@@ -10,7 +10,7 @@ from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.webview import CompleteChallenge
 
-IMAGES_EXTS = dict(g='gif', j='jpg', p='png', w='webp')
+IMAGES_EXTS = {'g': 'gif', 'j': 'jpg', 'p': 'png', 'w': 'webp'}
 
 # Mirrors
 # https://nhentai.to
@@ -49,20 +49,20 @@ class Nhentai(Server):
             return None
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],  # Not available
-            genres=[],
-            status=None,    # Not available
-            synopsis=None,  # Not available
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],  # Not available
+            'genres': [],
+            'status': None,    # Not available
+            'synopsis': None,  # Not available
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         soup = BeautifulSoup(r.text, 'lxml')
 
         data['name'] = soup.find('meta', property='og:title')['content']
-        data['cover'] = soup.find('meta', property='og:image')['content']
+        data['cover'] = 'https:' + soup.find('meta', property='og:image')['content']
 
         # Genres & Artists + chapter date
         chapter_date = None
@@ -82,11 +82,11 @@ class Nhentai(Server):
                     data['genres'].append(clean_tag)
 
         # Single chapter
-        data['chapters'].append(dict(
-            slug=data['cover'].rstrip('/').split('/')[-2],
-            title=data['name'],
-            date=convert_date_string(chapter_date, '%Y-%m-%d') if chapter_date else None,
-        ))
+        data['chapters'].append({
+            'slug': data['cover'].rstrip('/').split('/')[-2],
+            'title': data['name'],
+            'date': convert_date_string(chapter_date, '%Y-%m-%d') if chapter_date else None,
+        })
 
         return data
 
@@ -120,13 +120,13 @@ class Nhentai(Server):
             for index, page in enumerate(info['images']['pages']):
                 num = index + 1
                 extension = IMAGES_EXTS[page['t']]
-                page = dict(
-                    image=None,
-                    slug=f'{num}.{extension}',
-                )
+                page = {
+                    'image': None,
+                    'slug': f'{num}.{extension}',
+                }
                 pages.append(page)
 
-        return dict(pages=pages)
+        return {'pages': pages}
 
     def get_manga_chapter_page_image(self, manga_slug, manga_name, chapter_slug, page):
         """
@@ -141,11 +141,11 @@ class Nhentai(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['slug'],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['slug'],
+        }
 
     def get_manga_url(self, slug, url):
         """
@@ -165,11 +165,11 @@ class Nhentai(Server):
                 for element in elements:
                     a_element = element.find('a', class_='cover')
                     caption_element = element.find('div', class_='caption')
-                    results.append(dict(
-                        slug=a_element.get('href').rstrip('/').split('/')[-1],
-                        name=caption_element.text.strip(),
-                        cover=a_element.img.get('data-src'),
-                    ))
+                    results.append({
+                        'slug': a_element.get('href').rstrip('/').split('/')[-1],
+                        'name': caption_element.text.strip(),
+                        'cover': 'https:' + a_element.img.get('data-src'),
+                    })
             except Exception:
                 return None
             else:

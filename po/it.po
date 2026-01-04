@@ -7,22 +7,22 @@
 # Andrea Scarano <ascarano263@gmail.com>, 2025.
 # pasquale ruotolo <pachiruo@gmail.com>, 2025.
 # Riccardo Luise <vvvienna@proton.me>, 2025.
-# cas9 <cas9@users.noreply.hosted.weblate.org>, 2025.
+# cas9 <cas9@users.noreply.hosted.weblate.org>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.25.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-05 16:06+0100\n"
-"PO-Revision-Date: 2025-11-29 19:00+0000\n"
+"PO-Revision-Date: 2026-01-05 16:43+0000\n"
 "Last-Translator: cas9 <cas9@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/komikku/main/it/"
-">\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/komikku/main/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -102,7 +102,7 @@ msgstr "Tema chiaro e scuro"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "lettore"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
@@ -138,7 +138,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "libro"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"

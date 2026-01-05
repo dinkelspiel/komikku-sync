@@ -17,4 +17,5 @@ class Mangasorigines(Madara2):
     logo_url = base_url + '/wp-content/uploads/2023/07/cropped-favmo3-32x32.png'
     chapters_url = base_url + '/' + series_name + '/{0}/ajax/chapters/?t=1'
 
+    details_cover_selector = 'picture > img'
     chapters_date_selector = '.timediff'

@@ -9,6 +9,7 @@ class Rimuscans(MangaStream):
     id = 'rimuscans'
     name = 'Rimu Scans'
     lang = 'fr'
+    status = 'disabled'  # theme change
 
     has_cf = True
 

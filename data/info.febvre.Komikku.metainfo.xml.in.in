@@ -114,6 +114,22 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.99.0" date="2026-01-05">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] Anime-Sama (FR): Update</li>
+                    <li>[Servers] Cartel De Manhwas (ES): Re-enabled</li>
+                    <li>[Servers] Kavita: Fixed chapters recovery</li>
+                    <li>[Servers] Neko Scans (ES): Re-enabled</li>
+                    <li>[Servers] NHentai: Update</li>
+                    <li>[Servers] Rezo Scans (EN): Disabled</li>
+                    <li>[Servers] Rimu Scans (FR): Disabled</li>
+                    <li>[Servers] Team-X (AR): Update</li>
+                    <li>[L10n] Updated Indonesian and Spanish translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.98.0" date="2025-12-21">
             <description translate="no">
                 <ul>

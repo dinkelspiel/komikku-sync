@@ -92,6 +92,7 @@ CREDITS = dict(
         'Alim Satria (Indonesian)',
         'Juan Manuel (Indonesian)',
         'srntskl-111 (Indonesian)',
+        'Nataniel Dika Kurniawan (Indonesian)',
         'Mek101 (Italian)',
         'dedocc (Italian)',
         'Davide Mora (Italian)',
@@ -115,6 +116,7 @@ CREDITS = dict(
         'Сергей (Russian)',
         'Óscar Fernández Díaz (Spanish)',
         'gallegonovato (Spanish)',
+        'Klauss (Spanish)',
         'Jesper (Swedish)',
         'PaneradFisk (Swedish)',
         'Willem Dinkelspiel (Swedish)',
@@ -139,14 +141,15 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Added Hive Toon (EN)</li>
-    <li>[Servers] Dragon Ball Multiverse: Update</li>
+    <li>[Servers] Anime-Sama (FR): Update</li>
+    <li>[Servers] Cartel De Manhwas (ES): Re-enabled</li>
     <li>[Servers] Kavita: Fixed chapters recovery</li>
-    <li>[Servers] Mangalek (AR): Update</li>
-    <li>[Servers] Qi Scans (EN): Update</li>
-    <li>[Servers] Raijin Scan (FR): Update</li>
-    <li>[Servers] Scanvf (FR): Disabled</li>
-    <li>[L10n] Updated Finnish translation</li>
+    <li>[Servers] Neko Scans (ES): Re-enabled</li>
+    <li>[Servers] NHentai: Update</li>
+    <li>[Servers] Rezo Scans (EN): Disabled</li>
+    <li>[Servers] Rimu Scans (FR): Disabled</li>
+    <li>[Servers] Team-X (AR): Update</li>
+    <li>[L10n] Updated Indonesian and Spanish translations</li>
 </ul>
-<p>Enjoy holiday season and Happy reading.</p>
+<p>Happy reading.</p>
 """

@@ -13,7 +13,7 @@
 # Qi Scans [EN]
 # Reaper Scans [EN] (disabled)
 # Reaper Scans [pt_BR] (disabled)
-# Rezo Scans [EN]
+# Rezo Scans [EN] (disabled)
 
 
 import logging

@@ -12,13 +12,14 @@
 # Matheus Santana <estudosfodasdomatheus@gmail.com>, 2025.
 # Alex Carvalho <alexcs.carvalho@proton.me>, 2025.
 # Valéry Febvre <vfebvre@easter-eggs.com>, 2025.
+# Lucas Oliveira <akinolucas16@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-05 16:06+0100\n"
-"PO-Revision-Date: 2025-09-28 18:01+0000\n"
-"Last-Translator: Alex Carvalho <gameplayalex160@gmail.com>\n"
+"PO-Revision-Date: 2026-01-08 20:01+0000\n"
+"Last-Translator: Lucas Oliveira <akinolucas16@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "komikku/main/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -26,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -38,7 +39,7 @@ msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
-msgstr ""
+msgstr "leitor"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -62,7 +63,7 @@ msgstr "Leitura online e offline de dezenas de servidores"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid "Support for locally stored series (in CBZ/CBR/CBT or PDF formats)"
-msgstr ""
+msgstr "Suporte para series salvas localmente (em formatos CBZ/CBR/CBT e PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -85,7 +86,7 @@ msgstr "Categorias para organizar sua biblioteca"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
-msgstr ""
+msgstr "Tracking automatico de series com AniList, MangaUpdates e MyAnimeList"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
@@ -105,7 +106,7 @@ msgstr "Temas claro e escuro"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "leitor"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
@@ -121,35 +122,35 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "manga"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "manhwa"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "manhua"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "webtoon"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
-msgstr ""
+msgstr "webcomic"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "livro"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "ebook"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "off-line"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
@@ -440,7 +441,7 @@ msgstr "Geral"
 
 #: ../data/ui/preferences.blp:24
 msgid "Support Komikku"
-msgstr ""
+msgstr "Suporte Komikku"
 
 #: ../data/ui/preferences.blp:30
 msgid ""
@@ -449,10 +450,14 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"Komikku é gratuito e de código aberto, e sempre será. Se você gosta dele, "
+"apoiar-me por meio de doações seria ótimo. Isso não só me ajudará a mantê-"
+"lo, como também a continuar meu trabalho como desenvolvedor de software "
+"livre em geral."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
-msgstr ""
+msgstr "Aparência"
 
 #: ../data/ui/preferences.blp:61
 msgid "Theme"
@@ -574,7 +579,7 @@ msgstr "Baixa automaticamente novos capítulos"
 
 #: ../data/ui/preferences.blp:218
 msgid "Languages"
-msgstr ""
+msgstr "Línguas"
 
 #: ../data/ui/preferences.blp:219
 msgid "Restrict servers to selected languages"
@@ -699,7 +704,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"
-msgstr ""
+msgstr "Direita para Esquerda / Esquerda para Direita / Vertical"
 
 #: ../data/ui/preferences.blp:323
 msgid "Scaling"
@@ -754,7 +759,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:347
 msgid "Webtoon Reading Mode"
-msgstr ""
+msgstr "Modo de leitura para Webtoon"
 
 #: ../data/ui/preferences.blp:348
 msgid "Long Strip aka Infinite Vertical Canvas"
@@ -762,7 +767,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:353
 msgid "Reset to Default"
-msgstr ""
+msgstr "Restaurar padrão"
 
 #: ../data/ui/preferences.blp:361
 msgid "Maximum Width"
@@ -770,23 +775,24 @@ msgstr "Largura máxima"
 
 #: ../data/ui/preferences.blp:362
 msgid "Constrain reader's width to a given maximum size"
-msgstr ""
+msgstr "Limitar a largura do leitor a um tamanho máximo"
 
 #: ../data/ui/preferences.blp:372
 msgid "Scroll Distance"
-msgstr ""
+msgstr "Distância de rolagem"
 
 #: ../data/ui/preferences.blp:373
 msgid "Percentage of page height to scroll on click or Page Up/Down"
 msgstr ""
+"Porcentagem da altura da página a ser rolada ao clicar ou usar Page Up/Down"
 
 #: ../data/ui/preferences.blp:384
 msgid "Drag Sensitivity"
-msgstr ""
+msgstr "Sensibilidade de arraste"
 
 #: ../data/ui/preferences.blp:385
 msgid "Multiplier for drag scrolling sensitivity"
-msgstr ""
+msgstr "Multiplicador da sensibilidade de rolagem por arraste"
 
 #: ../data/ui/preferences.blp:399
 msgid "Advanced"
@@ -1312,7 +1318,7 @@ msgstr "Salvar"
 #: ../komikku/downloader.py:283
 #, python-brace-format
 msgid "[{0}] Chapters download ended"
-msgstr ""
+msgstr "[{0}] Download dos capítulos concluído"
 
 #: ../komikku/explorer/common.py:122
 #, python-brace-format
@@ -1538,7 +1544,7 @@ msgstr "Baixando"
 
 #: ../komikku/models/database/downloads.py:22
 msgid "Download canceled"
-msgstr ""
+msgstr "Download cancelado"
 
 #: ../komikku/models/database/downloads.py:23
 msgid "Download error"
@@ -1602,6 +1608,8 @@ msgstr ""
 #: ../komikku/preferences/__init__.py:178
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr ""
+"Tem certeza de que deseja limpar os dados do WebView (cache, armazenamento e "
+"cookies)?"
 
 #: ../komikku/preferences/__init__.py:203
 msgid "Disable animations?"
@@ -1670,7 +1678,7 @@ msgstr "Desconectado"
 
 #: ../komikku/preferences/trackers.py:43
 msgid "Reconnect"
-msgstr ""
+msgstr "Reconectado"
 
 #: ../komikku/preferences/trackers.py:46 ../komikku/preferences/trackers.py:71
 #: ../komikku/preferences/trackers.py:104
@@ -2270,7 +2278,7 @@ msgstr "Filtrar por tipos"
 
 #: ../komikku/servers/comix/__init__.py:86
 msgid "Hide NSFW Content"
-msgstr ""
+msgstr "Esconder conteúdo NSFW"
 
 #: ../komikku/servers/comix/__init__.py:87
 msgid "Hide NSFW content from popular, latest, and search lists"

@@ -19,3 +19,5 @@ class Mangasorigines(Madara2):
 
     details_cover_selector = 'picture > img'
     chapters_date_selector = '.timediff'
+
+    images_src_attr = 'data-src'

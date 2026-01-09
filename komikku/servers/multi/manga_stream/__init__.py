@@ -5,8 +5,9 @@
 # Manga Strean/Manga Reader/Mamga Themesia - WordPress Themes for read manga
 
 # Supported servers:
-# Asura Scans For Free [EN]
+# Asura Scans For Free [EN] (Disabled)
 # Cartel De Manhwas [ES]
+# Hijala [AR]
 # Iris Scanlator [pt_BR] (Disabled)
 # KomikLovers [ID]
 # Lelmanga [FR]
@@ -26,7 +27,7 @@
 # Sushiscan (.net) [FR]
 # Terco Scans [EN]
 # Tres Daos [ES] (Disabled)
-# VF Scan [FR]
+# VF Scan [FR] (Disabled)
 # Vortex Scans For Free [EN] (Disabled)
 
 from gettext import gettext as _

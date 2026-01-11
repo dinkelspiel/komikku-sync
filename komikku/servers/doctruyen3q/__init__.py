@@ -15,7 +15,7 @@ class Doctruyen3q(WPComics):
 
     has_cf = True
 
-    base_url = 'https://doctruyen3qui19.com'
+    base_url = 'https://doctruyen3qhub.com'
     search_url = base_url + '/tim-truyen'
     latest_updates_url = base_url + '/tim-truyen?sort=1'
     most_populars_url = base_url + '/tim-truyen?sort=2'

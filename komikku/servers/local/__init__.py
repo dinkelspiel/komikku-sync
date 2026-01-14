@@ -12,24 +12,27 @@ import tarfile
 import xml.etree.ElementTree as ET
 import zipfile
 
+import ebooklib
+from ebooklib import epub
 from pypdf import PdfReader
 
 from komikku.servers import Server
 from komikku.servers.exceptions import ArchiveError
 from komikku.servers.exceptions import ArchiveUnrarMissingError
 from komikku.servers.exceptions import ServerException
+from komikku.servers.utils import convert_date_string
 from komikku.utils import concat_images_vertically
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_file_mime_type
 from komikku.utils import get_data_dir
 
-IMG_EXTENSIONS = ['bmp', 'gif', 'jpg', 'jpeg', 'png', 'tiff', 'webp']
+IMG_EXTENSIONS = ['bmp', 'gif', 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'webp']
 
 logger = logging.getLogger('komikku.servers.local')
 
 
 def is_archive(path):
-    if zipfile.is_zipfile(path):
+    if zipfile.is_zipfile(path):  # CBZ, EPUB
         return True
     if rarfile.is_rarfile(path):
         return True
@@ -37,14 +40,16 @@ def is_archive(path):
         return True
     if get_file_mime_type(path) == 'application/pdf':
         return True
-
     return False
 
 
 class Archive:
     def __init__(self, path):
         try:
-            if zipfile.is_zipfile(path):
+            if get_file_mime_type(path) == 'application/epub+zip':
+                self.obj = EPUB(path)
+
+            elif zipfile.is_zipfile(path):
                 self.obj = CBZ(path)
 
             elif rarfile.is_rarfile(path):
@@ -64,9 +69,12 @@ class Archive:
         return self
 
     def __exit__(self, *exc_info):
-        self.obj.archive.close()
+        self.obj.close()
 
     def get_info(self):
+        if hasattr(self.obj, 'get_info'):
+            return self.obj.get_info()
+
         # Parse ComicInfo.xml if exists
         data = dict(
             title=None,
@@ -135,6 +143,9 @@ class CBR:
         self.path = path
         self.archive = rarfile.RarFile(self.path)
 
+    def close(self):
+        self.archive.close()
+
     def get_namelist(self):
         return self.archive.namelist()
 
@@ -158,6 +169,9 @@ class CBT:
     def __init__(self, path):
         self.path = path
         self.archive = tarfile.open(self.path)
+
+    def close(self):
+        self.archive.close()
 
     def get_namelist(self):
         return self.archive.getnames()
@@ -183,7 +197,10 @@ class CBZ:
 
     def __init__(self, path):
         self.path = path
-        self.archive = zipfile.ZipFile(self.path)
+        self.archive = zipfile.ZipFile(self.path, allowZip64=True)
+
+    def close(self):
+        self.archive.close()
 
     def get_namelist(self):
         return self.archive.namelist()
@@ -194,6 +211,81 @@ class CBZ:
         except KeyError as e:
             logger.info(f'{self.path}: {e}')
             return None
+        except Exception as e:
+            logger.info(f'{self.path}: {e}')
+            raise ServerException(e) from e
+
+
+class EPUB:
+    """EPUB format"""
+
+    def __init__(self, path):
+        self.path = path
+
+        reader = epub.EpubReader(path, None)
+        self.archive = reader.load()
+
+    def close(self):
+        return
+
+    def get_info(self):
+        data = dict(
+            title=self.archive.get_metadata('DC', 'title')[0][0],
+            volume=None,
+            number=None,
+            authors=set(),
+            translators=set(),
+            genres=set(),
+            synopsis=None,
+            day=None,
+            month=None,
+            year=None,
+        )
+
+        if creators := self.archive.get_metadata('DC', 'creator'):
+            for creator in creators:
+                data['authors'].add(creator[0])
+
+        if descriptions := self.archive.get_metadata('DC', 'description'):
+            data['synopsis'] = []
+            for description in descriptions:
+                for line in description[0].split('\n'):
+                    data['synopsis'].append(line.strip())
+
+            data['synopsis'] = '\n'.join(data['synopsis'])
+
+        if date := self.archive.get_metadata('DC', 'date'):
+            if len(date[0][0]) == 8:
+                data['year'] = int(date[0][0][:4])
+                data['month'] = int(date[0][0][4:6])
+                data['day'] = int(date[0][0][6:8])
+            elif date := convert_date_string(date[0][0]):
+                data['year'] = date.year
+                data['month'] = date.month
+                data['day'] = date.day
+
+        if position := self.archive.get_metadata('OPF', 'group-position'):
+            if '.' in position[0][1]['content']:
+                data['volume'], data['number'] = position[0][1]['content'].split('.')
+            else:
+                data['volume'] = position[0][1]['content']
+
+        return data
+
+    def get_namelist(self):
+        namelist = []
+
+        for image in self.archive.get_items_of_type(ebooklib.ITEM_COVER):
+            namelist.append(image.get_name())
+
+        for image in self.archive.get_items_of_type(ebooklib.ITEM_IMAGE):
+            namelist.append(image.get_name())
+
+        return namelist
+
+    def get_name_buffer(self, name):
+        try:
+            return self.archive.get_item_with_href(name).get_content()
         except Exception as e:
             logger.info(f'{self.path}: {e}')
             raise ServerException(e) from e

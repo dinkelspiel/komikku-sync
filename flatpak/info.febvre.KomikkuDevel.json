@@ -32,10 +32,11 @@
         "python3-brotli.json",
         "python3-requests.json",
         "python3-curl_cffi.json",
+        "python3-ebooklib.json",
+        "python3-pypdf.json",
         "python3-rarfile.json",
         "python3-emoji.json",
         "python3-piexif.json",
-        "python3-pypdf.json",
         "python3-pyjwt.json",
         {
             "name": "gnustep-make",

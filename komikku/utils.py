@@ -508,7 +508,7 @@ class BaseServer:
             return False
 
         if not os.path.exists(dir_path):
-            os.mkdir(dir_path)
+            os.makedirs(dir_path)
 
         fs_path = os.path.join(dir_path, f'{name}.{"jpg" if format == "JPEG" else format.lower()}')
         with open(fs_path, 'wb') as fp:

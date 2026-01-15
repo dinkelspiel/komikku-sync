@@ -118,9 +118,10 @@ class Tapas(Server):
             if r.status_code != 200:
                 return None
 
-            more = r.json()['data']['pagination']['has_next']
+            resp_data = r.json()['data']
+            more = resp_data['pagination']['has_next']
 
-            return r.json()['data']['episodes'], more, get_response_elapsed(r)
+            return resp_data['episodes'], more, get_response_elapsed(r)
 
         chapters = []
         delay = None

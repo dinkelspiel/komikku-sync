@@ -34,7 +34,7 @@ from komikku.utils import get_cache_dir
 from komikku.utils import get_cached_logos_dir
 from komikku.utils import retry_session
 
-APP_MIN_VERSION = '1.98.0'  # Minimum app version required to use `Up-to-date servers modules`
+APP_MIN_VERSION = '1.100.0'  # Minimum app version required to use `Up-to-date servers modules`
 
 # https://www.localeplanet.com/icu/
 LANGUAGES = dict(

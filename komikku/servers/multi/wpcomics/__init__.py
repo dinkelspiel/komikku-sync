@@ -149,10 +149,13 @@ class WPComics(Server):
         data = dict(
             pages=[],
         )
-        for index, img_element in enumerate(soup.select('.page-chapter > img')):
+        for index, element in enumerate(soup.select('.page-chapter')):
+            if not element.get('id') or not element.get('id').startswith('page'):
+                continue
+
             image = None
             for attr in self.image_src_attrs:
-                if image := img_element.get(attr):
+                if image := element.img.get(attr):
                     break
             if image and image.startswith('//'):
                 image = f'https:{image}'  # noqa: E231

@@ -24,7 +24,7 @@ class Doctruyen3q(WPComics):
 
     chapters_name = 'chapter'
     date_format = None
-    image_src_attrs = ['data-original', 'src']
+    image_src_attrs = ['data-original', 'data-src', 'src']
     slug_segments = 2
 
     details_name_selector = 'h1.title-manga'

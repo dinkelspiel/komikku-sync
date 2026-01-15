@@ -114,6 +114,18 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.100.0" date="2026-01-16">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] Added Hijala (AR)</li>
+                    <li>[Servers] Local: Added EPUB format support</li>
+                    <li>[Servers] DocTruyen3Q (VI): Update</li>
+                    <li>[Servers] Mangas Origines (FR): Update</li>
+                    <li>[L10n] Updated Italian and Portuguese (Brazil) translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.99.0" date="2026-01-05">
             <description translate="no">
                 <ul>

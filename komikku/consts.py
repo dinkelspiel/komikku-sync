@@ -51,6 +51,7 @@ CREDITS = dict(
         'Fúlvio Alves (Brazilian Portuguese)',
         'Felipe (Brazilian Portuguese)',
         'Matheus Santana (Brazilian Portuguese)',
+        'Lucas Oliveira (Brazilian Portuguese)',
         'twlvnn (Bulgarian)',
         'Roger VC (Catalan)',
         'Lukáš Linhart (Czech)',
@@ -141,15 +142,11 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Anime-Sama (FR): Update</li>
-    <li>[Servers] Cartel De Manhwas (ES): Re-enabled</li>
-    <li>[Servers] Kavita: Fixed chapters recovery</li>
-    <li>[Servers] Neko Scans (ES): Re-enabled</li>
-    <li>[Servers] NHentai: Update</li>
-    <li>[Servers] Rezo Scans (EN): Disabled</li>
-    <li>[Servers] Rimu Scans (FR): Disabled</li>
-    <li>[Servers] Team-X (AR): Update</li>
-    <li>[L10n] Updated Indonesian and Spanish translations</li>
+    <li>[Servers] Added Hijala (AR)</li>
+    <li>[Servers] Local: Added EPUB format support</li>
+    <li>[Servers] DocTruyen3Q (VI): Update</li>
+    <li>[Servers] Mangas Origines (FR): Update</li>
+    <li>[L10n] Updated Italian and Portuguese (Brazil) translations</li>
 </ul>
 <p>Happy reading.</p>
 """

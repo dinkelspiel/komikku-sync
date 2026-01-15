@@ -28,6 +28,7 @@ LANGUAGES = {
     'id': 'Indonesian',
     'it': 'Italian',
     'ko': 'Korean',
+    'kw': 'Cornish',
     'ml': 'Malayalam',
     'ms': 'Malay',
     'lt': 'Lithuanian',

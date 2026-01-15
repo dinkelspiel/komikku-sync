@@ -7,7 +7,7 @@ from komikku.servers.multi.manga_stream import MangaStream
 
 class Mangastop(MangaStream):
     id = 'mangastop'
-    name = 'Mangas Top'
+    name = 'Manga Stop'
     lang = 'pt_BR'
     is_nsfw = True
 

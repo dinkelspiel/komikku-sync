@@ -28,10 +28,12 @@ class Manganelo(Server):
 
     base_url = 'https://www.manganato.gg'
     logo_url = base_url + '/images/favicon.ico'
+    latest_updates_url = base_url + '/manga-list/latest-manga'
+    most_populars_url = base_url + '/manga-list/hot-manga'
     search_url = base_url + '/home/search/json'
-    manga_list_url = base_url + '/genre/all'
     manga_url = base_url + '/manga/{0}'
     chapter_url = base_url + '/manga/{0}/chapter-{1}'
+    api_chapters_url = base_url + '/api/manga/{0}/chapters?limit=-1'
 
     bypass_cf_url = search_url + '?searchword=blossom'
 
@@ -97,15 +99,20 @@ class Manganelo(Server):
         data['synopsis'] = get_soup_element_inner_text(soup.select_one('#contentBox'), recursive=False)
 
         # Chapters
-        for element in reversed(soup.select('.chapter-list .row')):
-            a_element = element.select_one('a')
-            slug = a_element.get('href').split('/')[-1].split('-')[-1]
+        r = self.session_get(self.api_chapters_url.format(initial_data['slug']))
+        if r.status_code != 200:
+            return data
 
+        resp_data = r.json()
+        if not resp_data.get('success'):
+            return data
+
+        for chapter in reversed(resp_data['data']['chapters']):
             data['chapters'].append(dict(
-                slug=slug,
-                title=a_element.text.strip(),
-                num=slug if is_number(slug) else None,
-                date=convert_date_string(element.select_one('span:last-child').get('title').split()[0], format='%b-%d-%Y'),
+                slug=chapter['chapter_slug'].split('-')[-1],
+                title=chapter['chapter_name'].strip(),
+                num=chapter['chapter_num'] if is_number(chapter.get('chapter_num')) else None,
+                date=convert_date_string(chapter['updated_at'].split('T')[0], format='%Y-%m-%d'),
             ))
 
         return data
@@ -177,23 +184,18 @@ class Manganelo(Server):
         """
         Returns hot manga list
         """
-        return self.get_manga_list(orderby='topview')
+        return self.get_manga_list(orderby='popular')
 
     def get_manga_list(self, orderby=None):
         """
         Returns hot manga list
         """
-        params = {
-            'state': 'all',
-            'page': 1
-        }
-        if orderby:
-            params['type'] = orderby
+        if orderby == 'popular':
+            url = self.most_populars_url
+        elif orderby == 'latest':
+            url = self.latest_updates_url
 
-        r = self.session_get(
-            self.manga_list_url,
-            params=params,
-        )
+        r = self.session_get(url)
         if r.status_code != 200:
             return None
 
@@ -204,7 +206,7 @@ class Manganelo(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         results = []
-        for element in soup.select('.list-truyen-item-wrap'):
+        for element in soup.select('.list-comic-item-wrap'):
             link_element = element.h3.a
             link_cover_element = element.a
             last_chapter_link_element = element.select_one('.list-story-item-wrap-chapter')

@@ -19,6 +19,7 @@
 # Hunlight Scans [EN] (disabled)
 # Leomanga [ES]
 # Leviatanscans [EN] (disabled)
+# Lovers Toon [pt_BR]
 # Manga-Scantrad [FR]
 # Mangas Origines [FR]
 # MangaWeebs [EN] (disabled)

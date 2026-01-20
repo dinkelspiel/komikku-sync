@@ -349,12 +349,12 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
             self.scroll_by_increment(-self.vadjustment.props.step_increment, 80, False)
             return Gdk.EVENT_STOP
 
-        elif keyval == Gdk.KEY_Page_Down:
+        elif keyval in (Gdk.KEY_Page_Down, Gdk.KEY_KP_Page_Down):
             self.emit('keyboard-navigation')
             self.scroll_by_increment(self.vadjustment.props.page_size * self.settings.scroll_click_percentage)
             return Gdk.EVENT_STOP
 
-        elif keyval == Gdk.KEY_Page_Up:
+        elif keyval in (Gdk.KEY_Page_Up, Gdk.KEY_KP_Page_Up):
             self.emit('keyboard-navigation')
             self.scroll_by_increment(-self.vadjustment.props.page_size * self.settings.scroll_click_percentage)
             return Gdk.EVENT_STOP

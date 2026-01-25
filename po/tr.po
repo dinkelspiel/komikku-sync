@@ -6,21 +6,22 @@
 # Sabri Ünal <libreajans@gmail.com>, 2022, 2023, 2024.
 # Volkan Yıldırım <volki+weblate@disroot.org>, 2023, 2024.
 # Sabri Ünal <yakushabb@gmail.com>, 2024.
+# Efe Akın <efeakin1122@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-05 16:06+0100\n"
-"PO-Revision-Date: 2024-11-03 14:00+0000\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/"
-">\n"
+"PO-Revision-Date: 2026-01-25 13:17+0000\n"
+"Last-Translator: Efe Akın <efeakin1122@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/>"
+"\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.2\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -36,7 +37,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr ""
+msgstr "Manga & çizgi romanları keşfet ve oku"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
@@ -79,7 +80,7 @@ msgstr "Kitaplığınızı düzenlemek için kategoriler"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
-msgstr ""
+msgstr "Serilerin AniList, MangaUpdates ve MyAnimeList ile otomatik takibi"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
@@ -99,11 +100,11 @@ msgstr "Açık ve koyu tema"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "Okuyucu"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr ""
+msgstr "İzleyici"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 msgid "scanlation"
@@ -111,23 +112,23 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "Çizgi roman"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "Manga"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "Manwha"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "Manhua"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "Webtoon"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
@@ -135,15 +136,15 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "Kitap"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "E-kitap"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "Çevrimdışı"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
@@ -240,7 +241,7 @@ msgstr "Ara"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
-msgstr ""
+msgstr "Takip için Arama"
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
@@ -433,20 +434,26 @@ msgid "General"
 msgstr "Genel"
 
 #: ../data/ui/preferences.blp:24
+#, fuzzy
 msgid "Support Komikku"
-msgstr ""
+msgstr "Komikku'ya destek ol"
 
 #: ../data/ui/preferences.blp:30
+#, fuzzy
 msgid ""
 "Komikku is a free and open-source, and always will be. If you like it, "
 "backing me through donating would be great. This will not only help me "
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"Komikku bedava ve açık kaynak kodlu ve herzaman böyle olacak. Beğeniyorsanız "
+"be bağışlar ile desteklemeniz güzel olurdu. Bu sadece benim Komikku'yu idare "
+"etmem için değil, aynı zamanda genel olarak bedava yazılım geliştiricisi "
+"işime devam etmemi sağlayacak."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
-msgstr ""
+msgstr "Görünüş"
 
 #: ../data/ui/preferences.blp:61
 msgid "Theme"
@@ -490,7 +497,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:87
 msgid "Linear gradient"
-msgstr ""
+msgstr "Düz Gradyan"
 
 #: ../data/ui/preferences.blp:88
 msgid "Blurred cover"
@@ -568,7 +575,7 @@ msgstr "Yeni bölümleri otomatik olarak indir"
 
 #: ../data/ui/preferences.blp:218
 msgid "Languages"
-msgstr ""
+msgstr "Diller"
 
 #: ../data/ui/preferences.blp:219
 msgid "Restrict servers to selected languages"
@@ -693,7 +700,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"
-msgstr ""
+msgstr "Sağdan Sola / Soldan Sağa / Dikey"
 
 #: ../data/ui/preferences.blp:323
 msgid "Scaling"
@@ -748,15 +755,16 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:347
 msgid "Webtoon Reading Mode"
-msgstr ""
+msgstr "Webtoon Okuma Modu"
 
 #: ../data/ui/preferences.blp:348
 msgid "Long Strip aka Infinite Vertical Canvas"
 msgstr ""
 
 #: ../data/ui/preferences.blp:353
+#, fuzzy
 msgid "Reset to Default"
-msgstr ""
+msgstr "Varsayılana dön"
 
 #: ../data/ui/preferences.blp:361
 msgid "Maximum Width"

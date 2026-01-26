@@ -9,6 +9,7 @@ class Tecnoscan(MangaStream):
     id = 'tecnoscan'
     name = 'Terco Scans (Tecno Scans)'
     lang = 'en'
+    status = 'disabled'
 
     base_url = 'https://tercotoon.xyz'
     logo_url = base_url + '/wp-content/uploads/2024/11/cropped-LOGO-6-1-32x32.png'

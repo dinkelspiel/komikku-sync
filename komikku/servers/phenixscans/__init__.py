@@ -18,15 +18,15 @@ class Phenixscans(Server):
 
     has_cf = True
 
-    base_url = 'https://phenix-scans.com'
+    base_url = 'https://phenix-scans.co'
     logo_url = base_url + '/logo.png'
-    api_base_url = base_url + '/api'
+    api_base_url = 'https://api.phenix-scans.co/api'
     api_list_url = api_base_url + '/front/manga'
     api_search_url = api_base_url + '/front/manga/search'
     api_manga_url = api_base_url + '/front/manga/{0}'
     api_chapter_url = api_base_url + '/front/manga/{0}/chapter/{1}'
     manga_url = base_url + '/manga/{0}'
-    media_url = api_base_url + '/{0}'
+    media_url = 'https://api.phenix-scans.co' + '/{0}'
 
     filters = [
         {

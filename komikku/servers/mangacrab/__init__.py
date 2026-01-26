@@ -49,14 +49,14 @@ class Mangacrab(Madara2):
         img_key = None
         for script_element in soup.find_all('script'):
             script = script_element.string
-            if script and 'X-Img-Key' in script:
-                re_key = r"'X-Img-Key': '(.*)'"
+            if script and 'Img-Key' in script:
+                re_key = r"'Img-Key': '(.*)'"
                 if matches := re.search(re_key, script):
                     img_key = matches.group(1)
                     break
 
         if img_key is None:
-            logger.info('Failed to retrieve X-Img-Key header value')
+            logger.info('Failed to retrieve Img-Key header value')
             return None
 
         data = dict(
@@ -91,7 +91,7 @@ class Mangacrab(Madara2):
             headers={
                 'Accept': 'image/*',
                 'Referer': self.chapter_url.format(manga_slug, chapter_slug),
-                'X-Img-Key': page['key'],
+                'Img-Key': page['key'],
             }
         )
         if r.status_code != 200:

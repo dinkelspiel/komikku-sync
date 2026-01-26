@@ -244,16 +244,21 @@ class Madara(Server):
                 continue
 
             a_element = element.a
-            date_element = element.select_one(self.chapters_date_selector).extract()
             if view_element := element.find(class_='view'):
                 view_element.extract()
 
+            url = a_element.get('href')
+            if 'javascript' in url:
+                # VIP
+                continue
+
+            date_element = element.select_one(self.chapters_date_selector).extract()
             if date := date_element.text.strip():
                 date = convert_date_string(date, format=self.date_format, languages=[self.lang])
             else:
                 date = datetime.date.today().strftime('%Y-%m-%d')
 
-            slug = a_element.get('href').split('/')[-2]
+            slug = url.split('/')[-2]
             num, num_volume = self.extract_chapter_nums_from_slug(slug)
 
             data['chapters'].append(dict(

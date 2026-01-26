@@ -20,6 +20,7 @@ class Invinciblecomicsvf(Server):
     id = 'invinciblecomicsvf'
     name = 'Invincible ComicsVF'
     lang = 'fr'
+    status = 'disabled'
 
     base_url = 'https://invinciblecomicsvf.fr'
     logo_url = base_url + '/wp-content/uploads/2025/05/cropped-5xhpykwda6w61-32x32.png'

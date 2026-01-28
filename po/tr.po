@@ -7,13 +7,14 @@
 # Volkan Yıldırım <volki+weblate@disroot.org>, 2023, 2024.
 # Sabri Ünal <yakushabb@gmail.com>, 2024.
 # Efe Akın <efeakin1122@gmail.com>, 2026.
+# Valéry Febvre <vfebvre@easter-eggs.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-05 16:06+0100\n"
-"PO-Revision-Date: 2026-01-25 13:17+0000\n"
-"Last-Translator: Efe Akın <efeakin1122@gmail.com>\n"
+"PO-Revision-Date: 2026-01-28 22:05+0000\n"
+"Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/>"
 "\n"
 "Language: tr\n"
@@ -37,7 +38,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr "Manga & çizgi romanları keşfet ve oku"
+msgstr "Manga &amp; çizgi romanları keşfet ve oku"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""

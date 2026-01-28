@@ -27,6 +27,7 @@ class Tapas(Server):
     id = 'tapas'
     name = 'Tapas'
     lang = 'en'
+    status = 'disabled'  # commercial platforms are no supported
 
     base_url = 'https://tapas.io'
     api_base_url = 'https://story-api.tapas.io'

@@ -52,6 +52,7 @@ class Mangapluscreators(Server):
     id = 'mangapluscreators'
     name = 'MANGA Plus Creators by SHUEISHA'
     lang = 'en'
+    status = 'disabled'  # commercial platforms are no supported
 
     is_lang_set = False
     csrf_token = None

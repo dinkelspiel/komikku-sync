@@ -26,6 +26,7 @@ class Vizmanga(Server):
     lang = 'en'
     locale = 'enUS'
     has_login = True
+    status = 'disabled'  # commercial platforms are no supported
 
     base_url = 'https://www.viz.com'
     logo_url = base_url + '/favicon/favicon-32x32.png?v=47MPqANpyj'

@@ -58,6 +58,7 @@ class Mangaplus(Server):
     id = 'mangaplus'
     name = 'MANGA Plus by SHUEISHA'
     lang = 'en'
+    status = 'disabled'  # commercial platforms are no supported
 
     is_lang_set = False
 

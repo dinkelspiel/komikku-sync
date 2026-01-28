@@ -38,6 +38,7 @@ class Webtoon(Server):
     id = 'webtoon'
     name = SERVER_NAME
     lang = 'en'
+    status = 'disabled'  # commercial platforms are no supported
 
     base_url = 'https://www.webtoons.com'
     logo_url = 'https://webtoons-static.pstatic.net/image/favicon/favicon.ico?dt=2017082301'

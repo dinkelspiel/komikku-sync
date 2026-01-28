@@ -125,6 +125,7 @@ CREDITS = dict(
         'Ege Çelikçi (Turkish)',
         'Sabri Ünal (Turkish)',
         'Volkan Yıldırım (Turkish)',
+        'Efe Akın (Turkish)',
         'CakesTwix (Ukrainian)',
         'Kislotniy (Acela) (Ukrainian)',
         'mondstern (Ukrainian)',
@@ -142,11 +143,15 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Added Hijala (AR)</li>
-    <li>[Servers] Local: Added EPUB format support</li>
-    <li>[Servers] DocTruyen3Q (VI): Update</li>
-    <li>[Servers] Mangas Origines (FR): Update</li>
-    <li>[L10n] Updated Italian and Portuguese (Brazil) translations</li>
+    <li>[Reader] Webtoon pager: Added missing navigation with `Page Up` and `Page Down` of numpad</li>
+    <li>[Servers] Invincible ComicsVF (FR): Disabled</li>
+    <li>[Servers] Lovers Toon (pt_BR): Re-enabled</li>
+    <li>[Servers] MangaCrab (ES): Update</li>
+    <li>[Servers] Manganelo (EN): Update</li>
+    <li>[Servers] Phenix Scans (FR): Update</li>
+    <li>[Servers] Terco Scans (EN): Disabled</li>
+    <li>[Servers] Disabled commercial platforms</li>
+    <li>[L10n] Updated Turkish translation</li>
 </ul>
 <p>Happy reading.</p>
 """

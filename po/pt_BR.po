@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-05 16:06+0100\n"
 "PO-Revision-Date: 2026-01-30 15:01+0000\n"
-"Last-Translator: Alex Carvalho <alexcs.carvalho@proton.me>\n"
+"Last-Translator: Lucas Oliveira <akinolucas16@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "komikku/main/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -700,7 +700,7 @@ msgstr "Entrar automaticamente no modo de tela cheia"
 
 #: ../data/ui/preferences.blp:319
 msgid "Paged Reading Modes"
-msgstr ""
+msgstr "Modos de leitura por páginas"
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"

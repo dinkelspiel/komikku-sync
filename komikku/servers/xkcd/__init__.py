@@ -12,12 +12,17 @@ from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.servers.utils import TextImage
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 
 class Xkcd(Server):
     id = 'xkcd'
     name = 'xkcd'
     lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+        license='CC BY-NC 2.5'
+    )
     true_search = False
 
     base_url = 'https://www.xkcd.com'

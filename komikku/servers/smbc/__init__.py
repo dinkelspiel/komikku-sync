@@ -7,13 +7,19 @@ import json
 from bs4 import BeautifulSoup
 
 from komikku.servers.multi.hiveworks import Hiveworks
+from komikku.utils import ServerContent
 
 
 class Smbc(Hiveworks):
     id = 'smbc'
     name = 'SMBC'
+    lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
 
     base_url = 'https://www.smbc-comics.com'
+    donate_url = 'https://www.patreon.com/ZachWeinersmith?ty=h'
     logo_url = base_url + '/favicon.ico'
     cover_url = base_url + '/images/moblogo.png'
 

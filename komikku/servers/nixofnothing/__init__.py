@@ -7,11 +7,16 @@ import json
 from bs4 import BeautifulSoup
 
 from komikku.servers.multi.hiveworks import Hiveworks
+from komikku.utils import ServerContent
 
 
 class Nixofnothing(Hiveworks):
     id = 'nixofnothing'
     name = 'Nix of Nothing'
+    lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
 
     base_url = 'https://www.nixofnothing.com'
     logo_url = base_url + '/favicon.ico'

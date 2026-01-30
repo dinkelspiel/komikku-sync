@@ -8,12 +8,16 @@ from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 
 class Aralosbd(Server):
     id = 'aralosbd'
     name = 'Aralos BD'
     lang = 'fr'
+    content = ServerContent(
+        type='Self-publishing platform'
+    )
     long_strip_genres = ['Webtoon']
 
     base_url = 'https://aralosbd.fr'

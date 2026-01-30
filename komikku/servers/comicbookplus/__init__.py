@@ -15,6 +15,7 @@ from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.servers.utils import search_duckduckgo
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 logger = logging.getLogger('komikku.servers.comicbookplus')
 
@@ -23,6 +24,10 @@ class Comicbookplus(Server):
     id = 'comicbookplus'
     name = 'Comic Book Plus'
     lang = 'en'
+    content = ServerContent(
+        type='Collection of free and legal comic books',
+        public_domain=True
+    )
 
     base_url = 'https://comicbookplus.com'
     logo_url = base_url + '/favicon.ico'

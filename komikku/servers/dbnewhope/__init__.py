@@ -9,6 +9,7 @@ from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.utils import get_soup_element_inner_text
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 # Conversion ISO_639-1 codes => server codes
 LANGUAGES_CODES = dict(
@@ -24,6 +25,9 @@ class Dbnewhope(Server):
     id = 'dbnewhope'
     name = 'DB New Hope'
     lang = 'fr'
+    content = ServerContent(
+        type='Doujins of Dragon Ball manga',
+    )
     true_search = False
 
     base_url = 'https://dbnewhope.com'

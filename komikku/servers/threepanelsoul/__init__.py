@@ -5,11 +5,16 @@
 from bs4 import BeautifulSoup
 
 from komikku.servers.multi.hiveworks import Hiveworks
+from komikku.utils import ServerContent
 
 
 class Threepanelsoul(Hiveworks):
     id = 'threepanelsoul'
     name = 'Three Panel Soul'
+    lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
 
     base_url = 'https://www.threepanelsoul.com'
     logo_url = base_url + '/favicon.ico'

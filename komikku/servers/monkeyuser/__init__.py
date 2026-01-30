@@ -11,12 +11,16 @@ from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 
 class Monkeyuser(Server):
     id = 'monkeyuser'
     name = 'MonkeyUser'
     lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
     true_search = False
 
     base_url = 'https://www.monkeyuser.com'

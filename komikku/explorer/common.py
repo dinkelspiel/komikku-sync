@@ -257,35 +257,75 @@ class ExplorerServerRow(Gtk.ListBoxRow):
             login_image = Gtk.Image.new_from_icon_name('dialog-password-symbolic')
             self.box.append(login_image)
 
-        if data['id'] == 'local':
-            # Info button
+        # Info button
+        if data['lang'] or data['id'] == 'local':
             button = Gtk.Button(valign=Gtk.Align.CENTER)
             button.set_icon_name('help-about-symbolic')
-            button.set_tooltip_text(_('Help'))
-            message = _("""A specific folder structure is required for local comics to be properly processed.
+            if data['id'] == 'local':
+                # Info button
+                button.set_tooltip_text(_('Help'))
+                title = _('Local Folder')
+                message = _("""A specific folder structure is required for local comics to be properly processed.
 
 Each comic must have its own folder which must contain the chapters/volumes as archive files in CBZ or CBR formats.
 
 The folder's name will be used as name for the comic.
 
 NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
+
+                # Button to open local folder
+                self.local_folder_button = Gtk.Button(valign=Gtk.Align.CENTER)
+                self.local_folder_button.set_icon_name('folder-visiting-symbolic')
+                self.local_folder_button.set_tooltip_text(_('Open local folder'))
+                self.local_folder_button_clicked_handler_id = self.local_folder_button.connect(
+                    'clicked', self.page.open_local_folder)
+                self.box.append(self.local_folder_button)
+
+            elif data['content']:
+                button.set_tooltip_text(_('Content Information'))
+                title = '\n'.join([
+                    _('Content Information'),
+                    data['name'],
+                ])
+                message = []
+                if type := data['content'].type:
+                    message.append(_('Type: {0}').format(type))
+                if license := data['content'].license:
+                    message.append(
+                        _('Copyrighted: Reproduction and distribution authorized under certain conditions ({0} license)').format(license)
+                    )
+                elif data['content'].public_domain:
+                    message.append(f'{_("Royalty-free, Public domain")}')
+                else:
+                    message.append(f'{_("Copyrighted")}')
+
+                message = '\n\n'.join(message)
+
+            else:
+                button.set_tooltip_text(_('Content Information'))
+                button.add_css_class('destructive-action')
+                title = '\n'.join([
+                    _('Content Information'),
+                    data['name'],
+                ])
+                message = [
+                    _('Use with caution!'),
+                    _('Copyrighted works'),
+                ]
+                message.append(_('Licensed/Published and/or Unlicensed works'))
+                message.append(_('It may be partially or totally illegal'))
+
+                message = '\n\n'.join(message)
+
             button.connect(
                 'clicked',
                 lambda x: self.page.window.open_dialog(
-                    _('Local Folder'),
+                    title,
                     body=message,
                     cancel_label=_('Close')
                 )
             )
             self.box.append(button)
-
-            # Button to open local folder
-            self.local_folder_button = Gtk.Button(valign=Gtk.Align.CENTER)
-            self.local_folder_button.set_icon_name('folder-visiting-symbolic')
-            self.local_folder_button.set_tooltip_text(_('Open local folder'))
-            self.local_folder_button_clicked_handler_id = self.local_folder_button.connect(
-                'clicked', self.page.open_local_folder)
-            self.box.append(self.local_folder_button)
 
         # Button to pin/unpin
         self.pin_button = Gtk.ToggleButton(valign=Gtk.Align.CENTER)

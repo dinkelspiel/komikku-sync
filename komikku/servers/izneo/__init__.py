@@ -20,7 +20,7 @@ class Izneo(Server):
     id = 'izneo'
     name = 'Izneo'
     lang = 'en'
-    status = 'disabled'
+    status = 'disabled'  # commercial platforms are no supported
 
     long_strip_genres = ['Webtoon', ]
     has_login = True
@@ -277,18 +277,15 @@ class Izneo_de(Izneo):
     id = 'izneo_de'
     name = 'Izneo'
     lang = 'de'
-    status = 'disabled'
 
 
 class Izneo_fr(Izneo):
     id = 'izneo_fr'
     name = 'Izneo'
     lang = 'fr'
-    status = 'enabled'
 
 
 class Yieha(Izneo):
     id = 'yieha:izneo'
     name = 'Yieha'
     lang = 'nl'
-    status = 'disabled'

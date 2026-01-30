@@ -34,7 +34,7 @@ from komikku.utils import get_cache_dir
 from komikku.utils import get_cached_logos_dir
 from komikku.utils import retry_session
 
-APP_MIN_VERSION = '1.100.0'  # Minimum app version required to use `Up-to-date servers modules`
+APP_MIN_VERSION = '1.102.0'  # Minimum app version required to use `Up-to-date servers modules`
 
 # https://www.localeplanet.com/icu/
 LANGUAGES = dict(
@@ -74,6 +74,8 @@ class Server(BaseServer, ABC):
     id: str
     name: str
     lang: str
+    content = None
+    true_search = True  # If False, hide search in Explorer search page (XKCD, DBM, pepper&carotte…)
 
     base_url = None
     donate_url = None
@@ -91,7 +93,6 @@ class Server(BaseServer, ABC):
     manga_title_css_selector = None  # Used to extract manga title in a manga URL
     params = None  # List of parameters (images quality for ex.)
     sync = False
-    true_search = True  # If False, hide search in Explorer search page (XKCD, DBM, pepper&carotte…)
 
     @classmethod
     def get_manga_initial_data_from_url(cls, url):

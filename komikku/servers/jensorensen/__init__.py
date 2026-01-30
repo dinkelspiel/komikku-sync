@@ -12,12 +12,16 @@ from komikku.servers.utils import convert_date_string
 from komikku.servers.utils import TextImage
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import html_escape
+from komikku.utils import ServerContent
 
 
 class Jensorensen(Server):
     id = 'jensorensen'
     name = 'Jen Sorensen'
     lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
     true_search = False
 
     base_url = 'https://jensorensen.com'

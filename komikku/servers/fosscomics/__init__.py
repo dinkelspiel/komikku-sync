@@ -13,12 +13,16 @@ from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.servers.utils import TextImage
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 
 class Fosscomics(Server):
     id = 'fosscomics'
     name = 'F/OSS Comics'
     lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+    )
     true_search = False
 
     base_url = 'https://fosscomics.com'

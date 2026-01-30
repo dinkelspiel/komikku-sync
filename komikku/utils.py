@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from dataclasses import dataclass
 import datetime
 from functools import cache
 from functools import cached_property
@@ -770,3 +771,11 @@ class CoverPicture(Gtk.Picture):
         self.disconnect_by_func(self.on_unrealize)
 
         self.get_paintable().dispose()
+
+
+@dataclass
+class ServerContent:
+    """Class for describing the content available in a server (legal only)"""
+    type: str = None
+    license: str = None
+    public_domain: bool = False  # 100% of content is in public domain

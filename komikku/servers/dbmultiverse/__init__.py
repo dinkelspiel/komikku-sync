@@ -12,6 +12,7 @@ from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import is_number
+from komikku.utils import ServerContent
 
 # Conversion ISO_639-1 codes => server codes
 LANGUAGES_CODES = {
@@ -29,6 +30,9 @@ class Dbmultiverse(Server):
     id = 'dbmultiverse'
     name = 'Dragon Ball Multiverse'
     lang = 'en'
+    content = ServerContent(
+        type='Doujins of Dragon Ball manga',
+    )
     true_search = False
 
     base_url = 'https://www.dragonball-multiverse.com'

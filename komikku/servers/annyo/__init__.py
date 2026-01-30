@@ -9,12 +9,17 @@ from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 
 class Annyo(Server):
     id = 'annyo'
     name = 'Annyo - le mouton a 5 pattes'
     lang = 'fr'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+        license='CC BY-SA'
+    )
     true_search = False
 
     base_url = 'https://annyo.logaton.fr'

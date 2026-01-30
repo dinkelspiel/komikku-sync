@@ -8,6 +8,7 @@ import requests
 from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.utils import get_buffer_mime_type
+from komikku.utils import ServerContent
 
 # Conversion ISO_639-1 codes => server codes
 LANGUAGES_CODES = dict(
@@ -38,6 +39,10 @@ class Peppercarrot(Server):
     id = 'peppercarrot'
     name = SERVER_NAME
     lang = 'en'
+    content = ServerContent(
+        type='Webcomic, Self-publishing',
+        license='CC BY'
+    )
     true_search = False
 
     base_url = 'https://www.peppercarrot.com'

@@ -277,6 +277,7 @@ def get_servers_list(include_disabled=False, order_by=('lang', 'name')):
                 servers.append(dict(
                     id=obj.id,
                     name=obj.name,
+                    content=obj.content,
                     description=obj.description,
                     lang=obj.lang,
                     base_url=obj.base_url,

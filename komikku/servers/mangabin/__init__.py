@@ -10,6 +10,7 @@ class Mangabin(Madara2):
     name = 'MangaBin'
     lang = 'en'
     is_nsfw = True
+    status = 'disabled'
 
     base_url = 'https://mangabin.com'
     logo_url = base_url + '/wp-content/uploads/2024/12/cropped-coollogo_com-29007530-32x32.png'

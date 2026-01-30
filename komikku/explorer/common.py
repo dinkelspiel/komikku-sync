@@ -297,7 +297,7 @@ NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
                 elif data['content'].public_domain:
                     message.append(f'{_("Royalty-free, Public domain")}')
                 else:
-                    message.append(f'{_("Copyrighted")}')
+                    message.append(f'{_("Copyrighted works")}')
 
                 message = '\n\n'.join(message)
 

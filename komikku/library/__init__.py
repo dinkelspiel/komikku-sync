@@ -652,24 +652,21 @@ class LibraryPage(Adw.NavigationPage):
 
             for index, row in enumerate(mangas_rows):
                 thumbnail = Thumbnail(self, Manga.get(row['id'], db_conn=db_conn), *self.thumbnails_cover_size)
-                thumbnails.append(thumbnail)
-
-                GLib.idle_add(self.start_page_progressbar.set_fraction, (index + 1) / len(mangas_rows))
+                GLib.idle_add(on_progress, thumbnail, (index + 1) / len(mangas_rows))
 
             db_conn.close()
-            GLib.idle_add(complete)
+            GLib.idle_add(on_complete)
 
-        def complete():
+        def on_complete():
             self.show_page('flowbox')
-
-            for thumbnail in thumbnails:
-                self.flowbox.append(thumbnail)
-
             self.populating = False
+
+        def on_progress(thumbnail, fraction):
+            self.start_page_progressbar.set_fraction(fraction)
+            self.flowbox.append(thumbnail)
 
         # Populate flowbox
         self.compute_thumbnails_cover_size()
-        thumbnails = []
 
         thread = threading.Thread(target=run)
         thread.daemon = True

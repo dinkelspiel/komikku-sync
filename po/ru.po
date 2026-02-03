@@ -2,23 +2,23 @@
 # Valentin Chernetsov <kurnesay@danwin1210.de>, 2023.
 # FIONover <overfion@protonmail.com>, 2023.
 # Анна Алешкина #нетвойне <chipchilinka338@gmail.com>, 2023.
-# Сергей <asvmail.as@gmail.com>, 2024, 2025.
+# Сергей <asvmail.as@gmail.com>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 21:51+0100\n"
-"PO-Revision-Date: 2025-12-06 13:20+0000\n"
+"PO-Revision-Date: 2026-02-04 11:01+0000\n"
 "Last-Translator: Сергей <asvmail.as@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1379,7 +1379,7 @@ msgstr "Открыть локальную папку"
 #: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
 #: ../komikku/explorer/common.py:305 ../komikku/explorer/common.py:308
 msgid "Content Information"
-msgstr ""
+msgstr "Информация о содержании"
 
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
@@ -1392,10 +1392,12 @@ msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
 msgstr ""
+"Защищено авторским правом: Воспроизведение и распространение разрешено при "
+"определенных условиях (лицензия {0})"
 
 #: ../komikku/explorer/common.py:298
 msgid "Royalty-free, Public domain"
-msgstr ""
+msgstr "Без лицензионных отчислений, Общественное достояние"
 
 #: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:313
 msgid "Copyrighted works"

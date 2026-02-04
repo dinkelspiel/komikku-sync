@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 21:51+0100\n"
-"PO-Revision-Date: 2026-02-04 11:01+0000\n"
+"PO-Revision-Date: 2026-02-05 12:01+0000\n"
 "Last-Translator: Сергей <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
 "\n"
@@ -1384,7 +1384,7 @@ msgstr "Информация о содержании"
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
 msgid "Type: {0}"
-msgstr ""
+msgstr "Тип: {0}"
 
 #: ../komikku/explorer/common.py:295
 #, python-brace-format
@@ -1401,19 +1401,21 @@ msgstr "Без лицензионных отчислений, Обществен
 
 #: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:313
 msgid "Copyrighted works"
-msgstr ""
+msgstr "Произведения, защищённые авторским правом"
 
 #: ../komikku/explorer/common.py:312
 msgid "Use with caution!"
-msgstr ""
+msgstr "Использовать с осторожностью"
 
 #: ../komikku/explorer/common.py:315
 msgid "Licensed/Published and/or Unlicensed works"
 msgstr ""
+"Опубликованные по лицензии произведения и/или произведения, переданные в "
+"общественное достояние"
 
 #: ../komikku/explorer/common.py:316
 msgid "It may be partially or totally illegal"
-msgstr ""
+msgstr "Это может быть частично или полностью незаконно"
 
 #: ../komikku/explorer/common.py:333
 msgid "Toggle pinned status"

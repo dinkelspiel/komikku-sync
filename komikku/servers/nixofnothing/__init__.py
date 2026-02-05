@@ -20,6 +20,7 @@ class Nixofnothing(Hiveworks):
 
     base_url = 'https://www.nixofnothing.com'
     logo_url = base_url + '/favicon.ico'
+    donate_url = base_url
     cover_url = base_url + '/templates/nix2024/images/logo.png'
 
     def get_metadata(self, soup: BeautifulSoup):

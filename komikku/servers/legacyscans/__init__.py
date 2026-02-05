@@ -21,6 +21,7 @@ class Legacyscans(Server):
     id = 'legacyscans'
     name = 'LegacyScans'
     lang = 'fr'
+    status = 'disabled'
 
     base_url = 'https://legacy-scans.com'
     logo_url = base_url + '/imgs/icon.webp'

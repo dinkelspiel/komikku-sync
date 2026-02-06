@@ -52,6 +52,7 @@ CREDITS = dict(
         'Felipe (Brazilian Portuguese)',
         'Matheus Santana (Brazilian Portuguese)',
         'Lucas Oliveira (Brazilian Portuguese)',
+        'Lucas Loura (Brazilian Portuguese)',
         'twlvnn (Bulgarian)',
         'Roger VC (Catalan)',
         'Lukáš Linhart (Czech)',
@@ -101,6 +102,7 @@ CREDITS = dict(
         'pasquale ruotolo (Italian)',
         'Riccardo Luise (Italian)',
         'cas9 (Italian)',
+        'Flynn (Cornish)',
         'Velyvis (Lithuanian)',
         'Lili Kurek (Polish)',
         'Aleksander Warzyniak (Polish)',
@@ -143,15 +145,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Reader] Webtoon pager: Added missing navigation with `Page Up` and `Page Down` of numpad</li>
-    <li>[Servers] Invincible ComicsVF (FR): Disabled</li>
-    <li>[Servers] Lovers Toon (pt_BR): Re-enabled</li>
-    <li>[Servers] MangaCrab (ES): Update</li>
-    <li>[Servers] Manganelo (EN): Update</li>
-    <li>[Servers] Phenix Scans (FR): Update</li>
-    <li>[Servers] Terco Scans (EN): Disabled</li>
-    <li>[Servers] Disabled commercial platforms</li>
-    <li>[L10n] Updated Turkish translation</li>
+    <li>[Servers] DocTruyen3Q (VI): Update</li>
+    <li>[Servers] LegacyScans (FR): Disabled</li>
+    <li>[Servers] MangaBin (EN): Disabled</li>
+    <li>[Servers] Toonily (EN): Update</li>
+    <li>[Servers] Added copyright information about content</li>
+    <li>[L10n] Updated French, Portuguese (Brazil) and Russian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

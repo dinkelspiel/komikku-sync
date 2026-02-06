@@ -32,6 +32,7 @@ LANGUAGES = {
     'kw': 'Cornish',
     'ml': 'Malayalam',
     'ms': 'Malay',
+    'oc': 'Occitan',
     'lt': 'Lithuanian',
     'pl': 'Polish',
     'pt': 'Portuguese',

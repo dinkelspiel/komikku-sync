@@ -114,6 +114,19 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.102.0" date="2026-02-06">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] DocTruyen3Q (VI): Update</li>
+                    <li>[Servers] LegacyScans (FR): Disabled</li>
+                    <li>[Servers] MangaBin (EN): Disabled</li>
+                    <li>[Servers] Toonily (EN): Update</li>
+                    <li>[Servers] Added copyright information about content</li>
+                    <li>[L10n] Updated French, Portuguese (Brazil) and Russian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.101.0" date="2026-01-28">
             <description translate="no">
                 <ul>

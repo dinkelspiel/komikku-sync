@@ -11,7 +11,7 @@
 # Felipe <felipe.bueno.ramos@gmail.com>, 2025.
 # Matheus Santana <estudosfodasdomatheus@gmail.com>, 2025.
 # Alex Carvalho <alexcs.carvalho@proton.me>, 2025, 2026.
-# Valéry Febvre <vfebvre@easter-eggs.com>, 2025.
+# Valéry Febvre <vfebvre@easter-eggs.com>, 2025, 2026.
 # Lucas Oliveira <akinolucas16@gmail.com>, 2026.
 # Lucas Loura <oliverloura2020@gmail.com>, 2026.
 msgid ""
@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: Komikku\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-30 21:51+0100\n"
-"PO-Revision-Date: 2026-01-30 15:01+0000\n"
-"Last-Translator: Lucas Oliveira <akinolucas16@gmail.com>\n"
+"PO-Revision-Date: 2026-02-06 11:05+0000\n"
+"Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "komikku/main/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -44,7 +44,7 @@ msgstr "mangá;leitor;visualizador;quadrinho;manhwa;manhua;webtoon;webcomic;scan
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr "Descubra e leia mangás & quadrinhos"
+msgstr "Descubra e leia mangás &amp; quadrinhos"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""

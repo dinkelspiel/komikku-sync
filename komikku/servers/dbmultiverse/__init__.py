@@ -26,38 +26,51 @@ LANGUAGES_CODES = {
 }
 
 
+def get_comic_from_slug(slug):
+    # An previous slug format included the language (for ex. dbm_en)
+    comic = slug.split('_')[0]
+    if comic == 'dbm':
+        comic = 'page'
+
+    return comic
+
+
 class Dbmultiverse(Server):
     id = 'dbmultiverse'
     name = 'Dragon Ball Multiverse'
     lang = 'en'
     content = ServerContent(
-        type='Doujins of Dragon Ball manga',
+        type='Dojinshi of Dragon Ball manga, Fan Webcomic',
     )
     true_search = False
 
     base_url = 'https://www.dragonball-multiverse.com'
     logo_url = base_url + '/favicon.ico'
+    most_populars_url = None
     manga_url = None
     chapter_url = None
     page_url = None
-    cover_url = base_url + '/image.php?comic=page&num=0&lg=en&ext=jpg&small=1&pw=8f3722a594856af867d55c57f31ee103'
+    cover_url = base_url + '/imgs/read/{0}.jpg'
 
     synopsis = "Dragon Ball Multiverse (DBM) is a free online comic, made by a whole team of fans. It's our personal sequel to DBZ."
+    status_complete = 'finished'
 
     def __init__(self):
-        self.manga_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/chapters.html?comic=page'
-        self.chapter_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/chapters.html?comic=page&chapter={{0}}'
-        self.page_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/page-{{0}}.html'
-
+        self.most_populars_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/read.html'
+        self.manga_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/chapters.html?comic={{0}}'
+        self.chapter_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/chapters.html?comic={{0}}&chapter={{1}}'
+        self.page_url = self.base_url + f'/{LANGUAGES_CODES[self.lang]}/{{0}}-{{1}}.html'
         if self.session is None:
             self.session = requests.Session()
-            self.session.headers.update({'user-agent': USER_AGENT})
+            self.session.headers.update({'User-Agent': USER_AGENT})
 
     def get_manga_data(self, initial_data):
         """
         Returns manga data by scraping manga HTML page content
         """
-        r = self.session_get(self.manga_url)
+        comic = get_comic_from_slug(initial_data['slug'])
+
+        r = self.session_get(self.manga_url.format(comic))
         if r.status_code != 200:
             return None
 
@@ -68,16 +81,29 @@ class Dbmultiverse(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=['Gogeta Jr', 'Asura', 'Salagir'],
-            scanlators=[],
-            genres=['Shōnen', 'Dōjinshi'],
-            status='ongoing',
-            synopsis=self.synopsis,
-            chapters=[],
-            server_id=self.id,
-            cover=self.cover_url,
-        ))
+        data.update({
+            'authors': ['Gogeta Jr', 'Asura', 'Salagir', 'Et al.'],
+            'scanlators': [],
+            'genres': ['Shōnen', 'Dōjinshi'],
+            'status': 'ongoing',
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+            'cover': self.cover_url.format(comic),
+        })
+
+        for element in soup.select('.dbm-tags span'):
+            data['genres'].append(element.text.strip())
+
+        if self.status_complete in soup.select_one('.cadrelect').text.strip():
+            data['status'] = 'complete'
+
+        if comic != 'page':
+            # Other comics
+            data['synopsis'] = soup.select_one('.cadrelect > p').text.strip()
+        else:
+            # DBM comic
+            data['synopsis'] = self.synopsis
 
         # Chapters
         for element in soup.select('.chapter'):
@@ -85,13 +111,13 @@ class Dbmultiverse(Server):
             qs = parse_qs(urlparse(url).query)
             slug = qs['chapter'][0]
 
-            chapter_data = dict(
-                slug=slug,
-                title=element.h4.text.strip(),
-                num=slug if is_number(slug) else None,
-                date=None,
-                pages=[],
-            )
+            chapter_data = {
+                'slug': slug,
+                'title': element.h4.text.strip(),
+                'num': slug if is_number(slug) else None,
+                'date': None,
+                'pages': [],
+            }
 
             data['chapters'].append(chapter_data)
 
@@ -103,7 +129,9 @@ class Dbmultiverse(Server):
 
         Currently, only pages are expected.
         """
-        r = self.session_get(self.chapter_url.format(chapter_slug))
+        comic = get_comic_from_slug(manga_slug)
+
+        r = self.session_get(self.chapter_url.format(comic, chapter_slug))
         if r.status_code != 200:
             return None
 
@@ -113,14 +141,14 @@ class Dbmultiverse(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         for element in soup.select('.pageslist > a > img'):
-            data['pages'].append(dict(
-                slug=element.get('title'),
-                image=None,
-            ))
+            data['pages'].append({
+                'slug': element.get('title'),
+                'image': None,
+            })
 
         return data
 
@@ -128,7 +156,9 @@ class Dbmultiverse(Server):
         """
         Returns chapter page scan (image) content
         """
-        r = self.session_get(self.page_url.format(page['slug']))
+        comic = get_comic_from_slug(manga_slug)
+
+        r = self.session_get(self.page_url.format(comic, page['slug']))
         if r.status_code != 200:
             return None
 
@@ -155,24 +185,40 @@ class Dbmultiverse(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name='{0}.png'.format(page['slug']),
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': '{0}.png'.format(page['slug']),
+        }
 
     def get_manga_url(self, slug, url):
         """
         Returns manga absolute URL
         """
-        return self.manga_url
+        return self.manga_url.format(get_comic_from_slug(slug))
 
     def get_most_populars(self):
-        return [dict(
-            slug='dbm_{0}'.format(self.lang),
-            name='Dragon Ball Multiverse (DBM)',
-            cover=self.cover_url,
-        )]
+        r = self.session_get(self.most_populars_url)
+        if r.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(r.text, 'lxml')
+
+        results = []
+        for element in soup.select('#dbm-reads .dbm-read'):
+            url = element.a.get('href')
+            if param := parse_qs(urlparse(url).query).get('comic'):
+                slug = param[0]
+                if slug == 'page':
+                    slug = 'dbm'
+
+                results.append({
+                    'slug': slug,
+                    'name': element.h3.text.strip(),
+                    'cover': self.cover_url.format(get_comic_from_slug(slug)),
+                })
+
+        return results
 
     def search(self, term=None):
         # This server does not have a true search
@@ -192,6 +238,7 @@ class Dbmultiverse_de(Dbmultiverse):
     lang = 'de'
 
     synopsis = 'Dragon Ball Multiverse ist ein kostenloser Online-Comic, gezeichnet von Fans, u. a. Gogeta Jr, Asura und Salagir. Es knüpft direkt an DBZ an als eine Art Fortsetzung. Veröffentlichung dreimal pro Woche: Mittwoch, Freitag und Sonntag um 20.00 MEZ.'
+    status_complete = 'beendet'
 
 
 class Dbmultiverse_es(Dbmultiverse):
@@ -199,6 +246,7 @@ class Dbmultiverse_es(Dbmultiverse):
     lang = 'es'
 
     synopsis = 'Dragon Ball Multiverse (DBM) es un cómic online gratuito, realizado por un gran equipo de fans. Es nuestra propia continuación de DBZ.'
+    status_complete = 'terminado'
 
 
 class Dbmultiverse_fr(Dbmultiverse):
@@ -206,6 +254,7 @@ class Dbmultiverse_fr(Dbmultiverse):
     lang = 'fr'
 
     synopsis = "Dragon Ball Multiverse (DBM) est une BD en ligne gratuite, faite par toute une équipe de fans. C'est notre suite personnelle à DBZ."
+    status_complete = 'terminé'
 
 
 class Dbmultiverse_it(Dbmultiverse):
@@ -213,6 +262,7 @@ class Dbmultiverse_it(Dbmultiverse):
     lang = 'it'
 
     synopsis = 'Dragon Ball Multiverse (abbreviato in DBM) è un Fumetto gratuito pubblicato online e rappresenta un possibile seguito di DBZ. I creatori sono due fan: Gogeta Jr e Salagir.'
+    status_complete = 'concluso'
 
 
 class Dbmultiverse_pt(Dbmultiverse):
@@ -220,6 +270,7 @@ class Dbmultiverse_pt(Dbmultiverse):
     lang = 'pt'
 
     synopsis = 'Dragon Ball Multiverse (DBM) é uma BD online grátis, feita por dois fãs Gogeta Jr e Salagir. É a sequela do DBZ.'
+    status_complete = 'finished'
 
 
 class Dbmultiverse_ru(Dbmultiverse):
@@ -227,3 +278,4 @@ class Dbmultiverse_ru(Dbmultiverse):
     lang = 'ru'
 
     synopsis = 'Dragon Ball Multiverse (DBM) это бесплатный онлайн комикс (манга), сделана двумя фанатами, Gogeta Jr и Salagir. Это продолжение DBZ.'
+    status_complete = 'finished'

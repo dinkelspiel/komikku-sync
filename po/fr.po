@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-08 02:30+0100\n"
-"PO-Revision-Date: 2026-01-31 00:28+0000\n"
+"PO-Revision-Date: 2026-02-08 01:35+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1827,7 +1827,7 @@ msgstr "Réessayer"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic, Self-publishing"
-msgstr ""
+msgstr "Webcomic, Auto-édition"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2345,7 +2345,7 @@ msgstr ""
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Dōjinshi of Dragon Ball manga, Fan Webcomic"
-msgstr ""
+msgstr "Dōjinshi du manga Dragon Ball, Fan Webcomic"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

@@ -40,7 +40,7 @@ class Coloredcouncil(Server):
             'default': 'all',
             'options': [
                 {'key': 'all', 'name': _('All')},
-                {'key': 'Manwha', 'name': _('Manwha')},
+                {'key': 'Manwha', 'name': _('Manhwa')},
                 {'key': 'Manga', 'name': _('Manga')},
             ],
         },

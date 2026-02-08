@@ -109,7 +109,7 @@ class Mangadex(Server):
                 {'key': '320831a8-4026-470b-94f6-8353740e6f04', 'name': _('Official Colored'), 'default': False},
                 {'key': '0234a31e-a729-4e28-9d6a-3f87c4966b9e', 'name': _('Oneshot'), 'default': False},
                 {'key': '891cf039-b895-47f0-9229-bef4c96eccd4', 'name': _('Self-Published'), 'default': False},
-                {'key': 'e197df38-d0e7-43b5-9b09-2842d0c326dd', 'name': _('Web Comic'), 'default': False},
+                {'key': 'e197df38-d0e7-43b5-9b09-2842d0c326dd', 'name': _('Webcomic'), 'default': False},
             ]
         },
         {

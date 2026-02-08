@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 21:51+0100\n"
+"POT-Creation-Date: 2026-02-08 02:30+0100\n"
 "PO-Revision-Date: 2025-12-01 06:00+0000\n"
 "Last-Translator: Tim <rc2225@ghueder-schrott.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/"
@@ -189,7 +189,7 @@ msgstr "Kategorieeditor im mobilen Format"
 msgid "The Reading history page in mobile format"
 msgstr "Lesehistorie im mobilen Format"
 
-#: ../data/ui/application_window.blp:54 ../data/ui/preferences.blp:404
+#: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:404
 msgid "Got it!"
 msgstr "Verstanden!"
 
@@ -1093,7 +1093,7 @@ msgstr "Unterhaltung beitreten"
 #: ../komikku/application.py:517 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
-#: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
+#: ../komikku/library/__init__.py:779 ../komikku/library/__init__.py:780
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -1184,7 +1184,7 @@ msgid "Donate"
 msgstr "Spenden"
 
 #: ../komikku/card/chapters_list.py:342 ../komikku/downloader.py:542
-#: ../komikku/library/__init__.py:816
+#: ../komikku/library/__init__.py:813
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
@@ -1538,15 +1538,15 @@ msgstr "Willkommen"
 msgid "Loading…"
 msgstr "Lade…"
 
-#: ../komikku/library/__init__.py:765
+#: ../komikku/library/__init__.py:762
 msgid "Failed to update reading status"
 msgstr "Konnte Lesestatus nicht aktualisieren"
 
-#: ../komikku/library/__init__.py:787
+#: ../komikku/library/__init__.py:784
 msgid "Add New Comic"
 msgstr "Neuen Comic hinzufügen"
 
-#: ../komikku/library/__init__.py:820 ../komikku/library/categories_list.py:145
+#: ../komikku/library/__init__.py:817 ../komikku/library/categories_list.py:145
 msgid "Uncategorized"
 msgstr "Nicht kategorisiert"
 
@@ -1804,6 +1804,17 @@ msgstr "Fehler beim Laden des Bildes"
 #: ../komikku/reader/pager/page.py:303
 msgid "Retry"
 msgstr "Wiederholen"
+
+#: ../komikku/servers/annyo/__init__.py:22
+#: ../komikku/servers/grisebouille/__init__.py:24
+#: ../komikku/servers/monkeyuser/__init__.py:23
+#: ../komikku/servers/peppercarrot/__init__.py:45
+#: ../komikku/servers/smbc/__init__.py:19
+#: ../komikku/servers/threepanelsoul/__init__.py:18
+#: ../komikku/servers/wildlife/__init__.py:16
+#: ../komikku/servers/xkcd/__init__.py:24
+msgid "Webcomic, Self-publishing"
+msgstr ""
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2315,6 +2326,11 @@ msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:87
 msgid "Hide NSFW content from popular, latest, and search lists"
+msgstr ""
+
+#: ../komikku/servers/dbmultiverse/__init__.py:53
+#: ../komikku/servers/dbnewhope/__init__.py:30
+msgid "Dōjinshi of Dragon Ball manga, Fan Webcomic"
 msgstr ""
 
 #: ../komikku/servers/dynasty/__init__.py:40

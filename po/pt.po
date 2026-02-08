@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 21:51+0100\n"
+"POT-Creation-Date: 2026-02-08 02:30+0100\n"
 "PO-Revision-Date: 2025-09-19 01:02+0000\n"
 "Last-Translator: Manuela Silva <mmsrs@sky.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/komikku/main/"
@@ -185,7 +185,7 @@ msgstr "A página do Editor de Categorias em formato móvel"
 msgid "The Reading history page in mobile format"
 msgstr "A página de histórico de Leitura em formato móvel"
 
-#: ../data/ui/application_window.blp:54 ../data/ui/preferences.blp:404
+#: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:404
 msgid "Got it!"
 msgstr "Beleza!"
 
@@ -1080,7 +1080,7 @@ msgstr "Aderir Conversação"
 #: ../komikku/application.py:517 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
-#: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
+#: ../komikku/library/__init__.py:779 ../komikku/library/__init__.py:780
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -1172,7 +1172,7 @@ msgid "Donate"
 msgstr "Doar"
 
 #: ../komikku/card/chapters_list.py:342 ../komikku/downloader.py:542
-#: ../komikku/library/__init__.py:816
+#: ../komikku/library/__init__.py:813
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
@@ -1526,15 +1526,15 @@ msgstr "Bem-vindo ao Komikku"
 msgid "Loading…"
 msgstr "A carregar…"
 
-#: ../komikku/library/__init__.py:765
+#: ../komikku/library/__init__.py:762
 msgid "Failed to update reading status"
 msgstr "Não foi possível atualizar o estado de leitura"
 
-#: ../komikku/library/__init__.py:787
+#: ../komikku/library/__init__.py:784
 msgid "Add New Comic"
 msgstr "Adicionar Nova Banda Desenhada"
 
-#: ../komikku/library/__init__.py:820 ../komikku/library/categories_list.py:145
+#: ../komikku/library/__init__.py:817 ../komikku/library/categories_list.py:145
 msgid "Uncategorized"
 msgstr "Não categorizado"
 
@@ -1791,6 +1791,17 @@ msgstr "Falha ao carregar a imagem"
 #: ../komikku/reader/pager/page.py:303
 msgid "Retry"
 msgstr "Repetir"
+
+#: ../komikku/servers/annyo/__init__.py:22
+#: ../komikku/servers/grisebouille/__init__.py:24
+#: ../komikku/servers/monkeyuser/__init__.py:23
+#: ../komikku/servers/peppercarrot/__init__.py:45
+#: ../komikku/servers/smbc/__init__.py:19
+#: ../komikku/servers/threepanelsoul/__init__.py:18
+#: ../komikku/servers/wildlife/__init__.py:16
+#: ../komikku/servers/xkcd/__init__.py:24
+msgid "Webcomic, Self-publishing"
+msgstr ""
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2302,6 +2313,11 @@ msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:87
 msgid "Hide NSFW content from popular, latest, and search lists"
+msgstr ""
+
+#: ../komikku/servers/dbmultiverse/__init__.py:53
+#: ../komikku/servers/dbnewhope/__init__.py:30
+msgid "Dōjinshi of Dragon Ball manga, Fan Webcomic"
 msgstr ""
 
 #: ../komikku/servers/dynasty/__init__.py:40

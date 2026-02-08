@@ -16,18 +16,27 @@ from komikku.utils import ServerContent
 
 # Conversion ISO_639-1 codes => server codes
 LANGUAGES_CODES = {
+    'ar': 'ar_JO',
     'de': 'de',
     'en': 'en',
     'es': 'es',
+    'es_419': 'es_CO',
     'fr': 'fr',
     'it': 'it',
+    'ja': 'jp',
+    'ko': 'kr_KR',
+    'nl': 'nl',
+    'pl': 'pl',
     'pt': 'pt',
+    'pt_BR': 'pt_BR',
     'ru': 'ru_RU',
+    'tr': 'tr_TR',
+    'zh_Hans': 'cn',
 }
 
 
 def get_comic_from_slug(slug):
-    # An previous slug format included the language (for ex. dbm_en)
+    # A previous slug format included the language (for ex. dbm_en)
     comic = slug.split('_')[0]
     if comic == 'dbm':
         comic = 'page'
@@ -40,7 +49,7 @@ class Dbmultiverse(Server):
     name = 'Dragon Ball Multiverse'
     lang = 'en'
     content = ServerContent(
-        type='Dojinshi of Dragon Ball manga, Fan Webcomic',
+        type='Dōjinshi of Dragon Ball manga, Fan Webcomic',
     )
     true_search = False
 
@@ -52,7 +61,6 @@ class Dbmultiverse(Server):
     page_url = None
     cover_url = base_url + '/imgs/read/{0}.jpg'
 
-    synopsis = "Dragon Ball Multiverse (DBM) is a free online comic, made by a whole team of fans. It's our personal sequel to DBZ."
     status_complete = 'finished'
 
     def __init__(self):
@@ -98,12 +106,7 @@ class Dbmultiverse(Server):
         if self.status_complete in soup.select_one('.cadrelect').text.strip():
             data['status'] = 'complete'
 
-        if comic != 'page':
-            # Other comics
-            data['synopsis'] = soup.select_one('.cadrelect > p').text.strip()
-        else:
-            # DBM comic
-            data['synopsis'] = self.synopsis
+        data['synopsis'] = soup.select_one('.cadrelect > p').text.strip()
 
         # Chapters
         for element in soup.select('.chapter'):
@@ -233,11 +236,17 @@ class Dbmultiverse(Server):
         return results
 
 
+class Dbmultiverse_ar(Dbmultiverse):
+    id = 'dbmultiverse_ar'
+    lang = 'ar'
+
+    status_complete = 'انتهت'
+
+
 class Dbmultiverse_de(Dbmultiverse):
     id = 'dbmultiverse_de'
     lang = 'de'
 
-    synopsis = 'Dragon Ball Multiverse ist ein kostenloser Online-Comic, gezeichnet von Fans, u. a. Gogeta Jr, Asura und Salagir. Es knüpft direkt an DBZ an als eine Art Fortsetzung. Veröffentlichung dreimal pro Woche: Mittwoch, Freitag und Sonntag um 20.00 MEZ.'
     status_complete = 'beendet'
 
 
@@ -245,7 +254,13 @@ class Dbmultiverse_es(Dbmultiverse):
     id = 'dbmultiverse_es'
     lang = 'es'
 
-    synopsis = 'Dragon Ball Multiverse (DBM) es un cómic online gratuito, realizado por un gran equipo de fans. Es nuestra propia continuación de DBZ.'
+    status_complete = 'terminado'
+
+
+class Dbmultiverse_es_419(Dbmultiverse):
+    id = 'dbmultiverse_es_419'
+    lang = 'es_419'
+
     status_complete = 'terminado'
 
 
@@ -253,7 +268,6 @@ class Dbmultiverse_fr(Dbmultiverse):
     id = 'dbmultiverse_fr'
     lang = 'fr'
 
-    synopsis = "Dragon Ball Multiverse (DBM) est une BD en ligne gratuite, faite par toute une équipe de fans. C'est notre suite personnelle à DBZ."
     status_complete = 'terminé'
 
 
@@ -261,21 +275,67 @@ class Dbmultiverse_it(Dbmultiverse):
     id = 'dbmultiverse_it'
     lang = 'it'
 
-    synopsis = 'Dragon Ball Multiverse (abbreviato in DBM) è un Fumetto gratuito pubblicato online e rappresenta un possibile seguito di DBZ. I creatori sono due fan: Gogeta Jr e Salagir.'
     status_complete = 'concluso'
+
+
+class Dbmultiverse_ja(Dbmultiverse):
+    id = 'dbmultiverse_ja'
+    lang = 'ja'
+
+    status_complete = 'finished'
+
+
+class Dbmultiverse_ko(Dbmultiverse):
+    id = 'dbmultiverse_ko'
+    lang = 'ko'
+
+    status_complete = 'finished'
+
+
+class Dbmultiverse_nl(Dbmultiverse):
+    id = 'dbmultiverse_nl'
+    lang = 'nl'
+
+    status_complete = 'finished'
+
+
+class Dbmultiverse_pl(Dbmultiverse):
+    id = 'dbmultiverse_pl'
+    lang = 'pl'
+
+    status_complete = 'finished'
 
 
 class Dbmultiverse_pt(Dbmultiverse):
     id = 'dbmultiverse_pt'
     lang = 'pt'
 
-    synopsis = 'Dragon Ball Multiverse (DBM) é uma BD online grátis, feita por dois fãs Gogeta Jr e Salagir. É a sequela do DBZ.'
     status_complete = 'finished'
+
+
+class Dbmultiverse_pt_BR(Dbmultiverse):
+    id = 'dbmultiverse_pt_BR'
+    lang = 'pt_BR'
+
+    status_complete = 'finalizada'
 
 
 class Dbmultiverse_ru(Dbmultiverse):
     id = 'dbmultiverse_ru'
     lang = 'ru'
 
-    synopsis = 'Dragon Ball Multiverse (DBM) это бесплатный онлайн комикс (манга), сделана двумя фанатами, Gogeta Jr и Salagir. Это продолжение DBZ.'
+    status_complete = 'finished'
+
+
+class Dbmultiverse_tr(Dbmultiverse):
+    id = 'dbmultiverse_tr'
+    lang = 'tr'
+
+    status_complete = 'finished'
+
+
+class Dbmultiverse_zh_Hans(Dbmultiverse):
+    id = 'dbmultiverse_zh_Hans'
+    lang = 'zh_Hans'
+
     status_complete = 'finished'

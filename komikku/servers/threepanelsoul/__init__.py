@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Seth Falco <seth@falco.fun>
 
+from gettext import gettext as _
+
 from bs4 import BeautifulSoup
 
 from komikku.servers.multi.hiveworks import Hiveworks
@@ -13,7 +15,7 @@ class Threepanelsoul(Hiveworks):
     name = 'Three Panel Soul'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=_('Webcomic, Self-publishing')
     )
 
     base_url = 'https://www.threepanelsoul.com'

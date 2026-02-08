@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
 from bs4 import BeautifulSoup
 import requests
 
@@ -26,7 +27,7 @@ class Dbnewhope(Server):
     name = 'DB New Hope'
     lang = 'fr'
     content = ServerContent(
-        type='Doujins of Dragon Ball manga',
+        type=_('Dōjinshi of Dragon Ball manga, Fan Webcomic'),
     )
     true_search = False
 

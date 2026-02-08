@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Seth Falco <seth@falco.fun>
 
+from gettext import gettext as _
 import json
 
 from bs4 import BeautifulSoup
@@ -15,7 +16,7 @@ class Smbc(Hiveworks):
     name = 'SMBC'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=_('Webcomic, Self-publishing')
     )
 
     base_url = 'https://www.smbc-comics.com'

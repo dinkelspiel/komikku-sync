@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Seth Falco <seth@falco.fun>
 
+from gettext import gettext as _
+
 from komikku.servers.multi.hiveworks import Hiveworks
 from komikku.utils import ServerContent
 
@@ -11,7 +13,7 @@ class Wildlife(Hiveworks):
     name = 'Wild Life'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=_('Webcomic, Self-publishing')
     )
 
     base_url = 'https://www.wildelifecomic.com'

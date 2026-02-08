@@ -16,7 +16,7 @@ class Aralosbd(Server):
     name = 'Aralos BD'
     lang = 'fr'
     content = ServerContent(
-        type='Self-publishing platform'
+        type="Platforme d'auto-édition"
     )
     long_strip_genres = ['Webtoon']
 

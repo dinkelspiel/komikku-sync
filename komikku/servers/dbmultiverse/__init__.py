@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
 from urllib.parse import parse_qs
 from urllib.parse import urlparse
 
@@ -49,7 +50,7 @@ class Dbmultiverse(Server):
     name = 'Dragon Ball Multiverse'
     lang = 'en'
     content = ServerContent(
-        type='Dōjinshi of Dragon Ball manga, Fan Webcomic',
+        type=_('Dōjinshi of Dragon Ball manga, Fan Webcomic'),
     )
     true_search = False
 

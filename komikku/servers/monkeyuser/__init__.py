@@ -3,6 +3,7 @@
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 import datetime
+from gettext import gettext as _
 
 from bs4 import BeautifulSoup
 import requests
@@ -19,7 +20,7 @@ class Monkeyuser(Server):
     name = 'MonkeyUser'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=_('Webcomic, Self-publishing')
     )
     true_search = False
 

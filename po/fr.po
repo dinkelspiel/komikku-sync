@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-09 01:08+0100\n"
-"PO-Revision-Date: 2026-02-08 01:35+0000\n"
+"PO-Revision-Date: 2026-02-09 00:19+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1827,7 +1827,7 @@ msgstr "Réessayer"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Self-publishing"
-msgstr ""
+msgstr "Auto-édition"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -1844,11 +1844,11 @@ msgstr ""
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr ""
+msgstr "Webcomic"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Plateforme d'auto-édition"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2360,7 +2360,7 @@ msgstr ""
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Fan Webcomic"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

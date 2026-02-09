@@ -53,6 +53,7 @@ komikku/reader/pager/__init__.py
 komikku/reader/pager/page.py
 komikku/reader/pager/webtoon.py
 komikku/servers/annyo/__init__.py
+komikku/servers/aralosbd/__init__.py
 komikku/servers/asurascans/__init__.py
 komikku/servers/bilibili/__init__.py
 komikku/servers/coloredcouncil/__init__.py
@@ -62,9 +63,12 @@ komikku/servers/dbmultiverse/__init__.py
 komikku/servers/dbnewhope/__init__.py
 komikku/servers/dynasty/__init__.py
 komikku/servers/exceptions.py
+komikku/servers/existentialcomics/__init__.py
 komikku/servers/flamescans/__init__.py
+komikku/servers/fosscomics/__init__.py
 komikku/servers/grisebouille/__init__.py
 komikku/servers/invinciblecomicsvf/__init__.py
+komikku/servers/jensorensen/__init__.py
 komikku/servers/kavita/__init__.py
 komikku/servers/komga/__init__.py
 komikku/servers/local/__init__.py
@@ -79,6 +83,7 @@ komikku/servers/monkeyuser/__init__.py
 komikku/servers/multi/madara/__init__.py
 komikku/servers/multi/mangareader/__init__.py
 komikku/servers/multi/manga_stream/__init__.py
+komikku/servers/nixofnothing/__init__.py
 komikku/servers/peppercarrot/__init__.py
 komikku/servers/phenixscans/__init__.py
 komikku/servers/raijinscan/__init__.py

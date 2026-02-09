@@ -146,7 +146,7 @@ class Comick(Server):
                 },
                 {'key': 'oneshot', 'name': _('Oneshot'), 'default': False},
                 {'key': 'user-created', 'name': _('User Created'), 'default': False},
-                {'key': 'web-comic', 'name': _('Web Comic'), 'default': False},
+                {'key': 'web-comic', 'name': _('Webcomic'), 'default': False},
             ],
         },
         {

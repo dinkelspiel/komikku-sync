@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.53.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-08 02:30+0100\n"
+"POT-Creation-Date: 2026-02-09 01:08+0100\n"
 "PO-Revision-Date: 2025-07-27 11:07+0000\n"
 "Last-Translator: twlvnn <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/komikku/main/"
@@ -805,7 +805,7 @@ msgstr "Изчистване на кеша на главите и базата �
 msgid "Clear Chapters Cache and Database on Exit"
 msgstr "Изчистване на кеша на главите и базата от данни при спиране"
 
-#: ../data/ui/preferences.blp:433
+#: ../data/ui/preferences.blp:433 ../data/ui/webview.blp:10
 msgid "WebView"
 msgstr ""
 
@@ -1027,10 +1027,6 @@ msgstr "Еднократно или месечно дарение"
 #: ../data/ui/support.blp:144
 msgid "Copy to Clipboard"
 msgstr ""
-
-#: ../data/ui/webview.blp:10
-msgid "Webview"
-msgstr "Уеб изглед"
 
 #: ../komikku/application.py:100
 msgid "Multiple URLs not supported"
@@ -1795,14 +1791,39 @@ msgid "Retry"
 msgstr "Повтаряне"
 
 #: ../komikku/servers/annyo/__init__.py:22
+#: ../komikku/servers/existentialcomics/__init__.py:23
+#: ../komikku/servers/fosscomics/__init__.py:25
 #: ../komikku/servers/grisebouille/__init__.py:24
+#: ../komikku/servers/jensorensen/__init__.py:25
 #: ../komikku/servers/monkeyuser/__init__.py:23
+#: ../komikku/servers/nixofnothing/__init__.py:19
 #: ../komikku/servers/peppercarrot/__init__.py:45
 #: ../komikku/servers/smbc/__init__.py:19
 #: ../komikku/servers/threepanelsoul/__init__.py:18
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
-msgid "Webcomic, Self-publishing"
+msgid "Self-publishing"
+msgstr ""
+
+#: ../komikku/servers/annyo/__init__.py:22
+#: ../komikku/servers/comick/__init__.py:149
+#: ../komikku/servers/existentialcomics/__init__.py:23
+#: ../komikku/servers/fosscomics/__init__.py:25
+#: ../komikku/servers/grisebouille/__init__.py:24
+#: ../komikku/servers/jensorensen/__init__.py:25
+#: ../komikku/servers/mangadex/__init__.py:112
+#: ../komikku/servers/monkeyuser/__init__.py:23
+#: ../komikku/servers/nixofnothing/__init__.py:19
+#: ../komikku/servers/peppercarrot/__init__.py:45
+#: ../komikku/servers/smbc/__init__.py:19
+#: ../komikku/servers/threepanelsoul/__init__.py:18
+#: ../komikku/servers/wildlife/__init__.py:16
+#: ../komikku/servers/xkcd/__init__.py:24
+msgid "Webcomic"
+msgstr ""
+
+#: ../komikku/servers/aralosbd/__init__.py:21
+msgid "Self-publishing platform"
 msgstr ""
 
 #: ../komikku/servers/asurascans/__init__.py:36
@@ -1849,6 +1870,7 @@ msgid "Manga"
 msgstr "Манга"
 
 #: ../komikku/servers/asurascans/__init__.py:43
+#: ../komikku/servers/coloredcouncil/__init__.py:43
 #: ../komikku/servers/comick/__init__.py:95
 #: ../komikku/servers/comix/__init__.py:60
 #: ../komikku/servers/flamescans/__init__.py:41
@@ -1905,10 +1927,6 @@ msgstr "Формат"
 #: ../komikku/servers/coloredcouncil/__init__.py:38
 msgid "Filter by format"
 msgstr "Филтриране по формат"
-
-#: ../komikku/servers/coloredcouncil/__init__.py:43
-msgid "Manwha"
-msgstr "Манвха"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:50
 msgid "Version"
@@ -2104,6 +2122,8 @@ msgid "Award Winning"
 msgstr "Носител на награди"
 
 #: ../komikku/servers/comick/__init__.py:138
+#: ../komikku/servers/dbmultiverse/__init__.py:53
+#: ../komikku/servers/dbnewhope/__init__.py:30
 #: ../komikku/servers/mangadex/__init__.py:105
 #: ../komikku/servers/mangafire/__init__.py:51
 #: ../komikku/servers/mangapill/__init__.py:43
@@ -2138,11 +2158,6 @@ msgstr "Самостоятелно"
 #: ../komikku/servers/comick/__init__.py:148
 msgid "User Created"
 msgstr "Създадено от потребител"
-
-#: ../komikku/servers/comick/__init__.py:149
-#: ../komikku/servers/mangadex/__init__.py:112
-msgid "Web Comic"
-msgstr "Уеб комикс"
 
 #: ../komikku/servers/comick/__init__.py:155
 #: ../komikku/servers/mangadex/__init__.py:118
@@ -2319,7 +2334,7 @@ msgstr ""
 
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
-msgid "Dōjinshi of Dragon Ball manga, Fan Webcomic"
+msgid "Fan Webcomic"
 msgstr ""
 
 #: ../komikku/servers/dynasty/__init__.py:40
@@ -2658,6 +2673,15 @@ msgstr "Изчакайте…"
 #: ../komikku/webview.py:496
 msgid "Please complete CAPTCHA"
 msgstr "Направете CAPTCHA"
+
+#~ msgid "Web Comic"
+#~ msgstr "Уеб комикс"
+
+#~ msgid "Webview"
+#~ msgstr "Уеб изглед"
+
+#~ msgid "Manwha"
+#~ msgstr "Манвха"
 
 #~ msgid "Automatic tracking of series with MyAnimeList and AniList"
 #~ msgstr "Автоматично проследяване на серии с MyAnimeList и AniList"

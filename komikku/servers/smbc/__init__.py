@@ -16,7 +16,7 @@ class Smbc(Hiveworks):
     name = 'SMBC'
     lang = 'en'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing')
+        type=[_('Webcomic'), _('Self-publishing')]
     )
 
     base_url = 'https://www.smbc-comics.com'

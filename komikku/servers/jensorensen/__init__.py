@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
+
 from bs4 import BeautifulSoup
 import requests
 import textwrap
@@ -20,7 +22,7 @@ class Jensorensen(Server):
     name = 'Jen Sorensen'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=[_('Webcomic'), _('Self-publishing')]
     )
     true_search = False
 

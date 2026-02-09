@@ -25,7 +25,7 @@ class Comicbookplus(Server):
     name = 'Comic Book Plus'
     lang = 'en'
     content = ServerContent(
-        type='Collection of free and legal comic books',
+        type=['Collection of free and legal comic books'],
         public_domain=True
     )
 

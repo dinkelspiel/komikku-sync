@@ -289,7 +289,7 @@ NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
                 ])
                 message = []
                 if type := data['content'].type:
-                    message.append(_('Type: {0}').format(type))
+                    message.append(_('Type: {0}').format(', '.join(type)))
                 if license := data['content'].license:
                     message.append(
                         _('Copyrighted: Reproduction and distribution authorized under certain conditions ({0} license)').format(license)

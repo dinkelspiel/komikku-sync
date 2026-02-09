@@ -20,7 +20,7 @@ class Monkeyuser(Server):
     name = 'MonkeyUser'
     lang = 'en'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing')
+        type=[_('Webcomic'), _('Self-publishing')]
     )
     true_search = False
 

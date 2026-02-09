@@ -13,7 +13,7 @@ class Wildlife(Hiveworks):
     name = 'Wild Life'
     lang = 'en'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing')
+        type=[_('Webcomic'), _('Self-publishing')]
     )
 
     base_url = 'https://www.wildelifecomic.com'

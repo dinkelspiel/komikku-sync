@@ -42,7 +42,7 @@ class Peppercarrot(Server):
     name = SERVER_NAME
     lang = 'en'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing'),
+        type=[_('Webcomic'), _('Self-publishing')],
         license='CC BY'
     )
     true_search = False

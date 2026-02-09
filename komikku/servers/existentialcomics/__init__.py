@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
 import textwrap
 
 from bs4 import BeautifulSoup
@@ -19,7 +20,7 @@ class Existentialcomics(Server):
     name = 'Existential Comics'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=[_('Webcomic'), _('Self-publishing')]
     )
     true_search = False
 

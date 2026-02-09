@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
+
 import requests
 
 from komikku.consts import USER_AGENT
@@ -16,7 +18,7 @@ class Aralosbd(Server):
     name = 'Aralos BD'
     lang = 'fr'
     content = ServerContent(
-        type="Platforme d'auto-édition"
+        type=[_('Self-publishing platform')]
     )
     long_strip_genres = ['Webtoon']
 

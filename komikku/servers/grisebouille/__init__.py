@@ -21,7 +21,7 @@ class Grisebouille(Server):
     name = 'Grise Bouille'
     lang = 'fr'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing'),
+        type=[_('Webcomic'), _('Self-publishing')],
         license='CC BY-SA'
     )
     true_search = False

@@ -27,7 +27,7 @@ class Dbnewhope(Server):
     name = 'DB New Hope'
     lang = 'fr'
     content = ServerContent(
-        type=_('Dōjinshi of Dragon Ball manga, Fan Webcomic'),
+        type=[_('Doujinshi'), _('Fan Webcomic')]
     )
     true_search = False
 

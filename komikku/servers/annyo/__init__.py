@@ -19,7 +19,7 @@ class Annyo(Server):
     name = 'Annyo - le mouton a 5 pattes'
     lang = 'fr'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing'),
+        type=[_('Webcomic'), _('Self-publishing')],
         license='CC BY-SA'
     )
     true_search = False

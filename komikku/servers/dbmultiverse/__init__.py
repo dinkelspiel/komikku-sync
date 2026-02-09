@@ -50,7 +50,7 @@ class Dbmultiverse(Server):
     name = 'Dragon Ball Multiverse'
     lang = 'en'
     content = ServerContent(
-        type=_('Dōjinshi of Dragon Ball manga, Fan Webcomic'),
+        type=[_('Doujinshi'), _('Fan Webcomic')]
     )
     true_search = False
 

@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Seth Falco <seth@falco.fun>
 
+from gettext import gettext as _
 import json
 
 from bs4 import BeautifulSoup
@@ -15,7 +16,7 @@ class Nixofnothing(Hiveworks):
     name = 'Nix of Nothing'
     lang = 'en'
     content = ServerContent(
-        type='Webcomic, Self-publishing',
+        type=[_('Webcomic'), _('Self-publishing')]
     )
 
     base_url = 'https://www.nixofnothing.com'

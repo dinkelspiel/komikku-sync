@@ -21,7 +21,7 @@ class Xkcd(Server):
     name = 'xkcd'
     lang = 'en'
     content = ServerContent(
-        type=_('Webcomic, Self-publishing'),
+        type=[_('Webcomic'), _('Self-publishing')],
         license='CC BY-NC 2.5'
     )
     true_search = False

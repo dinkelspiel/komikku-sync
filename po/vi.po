@@ -2,15 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Komikku package.
 # niyaki hayyashi <animedaytime@gmail.com>, 2024.
-# Loc Huynh <huynhloc.contact@gmail.com>, 2025.
+# Loc Huynh <huynhloc.contact@gmail.com>, 2025, 2026.
 # Valéry Febvre <vfebvre@easter-eggs.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-09 01:08+0100\n"
-"PO-Revision-Date: 2025-12-12 23:28+0000\n"
-"Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
+"PO-Revision-Date: 2026-02-13 05:09+0000\n"
+"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
 "vi/>\n"
 "Language: vi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1358,12 +1358,12 @@ msgstr "Mở thư mục cục bộ"
 #: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
 #: ../komikku/explorer/common.py:305 ../komikku/explorer/common.py:308
 msgid "Content Information"
-msgstr ""
+msgstr "Thông tin nội dung"
 
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
 msgid "Type: {0}"
-msgstr ""
+msgstr "Loại: {0}"
 
 #: ../komikku/explorer/common.py:295
 #, python-brace-format
@@ -1371,26 +1371,28 @@ msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
 msgstr ""
+"Có bản quyền: Việc sao chép và phân phối được ủy quyền theo các điều kiện "
+"nhất định ({0} giấy phép)"
 
 #: ../komikku/explorer/common.py:298
 msgid "Royalty-free, Public domain"
-msgstr ""
+msgstr "Miễn phí bản quyền, Phạm vi công cộng"
 
 #: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:313
 msgid "Copyrighted works"
-msgstr ""
+msgstr "Tác phẩm có bản quyền"
 
 #: ../komikku/explorer/common.py:312
 msgid "Use with caution!"
-msgstr ""
+msgstr "Sử dụng một cách thận trọng!"
 
 #: ../komikku/explorer/common.py:315
 msgid "Licensed/Published and/or Unlicensed works"
-msgstr ""
+msgstr "Tác phẩm được cấp phép/xuất bản và/hoặc không được cấp phép"
 
 #: ../komikku/explorer/common.py:316
 msgid "It may be partially or totally illegal"
-msgstr ""
+msgstr "Nó có thể là bất hợp pháp một phần hoặc hoàn toàn"
 
 #: ../komikku/explorer/common.py:333
 msgid "Toggle pinned status"
@@ -1800,7 +1802,7 @@ msgstr "Thử lại"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Self-publishing"
-msgstr ""
+msgstr "Tự xuất bản"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -1817,11 +1819,11 @@ msgstr ""
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr ""
+msgstr "Webcomic"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Nền tảng tự xuất bản"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2332,7 +2334,7 @@ msgstr "Ẩn nội dung NSFW khỏi danh sách phổ biến, mới nhất và t�
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Người hâm mộ Webcomic"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

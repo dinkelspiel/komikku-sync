@@ -114,6 +114,19 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.103.0" date="2026-02-13">
+            <description translate="no">
+                <ul>
+                    <li>[In-app notifications] Fixed incorrect positioning of the message box</li>
+                    <li>[Reader] Webtoon mode: Added keyboard/mouse zoom</li>
+                    <li>[Servers] DocTruyen3Q (VI): Update</li>
+                    <li>[Servers] Dragon Ball Multiverse: Added 17 Webcomics and 9 languages</li>
+                    <li>[Servers] MangaReader(to): Disabled</li>
+                    <li>[L10n] Updated French, Portuguese (Brazil) and Vietnamese translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.102.0" date="2026-02-06">
             <description translate="no">
                 <ul>

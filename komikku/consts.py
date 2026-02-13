@@ -53,6 +53,7 @@ CREDITS = dict(
         'Matheus Santana (Brazilian Portuguese)',
         'Lucas Oliveira (Brazilian Portuguese)',
         'Lucas Loura (Brazilian Portuguese)',
+        'Beruto666 (Brazilian Portuguese)',
         'twlvnn (Bulgarian)',
         'Roger VC (Catalan)',
         'Lukáš Linhart (Czech)',
@@ -145,12 +146,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
+    <li>[In-app notifications] Fixed incorrect positioning of the message box</li>
+    <li>[Reader] Webtoon mode: Added keyboard/mouse zoom</li>
     <li>[Servers] DocTruyen3Q (VI): Update</li>
-    <li>[Servers] LegacyScans (FR): Disabled</li>
-    <li>[Servers] MangaBin (EN): Disabled</li>
-    <li>[Servers] Toonily (EN): Update</li>
-    <li>[Servers] Added copyright information about content</li>
-    <li>[L10n] Updated French, Portuguese (Brazil) and Russian translations</li>
+    <li>[Servers] Dragon Ball Multiverse: Added 17 Webcomics and 9 languages</li>
+    <li>[Servers] MangaReader(to): Disabled</li>
+    <li>[L10n] Updated French, Portuguese (Brazil) and Vietnamese translations</li>
 </ul>
 <p>Happy reading.</p>
 """

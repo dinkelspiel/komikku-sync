@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-13 18:23+0100\n"
-"PO-Revision-Date: 2026-02-13 05:09+0000\n"
+"PO-Revision-Date: 2026-02-13 17:50+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
 "vi/>\n"
@@ -967,42 +967,42 @@ msgstr "Trình đọc"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Next Page"
-msgstr ""
+msgstr "Trang tiếp theo"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Đi tới trang bên phải"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Tới trang bên trái"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Cuộn xuống"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Cuộn lên"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Phóng to"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Thu nhỏ"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Đặt lại thu phóng"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"

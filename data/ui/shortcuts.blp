@@ -72,6 +72,55 @@ Adw.ShortcutsDialog shortcuts_dialog {
     title: C_("Shortcut window description", "Reader");
 
     Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Next Page");
+      subtitle: _("Paged Reading Modes");
+      accelerator: "space";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Go to Right Page");
+      subtitle: _("Paged Reading Modes");
+      accelerator: "Right k";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Go to Left Page");
+      subtitle: _("Paged Reading Modes");
+      accelerator: "Left j";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Scroll Down");
+      subtitle: _("Webtoon Reading Mode");
+      accelerator: "Down Right space k Page_Down";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Scroll Up");
+      subtitle: _("Webtoon Reading Mode");
+      accelerator: "Up Left j Page_Up";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Zoom In");
+      accelerator: "plus";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Zoom Out");
+      accelerator: "minus";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("Shortcut window description", "Zoom Reset");
+      accelerator: "0";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    Adw.ShortcutsItem {
       title: C_("Shortcut window description", "Save Page");
       action-name: "app.reader.save-page";
     }

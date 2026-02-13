@@ -35,8 +35,7 @@ class WebtoonPager(Adw.Bin, BasePager):
         self.vadjustment_value_changed_handler_id = self.scrolledwindow.get_vadjustment().connect('value-changed', self.on_scroll)
 
         self.clamp = Adw.ClampScrollable()
-        self.clamp.set_maximum_size(Settings.get_default().clamp_size)
-        self.clamp.set_tightening_threshold(Settings.get_default().clamp_size)
+        self.set_clamp_size()
         self.scrolledwindow.set_child(self.clamp)
 
         self.canvas = KInfiniteCanvas(self)
@@ -128,6 +127,25 @@ class WebtoonPager(Adw.Bin, BasePager):
                 100, self.save_progress,
                 pages[pages.index(self.canvas.current_page_top):pages.index(self.current_page) + 1]
             )
+
+    def set_clamp_size(self, zoom=1):
+        """
+        Adjust clamp width (increase/decrease) by a zoom factor
+
+        Use to allow pseudo-zoom limited to the width of the window
+
+        :param zoom: A zoom factor to be applied to the width of the clamp
+        :type zoom: float
+
+        :return: Zoom factor applied taking into account size limitations
+        :rtype: float
+        """
+        size = min(max(360, Settings.get_default().clamp_size * zoom), self.reader.window.monitor.props.geometry.width)
+
+        self.clamp.set_maximum_size(size)
+        self.clamp.set_tightening_threshold(size)
+
+        return size / Settings.get_default().clamp_size
 
     def set_orientation(self, _orientation):
         return

@@ -20,6 +20,7 @@ from komikku.models import Settings
 logger = logging.getLogger('komikku')
 
 PRELOAD = 5  # in widget height unit
+ZOOM_FACTOR_SCROLL_WHEEL = 1.3
 
 
 class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
@@ -39,6 +40,7 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
 
         self.__hadj = None
         self.__vadj = None
+        self.zoom = 1
 
         self.vadjustment_value_changed_handler_id = None
 
@@ -336,10 +338,25 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
             return Gdk.EVENT_PROPAGATE
 
         modifiers = Gtk.accelerator_get_default_mod_mask()
-        if (state & modifiers) != 0:
+        if (state & modifiers) not in (Gdk.ModifierType.NO_MODIFIER_MASK, Gdk.ModifierType.SHIFT_MASK):
             return Gdk.EVENT_PROPAGATE
 
-        if keyval in (Gdk.KEY_Down, Gdk.KEY_KP_Down, Gdk.KEY_Right, Gdk.KEY_KP_Right, Gdk.KEY_space, Gdk.KEY_k):
+        if keyval in (Gdk.KEY_plus, Gdk.KEY_KP_Add):
+            # Zoom in
+            self.zoom = self.pager.set_clamp_size(self.zoom * ZOOM_FACTOR_SCROLL_WHEEL)
+            return Gdk.EVENT_STOP
+
+        elif keyval in (Gdk.KEY_minus, Gdk.KEY_KP_Subtract):
+            # Zoom out
+            self.zoom = self.pager.set_clamp_size(self.zoom / ZOOM_FACTOR_SCROLL_WHEEL)
+            return Gdk.EVENT_STOP
+
+        elif keyval in (Gdk.KEY_0, Gdk.KEY_KP_0):
+            # Zoom reset
+            self.zoom = self.pager.set_clamp_size()
+            return Gdk.EVENT_STOP
+
+        elif keyval in (Gdk.KEY_Down, Gdk.KEY_KP_Down, Gdk.KEY_Right, Gdk.KEY_KP_Right, Gdk.KEY_space, Gdk.KEY_k):
             self.emit('keyboard-navigation')
             self.scroll_by_increment(self.vadjustment.props.step_increment, 80, False)
             return Gdk.EVENT_STOP
@@ -388,6 +405,17 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
     def on_scroll(self, _controller, _dx, dy):
         self.is_scroll_decelerating = False
         self.scroll_direction = Gtk.DirectionType.UP if dy < 0 else Gtk.DirectionType.DOWN
+
+        modifiers = Gtk.accelerator_get_default_mod_mask()
+        state = self.controller_scroll.get_current_event_state()
+        if state & modifiers == Gdk.ModifierType.CONTROL_MASK:
+            if self.scroll_direction == Gtk.DirectionType.UP:
+                zoom = self.zoom * ZOOM_FACTOR_SCROLL_WHEEL
+            else:
+                zoom = self.zoom / ZOOM_FACTOR_SCROLL_WHEEL
+            self.zoom = self.pager.set_clamp_size(zoom)
+
+            return Gdk.EVENT_STOP
 
         # Scroll deltas unit Gdk.ScrollUnit.SURFACE occurs with touchpads under Wayland
         unit_multiple_factor = 1 if self.controller_scroll.get_unit() == Gdk.ScrollUnit.SURFACE else self.vadjustment.props.step_increment

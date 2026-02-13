@@ -434,6 +434,9 @@ class LibraryPage(Adw.NavigationPage):
         self.overlaysplitview.set_show_sidebar(False)
 
     def on_left_button_clicked(self, action_or_button=None, _param=None):
+        if self.window.page != self.props.tag:
+            return
+
         if not self.selection_mode:
             self.window.explorer.show()
         else:

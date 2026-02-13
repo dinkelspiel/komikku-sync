@@ -10,6 +10,7 @@ class Mangareaderto(Mangareader):
     name = 'MangaReader (to)'
     lang = 'en'
     is_nsfw = True
+    status = 'disabled'
 
     languages_codes = dict(
         en='en',

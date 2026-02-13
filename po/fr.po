@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-13 18:23+0100\n"
-"PO-Revision-Date: 2026-02-09 00:19+0000\n"
+"PO-Revision-Date: 2026-02-13 17:50+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -976,42 +976,42 @@ msgstr "Lecteur"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Next Page"
-msgstr ""
+msgstr "Page suivante"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Aller à la page de droite"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Aller à la page de gauche"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Défiler vers le bas"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Défiler vers le haut"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoomer en avant"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoomer en arrière"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Réinitialiser le zoom"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"

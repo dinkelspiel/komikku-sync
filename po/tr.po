@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 18:23+0100\n"
+"POT-Creation-Date: 2026-02-13 18:52+0100\n"
 "PO-Revision-Date: 2026-01-28 22:05+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/"
@@ -972,7 +972,7 @@ msgstr "Okuyucu"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
-msgid "Next Page"
+msgid "Go to Next Page"
 msgstr ""
 
 #: ../data/ui/shortcuts.blp:81
@@ -1524,6 +1524,11 @@ msgstr "Sonuç yok"
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
 msgstr "Diğer"
+
+#: ../komikku/explorer/servers.py:150
+msgid ""
+"It appears that you have not yet defined any server languages in Preferences."
+msgstr ""
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"

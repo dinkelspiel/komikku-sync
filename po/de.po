@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 18:23+0100\n"
+"POT-Creation-Date: 2026-02-13 18:52+0100\n"
 "PO-Revision-Date: 2025-12-01 06:00+0000\n"
 "Last-Translator: Tim <rc2225@ghueder-schrott.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/"
@@ -970,7 +970,7 @@ msgstr "Leser"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
-msgid "Next Page"
+msgid "Go to Next Page"
 msgstr ""
 
 #: ../data/ui/shortcuts.blp:81
@@ -1529,6 +1529,11 @@ msgstr "Keine Ergebnisse"
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
 msgstr "Andere"
+
+#: ../komikku/explorer/servers.py:150
+msgid ""
+"It appears that you have not yet defined any server languages in Preferences."
+msgstr ""
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"

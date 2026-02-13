@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 18:23+0100\n"
+"POT-Creation-Date: 2026-02-13 18:52+0100\n"
 "PO-Revision-Date: 2026-02-13 17:50+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
@@ -966,8 +966,8 @@ msgstr "Trình đọc"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
-msgid "Next Page"
-msgstr "Trang tiếp theo"
+msgid "Go to Next Page"
+msgstr ""
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
@@ -1518,6 +1518,11 @@ msgstr "Không có kết quả"
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
 msgstr "Khác"
+
+#: ../komikku/explorer/servers.py:150
+msgid ""
+"It appears that you have not yet defined any server languages in Preferences."
+msgstr ""
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
@@ -2711,6 +2716,10 @@ msgstr "Vui lòng chờ…"
 #: ../komikku/webview.py:496
 msgid "Please complete CAPTCHA"
 msgstr "Vui lòng hoàn thành CAPTCHA"
+
+#~ msgctxt "Shortcut window description"
+#~ msgid "Next Page"
+#~ msgstr "Trang tiếp theo"
 
 #~ msgid "Web Comic"
 #~ msgstr "Web Comic"

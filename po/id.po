@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.12.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 18:23+0100\n"
+"POT-Creation-Date: 2026-02-13 18:52+0100\n"
 "PO-Revision-Date: 2025-12-24 16:00+0000\n"
 "Last-Translator: Nataniel Dika Kurniawan <hikawaart2@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/komikku/main/"
@@ -966,7 +966,7 @@ msgstr "Pembaca"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
-msgid "Next Page"
+msgid "Go to Next Page"
 msgstr ""
 
 #: ../data/ui/shortcuts.blp:81
@@ -1499,6 +1499,11 @@ msgstr "Tidak ada hasil"
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
 msgstr "Lainnya"
+
+#: ../komikku/explorer/servers.py:150
+msgid ""
+"It appears that you have not yet defined any server languages in Preferences."
+msgstr ""
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"

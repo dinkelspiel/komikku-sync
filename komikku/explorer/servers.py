@@ -147,7 +147,7 @@ class ExplorerServersPage(Adw.NavigationPage):
 
             if not Settings.get_default().servers_languages:
                 self.window.show_banner(
-                    'It appears that you have not yet defined any server languages in Preferences.', at_bottom=True
+                    _('It appears that you have not yet defined any server languages in Preferences.'), at_bottom=True
                 )
 
         if not Gtk.Settings.get_default().get_property('gtk-enable-animations'):

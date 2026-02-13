@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-09 01:08+0100\n"
+"POT-Creation-Date: 2026-02-13 18:23+0100\n"
 "PO-Revision-Date: 2025-12-01 06:00+0000\n"
 "Last-Translator: Tim <rc2225@ghueder-schrott.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/"
@@ -693,7 +693,8 @@ msgstr "Vollbild"
 msgid "Automatically enter fullscreen mode"
 msgstr "Wechselt automatisch in den Vollbildmodus"
 
-#: ../data/ui/preferences.blp:319
+#: ../data/ui/preferences.blp:319 ../data/ui/shortcuts.blp:76
+#: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
 msgstr ""
 
@@ -750,7 +751,8 @@ msgstr ""
 "Achtung: Diese Option erhöht die Nutzung der CPU und kann zu langsamen "
 "Animationen, insbesondere bei mobilen Geräten, führen."
 
-#: ../data/ui/preferences.blp:347
+#: ../data/ui/preferences.blp:347 ../data/ui/shortcuts.blp:94
+#: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
 msgstr ""
 
@@ -968,15 +970,55 @@ msgstr "Leser"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
+msgid "Next Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:81
+msgctxt "Shortcut window description"
+msgid "Go to Right Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:87
+msgctxt "Shortcut window description"
+msgid "Go to Left Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:93
+msgctxt "Shortcut window description"
+msgid "Scroll Down"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:99
+msgctxt "Shortcut window description"
+msgid "Scroll Up"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:107
+msgctxt "Shortcut window description"
+msgid "Zoom In"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:112
+msgctxt "Shortcut window description"
+msgid "Zoom Out"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:117
+msgctxt "Shortcut window description"
+msgid "Zoom Reset"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:124
+msgctxt "Shortcut window description"
 msgid "Save Page"
 msgstr "Seite speichern"
 
-#: ../data/ui/shortcuts.blp:81
+#: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
 msgstr "Download-Manager"
 
-#: ../data/ui/shortcuts.blp:84
+#: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
 msgid "Select All Downloads"
 msgstr "Alle Download auswählen"
@@ -1089,7 +1131,7 @@ msgstr "Unterhaltung beitreten"
 #: ../komikku/application.py:517 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
-#: ../komikku/library/__init__.py:779 ../komikku/library/__init__.py:780
+#: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -1180,7 +1222,7 @@ msgid "Donate"
 msgstr "Spenden"
 
 #: ../komikku/card/chapters_list.py:342 ../komikku/downloader.py:542
-#: ../komikku/library/__init__.py:813
+#: ../komikku/library/__init__.py:816
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
@@ -1526,23 +1568,23 @@ msgstr ""
 msgid "Download?"
 msgstr "Herunterladen?"
 
-#: ../komikku/library/__init__.py:630
+#: ../komikku/library/__init__.py:633
 msgid "Welcome to Komikku"
 msgstr "Willkommen"
 
-#: ../komikku/library/__init__.py:640
+#: ../komikku/library/__init__.py:643
 msgid "Loading…"
 msgstr "Lade…"
 
-#: ../komikku/library/__init__.py:762
+#: ../komikku/library/__init__.py:765
 msgid "Failed to update reading status"
 msgstr "Konnte Lesestatus nicht aktualisieren"
 
-#: ../komikku/library/__init__.py:784
+#: ../komikku/library/__init__.py:787
 msgid "Add New Comic"
 msgstr "Neuen Comic hinzufügen"
 
-#: ../komikku/library/__init__.py:817 ../komikku/library/categories_list.py:145
+#: ../komikku/library/__init__.py:820 ../komikku/library/categories_list.py:145
 msgid "Uncategorized"
 msgstr "Nicht kategorisiert"
 
@@ -1779,17 +1821,17 @@ msgid "Failed to sync read progress with server"
 msgstr "Lesefortschritt konnte nicht mit Server synchronisiert werden"
 
 #: ../komikku/reader/pager/__init__.py:477
-#: ../komikku/reader/pager/webtoon.py:95
+#: ../komikku/reader/pager/webtoon.py:94
 msgid "There is no previous chapter."
 msgstr "Kein vorheriges Kapitel vorhanden."
 
 #: ../komikku/reader/pager/__init__.py:479
-#: ../komikku/reader/pager/webtoon.py:93
+#: ../komikku/reader/pager/webtoon.py:92
 msgid "It was the last chapter."
 msgstr "Das war das letzte Kapitel."
 
 #: ../komikku/reader/pager/__init__.py:645
-#: ../komikku/reader/pager/webtoon.py:152
+#: ../komikku/reader/pager/webtoon.py:170
 msgid "This chapter is inaccessible."
 msgstr "Dieses Kapitel ist nicht verfügbar."
 

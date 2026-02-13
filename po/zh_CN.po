@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-09 01:08+0100\n"
+"POT-Creation-Date: 2026-02-13 18:23+0100\n"
 "PO-Revision-Date: 2025-01-20 17:00+0000\n"
 "Last-Translator: LS-Shandong <ls-shandong@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -678,7 +678,8 @@ msgstr "全屏"
 msgid "Automatically enter fullscreen mode"
 msgstr "自动进入全屏模式"
 
-#: ../data/ui/preferences.blp:319
+#: ../data/ui/preferences.blp:319 ../data/ui/shortcuts.blp:76
+#: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
 msgstr ""
 
@@ -734,7 +735,8 @@ msgstr ""
 "\n"
 "注意：需要使用更多 CPU 资源且可能引起渲染和动画变慢，特别是对移动设备。"
 
-#: ../data/ui/preferences.blp:347
+#: ../data/ui/preferences.blp:347 ../data/ui/shortcuts.blp:94
+#: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
 msgstr ""
 
@@ -947,15 +949,55 @@ msgstr "阅读器"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
+msgid "Next Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:81
+msgctxt "Shortcut window description"
+msgid "Go to Right Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:87
+msgctxt "Shortcut window description"
+msgid "Go to Left Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:93
+msgctxt "Shortcut window description"
+msgid "Scroll Down"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:99
+msgctxt "Shortcut window description"
+msgid "Scroll Up"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:107
+msgctxt "Shortcut window description"
+msgid "Zoom In"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:112
+msgctxt "Shortcut window description"
+msgid "Zoom Out"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:117
+msgctxt "Shortcut window description"
+msgid "Zoom Reset"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:124
+msgctxt "Shortcut window description"
 msgid "Save Page"
 msgstr "保存页面"
 
-#: ../data/ui/shortcuts.blp:81
+#: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
 msgstr "下载管理器"
 
-#: ../data/ui/shortcuts.blp:84
+#: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
 msgid "Select All Downloads"
 msgstr "选择所有下载"
@@ -1056,7 +1098,7 @@ msgstr "加入聊天"
 #: ../komikku/application.py:517 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
-#: ../komikku/library/__init__.py:779 ../komikku/library/__init__.py:780
+#: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
 msgid "Cancel"
 msgstr "取消"
 
@@ -1147,7 +1189,7 @@ msgid "Donate"
 msgstr "捐赠"
 
 #: ../komikku/card/chapters_list.py:342 ../komikku/downloader.py:542
-#: ../komikku/library/__init__.py:813
+#: ../komikku/library/__init__.py:816
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
@@ -1486,23 +1528,23 @@ msgstr "你确定要下载所选漫画的全部章节吗？"
 msgid "Download?"
 msgstr "下载？"
 
-#: ../komikku/library/__init__.py:630
+#: ../komikku/library/__init__.py:633
 msgid "Welcome to Komikku"
 msgstr "欢迎使用 Komikku"
 
-#: ../komikku/library/__init__.py:640
+#: ../komikku/library/__init__.py:643
 msgid "Loading…"
 msgstr "正在加载……"
 
-#: ../komikku/library/__init__.py:762
+#: ../komikku/library/__init__.py:765
 msgid "Failed to update reading status"
 msgstr "更新阅读状态失败"
 
-#: ../komikku/library/__init__.py:784
+#: ../komikku/library/__init__.py:787
 msgid "Add New Comic"
 msgstr "添加新漫画"
 
-#: ../komikku/library/__init__.py:817 ../komikku/library/categories_list.py:145
+#: ../komikku/library/__init__.py:820 ../komikku/library/categories_list.py:145
 msgid "Uncategorized"
 msgstr "未分类"
 
@@ -1731,17 +1773,17 @@ msgid "Failed to sync read progress with server"
 msgstr "与服务器同步阅读进度失败"
 
 #: ../komikku/reader/pager/__init__.py:477
-#: ../komikku/reader/pager/webtoon.py:95
+#: ../komikku/reader/pager/webtoon.py:94
 msgid "There is no previous chapter."
 msgstr "没有上一章。"
 
 #: ../komikku/reader/pager/__init__.py:479
-#: ../komikku/reader/pager/webtoon.py:93
+#: ../komikku/reader/pager/webtoon.py:92
 msgid "It was the last chapter."
 msgstr "已经时最后一章。"
 
 #: ../komikku/reader/pager/__init__.py:645
-#: ../komikku/reader/pager/webtoon.py:152
+#: ../komikku/reader/pager/webtoon.py:170
 msgid "This chapter is inaccessible."
 msgstr "此章节无法访问。"
 

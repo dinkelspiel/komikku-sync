@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.64.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-09 01:08+0100\n"
+"POT-Creation-Date: 2026-02-13 18:23+0100\n"
 "PO-Revision-Date: 2025-07-13 22:17+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/komikku/main/ta/>\n"
@@ -680,7 +680,8 @@ msgstr "முழு திரை"
 msgid "Automatically enter fullscreen mode"
 msgstr "தானாகவே முழுத்திரை பயன்முறையை உள்ளிடவும்"
 
-#: ../data/ui/preferences.blp:319
+#: ../data/ui/preferences.blp:319 ../data/ui/shortcuts.blp:76
+#: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
 msgstr ""
 
@@ -739,7 +740,8 @@ msgstr ""
 " குறிப்பு: அதிக சிபியு பயன்பாடு தேவைப்படுகிறது மற்றும் வழங்குதல் மற்றும் அனிமேசன் "
 "மந்தநிலைகளை ஏற்படுத்தும், குறிப்பாக மொபைல் சாதனங்களில்."
 
-#: ../data/ui/preferences.blp:347
+#: ../data/ui/preferences.blp:347 ../data/ui/shortcuts.blp:94
+#: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
 msgstr ""
 
@@ -955,15 +957,55 @@ msgstr "வாசகர்"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
+msgid "Next Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:81
+msgctxt "Shortcut window description"
+msgid "Go to Right Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:87
+msgctxt "Shortcut window description"
+msgid "Go to Left Page"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:93
+msgctxt "Shortcut window description"
+msgid "Scroll Down"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:99
+msgctxt "Shortcut window description"
+msgid "Scroll Up"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:107
+msgctxt "Shortcut window description"
+msgid "Zoom In"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:112
+msgctxt "Shortcut window description"
+msgid "Zoom Out"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:117
+msgctxt "Shortcut window description"
+msgid "Zoom Reset"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:124
+msgctxt "Shortcut window description"
 msgid "Save Page"
 msgstr "பக்கத்தை சேமிக்கவும்"
 
-#: ../data/ui/shortcuts.blp:81
+#: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
 msgstr "மேலாளரைப் பதிவிறக்கவும்"
 
-#: ../data/ui/shortcuts.blp:84
+#: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
 msgid "Select All Downloads"
 msgstr "எல்லா பதிவிறக்கங்களையும் தேர்ந்தெடுக்கவும்"
@@ -1069,7 +1111,7 @@ msgstr "அரட்டையில் சேரவும்"
 #: ../komikku/application.py:517 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
-#: ../komikku/library/__init__.py:779 ../komikku/library/__init__.py:780
+#: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -1160,7 +1202,7 @@ msgid "Donate"
 msgstr "நன்கொடை"
 
 #: ../komikku/card/chapters_list.py:342 ../komikku/downloader.py:542
-#: ../komikku/library/__init__.py:813
+#: ../komikku/library/__init__.py:816
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
@@ -1502,23 +1544,23 @@ msgstr ""
 msgid "Download?"
 msgstr "பதிவிறக்கம்?"
 
-#: ../komikku/library/__init__.py:630
+#: ../komikku/library/__init__.py:633
 msgid "Welcome to Komikku"
 msgstr "வா எல் அரிசி மற்றும் காமிக்ச்"
 
-#: ../komikku/library/__init__.py:640
+#: ../komikku/library/__init__.py:643
 msgid "Loading…"
 msgstr "ஏற்றுகிறது…"
 
-#: ../komikku/library/__init__.py:762
+#: ../komikku/library/__init__.py:765
 msgid "Failed to update reading status"
 msgstr "வாசிப்பு நிலையைப் புதுப்பிக்கத் தவறிவிட்டது"
 
-#: ../komikku/library/__init__.py:784
+#: ../komikku/library/__init__.py:787
 msgid "Add New Comic"
 msgstr "புதிய காமிக் சேர்க்கவும்"
 
-#: ../komikku/library/__init__.py:817 ../komikku/library/categories_list.py:145
+#: ../komikku/library/__init__.py:820 ../komikku/library/categories_list.py:145
 msgid "Uncategorized"
 msgstr "வகைப்படுத்தப்படாதது"
 
@@ -1751,17 +1793,17 @@ msgid "Failed to sync read progress with server"
 msgstr "சேவையகத்துடன் முன்னேற்றத்தைப் படிக்க ஒத்திசைக்கத் தவறிவிட்டது"
 
 #: ../komikku/reader/pager/__init__.py:477
-#: ../komikku/reader/pager/webtoon.py:95
+#: ../komikku/reader/pager/webtoon.py:94
 msgid "There is no previous chapter."
 msgstr "முந்தைய அத்தியாயம் எதுவும் இல்லை."
 
 #: ../komikku/reader/pager/__init__.py:479
-#: ../komikku/reader/pager/webtoon.py:93
+#: ../komikku/reader/pager/webtoon.py:92
 msgid "It was the last chapter."
 msgstr "அது கடைசி அத்தியாயம்."
 
 #: ../komikku/reader/pager/__init__.py:645
-#: ../komikku/reader/pager/webtoon.py:152
+#: ../komikku/reader/pager/webtoon.py:170
 msgid "This chapter is inaccessible."
 msgstr "இந்த அத்தியாயம் அணுக முடியாதது."
 

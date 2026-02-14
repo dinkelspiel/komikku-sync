@@ -7,13 +7,14 @@
 # DXCVII <dxcvii@duck.com>, 2024, 2025.
 # Bezruchenko Simon <worcposj44@gmail.com>, 2024, 2025.
 # Максим Горпиніч <gorpinicmaksim0@gmail.com>, 2025.
+# Димко <Term0@ukr.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-13 18:52+0100\n"
-"PO-Revision-Date: 2025-12-05 15:44+0000\n"
-"Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
+"PO-Revision-Date: 2026-02-15 01:09+0000\n"
+"Last-Translator: Димко <Term0@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
 "Language: uk\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -974,44 +975,51 @@ msgid "Reader"
 msgstr "Читач"
 
 #: ../data/ui/shortcuts.blp:75
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Наступна сторінка"
 
 #: ../data/ui/shortcuts.blp:81
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Перейти на праву сторінку"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Перейти на ліву сторінку"
 
 #: ../data/ui/shortcuts.blp:93
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Гортати вниз"
 
 #: ../data/ui/shortcuts.blp:99
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Гортати вгору"
 
 #: ../data/ui/shortcuts.blp:107
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Збільшити"
 
 #: ../data/ui/shortcuts.blp:112
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Зменшити"
 
 #: ../data/ui/shortcuts.blp:117
+#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Скинути масштаб"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1330,7 +1338,7 @@ msgstr "На жаль, пошук не вдався. Спробуйте ще р�
 
 #: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:82
 msgid "No Results Found"
-msgstr "Результатів не знайдено"
+msgstr "Нічого не знайдено"
 
 #: ../komikku/card/tracking.py:516 ../komikku/explorer/search/search.py:83
 msgid "Try a different search"
@@ -1425,11 +1433,13 @@ msgid "Type: {0}"
 msgstr ""
 
 #: ../komikku/explorer/common.py:295
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
 msgstr ""
+"Захищено авторським правом: відтворення та розповсюдження дозволено за "
+"певних умов (ліцензія {0})"
 
 #: ../komikku/explorer/common.py:298
 msgid "Royalty-free, Public domain"
@@ -1859,8 +1869,9 @@ msgstr "Повторити"
 #: ../komikku/servers/threepanelsoul/__init__.py:18
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
+#, fuzzy
 msgid "Self-publishing"
-msgstr ""
+msgstr "Самвидав"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -1876,12 +1887,14 @@ msgstr ""
 #: ../komikku/servers/threepanelsoul/__init__.py:18
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
+#, fuzzy
 msgid "Webcomic"
-msgstr ""
+msgstr "Вебмальопис"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
+#, fuzzy
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Платформа самвидаву"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2391,8 +2404,9 @@ msgstr "Приховати контент NSFW від популярних, на
 
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
+#, fuzzy
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Фанатський вебмальопис"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

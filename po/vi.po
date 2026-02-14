@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-13 18:52+0100\n"
-"PO-Revision-Date: 2026-02-13 17:50+0000\n"
+"PO-Revision-Date: 2026-02-15 01:09+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
 "vi/>\n"
@@ -967,7 +967,7 @@ msgstr "Trình đọc"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Tới trang tiếp theo"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
@@ -1522,7 +1522,7 @@ msgstr "Khác"
 #: ../komikku/explorer/servers.py:150
 msgid ""
 "It appears that you have not yet defined any server languages in Preferences."
-msgstr ""
+msgstr "Có vẻ như bạn chưa xác định bất kỳ ngôn ngữ máy chủ nào trong Tùy chọn."
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"

@@ -131,6 +131,10 @@ class CardPage(Adw.NavigationPage):
         self.update_action.connect('activate', self.on_update_request)
         self.window.application.add_action(self.update_action)
 
+        self.clear_action = Gio.SimpleAction.new('card.clear', None)
+        self.clear_action.connect('activate', self.on_clear_menu_clicked)
+        self.window.application.add_action(self.clear_action)
+
         self.delete_action = Gio.SimpleAction.new('card.delete', None)
         self.delete_action.connect('activate', self.on_delete_menu_clicked)
         self.window.application.add_action(self.delete_action)
@@ -209,6 +213,20 @@ class CardPage(Adw.NavigationPage):
         # Update manga
         self.manga.add_in_library()
         self.window.library.on_manga_added(self.manga)
+
+    def on_clear_menu_clicked(self, _action, _gparam):
+        def confirm_callback():
+            self.manga.clear()
+            self.refresh(info=True, chapters=self.manga.chapters)
+            self.window.library.refresh_on_manga_state_changed(self.manga)
+
+        self.window.open_dialog(
+            _('Clear?'),
+            body=_('Are you sure you want to clear all chapters?'),
+            confirm_label=_('Clear'),
+            confirm_callback=confirm_callback,
+            confirm_appearance=Adw.ResponseAppearance.DESTRUCTIVE
+        )
 
     def on_delete_menu_clicked(self, _action, _gparam):
         self.window.library.delete_mangas([self.manga, ])

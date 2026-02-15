@@ -365,6 +365,21 @@ class Manga:
             # Move folder
             shutil.move(tmp_path, self.path)
 
+    def clear(self):
+        # Remove chapters folders
+        for path in Path(self.path).glob('*'):
+            if path.is_dir():
+                shutil.rmtree(path)
+
+        # Set all chapters downloaded flag to 0
+        db_conn = create_db_connection()
+        with db_conn:
+            db_conn.execute('UPDATE chapters SET downloaded = 0 WHERE manga_id = ?', (self.id, ))
+
+        db_conn.close()
+
+        self._chapters = None
+
     def delete(self, db_conn=None):
         if db_conn is None:
             db_conn = create_db_connection()

@@ -20,6 +20,10 @@ SPDX-FileContributor: Valéry Febvre <vfebvre@easter-eggs.com>
 
         <section>
             <item>
+                <attribute name="label" translatable="yes">Clear</attribute>
+                <attribute name="action">app.card.clear</attribute>
+            </item>
+            <item>
                 <attribute name="label" translatable="yes">Delete</attribute>
                 <attribute name="action">app.card.delete</attribute>
             </item>

@@ -4,9 +4,7 @@
 
 import base64
 from gettext import gettext as _
-import json
 import logging
-import re
 
 from bs4 import BeautifulSoup
 
@@ -122,8 +120,10 @@ class Raijinscan(Server):
 
         # Chapters
         for element in reversed(soup.select('ul li.item')):
+            if 'premium-chapter' in element.get('class'):
+                continue
             a_element = element.select_one('a')
-            date_element = element.select_one('a > span:last-child')
+            date_element = a_element.select_one('.chapter-meta')
             slug = a_element.get('href').split('/')[-1]
 
             data['chapters'].append(dict(
@@ -148,44 +148,12 @@ class Raijinscan(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        # Find encoded key and data
-        rmk_re = r"""window\._rmk\s*=\s*["']([^"']+)["']"""
-        rmd_re = r"""window\._rmd\s*=\s*["']([^"']+)["']"""
-        rmd = rmk = None
-        for script_element in soup.find_all('script'):
-            script = script_element.string
-            if not script:
-                continue
-            if matches := re.search(rmk_re, script):
-                rmk = matches.group(1)
-            if matches := re.search(rmd_re, script):
-                rmd = matches.group(1)
-
-            if rmk and rmd:
-                break
-
-        if not rmk or not rmd:
-            logger.error('Failed to find window._rmk or window._rmd')
-            return None
-
-        # Decode key
-        decoded = base64.b64decode(rmk)
-        key_seed = [90, 60, 126, 29, 159, 178, 78, 106]
-        key = [(decoded[index] & 0xFF) ^ key_seed[index] for index in range(8)]
-
-        # Decode data
-        normalized = rmd.replace('-', '+').replace('_', '/') + '=='
-        decoded = base64.b64decode(normalized)
-        decrypted = ''.join(
-            [chr((int(c) & 0xFF) ^ key[index % len(key)]) for index, c in enumerate(decoded)]
-        )
-
         data = dict(
             pages=[],
         )
-        for image in json.loads(decrypted):
+        for element in soup.select('.protected-image-data'):
             data['pages'].append(dict(
-                image=image,
+                image=base64.b64decode(element.get('data-src')).decode('utf-8'),
                 slug=None,
             ))
 

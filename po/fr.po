@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-13 19:59+0000\n"
+"PO-Revision-Date: 2026-02-17 00:49+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -56,6 +56,8 @@ msgstr "Lecture en ligne ou hors ligne depuis des dizaines de serveurs"
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Support pour les BD stockées localement (aux formats CBZ/CBR/CBT, EPUB et "
+"PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -1181,7 +1183,7 @@ msgstr "Effacer ?"
 
 #: ../komikku/card/__init__.py:225
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir effacer tous les chapitres ?"
 
 #: ../komikku/card/__init__.py:226 ../komikku/card/chapters_list.py:735
 #: ../komikku/preferences/__init__.py:156
@@ -1403,21 +1405,28 @@ msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr ""
+"Une structure de dossier spécifique est nécessaire pour que les BD locales "
+"soient correctement analysées."
 
 #: ../komikku/explorer/common.py:270
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"Chaque BD doit avoir son propre dossier qui doit contenir les chapitres / "
+"volumes sous forme de fichiers archive aux formats CBZ, CBR, CBT, EPUB ou "
+"PDF."
 
 #: ../komikku/explorer/common.py:271
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "Le nom du dossier sera utilisé comme nom pour la BD."
 
 #: ../komikku/explorer/common.py:272
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
+"REMARQUE : l'outil en ligne de commande 'unrar' ou 'unar' est nécessaire "
+"pour les archives CBR."
 
 #: ../komikku/explorer/common.py:278
 msgid "Open local folder"

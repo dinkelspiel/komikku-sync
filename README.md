@@ -19,7 +19,7 @@
 ## ✨ Keys features
 
 * Online/Offline reading
-* Support for locally stored series (in [CBZ/CBR/CBT](https://en.wikipedia.org/wiki/Comic_book_archive) or PDF formats)
+* Support for locally stored series (in [CBZ/CBR/CBT](https://en.wikipedia.org/wiki/Comic_book_archive), EPUB and PDF formats)
 * RTL (Right To Left), LTR (Left To Right), Vertical and Webtoon reading modes
 * Several types of navigation:
   * Keyboard arrow keys

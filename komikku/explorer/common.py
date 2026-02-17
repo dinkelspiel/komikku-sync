@@ -265,13 +265,12 @@ class ExplorerServerRow(Gtk.ListBoxRow):
                 # Info button
                 button.set_tooltip_text(_('Help'))
                 title = _('Local Folder')
-                message = _("""A specific folder structure is required for local comics to be properly processed.
-
-Each comic must have its own folder which must contain the chapters/volumes as archive files in CBZ or CBR formats.
-
-The folder's name will be used as name for the comic.
-
-NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
+                message = [
+                    _('A specific folder structure is required for local comics to be properly processed.'),
+                    _('Each comic must have its own folder which must contain the chapters/volumes as archive files in CBZ, CBR, CBT, EPUB or PDF formats.'),
+                    _("The folder's name will be used as name for the comic."),
+                    _("NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."),
+                ]
 
                 # Button to open local folder
                 self.local_folder_button = Gtk.Button(valign=Gtk.Align.CENTER)
@@ -299,8 +298,6 @@ NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
                 else:
                     message.append(f'{_("Copyrighted works")}')
 
-                message = '\n\n'.join(message)
-
             else:
                 button.set_tooltip_text(_('Content Information'))
                 button.add_css_class('destructive-action')
@@ -315,13 +312,11 @@ NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives.""")
                 message.append(_('Licensed/Published and/or Unlicensed works'))
                 message.append(_('It may be partially or totally illegal'))
 
-                message = '\n\n'.join(message)
-
             button.connect(
                 'clicked',
                 lambda x: self.page.window.open_dialog(
                     title,
-                    body=message,
+                    body='\n\n'.join(message),
                     cancel_label=_('Close')
                 )
             )

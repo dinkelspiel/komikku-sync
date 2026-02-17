@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 18:52+0100\n"
+"POT-Creation-Date: 2026-02-17 01:27+0100\n"
 "PO-Revision-Date: 2026-02-05 12:01+0000\n"
 "Last-Translator: Сергей <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
@@ -54,8 +54,9 @@ msgid "Online and offline reading from dozens of servers"
 msgstr "Онлайн и офлайн чтение с десятков серверов"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
-msgid "Support for locally stored series (in CBZ/CBR/CBT or PDF formats)"
-msgstr "Поддержка локально сохраненных циклов (в форматах CBZ/CBR/CBT или PDF)"
+msgid ""
+"Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
+msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -326,31 +327,31 @@ msgstr "Откройте для себя комиксы"
 msgid "OK"
 msgstr "OK"
 
-#: ../data/ui/menu/card.xml:30
+#: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
 msgstr "Порядок глав"
 
-#: ../data/ui/menu/card.xml:35
+#: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
 msgstr "⬆ По источнику"
 
-#: ../data/ui/menu/card.xml:40
+#: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
 msgstr "⬇ По источнику"
 
-#: ../data/ui/menu/card.xml:46
+#: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
 msgstr "⬆ По дате"
 
-#: ../data/ui/menu/card.xml:51
+#: ../data/ui/menu/card.xml:55
 msgid "⬇ By Date"
 msgstr "⬇ По дате"
 
-#: ../data/ui/menu/card.xml:57
+#: ../data/ui/menu/card.xml:61
 msgid "⬆ By Title"
 msgstr "⬆ По названию"
 
-#: ../data/ui/menu/card.xml:62
+#: ../data/ui/menu/card.xml:66
 msgid "⬇ By Title"
 msgstr "⬇ По названию"
 
@@ -1105,7 +1106,7 @@ msgstr ""
 "изменения делают их несовместимыми с текущей версией приложения. Пожалуйста, "
 "обновите приложение, если существует более свежая версия."
 
-#: ../komikku/application.py:393 ../komikku/explorer/common.py:325
+#: ../komikku/application.py:393 ../komikku/explorer/common.py:320
 msgid "Close"
 msgstr "Закрыть"
 
@@ -1131,8 +1132,8 @@ msgstr "Помощники"
 msgid "Join Chat"
 msgstr "Присоединиться к чату"
 
-#: ../komikku/application.py:517 ../komikku/card/__init__.py:162
-#: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:190
+#: ../komikku/application.py:517 ../komikku/card/__init__.py:166
+#: ../komikku/card/__init__.py:167 ../komikku/categories_editor.py:190
 #: ../komikku/downloader.py:397 ../komikku/downloader.py:398
 #: ../komikku/library/__init__.py:782 ../komikku/library/__init__.py:783
 msgid "Cancel"
@@ -1166,26 +1167,41 @@ msgstr "Перезагрузить?"
 msgid "Restart"
 msgstr "Перезагрузить"
 
-#: ../komikku/card/__init__.py:114 ../komikku/card/__init__.py:243
+#: ../komikku/card/__init__.py:114 ../komikku/card/__init__.py:261
 #: ../komikku/explorer/search/__init__.py:75
 #: ../komikku/explorer/search/__init__.py:220 ../komikku/reader/__init__.py:528
 #: ../komikku/reader/__init__.py:531
 msgid "Filters"
 msgstr "Фильтры"
 
-#: ../komikku/card/__init__.py:252
+#: ../komikku/card/__init__.py:224 ../komikku/preferences/__init__.py:154
+#: ../komikku/preferences/__init__.py:177
+msgid "Clear?"
+msgstr "Очистить?"
+
+#: ../komikku/card/__init__.py:225
+msgid "Are you sure you want to clear all chapters?"
+msgstr ""
+
+#: ../komikku/card/__init__.py:226 ../komikku/card/chapters_list.py:735
+#: ../komikku/preferences/__init__.py:156
+#: ../komikku/preferences/__init__.py:179
+msgid "Clear"
+msgstr "Очистить"
+
+#: ../komikku/card/__init__.py:270
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: ../komikku/card/__init__.py:354
+#: ../komikku/card/__init__.py:372
 msgid "Read progress synchronization with server completed successfully"
 msgstr "Синхронизация прогресса чтения с сервером завершена успешно"
 
-#: ../komikku/card/__init__.py:360
+#: ../komikku/card/__init__.py:378
 msgid "Failed to get manga URL"
 msgstr "Не удалось получить URL манги"
 
-#: ../komikku/card/__init__.py:384
+#: ../komikku/card/__init__.py:402
 #, python-brace-format
 msgid ""
 "NOTICE\n"
@@ -1196,31 +1212,31 @@ msgstr ""
 "{0} больше не поддерживается.\n"
 "Пожалуйста, переключитесь на другой сервер."
 
-#: ../komikku/card/__init__.py:477 ../komikku/card/chapters_list.py:739
+#: ../komikku/card/__init__.py:495 ../komikku/card/chapters_list.py:739
 msgid "Clear and Reset"
 msgstr "Очистить и сбросить"
 
-#: ../komikku/card/__init__.py:477 ../komikku/card/chapters_list.py:739
+#: ../komikku/card/__init__.py:495 ../komikku/card/chapters_list.py:739
 msgid "Reset"
 msgstr "Сбросить"
 
-#: ../komikku/card/__init__.py:588
+#: ../komikku/card/__init__.py:606
 msgid "Unknown author"
 msgstr "Неизвестный автор"
 
-#: ../komikku/card/__init__.py:595 ../komikku/card/__init__.py:604
+#: ../komikku/card/__init__.py:613 ../komikku/card/__init__.py:622
 msgid "Unknown status"
 msgstr "Неизвестный статус"
 
-#: ../komikku/card/__init__.py:605
+#: ../komikku/card/__init__.py:623
 msgid "Local"
 msgstr "Расположенные локально"
 
-#: ../komikku/card/__init__.py:647 ../komikku/card/chapters_list.py:667
+#: ../komikku/card/__init__.py:665 ../komikku/card/chapters_list.py:667
 msgid "%m/%d/%Y"
 msgstr "%d/%m/%Y"
 
-#: ../komikku/card/__init__.py:660
+#: ../komikku/card/__init__.py:678
 msgid "Donate"
 msgstr "Пожертвовать"
 
@@ -1240,11 +1256,6 @@ msgstr "Не удалось обновить статус чтения глав"
 #: ../komikku/card/chapters_list.py:725 ../komikku/library/__init__.py:408
 msgid "Download"
 msgstr "Загрузить"
-
-#: ../komikku/card/chapters_list.py:735 ../komikku/preferences/__init__.py:156
-#: ../komikku/preferences/__init__.py:179
-msgid "Clear"
-msgstr "Очистить"
 
 #: ../komikku/card/chapters_list.py:749
 msgid "Mark as Read"
@@ -1286,7 +1297,7 @@ msgstr "Отменить отслеживание"
 #: ../komikku/servers/mangamana/__init__.py:62
 #: ../komikku/servers/mangamana/__init__.py:63
 #: ../komikku/servers/mangaworld/__init__.py:74
-#: ../komikku/servers/raijinscan/__init__.py:39
+#: ../komikku/servers/raijinscan/__init__.py:37
 #: ../komikku/servers/weebdex/__init__.py:60
 #: ../komikku/servers/zenko/__init__.py:57
 msgid "Status"
@@ -1387,44 +1398,42 @@ msgstr "Справка"
 msgid "Local Folder"
 msgstr "Локальная папка"
 
-#: ../komikku/explorer/common.py:268
+#: ../komikku/explorer/common.py:269
 msgid ""
 "A specific folder structure is required for local comics to be properly "
-"processed.\n"
-"\n"
+"processed."
+msgstr ""
+
+#: ../komikku/explorer/common.py:270
+msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
-"as archive files in CBZ or CBR formats.\n"
-"\n"
-"The folder's name will be used as name for the comic.\n"
-"\n"
+"as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
+msgstr ""
+
+#: ../komikku/explorer/common.py:271
+msgid "The folder's name will be used as name for the comic."
+msgstr ""
+
+#: ../komikku/explorer/common.py:272
+msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
-"Для правильной обработки локальных комиксов требуется определенная структура "
-"папок.\n"
-"\n"
-"Каждый комикс должен иметь свою собственную папку, в которой должны "
-"находиться главы/тома в виде архивных файлов в форматах CBZ или CBR.\n"
-"\n"
-"Название папки будет использоваться в качестве названия комикса.\n"
-"\n"
-"ПРИМЕЧАНИЕ: Для архивов CBR требуется инструмент командной строки 'unrar' "
-"или 'unar'."
 
-#: ../komikku/explorer/common.py:279
+#: ../komikku/explorer/common.py:278
 msgid "Open local folder"
 msgstr "Открыть локальную папку"
 
-#: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
-#: ../komikku/explorer/common.py:305 ../komikku/explorer/common.py:308
+#: ../komikku/explorer/common.py:284 ../komikku/explorer/common.py:286
+#: ../komikku/explorer/common.py:302 ../komikku/explorer/common.py:305
 msgid "Content Information"
 msgstr "Информация о содержании"
 
-#: ../komikku/explorer/common.py:292
+#: ../komikku/explorer/common.py:291
 #, python-brace-format
 msgid "Type: {0}"
 msgstr "Тип: {0}"
 
-#: ../komikku/explorer/common.py:295
+#: ../komikku/explorer/common.py:294
 #, python-brace-format
 msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
@@ -1433,29 +1442,29 @@ msgstr ""
 "Защищено авторским правом: Воспроизведение и распространение разрешено при "
 "определенных условиях (лицензия {0})"
 
-#: ../komikku/explorer/common.py:298
+#: ../komikku/explorer/common.py:297
 msgid "Royalty-free, Public domain"
 msgstr "Без лицензионных отчислений, Общественное достояние"
 
-#: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:313
+#: ../komikku/explorer/common.py:299 ../komikku/explorer/common.py:310
 msgid "Copyrighted works"
 msgstr "Произведения, защищённые авторским правом"
 
-#: ../komikku/explorer/common.py:312
+#: ../komikku/explorer/common.py:309
 msgid "Use with caution!"
 msgstr "Использовать с осторожностью"
 
-#: ../komikku/explorer/common.py:315
+#: ../komikku/explorer/common.py:312
 msgid "Licensed/Published and/or Unlicensed works"
 msgstr ""
 "Опубликованные по лицензии произведения и/или произведения, переданные в "
 "общественное достояние"
 
-#: ../komikku/explorer/common.py:316
+#: ../komikku/explorer/common.py:313
 msgid "It may be partially or totally illegal"
 msgstr "Это может быть частично или полностью незаконно"
 
-#: ../komikku/explorer/common.py:333
+#: ../komikku/explorer/common.py:328
 msgid "Toggle pinned status"
 msgstr "Переключение статуса «закреплено»"
 
@@ -1648,7 +1657,7 @@ msgstr "Завершено"
 #: ../komikku/servers/mangadex/__init__.py:75
 #: ../komikku/servers/mangamana/__init__.py:67
 #: ../komikku/servers/mangaworld/__init__.py:78
-#: ../komikku/servers/raijinscan/__init__.py:43
+#: ../komikku/servers/raijinscan/__init__.py:41
 #: ../komikku/servers/weebcentral/__init__.py:52
 #: ../komikku/servers/weebdex/__init__.py:64
 #: ../komikku/servers/zenko/__init__.py:61
@@ -1673,11 +1682,6 @@ msgstr "Приостановлено"
 #: ../komikku/servers/zenko/__init__.py:63
 msgid "Hiatus"
 msgstr "Перерыв"
-
-#: ../komikku/preferences/__init__.py:154
-#: ../komikku/preferences/__init__.py:177
-msgid "Clear?"
-msgstr "Очистить?"
 
 #: ../komikku/preferences/__init__.py:155
 msgid "Are you sure you want to clear chapters cache and database?"
@@ -1902,7 +1906,7 @@ msgstr ""
 #: ../komikku/servers/mangaworld/__init__.py:59
 #: ../komikku/servers/multi/manga_stream/__init__.py:75
 #: ../komikku/servers/phenixscans/__init__.py:35
-#: ../komikku/servers/raijinscan/__init__.py:50
+#: ../komikku/servers/raijinscan/__init__.py:48
 #: ../komikku/servers/webtoon/__init__.py:55
 #: ../komikku/servers/zenko/__init__.py:69
 msgid "Type"
@@ -1929,7 +1933,7 @@ msgstr "Фильтровать по типу"
 #: ../komikku/servers/mangaworld/__init__.py:63
 #: ../komikku/servers/multi/manga_stream/__init__.py:81
 #: ../komikku/servers/phenixscans/__init__.py:41
-#: ../komikku/servers/raijinscan/__init__.py:54
+#: ../komikku/servers/raijinscan/__init__.py:52
 #: ../komikku/servers/rawkuma/__init__.py:41
 #: ../komikku/servers/weebcentral/__init__.py:39
 #: ../komikku/servers/zenko/__init__.py:74
@@ -1947,7 +1951,7 @@ msgstr "Манга"
 #: ../komikku/servers/mangaworld/__init__.py:65
 #: ../komikku/servers/multi/manga_stream/__init__.py:82
 #: ../komikku/servers/phenixscans/__init__.py:42
-#: ../komikku/servers/raijinscan/__init__.py:55
+#: ../komikku/servers/raijinscan/__init__.py:53
 #: ../komikku/servers/rawkuma/__init__.py:42
 #: ../komikku/servers/weebcentral/__init__.py:40
 #: ../komikku/servers/zenko/__init__.py:75
@@ -1964,7 +1968,7 @@ msgstr "Манхва"
 #: ../komikku/servers/mangaworld/__init__.py:64
 #: ../komikku/servers/multi/manga_stream/__init__.py:83
 #: ../komikku/servers/phenixscans/__init__.py:43
-#: ../komikku/servers/raijinscan/__init__.py:56
+#: ../komikku/servers/raijinscan/__init__.py:54
 #: ../komikku/servers/rawkuma/__init__.py:43
 #: ../komikku/servers/weebcentral/__init__.py:41
 #: ../komikku/servers/zenko/__init__.py:76
@@ -2047,7 +2051,7 @@ msgstr "Эротика"
 #: ../komikku/servers/mangadex/__init__.py:72
 #: ../komikku/servers/mangafire/__init__.py:61
 #: ../komikku/servers/mangaworld/__init__.py:75
-#: ../komikku/servers/raijinscan/__init__.py:40
+#: ../komikku/servers/raijinscan/__init__.py:38
 #: ../komikku/servers/weebcentral/__init__.py:49
 #: ../komikku/servers/weebdex/__init__.py:61
 #: ../komikku/servers/zenko/__init__.py:58
@@ -2060,7 +2064,7 @@ msgstr "Фильтровать по статусам"
 #: ../komikku/servers/mangaball/__init__.py:95
 #: ../komikku/servers/mangadex/__init__.py:76
 #: ../komikku/servers/mangafire/__init__.py:65
-#: ../komikku/servers/raijinscan/__init__.py:44
+#: ../komikku/servers/raijinscan/__init__.py:42
 #: ../komikku/servers/weebdex/__init__.py:65
 #: ../komikku/servers/zenko/__init__.py:62 ../komikku/trackers/__init__.py:68
 msgid "Completed"
@@ -2385,7 +2389,7 @@ msgstr "Юри"
 #: ../komikku/servers/flamescans/__init__.py:37
 #: ../komikku/servers/mangafire/__init__.py:46
 #: ../komikku/servers/mangaworld/__init__.py:60
-#: ../komikku/servers/raijinscan/__init__.py:51
+#: ../komikku/servers/raijinscan/__init__.py:49
 #: ../komikku/servers/weebcentral/__init__.py:36
 #: ../komikku/servers/zenko/__init__.py:70
 msgid "Filter by Types"
@@ -2743,6 +2747,33 @@ msgstr "Пожалуйста, подождите…"
 #: ../komikku/webview.py:496
 msgid "Please complete CAPTCHA"
 msgstr "Пожалуйста, заполните CAPTCHA"
+
+#~ msgid "Support for locally stored series (in CBZ/CBR/CBT or PDF formats)"
+#~ msgstr ""
+#~ "Поддержка локально сохраненных циклов (в форматах CBZ/CBR/CBT или PDF)"
+
+#~ msgid ""
+#~ "A specific folder structure is required for local comics to be properly "
+#~ "processed.\n"
+#~ "\n"
+#~ "Each comic must have its own folder which must contain the chapters/"
+#~ "volumes as archive files in CBZ or CBR formats.\n"
+#~ "\n"
+#~ "The folder's name will be used as name for the comic.\n"
+#~ "\n"
+#~ "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR "
+#~ "archives."
+#~ msgstr ""
+#~ "Для правильной обработки локальных комиксов требуется определенная "
+#~ "структура папок.\n"
+#~ "\n"
+#~ "Каждый комикс должен иметь свою собственную папку, в которой должны "
+#~ "находиться главы/тома в виде архивных файлов в форматах CBZ или CBR.\n"
+#~ "\n"
+#~ "Название папки будет использоваться в качестве названия комикса.\n"
+#~ "\n"
+#~ "ПРИМЕЧАНИЕ: Для архивов CBR требуется инструмент командной строки 'unrar' "
+#~ "или 'unar'."
 
 #~ msgid "Web Comic"
 #~ msgstr "Веб-комикс"

@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-05 12:01+0000\n"
+"PO-Revision-Date: 2026-02-19 13:09+0000\n"
 "Last-Translator: Сергей <asvmail.as@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -57,6 +57,7 @@ msgstr "Онлайн и офлайн чтение с десятков серве
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Поддержка локально сохраненных циклов (в форматах CBZ/CBR/CBT, EPUB и PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -976,42 +977,42 @@ msgstr "Читалка"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Перейти на следующую страницу"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Перейти на страницу вправо"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Перейти на страницу влево"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Прокрутить вниз"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Прокрутить вверх"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Увеличить"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Уменьшить"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Сбросить масштаб"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1181,7 +1182,7 @@ msgstr "Очистить?"
 
 #: ../komikku/card/__init__.py:225
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "Вы уверены, что хотите очистить все главы?"
 
 #: ../komikku/card/__init__.py:226 ../komikku/card/chapters_list.py:735
 #: ../komikku/preferences/__init__.py:156
@@ -1403,21 +1404,27 @@ msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr ""
+"Для правильной обработки расположенных локально комиксов требуется "
+"определенная структура папок."
 
 #: ../komikku/explorer/common.py:270
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"У каждого комикса должна быть своя папка, в которой должны содержаться главы/"
+"тома в виде архивных файлов форматов CBZ, CBR, CBT, EPUB или PDF."
 
 #: ../komikku/explorer/common.py:271
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "Название папки будет использовано в качестве названия для комикса."
 
 #: ../komikku/explorer/common.py:272
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
+"ПРИМЕЧАНИЕ: Для работы с архивами CBR требуется утилита командной строки «"
+"unrar» или «unar»."
 
 #: ../komikku/explorer/common.py:278
 msgid "Open local folder"
@@ -1551,6 +1558,8 @@ msgstr "Прочие"
 msgid ""
 "It appears that you have not yet defined any server languages in Preferences."
 msgstr ""
+"Похоже, что вы ещё не определили какие-либо языковые серверы в разделе «"
+"Параметры»."
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
@@ -1874,7 +1883,7 @@ msgstr "Повторить"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Self-publishing"
-msgstr ""
+msgstr "Самостоятельная публикация"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -1891,11 +1900,11 @@ msgstr ""
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr ""
+msgstr "Веб-комикс"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Платформа для самостоятельных публикаций"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -2408,7 +2417,7 @@ msgstr ""
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Фан веб-комикс"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

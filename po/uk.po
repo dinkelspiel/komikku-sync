@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-15 01:09+0000\n"
+"PO-Revision-Date: 2026-02-19 13:09+0000\n"
 "Last-Translator: Димко <Term0@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -62,7 +62,7 @@ msgstr "Онлайн та офлайн читання з десятків сер
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
-msgstr ""
+msgstr "Підтримка локальних серій (у форматах CBZ/CBR/CBT, EPUB та PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -1189,8 +1189,9 @@ msgid "Clear?"
 msgstr "Очистити?"
 
 #: ../komikku/card/__init__.py:225
+#, fuzzy
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "Впевнені, що хочете видалити всі розділи?"
 
 #: ../komikku/card/__init__.py:226 ../komikku/card/chapters_list.py:735
 #: ../komikku/preferences/__init__.py:156
@@ -1418,15 +1419,17 @@ msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"Кожен мальопис мусить мати власну теку, яка містить розділи/томи в архівних "
+"форматах CBZ, CBR, CBT, EPUB або PDF."
 
 #: ../komikku/explorer/common.py:271
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "Назва теки стане назвою мальопису."
 
 #: ../komikku/explorer/common.py:272
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
-msgstr ""
+msgstr "Примітка: для архівів CBR потрібна утиліта 'unrar' або 'unar'."
 
 #: ../komikku/explorer/common.py:278
 msgid "Open local folder"
@@ -1453,7 +1456,7 @@ msgstr ""
 
 #: ../komikku/explorer/common.py:297
 msgid "Royalty-free, Public domain"
-msgstr ""
+msgstr "Безплатне, суспільне надбання"
 
 #: ../komikku/explorer/common.py:299 ../komikku/explorer/common.py:310
 msgid "Copyrighted works"
@@ -1464,12 +1467,13 @@ msgid "Use with caution!"
 msgstr ""
 
 #: ../komikku/explorer/common.py:312
+#, fuzzy
 msgid "Licensed/Published and/or Unlicensed works"
-msgstr ""
+msgstr "Ліцензовані/опубліковані та/або неліцензовані твори"
 
 #: ../komikku/explorer/common.py:313
 msgid "It may be partially or totally illegal"
-msgstr ""
+msgstr "Може бути частково або повністю незаконним"
 
 #: ../komikku/explorer/common.py:328
 msgid "Toggle pinned status"
@@ -1497,7 +1501,7 @@ msgid ""
 "\n"
 "<b>id:ID from comic URL</b>"
 msgstr ""
-"Крім того, ви можете шукати конкретні комікси за допомогою синтаксису:\n"
+"Крім того, ви можете шукати конкретні мальописи за допомогою синтаксису:\n"
 "\n"
 "<b>id:ID з URL коміксу</b>"
 
@@ -1511,7 +1515,7 @@ msgstr "Шукати скрізь по імені"
 
 #: ../komikku/explorer/search/__init__.py:416
 msgid "Search for Comics"
-msgstr "Шукати серед коміксів"
+msgstr "Шукати серед мальописів"
 
 #: ../komikku/explorer/search/__init__.py:490
 msgid "Oops, failed to retrieve manga's information."
@@ -1557,7 +1561,7 @@ msgstr "Інше"
 #: ../komikku/explorer/servers.py:150
 msgid ""
 "It appears that you have not yet defined any server languages in Preferences."
-msgstr ""
+msgstr "Схоже, у налаштуваннях ще не обрано жодної мови серверу."
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
@@ -1892,12 +1896,10 @@ msgstr "Самвидав"
 #: ../komikku/servers/threepanelsoul/__init__.py:18
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
-#, fuzzy
 msgid "Webcomic"
 msgstr "Вебмальопис"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
-#, fuzzy
 msgid "Self-publishing platform"
 msgstr "Платформа самвидаву"
 
@@ -2409,7 +2411,6 @@ msgstr "Приховати контент NSFW від популярних, на
 
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
-#, fuzzy
 msgid "Fan Webcomic"
 msgstr "Фанатський вебмальопис"
 
@@ -2601,7 +2602,7 @@ msgstr "Вебтун"
 #: ../komikku/servers/multi/manga_stream/__init__.py:84
 #: ../komikku/servers/zenko/__init__.py:78
 msgid "Comic"
-msgstr "Комікс"
+msgstr "Мальопис"
 
 #: ../komikku/servers/mangatube/__init__.py:137
 #: ../komikku/servers/zenko/__init__.py:79

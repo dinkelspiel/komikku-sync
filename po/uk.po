@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-19 13:09+0000\n"
+"PO-Revision-Date: 2026-02-20 17:09+0000\n"
 "Last-Translator: Димко <Term0@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr "Відкривайте та читайте манґу й комікси"
+msgstr "Знаходьте та читайте мальописи"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
@@ -1130,7 +1130,7 @@ msgstr ""
 "Читач манґи, вебтунів та коміксів\n"
 "\n"
 "👉 Ніколи не забувайте, що ви можете підтримати авторів,\n"
-"купуючи офіційні комікси, коли вони\n"
+"купуйте офіційні видання, коли вони\n"
 "доступні у вашому регіоні/мові."
 
 #: ../komikku/application.py:417
@@ -1412,7 +1412,7 @@ msgstr "На комп'ютері"
 msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
-msgstr ""
+msgstr "Щоб локальні мальописи працювали, потрібна певна структура папок."
 
 #: ../komikku/explorer/common.py:270
 msgid ""
@@ -1438,7 +1438,7 @@ msgstr "Відкрити локальну теку"
 #: ../komikku/explorer/common.py:284 ../komikku/explorer/common.py:286
 #: ../komikku/explorer/common.py:302 ../komikku/explorer/common.py:305
 msgid "Content Information"
-msgstr ""
+msgstr "Інформація про вміст"
 
 #: ../komikku/explorer/common.py:291
 #, python-brace-format
@@ -1459,8 +1459,9 @@ msgid "Royalty-free, Public domain"
 msgstr "Безплатне, суспільне надбання"
 
 #: ../komikku/explorer/common.py:299 ../komikku/explorer/common.py:310
+#, fuzzy
 msgid "Copyrighted works"
-msgstr ""
+msgstr "Захищається авторським правом"
 
 #: ../komikku/explorer/common.py:309
 msgid "Use with caution!"
@@ -1503,7 +1504,7 @@ msgid ""
 msgstr ""
 "Крім того, ви можете шукати конкретні мальописи за допомогою синтаксису:\n"
 "\n"
-"<b>id:ID з URL коміксу</b>"
+"<b>id:ID з URL мальопису</b>"
 
 #: ../komikku/explorer/search/__init__.py:412
 msgid "Global Search"
@@ -2498,8 +2499,7 @@ msgstr "Власно розміщена цифрова бібліотека"
 
 #: ../komikku/servers/local/__init__.py:346
 msgid "Comics stored locally as archives in CBZ/CBR/CBT or PDF formats"
-msgstr ""
-"Комікси, що зберігаються локально як архіви у форматах CBZ/CBR/CBT або PDF"
+msgstr "Мальописи, збережені локально у форматах CBZ/CBR/CBT або PDF"
 
 #: ../komikku/servers/mangaball/__init__.py:71
 #: ../komikku/servers/weebdex/__init__.py:73

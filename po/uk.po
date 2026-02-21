@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-20 17:09+0000\n"
+"PO-Revision-Date: 2026-02-22 16:09+0000\n"
 "Last-Translator: Димко <Term0@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -976,48 +976,41 @@ msgid "Reader"
 msgstr "Читач"
 
 #: ../data/ui/shortcuts.blp:75
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
 msgstr "Наступна сторінка"
 
 #: ../data/ui/shortcuts.blp:81
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr "Перейти на праву сторінку"
+msgstr "На праву сторінку"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr "Перейти на ліву сторінку"
+msgstr "На ліву сторінку"
 
 #: ../data/ui/shortcuts.blp:93
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
 msgstr "Гортати вниз"
 
 #: ../data/ui/shortcuts.blp:99
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
 msgstr "Гортати вгору"
 
 #: ../data/ui/shortcuts.blp:107
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom In"
 msgstr "Збільшити"
 
 #: ../data/ui/shortcuts.blp:112
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
 #: ../data/ui/shortcuts.blp:117
-#, fuzzy
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
 msgstr "Скинути масштаб"
@@ -1189,7 +1182,6 @@ msgid "Clear?"
 msgstr "Очистити?"
 
 #: ../komikku/card/__init__.py:225
-#, fuzzy
 msgid "Are you sure you want to clear all chapters?"
 msgstr "Впевнені, що хочете видалити всі розділи?"
 
@@ -1443,10 +1435,10 @@ msgstr "Інформація про вміст"
 #: ../komikku/explorer/common.py:291
 #, python-brace-format
 msgid "Type: {0}"
-msgstr ""
+msgstr "Вид: {0}"
 
 #: ../komikku/explorer/common.py:294
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
@@ -1459,16 +1451,14 @@ msgid "Royalty-free, Public domain"
 msgstr "Безплатне, суспільне надбання"
 
 #: ../komikku/explorer/common.py:299 ../komikku/explorer/common.py:310
-#, fuzzy
 msgid "Copyrighted works"
 msgstr "Захищається авторським правом"
 
 #: ../komikku/explorer/common.py:309
 msgid "Use with caution!"
-msgstr ""
+msgstr "Користуватися обережно!"
 
 #: ../komikku/explorer/common.py:312
-#, fuzzy
 msgid "Licensed/Published and/or Unlicensed works"
 msgstr "Ліцензовані/опубліковані та/або неліцензовані твори"
 
@@ -1879,7 +1869,6 @@ msgstr "Повторити"
 #: ../komikku/servers/threepanelsoul/__init__.py:18
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
-#, fuzzy
 msgid "Self-publishing"
 msgstr "Самвидав"
 

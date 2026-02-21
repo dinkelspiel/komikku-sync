@@ -1,23 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Komikku package.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2023, 2024, 2025.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2023, 2024, 2025, 2026.
 # Ricky Tigg <ricky.tigg@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.12.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2025-12-14 09:00+0000\n"
+"PO-Revision-Date: 2026-02-22 16:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/komikku/main/fi/"
-">\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/komikku/main/fi/>"
+"\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -893,7 +893,7 @@ msgstr "Takaisin"
 
 #: ../data/ui/reader.blp:31
 msgid "Toggle Fullscreen Mode"
-msgstr "Koko näytön tila päälle/pois"
+msgstr "Koko näytön tila päällä/pois"
 
 #: ../data/ui/shortcuts.blp:10
 msgctxt "Shortcut window description"
@@ -908,7 +908,7 @@ msgstr "Avaa asetukset"
 #: ../data/ui/shortcuts.blp:18
 msgctxt "Shortcut window description"
 msgid "Toggle Fullscreen Mode"
-msgstr "Koko näytön tila päälle/pois"
+msgstr "Koko näytön tila päällä/pois"
 
 #: ../data/ui/shortcuts.blp:23
 msgctxt "Shortcut window description"

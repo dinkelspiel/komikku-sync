@@ -13,8 +13,8 @@ class Noromax(MangaStream):
     name_re_sub = r'Bahasa Indonesia'
     series_name = 'manga'
 
-    base_url = 'https://noromax01.my.id'
-    logo_url = 'https://i0.wp.com/noromax01.my.id/wp-content/uploads/2025/02/cropped-Untitled-1-300x300.png'
+    base_url = 'https://noromax02.my.id'
+    logo_url = base_url + '/wp-content/uploads/2026/02/cropped-Untitled-1-150x150.png'
 
     authors_selector = '.infox .fmed:-soup-contains("Artist") span, .infox .fmed:-soup-contains("Author") span'
     genres_selector = '.infox .mgen a'

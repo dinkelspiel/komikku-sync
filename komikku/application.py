@@ -86,7 +86,7 @@ class Application(Adw.Application):
         if not self.window:
             self.window = ApplicationWindow(application=self, title='Komikku', icon_name=self.application_id)
 
-        self.window.present()
+        self.window.do_present()
 
     def do_command_line(self, command_line):
         self.do_activate()
@@ -132,6 +132,7 @@ class Application(Adw.Application):
 class ApplicationWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'ApplicationWindow'
 
+    maximized_state = False
     network_available = False
     last_navigation_action = None
     external_servers_modules_update_at_startup_done = False
@@ -274,7 +275,6 @@ class ApplicationWindow(Adw.ApplicationWindow):
         self.connect('notify::default-width', self.on_resize)
         self.connect('notify::default-height', self.on_resize)
         self.connect('notify::fullscreened', self.on_resize)
-        self.connect('notify::maximized', self.on_resize)
         self.connect('close-request', self.quit)
 
         self.navigationview.connect('popped', self.on_navigation_popped)
@@ -314,6 +314,12 @@ class ApplicationWindow(Adw.ApplicationWindow):
         Adw.StyleManager.get_default().connect('notify::accent-color', lambda _sm, _p: self.init_accent_colors())
 
         GLib.idle_add(self.library.populate)
+
+    def do_present(self):
+        self.present()
+
+        # Detect maximized/unmaximized state changes
+        self.get_native().get_surface().connect('notify::state', self.on_state_changed)
 
     def enter_search_mode(self, _action, _param):
         if self.page == 'library':
@@ -472,23 +478,7 @@ available in your region/language."""))
         self.preferences.show()
 
     def on_resize(self, _window, allocation):
-        def on_maximized():
-            # Gtk.Window::maximized (idem with Gdk.Toplevel:state) event is unreliable because it's emitted too earlier
-            # We detect that maximization is effective by comparing monitor size and window size
-            scale_factor = self.get_native().get_surface().get_scale()
-            monitor_width = self.monitor.props.geometry.width / scale_factor
-            if self.get_width() < monitor_width and self.is_maximized():
-                return True
-
-            do_resize()
-
-        def do_resize():
-            self.library.on_resize()
-
-        if allocation.name == 'maximized':
-            GLib.idle_add(on_maximized)
-        else:
-            do_resize()
+        self.library.on_resize()
 
     def on_shortcuts_menu_clicked(self, _action, _param):
         builder = Gtk.Builder()
@@ -496,6 +486,16 @@ available in your region/language."""))
 
         dialog = builder.get_object('shortcuts_dialog')
         dialog.present(self)
+
+    def on_state_changed(self, surface, _param):
+        # Detect maximized/unmaximized
+        # Only reliable method found to detect maximized/unmaximized state changes in both X11 and Wayland
+        # Gtk.Window::maximized event is unreliable in X11 because it's emitted too earlier
+        maximized_state = surface.props.state & Gdk.ToplevelState.MAXIMIZED == Gdk.ToplevelState.MAXIMIZED
+
+        if self.maximized_state != maximized_state:
+            self.maximized_state = maximized_state
+            self.library.on_resize()
 
     def open_dialog(self, heading, body=None, child=None, confirm_label=None, confirm_callback=None, confirm_appearance=None, cancel_label=None, cancel_callback=None):
         def on_response(dialog, response_id):

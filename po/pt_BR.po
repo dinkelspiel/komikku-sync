@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: Komikku\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-12 03:09+0000\n"
-"Last-Translator: Beruto666 <joseeduardo.mourasilva@gmail.com>\n"
+"PO-Revision-Date: 2026-02-25 01:09+0000\n"
+"Last-Translator: Lucas Loura <oliverloura2020@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "komikku/main/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -67,6 +67,8 @@ msgstr "Leitura online e offline de dezenas de servidores"
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Suporte para séries armazenadas localmente (em formatos CBZ/CBR/CBT, EPUB e "
+"PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -982,42 +984,42 @@ msgstr "Leitor"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Ir para a Próxima Página"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Ir para a Página Direita"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Ir para a Página Esquerda"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Rolar para Baixo"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Rolar para Cima"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Ampliar"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Reduzir"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Redefinir zoom"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1183,7 +1185,7 @@ msgstr "Limpar?"
 
 #: ../komikku/card/__init__.py:225
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "Tem certeza que deseja limpar todos os capítulos?"
 
 #: ../komikku/card/__init__.py:226 ../komikku/card/chapters_list.py:735
 #: ../komikku/preferences/__init__.py:156
@@ -1404,21 +1406,27 @@ msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr ""
+"É necessária uma estrutura de pastas específica para que os quadrinhos "
+"locais sejam processadas corretamente."
 
 #: ../komikku/explorer/common.py:270
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"Cada quadrinho deve ter sua própria pasta, que deve conter os capítulos/"
+"volumes como arquivos compactados nos formatos CBZ, CBR, CBT, EPUB ou PDF."
 
 #: ../komikku/explorer/common.py:271
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "O nome da pasta será usado como nome do quadrinhos."
 
 #: ../komikku/explorer/common.py:272
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
+"NOTA: A ferramenta de linha de comando 'unrar' ou 'unar' é necessária para "
+"arquivos CBR."
 
 #: ../komikku/explorer/common.py:278
 msgid "Open local folder"
@@ -1551,6 +1559,7 @@ msgstr "Outros"
 msgid ""
 "It appears that you have not yet defined any server languages in Preferences."
 msgstr ""
+"Parece que você ainda não definiu nenhum idioma de servidor nas Preferências."
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
@@ -1890,7 +1899,7 @@ msgstr "Auto-publicação"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr ""
+msgstr "Webcomic"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
@@ -2405,7 +2414,7 @@ msgstr "Ocultar Conteúdo NSFW das listas de populares, recentes e de pesquisa"
 #: ../komikku/servers/dbmultiverse/__init__.py:53
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Webcomic de Fã"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"

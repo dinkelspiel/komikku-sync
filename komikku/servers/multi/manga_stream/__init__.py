@@ -14,6 +14,7 @@
 # Manga Koleji [TR]
 # Neko Scans [ES]
 # Noromax [ID]
+# Point Zero Toons [pt_BR]
 # Ragna Scan [ES] (Disabled)
 # Raiki Scan [ES]
 # Raw Manga [JA] (Disabled)
@@ -151,6 +152,7 @@ class MangaStream(Server):
                 'en curso',  # es
                 'en cours',  # fr
                 'ativo',  # pt
+                'em andamento',  # pt_BR
                 'devam ediyor',  # tr
             )
             if any(re.findall('|'.join(labels), label, re.IGNORECASE)):
@@ -184,6 +186,7 @@ class MangaStream(Server):
                 'dropped',
                 'durduruldu',  # tr
                 'ara verildi'  # tr
+                'cancelado',  # pt_BR
             )
             if any(re.findall('|'.join(labels), label, re.IGNORECASE)):
                 return 'suspended'

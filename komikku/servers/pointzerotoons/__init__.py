@@ -10,6 +10,8 @@ class Pointzerotoons(MangaStream):
     name = 'Point Zero Toons'
     lang = 'pt_BR'
 
+    date_format = '%d.%m.%Y'
+
     base_url = 'https://kitsuneyako.com'
     logo_url = base_url + '/wp-content/uploads/2026/01/cropped-Imagem-do-WhatsApp-de-2025-10-18-as-12.15.42_53866798-32x32.jpg'
 

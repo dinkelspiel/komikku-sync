@@ -260,6 +260,7 @@ def get_server_module_name_by_id(id):
 
 
 def get_servers_list(include_disabled=False, order_by=('lang', 'name')):
+    count = 0
     servers = []
     for module in get_servers_modules():
         for _name, obj in dict(inspect.getmembers(module)).items():
@@ -271,25 +272,28 @@ def get_servers_list(include_disabled=False, order_by=('lang', 'name')):
             if not include_disabled and obj.status == 'disabled':
                 continue
 
+            count += 1
             if inspect.isclass(obj):
                 logo_path = os.path.join(get_cached_logos_dir(), 'servers', get_server_main_id_by_id(obj.id) + '.png')
 
-                servers.append(dict(
-                    id=obj.id,
-                    name=obj.name,
-                    content=obj.content,
-                    description=obj.description,
-                    lang=obj.lang,
-                    base_url=obj.base_url,
-                    has_login=obj.has_login,
-                    is_nsfw=obj.is_nsfw,
-                    is_nsfw_only=obj.is_nsfw_only,
-                    logo_path=logo_path if os.path.exists(logo_path) else None,
-                    logo_url=obj.logo_url,
-                    module=module,
-                    params=obj.params,
-                    class_name=get_server_class_name_by_id(obj.id),
-                ))
+                servers.append({
+                    'id': obj.id,
+                    'name': obj.name,
+                    'content': obj.content,
+                    'description': obj.description,
+                    'lang': obj.lang,
+                    'base_url': obj.base_url,
+                    'has_login': obj.has_login,
+                    'is_nsfw': obj.is_nsfw,
+                    'is_nsfw_only': obj.is_nsfw_only,
+                    'logo_path': logo_path if os.path.exists(logo_path) else None,
+                    'logo_url': obj.logo_url,
+                    'module': module,
+                    'params': obj.params,
+                    'class_name': get_server_class_name_by_id(obj.id),
+                })
+
+    logger.info('Found %d servers', count)
 
     return sorted(servers, key=itemgetter(*order_by))
 
@@ -318,7 +322,7 @@ def get_servers_modules():
             count += 1
 
         if count > 0:
-            logger.info('Import {0} servers modules from external folder: {1}'.format(count, servers_path))
+            logger.info('Import %d server modules from external folder %s', count, servers_path)
 
         return count
 
@@ -334,7 +338,7 @@ def get_servers_modules():
             count += 1
 
         if count > 0:
-            logger.info('Import {0} servers modules from internal folder'.format(count))
+            logger.info('Import %d server modules from internal folder', count)
 
         return count
 
@@ -445,7 +449,7 @@ def parse_nextjs_hydration(soup, keyword, key=None):
         try:
             data = json.loads(json.loads(f'"{line}"'))
         except Exception as e:
-            logger.debug(f'ERROR: {line}')
+            logger.debug('ERROR: %s', line)
             logger.debug(e)
         break
 
@@ -711,12 +715,12 @@ def unscramble_image_rc4(image, key, piece_size):
     pieces = []
     for j in range(math.ceil(image.height / piece_size)):
         for i in range(math.ceil(image.width / piece_size)):
-            pieces.append(dict(
-                x=piece_size * i,
-                y=piece_size * j,
-                w=min(piece_size, image.width - piece_size * i),
-                h=min(piece_size, image.height - piece_size * j)
-            ))
+            pieces.append({
+                'x': piece_size * i,
+                'y': piece_size * j,
+                'w': min(piece_size, image.width - piece_size * i),
+                'h': min(piece_size, image.height - piece_size * j)
+            })
 
     groups = {}
     for k, v in itertools.groupby(pieces, key=lambda x: x['w'] << 16 | x['h']):

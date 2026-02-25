@@ -3,6 +3,8 @@
 # Author: GrownNed <grownned@gmail.com>
 # Author: valos <vfebvre@easter-eggs.com>
 
+import uuid
+
 try:
     # For some reasons, under flatpak sandbox, HTTP requests return 403 errors!
     # Only solution found, use curl_cffi (JA3/TLS and HTTP2 fingerprints impersonation) in place of requests
@@ -26,9 +28,9 @@ class Mangalib(Server):
 
     base_url = 'https://mangalib.org'
     logo_url = base_url + '/static/images/logo/ml/favicon.ico?529e41ba742f20a52986d0dea3e6ab1b'
-    search_url = base_url + '/ru/catalog'
     manga_url = base_url + '/ru/manga/{0}'
-    api_base_url = 'https://api2.mangalib.me/api'
+    api_base_url = 'https://api.cdnlibs.org/api'
+    api_search_url = api_base_url + '/manga'
     api_manga_url = api_base_url + '/manga/{0}'
     api_chapters_url = api_base_url + '/manga/{0}/chapters'
     api_chapter_url = api_base_url + '/manga/{0}/chapter'
@@ -38,8 +40,10 @@ class Mangalib(Server):
         'Accept': '*/*',
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3',
+        'Client-Time-Zone': 'Atlantic/Reykjavik',
         'Content-Type': 'application/json',
         'Referer': f'{base_url}/',
+        'Site-Id': 1,
     }
 
     def __init__(self):
@@ -182,7 +186,12 @@ class Mangalib(Server):
         """
         Returns chapter page scan (image) content
         """
-        r = self.session_get(self.image_base_url + page['image'], headers={'Referer': f'{self.base_url}/'})
+        r = self.session_get(
+            self.image_base_url + page['image'],
+            headers={
+                'Referer': f'{self.base_url}/'
+            }
+        )
         if r.status_code != 200:
             return None
 
@@ -215,9 +224,13 @@ class Mangalib(Server):
         return self.search('', orderby='populars')
 
     def search(self, term, orderby=None):
-        params = {'fields[]': ['rate', 'rate_avg', 'userBookmark'], 'site_id[]': 1}
+        params = {
+            'fields[]': ['rate', 'rate_avg', 'userBookmark'],
+            'seed': uuid.uuid1().hex,
+            'site_id[]': 1,
+        }
         r = self.session_get(
-            'https://api2.mangalib.me/api/manga',
+            self.api_search_url,
             params=params,
             headers=self.api_headers,
         )
@@ -240,7 +253,7 @@ class Mangalib(Server):
             })
 
         r = self.session_get(
-            'https://api2.mangalib.me/api/manga',
+            self.api_search_url,
             params=params,
             headers=self.api_headers,
         )

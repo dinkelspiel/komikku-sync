@@ -8,21 +8,22 @@
 # pasquale ruotolo <pachiruo@gmail.com>, 2025.
 # Riccardo Luise <vvvienna@proton.me>, 2025.
 # cas9 <cas9@users.noreply.hosted.weblate.org>, 2025, 2026.
+# Giulia <giuliachen6562@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.25.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-01-05 16:43+0000\n"
-"Last-Translator: cas9 <cas9@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/komikku/main/it/"
-">\n"
+"PO-Revision-Date: 2026-02-26 21:09+0000\n"
+"Last-Translator: Giulia <giuliachen6562@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/komikku/main/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -30,7 +31,7 @@ msgstr "@prettyname@"
 
 #: ../data/info.febvre.Komikku.desktop.in:3
 msgid "@description@"
-msgstr ""
+msgstr "@descrizione@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
@@ -50,11 +51,11 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
-msgstr "Perché adorerai Komikku?"
+msgstr "Perché amerai Komikku?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr "Leggi online e offline da dozzine di server"
+msgstr "Lettura online e offline da decine di server"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
@@ -91,7 +92,7 @@ msgstr "Aggiornamento automatico delle serie"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr "Scaricamento automatico dei nuovi capitoli"
+msgstr "Download automatico dei nuovi capitoli"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
@@ -99,7 +100,7 @@ msgstr "Cronologia di lettura"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:26
 msgid "Light and dark themes"
-msgstr "Tema chiaro e scuro"
+msgstr "Temi chiari e scuri"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
@@ -151,7 +152,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
-msgstr "Pagina della Libreria"
+msgstr "Pagina della libreria"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:66
 msgid "The Library page with the category sidebar open"
@@ -336,11 +337,11 @@ msgstr "Ordine dei capitoli"
 
 #: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
-msgstr "⬆ Per sorgente"
+msgstr "⬆ Per fonte"
 
 #: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
-msgstr "⬇ Per sorgente"
+msgstr "⬇ Per fonte"
 
 #: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
@@ -970,7 +971,7 @@ msgstr "Lettore"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Vai alla pagina seguente"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
@@ -985,22 +986,22 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Scorri in basso"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Scorri in alto"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Rimpicciolire"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Ingrandire"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
@@ -1295,7 +1296,7 @@ msgstr "Capitolo"
 #: ../komikku/card/tracking.py:253 ../komikku/categories_editor.py:78
 #: ../komikku/library/__init__.py:382
 msgid "Delete?"
-msgstr "Cancellare?"
+msgstr "Eliminare?"
 
 #: ../komikku/card/tracking.py:254
 msgid "Are you sure you want to cancel tracking?"
@@ -1304,7 +1305,7 @@ msgstr "Vuoi eliminare il tracciamento?"
 #: ../komikku/card/tracking.py:255 ../komikku/categories_editor.py:80
 #: ../komikku/categories_editor.py:179 ../komikku/library/__init__.py:384
 msgid "Delete"
-msgstr "Cancella"
+msgstr "Elimina"
 
 #: ../komikku/card/tracking.py:359 ../komikku/preferences/trackers.py:42
 msgid "Connection is expired"
@@ -1426,19 +1427,19 @@ msgstr ""
 
 #: ../komikku/explorer/common.py:299 ../komikku/explorer/common.py:310
 msgid "Copyrighted works"
-msgstr ""
+msgstr "Opere con copyright"
 
 #: ../komikku/explorer/common.py:309
 msgid "Use with caution!"
-msgstr ""
+msgstr "Usare con cautela!"
 
 #: ../komikku/explorer/common.py:312
 msgid "Licensed/Published and/or Unlicensed works"
-msgstr ""
+msgstr "Opere in licenza/pubblicate e/o senza licenza"
 
 #: ../komikku/explorer/common.py:313
 msgid "It may be partially or totally illegal"
-msgstr ""
+msgstr "Potrebbe essere parzialmente o totalmente illegale"
 
 #: ../komikku/explorer/common.py:328
 msgid "Toggle pinned status"
@@ -1842,7 +1843,7 @@ msgstr "Riprova"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Self-publishing"
-msgstr ""
+msgstr "Auto-pubblicato"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -1863,7 +1864,7 @@ msgstr ""
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Piattaforma per opere autopubblicate"
 
 #: ../komikku/servers/asurascans/__init__.py:36
 #: ../komikku/servers/comix/__init__.py:55
@@ -1993,7 +1994,7 @@ msgstr "Valutazione"
 #: ../komikku/servers/mangadex/__init__.py:59
 #: ../komikku/servers/weebdex/__init__.py:48
 msgid "Filter by Content Ratings"
-msgstr ""
+msgstr "Filtra per valutazione del contenuto"
 
 #: ../komikku/servers/comick/__init__.py:69
 #: ../komikku/servers/mangadex/__init__.py:62
@@ -2024,7 +2025,7 @@ msgstr "Letteratura erotica"
 #: ../komikku/servers/weebdex/__init__.py:61
 #: ../komikku/servers/zenko/__init__.py:58
 msgid "Filter by Statuses"
-msgstr ""
+msgstr "Filtra per stato"
 
 #: ../komikku/servers/comick/__init__.py:82
 #: ../komikku/servers/comix/__init__.py:47
@@ -2047,7 +2048,7 @@ msgstr "Completato"
 #: ../komikku/servers/weebcentral/__init__.py:55
 #: ../komikku/servers/weebdex/__init__.py:67
 msgid "Canceled"
-msgstr ""
+msgstr "Cancellato"
 
 #: ../komikku/servers/comick/__init__.py:84
 msgid "Paused"
@@ -2196,7 +2197,7 @@ msgstr ""
 
 #: ../komikku/servers/comick/__init__.py:148
 msgid "User Created"
-msgstr ""
+msgstr "Utente creato"
 
 #: ../komikku/servers/comick/__init__.py:155
 #: ../komikku/servers/mangadex/__init__.py:118
@@ -2325,12 +2326,12 @@ msgstr "Sport"
 #: ../komikku/servers/comick/__init__.py:183
 #: ../komikku/servers/mangadex/__init__.py:142
 msgid "Superhero"
-msgstr ""
+msgstr "Supereroi"
 
 #: ../komikku/servers/comick/__init__.py:184
 #: ../komikku/servers/mangadex/__init__.py:143
 msgid "Thriller"
-msgstr ""
+msgstr "Thriller"
 
 #: ../komikku/servers/comick/__init__.py:185
 #: ../komikku/servers/mangadex/__init__.py:144
@@ -2345,12 +2346,12 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:187
 #: ../komikku/servers/mangaball/__init__.py:82
 msgid "Yaoi"
-msgstr ""
+msgstr "Yaoi"
 
 #: ../komikku/servers/comick/__init__.py:188
 #: ../komikku/servers/mangaball/__init__.py:81
 msgid "Yuri"
-msgstr ""
+msgstr "Yuri"
 
 #: ../komikku/servers/comix/__init__.py:56
 #: ../komikku/servers/dynasty/__init__.py:41
@@ -2477,7 +2478,7 @@ msgstr "Qualsiasi"
 
 #: ../komikku/servers/mangaball/__init__.py:89
 msgid "Filter by Status"
-msgstr ""
+msgstr "Filtra per stato"
 
 #: ../komikku/servers/mangadex/__init__.py:65
 #: ../komikku/servers/weebdex/__init__.py:54
@@ -2610,11 +2611,11 @@ msgstr ""
 
 #: ../komikku/servers/zenko/__init__.py:45
 msgid "Age Restriction"
-msgstr ""
+msgstr "Restrizione età"
 
 #: ../komikku/servers/zenko/__init__.py:46
 msgid "Filter by Age Restrictions"
-msgstr ""
+msgstr "Filtra per restrizione età"
 
 #: ../komikku/servers/zenko/__init__.py:73
 msgid "Manga UA"
@@ -2704,11 +2705,11 @@ msgstr "Nessuna connessione a internet, timeout scaduto o server offline"
 
 #: ../komikku/webview.py:441
 msgid "Please wait…"
-msgstr "Per favore aspetta…"
+msgstr "Si prega di attendere…"
 
 #: ../komikku/webview.py:496
 msgid "Please complete CAPTCHA"
-msgstr "Completare il CAPTCHA"
+msgstr "Si prega di completare il CAPTCHA"
 
 #~ msgid "Support for locally stored series (in CBZ/CBR/CBT or PDF formats)"
 #~ msgstr ""

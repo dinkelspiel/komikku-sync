@@ -5,13 +5,14 @@
 # PaneradFisk <andre.bergvall@icloud.com>, 2024.
 # Willem Dinkelspiel <mail@keii.dev>, 2025.
 # Daniel Wiik <d.wiik@outlook.com>, 2026.
+# Valéry Febvre <vfebvre@easter-eggs.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.47.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-02-22 16:09+0000\n"
-"Last-Translator: Daniel Wiik <d.wiik@outlook.com>\n"
+"PO-Revision-Date: 2026-02-27 14:01+0000\n"
+"Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/komikku/main/sv/>"
 "\n"
 "Language: sv\n"
@@ -37,7 +38,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr "Upptäck och läs manga & serier"
+msgstr "Upptäck och läs manga &amp; serier"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""

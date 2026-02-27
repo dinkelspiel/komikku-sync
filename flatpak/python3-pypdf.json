@@ -7,8 +7,8 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/38/99/3147435e15ccd97c0451efc3d13495dc22602e9887f81e64f1b135bae821/pypdf-6.4.2-py3-none-any.whl",
-            "sha256": "014dcff867fd99fc0b6fc90ed1f7e1347ef2317ae038a489c2caa64106d268f4"
+            "url": "https://files.pythonhosted.org/packages/b0/90/3308a9b8b46c1424181fdf3f4580d2b423c5471425799e7fc62f92d183f4/pypdf-6.7.3-py3-none-any.whl",
+            "sha256": "cd25ac508f20b554a9fafd825186e3ba29591a69b78c156783c5d8a2d63a1c0a"
         }
     ]
 }

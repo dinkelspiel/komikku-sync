@@ -114,6 +114,21 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.104.0" date="2026-02-27">
+            <description translate="no">
+                <ul>
+                    <li>Improved detection of window maximized state changes</li>
+                    <li>[Card] Added `Clear` action in menu</li>
+                    <li>[Reader] Added support for JPEG XL images</li>
+                    <li>[Servers] Added Point Zero Toons (pt_BR)</li>
+                    <li>[Servers] MangaLib (RU): Update</li>
+                    <li>[Servers] Noromax (ID): Update</li>
+                    <li>[Servers] Raijin Scan (FR): Update</li>
+                    <li>[L10n] Updated French, Italian, Portuguese (Brazil), Russian, Swedish, Turkish, Ukrainian and Vietnamese translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.103.0" date="2026-02-13">
             <description translate="no">
                 <ul>

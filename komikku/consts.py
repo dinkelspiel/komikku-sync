@@ -103,6 +103,7 @@ CREDITS = dict(
         'pasquale ruotolo (Italian)',
         'Riccardo Luise (Italian)',
         'cas9 (Italian)',
+        'Giulia (Italian)',
         'Flynn (Cornish)',
         'Velyvis (Lithuanian)',
         'Lili Kurek (Polish)',
@@ -124,6 +125,7 @@ CREDITS = dict(
         'Jesper (Swedish)',
         'PaneradFisk (Swedish)',
         'Willem Dinkelspiel (Swedish)',
+        'Daniel Wiik (Swedish)',
         'தமிழ்நேரம் (Tamil)',
         'Ege Çelikçi (Turkish)',
         'Sabri Ünal (Turkish)',
@@ -135,6 +137,7 @@ CREDITS = dict(
         'DXCVII (Ukrainian)',
         'Bezruchenko Simon (Ukrainian)',
         'Максим Горпиніч (Ukrainian)',
+        'Димко (Ukrainian)',
         'niyaki hayyashi (Vietnamese)',
         'Loc Huynh (Vietnamese)',
     ),
@@ -146,12 +149,14 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[In-app notifications] Fixed incorrect positioning of the message box</li>
-    <li>[Reader] Webtoon mode: Added keyboard/mouse zoom</li>
-    <li>[Servers] DocTruyen3Q (VI): Update</li>
-    <li>[Servers] Dragon Ball Multiverse: Added 17 Webcomics and 9 languages</li>
-    <li>[Servers] MangaReader(to): Disabled</li>
-    <li>[L10n] Updated French, Portuguese (Brazil) and Vietnamese translations</li>
+    <li>Improved detection of window maximized state changes</li>
+    <li>[Card] Added `Clear` action in menu</li>
+    <li>[Reader] Added support for JPEG XL images</li>
+    <li>[Servers] Added Point Zero Toons (pt_BR)</li>
+    <li>[Servers] MangaLib (RU): Update</li>
+    <li>[Servers] Noromax (ID): Update</li>
+    <li>[Servers] Raijin Scan (FR): Update</li>
+    <li>[L10n] Updated French, Italian, Portuguese (Brazil), Russian, Swedish, Turkish, Ukrainian and Vietnamese translations</li>
 </ul>
 <p>Happy reading.</p>
 """

@@ -8,21 +8,22 @@
 # Sabri Ünal <yakushabb@gmail.com>, 2024.
 # Efe Akın <efeakin1122@gmail.com>, 2026.
 # Valéry Febvre <vfebvre@easter-eggs.com>, 2026.
+# Ahmet <teaqaria@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-17 01:27+0100\n"
-"PO-Revision-Date: 2026-01-28 22:05+0000\n"
-"Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/"
-">\n"
+"PO-Revision-Date: 2026-02-27 13:11+0000\n"
+"Last-Translator: Ahmet <teaqaria@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/>"
+"\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -60,6 +61,8 @@ msgstr "Düzinelerce sunucudan çevrim içi ve çevrim dışı okuma"
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Yerel olarak depolanan seriler için destek (CBZ/CBR/CBT, EPUB ve PDF "
+"formatlarında)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -190,7 +193,7 @@ msgstr "Okuma geçmişi sayfası mobil biçimde"
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:404
 msgid "Got it!"
-msgstr ""
+msgstr "Anladım!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:431
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26

@@ -18,6 +18,7 @@ import traceback
 
 import gi
 from PIL import Image
+import pillow_jxl  # noqa: F401
 import magic
 import requests
 from requests.adapters import HTTPAdapter
@@ -252,7 +253,7 @@ def get_image_info(path_or_bytes):
             img = Image.open(path_or_bytes)
         else:
             img = Image.open(BytesIO(path_or_bytes))
-    except Exception as exc:
+    except Exception:
         # Pillow doesn´t support SVG images
         # Get content type to identify an image
         if isinstance(path_or_bytes, str):
@@ -268,7 +269,7 @@ def get_image_info(path_or_bytes):
                 'is_animated': False,
             }
         else:
-            logger.warning('Failed to open or identify image', exc_info=exc)
+            logger.warning('Pillow: Failed to open or identify image file (%s)', content_type)
             info = None
     else:
         info = {

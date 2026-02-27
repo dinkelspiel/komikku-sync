@@ -13,6 +13,7 @@ lxml >= 5.2.1
 natsort
 piexif
 pillow >= 11.3.0
+pillow-jxl-plugin
 PyGObject
 PyJWT >= 2.10.1
 pypdf >= 6.4.2

@@ -26,7 +26,7 @@ from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_file_mime_type
 from komikku.utils import get_data_dir
 
-IMG_EXTENSIONS = ['bmp', 'gif', 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'webp']
+IMG_EXTENSIONS = ['bmp', 'gif', 'jpg', 'jpeg', 'jxl', 'png', 'tif', 'tiff', 'webp']
 
 logger = logging.getLogger('komikku.servers.local')
 

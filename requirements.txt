@@ -6,17 +6,17 @@ beautifulsoup4
 brotli >= 1.2.0
 colorthief
 dateparser >= 1.1.6
-ebooklib
+ebooklib >= 0.20
 emoji
 keyring >= 21.6.0
 lxml >= 5.2.1
 natsort
 piexif
-pillow >= 11.3.0
+pillow >= 12.1.1
 pillow-jxl-plugin
 PyGObject
 PyJWT >= 2.10.1
-pypdf >= 6.4.2
+pypdf >= 6.7.3
 python_magic
 rarfile
 requests >= 2.32.4

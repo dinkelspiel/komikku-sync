@@ -7,9 +7,7 @@ from gettext import gettext as _
 import time
 
 from bs4 import BeautifulSoup
-import requests
 
-from komikku.consts import USER_AGENT
 from komikku.consts import DOWNLOAD_MAX_DELAY
 from komikku.servers import Server
 from komikku.servers.utils import get_soup_element_inner_text
@@ -17,6 +15,7 @@ from komikku.servers.utils import parse_nextjs_hydration
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_response_elapsed
 from komikku.utils import is_number
+from komikku.webview import CompleteChallenge
 
 SEARCH_RESULTS_PAGES = 4
 
@@ -26,6 +25,8 @@ class Comix(Server):
     name = 'Comix'
     lang = 'en'
     is_nsfw = True
+
+    has_cf = True
 
     base_url = 'https://comix.to'
     logo_url = base_url + '/icon.png?icon.530a1f27.png'
@@ -90,10 +91,9 @@ class Comix(Server):
     ]
 
     def __init__(self):
-        if self.session is None:
-            self.session = requests.Session()
-            self.session.headers.update({'User-Agent': USER_AGENT})
+        self.session = None
 
+    @CompleteChallenge()
     def get_manga_data(self, initial_data):
         """
         Returns manga data by scraping manga HTML page content and API for chapters
@@ -158,6 +158,7 @@ class Comix(Server):
 
         return data
 
+    @CompleteChallenge()
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
         Returns manga chapter data by scraping chapter HTML page content
@@ -352,17 +353,20 @@ class Comix(Server):
         """
         return self.manga_url.format(slug)
 
+    @CompleteChallenge()
     def get_latest_updates(self, statuses=None, types=None, demographics=None):
         """
         Returns latest updated mangas
         """
         return self.get_manga_list(statuses=statuses, types=types, demographics=demographics, orderby='latest')
 
+    @CompleteChallenge()
     def get_most_populars(self, statuses=None, types=None, demographics=None):
         """
         Returns most popular mangas
         """
         return self.get_manga_list(statuses=statuses, types=types, demographics=demographics, orderby='popular')
 
+    @CompleteChallenge()
     def search(self, term, statuses=None, types=None, demographics=None):
         return self.get_manga_list(term=term, statuses=statuses, types=types, demographics=demographics)

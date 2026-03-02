@@ -17,9 +17,9 @@ import subprocess
 import traceback
 
 import gi
-from PIL import Image
-import pillow_jxl  # noqa: F401
+from jxlpy import JXLImagePlugin  # noqa: F401
 import magic
+from PIL import Image
 import requests
 from requests.adapters import HTTPAdapter
 from requests.adapters import TimeoutSauce

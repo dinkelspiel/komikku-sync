@@ -109,8 +109,8 @@ class DebugInfo:
         info += '\n'
 
         info += 'Compiled against:\n'
-        info += f'- GdkPixbuf: {GdkPixbuf.PIXBUF_VERSION}\n'
         info += f'- GLib: {GLib.MAJOR_VERSION}.{GLib.MINOR_VERSION}.{GLib.MICRO_VERSION}\n'
+        info += f'- GdkPixbuf: {GdkPixbuf.PIXBUF_VERSION}\n'
         info += f'- GTK: {Gtk.MAJOR_VERSION}.{Gtk.MINOR_VERSION}.{Gtk.MICRO_VERSION}\n'
         info += f'- Adwaita: {Adw.VERSION_S}\n'
         info += f'- WebKitGTK: {WebKit.MAJOR_VERSION}.{WebKit.MINOR_VERSION}.{WebKit.MICRO_VERSION}\n'
@@ -118,7 +118,6 @@ class DebugInfo:
         info += '\n'
 
         info += 'Running against:\n'
-        info += f'- GLib: {GLib.glib_version[0]}.{GLib.glib_version[1]}.{GLib.glib_version[2]}\n'
         info += f'- GTK: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_version()}\n'
         info += f'- Adwaita: {Adw.get_major_version()}.{Adw.get_minor_version()}.{Adw.get_micro_version()}\n'
         info += f'- WebKitGTK: {WebKit.get_major_version()}.{WebKit.get_minor_version()}.{WebKit.get_micro_version()}\n'

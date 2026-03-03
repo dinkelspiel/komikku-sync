@@ -10,5 +10,5 @@ class Nightscans(HeanCMS):
     name = 'Qi Scans (Night scans)'
     lang = 'en'
 
-    base_url = 'https://qiscans.org'
-    api_url = 'https://api.qiscans.org/api'
+    base_url = 'https://qimanhwa.com'
+    api_url = 'https://api.qimanhwa.com/api'

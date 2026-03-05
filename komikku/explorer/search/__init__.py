@@ -112,7 +112,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
         defaults = get_server_default_search_filters(self.server)
         self.search_filters = deepcopy(defaults)
 
-        # Hide filter menu button in searchbar
+        # Hide filter menu button (global search only) in searchbar
         self.filters_menu_button.set_visible(False)
 
         # Show or hide filters button in headerbar

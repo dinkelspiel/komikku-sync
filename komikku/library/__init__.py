@@ -29,13 +29,13 @@ class LibraryPage(Adw.NavigationPage):
 
     left_button = Gtk.Template.Child('left_button')
     categories_togglebutton = Gtk.Template.Child('categories_togglebutton')
+    filters_button = Gtk.Template.Child('filters_button')
     title = Gtk.Template.Child('title')
     search_button = Gtk.Template.Child('search_button')
     menu_button = Gtk.Template.Child('menu_button')
 
     searchbar = Gtk.Template.Child('searchbar')
     searchbar_separator = Gtk.Template.Child('searchbar_separator')
-    search_menu_button = Gtk.Template.Child('search_menu_button')
     search_entry = Gtk.Template.Child('searchentry')
     overlaysplitview = Gtk.Template.Child('overlaysplitview')
     stack = Gtk.Template.Child('stack')
@@ -70,7 +70,6 @@ class LibraryPage(Adw.NavigationPage):
         self.window = window
         self.builder = window.builder
         self.builder.add_from_resource('/info/febvre/Komikku/ui/menu/main.xml')
-        self.builder.add_from_resource('/info/febvre/Komikku/ui/menu/library_search.xml')
         self.builder.add_from_resource('/info/febvre/Komikku/ui/menu/library_selection_mode.xml')
 
         self.selected_filters = Settings.get_default().library_selected_filters
@@ -79,14 +78,14 @@ class LibraryPage(Adw.NavigationPage):
 
         # Header bar
         self.left_button.connect('clicked', self.on_left_button_clicked)
+        self.filters_button.connect('clicked', self.on_filters_button_clicked)
+        if self.selected_filters:
+            self.filters_button.add_css_class('accent')
         self.menu_button.set_menu_model(self.builder.get_object('menu'))
         # Focus is lost after showing popover submenu (bug?)
         self.menu_button.get_popover().connect('closed', lambda _popover: self.menu_button.grab_focus())
 
         # Search
-        self.search_menu_button.set_menu_model(self.builder.get_object('menu-library-search'))
-        if self.selected_filters:
-            self.search_menu_button.add_css_class('accent')
         self.search_entry.connect('activate', self.on_search_entry_activated)
         self.search_entry.connect('changed', self.search)
         self.searchbar.bind_property(
@@ -99,6 +98,12 @@ class LibraryPage(Adw.NavigationPage):
         )
         self.searchbar.connect_entry(self.search_entry)
         self.searchbar.set_key_capture_widget(self.window)
+
+        # Filters dialog
+        self.filters_dialog = Adw.PreferencesDialog.new()
+        self.filters_dialog.set_title(_('Filters'))
+        self.filters_dialog.props.presentation_mode = Adw.DialogPresentationMode.BOTTOM_SHEET
+        self.init_filters_dialog()
 
         # Overlay split view (provide overlay sidebar)
         self.overlaysplitview.connect('notify::show-sidebar', self.on_overlaysplitview_revealed)
@@ -263,25 +268,6 @@ class LibraryPage(Adw.NavigationPage):
         history_action.connect('activate', self.open_history)
         self.window.application.add_action(history_action)
 
-        # Search menu actions
-        search_downloaded_action = Gio.SimpleAction.new_stateful(
-            'library.search.downloaded', None, GLib.Variant('b', 'downloaded' in self.selected_filters)
-        )
-        search_downloaded_action.connect('change-state', self.on_search_menu_action_changed)
-        self.window.application.add_action(search_downloaded_action)
-
-        search_unread_action = Gio.SimpleAction.new_stateful(
-            'library.search.unread', None, GLib.Variant('b', 'unread' in self.selected_filters)
-        )
-        search_unread_action.connect('change-state', self.on_search_menu_action_changed)
-        self.window.application.add_action(search_unread_action)
-
-        search_recents_action = Gio.SimpleAction.new_stateful(
-            'library.search.recents', None, GLib.Variant('b', 'recents' in self.selected_filters)
-        )
-        search_recents_action.connect('change-state', self.on_search_menu_action_changed)
-        self.window.application.add_action(search_recents_action)
-
         # ActionBar actions in selection mode
         update_selected_action = Gio.SimpleAction.new('library.update-selected', None)
         update_selected_action.connect('activate', self.update_selected)
@@ -422,6 +408,37 @@ class LibraryPage(Adw.NavigationPage):
         self.flowbox.set_selection_mode(Gtk.SelectionMode.MULTIPLE)
         self.selection_mode_actionbar.set_revealed(True)
 
+    def init_filters_dialog(self):
+        page = Adw.PreferencesPage(title=_('Filters'))
+        self.filters_dialog.add(page)
+
+        group = Adw.PreferencesGroup()
+
+        filters = {
+            'unread': {
+                'title': _('Unread'),
+                'subtitle': _('Series with unread chapters'),
+            },
+            'downloaded': {
+                'title': _('Downloaded'),
+                'subtitle': _('Series with downloaded chapters'),
+            },
+            'recents': {
+                'title': _('Recents'),
+                'subtitle': _('Series with new chapters'),
+            },
+        }
+
+        for name, filter in filters.items():
+            row = Adw.SwitchRow(title=filter['title'])
+            row.set_subtitle(filter['subtitle'])
+            row.set_use_markup(True)
+            row.set_active(name in self.selected_filters)
+            row.connect('notify::active', self.on_filter_changed, name)
+            group.add(row)
+
+        page.add(group)
+
     def leave_selection_mode(self, _param=None):
         self.selection_mode = False
         self.update_headerbar_buttons()
@@ -433,14 +450,22 @@ class LibraryPage(Adw.NavigationPage):
         self.selection_mode_actionbar.set_revealed(False)
         self.overlaysplitview.set_show_sidebar(False)
 
-    def on_left_button_clicked(self, action_or_button=None, _param=None):
-        if self.window.page != self.props.tag:
-            return
-
-        if not self.selection_mode:
-            self.window.explorer.show()
+    def on_filter_changed(self, switch, _gparam, name):
+        if switch.get_active():
+            self.selected_filters.add(name)
         else:
-            self.leave_selection_mode()
+            self.selected_filters.remove(name)
+        Settings.get_default().library_selected_filters = self.selected_filters
+
+        if self.selected_filters:
+            self.filters_button.add_css_class('accent')
+        else:
+            self.filters_button.remove_css_class('accent')
+
+        self.flowbox.invalidate_filter()
+
+    def on_filters_button_clicked(self, _button):
+        self.filters_dialog.present(self.window)
 
     def on_gesture_long_press_activated(self, _gesture, x, y):
         """Allow to enter in selection mode with a long press on a thumbnail"""
@@ -479,6 +504,15 @@ class LibraryPage(Adw.NavigationPage):
                 self.leave_selection_mode()
 
         return Gdk.EVENT_PROPAGATE
+
+    def on_left_button_clicked(self, action_or_button=None, _param=None):
+        if self.window.page != self.props.tag:
+            return
+
+        if not self.selection_mode:
+            self.window.explorer.show()
+        else:
+            self.leave_selection_mode()
 
     def on_manga_added(self, manga):
         """Called from 'Card' when user clicks on `+ Add to Library` button"""
@@ -568,24 +602,6 @@ class LibraryPage(Adw.NavigationPage):
         if thumbnail:
             self.on_manga_thumbnail_activated(None, thumbnail)
 
-    def on_search_menu_action_changed(self, action, variant):
-        value = variant.get_boolean()
-        action.set_state(GLib.Variant('b', value))
-        name = action.props.name.split('.')[-1]
-
-        if value:
-            self.selected_filters.add(name)
-        else:
-            self.selected_filters.remove(name)
-        Settings.get_default().library_selected_filters = self.selected_filters
-
-        if self.selected_filters:
-            self.search_menu_button.add_css_class('accent')
-        else:
-            self.search_menu_button.remove_css_class('accent')
-
-        self.flowbox.invalidate_filter()
-
     def on_shown(self, _page):
         if self.searchbar.get_search_mode():
             self.search_entry.grab_focus()
@@ -628,10 +644,10 @@ class LibraryPage(Adw.NavigationPage):
         self.start_page_logo_image.set_from_paintable(paintable)
 
         if len(mangas_rows) == 0:
-            # Update start page title, hide loading progress bar and show 'Discover' button
-            self.start_page_progressbar.set_visible(False)
             self.start_page_title_label.set_markup('<span weight="bold">' + _('Welcome to Komikku') + '</span>')
+            self.start_page_progressbar.set_visible(False)
             self.start_page_discover_button.set_visible(True)
+            self.filters_button.set_visible(False)
 
             self.populating = False
 
@@ -661,6 +677,7 @@ class LibraryPage(Adw.NavigationPage):
             GLib.idle_add(on_complete)
 
         def on_complete():
+            self.filters_button.set_visible(True)
             self.show_page('flowbox')
             self.populating = False
 

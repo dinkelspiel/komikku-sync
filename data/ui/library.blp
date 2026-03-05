@@ -22,6 +22,11 @@ template $LibraryPage : Adw.NavigationPage {
         icon-name: "categories-symbolic";
         tooltip-text: _("Toggle Categories Sidebar");
       }
+      Button filters_button {
+        icon-name: "filter-symbolic";
+        tooltip-text: _("Filters");
+        visible: false;
+      }
 
       title-widget: Adw.WindowTitle title {
         title: "Komikku";
@@ -69,22 +74,9 @@ template $LibraryPage : Adw.NavigationPage {
                 margin-start: 8;
                 margin-end: 8;
 
-                Box {
-                  valign: center;
+                SearchEntry searchentry {
                   hexpand: true;
-
-                  SearchEntry searchentry {
-                    hexpand: true;
-                    placeholder-text: _("Search by name, server or genre");
-                  }
-
-                  MenuButton search_menu_button {
-                    icon-name: "go-down-symbolic";
-                  }
-
-                  styles [
-                    "linked",
-                  ]
+                  placeholder-text: _("Search by name, server or genre");
                 }
 
                 styles [

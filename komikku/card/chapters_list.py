@@ -358,6 +358,7 @@ class ChaptersList:
         if len(chapters) > 0:
             self.card.toggle_resume(True)
         else:
+            self.card.window.add_notification(_('No chapters found'))
             self.card.toggle_resume(False)
 
     def refresh(self, chapters):

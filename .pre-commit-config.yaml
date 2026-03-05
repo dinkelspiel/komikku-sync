@@ -31,7 +31,7 @@ repos:
     -   id: flake8
         additional_dependencies: [flake8-pyproject, flake8-quotes]
 
--   repo: https://github.com/fsfe/reuse-tool
-    rev: v5.0.2
+-   repo: https://codeberg.org/fsfe/reuse-tool
+    rev: v6.2.0
     hooks:
     -   id: reuse

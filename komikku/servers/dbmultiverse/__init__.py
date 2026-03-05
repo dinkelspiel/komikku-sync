@@ -314,8 +314,8 @@ class Dbmultiverse_pt(Dbmultiverse):
     status_complete = 'finished'
 
 
-class Dbmultiverse_pt_BR(Dbmultiverse):
-    id = 'dbmultiverse_pt_BR'
+class Dbmultiverse_pt_br(Dbmultiverse):
+    id = 'dbmultiverse_pt_br'
     lang = 'pt_BR'
 
     status_complete = 'finalizada'
@@ -335,8 +335,8 @@ class Dbmultiverse_tr(Dbmultiverse):
     status_complete = 'finished'
 
 
-class Dbmultiverse_zh_Hans(Dbmultiverse):
-    id = 'dbmultiverse_zh_Hans'
+class Dbmultiverse_zh_hans(Dbmultiverse):
+    id = 'dbmultiverse_zh_hans'
     lang = 'zh_Hans'
 
     status_complete = 'finished'

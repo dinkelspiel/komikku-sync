@@ -40,6 +40,7 @@ class Mangadex(Server):
     api_base_url = 'https://api.mangadex.org'
     api_manga_base = api_base_url + '/manga'
     api_manga_url = api_manga_base + '/{0}'
+    api_chapters_url = api_base_url + '/manga/{0}/feed'
     api_chapter_base = api_base_url + '/chapter'
     api_chapter_url = api_chapter_base + '/{0}'
     api_author_base = api_base_url + '/author'
@@ -174,13 +175,6 @@ class Mangadex(Server):
             self.session = requests.Session()
             self.session.headers.update({'user-agent': USER_AGENT})
 
-    @staticmethod
-    def get_group_name(group_id, groups_list):
-        """Get group name from group id"""
-        matching_group = [group for group in groups_list if group['id'] == group_id]
-
-        return matching_group[0]['name']
-
     def __convert_old_slug(self, slug, type):
         # Removing this will break manga that were added before the change to the manga slug
         slug = slug.split('/')[0]
@@ -225,7 +219,7 @@ class Mangadex(Server):
         return None
 
     @lru_cache(maxsize=1)
-    def __get_chapter_json(self, chapter_slug):
+    def __get_chapter_pages(self, chapter_slug):
         r = self.session_get(self.api_server_url.format(chapter_slug))
         if r.status_code != 200:
             return None
@@ -291,7 +285,7 @@ class Mangadex(Server):
             # Fall back to english synopsis
             data['synopsis'] = attributes['description']['en']
 
-        data['chapters'] += self.resolve_chapters(data['slug'])
+        data['chapters'] += self.get_manga_chapters_data(data['slug'])
 
         return data
 
@@ -330,13 +324,67 @@ class Mangadex(Server):
 
         return data
 
+    def get_manga_chapters_data(self, manga_slug):
+        chapters = []
+        offset = 0
+
+        while True:
+            r = self.session_get(self.api_chapters_url.format(manga_slug), params={
+                'translatedLanguage[]': [self.lang_code],
+                'limit': CHAPTERS_PER_REQUEST,
+                'offset': offset,
+                'order[chapter]': 'asc',
+                'includes[]': ['scanlation_group'],
+                'includeExternalUrl': 0,
+                'contentRating[]': ['safe', 'suggestive', 'erotica', 'pornographic'],
+            })
+            if r.status_code == 204:
+                break
+            if r.status_code != 200:
+                return None
+
+            results = r.json()['data']
+
+            for chapter in results:
+                attributes = chapter['attributes']
+                if attributes.get('externalUrl') or attributes['pages'] == 0:
+                    # Skip externals and empty chapters
+                    continue
+
+                title = ''
+                if attributes['volume']:
+                    title += f'[{attributes["volume"]}] '
+                if attributes['chapter']:
+                    title += f'#{attributes["chapter"]} '
+                if attributes['title']:
+                    title += f'- {attributes["title"]}'
+
+                scanlators = [rel['attributes']['name'] for rel in chapter['relationships'] if rel['type'] == 'scanlation_group']
+
+                data = dict(
+                    slug=chapter['id'],
+                    title=title,
+                    num=attributes['chapter'],
+                    num_volume=attributes['volume'],
+                    date=convert_date_string(attributes['publishAt'].split('T')[0], format='%Y-%m-%d'),
+                    scanlators=scanlators,
+                )
+                chapters.append(data)
+
+            if len(results) < CHAPTERS_PER_REQUEST:
+                break
+
+            offset += CHAPTERS_PER_REQUEST
+
+        return chapters
+
     def get_manga_chapter_page_image(self, manga_slug, manga_name, chapter_slug, page):
         """
         Returns chapter page scan (image) content
         """
-        chapter_json = self.__get_chapter_json(chapter_slug)
+        chapter_json = self.__get_chapter_pages(chapter_slug)
         if chapter_json is None:
-            self.__get_chapter_json.cache_clear()
+            self.__get_chapter_pages.cache_clear()
             return None
 
         server_url = chapter_json['baseUrl']
@@ -357,7 +405,7 @@ class Mangadex(Server):
             }
         )
         if r.status_code != 200:
-            self.__get_chapter_json.cache_clear()
+            self.__get_chapter_pages.cache_clear()
             return None
 
         mime_type = get_buffer_mime_type(r.content)
@@ -444,60 +492,6 @@ class Mangadex(Server):
             tags_mode=tags_mode,
             orderby='populars'
         )
-
-    def resolve_chapters(self, manga_slug):
-        chapters = []
-        offset = 0
-
-        while True:
-            r = self.session_get(self.api_chapter_base, params={
-                'manga': manga_slug,
-                'translatedLanguage[]': [self.lang_code],
-                'limit': CHAPTERS_PER_REQUEST,
-                'offset': offset,
-                'order[chapter]': 'asc',
-                'includes[]': ['scanlation_group'],
-                'contentRating[]': ['safe', 'suggestive', 'erotica', 'pornographic'],
-            })
-            if r.status_code == 204:
-                break
-            if r.status_code != 200:
-                return None
-
-            results = r.json()['data']
-
-            for chapter in results:
-                attributes = chapter['attributes']
-                if attributes.get('externalUrl') or attributes['pages'] == 0:
-                    # Skip externals and empty chapters
-                    continue
-
-                title = ''
-                if attributes['volume']:
-                    title += f'[{attributes["volume"]}] '
-                if attributes['chapter']:
-                    title += f'#{attributes["chapter"]} '
-                if attributes['title']:
-                    title += f'- {attributes["title"]}'
-
-                scanlators = [rel['attributes']['name'] for rel in chapter['relationships'] if rel['type'] == 'scanlation_group']
-
-                data = dict(
-                    slug=chapter['id'],
-                    title=title,
-                    num=attributes['chapter'],
-                    num_volume=attributes['volume'],
-                    date=convert_date_string(attributes['publishAt'].split('T')[0], format='%Y-%m-%d'),
-                    scanlators=scanlators,
-                )
-                chapters.append(data)
-
-            if len(results) < CHAPTERS_PER_REQUEST:
-                break
-
-            offset += CHAPTERS_PER_REQUEST
-
-        return chapters
 
     def search(self, term, ratings=None, statuses=None, publication_demographics=None, tags=None, genres=None, tags_mode=None, orderby=None):
         params = {

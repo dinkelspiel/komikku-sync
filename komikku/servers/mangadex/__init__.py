@@ -350,7 +350,12 @@ class Mangadex(Server):
             slug = chapter_json['chapter']['data'][page['index']]
             url = self.page_image_url.format(server_url, 'data', chapter_hash, slug)
 
-        r = self.session_get(url)
+        r = self.session_get(
+            url,
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
         if r.status_code != 200:
             self.__get_chapter_json.cache_clear()
             return None

@@ -337,7 +337,7 @@ class Mangadex(Server):
                 'order[chapter]': 'asc',
                 'includes[]': ['scanlation_group'],
                 'includeExternalUrl': 0,
-                'contentRating[]': ['safe', 'suggestive', 'erotica', 'pornographic'],
+                'contentRating[]': self.get_param('ratings'),
             })
             if r.status_code == 204:
                 break

@@ -30,6 +30,8 @@ class CategoriesList:
         self.library.categories_edit_mode_ok_button.connect('clicked', self.on_edit_mode_ok_button_clicked)
         self.library.categories_edit_mode_cancel_button.connect('clicked', self.on_edit_mode_cancel_button_clicked)
 
+        self.set_togglebutton_accent()
+
     def clear(self):
         row = self.listbox.get_first_child()
         while row:
@@ -42,6 +44,8 @@ class CategoriesList:
             return
 
         Settings.get_default().selected_category = row.category.id if isinstance(row.category, Category) else row.category
+
+        self.set_togglebutton_accent()
 
         self.listbox.unselect_all()
         self.listbox.select_row(row)
@@ -181,3 +185,9 @@ class CategoriesList:
 
     def set_edit_mode(self, edit_mode):
         self.edit_mode = edit_mode
+
+    def set_togglebutton_accent(self):
+        if Settings.get_default().selected_category != CategoryVirtual.ALL:
+            self.library.categories_togglebutton.add_css_class('accent')
+        else:
+            self.library.categories_togglebutton.remove_css_class('accent')

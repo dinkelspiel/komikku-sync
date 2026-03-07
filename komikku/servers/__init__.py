@@ -251,7 +251,7 @@ class Server(BaseServer, ABC):
         """Returns param value if defined in server settings else returns param default value"""
 
         # Check param exists
-        if self.params is None:
+        if self.params is None and self.filters is None:
             logger.error('[%s] Unknown server param key `%s`', self.id, key)
             raise ServerException('Unknown server param key {0}'.format(key))
 
@@ -260,6 +260,13 @@ class Server(BaseServer, ABC):
             if param_['key'] == key:
                 param = param_
                 break
+
+        if param is None:
+            # Search param in filters
+            for filter in self.filters:
+                if filter.get('include_in_settings', False) and filter['key'] == key:
+                    param = filter
+                    break
 
         if param is None:
             logger.error('[%s] Unknown server param key `%s`', self.id, key)

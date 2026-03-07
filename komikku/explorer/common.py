@@ -21,6 +21,7 @@ from komikku.consts import LOGO_SIZE
 from komikku.consts import MISSING_IMG_RESOURCE_PATH
 from komikku.models import Settings
 from komikku.servers import LANGUAGES
+from komikku.servers.utils import get_server_main_id_by_id
 from komikku.utils import convert_and_resize_image
 from komikku.utils import CoverPicture
 from komikku.utils import html_escape
@@ -394,11 +395,19 @@ def get_server_default_search_filters(server):
     if not server.filters:
         return filters
 
+    server_settings = Settings.get_default().servers_settings.get(get_server_main_id_by_id(server.id))
+    server_params = server_settings.get('params') if server_settings else None
+
     for filter_ in server.filters:
-        if filter_['type'] == 'select' and filter_['value_type'] == 'multiple':
-            filters[filter_['key']] = [option['key'] for option in filter_['options'] if option['default']]
+        if server_params and filter_['key'] in server_params:
+            # Use default saved in server settings
+            default = server_params[filter_['key']]
+        elif filter_['type'] == 'select' and filter_['value_type'] == 'multiple':
+            default = [option['key'] for option in filter_['options'] if option['default']]
         else:
-            filters[filter_['key']] = filter_['default']
+            default = filter_['default']
+
+        filters[filter_['key']] = default
 
     return filters
 

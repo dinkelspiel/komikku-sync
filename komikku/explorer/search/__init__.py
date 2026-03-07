@@ -156,7 +156,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
             selected_position = 0
             for index, option in enumerate(filter_['options']):
                 labels.append(option['name'])
-                if option['key'] == filter_['default']:
+                if option['key'] == defaults[filter_['key']]:
                     selected_position = index
 
             row = Adw.ComboRow(title=filter_['name'], subtitle=filter_['description'])
@@ -187,7 +187,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
             for option in filter_['options']:
                 row = Adw.SwitchRow(title=option['name'])
                 row.set_use_markup(True)
-                row.set_active(option['default'])
+                row.set_active(option['key'] in defaults[filter_['key']])
                 row.connect('notify::active', on_active, option['key'])
 
                 group.add(row)
@@ -206,7 +206,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
             row = Adw.SwitchRow(title=filter_['name'])
             row.set_use_markup(True)
             row.set_subtitle(filter_['description'])
-            row.set_active(filter_['default'])
+            row.set_active(defaults[filter_['key']])
             row.connect('notify::active', on_active, filter_['key'])
 
             group.add(row)

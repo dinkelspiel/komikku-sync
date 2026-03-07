@@ -103,16 +103,20 @@ class PreferencesServerParamsSupPage(Adw.NavigationPage):
             password_entry.set_text(credential.password)
 
     def add_params_fields(self):
-        if not self.data['params']:
+        defaults = get_server_default_params(self.data)
+        if not defaults:
             return
 
         servers_settings = deepcopy(self.settings.servers_settings)
-        defaults = get_server_default_params(self.data)
 
         if self.data['main_id'] not in servers_settings:
             servers_settings[self.data['main_id']] = {'params': defaults}
         elif 'params' not in servers_settings[self.data['main_id']]:
             servers_settings[self.data['main_id']]['params'] = defaults
+        else:
+            for key, value in defaults.items():
+                if key not in servers_settings[self.data['main_id']]['params']:
+                    servers_settings[self.data['main_id']]['params'][key] = value
 
         def build_select_single(group, param):
             def on_selected(row, _param):
@@ -180,7 +184,30 @@ class PreferencesServerParamsSupPage(Adw.NavigationPage):
 
             return group
 
-        for index, param in enumerate(self.data['params']):
+        for param in self.data['params']:
+            group = Adw.PreferencesGroup()
+
+            if param['type'] == 'select':
+                if param['value_type'] == 'single':
+                    build_select_single(group, param)
+                elif param['value_type'] == 'multiple':
+                    build_select_multiple(group, param)
+                else:
+                    raise ValueError('Invalid select value_type')  # noqa: TC003
+            elif param['type'] == 'checkbox':
+                build_switch(group, param)
+            else:
+                raise ValueError('Invalid param type')  # noqa: TC003
+
+            self.page.add(group)
+
+        # Add some filters (include_in_settings key == True)
+        # Allow to define default values for server filters in Explorer (search)
+        # and to configure the server's behavior
+        for param in self.data['filters']:
+            if not param.get('include_in_settings'):
+                continue
+
             group = Adw.PreferencesGroup()
 
             if param['type'] == 'select':
@@ -333,6 +360,7 @@ class PreferencesServersSettingsSubPage(Adw.NavigationPage):
                     has_login=server_data['has_login'],
                     is_nsfw=server_data['is_nsfw'],
                     is_nsfw_only=server_data['is_nsfw_only'],
+                    filters=server_data['filters'],
                     params=server_data['params'],
                     langs=[],
                     langs_enabled=[],
@@ -447,10 +475,20 @@ class PreferencesServersSettingsSubPage(Adw.NavigationPage):
 def get_server_default_params(data):
     params = {}
 
-    if not data['params']:
+    if not data['params'] and not data['filters']:
         return params
 
     for param in data['params']:
+        if param['type'] == 'select' and param['value_type'] == 'multiple':
+            params[param['key']] = [option['key'] for option in param['options'] if option['default']]
+        else:
+            params[param['key']] = param['default']
+
+    # Add default values of filters that are included in server settings
+    for param in data['filters']:
+        if not param.get('include_in_settings'):
+            continue
+
         if param['type'] == 'select' and param['value_type'] == 'multiple':
             params[param['key']] = [option['key'] for option in param['options'] if option['default']]
         else:

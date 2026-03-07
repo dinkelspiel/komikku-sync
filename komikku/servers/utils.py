@@ -289,6 +289,7 @@ def get_servers_list(include_disabled=False, order_by=('lang', 'name')):
                     'logo_path': logo_path if os.path.exists(logo_path) else None,
                     'logo_url': obj.logo_url,
                     'module': module,
+                    'filters': obj.filters,
                     'params': obj.params,
                     'class_name': get_server_class_name_by_id(obj.id),
                 })

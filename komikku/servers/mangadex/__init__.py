@@ -64,7 +64,8 @@ class Mangadex(Server):
                 {'key': 'suggestive', 'name': _('Suggestive'), 'default': True},
                 {'key': 'erotica', 'name': _('Erotica'), 'default': False},
                 {'key': 'pornographic', 'name': _('Pornographic'), 'default': False},
-            ]
+            ],
+            'include_in_settings': True,
         },
         {
             'key': 'statuses',

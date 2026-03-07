@@ -149,14 +149,13 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>Improved detection of window maximized state changes</li>
-    <li>[Card] Added `Clear` action in menu</li>
-    <li>[Reader] Added support for JPEG XL images</li>
-    <li>[Servers] Added Point Zero Toons (pt_BR)</li>
-    <li>[Servers] MangaLib (RU): Update</li>
-    <li>[Servers] Noromax (ID): Update</li>
-    <li>[Servers] Raijin Scan (FR): Update</li>
-    <li>[L10n] Updated French, Italian, Portuguese (Brazil), Russian, Swedish, Turkish, Ukrainian and Vietnamese translations</li>
+    <li>[Library] Used a dialog for filters</li>
+    <li>[Card] Added a notification when there are no chapters</li>
+    <li>[Servers] Added zero搬运网 (ZH)</li>
+    <li>[Servers] Anime-Sama (FR): Update</li>
+    <li>[Servers] Comix (EN): Update</li>
+    <li>[Servers] MangaDex: Update</li>
+    <li>[Servers] Qi Scans (EN): Update</li>
 </ul>
 <p>Happy reading.</p>
 """

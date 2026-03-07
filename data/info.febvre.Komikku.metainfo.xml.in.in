@@ -114,6 +114,20 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="1.105.0" date="2026-03-08">
+            <description translate="no">
+                <ul>
+                    <li>[Library] Used a dialog for filters</li>
+                    <li>[Card] Added a notification when there are no chapters</li>
+                    <li>[Servers] Added zero搬运网 (ZH)</li>
+                    <li>[Servers] Anime-Sama (FR): Update</li>
+                    <li>[Servers] Comix (EN): Update</li>
+                    <li>[Servers] MangaDex: Update</li>
+                    <li>[Servers] Qi Scans (EN): Update</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.104.0" date="2026-02-27">
             <description translate="no">
                 <ul>

@@ -217,8 +217,6 @@ class HistoryPage(Adw.NavigationPage):
         else:
             self.stack.set_visible_child_name('empty')
 
-        db_conn.close()
-
     def search(self, _entry):
         for date_box in self.dates_box:
             listbox = date_box.get_last_child()

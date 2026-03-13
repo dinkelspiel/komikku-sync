@@ -502,7 +502,6 @@ class ExplorerSearchPage(Adw.NavigationPage):
             'SELECT * FROM mangas WHERE slug = ? AND server_id = ?',
             (manga_data['slug'], self.server.id)
         ).fetchone()
-        db_conn.close()
 
         if record:
             thread = threading.Thread(target=run_update, args=(self.server, record['id'], ))

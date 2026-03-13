@@ -72,7 +72,6 @@ class Downloader(GObject.GObject):
             chapters_ids.append(chapter_id)
 
         if not chapters_ids:
-            db_conn.close()
             return
 
         with db_conn:
@@ -83,8 +82,6 @@ class Downloader(GObject.GObject):
                 download = Download.get_by_chapter_id(chapter_id, db_conn=db_conn)
                 if download:
                     self.emit('download-changed', download, None)
-
-        db_conn.close()
 
     def cancel(self, chapters):
         """Cancel downloads"""
@@ -102,8 +99,6 @@ class Downloader(GObject.GObject):
 
             self.emit('download-changed', None, chapter)
 
-        db_conn.close()
-
     @if_network_available
     def start(self):
         def run(exclude_errors=False):
@@ -120,8 +115,6 @@ class Downloader(GObject.GObject):
 
             sql += ' ORDER BY m.server_id ASC, m.id ASC, d.id ASC'
             rows = db_conn.execute(sql).fetchall()
-
-            db_conn.close()
 
             if not rows or self.stop_flag:
                 self.running = False
@@ -261,8 +254,6 @@ class Downloader(GObject.GObject):
                     failures += 1
                     download.update(dict(status='error'), db_conn=db_conn)
                     GLib.idle_add(self.emit, 'download-changed', download, None)
-
-            db_conn.close()
 
             self.current_download = None
             if not self.stop_flag:
@@ -574,8 +565,6 @@ class DownloadManagerPage(Adw.NavigationPage):
         else:
             # No downloads
             self.stack.set_visible_child_name('empty')
-
-        db_conn.close()
 
     def select_all(self):
         if not self.selection_mode:

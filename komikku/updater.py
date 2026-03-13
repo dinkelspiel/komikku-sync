@@ -105,8 +105,6 @@ class Updater(GObject.GObject):
                     total_errors += 1
                     GLib.idle_add(error, manga, user_error_message)
 
-            db_conn.close()
-
             self.current_id = None
             self.running = False
             self.servers_down = []
@@ -214,7 +212,6 @@ class Updater(GObject.GObject):
         else:
             # Offline, update local manga only
             rows = db_conn.execute('SELECT * FROM mangas WHERE in_library = 1 AND server_id = "local" ORDER BY last_read DESC').fetchall()
-        db_conn.close()
 
         if rows:
             self.update_library_flag = True

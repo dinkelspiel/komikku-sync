@@ -96,8 +96,6 @@ class CategoriesList:
                 if delete_data:
                     delete_rows(db_conn, 'categories_mangas_association', delete_data)
 
-            db_conn.close()
-
             GLib.idle_add(complete)
 
         def complete():
@@ -119,7 +117,6 @@ class CategoriesList:
         nb_categorized = db_conn.execute('SELECT count(*) FROM categories_mangas_association').fetchone()[0]
 
         if not categories and self.edit_mode:
-            db_conn.close()
             return
 
         self.clear()
@@ -180,8 +177,6 @@ class CategoriesList:
         else:
             Settings.get_default().selected_category = CategoryVirtual.ALL
             self.stack.set_visible_child_name('empty')
-
-        db_conn.close()
 
     def set_edit_mode(self, edit_mode):
         self.edit_mode = edit_mode

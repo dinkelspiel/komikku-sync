@@ -239,8 +239,6 @@ class Trackers(GObject.GObject):
                     else:
                         logging.warning(f'Failed to sync tracker {id}: ID={data["id"]} name={data["name"]}')
 
-            db_conn.close()
-
         if not Settings.get_default().tracking:
             return
 

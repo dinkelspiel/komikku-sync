@@ -150,8 +150,6 @@ class BasePager:
                     self.sync_progress_with_server(chapter, index)
                     self.sync_progress_with_trackers(chapter, index)
 
-        db_conn.close()
-
         return GLib.SOURCE_REMOVE if not read_pages else GLib.SOURCE_CONTINUE
 
     def sync_progress_with_server(self, chapter, index):

@@ -341,8 +341,6 @@ class LibraryPage(Adw.NavigationPage):
             for manga in mangas:
                 manga.delete(db_conn=db_conn)
 
-            db_conn.close()
-
             # Restart Downloader & Updater
             self.window.downloader.start()
             self.window.updater.start()
@@ -518,7 +516,6 @@ class LibraryPage(Adw.NavigationPage):
         """Called from 'Card' when user clicks on `+ Add to Library` button"""
         db_conn = create_db_connection()
         nb_mangas = db_conn.execute('SELECT count(*) FROM mangas WHERE in_library = 1').fetchone()[0]
-        db_conn.close()
 
         if nb_mangas == 1:
             # Library was previously empty
@@ -638,7 +635,6 @@ class LibraryPage(Adw.NavigationPage):
         self.update_title(db_conn=db_conn)
 
         mangas_rows = db_conn.execute('SELECT id FROM mangas WHERE in_library = 1 ORDER BY last_read DESC').fetchall()
-        db_conn.close()
 
         paintable = Gdk.Texture.new_from_resource('/info/febvre/Komikku/images/logo.png')
         self.start_page_logo_image.set_from_paintable(paintable)
@@ -673,7 +669,6 @@ class LibraryPage(Adw.NavigationPage):
                 thumbnail = Thumbnail(self, Manga.get(row['id'], db_conn=db_conn), *self.thumbnails_cover_size)
                 GLib.idle_add(on_progress, thumbnail, (index + 1) / len(mangas_rows))
 
-            db_conn.close()
             GLib.idle_add(on_complete)
 
         def on_complete():
@@ -774,7 +769,6 @@ class LibraryPage(Adw.NavigationPage):
         db_conn = create_db_connection()
         with db_conn:
             res = update_rows(db_conn, 'chapters', chapters_ids, chapters_data)
-        db_conn.close()
 
         self.window.activity_indicator.set_visible(False)
 

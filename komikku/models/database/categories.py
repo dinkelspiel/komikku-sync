@@ -22,14 +22,8 @@ class Category:
     def get(cls, id_, db_conn=None):
         if db_conn is None:
             db_conn = create_db_connection()
-            close_db_conn = True
-        else:
-            close_db_conn = False
 
         row = db_conn.execute('SELECT * FROM categories WHERE id = ?', (id_,)).fetchone()
-
-        if close_db_conn:
-            db_conn.close()
 
         if row is None:
             return None
@@ -48,15 +42,12 @@ class Category:
 
         category = cls.get(id_, db_conn=db_conn) if id_ is not None else None
 
-        db_conn.close()
-
         return category
 
     @property
     def mangas(self):
         db_conn = create_db_connection()
         rows = db_conn.execute('SELECT manga_id FROM categories_mangas_association WHERE category_id = ?', (self.id,)).fetchall()
-        db_conn.close()
 
         return [row['manga_id'] for row in rows] if rows else []
 
@@ -65,8 +56,6 @@ class Category:
 
         with db_conn:
             db_conn.execute('DELETE FROM categories WHERE id = ?', (self.id, ))
-
-        db_conn.close()
 
     def update(self, data):
         """
@@ -83,8 +72,6 @@ class Category:
         db_conn = create_db_connection()
         with db_conn:
             ret = update_row(db_conn, 'categories', self.id, data)
-
-        db_conn.close()
 
         return ret
 

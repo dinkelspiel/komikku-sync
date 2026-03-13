@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import shutil
+import threading
 
 from gi.repository import Gio
 import natsort
@@ -18,6 +19,8 @@ from komikku.utils import get_data_dir
 from komikku.utils import is_flatpak
 
 logger = logging.getLogger(__name__)
+
+db_connections = threading.local()
 
 VERSION = 15
 
@@ -75,8 +78,6 @@ def backup_db():
         else:
             logger.info('[SQLite] Failed to backup DB')
 
-        db_conn.close()
-
 
 def check_db(db_conn):
     try:
@@ -113,8 +114,6 @@ def clear_cached_data(manga_in_use=None):
         else:
             db_conn.execute('DELETE FROM mangas WHERE in_library != 1')
 
-    db_conn.close()
-
 
 def collate_natsort(value1, value2):
     lst = natsort.natsorted([value1, value2], alg=natsort.ns.INT | natsort.ns.IC)
@@ -128,18 +127,42 @@ def create_db_connection(path=None):
         logger.error('[SQLite] Failed to create DB connection: invalid path %s', path)
         return None
 
-    con = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
+    con = getattr(db_connections, path, None)
+
+    needs_connect = False
     if con is None:
-        logger.error('[SQLite] Failed to create DB connection')
-        return None
+        needs_connect = True
+        logger.debug(f'[SQLite] no DB connection exists for path {path} on thread {threading.get_native_id()}, creating new one')
+    else:
+        try:
+            # Use fast query to check if the connection was closed
+            con.execute('PRAGMA user_version')
+        except sqlite3.ProgrammingError:
+            logger.warn('[SQLite] DB connection was closed, reconnecting')
+            needs_connect = True
 
-    con.row_factory = sqlite3.Row
+    if needs_connect:
+        con = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
+        if con is None:
+            logger.error('[SQLite] Failed to create DB connection')
+            return None
 
-    # Enable integrity constraint
-    con.execute('PRAGMA foreign_keys = ON')
+        con.row_factory = sqlite3.Row
 
-    # Add natural sort collation
-    con.create_collation('natsort', collate_natsort)
+        # Enable integrity constraint
+        con.execute('PRAGMA foreign_keys = ON')
+
+        # Ensure database can be accessed concurrently
+        con.execute('PRAGMA journal_mode = WAL')
+
+        # Perform less disk synchronization, safe under WAL
+        con.execute('PRAGMA synchronous = NORMAL')
+        con.execute('PRAGMA temp_store = MEMORY')
+
+        # Add natural sort collation
+        con.create_collation('natsort', collate_natsort)
+
+        setattr(db_connections, path, con)
 
     return con
 
@@ -426,8 +449,6 @@ def init_db():
         db_conn.execute('PRAGMA user_version = {0}'.format(15))
 
     logger.info('DB version {0}'.format(db_conn.execute('PRAGMA user_version').fetchone()[0]))
-
-    db_conn.close()
 
 
 def delete_rows(db_conn, table, ids):

@@ -56,8 +56,6 @@ class CategoriesList:
         else:
             self.stack.set_visible_child_name('empty')
 
-        db_conn.close()
-
     def on_category_activated(self, switch, _param, category_id):
         self.card.manga.toggle_category(category_id, switch.get_active())
 

@@ -119,8 +119,6 @@ class CategoriesEditorPage(Adw.NavigationPage):
         else:
             self.stack.set_visible_child_name('empty')
 
-        db_conn.close()
-
     def show(self):
         self.populate()
 

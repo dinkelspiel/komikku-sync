@@ -189,8 +189,6 @@ class ChaptersList:
             item.chapter = Chapter.get(item.chapter.id, db_conn=db_conn)
             item.emit_changed()
 
-        db_conn.close()
-
         self.card.refresh(unread_chapters=reset, info=True)
         self.card.window.library.refresh_on_manga_state_changed(self.card.manga)
 
@@ -402,8 +400,6 @@ class ChaptersList:
         with db_conn:
             res = update_rows(db_conn, 'chapters', chapters_ids, chapters_data)
 
-        db_conn.close()
-
         if res:
             # Then, if DB update succeeded, update chapters rows
             for item in self.list_model:
@@ -498,8 +494,6 @@ class ChaptersList:
         with db_conn:
             res = update_rows(db_conn, 'chapters', chapters_ids, chapters_data)
 
-        db_conn.close()
-
         if res:
             # Then, if DB update succeeded, update chapters rows
             def update_chapters_rows():
@@ -509,8 +503,6 @@ class ChaptersList:
                     item.chapter = Chapter.get(item.chapter.id, db_conn=db_conn)
                     item.emit_changed()
                     yield True
-
-                db_conn.close()
 
                 self.card.leave_selection_mode()
                 self.card.window.activity_indicator.set_visible(False)

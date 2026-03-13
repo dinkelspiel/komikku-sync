@@ -173,7 +173,6 @@ class WebviewPage(Adw.NavigationPage):
             # Clear cookies in SQLite DB
             if con := create_db_connection(os.path.join(get_webview_data_dir(), 'cookies.sqlite')):
                 execute_sql(con, 'DELETE FROM moz_cookies;')
-                con.close()
 
             on_finish_callback(data_manager.clear_finish(result))
 

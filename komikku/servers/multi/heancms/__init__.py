@@ -138,6 +138,7 @@ class HeanCMS(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         if images := parse_nextjs_hydration(soup, 'images', key='images'):
+            images = sorted(images, key=lambda m: m['order'])
             data = dict(
                 pages=[],
             )

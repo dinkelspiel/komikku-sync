@@ -15,7 +15,6 @@ data/ui/menu/card_selection_mode.xml
 data/ui/menu/card.xml
 data/ui/menu/download_manager.xml
 data/ui/menu/explorer_search_global_search.xml
-data/ui/menu/library_search.xml
 data/ui/menu/library_selection_mode.xml
 data/ui/menu/main.xml
 data/ui/menu/reader.xml
@@ -81,6 +80,7 @@ komikku/servers/mangatube/__init__.py
 komikku/servers/mangaworld/__init__.py
 komikku/servers/monkeyuser/__init__.py
 komikku/servers/multi/madara/__init__.py
+komikku/servers/multi/madtheme/__init__.py
 komikku/servers/multi/mangareader/__init__.py
 komikku/servers/multi/manga_stream/__init__.py
 komikku/servers/nixofnothing/__init__.py

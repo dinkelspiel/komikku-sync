@@ -8,13 +8,14 @@
 # Bezruchenko Simon <worcposj44@gmail.com>, 2024, 2025.
 # Максим Горпиніч <gorpinicmaksim0@gmail.com>, 2025.
 # Димко <Term0@ukr.net>, 2026.
+# Димко <Dymkovych@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-13 23:35+0100\n"
-"PO-Revision-Date: 2026-02-22 16:09+0000\n"
-"Last-Translator: Димко <Term0@ukr.net>\n"
+"PO-Revision-Date: 2026-03-15 00:16+0000\n"
+"Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
 "Language: uk\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -36,8 +37,7 @@ msgstr "@description@"
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 msgstr ""
-"манґа;читач;глядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;книга;електронна "
-"книга;офлайн;GTK;GNOME;"
+"манґа;читач;глядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;книга;електронна;книга;офлайн;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -1246,7 +1246,7 @@ msgstr[2] "{0} обраний"
 
 #: ../komikku/card/chapters_list.py:361
 msgid "No chapters found"
-msgstr ""
+msgstr "Розділів не знайдено"
 
 #: ../komikku/card/chapters_list.py:426 ../komikku/card/chapters_list.py:529
 msgid "Failed to update chapters reading status"
@@ -1594,7 +1594,7 @@ msgstr "Непрочитане"
 
 #: ../komikku/library/__init__.py:420
 msgid "Series with unread chapters"
-msgstr ""
+msgstr "Серія з нечитаними розділами"
 
 #: ../komikku/library/__init__.py:423
 #: ../komikku/models/database/downloads.py:20
@@ -1603,7 +1603,7 @@ msgstr "Завантажено"
 
 #: ../komikku/library/__init__.py:424
 msgid "Series with downloaded chapters"
-msgstr ""
+msgstr "Серія зі збереженими розділами"
 
 #: ../komikku/library/__init__.py:427
 msgid "Recents"
@@ -1611,7 +1611,7 @@ msgstr "Нещодавні"
 
 #: ../komikku/library/__init__.py:428
 msgid "Series with new chapters"
-msgstr ""
+msgstr "Серія з новими розділами"
 
 #: ../komikku/library/__init__.py:647
 msgid "Welcome to Komikku"

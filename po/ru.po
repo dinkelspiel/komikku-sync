@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-13 23:35+0100\n"
-"PO-Revision-Date: 2026-02-19 13:09+0000\n"
+"PO-Revision-Date: 2026-03-15 23:27+0000\n"
 "Last-Translator: Сергей <asvmail.as@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1245,7 +1245,7 @@ msgstr[2] "выбрано {0}"
 
 #: ../komikku/card/chapters_list.py:361
 msgid "No chapters found"
-msgstr ""
+msgstr "Главы не найдены"
 
 #: ../komikku/card/chapters_list.py:426 ../komikku/card/chapters_list.py:529
 msgid "Failed to update chapters reading status"
@@ -1601,7 +1601,7 @@ msgstr "Не прочитано"
 
 #: ../komikku/library/__init__.py:420
 msgid "Series with unread chapters"
-msgstr ""
+msgstr "Циклы с непрочитанными главами"
 
 #: ../komikku/library/__init__.py:423
 #: ../komikku/models/database/downloads.py:20
@@ -1610,7 +1610,7 @@ msgstr "Загружено"
 
 #: ../komikku/library/__init__.py:424
 msgid "Series with downloaded chapters"
-msgstr ""
+msgstr "Циклы с загруженными главами"
 
 #: ../komikku/library/__init__.py:427
 msgid "Recents"
@@ -1618,7 +1618,7 @@ msgstr "Недавние"
 
 #: ../komikku/library/__init__.py:428
 msgid "Series with new chapters"
-msgstr ""
+msgstr "Циклы с новыми главами"
 
 #: ../komikku/library/__init__.py:647
 msgid "Welcome to Komikku"

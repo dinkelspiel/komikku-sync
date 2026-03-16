@@ -577,10 +577,12 @@ class Pager(Adw.Bin, BasePager):
         return Gdk.EVENT_PROPAGATE
 
     def on_single_click(self, x, _y):
-        if x < self.reader.size.width / 3:
+        width, _height = self.reader.size
+
+        if x < width / 3:
             # 1st third of the page
             self.scroll_to_direction('left')
-        elif x > 2 * self.reader.size.width / 3:
+        elif x > 2 * width / 3:
             # Last third of the page
             self.scroll_to_direction('right')
         else:

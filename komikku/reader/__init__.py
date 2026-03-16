@@ -127,12 +127,13 @@ class ReaderPage(Adw.NavigationPage):
 
     @property
     def size(self):
-        size = self.window.get_allocation()
+        width = self.window.get_width()
+        height = self.window.get_height()
 
         if self.headerbar_revealer.get_child_revealed():
-            size.height -= self.get_child().get_top_bar_height()
+            height -= self.get_child().get_top_bar_height()
 
-        return size
+        return (width, height)
 
     def add_accelerators(self):
         self.window.application.set_accels_for_action('app.reader.save-page', ['<Primary>s'])

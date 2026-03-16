@@ -57,10 +57,6 @@ class Page(Gtk.Overlay):
         self.add_overlay(self.activity_indicator)
 
     @property
-    def height(self):
-        return self.get_allocation().height
-
-    @property
     def hscrollable(self):
         if self.zoomable:
             adj = self.scrolledwindow.get_hadjustment()

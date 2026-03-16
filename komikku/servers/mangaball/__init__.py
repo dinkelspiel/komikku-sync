@@ -6,13 +6,12 @@ from gettext import gettext as _
 import json
 
 from bs4 import BeautifulSoup
-import requests
 
-from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import is_number
+from komikku.webview import CompleteChallenge
 
 LANGUAGES_CODES = dict(
     ar='ar',
@@ -46,6 +45,7 @@ class Mangaball(Server):
     name = 'MangaBall'
     lang = 'en'
 
+    has_cf = True
     is_nsfw = True
 
     base_url = 'https://mangaball.net'
@@ -93,15 +93,11 @@ class Mangaball(Server):
             ]
         },
     ]
-    headers = {
-        'User-Agent': USER_AGENT,
-    }
 
     def __init__(self):
-        if self.session is None:
-            self.session = requests.Session()
-            self.session.headers = self.headers
+        self.session = None
 
+    @CompleteChallenge()
     def get_manga_data(self, initial_data):
         """
         Returns manga data from manga HTML page
@@ -194,6 +190,7 @@ class Mangaball(Server):
 
         return data
 
+    @CompleteChallenge()
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
         Returns manga chapter data from chapter HTML page
@@ -311,12 +308,15 @@ class Mangaball(Server):
 
         return results
 
+    @CompleteChallenge()
     def get_latest_updates(self, demographic='any', status='any'):
         return self.get_manga_list(demographic=demographic, status=status, orderby='updated_chapters_desc')
 
+    @CompleteChallenge()
     def get_most_populars(self, demographic='any', status='any'):
         return self.get_manga_list(demographic=demographic, status=status, orderby='views_desc')
 
+    @CompleteChallenge()
     def search(self, term, demographic='any', status='any'):
         return self.get_manga_list(term=term, demographic=demographic, status=status)
 

@@ -31,8 +31,8 @@ def adapt_date_iso(val):
 
 
 def adapt_datetime_iso(val):
-    """Adapt datetime.datetime to timezone-naive ISO 8601 date"""
-    return val.replace(tzinfo=None).isoformat()
+    """Adapt datetime.datetime to ISO 8601 datetime"""
+    return val.isoformat()
 
 
 def adapt_json(data):

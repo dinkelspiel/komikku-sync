@@ -9,32 +9,41 @@ import requests
 
 from komikku.consts import USER_AGENT
 from komikku.servers import Server
+from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import ServerContent
 
 # Conversion ISO_639-1 codes => server codes
-LANGUAGES_CODES = dict(
-    cs='cs',
-    de='de',
-    en='en',
-    eo='eo',
-    es='es',
-    fa='fa',
-    fr='fr',
-    id='id',
-    it='it',
-    ja='ja',
-    ko='kr',  # diff
-    nb='no',  # diff
-    nl='nl',
-    pl='pl',
-    pt='pt',
-    ru='ru',
-    vi='vi',
-    zh_Hans='cn',  # diff
-)
+LANGUAGES_CODES = {
+    'cs': 'cs',
+    'de': 'de',
+    'en': 'en',
+    'eo': 'eo',
+    'es': 'es',
+    'fa': 'fa',
+    'fr': 'fr',
+    'id': 'id',
+    'it': 'it',
+    'ja': 'ja',
+    'ko': 'kr',  # diff
+    'nb': 'no',  # diff
+    'nl': 'nl',
+    'pl': 'pl',
+    'pt': 'pt',
+    'ru': 'ru',
+    'vi': 'vi',
+    'zh_Hans': 'cn',  # diff
+}
 
 SERVER_NAME = 'Pepper & Carrot'
+
+
+def convert_old_slug(slug):
+    if slug != '':
+        return slug
+
+    # Old Peppercarrot slug was '' (empty string)
+    return 'peppercarrot'
 
 
 class Peppercarrot(Server):
@@ -50,14 +59,14 @@ class Peppercarrot(Server):
     base_url = 'https://www.peppercarrot.com'
     donate_url = base_url + '/en/support/index.html'
     logo_url = base_url + '/core/img/favicon.png'
-    manga_url = base_url + '/{0}/webcomics/index.html'
+    manga_url = base_url + '/{0}/webcomics/{1}.html'
     langs_url = base_url + '/0_sources/langs.json'
     chapters_url = base_url + '/0_sources/episodes-v1.json'
+    chapter_url = base_url + '/{0}/{1}/{2}.html'
     image_url = base_url + '/0_sources/{0}/low-res/{1}_{2}'
-    cover_url = base_url + '/0_sources/0ther/artworks/low-res/2016-02-24_vertical-cover_remake_by-David-Revoy.jpg'
+    cover_url = base_url + '/core/img/thumb_{0}.jpg'
 
     genres = ['Fantasy', 'Magical girl', 'Coming-of-age']
-    synopsis = 'This is the story of the young witch Pepper and her cat Carrot in the magical world of Hereva. Pepper learns the magic of Chaosah, the magic of chaos, with his godmothers Cayenne, Thyme and Cumin. Other witches like Saffron, Coriander, Camomile and Schichimi learn magics that each have their specificities.'
 
     def __init__(self):
         if self.session is None:
@@ -70,7 +79,9 @@ class Peppercarrot(Server):
         """
         Returns manga data by scraping manga HTML page content
         """
-        r = self.session_get(self.manga_url.format(LANGUAGES_CODES[self.lang]))
+        r = self.session_get(
+            self.manga_url.format(LANGUAGES_CODES[self.lang], convert_old_slug(initial_data['slug']))
+        )
         if r.status_code != 200:
             return None
 
@@ -81,47 +92,81 @@ class Peppercarrot(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=['David Revoy', ],
-            scanlators=[],
-            genres=self.genres,
-            status='ongoing',
-            synopsis=self.synopsis,
-            chapters=[],
-            server_id=self.id,
-            cover=self.cover_url,
-        ))
+        data.update({
+            'authors': ['David Revoy', ],
+            'scanlators': [],
+            'genres': self.genres,
+            'status': 'ongoing',
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+            'cover': self.cover_url.format(convert_old_slug(data['slug'])),
+        })
 
-        # Scanlators (translators here)
-        r = self.session_get(self.langs_url)
-        if r.ok:
-            if lang_data := r.json().get(LANGUAGES_CODES[self.lang]):
-                data['scanlators'] = lang_data['translators']
+        if element := soup.select_one('.teaser span'):
+            data['synopsis'] = element.text.strip()
 
         # Chapters
-        r = self.session_get(self.chapters_url)
-        if r.status_code != 200:
-            return None
+        if data['slug'] == 'miniFantasyTheater':
+            # Chapters
+            for element in reversed(soup.select('figure')):
+                if 'notranslation' in element.get('class'):
+                    continue
 
-        chapters_data = r.json()
+                a_element = element.select_one('figcaption a')
+                date_element = element.select_one('figcaption span')
 
-        for index, element in enumerate(reversed(soup.select('figure.thumbnail'))):
-            if 'notranslation' in element.get('class'):
-                # Skipped not translated episodes
-                continue
+                data['chapters'].append({
+                    'slug': a_element.get('href').split('/')[-1].split('.')[0],
+                    'date': convert_date_string(date_element.text.strip().split()[-1][:-1], format='%Y-%m-%d'),
+                    'title': a_element.text.strip(),
+                })
 
-            data['chapters'].append(dict(
-                slug=chapters_data[index]['name'],
-                date=None,
-                title=element.a.img.get('title').split('(')[0].strip(),
-            ))
+        else:
+            # Scanlators (translators here)
+            r = self.session_get(self.langs_url)
+            if r.ok:
+                if lang_data := r.json().get(LANGUAGES_CODES[self.lang]):
+                    data['scanlators'] = lang_data['translators']
+
+            # Chapters
+            r = self.session_get(self.chapters_url)
+            if r.status_code != 200:
+                return None
+
+            chapters_data = r.json()
+
+            for index, element in enumerate(reversed(soup.select('figure.thumbnail'))):
+                if 'notranslation' in element.get('class'):
+                    # Skipped not translated episodes
+                    continue
+
+                data['chapters'].append({
+                    'slug': chapters_data[index]['name'],
+                    'date': None,
+                    'title': element.a.img.get('title').split('(')[0].strip(),
+                })
 
         return data
 
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
-        Returns manga chapter data using episodes API service
+        Returns manga chapter data
         """
+        if manga_slug == 'miniFantasyTheater':
+            r = self.session_get(self.chapter_url.format(LANGUAGES_CODES[self.lang], manga_slug, chapter_slug))
+            if r.status_code != 200:
+                return None
+
+            soup = BeautifulSoup(r.text, 'lxml')
+
+            return {
+                'pages': [{
+                    'slug': None,
+                    'image': soup.select_one('.webcomic-page img').get('src'),
+                }],
+            }
+
         r = self.session_get(self.chapters_url)
         if r.status_code != 200:
             return None
@@ -132,35 +177,35 @@ class Peppercarrot(Server):
                 pages = chapter_data['pages']
                 break
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
 
         # Cover & Title pages are first
-        data['pages'].append(dict(
-            slug=pages.pop('cover'),
-            image=None,
-        ))
-        data['pages'].append(dict(
-            slug=pages.pop('title'),
-            image=None,
-        ))
+        data['pages'].append({
+            'slug': pages.pop('cover'),
+            'image': None,
+        })
+        data['pages'].append({
+            'slug': pages.pop('title'),
+            'image': None,
+        })
         credits_slug = pages.pop('credits')
 
         # Sort pages
         pages = dict(sorted(pages.items(), key=lambda x: int(x[0])))
 
         for _key, page_name in pages.items():
-            data['pages'].append(dict(
-                slug=page_name,
-                image=None,
-            ))
+            data['pages'].append({
+                'slug': page_name,
+                'image': None,
+            })
 
         # Credits page at end
-        data['pages'].append(dict(
-            slug=credits_slug,
-            image=None,
-        ))
+        data['pages'].append({
+            'slug': credits_slug,
+            'image': None,
+        })
 
         return data
 
@@ -168,7 +213,12 @@ class Peppercarrot(Server):
         """
         Returns chapter page scan (image) content
         """
-        r = self.session_get(self.image_url.format(chapter_slug, LANGUAGES_CODES[self.lang], page['slug']))
+        if page['image']:
+            url = page['image']
+        else:
+            url = self.image_url.format(chapter_slug, LANGUAGES_CODES[self.lang], page['slug'])
+
+        r = self.session_get(url)
         if r.status_code != 200:
             return None
 
@@ -176,24 +226,31 @@ class Peppercarrot(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['slug'],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': url.split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """
         Returns manga absolute URL
         """
-        return self.manga_url.format(LANGUAGES_CODES[self.lang])
+        return self.manga_url.format(LANGUAGES_CODES[self.lang], convert_old_slug(slug))
 
     def get_most_populars(self):
-        return [dict(
-            slug='',
-            name=self.name,
-            cover=self.cover_url,
-        )]
+        return [
+            {
+                'slug': 'peppercarrot',
+                'name': self.name,
+                'cover': self.cover_url.format('peppercarrot'),
+            },
+            {
+                'slug': 'miniFantasyTheater',
+                'name': 'MiniFantasyTheater',
+                'cover': self.cover_url.format('miniFantasyTheater'),
+            }
+        ]
 
     def search(self, term=None):
         # This server does not have a search
@@ -237,15 +294,11 @@ class Peppercarrot_fa(Peppercarrot):
     name = 'فلفل و هویج'
     lang = 'fa'
 
-    synopsis = 'این داستان جادوگر جوان فلفل و گربه‌اش هویج در دنیای جادویی هروا است. پپر جادوی چائوسا، جادوی آشوب، را به همراه مادربزرگ‌هایش کاین، آویشن و زیره می‌آموزد. جادوگران دیگری مانند زعفران، گشنیز، بابونه و شیچیمی جادوهایی را یاد می‌گیرند که هر کدام ویژگی‌های خاص خود را دارند.'
-
 
 class Peppercarrot_fr(Peppercarrot):
     id = 'peppercarrot_fr'
     name = SERVER_NAME
     lang = 'fr'
-
-    synopsis = "C'est l'histoire de la jeune sorcière Pepper et de son chat Carrot dans le monde magique d'Hereva. Pepper apprend la magie de Chaosah, la magie du chaos, avec ses marraines Cayenne, Thym et Cumin. D'autres sorcières comme Saffran, Coriandre, Camomille et Schichimi apprennent des magies qui ont chacune leurs spécificités."
 
 
 class Peppercarrot_id(Peppercarrot):

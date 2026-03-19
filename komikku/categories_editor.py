@@ -161,9 +161,7 @@ class CategoryRow(Gtk.ListBoxRow):
         self.label_box.append(self.label)
         if nb_mangas := len(category.mangas):
             # Add badge to display number of associated manga
-            label = Gtk.Label()
-            label.set_markup(str(nb_mangas))
-            label.set_valign(Gtk.Align.CENTER)
+            label = Gtk.Label(label=str(nb_mangas), valign=Gtk.Align.CENTER)
             label.set_css_classes(['badge', 'caption'])
             self.label_box.append(label)
         self.box.append(self.label_box)

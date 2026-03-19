@@ -168,7 +168,7 @@ class CategoriesList:
                     row.set_activatable_widget(switch)
                     row.add_suffix(switch)
                 elif nb:
-                    nb_label = Gtk.Label(label=nb, valign=Gtk.Align.CENTER)
+                    nb_label = Gtk.Label(label=str(nb), valign=Gtk.Align.CENTER)
                     nb_label.add_css_class('badge')
                     nb_label.add_css_class('caption')
                     row.add_suffix(nb_label)

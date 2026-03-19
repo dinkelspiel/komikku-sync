@@ -17,7 +17,7 @@ jxlpy
 PyGObject
 PyJWT >= 2.10.1
 pypdf >= 6.7.3
-python_magic
+python-magic
 rarfile
 requests >= 2.32.4
 Unidecode

@@ -22,7 +22,7 @@
         "python3-cffi.json",
         "python3-keyring.json",
         "python3-dateparser.json",
-        "python3-file-magic.json",
+        "python3-python-magic.json",
         "python3-natsort.json",
         "python3-pillow.json",
         "python3-jxlpy.json",

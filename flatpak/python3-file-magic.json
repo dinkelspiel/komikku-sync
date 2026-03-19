@@ -2,13 +2,13 @@
     "name": "python3-file-magic",
     "buildsystem": "simple",
     "build-commands": [
-        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} file-magic"
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"file-magic\" --no-build-isolation"
     ],
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/bb/7e/b256e53a6558afd348387c3119dc4a1e3003d36030584a427168c8d72a7a/file_magic-0.4.0-py3-none-any.whl",
-            "sha256": "8ea03da58cf4de5a69909c0e27746cf17fc903356a601967ab01577916a73aed"
+            "url": "https://files.pythonhosted.org/packages/bd/13/de7c05b7b64f4e41cca7385642884490e2fa704dc1e695d1429119caa9c2/file_magic-0.4.1-py3-none-any.whl",
+            "sha256": "cb9496a1656baf75cadd771479f63b53081095e968d0be72b9b7a7ed538e4fb8"
         }
     ]
 }

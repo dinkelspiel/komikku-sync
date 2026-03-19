@@ -298,6 +298,9 @@ class PDF:
         self.path = path
         self.archive = PdfReader(self.path)
 
+    def close(self):
+        self.archive.close()
+
     def get_namelist(self):
         names = []
         for page_index, page in enumerate(self.archive.pages):

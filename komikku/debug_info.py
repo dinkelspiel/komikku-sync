@@ -6,6 +6,8 @@ import gi
 import os
 import platform
 
+import magic
+
 gi.require_version('Adw', '1')
 gi.require_version('GdkPixbuf', '2.0')
 gi.require_version('Gtk', '4.0')
@@ -122,6 +124,7 @@ class DebugInfo:
         info += f'- Adwaita: {Adw.get_major_version()}.{Adw.get_minor_version()}.{Adw.get_micro_version()}\n'
         info += f'- WebKitGTK: {WebKit.get_major_version()}.{WebKit.get_minor_version()}.{WebKit.get_micro_version()}\n'
         info += f'- Soup: {Soup.get_major_version()}.{Soup.get_minor_version()}.{Soup.get_micro_version()}\n'
+        info += f'- Magic: {magic.version()}\n'
         info += '\n'
 
         info += 'System:\n'

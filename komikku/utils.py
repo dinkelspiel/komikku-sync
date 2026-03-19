@@ -161,12 +161,21 @@ def get_buffer_mime_type(buffer):
     try:
         if hasattr(magic, 'detect_from_content'):
             # Using file-magic module: https://github.com/file/file
-            return magic.detect_from_content(buffer[:128]).mime_type  # noqa: TC300
-
-        # Using python-magic module: https://github.com/ahupp/python-magic
-        return magic.from_buffer(buffer[:128], mime=True)  # noqa: TC300
+            mime_type = magic.detect_from_content(buffer[:128]).mime_type  # noqa: TC300
+        else:
+            # Using python-magic module: https://github.com/ahupp/python-magic
+            mime_type = magic.from_buffer(buffer[:128], mime=True)  # noqa: TC300
     except Exception:
-        return ''
+        mime_type = ''
+
+    # Dirty hack: fileformat detector is broken with libmagic 547
+    # Known formats that cause problems: WebP
+    version = magic.version()
+    if version > 546 and mime_type == 'application/octet-stream':
+        logger.debug('Failed to detect image file format! libmagic %d is broken?', version)
+        mime_type = 'image/webp'
+
+    return mime_type
 
 
 @cache

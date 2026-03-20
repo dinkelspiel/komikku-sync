@@ -131,6 +131,7 @@ CREDITS = dict(
         'Sabri Ünal (Turkish)',
         'Volkan Yıldırım (Turkish)',
         'Efe Akın (Turkish)',
+        'Ahmet (Turkish)',
         'CakesTwix (Ukrainian)',
         'Kislotniy (Acela) (Ukrainian)',
         'mondstern (Ukrainian)',
@@ -149,13 +150,17 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Library] Used a dialog for filters</li>
-    <li>[Card] Added a notification when there are no chapters</li>
-    <li>[Servers] Added zero搬运网 (ZH)</li>
-    <li>[Servers] Anime-Sama (FR): Update</li>
-    <li>[Servers] Comix (EN): Update</li>
-    <li>[Servers] MangaDex: Update</li>
+    <li>Update to GNOME 50</li>
+    <li>[Database] Optimize disk accesses on queries</li>
+    <li>[Servers] Add KaliScan (EN)</li>
+    <li>[Servers] Add LanorTrad (FR)</li>
+    <li>[Servers] Add MangaBuddy (EN)</li>
+    <li>[Servers] Asura Scans (EN): Update</li>
+    <li>[Servers] Local: Fix support for PDF files</li>
+    <li>[Servers] MangaBall (multi): Update</li>
+    <li>[Servers] Pepper &amp; Carrot (multi): Add MiniFantasyTheater webcomic</li>
     <li>[Servers] Qi Scans (EN): Update</li>
+    <li>[L10n] Updated French, Italian, Russian and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

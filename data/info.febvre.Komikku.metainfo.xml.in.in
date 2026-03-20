@@ -114,6 +114,24 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.0.0" date="2026-03-20">
+            <description translate="no">
+                <ul>
+                    <li>Update to GNOME 50</li>
+                    <li>[Database] Optimize disk accesses on queries</li>
+                    <li>[Servers] Add KaliScan (EN)</li>
+                    <li>[Servers] Add LanorTrad (FR)</li>
+                    <li>[Servers] Add MangaBuddy (EN)</li>
+                    <li>[Servers] Asura Scans (EN): Update</li>
+                    <li>[Servers] Local: Fix support for PDF files</li>
+                    <li>[Servers] MangaBall (multi): Update</li>
+                    <li>[Servers] Pepper &amp; Carrot (multi): Add MiniFantasyTheater webcomic</li>
+                    <li>[Servers] Qi Scans (EN): Update</li>
+                    <li>[L10n] Updated French, Italian, Russian and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="1.105.0" date="2026-03-08">
             <description translate="no">
                 <ul>

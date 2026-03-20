@@ -4,7 +4,6 @@
 
 from gettext import gettext as _
 import json
-import re
 
 from bs4 import BeautifulSoup
 import requests
@@ -17,17 +16,15 @@ from komikku.utils import get_buffer_mime_type
 
 
 class Asurascans(Server):
-    # Probably a modified version of MangaStream theme
-
     id = 'asurascans'
     name = 'Asura Scans'
     lang = 'en'
 
-    base_url = 'https://asuracomic.net'
+    base_url = 'https://asurascans.com'
     logo_url = base_url + '/images/logo.webp'
-    search_url = base_url + '/series'
-    manga_url = base_url + '/series/{0}'
-    chapter_url = base_url + '/series/{0}/chapter/{1}'
+    search_url = base_url + '/browse'
+    manga_url = base_url + '/comics/{0}'
+    chapter_url = base_url + '/comics/{0}/chapter/{1}'
 
     filters = [
         {
@@ -88,10 +85,6 @@ class Asurascans(Server):
         if r.status_code != 200:
             return None
 
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
-            return None
-
         soup = BeautifulSoup(r.text, 'lxml')
 
         data = initial_data.copy()
@@ -106,13 +99,19 @@ class Asurascans(Server):
         ))
 
         # Name & cover
-        data['name'] = soup.select_one('h3:nth-child(3)').text.strip()
-        data['cover'] = soup.select_one('img[alt="poster"]').get('src')
+        data['name'] = soup.select_one('h1').text.strip()
+        data['cover'] = soup.select_one('#mobile-cover-img').get('src')
 
         # Details
-        if status_element := soup.select_one('h3:-soup-contains("Status") ~ h3'):
-            status = status_element.text.strip().lower()
-            if status in ('ongoing', 'season end'):
+        for element in soup.select('a.inline-flex.text-xs.font-medium'):
+            data['genres'].append(element.text.strip())
+
+        if element := soup.select_one('div:-soup-contains("Type") ~ div span:last-child'):
+            data['genres'].append(element.text.strip().capitalize())
+
+        if element := soup.select_one('div:-soup-contains("Status") ~ div span:last-child'):
+            status = element.text.strip().lower()
+            if status in 'ongoing':
                 data['status'] = 'ongoing'
             elif status == 'completed':
                 data['status'] = 'complete'
@@ -121,28 +120,17 @@ class Asurascans(Server):
             elif status == 'hiatus':
                 data['status'] = 'hiatus'
 
-        if author_element := soup.select_one('h3:-soup-contains("Author") ~ h3'):
+        if author_element := soup.select_one('div:-soup-contains("Author") ~ a'):
             author = author_element.text.strip()
             if author and author != '_':
                 data['authors'].append(author)
-        if author_element := soup.select_one('h3:-soup-contains("Artist") ~ h3'):
+        if author_element := soup.select_one('div:-soup-contains("Artist") ~ a'):
             author = author_element.text.strip()
             if author and author != '_' and author not in data['authors']:
                 data['authors'].append(author)
 
-        if scanlator_element := soup.select_one('h3:-soup-contains("Serialization") ~ h3'):
-            scanlator = scanlator_element.text.strip()
-            if scanlator and scanlator != '_':
-                data['scanlators'].append(scanlator)
-
-        for element in soup.select('h3:-soup-contains("Genre") ~ div button'):
-            data['genres'].append(element.text.strip())
-
-        for element in soup.select('h3:-soup-contains("Type") ~ h3'):
-            data['genres'].append(element.text.strip())
-
-        if synopsis_element := soup.select_one('h3:-soup-contains("Synopsis") ~ span'):
-            data['synopsis'] = synopsis_element.text.strip()
+        if element := soup.select_one('#description-text'):
+            data['synopsis'] = element.text.strip()
 
         # Chapters
         data['chapters'] = self.get_manga_chapters_data(soup)
@@ -152,16 +140,16 @@ class Asurascans(Server):
     def get_manga_chapters_data(self, soup):
         chapters = []
 
-        for a_element in reversed(soup.select('.scrollbar-thin > div > a')):
+        for a_element in reversed(soup.select('div.divide-y > a.group')):
             slug = a_element.get('href').split('/')[-1]
-            if date_element := a_element.select_one('h3:last-child'):
+            if date_element := a_element.select_one('span.text-sm'):
                 date = convert_date_string(date_element.text.strip())
             else:
                 date = None
 
             chapters.append(dict(
                 slug=slug,
-                title=a_element.h3.text.strip(),
+                title=a_element.select_one('span.font-medium').text.strip(),
                 num=slug,
                 date=date,
             ))
@@ -182,29 +170,17 @@ class Asurascans(Server):
         if r.status_code != 200:
             return None
 
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
-            return None
-
         soup = BeautifulSoup(r.text, 'lxml')
+        info = json.loads(soup.select_one('astro-island').get('props'))
 
         data = dict(
             pages=[],
         )
-        for script_element in soup.select('script'):
-            script = script_element.string
-            if not script or not script.startswith('self.__next_f.push([1,') or 'pages' not in script:
-                continue
-
-            re_pages = r'.*\"pages\":(\[.*?\]).*'
-            script = script.replace('\\', '')  # clean backslashes before double quotes
-
-            if matches := re.search(re_pages, script):
-                for page in json.loads(matches.group(1)):
-                    data['pages'].append(dict(
-                        slug=None,
-                        image=page['url'],
-                    ))
+        for page in info['pages'][1]:
+            data['pages'].append(dict(
+                slug=None,
+                image=page[1]['url'][1],
+            ))
 
         return data
 
@@ -237,19 +213,22 @@ class Asurascans(Server):
         """
         return self.manga_url.format(slug)
 
-    def get_manga_list(self, term='', type=None, orderby=None):
+    def get_manga_list(self, term=None, type=None, orderby=None):
+        params = {}
+        if term:
+            params['search'] = term
+        if orderby:
+            params['order'] = 'desc'
+            if orderby == 'popular':
+                params['sort'] = 'popular'
+        if type:
+            params['type'] = type
+
         r = self.session_get(
             self.search_url,
-            params=dict(
-                page=1,
-                name=term,
-                genres='',
-                status=-1,
-                types=-1,
-                order=orderby or 'asc',
-            ),
+            params=params,
             headers={
-                'referer': self.base_url,
+                'Referer': self.base_url,
             }
         )
         if r.status_code != 200:
@@ -258,12 +237,12 @@ class Asurascans(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         results = []
-        for a_element in soup.select('.grid.grid-cols-2 > a'):
+        for a_element in soup.select('.series-card > a'):
             cover_element = a_element.select_one('img[loading="lazy"]')
 
             results.append(dict(
                 slug=a_element.get('href').split('/')[-1],
-                name=a_element.select_one('span.block.font-bold').text.strip(),
+                name=cover_element.get('alt').strip(),
                 cover=cover_element.get('src') if cover_element else None,
             ))
 
@@ -273,7 +252,7 @@ class Asurascans(Server):
         return self.get_manga_list(type=type, orderby='latest')
 
     def get_most_populars(self, type):
-        return self.get_manga_list(type=type, orderby='rating')
+        return self.get_manga_list(type=type, orderby='popular')
 
     def search(self, term, type):
         return self.get_manga_list(term=term, type=type)

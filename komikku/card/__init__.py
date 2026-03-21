@@ -274,7 +274,7 @@ class CardPage(Adw.NavigationPage):
             row.set_active(not filters or 'scanlators' not in filters or scanlator['name'] not in filters['scanlators'])
             row.connect('notify::active', on_active, scanlator['name'])
 
-            label = Gtk.Label(label=scanlator['count'], valign=Gtk.Align.CENTER)
+            label = Gtk.Label(label=str(scanlator['count']), valign=Gtk.Align.CENTER)
             label.set_css_classes(['badge', 'caption'])
             row.add_prefix(label)
 

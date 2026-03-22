@@ -149,16 +149,23 @@ CREDITS = dict(
 )
 
 RELEASE_NOTES = """
+<p>This is a bugfix version.</p>
+<ul>
+    <li>[Card] Fixed crash on opening chapters filtering</li>
+    <li>[L10n] Updated Tamil translation</li>
+</ul>
+
+<p>Changes in previous version 50.0.0</p>
 <ul>
     <li>Update to GNOME 50</li>
-    <li>[Database] Optimize disk accesses on queries</li>
-    <li>[Servers] Add KaliScan (EN)</li>
-    <li>[Servers] Add LanorTrad (FR)</li>
-    <li>[Servers] Add MangaBuddy (EN)</li>
+    <li>[Database] Optimized disk accesses on queries</li>
+    <li>[Servers] Added KaliScan (EN)</li>
+    <li>[Servers] Added LanorTrad (FR)</li>
+    <li>[Servers] Added MangaBuddy (EN)</li>
     <li>[Servers] Asura Scans (EN): Update</li>
-    <li>[Servers] Local: Fix support for PDF files</li>
+    <li>[Servers] Local: Fixed support for PDF files</li>
     <li>[Servers] MangaBall (multi): Update</li>
-    <li>[Servers] Pepper &amp; Carrot (multi): Add MiniFantasyTheater webcomic</li>
+    <li>[Servers] Pepper &amp; Carrot (multi): Added MiniFantasyTheater webcomic</li>
     <li>[Servers] Qi Scans (EN): Update</li>
     <li>[L10n] Updated French, Italian, Russian and Ukrainian translations</li>
 </ul>

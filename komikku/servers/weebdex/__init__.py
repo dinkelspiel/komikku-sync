@@ -32,7 +32,7 @@ class Weebdex(Server):
 
     manga_url = base_url + '/title/{0}'
     chapter_url = base_url + '/chapter/{0}'
-    cover_url = 'https://srv.notdelta.xyz/covers/{0}/{1}.256.webp'
+    cover_url = base_url + '/covers/{0}/{1}.256.webp'
 
     api_url = 'https://api.weebdex.org'
     api_search_url = api_url + '/manga'

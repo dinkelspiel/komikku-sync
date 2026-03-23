@@ -23,7 +23,7 @@ from komikku.utils import is_number
 
 class Mangalib(Server):
     id = 'mangalib'
-    name = 'MangaLib'
+    name = 'MangaLIB'
     lang = 'ru'
 
     base_url = 'https://mangalib.org'
@@ -34,16 +34,17 @@ class Mangalib(Server):
     api_manga_url = api_base_url + '/manga/{0}'
     api_chapters_url = api_base_url + '/manga/{0}/chapters'
     api_chapter_url = api_base_url + '/manga/{0}/chapter'
-    image_base_url = 'https://img3.mixlib.me/'  # beware, an additional slash required
+    image_base_url = 'https://img3.mixlib.me/'  # beware, an additional slash is required
+
+    site_id = 1
 
     api_headers = {
         'Accept': '*/*',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3',
+        'Accept-Language': 'en-US;q=0.5,en;q=0.3',
         'Client-Time-Zone': 'Atlantic/Reykjavik',
         'Content-Type': 'application/json',
         'Referer': f'{base_url}/',
-        'Site-Id': 1,
+        'Site-Id': site_id,
     }
 
     def __init__(self):
@@ -227,7 +228,7 @@ class Mangalib(Server):
         params = {
             'fields[]': ['rate', 'rate_avg', 'userBookmark'],
             'seed': uuid.uuid1().hex,
-            'site_id[]': 1,
+            'site_id[]': self.site_id,
         }
         r = self.session_get(
             self.api_search_url,
@@ -274,14 +275,28 @@ class Mangalib(Server):
 # NSFW
 class Hentailib(Mangalib):
     id = 'hentailib:mangalib'
-    name = 'HentaiLib'
+    name = 'HentaiLIB'
     lang = 'ru'
     is_nsfw_only = True
+
+    # Unfortunately, user authentication (via social networks) is required to get chapter data
     status = 'disabled'
 
     base_url = 'https://hentailib.me'
-    search_url = base_url + '/manga-list?name={0}'
-    most_populars_url = base_url + '/manga-list?sort=views'
-    manga_url = base_url + '/{0}'
-    chapter_url = manga_url + '/{1}'
-    image_url = 'https://img{0}.hentailib.me{1}'
+    manga_url = base_url + '/ru/manga/{0}'
+    api_base_url = 'https://hapi.hentaicdn.org/api'
+    api_search_url = api_base_url + '/manga'
+    api_manga_url = api_base_url + '/manga/{0}'
+    api_chapters_url = api_base_url + '/manga/{0}/chapters'
+    api_chapter_url = api_base_url + '/manga/{0}/chapter'
+
+    site_id = 4
+
+    api_headers = {
+        'Accept': '*/*',
+        'Accept-Language': 'en-US;q=0.5,en;q=0.3',
+        'Client-Time-Zone': 'Atlantic/Reykjavik',
+        'Content-Type': 'application/json',
+        'Referer': f'{base_url}/',
+        'Site-Id': f'{site_id}',
+    }

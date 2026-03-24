@@ -63,7 +63,7 @@ class Mangaworld(Server):
                 {'key': 'manga', 'name': _('Manga'), 'default': False},
                 {'key': 'manhua', 'name': _('Manhua'), 'default': False},
                 {'key': 'manhwa', 'name': _('Manhwa'), 'default': False},
-                {'key': 'oneshot', 'name': _('One Shot'), 'default': False},
+                {'key': 'oneshot', 'name': _('Oneshot'), 'default': False},
                 {'key': 'thai', 'name': 'Thai', 'default': False},
                 {'key': 'vietnamese', 'name': 'Vietnamita', 'default': False},
             ],

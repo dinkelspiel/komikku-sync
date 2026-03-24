@@ -133,7 +133,7 @@ class Mangatube(Server):
                 {'key': '2', 'name': _('Manhua')},
                 {'key': '3', 'name': _('Webtoon')},
                 {'key': '4', 'name': _('Comic')},
-                {'key': '5', 'name': _('One Shot')},
+                {'key': '5', 'name': _('Oneshot')},
                 {'key': '6', 'name': _('Light Novel')},
             ]
         },
@@ -161,7 +161,7 @@ class Mangatube(Server):
 
         if self.session is None:
             self.session = requests.Session()
-            self.session.headers.update({'user-agent': USER_AGENT})
+            self.session.headers.update({'User-Agent': USER_AGENT})
 
     @CompleteChallenge()
     @get_data

@@ -246,6 +246,8 @@ class Weebdex(Server):
                 title.append(f'Ch. {num}')
             if chapter.get('title'):
                 title.append(chapter['title'])
+            elif num_volume is None and num is None:
+                title.append(_('Oneshot'))
 
             groups = chapter['relationships'].get('groups')
 

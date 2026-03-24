@@ -47,7 +47,7 @@ class Mangafire(Server):
             'value_type': 'multiple',
             'options': [
                 {'key': 'manga', 'name': _('Manga'), 'default': False},
-                {'key': 'one_shot', 'name': _('One Shot'), 'default': False},
+                {'key': 'one_shot', 'name': _('Oneshot'), 'default': False},
                 {'key': 'doujinshi', 'name': _('Doujinshi'), 'default': False},
                 {'key': 'novel', 'name': _('Novel'), 'default': False},
                 {'key': 'manhwa', 'name': _('Manhwa'), 'default': False},

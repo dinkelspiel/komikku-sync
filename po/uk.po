@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-13 23:35+0100\n"
-"PO-Revision-Date: 2026-03-15 00:16+0000\n"
+"PO-Revision-Date: 2026-03-25 14:09+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -119,7 +119,7 @@ msgstr "сканування"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr "комічний"
+msgstr "комікс"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
@@ -1035,23 +1035,23 @@ msgid ""
 "Developing and maintaining Komikku is a challenging task that takes up most "
 "of my free time."
 msgstr ""
-"Розробка та підтримка Мальописів це складна задача яка займає багато мого "
+"Розробка та підтримка Komikku є складним завданням, яке займає багато мого "
 "вільного часу."
 
 #: ../data/ui/support.blp:63
 msgid "Komikku will always be free and open-source and will never contain ads."
 msgstr ""
-"Мальописи завжди будуть безкоштовними, відкритими та ніколи не міститимуть "
-"реклами."
+"Вона завжди залишатиметься безплатною і з відкритим кодом та ніколи не "
+"міститиме реклами."
 
 #: ../data/ui/support.blp:70
 msgid ""
 "So if you like it, and you are able, please consider a one-time or recurring "
 "donation to support me, it will be hugely appreciated."
 msgstr ""
-"Тож, як вам подобається цей додаток, і ви маєте можливість, будь ласка "
-"витратьте трохи часу, аби пожертвувати трохи грошей на мою підтримку. Це "
-"було б дуже шляхетно із вашого боку."
+"Тож якщо вам подобається ця програма і ви маєте змогу, будь ласка, "
+"розгляньте можливість пожертвувати трохи грошей на мою підтримку. Це було б "
+"дуже шляхетно із вашого боку."
 
 #: ../data/ui/support.blp:84
 msgid "Weekly, monthly or yearly donation"

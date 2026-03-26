@@ -2,58 +2,64 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Komikku package.
 # 유찬후 <chanhooyoo1488@gmail.com>, 2025.
+# 안세훈 <on9686@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-13 23:35+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-03-27 13:09+0000\n"
+"Last-Translator: 안세훈 <on9686@gmail.com>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/komikku/main/ko/>"
+"\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
-msgstr ""
+msgstr "@prettyname@"
 
 #: ../data/info.febvre.Komikku.desktop.in:3
 msgid "@description@"
-msgstr ""
+msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 msgstr ""
+"manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr ""
+msgstr "만화, 코믹 탐색 및 읽기"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
 "With its simple, elegant and adaptive interface, this reader lets you "
 "search, sort and read your series with ease."
 msgstr ""
+"간단하고, 우아하며 적응성 있는 인터페이스를 갖춘 이 리더는 시리즈를 쉽게 "
+"검색, 정렬하고 읽게 합니다."
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
-msgstr ""
+msgstr "Komikku의 좋은 점은 무엇일까요?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr ""
+msgstr "수많은 서버에서 온라인 및 오프라인으로 읽기"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
-msgstr ""
+msgstr "로컬 저장 시리즈 지원 (CBZ/CBR/CBT, EPUB 및 PDF 포맷)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr ""
+msgstr "왼쪽으로 읽기, 오른쪽으로 읽기, 수직 및 웹툰 읽기 모드"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -61,361 +67,364 @@ msgid ""
 "navigation layout via mouse click or tapping (touchpad/touch screen), mouse "
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
+"다양한 유형의 네비게이션 지원: 키보드 화살표 키, 마우스 클릭 또는 탭"
+"(터치패드/터치스크린)을 통한 좌우 네비게이션 레이아웃, 마우스 휠, 두 손가락 "
+"스와이프 제스처(터치패드), 스와이프 제스처(터치스크린)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:21
 msgid "Categories to organize your library"
-msgstr ""
+msgstr "카테고리 설정을 통한 라이브러리 정리"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
-msgstr ""
+msgstr "AniList, MangaUpdates 및 MyAnimeList를 통한 시리즈 자동 트래킹"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
-msgstr ""
+msgstr "시리즈 자동 업데이트"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr ""
+msgstr "신규 챕터 자동 다운로드"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
-msgstr ""
+msgstr "독서 이력"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:26
 msgid "Light and dark themes"
-msgstr ""
+msgstr "라이트 및 다크 테마"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "리더"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr ""
+msgstr "뷰어"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 msgid "scanlation"
-msgstr ""
+msgstr "스캔레이션"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "코믹"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "일본만화"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "한국만화"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "중국만화"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "웹툰"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
-msgstr ""
+msgstr "웹 코믹"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "도서"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "전자책"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "오프라인"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
-msgstr ""
+msgstr "라이브러리 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:66
 msgid "The Library page with the category sidebar open"
-msgstr ""
+msgstr "카테고리 사이드바가 열린 라이브러리 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (Library settings)"
-msgstr ""
+msgstr "설정 페이지 (라이브러리 설정)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
-msgstr ""
+msgstr "모바일 형식 탐색 페이지 (서버 리스트)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:78
 msgid "The Details page"
-msgstr ""
+msgstr "세부 정보 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:82
 msgid "The Details page (chapters list)"
-msgstr ""
+msgstr "세부 정보 페이지 (챕터 리스트)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:86
 msgid "The Reader page"
-msgstr ""
+msgstr "리더 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:90
 msgid "The Reader page in mobile format"
-msgstr ""
+msgstr "모바일 형식 리더 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:94
 msgid "The Category editor page in mobile format"
-msgstr ""
+msgstr "모바일 형식 카테고리 편집 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:98
 msgid "The Reading history page in mobile format"
-msgstr ""
+msgstr "모바일 형식 독서 이력 페이지"
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:404
 msgid "Got it!"
-msgstr ""
+msgstr "알겠습니다!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:431
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
 #: ../data/ui/library.blp:138 ../data/ui/reader.blp:37
 msgid "Menu"
-msgstr ""
+msgstr "메뉴"
 
 #: ../data/ui/card.blp:68
 msgid "Info"
-msgstr ""
+msgstr "정보"
 
 #: ../data/ui/card.blp:148
 msgid "Add to Library"
-msgstr ""
+msgstr "라이브러리에 추가"
 
 #: ../data/ui/card.blp:228
 msgid "Scanlators"
-msgstr ""
+msgstr "스캔 역자"
 
 #: ../data/ui/card.blp:287
 msgid "Last Update"
-msgstr ""
+msgstr "마지막 업데이트"
 
 #: ../data/ui/card.blp:318
 msgid "Size on Disk"
-msgstr ""
+msgstr "디스크 크기"
 
 #: ../data/ui/card.blp:343
 msgid "Synopsis"
-msgstr ""
+msgstr "시놉시스"
 
 #: ../data/ui/card.blp:468 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:241
 msgid "No Categories"
-msgstr ""
+msgstr "카테고리 없음"
 
 #: ../data/ui/card_chapters_list_row.blp:65
 msgid "New"
-msgstr ""
+msgstr "신규"
 
 #: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:104
 msgid "Tracking"
-msgstr ""
+msgstr "트래킹"
 
 #: ../data/ui/card_tracking_search.blp:10 ../data/ui/explorer_search.blp:10
 #: ../data/ui/explorer_search.blp:43 ../data/ui/history.blp:22
 #: ../data/ui/library.blp:45
 msgid "Search"
-msgstr ""
+msgstr "검색"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
-msgstr ""
+msgstr "트래킹 검색"
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
-msgstr ""
+msgstr "추가"
 
 #: ../data/ui/download_manager.blp:10 ../data/ui/download_manager.blp:20
 msgid "Download Manager"
-msgstr ""
+msgstr "다운로드 관리자"
 
 #: ../data/ui/download_manager.blp:32
 msgid "Start/Stop Download"
-msgstr ""
+msgstr "다운로드 시작/정지"
 
 #: ../data/ui/download_manager.blp:67
 msgid "No Downloads"
-msgstr ""
+msgstr "다운로드 없음"
 
 #: ../data/ui/explorer_search.blp:28
 msgid "Search Filters"
-msgstr ""
+msgstr "검색 필터"
 
 #: ../data/ui/explorer_search.blp:34
 msgid "Open in Browser"
-msgstr ""
+msgstr "브라우저에서 열기"
 
 #: ../data/ui/explorer_search.blp:147
 msgid "Most Popular"
-msgstr ""
+msgstr "가장 인기있는"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
-msgstr ""
+msgstr "최신 업데이트"
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:215
 msgid "Servers"
-msgstr ""
+msgstr "서버"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
-msgstr ""
+msgstr "모든 서버에서 코믹스 검색"
 
 #: ../data/ui/explorer_servers.blp:23
 msgid "Search Servers"
-msgstr ""
+msgstr "서버 검색"
 
 #: ../data/ui/explorer_servers.blp:37
 msgid "Search for servers by name or language"
-msgstr ""
+msgstr "이름 또는 언어로 서버 검색"
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"
-msgstr ""
+msgstr "이력"
 
 #: ../data/ui/history.blp:71
 msgid "No History"
-msgstr ""
+msgstr "이력 없음"
 
 #: ../data/ui/library.blp:10 ../data/ui/preferences.blp:114
 msgid "Library"
-msgstr ""
+msgstr "라이브러리"
 
 #: ../data/ui/library.blp:23
 msgid "Toggle Categories Sidebar"
-msgstr ""
+msgstr "카테고리 사이드바 토글"
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
-msgstr ""
+msgstr "메인 메뉴"
 
 #: ../data/ui/library.blp:79
 msgid "Search by name, server or genre"
-msgstr ""
+msgstr "이름, 서버 또는 장르로 검색"
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:201
 msgid "Update"
-msgstr ""
+msgstr "업데이트"
 
 #: ../data/ui/library.blp:192
 msgid "Discover Comics"
-msgstr ""
+msgstr "코믹스 탐색"
 
 #: ../data/ui/library.blp:263
 msgid "OK"
-msgstr ""
+msgstr "확인"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
-msgstr ""
+msgstr "챕터 순서"
 
 #: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
-msgstr ""
+msgstr "⬆ 소스"
 
 #: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
-msgstr ""
+msgstr "⬇ 소스"
 
 #: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
-msgstr ""
+msgstr "⬆ 날짜"
 
 #: ../data/ui/menu/card.xml:55
 msgid "⬇ By Date"
-msgstr ""
+msgstr "⬇ 날짜"
 
 #: ../data/ui/menu/card.xml:61
 msgid "⬆ By Title"
-msgstr ""
+msgstr "⬆ 제목"
 
 #: ../data/ui/menu/card.xml:66
 msgid "⬇ By Title"
-msgstr ""
+msgstr "⬇ 제목"
 
 #: ../data/ui/menu/card_selection_mode.xml:23
 #: ../data/ui/menu/library_selection_mode.xml:30
 msgid "Select All"
-msgstr ""
+msgstr "모두 선택"
 
 #: ../data/ui/menu/download_manager.xml:12
 msgid "Delete All"
-msgstr ""
+msgstr "모두 삭제"
 
 #: ../data/ui/menu/explorer_search_global_search.xml:12
 msgid "Pinned Servers Only"
-msgstr ""
+msgstr "고정된 서버만"
 
 #: ../data/ui/menu/library_selection_mode.xml:12
 msgid "Edit Categories"
-msgstr ""
+msgstr "카테고리 편집"
 
 #: ../data/ui/menu/main.xml:12
 msgid "Update Library"
-msgstr ""
+msgstr "라이브러리 업데이트"
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
-msgstr ""
+msgstr "정렬"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr ""
+msgstr "알파벳 순"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
-msgstr ""
+msgstr "최근 읽은 순"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"
-msgstr ""
+msgstr "최근 업데이트 순"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "키보드 단축키"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
-msgstr ""
+msgstr "Komikku 정보"
 
 #: ../data/ui/menu/reader.xml:114
 msgid "Zoom Landscape Pages"
-msgstr ""
+msgstr "가로 화면 확대"
 
 #: ../data/ui/menu/reader.xml:118
 msgid "Crop Borders"
-msgstr ""
+msgstr "여백 제거"
 
 #: ../data/ui/menu/reader.xml:122
 msgid "Hide Page Numbering"
-msgstr ""
+msgstr "페이지 넘버링 숨기기"
 
 #: ../data/ui/menu/reader.xml:136
 msgid "Save Page"
-msgstr ""
+msgstr "페이지 저장"
 
 #: ../data/ui/preferences.blp:9 ../data/ui/preferences_servers_languages.blp:16
 #: ../data/ui/preferences_servers_settings.blp:16
 msgid "Preferences"
-msgstr ""
+msgstr "설정"
 
 #: ../data/ui/preferences.blp:14
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: ../data/ui/preferences.blp:24
 msgid "Support Komikku"
-msgstr ""
+msgstr "Komikku 지원"
 
 #: ../data/ui/preferences.blp:30
 msgid ""
@@ -424,290 +433,296 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"Komikku는 자유롭고 오픈 소스이며, 앞으로도 그럴 것입니다. 프로그램이 마음에 "
+"드셨다면 기부를 통해 지원해주시면 감사하겠습니다. 이 프로그램을 유지하는 "
+"것뿐만 아니라, 자유 소프트웨어 개발자로서의 활동을 계속하는 데에 도움이 될 "
+"것입니다."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
-msgstr ""
+msgstr "외형"
 
 #: ../data/ui/preferences.blp:61
 msgid "Theme"
-msgstr ""
+msgstr "테마"
 
 #: ../data/ui/preferences.blp:64
 msgid "Light"
-msgstr ""
+msgstr "라이트"
 
 #: ../data/ui/preferences.blp:65
 msgid "Dark"
-msgstr ""
+msgstr "다크"
 
 #: ../data/ui/preferences.blp:66
 msgid "Follow System"
-msgstr ""
+msgstr "시스템 설정"
 
 #: ../data/ui/preferences.blp:72
 msgid "Night Light"
-msgstr ""
+msgstr "야간 모드"
 
 #: ../data/ui/preferences.blp:73
 msgid "Automatically enable dark theme at night"
-msgstr ""
+msgstr "밤 시간에 자동으로 다크 테마 적용"
 
 #: ../data/ui/preferences.blp:77
 msgid "Accent Color"
-msgstr ""
+msgstr "강조 색상"
 
 #: ../data/ui/preferences.blp:78
 msgid "Use system accent colors"
-msgstr ""
+msgstr "시스템 강조 색상 사용"
 
 #: ../data/ui/preferences.blp:82
 msgid "Backdrop in Details Page"
-msgstr ""
+msgstr "상세 정보 페이지 배경"
 
 #: ../data/ui/preferences.blp:83
 msgid "Method used to recolor background to match cover"
-msgstr ""
+msgstr "표지에 따라 배경 색상을 재설정하는 방법"
 
 #: ../data/ui/preferences.blp:87
 msgid "Linear gradient"
-msgstr ""
+msgstr "선형 그라데이션"
 
 #: ../data/ui/preferences.blp:88
 msgid "Blurred cover"
-msgstr ""
+msgstr "흐릿한 표지"
 
 #: ../data/ui/preferences.blp:98
 msgid "Desktop Notifications"
-msgstr ""
+msgstr "데스크탑 알림"
 
 #: ../data/ui/preferences.blp:99
 msgid "Use desktop notifications for downloads and library updates"
-msgstr ""
+msgstr "다운로드 및 라이브러리 업데이트에 데스크탑 알림 사용"
 
 #: ../data/ui/preferences.blp:107
 msgid "Synchronize reading progress"
-msgstr ""
+msgstr "독서 진도 동기화"
 
 #: ../data/ui/preferences.blp:118
 msgid "Display"
-msgstr ""
+msgstr "디스플레이"
 
 #: ../data/ui/preferences.blp:121
 msgid "Display Mode"
-msgstr ""
+msgstr "디스플레이 모드"
 
 #: ../data/ui/preferences.blp:124
 msgid "Grid"
-msgstr ""
+msgstr "그리드"
 
 #: ../data/ui/preferences.blp:125
 msgid "Compact Grid"
-msgstr ""
+msgstr "컴팩트 그리드"
 
 #: ../data/ui/preferences.blp:131
 msgid "Servers Logo"
-msgstr ""
+msgstr "서버 로고"
 
 #: ../data/ui/preferences.blp:132
 msgid "Display servers logo"
-msgstr ""
+msgstr "서버 로고 표시"
 
 #: ../data/ui/preferences.blp:136
 msgid "Badges"
-msgstr ""
+msgstr "뱃지"
 
 #: ../data/ui/preferences.blp:139
 msgid "Number of Unread Chapters"
-msgstr ""
+msgstr "읽지 않은 챕터 수"
 
 #: ../data/ui/preferences.blp:159
 msgid "Number of Downloaded Chapters"
-msgstr ""
+msgstr "다운로드한 챕터 수"
 
 #: ../data/ui/preferences.blp:179
 msgid "Number of Recent and Unread Chapters"
-msgstr ""
+msgstr "최근 추가되고 읽지 않은 챕터 수"
 
 #: ../data/ui/preferences.blp:204
 msgid "Update at Startup"
-msgstr ""
+msgstr "시작할 때 업데이트"
 
 #: ../data/ui/preferences.blp:205
 msgid "Automatically update library at startup"
-msgstr ""
+msgstr "시작할 때 라이브러리를 자동 업데이트"
 
 #: ../data/ui/preferences.blp:209
 msgid "Auto Download of New Chapters"
-msgstr ""
+msgstr "새 챕터 자동 다운로드"
 
 #: ../data/ui/preferences.blp:210
 msgid "Automatically download new chapters"
-msgstr ""
+msgstr "새 챕터를 자동으로 다운로드"
 
 #: ../data/ui/preferences.blp:218
 msgid "Languages"
-msgstr ""
+msgstr "언어"
 
 #: ../data/ui/preferences.blp:219
 msgid "Restrict servers to selected languages"
-msgstr ""
+msgstr "선택한 언어로 서버 제한"
 
 #: ../data/ui/preferences.blp:228
 msgid "Enable/disable and configure servers"
-msgstr ""
+msgstr "서버 활성화/비활성화 및 설정"
 
 #: ../data/ui/preferences.blp:236
 msgid "Long Strip Detection"
-msgstr ""
+msgstr "롱 스트립 감지"
 
 #: ../data/ui/preferences.blp:237
 msgid "Automatically detect long vertical strip when possible"
-msgstr ""
+msgstr "가능할 경우 세로로 긴 스트립을 자동으로 감지"
 
 #: ../data/ui/preferences.blp:243
 msgid "NSFW Content (18+)"
-msgstr ""
+msgstr "NSFW 컨텐츠 (18+)"
 
 #: ../data/ui/preferences.blp:244
 msgid "Whether to enable servers with NSFW content"
-msgstr ""
+msgstr "NSFW 컨텐츠를 포함하는 서버 활성화 여부"
 
 #: ../data/ui/preferences.blp:248
 msgid "NSFW Only Content (18+)"
-msgstr ""
+msgstr "NSFW 전용 컨텐츠 (18+)"
 
 #: ../data/ui/preferences.blp:249
 msgid "Whether to enable servers with NSFW only content"
-msgstr ""
+msgstr "NSFW 컨텐츠만 있는 서버 활성화 여부"
 
 #: ../data/ui/preferences.blp:253
 msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
 msgstr ""
+"이 설정은 잘못 분류된 서버에서 NSFW 컨텐츠를 노출하는 것을 방지하지 못할 수 "
+"있습니다."
 
 #: ../data/ui/preferences.blp:268 ../data/ui/reader.blp:10
 msgid "Reader"
-msgstr ""
+msgstr "리더"
 
 #: ../data/ui/preferences.blp:273
 msgid "Reading Mode"
-msgstr ""
+msgstr "읽기 모드"
 
 #: ../data/ui/preferences.blp:276
 msgid "⬅ Right to Left"
-msgstr ""
+msgstr "⬅ 오른쪽에서 왼쪽으로"
 
 #: ../data/ui/preferences.blp:277
 msgid "➡ Left to Right"
-msgstr ""
+msgstr "➡ 왼쪽에서 오른쪽으로"
 
 #: ../data/ui/preferences.blp:278
 msgid "⬇ Vertical"
-msgstr ""
+msgstr "⬇ 수직"
 
 #: ../data/ui/preferences.blp:279
 msgid "⬇ Webtoon"
-msgstr ""
+msgstr "⬇ 웹툰"
 
 #: ../data/ui/preferences.blp:285
 msgid "Scaling Filter"
-msgstr ""
+msgstr "스케일링 필터"
 
 #: ../data/ui/preferences.blp:286
 msgid "Interpolation method used when scaling images"
-msgstr ""
+msgstr "이미지를 확대할 때 사용되는 보간 기법"
 
 #: ../data/ui/preferences.blp:289
 msgid "Linear"
-msgstr ""
+msgstr "선형"
 
 #: ../data/ui/preferences.blp:290
 msgid "Trilinear"
-msgstr ""
+msgstr "삼선형"
 
 #: ../data/ui/preferences.blp:296
 msgid "Background Color"
-msgstr ""
+msgstr "배경 색상"
 
 #: ../data/ui/preferences.blp:299
 msgid "White"
-msgstr ""
+msgstr "흰색"
 
 #: ../data/ui/preferences.blp:300
 msgid "Gray"
-msgstr ""
+msgstr "회색"
 
 #: ../data/ui/preferences.blp:301
 msgid "Black"
-msgstr ""
+msgstr "검정"
 
 #: ../data/ui/preferences.blp:302
 msgid "System Style"
-msgstr ""
+msgstr "시스템 스타일"
 
 #: ../data/ui/preferences.blp:308
 msgid "Page Numbering"
-msgstr ""
+msgstr "페이지 넘버링"
 
 #: ../data/ui/preferences.blp:309
 msgid "Hide the page numbering at the bottom of the screen while reading"
-msgstr ""
+msgstr "읽는 동안 화면 하단에 페이지 번호 숨기기"
 
 #: ../data/ui/preferences.blp:313
 msgid "Fullscreen"
-msgstr ""
+msgstr "전체 화면"
 
 #: ../data/ui/preferences.blp:314
 msgid "Automatically enter fullscreen mode"
-msgstr ""
+msgstr "자동으로 전체 화면 모드 진입"
 
 #: ../data/ui/preferences.blp:319 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
-msgstr ""
+msgstr "페이지 읽기 모드"
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"
-msgstr ""
+msgstr "오른쪽에서 왼쪽 / 왼쪽에서 오른쪽 / 수직"
 
 #: ../data/ui/preferences.blp:323
 msgid "Scaling"
-msgstr ""
+msgstr "스케일링"
 
 #: ../data/ui/preferences.blp:324
 msgid "Type of scaling to adapt image"
-msgstr ""
+msgstr "이미지 맞춤 스케일링 유형"
 
 #: ../data/ui/preferences.blp:327
 msgid "Adapt to Screen"
-msgstr ""
+msgstr "화면에 맞춤"
 
 #: ../data/ui/preferences.blp:328
 msgid "Adapt to Width"
-msgstr ""
+msgstr "너비에 맞춤"
 
 #: ../data/ui/preferences.blp:329
 msgid "Adapt to Height"
-msgstr ""
+msgstr "높이에 맞춤"
 
 #: ../data/ui/preferences.blp:330
 msgid "Original Size"
-msgstr ""
+msgstr "원본 크기"
 
 #: ../data/ui/preferences.blp:336
 msgid "Landscape Pages Zoom"
-msgstr ""
+msgstr "가로 페이지 확대"
 
 #: ../data/ui/preferences.blp:337
 msgid ""
 "Zoom page to fit height when page is landscape (Adapt to Screen scaling only)"
-msgstr ""
+msgstr "가로 페이지일 때 높이에 맞게 확대 (화면 맞춤 모드 전용)"
 
 #: ../data/ui/preferences.blp:341
 msgid "Borders Crop"
-msgstr ""
+msgstr "여백 자르기"
 
 #: ../data/ui/preferences.blp:342
 msgid ""
@@ -716,55 +731,59 @@ msgid ""
 "NOTE: Requires more CPU usage and can cause rendering and animation "
 "slowdowns, especially on mobile devices."
 msgstr ""
+"이미지 흰색 여백을 자릅니다\n"
+"\n"
+"주의: CPU 사용량이 증가하여 모바일 기기 등에서 렌더링 및 애니메이션이 느려질 "
+"수 있습니다."
 
 #: ../data/ui/preferences.blp:347 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
-msgstr ""
+msgstr "웹툰 읽기 모드"
 
 #: ../data/ui/preferences.blp:348
 msgid "Long Strip aka Infinite Vertical Canvas"
-msgstr ""
+msgstr "롱스트립(무한 수직 캔버스)"
 
 #: ../data/ui/preferences.blp:353
 msgid "Reset to Default"
-msgstr ""
+msgstr "기본값으로 되돌리기"
 
 #: ../data/ui/preferences.blp:361
 msgid "Maximum Width"
-msgstr ""
+msgstr "최대 너비"
 
 #: ../data/ui/preferences.blp:362
 msgid "Constrain reader's width to a given maximum size"
-msgstr ""
+msgstr "리더의 너비를 설정된 최대 크기로 제한"
 
 #: ../data/ui/preferences.blp:372
 msgid "Scroll Distance"
-msgstr ""
+msgstr "스크롤 이동량"
 
 #: ../data/ui/preferences.blp:373
 msgid "Percentage of page height to scroll on click or Page Up/Down"
-msgstr ""
+msgstr "클릭 또는 페이지 업/다운에서 스크롤할 페이지 높이 비율"
 
 #: ../data/ui/preferences.blp:384
 msgid "Drag Sensitivity"
-msgstr ""
+msgstr "드래그 민감도"
 
 #: ../data/ui/preferences.blp:385
 msgid "Multiplier for drag scrolling sensitivity"
-msgstr ""
+msgstr "드래그 스크롤 감도 배수"
 
 #: ../data/ui/preferences.blp:399
 msgid "Advanced"
-msgstr ""
+msgstr "고급"
 
 #: ../data/ui/preferences.blp:403
 msgid "A setting has changed that requires a restart to take effect"
-msgstr ""
+msgstr "재시작이 필요한 설정이 변경되었습니다"
 
 #: ../data/ui/preferences.blp:409
 msgid "Data"
-msgstr ""
+msgstr "데이터"
 
 #: ../data/ui/preferences.blp:410
 msgid "Data not saved in the library"

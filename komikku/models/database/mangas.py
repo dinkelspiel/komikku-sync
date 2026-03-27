@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -600,8 +600,9 @@ class Manga:
 
                         logger.info('[UPDATE] {0} ({1}): Add new chapter {2}'.format(self.name, self.server_id, chapter_data['title']))
 
-            if chapters_changes['recent_ids'] or chapters_changes['nb_updated'] or chapters_changes['nb_deleted']:
-                data['last_update'] = datetime.datetime.now(datetime.UTC)
+            if not data.get('last_update'):
+                if chapters_changes['recent_ids'] or chapters_changes['nb_updated'] or chapters_changes['nb_deleted']:
+                    data['last_update'] = datetime.datetime.now(datetime.UTC)
 
             # Update cover
             cover = data.pop('cover', None)

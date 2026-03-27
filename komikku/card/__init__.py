@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 from gettext import gettext as _
+import pytz
 
 from gi.repository import Adw
 from gi.repository import Gdk
@@ -13,6 +14,7 @@ from gi.repository import Pango
 
 from komikku.consts import COVER_WIDTH
 from komikku.consts import MISSING_IMG_RESOURCE_PATH
+from komikku.consts import TIMEZONE
 from komikku.card.categories_list import CategoriesList
 from komikku.card.chapters_list import ChaptersList
 from komikku.card.tracking import TrackingDialog
@@ -617,12 +619,7 @@ class InfoBox:
                 )
             )
         else:
-            self.status_server_label.set_markup(
-                '{0} · {1}'.format(
-                    _('Unknown status'),
-                    html_escape(_('Local'))
-                )
-            )
+            self.status_server_label.set_text('{0} · {1}'.format(_('Unknown status'), _('Local')))
 
         # Resume button
         if manga.in_library:
@@ -658,11 +655,13 @@ class InfoBox:
             self.scanlators_label.get_parent().set_visible(False)
 
         # Number of chapters
-        self.chapters_label.set_markup(str(len(manga.chapters)))
+        self.chapters_label.set_text(str(len(manga.chapters)))
 
         # Last update date
         if manga.last_update:
-            self.last_update_label.set_markup(manga.last_update.strftime(_('%m/%d/%Y')))
+            self.last_update_label.set_text(
+                manga.last_update.replace(tzinfo=pytz.UTC).astimezone(TIMEZONE).strftime(_('%m/%d/%Y %H:%M'))
+            )
             self.last_update_label.get_parent().set_visible(True)
         else:
             self.last_update_label.get_parent().set_visible(False)
@@ -671,7 +670,7 @@ class InfoBox:
         self.set_disk_usage()
 
         # Synopsis
-        self.synopsis_label.set_markup('-')
+        self.synopsis_label.set_text('-')
         if manga.synopsis:
             synopsis = manga.synopsis
             if manga.server.donate_url:

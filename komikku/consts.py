@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
+
+import datetime
 
 COVER_WIDTH = 180
 COVER_HEIGHT = 256
@@ -11,6 +13,8 @@ DOWNLOAD_MAX_DELAY = 1  # in seconds
 REQUESTS_TIMEOUT = 5
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0'
 USER_AGENT_MOBILE = 'Mozilla/5.0 (Linux; U; Android 4.1.1; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
+
+TIMEZONE = datetime.datetime.now(tz=datetime.UTC).astimezone().tzinfo
 
 CREDITS = dict(
     artists=(

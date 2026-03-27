@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -12,6 +12,7 @@ from gi.repository import GObject
 from gi.repository import Gtk
 
 from komikku.consts import MISSING_IMG_RESOURCE_PATH
+from komikku.consts import TIMEZONE
 from komikku.models import Chapter
 from komikku.models import create_db_connection
 from komikku.utils import CoverPicture
@@ -20,7 +21,6 @@ from komikku.utils import html_escape
 DAYS_LIMIT = 30
 THUMB_WIDTH = 45
 THUMB_HEIGHT = 62
-TIMEZONE = datetime.datetime.now(tz=datetime.UTC).astimezone().tzinfo
 
 
 class HistoryDateBox(Gtk.Box):

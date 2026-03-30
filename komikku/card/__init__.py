@@ -445,6 +445,7 @@ class CardPage(Adw.NavigationPage):
 
     def remove_backdrop(self):
         self.remove_css_class('backdrop')
+        self.remove_css_class('backdrop-linear-gradient')
         self.backdrop_picture.set_paintable(None)
         self.backdrop_picture.set_opacity(1)
 
@@ -474,6 +475,7 @@ class CardPage(Adw.NavigationPage):
         elif method == 'linear-gradient':
             if css := self.manga.backdrop_colors_css:
                 self.css_provider.load_from_string(css)
+                self.add_css_class('backdrop-linear-gradient')
 
         self.add_css_class('backdrop')
 

@@ -161,7 +161,8 @@ class Manga:
             return path
 
         with Image.open(self.cover_fs_path) as image:
-            image = image.convert('RGB').filter(ImageFilter.GaussianBlur(35))
+            radius = 25 * max(1, image.width / 180)
+            image = image.convert('RGB').filter(ImageFilter.GaussianBlur(radius))
             image.save(path, 'JPEG')
 
         return path

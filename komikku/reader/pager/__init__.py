@@ -85,11 +85,14 @@ class BasePager:
 
         for page in read_pages.copy():
             # Loop as long as a page rendering is not ended
-            if page.status in ('rendering', 'allocable'):
+            if page.status in (None, 'rendering', 'allocable'):
                 return GLib.SOURCE_CONTINUE
 
             if page.status == 'offlimit' or page.error is not None:
                 read_pages.remove(page)
+
+        if not read_pages:
+            return GLib.SOURCE_REMOVE
 
         read_chapters = dict()
         for page in read_pages.copy():
@@ -150,7 +153,7 @@ class BasePager:
                     self.sync_progress_with_server(chapter, index)
                     self.sync_progress_with_trackers(chapter, index)
 
-        return GLib.SOURCE_REMOVE if not read_pages else GLib.SOURCE_CONTINUE
+        return GLib.SOURCE_REMOVE
 
     def sync_progress_with_server(self, chapter, index):
         # Sync reading progress with server if function is supported

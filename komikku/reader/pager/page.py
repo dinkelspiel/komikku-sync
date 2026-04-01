@@ -247,16 +247,18 @@ class Page(Gtk.Overlay):
         self.image.set_allow_zooming(allow)
 
     def set_image(self, retry):
-        def on_loaded(image, success=True):
-            if not success:
+        def on_loaded(image, error=None, mime_type=None):
+            if error:
+                self.error = error
                 self.show_retry_button()
 
                 if self.path:
                     GLib.unlink(self.path)
 
-                self.window.add_notification(_('Failed to load image'), timeout=2)
-                if self.path or self.data:
-                    self.error = 'corrupt_file'
+                message = [_('Failed to load image')]
+                if self.error == 'corrupted-or-unsupported-format':
+                    message.append(_('Corrupted file or unsupported image format ({0})').format(mime_type))
+                self.window.add_notification('\n'.join(message), timeout=2)
 
             image.connect('clicked', self.on_clicked)
             image.connect('rendered', self.on_rendered, retry)
@@ -277,7 +279,7 @@ class Page(Gtk.Overlay):
 
         if self.path is None and self.data is None:
             image = KImage()
-            image.load_missing(on_loaded)
+            image.load_missing(callback=on_loaded)
         else:
             image = KImage(
                 scaling=self.reader.scaling, scaling_filter=self.reader.scaling_filter, crop=self.reader.borders_crop, landscape_zoom=self.reader.landscape_zoom, zoomable=self.zoomable

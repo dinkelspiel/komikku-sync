@@ -270,9 +270,10 @@ def get_image_info(path_or_bytes):
                 'is_animated': False,
             }
         else:
-            logger.warning('Pillow: Failed to open or identify image file (%s)', content_type)
+            logger.warning('Pillow: Failed to open file - corrupted or unsupported image format (%s)', content_type)
             info = None
     else:
+        content_type = img.get_format_mimetype()
         info = {
             'width': img.width,
             'height': img.height,
@@ -281,7 +282,7 @@ def get_image_info(path_or_bytes):
 
         img.close()
 
-    return info
+    return info, content_type
 
 
 def get_response_elapsed(r):
@@ -612,7 +613,7 @@ class CoverLoader(GObject.GObject):
 
     @classmethod
     def new_from_data(cls, data, width=None, height=None, static_animation=False):
-        info = get_image_info(data)
+        info, mime_type = get_image_info(data)
         if not info:
             return None
 
@@ -624,15 +625,19 @@ class CoverLoader(GObject.GObject):
                 pixbuf = Pixbuf.new_from_stream(stream)
 
             stream.close()
-        except Exception:
+        except Exception as exc:
             # Invalid image, corrupted image, unsupported image format,...
+            logger.warning(
+                'Failed to create pixbuf: corrupted file or unsupported image format (%s)',
+                mime_type, exc_info=exc
+            )
             return None
 
         return cls(None, pixbuf, None, width, height, static_animation)
 
     @classmethod
     def new_from_file(cls, path, width=None, height=None, static_animation=False):
-        info = get_image_info(path)
+        info, mime_type = get_image_info(path)
         if not info:
             return None
 
@@ -641,8 +646,12 @@ class CoverLoader(GObject.GObject):
                 pixbuf = PixbufAnimation.new_from_file(path)
             else:
                 pixbuf = Pixbuf.new_from_file(path)
-        except Exception:
+        except Exception as exc:
             # Invalid image, corrupted image, unsupported image format,...
+            logger.warning(
+                'Failed to create pixbuf: corrupted file or unsupported image format (%s)',
+                mime_type, xc_info=exc
+            )
             return None
 
         return cls(path, pixbuf, None, width, height, static_animation)

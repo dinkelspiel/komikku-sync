@@ -530,9 +530,9 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
             self.__rendered = True
 
     def load(self, path=None, data=None, callback=None, static_animation=False):
-        info = get_image_info(path or data)
+        info, mime_type = get_image_info(path or data)
         if info is None:
-            self.load_missing(callback=callback)
+            self.load_missing(callback=callback, error='corrupted-or-unsupported-format', mime_type=mime_type)
             return
 
         try:
@@ -543,19 +543,19 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
                 stream = Gio.MemoryInputStream.new_from_data(data, None)
 
             if not info['is_animated']:
-                Pixbuf.new_from_stream_async(stream, None, self.load_ready, callback, info)
+                Pixbuf.new_from_stream_async(stream, None, self.load_ready, callback, info, mime_type)
             else:
-                PixbufAnimation.new_from_stream_async(stream, None, self.load_ready, callback, info)
+                PixbufAnimation.new_from_stream_async(stream, None, self.load_ready, callback, info, mime_type)
 
         except Exception as exc:
-            logger.error('Failed to create textures: corrupted image or unsupported image format', exc_info=exc)
-            self.load_missing(callback=callback)
+            logger.warning('Failed to create textures: corrupted file or unsupported image format', exc_info=exc)
+            self.load_missing(callback=callback, error='corrupted-or-unsupported-format', mime_type=mime_type)
             return
 
         self.path = path
         self.data = data
 
-    def load_missing(self, callback=None):
+    def load_missing(self, callback=None, error=None, mime_type=None):
         self.path = MISSING_IMG_RESOURCE_PATH
 
         # Reset instance variables and controllers
@@ -570,13 +570,13 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
             self.textures = [Gdk.Texture.new_from_resource(self.path)]
 
         except Exception as exc:
-            logger.error('Failed to create textures: corrupted image or unsupported image format', exc_info=exc)
+            logger.warning('Failed to create textures: corrupted file or unsupported image format', exc_info=exc)
             return
 
         if callback:
-            callback(self, success=False)
+            callback(self, error=error, mime_type=mime_type)
 
-    def load_ready(self, stream, result, callback, info):
+    def load_ready(self, stream, result, callback, info, mime_type):
         stream.close()
 
         try:
@@ -597,8 +597,8 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
                 self.animation_tick_callback_id = self.add_tick_callback(self.__animation_tick_callback)
 
         except Exception as exc:
-            logger.error('Failed to create textures: corrupted image or unsupported image format', exc_info=exc)
-            self.load_missing(callback=callback)
+            logger.warning('Failed to create textures: corrupted file or unsupported image format', exc_info=exc)
+            self.load_missing(callback=callback, error='corrupted-or-unsupported-format', mime_type=mime_type)
             return
 
         callback(self)

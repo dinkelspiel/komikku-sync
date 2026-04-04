@@ -109,7 +109,7 @@ class Manganelo(Server):
 
         for chapter in reversed(resp_data['data']['chapters']):
             data['chapters'].append(dict(
-                slug=chapter['chapter_slug'].split('-')[-1],
+                slug='-'.join(chapter['chapter_slug'].split('-')[1:]),
                 title=chapter['chapter_name'].strip(),
                 num=chapter['chapter_num'] if is_number(chapter.get('chapter_num')) else None,
                 date=convert_date_string(chapter['updated_at'].split('T')[0], format='%Y-%m-%d'),

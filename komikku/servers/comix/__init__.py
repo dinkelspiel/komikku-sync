@@ -2,9 +2,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+import base64
 import datetime
 from gettext import gettext as _
 import time
+import urllib.parse
 
 from bs4 import BeautifulSoup
 
@@ -18,6 +20,283 @@ from komikku.utils import is_number
 from komikku.webview import CompleteChallenge
 
 SEARCH_RESULTS_PAGES = 4
+
+KEYS = {
+    0: '13YDu67uDgFczo3DnuTIURqas4lfMEPADY6Jaeqky+w=',   # 0  RC4 key  round 1
+    1: 'yEy7wBfBc+gsYPiQL/4Dfd0pIBZFzMwrtlRQGwMXy3Q=',   # 1  mut_key  round 1
+    2: 'yrP+EVA1Dw==',                                   # 2  pref_key round 1
+    3: 'vZ23RT7pbSlxwiygkHd1dhToIku8SNHPC6V36L4cnwM=',   # 3  RC4 key  round 2
+    4: 'QX0sLahOByWLcWGnv6l98vQudWqdRI3DOXBdit9bxCE=',   # 4  mut_key  round 2
+    5: 'WJwgqCmf',                                       # 5  pref_key round 2
+    6: 'BkWI8feqSlDZKMq6awfzWlUypl88nz65KVRmpH0RWIc=',   # 6  RC4 key  round 3
+    7: 'v7EIpiQQjd2BGuJzMbBA0qPWDSS+wTJRQ7uGzZ6rJKs=',   # 7  mut_key  round 3
+    8: '1SUReYlCRA==',                                   # 8  pref_key round 3
+    9: 'RougjiFHkSKs20DZ6BWXiWwQUGZXtseZIyQWKz5eG34=',   # 9  RC4 key  round 4
+    10: 'LL97cwoDoG5cw8QmhI+KSWzfW+8VehIh+inTxnVJ2ps=',  # 10 mut_key  round 4
+    11: '52iDqjzlqe8=',                                  # 11 pref_key round 4
+    12: 'U9LRYFL2zXU4TtALIYDj+lCATRk/EJtH7/y7qYYNlh8=',  # 12 RC4 key  round 5
+    13: 'e/GtffFDTvnw7LBRixAD+iGixjqTq9kIZ1m0Hj+s6fY=',  # 13 mut_key  round 5
+    14: 'xb2XwHNB',                                      # 14 pref_key round 5
+}
+
+
+def generate_hash(path, body_size=0, time=1):
+    """
+    :param path: API path, e.g. '/manga/some-hash/chapters'
+    :param body_size: encodeURIComponent(body) length for POST, or 0 for GET
+    :param time: 1 for GET manga requests, `System.currentTimeMillis()` for POST
+    """
+
+    def get_key_bytes(index):
+        b64 = KEYS.get(index)
+        if not b64:
+            return []
+
+        key = []
+        for c in base64.b64decode(b64):
+            key.append(int(c) & 0xFF)
+
+        return key
+
+    def get_mut_key(mk, idx):
+        if mk and (idx % 32) < len(mk):
+            return mk[idx % 32]
+        return 0
+
+    def mut_s(e):
+        return (e + 143) % 256
+
+    def mut_l(e):
+        return ((e >> 1) | (e << 7)) & 255
+
+    def mut_c(e):
+        return (e + 115) % 256
+
+    def mut_m(e):
+        return e ^ 177
+
+    def mut_f(e):
+        return (e - 188 + 256) % 256
+
+    def mut_g(e):
+        return ((e << 2) | (e >> 6)) & 255
+
+    def mut_h(e):
+        return (e - 42 + 256) % 256
+
+    def mut_dollar(e):
+        return ((e << 4) | (e >> 4)) & 255
+
+    def mut_b(e):
+        return (e - 12 + 256) % 256
+
+    def mut_underscore(e):
+        return (e - 20 + 256) % 256
+
+    def mut_y(e):
+        return ((e >> 1) | (e << 7)) & 255
+
+    def mut_k(e):
+        return (e - 241 + 256) % 256
+
+    def RC4(key, data):
+        if not key:
+            return data
+        s = list(range(256))
+        j = 0
+        for i in range(256):
+            j = (j + s[i] + key[i % len(key)]) % 256
+            temp = s[i]
+            s[i] = s[j]
+            s[j] = temp
+
+        i = 0
+        j = 0
+        out = [0] * len(data)
+        for k in range(len(data)):
+            i = (i + 1) % 256
+            j = (j + s[i]) % 256
+            temp = s[i]
+            s[i] = s[j]
+            s[j] = temp
+            out[k] = data[k] ^ s[(s[i] + s[j]) % 256]
+
+        return out
+
+    def round1(data):
+        enc = RC4(get_key_bytes(0), data)
+        mut_key = get_key_bytes(1)
+        pref_key = get_key_bytes(2)
+        out = []
+
+        for i, c in enumerate(enc):
+            if i < 7 and i < len(pref_key):
+                out.append(pref_key[i])
+
+            v = c ^ get_mut_key(mut_key, i)
+            if i % 10 in (0, 9):
+                v = mut_c(v)
+            elif i % 10 == 1:
+                v = mut_b(v)
+            elif i % 10 == 2:
+                v = mut_y(v)
+            elif i % 10 == 3:
+                v = mut_dollar(v)
+            elif i % 10 in (4, 6):
+                v = mut_h(v)
+            elif i % 10 == 5:
+                v = mut_s(v)
+            elif i % 10 == 7:
+                v = mut_k(v)
+            elif i % 10 == 8:
+                v = mut_l(v)
+
+            out.append(v & 255)
+
+        return out
+
+    def round2(data):
+        enc = RC4(get_key_bytes(3), data)
+        mut_key = get_key_bytes(4)
+        pref_key = get_key_bytes(5)
+        out = []
+
+        for i, c in enumerate(enc):
+            if i < 6 and i < len(pref_key):
+                out.append(pref_key[i])
+
+            v = c ^ get_mut_key(mut_key, i)
+            if i % 10 in (0, 8):
+                v = mut_c(v)
+            elif i % 10 == 1:
+                v = mut_b(v)
+            elif i % 10 in (2, 6):
+                v = mut_dollar(v)
+            elif i % 10 == 3:
+                v = mut_h(v)
+            elif i % 10 in (4, 9):
+                v = mut_s(v)
+            elif i % 10 == 5:
+                v = mut_k(v)
+            elif i % 10 == 7:
+                v = mut_underscore(v)
+
+            out.append(v & 255)
+
+        return out
+
+    def round3(data):
+        enc = RC4(get_key_bytes(6), data)
+        mut_key = get_key_bytes(7)
+        pref_key = get_key_bytes(8)
+        out = []
+
+        for i, c in enumerate(enc):
+            if i < 7 and i < len(pref_key):
+                out.append(pref_key[i])
+
+            v = c ^ get_mut_key(mut_key, i)
+            if i % 10 == 0:
+                v = mut_c(v)
+            elif i % 10 == 1:
+                v = mut_f(v)
+            elif i % 10 in (2, 8):
+                v = mut_s(v)
+            elif i % 10 == 3:
+                v = mut_g(v)
+            elif i % 10 == 4:
+                v = mut_y(v)
+            elif i % 10 == 5:
+                v = mut_m(v)
+            elif i % 10 == 6:
+                v = mut_dollar(v)
+            elif i % 10 == 7:
+                v = mut_k(v)
+            elif i % 10 == 9:
+                v = mut_b(v)
+
+            out.append(v & 255)
+
+        return out
+
+    def round4(data):
+        enc = RC4(get_key_bytes(9), data)
+        mut_key = get_key_bytes(10)
+        pref_key = get_key_bytes(11)
+        out = []
+
+        for i, c in enumerate(enc):
+            if i < 8 and i < len(pref_key):
+                out.append(pref_key[i])
+
+            v = c ^ get_mut_key(mut_key, i)
+            if i % 10 == 0:
+                v = mut_b(v)
+            elif i % 10 in (1, 9):
+                v = mut_m(v)
+            elif i % 10 in (2, 7):
+                v = mut_l(v)
+            elif i % 10 in (3, 5):
+                v = mut_s(v)
+            elif i % 10 in (4, 6):
+                v = mut_underscore(v)
+            elif i % 10 == 8:
+                v = mut_y(v)
+
+            out.append(v & 255)
+
+        return out
+
+    def round5(data):
+        enc = RC4(get_key_bytes(12), data)
+        mut_key = get_key_bytes(13)
+        pref_key = get_key_bytes(14)
+        out = []
+
+        for i, c in enumerate(enc):
+            if i < 6 and i < len(pref_key):
+                out.append(pref_key[i])
+
+            v = c ^ get_mut_key(mut_key, i)
+            if i % 10 == 0:
+                v = mut_underscore(v)
+            elif i % 10 in (1, 7):
+                v = mut_s(v)
+            elif i % 10 == 2:
+                v = mut_c(v)
+            elif i % 10 in (3, 5):
+                v = mut_m(v)
+            elif i % 10 == 4:
+                v = mut_b(v)
+            elif i % 10 == 6:
+                v = mut_f(v)
+            elif i % 10 == 8:
+                v = mut_dollar(v)
+            elif i % 10 == 9:
+                v = mut_g(v)
+
+            out.append(v & 255)
+
+        return out
+
+    base_str = f'{path}:{body_size}:{time}'  # noqa: E231
+    encoded = urllib.parse.quote_plus(base_str).replace('+', '%20').replace('*', '%2A').replace('%7E', '~')
+
+    initial_bytes = []
+    for i in encoded.encode():
+        initial_bytes.append(int(i) & 0xFF)
+
+    r1 = round1(initial_bytes)
+    r2 = round2(r1)
+    r3 = round3(r2)
+    r4 = round4(r3)
+    r5 = round5(r4)
+
+    final_bytes = []
+    for c in r5:
+        final_bytes.append(c.to_bytes(1))
+
+    return base64.b64encode(b''.join(final_bytes), altchars=b'-_').replace(b'=', b'')
 
 
 class Comix(Server):
@@ -192,6 +471,8 @@ class Comix(Server):
         """
         chapters = []
         hash_id = slug.split('-')[0]
+        path = f'/manga/{hash_id}/chapters'
+        hash_token = generate_hash(path, 0, 1)
 
         def get_page(page):
             r = self.session_get(
@@ -199,18 +480,21 @@ class Comix(Server):
                 params={
                     'order[number]': 'desc',
                     'limit': 100,
+                    'time': 1,
                     'page': page,
+                    '_': hash_token,
                 },
                 headers={
+                    'Content-Type': 'application/json',
                     'Referer': self.manga_url.format(slug),
                 }
             )
             if r.status_code != 200:
-                return None
+                return None, False, 0
 
             resp_data = r.json()
             if resp_data['status'] != 200:
-                return None
+                return None, False, 0
 
             more = page < resp_data['result']['pagination']['last_page']
 
@@ -225,6 +509,8 @@ class Comix(Server):
                 time.sleep(delay)
 
             items, more, rtime = get_page(page)
+            if not items:
+                return []
             for item in items:
                 title = f'Ch. {item["number"]}'
                 if item['volume']:

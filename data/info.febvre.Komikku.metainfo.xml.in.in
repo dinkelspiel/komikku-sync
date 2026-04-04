@@ -67,7 +67,7 @@
             <image>https://codeberg.org/valos/Komikku/raw/branch/main/screenshots/library-with-categories.png</image>
         </screenshot>
         <screenshot>
-            <caption>The Preferences page (Library settings)</caption>
+            <caption>The Preferences page (General settings)</caption>
             <image>https://codeberg.org/valos/Komikku/raw/branch/main/screenshots/preferences.png</image>
         </screenshot>
         <screenshot>
@@ -114,6 +114,25 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.1.0" date="2025-04-05">
+            <description translate="no">
+                <ul>
+                    <li>[Card] Improved `Blurred covers` backdrop</li>
+                    <li>[Card] Info: Added the time to `Last Update`</li>
+                    <li>[Reader] Improved notification message when an image fails to load (unidentified)</li>
+                    <li>[Reader] Improved saving of reading progress</li>
+                    <li>[Servers] Added Suwayomi</li>
+                    <li>[Servers] Comix (EN): Update</li>
+                    <li>[Servers] EZmanga (EN): Update</li>
+                    <li>[Servers] MangaDex: Get manga chapters regardless of content rating</li>
+                    <li>[Servers] MangaNato (EN): Update</li>
+                    <li>[Servers] Qi Scans (EN): Update</li>
+                    <li>[Servers] WeebDex (multi): Update</li>
+                    <li>[L10n] Updated Croatian, French, German, Korean and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.0.1" date="2025-03-23">
             <description translate="no">
                 <p>This is a bugfix version.</p>

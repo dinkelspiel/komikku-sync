@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -6,7 +6,6 @@
 
 # Supported servers:
 # Aurora Scans [EN] (disabled)
-# EZmanga [EN]
 # Hijala Scans [EN]
 # Hive Toon [EN]
 # Mode Scanlator [pt_BR] (disabled)

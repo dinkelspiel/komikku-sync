@@ -9,7 +9,6 @@
 # Hijala Scans [EN]
 # Hive Toon [EN]
 # Mode Scanlator [pt_BR] (disabled)
-# Qi Scans [EN]
 # Reaper Scans [EN] (disabled)
 # Reaper Scans [pt_BR] (disabled)
 # Rezo Scans [EN] (disabled)

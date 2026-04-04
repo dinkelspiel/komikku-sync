@@ -2,13 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
-from komikku.servers.multi.heancms import HeanCMS
+from komikku.servers.multi.iken import Iken
 
 
-class Nightscans(HeanCMS):
+class Nightscans(Iken):
     id = 'nightscans'
     name = 'Qi Scans (Night scans)'
     lang = 'en'
 
     base_url = 'https://qimanhwa.com'
-    api_url = 'https://api.qimanhwa.com/api'
+    logo_url = base_url + 'qimanhwa.ico'
+    api_url = 'https://api.qimanhwa.com/api/v1'

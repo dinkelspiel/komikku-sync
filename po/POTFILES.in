@@ -90,6 +90,7 @@ komikku/servers/raijinscan/__init__.py
 komikku/servers/rawkuma/__init__.py
 komikku/servers/readmanhwa/__init__.py
 komikku/servers/smbc/__init__.py
+komikku/servers/suwayomi/__init__.py
 komikku/servers/threepanelsoul/__init__.py
 komikku/servers/webtoon/__init__.py
 komikku/servers/weebcentral/__init__.py

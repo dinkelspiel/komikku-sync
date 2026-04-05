@@ -8,6 +8,7 @@
 # Aurora Scans [EN] (disabled)
 # Hijala Scans [EN]
 # Hive Toon [EN]
+# Kenscans [EN]
 # Mode Scanlator [pt_BR] (disabled)
 # Reaper Scans [EN] (disabled)
 # Reaper Scans [pt_BR] (disabled)
@@ -43,8 +44,6 @@ class HeanCMS(Server):
     api_chapters_url: str = None
 
     def __init__(self):
-        if self.logo_url is None:
-            self.logo_url = self.base_url + '/favicon.ico'
         if self.manga_url is None:
             self.manga_url = self.base_url + '/series/{0}'
         if self.chapter_url is None:

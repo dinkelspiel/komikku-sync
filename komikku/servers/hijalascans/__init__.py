@@ -11,5 +11,5 @@ class Hijalascans(HeanCMS):
     lang = 'en'
 
     base_url = 'https://en-hijala.com'
-    logo_url = 'https://storage.en-hijala.com/upload/2025/06/24/final-523b7e2e4fb3a659.webp'
+    logo_url = base_url + '/favicon-32x32.png'
     api_url = 'https://api.en-hijala.com/api'

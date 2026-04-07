@@ -24,6 +24,7 @@ class Weebdex(Server):
     name = 'WeebDex'
     lang = 'en'
     lang_code = 'en'
+    status = 'disabled'  # EoS 04/07/2026
 
     is_nsfw = True
 

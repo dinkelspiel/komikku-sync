@@ -650,7 +650,7 @@ class CoverLoader(GObject.GObject):
             # Invalid image, corrupted image, unsupported image format,...
             logger.warning(
                 'Failed to create pixbuf: corrupted file or unsupported image format (%s)',
-                mime_type, xc_info=exc
+                mime_type, exc_info=exc
             )
             return None
 

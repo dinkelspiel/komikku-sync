@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-04 23:38+0200\n"
-"PO-Revision-Date: 2026-02-15 01:09+0000\n"
+"PO-Revision-Date: 2026-04-08 09:09+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
 "vi/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -58,6 +58,7 @@ msgstr "Đọc trực tuyến và ngoại tuyến từ hàng chục máy chủ"
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Hỗ trợ các chuỗi được lưu trữ cục bộ (ở định dạng CBZ/CBR/CBT, EPUB và PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -156,7 +157,7 @@ msgstr "Trang Thư viện với thanh bên danh mục đang mở"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "Trang Tùy chọn (Cài đặt chung)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
@@ -1162,7 +1163,7 @@ msgstr "Xóa?"
 
 #: ../komikku/card/__init__.py:227
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "Bạn có chắc chắn muốn xóa tất cả các chương không?"
 
 #: ../komikku/card/__init__.py:228 ../komikku/card/chapters_list.py:728
 #: ../komikku/preferences/__init__.py:156
@@ -1215,7 +1216,7 @@ msgstr "Môi trường"
 
 #: ../komikku/card/__init__.py:665
 msgid "%m/%d/%Y %H:%M"
-msgstr ""
+msgstr "%m/%d/%Y %H:%M"
 
 #: ../komikku/card/__init__.py:679
 msgid "Donate"
@@ -1230,7 +1231,7 @@ msgstr[0] "{0} đã chọn"
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
-msgstr ""
+msgstr "Không tìm thấy chương nào"
 
 #: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
 msgid "Failed to update chapters reading status"
@@ -1389,21 +1390,25 @@ msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr ""
+"Cần có cấu trúc thư mục cụ thể để truyện tranh cục bộ được xử lý đúng cách."
 
 #: ../komikku/explorer/common.py:271
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"Mỗi truyện tranh phải có thư mục riêng chứa các chương/tập dưới dạng tệp lưu "
+"trữ ở định dạng CBZ, CBR, CBT, EPUB hoặc PDF."
 
 #: ../komikku/explorer/common.py:272
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "Tên của thư mục sẽ được dùng làm tên cho truyện tranh."
 
 #: ../komikku/explorer/common.py:273
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
+"LƯU Ý: Cần có công cụ dòng lệnh 'unrar' hoặc 'unar' cho các kho lưu trữ CBR."
 
 #: ../komikku/explorer/common.py:279
 msgid "Open local folder"
@@ -1580,7 +1585,7 @@ msgstr "Chưa đọc"
 
 #: ../komikku/library/__init__.py:418
 msgid "Series with unread chapters"
-msgstr ""
+msgstr "Series có các chương chưa đọc"
 
 #: ../komikku/library/__init__.py:421
 #: ../komikku/models/database/downloads.py:20
@@ -1589,7 +1594,7 @@ msgstr "Đã tải xuống"
 
 #: ../komikku/library/__init__.py:422
 msgid "Series with downloaded chapters"
-msgstr ""
+msgstr "Loạt truyện có các chương đã tải xuống"
 
 #: ../komikku/library/__init__.py:425
 msgid "Recents"
@@ -1597,7 +1602,7 @@ msgstr "Gần đây"
 
 #: ../komikku/library/__init__.py:426
 msgid "Series with new chapters"
-msgstr ""
+msgstr "Loạt truyện với các chương mới"
 
 #: ../komikku/library/__init__.py:643
 msgid "Welcome to Komikku"
@@ -1866,7 +1871,7 @@ msgstr "Không thể tải hình ảnh"
 #: ../komikku/reader/pager/page.py:260
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
-msgstr ""
+msgstr "Tệp bị hỏng hoặc định dạng hình ảnh không được hỗ trợ ({0})"
 
 #: ../komikku/reader/pager/page.py:301
 msgid "Retry"
@@ -2647,7 +2652,7 @@ msgstr "Không có sẵn ngôn ngữ {0}"
 
 #: ../komikku/servers/suwayomi/__init__.py:33
 msgid "Manga reader server"
-msgstr ""
+msgstr "Server đọc manga"
 
 #: ../komikku/servers/webtoon/__init__.py:61
 msgid "Originals"

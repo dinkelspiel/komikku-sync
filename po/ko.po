@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-04 23:38+0200\n"
-"PO-Revision-Date: 2026-03-27 13:09+0000\n"
-"Last-Translator: 안세훈 <on9686@gmail.com>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/komikku/main/ko/"
-">\n"
+"PO-Revision-Date: 2026-04-07 08:09+0000\n"
+"Last-Translator: on9686 <on9686@gmail.com>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/komikku/main/ko/>"
+"\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,7 +152,7 @@ msgstr "카테고리 사이드바가 열린 라이브러리 페이지"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "설정 페이지 (일반 설정)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"

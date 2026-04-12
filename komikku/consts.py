@@ -109,7 +109,7 @@ CREDITS = dict(
         'Riccardo Luise (Italian)',
         'cas9 (Italian)',
         'Giulia (Italian)',
-        '안세훈 (Korean)',
+        'on9686 (Korean)',
         'Flynn (Cornish)',
         'Velyvis (Lithuanian)',
         'Lili Kurek (Polish)',
@@ -156,18 +156,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Card] Improved `Blurred covers` backdrop</li>
-    <li>[Card] Info: Added the time to `Last Update`</li>
-    <li>[Reader] Improved notification message when an image fails to load (unidentified)</li>
-    <li>[Reader] Improved saving of reading progress</li>
-    <li>[Servers] Added Suwayomi</li>
-    <li>[Servers] Comix (EN): Update</li>
-    <li>[Servers] EZmanga (EN): Update</li>
-    <li>[Servers] MangaDex: Get manga chapters regardless of content rating</li>
-    <li>[Servers] MangaNato (EN): Update</li>
-    <li>[Servers] Qi Scans (EN): Update</li>
-    <li>[Servers] WeebDex (multi): Update</li>
-    <li>[L10n] Updated Croatian, French, German, Korean and Ukrainian translations</li>
+    <li>Fixed an issue with unidentified cover files</li>
+    <li>[Servers] Added Kenscans (EN)</li>
+    <li>[Servers] Hijala Scans (EN): Update</li>
+    <li>[Servers] Hive Toons (EN): Update</li>
+    <li>[Servers] WeebDex (EN): Disabled</li>
+    <li>[L10n] Updated German, Korean, Ukrainian and Vietnamese translations</li>
 </ul>
 <p>Happy reading.</p>
 """

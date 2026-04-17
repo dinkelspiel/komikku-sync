@@ -245,7 +245,7 @@ class Myanimelist(Tracker):
                 'name': item['node']['title'],
                 'score': item['node']['mean'] if item['node'].get('mean') else None,
                 'start_date': item['node']['start_date'][:4] if item['node'].get('start_date') else None,
-                'status': self.RELEASE_STATUSES[item['node']['status']],
+                'status': self.RELEASE_STATUSES.get(item['node']['status']),
                 'synopsis': item['node']['synopsis'],
             })
 

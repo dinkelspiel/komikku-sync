@@ -150,8 +150,8 @@ class TracherResultRow(Gtk.ListBoxRow):
         if data.get('start_date'):
             details.append(data['start_date'])
 
-        if data.get('status'):
-            details.append(data['status'])
+        if 'status' in data:
+            details.append(data['status'] or _('Unknown status'))
 
         if data.get('score'):
             details.append(f'{data["score"]}/10')

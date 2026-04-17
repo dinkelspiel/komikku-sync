@@ -310,7 +310,7 @@ class Anilist(Tracker):
                 'name': item['title']['userPreferred'],
                 'score': item['meanScore'] / 10 if item.get('meanScore') else None,
                 'start_date': str(item['startDate']['year']),
-                'status': self.RELEASE_STATUSES[item['status']],
+                'status': self.RELEASE_STATUSES.get(item['status'], "Unknown"),
                 'synopsis': item['description'],
             })
 

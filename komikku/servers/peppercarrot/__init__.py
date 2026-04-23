@@ -163,7 +163,7 @@ class Peppercarrot(Server):
             return {
                 'pages': [{
                     'slug': None,
-                    'image': soup.select_one('.webcomic-page img').get('src'),
+                    'image': soup.select_one('#panel-all img').get('src'),
                 }],
             }
 

@@ -50,15 +50,15 @@ class Mangainua(Server):
         soup = BeautifulSoup(r.text, features='lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         data['name'] = soup.find('span', class_='UAname').text
         data['cover'] = self.base_url + soup.find('figure').find('img')['src']
@@ -111,34 +111,38 @@ class Mangainua(Server):
 
         r = self.session_post(
             self.api_chapters_url,
-            data=dict(
-                action='show',
-                news_id=news_id,
-                news_category=1,
-                this_link='',
-                user_hash=hash,
-            )
+            data={
+                'action': 'show',
+                'news_id': news_id,
+                'news_category': '1',
+                'this_link': '',
+                'user_hash': hash,
+            },
+            headers={
+                'X-Requested-With': 'XMLHttpRequest',
+                'Referer': initial_data['url'],
+            }
         )
         if r.status_code != 200:
             return None
 
         soup = BeautifulSoup(r.text, features='lxml')
 
-        for chapter in soup.find_all('div', class_='ltcitems'):
-            url = chapter.a.get('href')
+        for element in soup.select('.ltcitems'):
+            url = element.a.get('href')
             slug = url.split('/')[-1].split('.')[0]
-            title = chapter.a.text.replace('НОВЕ', '')[1:]
-            num = chapter.get('manga-chappter')
-            num_volume = chapter.get('manga-tom')
+            title = element.a.text.replace('НОВЕ', '')[1:]
+            num = element.get('manga-chappter')
+            num_volume = element.get('manga-tom')
 
-            data['chapters'].append(dict(
-                url=url,
-                slug=slug,
-                title=title,
-                num=num if is_number(num) else None,
-                num_volume=num_volume if is_number(num_volume) else None,
-                date=convert_date_string(chapter.find('div', class_='ltcright').text, '%d.%m.%Y'),
-            ))
+            data['chapters'].append({
+                'url': url,
+                'slug': slug,
+                'title': title,
+                'num': num if is_number(num) else None,
+                'num_volume': num_volume if is_number(num_volume) else None,
+                'date': convert_date_string(element.select_one('.ltcright').text, '%d.%m.%Y'),
+            })
 
         return data
 
@@ -176,6 +180,10 @@ class Mangainua(Server):
                 'news_id': news,
                 'action': 'show',
                 'user_hash': hash
+            },
+            headers={
+                'X-Requested-With': 'XMLHttpRequest',
+                'Referer': chapter_url,
             }
         )
         if r.status_code != 200:
@@ -183,15 +191,15 @@ class Mangainua(Server):
 
         soup = BeautifulSoup(r.text, features='lxml')
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         urls = [tag['data-src'] for tag in soup.select('img')]
         for url in urls:
-            data['pages'].append(dict(
-                slug=None,
-                image=url,
-            ))
+            data['pages'].append({
+                'slug': None,
+                'image': url,
+            })
 
         return data
 
@@ -207,11 +215,11 @@ class Mangainua(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('/')[-1],
+        }
 
     @staticmethod
     def get_manga_url(_slug, url):
@@ -235,12 +243,12 @@ class Mangainua(Server):
             a_element = element.select_one('.title a')
             url = a_element.get('href')
             slug = url.split('/')[-1].split('.')[0]
-            results.append(dict(
-                url=url,
-                slug=slug,  # unused
-                name=a_element.get('title'),
-                cover=self.base_url + element.header.img.get('data-src'),
-            ))
+            results.append({
+                'url': url,
+                'slug': slug,  # unused
+                'name': a_element.get('title'),
+                'cover': self.base_url + element.header.img.get('data-src'),
+            })
 
         return results
 
@@ -258,12 +266,12 @@ class Mangainua(Server):
         for a_element in soup.select('.slider .card > a'):
             url = a_element.get('href')
             slug = url.split('/')[-1].split('.')[0]
-            results.append(dict(
-                url=url,
-                slug=slug,  # unused
-                name=a_element.get('title'),
-                cover=self.base_url + a_element.header.figure.img.get('data-src'),
-            ))
+            results.append({
+                'url': url,
+                'slug': slug,  # unused
+                'name': a_element.get('title'),
+                'cover': self.base_url + a_element.header.figure.img.get('data-src'),
+            })
 
         return results
 
@@ -280,11 +288,11 @@ class Mangainua(Server):
             img_element = element.select_one('header > figure > img')
             url = a_element.get('href')
             slug = url.split('/')[-1].split('.')[0]
-            results.append(dict(
-                url=url,
-                slug=slug,  # unused
-                name=a_element.get('title'),
-                cover=self.base_url + img_element.get('src'),
-            ))
+            results.append({
+                'url': url,
+                'slug': slug,  # unused
+                'name': a_element.get('title'),
+                'cover': self.base_url + img_element.get('src'),
+            })
 
         return results

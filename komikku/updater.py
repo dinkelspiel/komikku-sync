@@ -48,6 +48,10 @@ class Updater(GObject.GObject):
             if manga.id not in self.queue and manga.id != self.current_id and manga.server.status == 'enabled':
                 self.queue.append((manga.id, batch))
 
+    def remove(self, manga):
+        if manga.id in self.queue:
+            self.queue.remove(manga.id)
+
     @if_network_available(only_notify=True)
     def start(self):
         def show_notification(id, title, body=None):
@@ -192,10 +196,6 @@ class Updater(GObject.GObject):
         thread.start()
 
         return True
-
-    def remove(self, manga):
-        if manga.id in self.queue:
-            self.queue.remove(manga.id)
 
     def stop(self):
         if self.running:

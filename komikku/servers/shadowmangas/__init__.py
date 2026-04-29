@@ -10,6 +10,7 @@ class Shadowmangas(MangaStream):
     name = 'ShadowMangas'
     lang = 'es'
     is_nsfw = True
+    status = 'disabled'
 
     base_url = 'https://shadowmangas.com'
     logo_url = 'https://i3.wp.com/shadowmangas.com/wp-content/uploads/2022/09/cropped-icoweb-32x32.png'

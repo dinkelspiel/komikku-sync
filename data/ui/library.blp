@@ -126,6 +126,20 @@ template $LibraryPage : Adw.NavigationPage {
                 }
 
                 [start]
+                Separator {
+                  styles [
+                    "spacer",
+                  ]
+                }
+
+                [start]
+                Button {
+                  icon-name: "brush-symbolic";
+                  tooltip-text: _("Clear");
+                  action-name: "app.library.clear-selected";
+                }
+
+                [start]
                 Button {
                   icon-name: "user-trash-symbolic";
                   tooltip-text: _("Delete");

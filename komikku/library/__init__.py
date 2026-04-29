@@ -273,6 +273,10 @@ class LibraryPage(Adw.NavigationPage):
         update_selected_action.connect('activate', self.update_selected)
         self.window.application.add_action(update_selected_action)
 
+        clear_selected_action = Gio.SimpleAction.new('library.clear-selected', None)
+        clear_selected_action.connect('activate', self.clear_selected)
+        self.window.application.add_action(clear_selected_action)
+
         delete_selected_action = Gio.SimpleAction.new('library.delete-selected', None)
         delete_selected_action.connect('activate', self.delete_selected)
         self.window.application.add_action(delete_selected_action)
@@ -322,6 +326,44 @@ class LibraryPage(Adw.NavigationPage):
         height = (width * default_height) // default_width
 
         self.thumbnails_cover_size = (width, height)
+
+    def clear_mangas(self, mangas):
+        def confirm_callback():
+            # Stop Downloader & Updater
+            self.window.downloader.stop()
+            self.window.updater.stop()
+
+            GLib.idle_add(do_clear)
+
+        def do_clear():
+            if self.window.downloader.running or self.window.updater.running:
+                return GLib.SOURCE_CONTINUE
+
+            db_conn = create_db_connection()
+            for manga in mangas:
+                manga.clear(db_conn=db_conn)
+                self.update_thumbnail(manga)
+
+            # Update filtering if filters are selected
+            if self.selected_filters:
+                self.flowbox.invalidate_filter()
+
+            # Restart Downloader & Updater
+            self.window.downloader.start()
+            self.window.updater.start()
+
+            self.leave_selection_mode()
+
+        self.window.open_dialog(
+            _('Clear?'),
+            body=_('Are you sure you want to clear selected mangas?'),
+            confirm_label=_('Clear'),
+            confirm_callback=confirm_callback,
+            confirm_appearance=Adw.ResponseAppearance.DESTRUCTIVE
+        )
+
+    def clear_selected(self, _action, _param):
+        self.clear_mangas([thumbnail.manga for thumbnail in self.flowbox.get_selected_children()])
 
     def delete_mangas(self, mangas):
         def confirm_callback():

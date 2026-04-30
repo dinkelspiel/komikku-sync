@@ -156,12 +156,13 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>Fixed an issue with unidentified cover files</li>
-    <li>[Servers] Added Kenscans (EN)</li>
-    <li>[Servers] Hijala Scans (EN): Update</li>
-    <li>[Servers] Hive Toons (EN): Update</li>
-    <li>[Servers] WeebDex (EN): Disabled</li>
-    <li>[L10n] Updated German, Korean, Ukrainian and Vietnamese translations</li>
+    <li>[Library] Selection mode: Added `Clear` action (clears cached pages)</li>
+    <li>[Servers] Added Shadow Manga (ES)</li>
+    <li>[Servers] Kenscans (EN): Update</li>
+    <li>[Servers] Manga/in/ua (UK): Update</li>
+    <li>[Servers] Pepper&amp;Carrot: Update miniFantasyTheater</li>
+    <li>[Servers] ShadowMangas (ES): Disabled</li>
+    <li>[L10n] Updated Finnish, French and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

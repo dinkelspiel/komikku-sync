@@ -114,6 +114,20 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.3.0" date="2025-05-01">
+            <description translate="no">
+                <ul>
+                    <li>[Library] Selection mode: Added `Clear` action (clears cached pages)</li>
+                    <li>[Servers] Added Shadow Manga (ES)</li>
+                    <li>[Servers] Kenscans (EN): Update</li>
+                    <li>[Servers] Manga/in/ua (UK): Update</li>
+                    <li>[Servers] Pepper&amp;Carrot: Update miniFantasyTheater</li>
+                    <li>[Servers] ShadowMangas (ES): Disabled</li>
+                    <li>[L10n] Updated Finnish, French and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.2.0" date="2025-04-13">
             <description translate="no">
                 <ul>

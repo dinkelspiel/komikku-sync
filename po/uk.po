@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
-"PO-Revision-Date: 2026-04-09 18:09+0000\n"
+"PO-Revision-Date: 2026-04-30 21:20+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1886,7 +1886,7 @@ msgstr "Не вдалося завантажити зображення"
 #: ../komikku/reader/pager/page.py:260
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
-msgstr ""
+msgstr "Файл пошкоджено або формат зображення не підтримується ({0})"
 
 #: ../komikku/reader/pager/page.py:301
 msgid "Retry"
@@ -2666,7 +2666,7 @@ msgstr "Не доступно {0}"
 
 #: ../komikku/servers/suwayomi/__init__.py:33
 msgid "Manga reader server"
-msgstr ""
+msgstr "Сервер для читання манґи"
 
 #: ../komikku/servers/webtoon/__init__.py:61
 msgid "Originals"

@@ -154,7 +154,7 @@ class Mangafire(Server):
                 slug=slug,
                 title=title,
                 num=slug if is_number(slug) else None,
-                date=convert_date_string(date_element.text.strip(), languages=[self.lang]),
+                date=convert_date_string(date_element.text.strip(), format='%B %d, %Y'),
             ))
 
         return data

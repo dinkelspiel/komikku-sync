@@ -3,10 +3,15 @@
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 from gettext import gettext as _
+import textwrap
 from urllib.parse import parse_qs
 from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
+from io import BytesIO
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 import requests
 
 from komikku.consts import USER_AGENT
@@ -168,16 +173,35 @@ class Dbmultiverse(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        if img_element := soup.select_one('#balloonsimg > img'):
-            url = img_element.get('src')
-            if not url:
-                url = img_element.get('style').split(';')[0].split(':')[1][4:-1]
-        elif div_element := soup.select_one('div#balloonsimg'):
-            url = div_element.get('style').split('(')[1].split(')')[0]
+        if element := soup.select_one('#balloonsimg'):
+            if img_element := element.img:
+                url = img_element.get('src')
+                if not url:
+                    url = img_element.get('style').split(';')[0].split(':')[1][4:-1]
+            else:
+                url = element.get('style').split('(')[1].split(')')[0]
+
+            balloons = []
+            for belement in element.select('.balloon'):
+                balloon = {
+                    'text': belement.text,
+                }
+                for style in belement.get('style').split(';'):
+                    if not style:
+                        continue
+                    label, value = style.split(':')
+                    if label in ('left', 'top', 'width'):
+                        balloon[label] = float(value[:-2])
+                    elif label == 'font-size':
+                        balloon['font-ratio'] = float(value[:-1]) / 100
+
+                balloons.append(balloon)
+
         elif celebrate_element := soup.select_one('.cadrelect'):
             # Special page to celebrate 1000/2000/... pages
             # return first contribution image
             url = celebrate_element.select_one('img').get('src')
+            balloons = None
         else:
             return None
 
@@ -189,10 +213,43 @@ class Dbmultiverse(Server):
         if not mime_type.startswith('image'):
             return None
 
+        buffer = r.content
+        format_ = mime_type.split('/')[-1]
+
+        if balloons:
+            image = Image.open(BytesIO(buffer)).convert('RGB')
+            draw = ImageDraw.Draw(image)
+            font_base_size = 14
+            font_ratio = 1
+            font = None
+
+            for balloon in balloons:
+                if font is None or balloon.get('font-ratio', 1) != font_ratio:
+                    font_ratio = balloon.get('font-ratio', 1)
+                    font = ImageFont.truetype('DejaVuSansCondensed.ttf', size=font_base_size * font_ratio)
+
+                max_width = 1
+                language = self.lang.replace('_', '-')
+                while max_width < len(balloon['text']):
+                    if font.getlength(balloon['text'][:max_width + 1], language=language) > balloon['width']:
+                        break
+                    max_width += 1
+
+                offset_y = balloon['top']
+                for line in textwrap.wrap(balloon['text'], width=max_width):
+                    offset_x = max(0, balloon['width'] - font.getlength(line)) / 2
+                    draw.text(xy=(balloon['left'] + offset_x, offset_y), text=line, font=font, fill=(0, 0, 0))
+                    offset_y += font_base_size * font_ratio
+
+            io_buffer = BytesIO()
+            image.save(io_buffer, format_)
+            image.close()
+            buffer = io_buffer.getvalue()
+
         return {
-            'buffer': r.content,
+            'buffer': buffer,
             'mime_type': mime_type,
-            'name': '{0}.png'.format(page['slug']),
+            'name': '{0}.{1}'.format(page['slug'], format_),
         }
 
     def get_manga_url(self, slug, url):

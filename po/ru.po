@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
 "PO-Revision-Date: 2026-05-06 04:20+0000\n"
-"Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
+"Last-Translator: Сергей <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
 "\n"
 "Language: ru\n"
@@ -159,7 +159,7 @@ msgstr "Страница библиотеки с открытой боковой
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "Страница «Параметры» (Общие настройки)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"

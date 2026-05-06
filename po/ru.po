@@ -3,22 +3,23 @@
 # FIONover <overfion@protonmail.com>, 2023.
 # Анна Алешкина #нетвойне <chipchilinka338@gmail.com>, 2023.
 # Сергей <asvmail.as@gmail.com>, 2024, 2025, 2026.
+# Andrei Stepanov <adem4ik@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
-"PO-Revision-Date: 2026-03-15 23:27+0000\n"
-"Last-Translator: Сергей <asvmail.as@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
-">\n"
+"PO-Revision-Date: 2026-05-06 04:20+0000\n"
+"Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -30,7 +31,8 @@ msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
-msgstr "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;манга;комикс;книга;читалка;"
+msgstr ""
+"manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;манга;комикс;книга;читалка;чтение;манхва;маньхуа;вебтун;сканлейт;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -42,7 +44,7 @@ msgid ""
 "search, sort and read your series with ease."
 msgstr ""
 "Благодаря простому, элегантному и адаптивному интерфейсу это приложение для "
-"чтения позволяет с легкостью выполнять поиск, сортировку и чтение ваших "
+"чтения позволяет с лёгкостью выполнять поиск, сортировку и чтение ваших "
 "циклов."
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
@@ -57,11 +59,11 @@ msgstr "Онлайн и офлайн чтение с десятков серве
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
-"Поддержка локально сохраненных циклов (в форматах CBZ/CBR/CBT, EPUB и PDF)"
+"Поддержка локально сохранённых циклов (в форматах CBZ/CBR/CBT, EPUB и PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr "Режимы чтения RTL, LTR, Vertical и Webtoon"
+msgstr "Режимы чтения справа налево, слева направо, вертикально и вебтун"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -484,7 +486,7 @@ msgstr "Фон на странице информации"
 
 #: ../data/ui/preferences.blp:83
 msgid "Method used to recolor background to match cover"
-msgstr "Метод, используемый для перекрашивания фона в соответствии с обложкой"
+msgstr "Метод для перекрашивания фона в соответствии с обложкой"
 
 #: ../data/ui/preferences.blp:87
 msgid "Linear gradient"
@@ -637,7 +639,7 @@ msgstr "Фильтр масштабирования"
 
 #: ../data/ui/preferences.blp:286
 msgid "Interpolation method used when scaling images"
-msgstr "Метод интерполяции, используемый при масштабировании изображений"
+msgstr "Метод интерполяции для масштабирования изображений"
 
 #: ../data/ui/preferences.blp:289
 msgid "Linear"
@@ -690,9 +692,7 @@ msgstr "Режимы чтения страниц"
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"
-msgstr ""
-"Справа налево / Слева направо / \n"
-"Вертикальный"
+msgstr "Справа налево / Слева направо / Вертикально"
 
 #: ../data/ui/preferences.blp:323
 msgid "Scaling"
@@ -811,7 +811,7 @@ msgstr "Очищать кэш глав и базу данных при выхо�
 
 #: ../data/ui/preferences.blp:433 ../data/ui/webview.blp:10
 msgid "WebView"
-msgstr "WebView"
+msgstr "Браузер WebView"
 
 #: ../data/ui/preferences.blp:436
 msgid "Clear Data"
@@ -1230,7 +1230,7 @@ msgstr "Расположенные локально"
 
 #: ../komikku/card/__init__.py:665
 msgid "%m/%d/%Y %H:%M"
-msgstr ""
+msgstr "%d.%m.%Y %H:%M"
 
 #: ../komikku/card/__init__.py:679
 msgid "Donate"
@@ -1463,7 +1463,7 @@ msgstr "Произведения, защищённые авторским пра
 
 #: ../komikku/explorer/common.py:310
 msgid "Use with caution!"
-msgstr "Использовать с осторожностью"
+msgstr "Использовать с осторожностью!"
 
 #: ../komikku/explorer/common.py:313
 msgid "Licensed/Published and/or Unlicensed works"
@@ -1587,7 +1587,7 @@ msgstr "Продолжить"
 
 #: ../komikku/library/__init__.py:359
 msgid "Are you sure you want to clear selected mangas?"
-msgstr ""
+msgstr "Уверены, что хотите очистить выбранные манги?"
 
 #: ../komikku/library/__init__.py:404
 msgid "Are you sure you want to delete this manga?"
@@ -1595,7 +1595,7 @@ msgstr "Вы уверены что хотите удалить эту мангу
 
 #: ../komikku/library/__init__.py:406
 msgid "Are you sure you want to delete selected mangas?"
-msgstr "Вы уверенны что хотите удалить выбранные манги?"
+msgstr "Уверены, что хотите удалить выбранные манги?"
 
 #: ../komikku/library/__init__.py:430
 msgid "Are you sure you want to download all chapters of selected mangas?"
@@ -1900,7 +1900,7 @@ msgstr "Не удалось загрузить изображение"
 #: ../komikku/reader/pager/page.py:260
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
-msgstr ""
+msgstr "Повреждённый файл или неподдерживаемый формат изображения ({0})"
 
 #: ../komikku/reader/pager/page.py:301
 msgid "Retry"
@@ -2682,7 +2682,7 @@ msgstr "Недоступно на {0} языке"
 
 #: ../komikku/servers/suwayomi/__init__.py:33
 msgid "Manga reader server"
-msgstr ""
+msgstr "Сервер для чтения манги"
 
 #: ../komikku/servers/webtoon/__init__.py:61
 msgid "Originals"

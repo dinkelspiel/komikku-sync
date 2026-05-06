@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
-"PO-Revision-Date: 2026-05-06 04:20+0000\n"
-"Last-Translator: Сергей <asvmail.as@gmail.com>\n"
+"PO-Revision-Date: 2026-05-07 05:11+0000\n"
+"Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
 "\n"
 "Language: ru\n"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr "Режимы чтения справа налево, слева направо, вертикально и вебтун"
+msgstr "Режимы чтения справа налево, слева направо, вертикальный и вебтун"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
 "Поддержка различных типов навигации: клавиши-стрелки, навигация вправо и "
-"влево с помощью щелчка мыши или касания (тачпад/сенсорный экран), колесо "
+"влево с помощью щелчка мыши или касания (тачпад / сенсорный экран), колесо "
 "прокрутки, жест пролистывания двумя пальцами (тачпад), жест смахивания "
 "(сенсорный экран)"
 
@@ -226,7 +226,7 @@ msgstr "Описание"
 #: ../data/ui/card.blp:468 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:255
 msgid "No Categories"
-msgstr "Категории отсутствуют"
+msgstr "Нет категорий"
 
 #: ../data/ui/card_chapters_list_row.blp:65
 msgid "New"
@@ -260,7 +260,7 @@ msgstr "Начать/Остановить загрузку"
 
 #: ../data/ui/download_manager.blp:67
 msgid "No Downloads"
-msgstr "Загрузки отсутствуют"
+msgstr "Нет загрузок"
 
 #: ../data/ui/explorer_search.blp:28
 msgid "Search Filters"
@@ -381,7 +381,7 @@ msgstr "Обновить библиотеку"
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
-msgstr "Сортировать"
+msgstr "Сортировка"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
@@ -405,7 +405,7 @@ msgstr "О приложении"
 
 #: ../data/ui/menu/reader.xml:114
 msgid "Zoom Landscape Pages"
-msgstr "Масштабировать страницы в альбомной ориентации"
+msgstr "Увеличивать страницы в альбомной ориентации"
 
 #: ../data/ui/menu/reader.xml:118
 msgid "Crop Borders"
@@ -675,7 +675,7 @@ msgstr "Нумерация страниц"
 
 #: ../data/ui/preferences.blp:309
 msgid "Hide the page numbering at the bottom of the screen while reading"
-msgstr "Скрыть нумерацию страниц в нижней части экрана во время чтения"
+msgstr "Скрывать нумерацию страниц в нижней части экрана при чтении"
 
 #: ../data/ui/preferences.blp:313
 msgid "Fullscreen"
@@ -692,7 +692,7 @@ msgstr "Режимы чтения страниц"
 
 #: ../data/ui/preferences.blp:320
 msgid "Right to Left / Left to Right / Vertical"
-msgstr "Справа налево / Слева направо / Вертикально"
+msgstr "Справа налево / Слева направо / Вертикальный"
 
 #: ../data/ui/preferences.blp:323
 msgid "Scaling"
@@ -720,7 +720,7 @@ msgstr "Оригинальный размер"
 
 #: ../data/ui/preferences.blp:336
 msgid "Landscape Pages Zoom"
-msgstr "Масштабирование страниц в альбомной ориентации"
+msgstr "Увеличение страниц в альбомной ориентации"
 
 #: ../data/ui/preferences.blp:337
 msgid ""
@@ -742,8 +742,8 @@ msgid ""
 msgstr ""
 "Обрезать белые границы изображений\n"
 "\n"
-"ПРИМЕЧАНИЕ: Это действие увеличивает нагрузку на процессор и может вызвать "
-"замедление отрисовки и анимации, особенно на мобильных устройствах."
+"ПРИМЕЧАНИЕ: Это действие нагружает процессор и может замедлять отрисовку и "
+"анимации, особенно на мобильных устройствах."
 
 #: ../data/ui/preferences.blp:347 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
@@ -851,7 +851,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:470
 msgid "Tweaks"
-msgstr "Дополнительные настройки"
+msgstr "Тонкие настройки"
 
 #: ../data/ui/preferences.blp:473
 msgid "Disable Animations"
@@ -1014,7 +1014,7 @@ msgstr "Сохранить страницу"
 #: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
-msgstr "Менеджер загрузки"
+msgstr "Менеджер загрузок"
 
 #: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
@@ -1034,7 +1034,7 @@ msgid ""
 "Developing and maintaining Komikku is a challenging task that takes up most "
 "of my free time."
 msgstr ""
-"Разработка и сопровождение Komikku - сложная задача, которая отнимает "
+"Разработка и сопровождение Komikku — сложная задача, которая отнимает "
 "большую часть моего свободного времени."
 
 #: ../data/ui/support.blp:63
@@ -1048,9 +1048,9 @@ msgid ""
 "So if you like it, and you are able, please consider a one-time or recurring "
 "donation to support me, it will be hugely appreciated."
 msgstr ""
-"Если вам нравится приложение, и вы имеете возможность, пожалуйста, подумайте "
-"о единовременном или регулярном пожертвовании, чтобы поддержать меня, я буду "
-"очень признателен."
+"Если вам нравится приложение, и у вас есть возможность, пожалуйста, "
+"подумайте о единовременном или регулярном пожертвовании, чтобы поддержать "
+"меня, я буду очень признателен."
 
 #: ../data/ui/support.blp:84
 msgid "Weekly, monthly or yearly donation"
@@ -1111,11 +1111,11 @@ msgid ""
 "by buying the official comics when they are\n"
 "available in your region/language."
 msgstr ""
-"Читатель манги, вебтунов и комиксов\n"
+"Читалка манги, вебтунов и комиксов\n"
 "\n"
 "👉 Никогда не забывайте, что можете поддержать\n"
 "авторов, купив официальные выпуски, если они\n"
-"доступны в вашем регионе/на вашем языке."
+"доступны в вашем регионе или на вашем языке."
 
 #: ../komikku/application.py:423
 msgid "Supporters"
@@ -1134,7 +1134,7 @@ msgstr "Отменить"
 
 #: ../komikku/application.py:553
 msgid "Are you sure you want to quit?"
-msgstr "Вы уверены что хотите выйти?"
+msgstr "Уверены, что хотите выйти?"
 
 #: ../komikku/application.py:556
 msgid "Some chapters are currently being downloaded."
@@ -1176,7 +1176,7 @@ msgstr "Очистить?"
 
 #: ../komikku/card/__init__.py:227
 msgid "Are you sure you want to clear all chapters?"
-msgstr "Вы уверены, что хотите очистить все главы?"
+msgstr "Уверены, что хотите очистить все главы?"
 
 #: ../komikku/card/__init__.py:228 ../komikku/card/chapters_list.py:728
 #: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:156
@@ -1241,9 +1241,9 @@ msgstr "Пожертвовать"
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
-msgstr[0] "выбрана {0}"
-msgstr[1] "выбрано {0}"
-msgstr[2] "выбрано {0}"
+msgstr[0] "Выбрана {0}"
+msgstr[1] "Выбрано {0}"
+msgstr[2] "Выбрано {0}"
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
@@ -1255,7 +1255,7 @@ msgstr "Не удалось обновить статус чтения глав"
 
 #: ../komikku/card/chapters_list.py:660
 msgid "%m/%d/%Y"
-msgstr "%d/%m/%Y"
+msgstr "%d.%m.%Y"
 
 #: ../komikku/card/chapters_list.py:718 ../komikku/library/__init__.py:434
 msgid "Download"
@@ -1323,7 +1323,7 @@ msgstr "Удалить?"
 
 #: ../komikku/card/tracking.py:254
 msgid "Are you sure you want to cancel tracking?"
-msgstr "Вы уверены, что хотите отменить отслеживание?"
+msgstr "Уверены, что хотите отменить отслеживание?"
 
 #: ../komikku/card/tracking.py:255 ../komikku/categories_editor.py:80
 #: ../komikku/categories_editor.py:175 ../komikku/library/__init__.py:410
@@ -1336,12 +1336,12 @@ msgstr "Срок действия соединения истёк"
 
 #: ../komikku/card/tracking.py:449 ../komikku/explorer/search/__init__.py:378
 msgid "Search {}"
-msgstr "Искать {}"
+msgstr "Искать в {}"
 
 #: ../komikku/card/tracking.py:511 ../komikku/explorer/search/search.py:78
 #: ../komikku/explorer/search/search_global.py:168
 msgid "Oops, search failed. Please try again."
-msgstr "Упс, поиск не удался. Пожалуйста, попробуйте еще раз."
+msgstr "Ой, поиск не удался. Пожалуйста, попробуйте ещё раз."
 
 #: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:82
 msgid "No Results Found"
@@ -1357,7 +1357,7 @@ msgid ""
 "Are you sure you want to delete\n"
 "\"{0}\" category?"
 msgstr ""
-"Вы уверены, что хотите удалить\n"
+"Уверены, что хотите удалить\n"
 "категорию «{0}»?"
 
 #: ../komikku/categories_editor.py:180
@@ -1485,7 +1485,7 @@ msgstr "Поиск был отменён"
 
 #: ../komikku/explorer/search/__init__.py:290
 msgid "Oops, server website URL is unknown."
-msgstr "Упс, URL сервера неизвестен."
+msgstr "Ой, URL-адрес сервера неизвестен."
 
 #: ../komikku/explorer/search/__init__.py:380
 msgid "Search for Reading"
@@ -1503,7 +1503,7 @@ msgid ""
 msgstr ""
 "Кроме того, вы можете искать конкретные комиксы, используя синтаксис:\n"
 "\n"
-"<b>id:ID из URL комиксов</b>"
+"<b>id:ID из URL-адресов комиксов</b>"
 
 #: ../komikku/explorer/search/__init__.py:412
 msgid "Global Search"
@@ -1519,11 +1519,11 @@ msgstr "Поиск комиксов"
 
 #: ../komikku/explorer/search/__init__.py:490
 msgid "Oops, failed to retrieve manga's information."
-msgstr "Упс, не удалось получить информацию о манге."
+msgstr "Ой, не удалось получить информацию о манге."
 
 #: ../komikku/explorer/search/latest_updates.py:66
 msgid "Oops, failed to retrieve latest updates."
-msgstr "Упс, не удалось получить последние обновления."
+msgstr "Ой, не удалось получить последние обновления."
 
 #: ../komikku/explorer/search/latest_updates.py:70
 msgid "No Latest Updates Found"
@@ -1538,7 +1538,7 @@ msgstr "Запрос уже находится в процессе выполн�
 
 #: ../komikku/explorer/search/most_popular.py:66
 msgid "Oops, failed to retrieve most popular."
-msgstr "Упс, не удалось получить список самых популярных."
+msgstr "Ой, не удалось получить список самых популярных."
 
 #: ../komikku/explorer/search/most_popular.py:70
 msgid "No Most Popular Found"
@@ -1591,7 +1591,7 @@ msgstr "Уверены, что хотите очистить выбранные 
 
 #: ../komikku/library/__init__.py:404
 msgid "Are you sure you want to delete this manga?"
-msgstr "Вы уверены что хотите удалить эту мангу?"
+msgstr "Уверены, что хотите удалить эту мангу?"
 
 #: ../komikku/library/__init__.py:406
 msgid "Are you sure you want to delete selected mangas?"
@@ -1599,11 +1599,11 @@ msgstr "Уверены, что хотите удалить выбранные м
 
 #: ../komikku/library/__init__.py:430
 msgid "Are you sure you want to download all chapters of selected mangas?"
-msgstr "Вы уверены, что хотите загрузить все главы выбранных манг?"
+msgstr "Уверены, что хотите загрузить все главы выбранных манг?"
 
 #: ../komikku/library/__init__.py:432
 msgid "Download?"
-msgstr "Скачать?"
+msgstr "Загрузить?"
 
 #: ../komikku/library/__init__.py:459
 msgid "Unread"
@@ -1725,7 +1725,7 @@ msgstr "Перерыв"
 
 #: ../komikku/preferences/__init__.py:155
 msgid "Are you sure you want to clear chapters cache and database?"
-msgstr "Вы уверены, что хотите очистить кэш глав и базу данных?"
+msgstr "Уверены, что хотите очистить кэш и базу данных глав?"
 
 #: ../komikku/preferences/__init__.py:174
 msgid "Failed to clear WebView data"
@@ -1734,7 +1734,7 @@ msgstr "Не удалось очистить данные WebView"
 #: ../komikku/preferences/__init__.py:178
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr ""
-"Вы уверены, что хотите удалить данные режима WebView (кэш, хранилище, файлы "
+"Уверены, что хотите удалить данные браузера WebView (кэш, хранилище, файлы "
 "cookie)?"
 
 #: ../komikku/preferences/__init__.py:203
@@ -1747,7 +1747,7 @@ msgid ""
 "\n"
 "The gesture navigation in the reader will not work properly anymore."
 msgstr ""
-"Вы уверены, что хотите отключить анимацию?\n"
+"Уверены, что хотите отключить анимацию?\n"
 "\n"
 "Навигация с помощью жестов в читалке не будет работать должным образом."
 
@@ -2034,7 +2034,7 @@ msgstr "Бесплатно"
 
 #: ../komikku/servers/bilibili/__init__.py:45
 msgid "Paid"
-msgstr "Оплачивается"
+msgstr "Требует оплаты"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:37
 msgid "Format"
@@ -2145,7 +2145,8 @@ msgstr "Страны"
 
 #: ../komikku/servers/comick/__init__.py:104
 msgid "[Search and Most Popular only] Filter by Country (origination)"
-msgstr "[Только поиск и самые популярные] Фильтровать по странам (ориентация)"
+msgstr ""
+"[Только поиск и самые популярные] Фильтровать по странам (происхождения)"
 
 #: ../komikku/servers/comick/__init__.py:108
 msgid "Japan (Manga)"
@@ -2775,7 +2776,7 @@ msgstr[2] "не удалось обновить {0}"
 
 #: ../komikku/updater.py:179
 msgid "Oops, update has failed. Please try again."
-msgstr "Упс, обновление не удалось. Попробуйте ещё раз."
+msgstr "Ой, обновление не удалось. Попробуйте ещё раз."
 
 #: ../komikku/updater.py:188
 msgid "Library update started"
@@ -2795,7 +2796,7 @@ msgstr "Пожалуйста, подождите…"
 
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"
-msgstr "Пожалуйста, заполните CAPTCHA"
+msgstr "Пожалуйста, пройдите CAPTCHA"
 
 #~ msgid "The Preferences page (Library settings)"
 #~ msgstr "Страница параметров (Настройки библиотеки)"

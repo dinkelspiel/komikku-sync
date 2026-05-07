@@ -3,8 +3,8 @@
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 import base64
-import datetime
 from gettext import gettext as _
+import json
 import time
 import urllib.parse
 
@@ -12,8 +12,7 @@ from bs4 import BeautifulSoup
 
 from komikku.consts import DOWNLOAD_MAX_DELAY
 from komikku.servers import Server
-from komikku.servers.utils import get_soup_element_inner_text
-from komikku.servers.utils import parse_nextjs_hydration
+from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_response_elapsed
 from komikku.utils import is_number
@@ -279,8 +278,7 @@ def generate_hash(path, body_size=0, time=1):
 
         return out
 
-    base_str = f'{path}:{body_size}:{time}'  # noqa: E231
-    encoded = urllib.parse.quote_plus(base_str).replace('+', '%20').replace('*', '%2A').replace('%7E', '~')
+    encoded = urllib.parse.quote_plus(path).replace('+', '%20').replace('*', '%2A').replace('%7E', '~')
 
     initial_bytes = []
     for i in encoded.encode():
@@ -309,11 +307,12 @@ class Comix(Server):
 
     base_url = 'https://comix.to'
     logo_url = base_url + '/icon.png?icon.530a1f27.png'
-    api_url = 'https://comix.to/api/v2'
-    api_search_url = api_url + '/manga'
     manga_url = base_url + '/title/{0}'
-    api_chapters_url = api_url + '/manga/{0}/chapters'
     chapter_url = base_url + '/title/{0}/{1}'
+    api_url = 'https://comix.to/api/v1'
+    api_search_url = api_url + '/manga'
+    api_chapters_url = api_url + '/manga/{0}/chapters'
+    api_chapter_url = api_url + '/chapters/{0}'
 
     filters = [
         {
@@ -388,49 +387,62 @@ class Comix(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
+        if script_element := soup.select_one('script#initial-data'):
+            manga_data = json.loads(script_element.string)
+            hid = manga_data['manga']['hid']
+            detail = manga_data['queries'][f'["manga","detail","{hid}"]']  # noqa
+            groups = manga_data['queries'].get(f'["manga","groups","{hid}"]', [])  # noqa
+        else:
+            return None
+
         data = initial_data.copy()
         data.update(dict(
+            name=detail['title'],
             authors=[],
-            scanlators=[],  # not available
+            scanlators=[],
             genres=[],
             status=None,
-            synopsis=None,
+            synopsis=detail.get('synopsis'),
             chapters=[],
             server_id=self.id,
             cover=None,
         ))
 
-        data['name'] = soup.select_one('h1.title').text.strip()
-        data['cover'] = soup.select_one('img[itemprop="image"]').get('src')
+        if posters := detail.get('poster'):
+            data['cover'] = posters['medium']
 
         # Details
-        if element := soup.select_one('.status'):
-            status = element.text.strip()
-            if 'FINISHED' in status:
+        if status := detail.get('status'):
+            if status == 'finished':
                 data['status'] = 'complete'
-            elif 'RELEASING' in status:
+            elif status == 'releasing':
                 data['status'] = 'ongoing'
-            elif 'ON HIATUS' in status:
+            elif status == 'on_hiatus':
                 data['status'] = 'hiatus'
-            elif 'DISCONTINUED' in status:
+            elif status == 'discontinued':
                 data['status'] = 'suspended'
 
-        for element in soup.select('#metadata li:-soup-contains("Authors") a'):
-            data['authors'].append(element.text.strip())
+        for author in detail.get('authors', []):
+            data['authors'].append(author['title'].strip())
+        for artist in detail.get('artists', []):
+            title = artist['title'].strip()
+            if title not in data['authors']:
+                data['authors'].append(title)
 
-        for element in soup.select('#metadata li:-soup-contains("Artists") a'):
-            artist = element.text.strip()
-            if artist not in data['authors']:
-                data['authors'].append(artist)
+        for genre in detail.get('genres', []):
+            data['genres'].append(genre['title'].strip())
+        for demographic in detail.get('demographics', []):
+            data['genres'].append(demographic['title'].strip())
+        if type_ := detail.get('type'):
+            data['genres'].append(type_.capitalize())
+        if year := detail.get('year'):
+            data['genres'].append(str(year))
 
-        for element in soup.select('#metadata li:-soup-contains("Genres") a'):
-            data['genres'].append(element.text.strip())
-
-        for element in soup.select('#metadata li:-soup-contains("Type") a'):
-            data['genres'].append(element.text.strip())
-
-        if element := soup.select_one('.content'):
-            data['synopsis'] = get_soup_element_inner_text(element, sep='\n\n')
+        for group in groups:
+            name = group['name'].strip()
+            if name.lower() in ('official?', 'unknown group'):
+                continue
+            data['scanlators'].append(name)
 
         # Chapters
         data['chapters'] = self.get_manga_chapters_data(data['slug'])
@@ -440,27 +452,39 @@ class Comix(Server):
     @CompleteChallenge()
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
-        Returns manga chapter data by scraping chapter HTML page content
+        Returns manga chapter data using API
 
         Pages URLs are available in a <script> element
         """
-        r = self.session_get(self.chapter_url.format(manga_slug, chapter_slug))
+        hash_id = chapter_slug.split('-')[0]
+        path = f'/chapters/{hash_id}'
+        hash_token = generate_hash(path, 0, 1)
+
+        r = self.session_get(
+            self.api_chapter_url.format(hash_id),
+            params={
+                '_': hash_token,
+            },
+            headers={
+                'Content-Type': 'application/json',
+                'Referer': self.chapter_url.format(manga_slug, chapter_slug),
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        )
         if r.status_code != 200:
             return None
 
-        soup = BeautifulSoup(r.text, 'lxml')
-
-        info = parse_nextjs_hydration(soup, 'images')
-        if info is None:
+        resp_data = r.json()
+        if resp_data['status'] != 'ok':
             return None
 
         data = dict(
             pages=[],
         )
-        for image in info[3]['chapter']['images']:
+        for page in resp_data['result']['pages']:
             data['pages'].append(dict(
                 slug=None,
-                image=image['url'],
+                image=page['url'],
             ))
 
         return data
@@ -480,23 +504,23 @@ class Comix(Server):
                 params={
                     'order[number]': 'desc',
                     'limit': 100,
-                    'time': 1,
                     'page': page,
                     '_': hash_token,
                 },
                 headers={
                     'Content-Type': 'application/json',
                     'Referer': self.manga_url.format(slug),
+                    'X-Requested-With': 'XMLHttpRequest',
                 }
             )
             if r.status_code != 200:
                 return None, False, 0
 
             resp_data = r.json()
-            if resp_data['status'] != 200:
+            if resp_data['status'] != 'ok':
                 return None, False, 0
 
-            more = page < resp_data['result']['pagination']['last_page']
+            more = page < resp_data['result']['meta']['lastPage']
 
             return r.json()['result']['items'], more, get_response_elapsed(r)
 
@@ -517,20 +541,24 @@ class Comix(Server):
                     title = f'{title} Vol {item["volume"]}'
                 if item['name']:
                     title = f'{title} {item["name"]}'
-                if item['scanlation_group']:
-                    scanlators = [item['scanlation_group']['name']]
-                elif item['is_official']:
+                if item['group']:
+                    scanlators = [item['group']['name']]
+                elif item['isOfficial']:
                     scanlators = ['Official']
                 else:
                     scanlators = []
 
+                date = item['createdAtFormatted']
+                # dateaprser doesn't support 'mos'
+                date = date.replace('mos', 'm')
+
                 chapters.append(dict(
-                    slug=f'{item["chapter_id"]}-chapter-{item["number"]}',
+                    slug=f'{item["id"]}-chapter-{item["number"]}',
                     title=title,
                     scanlators=scanlators,
                     num=item['number'] if is_number(item['number']) else None,
                     num_volume=item['volume'] if is_number(item['volume']) else None,
-                    date=datetime.datetime.fromtimestamp(item['updated_at']).date(),
+                    date=convert_date_string(date),
                 ))
 
             delay = min(rtime * 4, DOWNLOAD_MAX_DELAY) if rtime else None
@@ -603,10 +631,10 @@ class Comix(Server):
                 return [], False, None
 
             resp_data = r.json()
-            if resp_data['status'] != 200:
+            if resp_data['status'] != 'ok':
                 return [], False, None
 
-            more = page < resp_data['result']['pagination']['last_page'] and page < SEARCH_RESULTS_PAGES
+            more = page < resp_data['result']['meta']['lastPage'] and page < SEARCH_RESULTS_PAGES
 
             return resp_data['result']['items'], more, get_response_elapsed(r)
 
@@ -621,11 +649,11 @@ class Comix(Server):
             items, more, rtime = get_page(page)
             for item in items:
                 results.append(dict(
-                    slug=f'{item["hash_id"]}-{item["slug"]}',
+                    slug=item['url'].split('/')[-1],
                     name=item['title'],
                     cover=item['poster']['medium'],
-                    last_chapter=item['latest_chapter'],
-                    nb_chapters=item['final_chapter'],
+                    last_chapter=item['latestChapter'],
+                    nb_chapters=item['finalChapter'],
                 ))
 
             delay = min(rtime * 4, DOWNLOAD_MAX_DELAY) if rtime else None

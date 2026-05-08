@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
-"PO-Revision-Date: 2026-05-04 09:09+0000\n"
+"PO-Revision-Date: 2026-05-09 08:11+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -279,7 +279,7 @@ msgstr "Найпопулярніші"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
-msgstr "Останні оновлення"
+msgstr "Оновлене"
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:215
 msgid "Servers"
@@ -1513,7 +1513,7 @@ msgstr "Шукати серед мальописів"
 
 #: ../komikku/explorer/search/__init__.py:490
 msgid "Oops, failed to retrieve manga's information."
-msgstr "На жаль, не вдалося отримати інформацію про манґу."
+msgstr "На жаль, не вдалося отримати інформацію."
 
 #: ../komikku/explorer/search/latest_updates.py:66
 msgid "Oops, failed to retrieve latest updates."
@@ -1521,7 +1521,7 @@ msgstr "На жаль, не вдалося отримати останні он�
 
 #: ../komikku/explorer/search/latest_updates.py:70
 msgid "No Latest Updates Found"
-msgstr "Останніх оновлень не знайдено"
+msgstr "Оновлень не знайдено"
 
 #: ../komikku/explorer/search/latest_updates.py:78
 #: ../komikku/explorer/search/most_popular.py:78
@@ -1579,19 +1579,19 @@ msgstr "Продовжити"
 
 #: ../komikku/library/__init__.py:359
 msgid "Are you sure you want to clear selected mangas?"
-msgstr ""
+msgstr "Впевнені, що хочете очистити дані вибраних мальописів?"
 
 #: ../komikku/library/__init__.py:404
 msgid "Are you sure you want to delete this manga?"
-msgstr "Ви дійсно хочете видалити цю манґу?"
+msgstr "Ви дійсно хочете видалити цей мальопис?"
 
 #: ../komikku/library/__init__.py:406
 msgid "Are you sure you want to delete selected mangas?"
-msgstr "Ви дійсно хочете видалити вибрані манґи?"
+msgstr "Ви дійсно хочете видалити вибрані мальописи?"
 
 #: ../komikku/library/__init__.py:430
 msgid "Are you sure you want to download all chapters of selected mangas?"
-msgstr "Ви впевнені, що хочете завантажити всі розділи обраної манґи?"
+msgstr "Впевнені, що хочете завантажити всі розділи вибраних мальописів?"
 
 #: ../komikku/library/__init__.py:432
 msgid "Download?"
@@ -1636,7 +1636,7 @@ msgstr "Не вдалося оновити статус читання"
 
 #: ../komikku/library/__init__.py:840
 msgid "Add New Comic"
-msgstr "Додати новий мальопис"
+msgstr "Додати мальопис"
 
 #: ../komikku/library/__init__.py:873 ../komikku/library/categories_list.py:146
 msgid "Uncategorized"

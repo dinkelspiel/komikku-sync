@@ -30,6 +30,19 @@ class Weebcentral(Server):
 
     filters = [
         {
+            'key': 'adult',
+            'type': 'select',
+            'name': _('Adult Content'),
+            'description': _('Filter by Adult Content'),
+            'value_type': 'single',
+            'default': 'Any',
+            'options': [
+                {'key': 'Any', 'name': _('Any')},
+                {'key': 'True', 'name': _('True')},
+                {'key': 'False', 'name': _('False')},
+            ]
+        },
+        {
             'key': 'types',
             'type': 'select',
             'name': _('Types'),
@@ -198,13 +211,13 @@ class Weebcentral(Server):
         """
         return self.manga_url.format(slug)
 
-    def get_latest_updates(self, types=None, statuses=None):
-        return self.search(orderby='Latest Updates', statuses=statuses, types=types)
+    def get_latest_updates(self, adult=None, types=None, statuses=None):
+        return self.search(orderby='Latest Updates', adult=adult, statuses=statuses, types=types)
 
-    def get_most_populars(self, types=None, statuses=None):
-        return self.search(orderby='Popularity', statuses=statuses, types=types)
+    def get_most_populars(self, adult=None, types=None, statuses=None):
+        return self.search(orderby='Popularity', adult=adult, statuses=statuses, types=types)
 
-    def search(self, term='', orderby='Best Match', types=None, statuses=None):
+    def search(self, term='', orderby='Best Match', adult=None, types=None, statuses=None):
         r = self.session_get(
             self.search_url,
             params={
@@ -213,6 +226,7 @@ class Weebcentral(Server):
                 'sort': orderby,
                 'order': 'Ascending',
                 'official': 'Any',
+                'adult': adult,
                 'included_status': statuses,
                 'included_type': types,
                 'display_mode': 'Minimal Display',

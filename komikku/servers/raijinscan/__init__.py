@@ -2,9 +2,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
-import base64
 from gettext import gettext as _
+import json
 import logging
+import re
 
 from bs4 import BeautifulSoup
 
@@ -28,7 +29,8 @@ class Raijinscan(Server):
     search_url = base_url + '/'
     manga_url = base_url + '/manga/{0}/'
     chapter_url = base_url + '/manga/{0}/{1}/'
-    bypass_cf_url = base_url + '/manga/nano-machine-1/'
+    api_chapters_url = base_url + '/wp-admin/admin-ajax.php'
+    bypass_cf_url = base_url + '/manga/nano-machine-lecture-vf/'
 
     filters = [
         {
@@ -138,7 +140,7 @@ class Raijinscan(Server):
     @CompleteChallenge()
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
-        Returns manga chapter data by scraping chapter HTML page content
+        Returns manga chapter data by scraping chapter HTML page content + API
 
         Currently, only pages are expected.
         """
@@ -148,14 +150,53 @@ class Raijinscan(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
+        cursor = None
+        cursor_hash = None
+        form_data = {}
+        for script_element in soup.select('script'):
+            script = script_element.string
+            if not script:
+                continue
+            if matches := re.match(r'.*push\((.*)\);', script):
+                req_data = json.loads(matches.group(1))
+                protocol_req = req_data['protocol']['request']
+                protocol_resp = req_data['protocol']['response']
+
+                form_data['action'] = req_data['protocol']['action']
+                for key, hash in protocol_req.items():
+                    value = req_data.get(key)
+                    if value is not None:
+                        form_data[hash] = value
+                    elif key == 'cursor':
+                        cursor_hash = hash
+
+                break
+
         data = dict(
             pages=[],
         )
-        for element in soup.select('.protected-image-data'):
-            data['pages'].append(dict(
-                image=base64.b64decode(element.get('data-src')).decode('utf-8'),
-                slug=None,
-            ))
+        more = True
+        while more:
+            if cursor:
+                form_data[cursor_hash] = cursor
+
+            r = self.session_post(
+                self.api_chapters_url,
+                data=form_data,
+                headers={
+                    'Referer': self.chapter_url.format(manga_slug, chapter_slug),
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            )
+
+            resp_data = r.json()
+            cursor = resp_data[protocol_resp['payload']][protocol_resp['nextToken']]
+            more = resp_data[protocol_resp['payload']][protocol_resp['hasMore']]
+            for image in resp_data[protocol_resp['payload']][protocol_resp['images']]:
+                data['pages'].append({
+                    'image': image[protocol_resp['url']],
+                    'slug': None,
+                })
 
         return data
 

@@ -35,7 +35,7 @@ class Readcomiconline(Server):
     has_captcha = True  # Custom captcha AreYouHuman2
     http_client = 'curl_cffi'
 
-    base_url = 'https://readcomiconline.li'
+    base_url = 'https://rcostation.xyz'
     latest_updates_url = base_url + '/ComicList/LatestUpdate'
     most_populars_url = base_url + '/ComicList/MostPopular'
     search_url = base_url + '/AdvanceSearch'

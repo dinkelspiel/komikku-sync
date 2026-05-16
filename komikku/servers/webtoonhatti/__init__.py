@@ -11,12 +11,9 @@ class Webtoonhatti(Madara2):
     lang = 'tr'
     is_nsfw = True
 
+    has_cf = True
+
     date_format = None
     series_name = 'webtoon'
 
     base_url = 'https://webtoonhatti.club'
-    logo_url = base_url + '/wp-content/uploads/2024/03/cropped-iconlogo.png'
-
-    def __init__(self):
-        super().__init__()
-        self.session.verify = False

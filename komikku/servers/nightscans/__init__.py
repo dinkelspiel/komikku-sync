@@ -11,5 +11,5 @@ class Nightscans(Iken):
     lang = 'en'
 
     base_url = 'https://qimanhwa.com'
-    logo_url = base_url + 'qimanhwa.ico'
+    logo_url = base_url + '/qiscans.ico'
     api_url = 'https://api.qimanhwa.com/api/v1'

@@ -5,7 +5,7 @@
 # Supported servers:
 # Aurora Scan [pt_BR] (disabled)
 # Cerise Scan [pt_BR] (disabled)
-# Dango Scan [pt_BR]
+# Dango Scan [pt_BR] (disabled)
 # Luratoon Scan [pt_BR] (disabled)
 # Nazarick Scan [pt_BR]
 # RF Dragon Scan [pt_BR]

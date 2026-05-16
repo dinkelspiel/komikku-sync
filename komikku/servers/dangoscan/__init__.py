@@ -9,6 +9,7 @@ class Dangoscan(Peachscan):
     id = 'dangoscan'
     name = 'Dango Scan'
     lang = 'pt_BR'
+    status = 'disabled'
 
     base_url = 'https://dangoscan.com.br'
     logo_url = base_url + '/static/dangoscan.com.br/favicon-32x32.png'

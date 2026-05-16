@@ -141,7 +141,7 @@ class Mangaball(Server):
             elif status == 'Ongoing':
                 data['status'] = 'ongoing'
             elif status == 'Hiatus':
-                data['status'] = 'Hiatus'
+                data['status'] = 'hiatus'
             elif status == 'Cancelled':
                 data['status'] = 'suspended'
 

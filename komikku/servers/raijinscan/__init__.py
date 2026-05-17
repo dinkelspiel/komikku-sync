@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+import base64
 from gettext import gettext as _
 import json
 import logging
@@ -151,26 +152,36 @@ class Raijinscan(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         cursor = None
-        cursor_hash = None
         form_data = {}
         for script_element in soup.select('script'):
             script = script_element.string
-            if not script:
+            if not script or 'rjfr_' not in script:
                 continue
-            if matches := re.match(r'.*push\((.*)\);', script):
-                req_data = json.loads(matches.group(1))
-                protocol_req = req_data['protocol']['request']
-                protocol_resp = req_data['protocol']['response']
 
-                form_data['action'] = req_data['protocol']['action']
-                for key, hash in protocol_req.items():
-                    value = req_data.get(key)
-                    if value is not None:
-                        form_data[hash] = value
-                    elif key == 'cursor':
-                        cursor_hash = hash
+            if matches := re.match(r'.*"([a-zA-Z0-9]*)"', script):
+                req_data = json.loads(base64.b64decode(matches.group(1) + '=='))
+                req_names = req_data[-2]
+                resp_names = req_data[-1]
+
+                form_data['action'] = req_data[12]
+                mapping = {
+                    0: 1,
+                    1: 2,
+                    2: 3,
+                    3: 4,
+                    4: 5,
+                    5: 6,
+                    6: 8,
+                    7: 9,
+                    8: 7,
+                }
+                for src, dst in mapping.items():
+                    form_data[req_names[src]] = req_data[dst]
 
                 break
+
+        if not form_data:
+            return None
 
         data = dict(
             pages=[],
@@ -178,23 +189,25 @@ class Raijinscan(Server):
         more = True
         while more:
             if cursor:
-                form_data[cursor_hash] = cursor
+                form_data[req_names[9]] = cursor
 
             r = self.session_post(
                 self.api_chapters_url,
                 data=form_data,
                 headers={
+                    'Accept': '*/*',
+                    'Origin': self.base_url,
                     'Referer': self.chapter_url.format(manga_slug, chapter_slug),
                     'X-Requested-With': 'XMLHttpRequest',
                 }
             )
 
             resp_data = r.json()
-            cursor = resp_data[protocol_resp['payload']][protocol_resp['nextToken']]
-            more = resp_data[protocol_resp['payload']][protocol_resp['hasMore']]
-            for image in resp_data[protocol_resp['payload']][protocol_resp['images']]:
+            cursor = resp_data[resp_names[1]][resp_names[8]]
+            more = resp_data[resp_names[1]][resp_names[9]]
+            for image in resp_data[resp_names[1]][resp_names[2]]:
                 data['pages'].append({
-                    'image': image[protocol_resp['url']],
+                    'image': image[resp_names[4]],
                     'slug': None,
                 })
 

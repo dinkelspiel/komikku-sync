@@ -125,6 +125,7 @@ CREDITS = dict(
         'FIONover (Russian)',
         'Анна Алешкина #нетвойне (Russian)',
         'Сергей (Russian)',
+        'Andrei Stepanov (Russian)',
         'Óscar Fernández Díaz (Spanish)',
         'gallegonovato (Spanish)',
         'Klauss (Spanish)',
@@ -156,13 +157,15 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Library] Selection mode: Added `Clear` action (clears cached pages)</li>
-    <li>[Servers] Added Shadow Manga (ES)</li>
-    <li>[Servers] Kenscans (EN): Update</li>
-    <li>[Servers] Manga/in/ua (UK): Update</li>
-    <li>[Servers] Pepper&amp;Carrot: Update miniFantasyTheater</li>
-    <li>[Servers] ShadowMangas (ES): Disabled</li>
-    <li>[L10n] Updated Finnish, French and Ukrainian translations</li>
+    <li>[Servers] Dango Scan (pt_BR): Disabled</li>
+    <li>[Servers] Dragon Ball Multiverse (multi): Fixed pages not showing text on balloon speech bubbles</li>
+    <li>[Servers] MangaFire (multi): Fixed chapter dates</li>
+    <li>[Servers] Mangas Origines (FR): Disabled</li>
+    <li>[Servers] Raijin Scan (FR): Update</li>
+    <li>[Servers] Read Comic Online (EN): Update</li>
+    <li>[Servers] Webtoon Hatti (TR): Update</li>
+    <li>[Servers] Weeb Central (EN): Update</li>
+    <li>[L10n] Updated Croatian, Russian, Ukrainian and Vietnamese translations</li>
 </ul>
 <p>Happy reading.</p>
 """

@@ -114,6 +114,22 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.4.0" date="2025-05-19">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] Dango Scan (pt_BR): Disabled</li>
+                    <li>[Servers] Dragon Ball Multiverse (multi): Fixed pages not showing text on balloon speech bubbles</li>
+                    <li>[Servers] MangaFire (multi): Fixed chapter dates</li>
+                    <li>[Servers] Mangas Origines (FR): Disabled</li>
+                    <li>[Servers] Raijin Scan (FR): Update</li>
+                    <li>[Servers] Read Comic Online (EN): Update</li>
+                    <li>[Servers] Webtoon Hatti (TR): Update</li>
+                    <li>[Servers] Weeb Central (EN): Update</li>
+                    <li>[L10n] Updated Croatian, Russian, Ukrainian and Vietnamese translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.3.0" date="2025-05-01">
             <description translate="no">
                 <ul>

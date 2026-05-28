@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-30 00:29+0200\n"
-"PO-Revision-Date: 2026-05-27 01:11+0000\n"
+"PO-Revision-Date: 2026-05-29 07:01+0000\n"
 "Last-Translator: \"4kŸ\\\"]ãcJ1Ž{æÓC–â^K^;‰-)åÄ7†”ùüÑIù =z–(:FE½«î!ùñ|ßd›”"
 "ïÊ±?\" <sooleehin7@gmail.com>\n"
 "Language-Team: Malay <https://hosted.weblate.org/projects/komikku/main/ms/>\n"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "komik"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:404
 msgid "Got it!"
-msgstr ""
+msgstr "Ye!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:431
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
@@ -205,7 +205,7 @@ msgstr ""
 
 #: ../data/ui/card.blp:318
 msgid "Size on Disk"
-msgstr ""
+msgstr "Saiz data"
 
 #: ../data/ui/card.blp:343
 msgid "Synopsis"
@@ -256,11 +256,11 @@ msgstr ""
 
 #: ../data/ui/explorer_search.blp:34
 msgid "Open in Browser"
-msgstr ""
+msgstr "Buka di Browser"
 
 #: ../data/ui/explorer_search.blp:147
 msgid "Most Popular"
-msgstr ""
+msgstr "Paling Popular"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
@@ -268,7 +268,7 @@ msgstr ""
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:215
 msgid "Servers"
-msgstr ""
+msgstr "Server"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
@@ -276,11 +276,11 @@ msgstr ""
 
 #: ../data/ui/explorer_servers.blp:23
 msgid "Search Servers"
-msgstr ""
+msgstr "Cari Server"
 
 #: ../data/ui/explorer_servers.blp:37
 msgid "Search for servers by name or language"
-msgstr ""
+msgstr "Cari server secara nama atau bahasa"
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"

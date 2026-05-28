@@ -170,7 +170,41 @@ template $CardPage : Adw.NavigationPage {
                     }
                   }
 
-                  Box details_box {
+                  Box {
+                    spacing: 12;
+
+                    Image {
+                      halign: start;
+                      valign: start;
+                      icon-name: "genres-symbolic";
+                    }
+
+                    Adw.WrapBox genres_wrapbox {
+                      justify: fill;
+                      halign: start;
+                      hexpand: true;
+                      valign: center;
+                      line-spacing: 6;
+                      child-spacing: 6;
+                    }
+                  }
+
+                  Box synopsis_box {
+                    orientation: vertical;
+                    spacing: 24;
+
+                    ToggleButton synopsis_togglebutton {
+                      label: _("Show More");
+                      halign: center;
+                      valign: center;
+
+                      styles [
+                        "circular",
+                      ]
+                    }
+                  }
+
+                  Box {
                     orientation: vertical;
 
                     Box {
@@ -180,32 +214,22 @@ template $CardPage : Adw.NavigationPage {
                       Image {
                         halign: start;
                         valign: start;
-                        icon-name: "genres-symbolic";
-                      }
-
-                      Adw.WrapBox genres_wrapbox {
-                        justify: fill;
-                        halign: start;
-                        hexpand: true;
-                        valign: center;
-                        line-spacing: 6;
-                        child-spacing: 6;
-                      }
-                    }
-
-                    Box {
-                      spacing: 12;
-                      margin-bottom: 12;
-
-                      Image {
-                        halign: start;
-                        valign: start;
                         icon-name: "categories-symbolic";
                       }
 
+                      Label {
+                        label: _("Categories");
+                        valign: start;
+                        wrap: false;
+                        styles [
+                          "heading",
+                        ]
+                      }
+
                       Adw.WrapBox categories_wrapbox {
+                        align: 1;
                         justify: fill;
-                        halign: start;
+                        halign: end;
                         hexpand: true;
                         valign: center;
                         line-spacing: 6;
@@ -334,34 +358,6 @@ template $CardPage : Adw.NavigationPage {
                         ]
                       }
                     }
-                  }
-
-                  Expander {
-                    expanded: true;
-
-                    label-widget: Label {
-                      label: _("Synopsis");
-                      xalign: 0;
-                      halign: fill;
-                      ellipsize: end;
-
-                      styles [
-                        "heading",
-                      ]
-                    };
-
-                    child: Label synopsis_label {
-                      hexpand: true;
-                      label: "synopsis";
-                      wrap: true;
-                      wrap-mode: word_char;
-                      xalign: 0;
-                      margin-top: 6;
-
-                      styles [
-                        "document",
-                      ]
-                    };
                   }
                 }
               }

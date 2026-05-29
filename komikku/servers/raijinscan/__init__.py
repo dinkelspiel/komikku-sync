@@ -158,8 +158,19 @@ class Raijinscan(Server):
             if not script or 'rjfr_' not in script:
                 continue
 
-            if matches := re.match(r'.*"([a-zA-Z0-9]*)"', script):
-                req_data = json.loads(base64.b64decode(matches.group(1) + '=='))
+            if matches := re.match(r'.*push\((.*)\);', script):
+                req_data = json.loads(matches.group(1))
+
+                encoded = ''
+                for key in req_data['m'].split('|'):
+                    encoded += req_data['c'][key]
+
+                decoded = json.loads(base64.b64decode(encoded + '=='))
+
+                req_data = [None] * 15
+                for index, pos in enumerate(decoded['m']):
+                    req_data[pos] = decoded['d'][index]
+
                 req_names = req_data[-2]
                 resp_names = req_data[-1]
 

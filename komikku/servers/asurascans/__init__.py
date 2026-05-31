@@ -85,18 +85,18 @@ class Asurascans(Server):
         if r.status_code != 200:
             return None
 
-        soup = BeautifulSoup(r.text, 'lxml')
+        soup = BeautifulSoup(r.content, 'lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         # Name & cover
         data['name'] = soup.select_one('h1').text.strip()
@@ -115,7 +115,7 @@ class Asurascans(Server):
                 data['status'] = 'ongoing'
             elif status == 'completed':
                 data['status'] = 'complete'
-            elif status == 'dropped':
+            elif status in ('axed', 'dropped'):
                 data['status'] = 'suspended'
             elif status == 'hiatus':
                 data['status'] = 'hiatus'
@@ -147,12 +147,12 @@ class Asurascans(Server):
             else:
                 date = None
 
-            chapters.append(dict(
-                slug=slug,
-                title=a_element.select_one('span.font-medium').text.strip(),
-                num=slug,
-                date=date,
-            ))
+            chapters.append({
+                'slug': slug,
+                'title': a_element.select_one('span.font-medium').text.strip(),
+                'num': slug,
+                'date': date,
+            })
 
         return chapters
 
@@ -173,14 +173,14 @@ class Asurascans(Server):
         soup = BeautifulSoup(r.text, 'lxml')
         info = json.loads(soup.select_one('astro-island').get('props'))
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         for page in info['pages'][1]:
-            data['pages'].append(dict(
-                slug=None,
-                image=page[1]['url'][1],
-            ))
+            data['pages'].append({
+                'slug': None,
+                'image': page[1]['url'][1],
+            })
 
         return data
 
@@ -201,11 +201,11 @@ class Asurascans(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """
@@ -216,7 +216,7 @@ class Asurascans(Server):
     def get_manga_list(self, term=None, type=None, orderby=None):
         params = {}
         if term:
-            params['search'] = term
+            params['q'] = term
         if orderby:
             params['order'] = 'desc'
             if orderby == 'popular':
@@ -234,17 +234,17 @@ class Asurascans(Server):
         if r.status_code != 200:
             return None
 
-        soup = BeautifulSoup(r.text, 'lxml')
+        soup = BeautifulSoup(r.content, 'lxml')
 
         results = []
-        for a_element in soup.select('.series-card > a'):
+        for a_element in soup.select('.series-card[data-series-id] > a'):
             cover_element = a_element.select_one('img[loading="lazy"]')
 
-            results.append(dict(
-                slug=a_element.get('href').split('/')[-1],
-                name=cover_element.get('alt').strip(),
-                cover=cover_element.get('src') if cover_element else None,
-            ))
+            results.append({
+                'slug': a_element.get('href').split('/')[-1],
+                'name': cover_element.get('alt').strip(),
+                'cover': cover_element.get('src') if cover_element else None,
+            })
 
         return results
 

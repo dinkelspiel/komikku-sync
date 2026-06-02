@@ -56,7 +56,7 @@ class Animesama(Server):
             server_id=self.id,
         ))
 
-        data['name'] = soup.select_one('#titreOeuvre').text.strip()
+        data['name'] = soup.select_one('.oeuvre-right h1').text.strip()
         data['cover'] = soup.select_one('#coverOeuvre').get('src')
 
         if element := soup.select_one('div h2:-soup-contains("Synopsis") ~ p'):

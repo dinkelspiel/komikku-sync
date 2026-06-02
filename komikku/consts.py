@@ -31,7 +31,7 @@ PROGRESSBAR_THEMES = {
         'name': _('Transgender Pride Colors'),
         'colors': ['#5BCEFA', '#F5A9B8', '#FFFFFF', '#F5A9B8', '#5BCEFA'],
     },
-    'onbinary': {
+    'nonbinary': {
         'name': _('Nonbinary Pride Colors'),
         'colors': ['#FCF434', '#FFFFFF', '#9C59D1', '#2C2C2C'],
     },
@@ -249,15 +249,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Dango Scan (pt_BR): Disabled</li>
-    <li>[Servers] Dragon Ball Multiverse (multi): Fixed pages not showing text on balloon speech bubbles</li>
-    <li>[Servers] MangaFire (multi): Fixed chapter dates</li>
-    <li>[Servers] Mangas Origines (FR): Disabled</li>
+    <li>[Card] Info: Long Synopsis truncation With Show More/Less button</li>
+    <li>[Preferences] General: Added `Progress Bars Theme` setting (Happy Pride Month!)</li>
+    <li>[Servers] Added MangaTown (EN)</li>
+    <li>[Servers] Asura Scans (EN): Update</li>
     <li>[Servers] Raijin Scan (FR): Update</li>
-    <li>[Servers] Read Comic Online (EN): Update</li>
-    <li>[Servers] Webtoon Hatti (TR): Update</li>
-    <li>[Servers] Weeb Central (EN): Update</li>
-    <li>[L10n] Updated Croatian, Russian, Ukrainian and Vietnamese translations</li>
+    <li>[L10n] Updated French, German and Russian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

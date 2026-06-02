@@ -114,6 +114,19 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.5.0" date="2025-06-03">
+            <description translate="no">
+                <ul>
+                    <li>[Card] Info: Long Synopsis truncation With Show More/Less button</li>
+                    <li>[Preferences] General: Added `Progress Bars Theme` setting (Happy Pride Month!)</li>
+                    <li>[Servers] Added MangaTown (EN)</li>
+                    <li>[Servers] Asura Scans (EN): Update</li>
+                    <li>[Servers] Raijin Scan (FR): Update</li>
+                    <li>[L10n] Updated French, German and Russian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.4.0" date="2025-05-19">
             <description translate="no">
                 <ul>

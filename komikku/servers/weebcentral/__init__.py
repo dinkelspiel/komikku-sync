@@ -38,8 +38,8 @@ class Weebcentral(Server):
             'default': 'Any',
             'options': [
                 {'key': 'Any', 'name': _('Any')},
-                {'key': 'True', 'name': _('True')},
-                {'key': 'False', 'name': _('False')},
+                {'key': 'True', 'name': _('Yes')},
+                {'key': 'False', 'name': _('No')},
             ]
         },
         {

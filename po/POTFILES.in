@@ -28,9 +28,11 @@ data/ui/support.blp
 data/ui/webview.blp
 komikku/application.py
 komikku/card/chapters_list.py
+komikku/card/info_box.py
 komikku/card/__init__.py
 komikku/card/tracking.py
 komikku/categories_editor.py
+komikku/consts.py
 komikku/downloader.py
 komikku/explorer/common.py
 komikku/explorer/search/__init__.py
@@ -76,6 +78,7 @@ komikku/servers/mangadex/__init__.py
 komikku/servers/mangafire/__init__.py
 komikku/servers/mangamana/__init__.py
 komikku/servers/mangapill/__init__.py
+komikku/servers/mangatown/__init__.py
 komikku/servers/mangatube/__init__.py
 komikku/servers/mangaworld/__init__.py
 komikku/servers/monkeyuser/__init__.py

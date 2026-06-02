@@ -167,8 +167,9 @@ class Raijinscan(Server):
 
                 decoded = json.loads(base64.b64decode(encoded + '=='))
 
-                req_data = [None] * 15
+                req_data = [None] * len(decoded['d'])
                 for index, pos in enumerate(decoded['m']):
+                    pos = decoded['l'].index(pos)
                     req_data[pos] = decoded['d'][index]
 
                 req_names = req_data[-2]

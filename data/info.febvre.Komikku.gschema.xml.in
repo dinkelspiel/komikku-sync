@@ -26,6 +26,30 @@
         <value nick="latest-read-desc" value="3" />
         <value nick="latest-updated-desc" value="5" />
     </enum>
+    <enum id="@appid@.progressbarTheme">
+        <value nick="accent-color" value="0" />
+        <value nick="pride-rainbow" value="1" />
+        <value nick="lesbian-pride" value="2" />
+        <value nick="gay-pride" value="3" />
+        <value nick="transgender" value="4" />
+        <value nick="nonbinary" value="5" />
+        <value nick="bisexual" value="6" />
+        <value nick="asexual" value="7" />
+        <value nick="pansexual" value="8" />
+        <value nick="aromantic" value="9" />
+        <value nick="genderfluid" value="10" />
+        <value nick="polysexual" value="11" />
+        <value nick="omnisexual" value="12" />
+        <value nick="aroace" value="13" />
+        <value nick="agender" value="14" />
+        <value nick="genderqueer" value="15" />
+        <value nick="intersex" value="16" />
+        <value nick="demigender" value="17" />
+        <value nick="biromantic" value="18" />
+        <value nick="disability" value="19" />
+        <value nick="femboy" value="20" />
+        <value nick="neutrois" value="21" />
+    </enum>
     <enum id="@appid@.ReadingMode">
         <value nick="--" value="-1" />
         <value nick="right-to-left" value="0" />
@@ -101,6 +125,11 @@
             <default>false</default>
             <summary>Accent Color</summary>
             <description>Use system accent colors</description>
+        </key>
+        <key enum="@appid@.progressbarTheme" name="progressbar-theme">
+          <default>"accent-color"</default>
+          <summary>Progress Bar Theme</summary>
+          <description>List of themes for progress bars</description>
         </key>
         <key type="b" name="card-backdrop">
             <default>false</default>

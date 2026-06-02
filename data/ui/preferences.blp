@@ -57,6 +57,7 @@ template $PreferencesDialog : Adw.PreferencesDialog {
 
     Adw.PreferencesGroup {
       title: _("Appearance");
+
       Adw.ComboRow color_scheme_row {
         title: _("Theme");
         model: StringList {
@@ -76,6 +77,11 @@ template $PreferencesDialog : Adw.PreferencesDialog {
       Adw.SwitchRow system_accent_colors_switch {
         title: _("Accent Color");
         subtitle: _("Use system accent colors");
+      }
+
+      Adw.ComboRow progressbar_theme_row {
+        title: _("Progress Bars Theme");
+        subtitle: _("Theme to use for progress bars");
       }
 
       Adw.ComboRow card_backdrop_method_row {

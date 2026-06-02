@@ -8,6 +8,7 @@ from gi.repository import Adw
 from gi.repository import GLib
 from gi.repository import Gtk
 
+from komikku.consts import PROGRESSBAR_THEMES
 from komikku.models import Settings
 from komikku.models.database import clear_cached_data
 from komikku.preferences.servers import PreferencesServersLanguagesSubPage
@@ -29,6 +30,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     color_scheme_row = Gtk.Template.Child('color_scheme_row')
     night_light_switch = Gtk.Template.Child('night_light_switch')
     system_accent_colors_switch = Gtk.Template.Child('system_accent_colors_switch')
+    progressbar_theme_row = Gtk.Template.Child('progressbar_theme_row')
     card_backdrop_method_row = Gtk.Template.Child('card_backdrop_method_row')
     desktop_notifications_switch = Gtk.Template.Child('desktop_notifications_switch')
     tracking_group = Gtk.Template.Child('tracking_group')
@@ -255,6 +257,11 @@ class PreferencesDialog(Adw.PreferencesDialog):
     def on_long_strip_detection_changed(self, switch_button, _gparam):
         self.settings.long_strip_detection = switch_button.get_active()
 
+    def on_progressbar_theme_changed(self, row, _gparam):
+        self.settings.progressbar_theme = list(PROGRESSBAR_THEMES.keys())[row.get_selected()]
+
+        self.window.init_progressbar_theme()
+
     def on_new_chapters_auto_download_changed(self, switch_button, _gparam):
         if switch_button.get_active():
             self.settings.new_chapters_auto_download = True
@@ -366,13 +373,25 @@ class PreferencesDialog(Adw.PreferencesDialog):
         self.system_accent_colors_switch.set_active(self.settings.system_accent_colors)
         self.system_accent_colors_switch.connect('notify::active', self.on_system_accent_colors_changed)
 
-        # Desktop notifications
-        self.desktop_notifications_switch.set_active(self.settings.desktop_notifications)
-        self.desktop_notifications_switch.connect('notify::active', self.on_desktop_notifications_changed)
+        # Progress bars theme
+        model = Gtk.StringList()
+        for _key, theme in PROGRESSBAR_THEMES.items():
+            model.append(theme['name'])
+        self.progressbar_theme_row.set_model(model)
+        self.progressbar_theme_row.set_selected(self.settings.progressbar_theme_value)
+        self.progressbar_theme_row.connect('notify::selected', self.on_progressbar_theme_changed)
+
+        progressbar = Gtk.ProgressBar(fraction=1, margin_top=4, margin_end=8)
+        progressbar.add_css_class('osd')
+        self.progressbar_theme_row.get_first_child().get_first_child().get_next_sibling().get_next_sibling().append(progressbar)
 
         # Card backdrop method
         self.card_backdrop_method_row.set_selected(self.settings.card_backdrop_method_value)
         self.card_backdrop_method_row.connect('notify::selected', self.on_card_backdrop_method_changed)
+
+        # Desktop notifications
+        self.desktop_notifications_switch.set_active(self.settings.desktop_notifications)
+        self.desktop_notifications_switch.connect('notify::active', self.on_desktop_notifications_changed)
 
         # Tracking
         self.tracking_switch.set_active(self.settings.tracking)

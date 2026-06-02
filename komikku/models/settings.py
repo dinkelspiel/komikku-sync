@@ -7,6 +7,8 @@ import json
 from gi.repository import Gio
 from gi.repository import GLib
 
+from komikku.consts import PROGRESSBAR_THEMES
+
 
 class Settings(Gio.Settings):
     """
@@ -409,6 +411,26 @@ class Settings(Gio.Settings):
     def pinned_servers(self, ids):
         ids = GLib.Variant('as', ids)
         self.set_value('pinned-servers', ids)
+
+    @property
+    def progressbar_theme(self):
+        """Return progressbar theme"""
+        return list(PROGRESSBAR_THEMES.keys())[self.progressbar_theme_value]
+
+    @property
+    def progressbar_theme_value(self):
+        """Return progressbar theme value"""
+        return self.get_enum('progressbar-theme')
+
+    @progressbar_theme.setter
+    def progressbar_theme(self, value):
+        """
+        Set progressbar theme
+
+        :param value: progressbar theme
+        :type value: string
+        """
+        self.set_enum('progressbar-theme', list(PROGRESSBAR_THEMES.keys()).index(value))
 
     @property
     def reading_mode(self):

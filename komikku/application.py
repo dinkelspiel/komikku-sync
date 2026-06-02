@@ -22,6 +22,7 @@ from gi.repository import Gtk
 
 from komikku.card import CardPage
 from komikku.consts import CREDITS
+from komikku.consts import PROGRESSBAR_THEMES
 from komikku.consts import RELEASE_NOTES
 from komikku.categories_editor import CategoriesEditorPage
 from komikku.debug_info import DebugInfo
@@ -163,6 +164,7 @@ class ApplicationWindow(Adw.ApplicationWindow):
 
         self.css_provider = Gtk.CssProvider.new()
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), self.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        self.css_rules = {}
 
         self.activity_indicator = Adw.Spinner(
             halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER, width_request=48, height_request=48, visible=False
@@ -310,6 +312,7 @@ class ApplicationWindow(Adw.ApplicationWindow):
 
         # Theme (light or dark) and accent colors
         self.init_theme()
+        self.init_progressbar_theme()
         self.init_accent_colors()
         Adw.StyleManager.get_default().connect('notify::accent-color', lambda _sm, _p: self.init_accent_colors())
 
@@ -339,9 +342,39 @@ class ApplicationWindow(Adw.ApplicationWindow):
 
     def init_accent_colors(self):
         if Adw.StyleManager.get_default().get_system_supports_accent_colors() and Settings.get_default().system_accent_colors:
-            self.css_provider.load_from_string('')
+            self.css_rules['accent-colors'] = ''
         else:
-            self.css_provider.load_from_string(':root {--accent-bg-color: var(--red-1); --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));}')
+            self.css_rules['accent-colors'] = """
+                :root {
+                    --accent-bg-color: var(--red-1);
+                    --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+                }
+            """
+
+        self.css_provider.load_from_string('\n'.join(self.css_rules.values()))
+
+    def init_progressbar_theme(self):
+        theme = Settings.get_default().progressbar_theme
+
+        if theme == 'accent-color':
+            self.css_rules['progressbar-theme'] = ''
+        else:
+            colors = PROGRESSBAR_THEMES[theme]['colors']
+            step = 100 / len(colors)
+            lgc = []
+            for index, color in enumerate(colors):
+                lgc.append(f'{color} {round(step * index, 2)}% {round(step * (index + 1), 2)}%')
+
+            self.css_rules['progressbar-theme'] = f"""
+                progressbar > trough > progress {{
+                    background: linear-gradient(
+                        90deg,
+                        {',\n\t'.join(lgc)}
+                    );
+                }}
+            """  # noqa
+
+        self.css_provider.load_from_string('\n'.join(self.css_rules.values()))
 
     def init_theme(self):
         def set_color_scheme():

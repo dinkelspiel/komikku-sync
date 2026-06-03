@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-03 00:18+0200\n"
-"PO-Revision-Date: 2026-05-09 08:11+0000\n"
+"PO-Revision-Date: 2026-06-04 06:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -473,11 +473,11 @@ msgstr "Використовувати системні акцентні кол�
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
-msgstr ""
+msgstr "Смужка поступу"
 
 #: ../data/ui/preferences.blp:84
 msgid "Theme to use for progress bars"
-msgstr ""
+msgstr "Оберіть вигляд смужки поступу"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
@@ -1251,11 +1251,11 @@ msgstr "Позначити попередні розділи як прочита
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"
-msgstr ""
+msgstr "Стисло"
 
 #: ../komikku/card/info_box.py:80 ../komikku/card/info_box.py:178
 msgid "Show More"
-msgstr ""
+msgstr "Розгорнуто"
 
 #: ../komikku/card/info_box.py:110
 msgid "Unknown author"
@@ -1381,87 +1381,87 @@ msgstr "Акцентний колір"
 
 #: ../komikku/consts.py:19
 msgid "Pride Colors"
-msgstr ""
+msgstr "Pride Colors"
 
 #: ../komikku/consts.py:23
 msgid "Lesbian Pride Colors"
-msgstr ""
+msgstr "Lesbian Pride Colors"
 
 #: ../komikku/consts.py:27
 msgid "Male Homosexual Pride Colors"
-msgstr ""
+msgstr "Male Homosexual Pride Colors"
 
 #: ../komikku/consts.py:31
 msgid "Transgender Pride Colors"
-msgstr ""
+msgstr "Transgender Pride Colors"
 
 #: ../komikku/consts.py:35
 msgid "Nonbinary Pride Colors"
-msgstr ""
+msgstr "Nonbinary Pride Colors"
 
 #: ../komikku/consts.py:39
 msgid "Bisexual Pride Colors"
-msgstr ""
+msgstr "Bisexual Pride Colors"
 
 #: ../komikku/consts.py:43
 msgid "Asexual Pride Colors"
-msgstr ""
+msgstr "Asexual Pride Colors"
 
 #: ../komikku/consts.py:47
 msgid "Pansexual Pride Colors"
-msgstr ""
+msgstr "Pansexual Pride Colors"
 
 #: ../komikku/consts.py:51
 msgid "Aromantic Pride Colors"
-msgstr ""
+msgstr "Aromantic Pride Colors"
 
 #: ../komikku/consts.py:55
 msgid "Genderfluid Pride Colors"
-msgstr ""
+msgstr "Genderfluid Pride Colors"
 
 #: ../komikku/consts.py:59
 msgid "Polysexual Pride Colors"
-msgstr ""
+msgstr "Polysexual Pride Colors"
 
 #: ../komikku/consts.py:63
 msgid "Omnisexual Pride Colors"
-msgstr ""
+msgstr "Omnisexual Pride Colors"
 
 #: ../komikku/consts.py:67
 msgid "Aroace Pride Colors"
-msgstr ""
+msgstr "Aroace Pride Colors"
 
 #: ../komikku/consts.py:71
 msgid "Agender Pride Colors"
-msgstr ""
+msgstr "Agender Pride Colors"
 
 #: ../komikku/consts.py:75
 msgid "Genderqueer Pride Colors"
-msgstr ""
+msgstr "Genderqueer Pride Colors"
 
 #: ../komikku/consts.py:79
 msgid "Intersex Pride Colors"
-msgstr ""
+msgstr "Intersex Pride Colors"
 
 #: ../komikku/consts.py:83
 msgid "Demigender Pride Colors"
-msgstr ""
+msgstr "Demigender Pride Colors"
 
 #: ../komikku/consts.py:87
 msgid "Biromantic Pride Colors"
-msgstr ""
+msgstr "Biromantic Pride Colors"
 
 #: ../komikku/consts.py:91
 msgid "Disability Pride Colors"
-msgstr ""
+msgstr "Disability Pride Colors"
 
 #: ../komikku/consts.py:95
 msgid "Femboy Pride Colors"
-msgstr ""
+msgstr "Femboy Pride Colors"
 
 #: ../komikku/consts.py:99
 msgid "Neutrois Pride Colors"
-msgstr ""
+msgstr "Neutrois Pride Colors"
 
 #: ../komikku/downloader.py:274
 #, python-brace-format
@@ -2540,12 +2540,14 @@ msgid "Yuri"
 msgstr "Юрі"
 
 #: ../komikku/servers/comix/__init__.py:44
+#, fuzzy
 msgid "Content Rating"
-msgstr ""
+msgstr "Вікові обмеження"
 
 #: ../komikku/servers/comix/__init__.py:45
+#, fuzzy
 msgid "Filter by Content Rating"
-msgstr ""
+msgstr "Фільтрувати за віковими обмеженнями"
 
 #: ../komikku/servers/comix/__init__.py:52
 #: ../komikku/servers/mangadex/__init__.py:66
@@ -2685,11 +2687,11 @@ msgstr "Самвидав"
 
 #: ../komikku/servers/mangadex/__init__.py:126
 msgid "Boys Love"
-msgstr "Бойс-лав"
+msgstr "Гейське"
 
 #: ../komikku/servers/mangadex/__init__.py:131
 msgid "Girls Love"
-msgstr "Гірлс лав"
+msgstr "Лесбійське"
 
 #: ../komikku/servers/mangadex/__init__.py:153
 msgid "Tags Inclusion Mode"
@@ -2740,7 +2742,7 @@ msgstr "OEL"
 
 #: ../komikku/servers/mangatown/__init__.py:58
 msgid "Shounen Ai"
-msgstr ""
+msgstr "Шьонен-ай"
 
 #: ../komikku/servers/mangatown/__init__.py:71
 msgid "New"
@@ -2810,19 +2812,20 @@ msgstr "Полотно"
 
 #: ../komikku/servers/weebcentral/__init__.py:35
 msgid "Adult Content"
-msgstr ""
+msgstr "Вміст для дорослих"
 
 #: ../komikku/servers/weebcentral/__init__.py:36
+#, fuzzy
 msgid "Filter by Adult Content"
-msgstr ""
+msgstr "Фільтрувати за вмістом для дорослих"
 
 #: ../komikku/servers/weebcentral/__init__.py:41
 msgid "Yes"
-msgstr ""
+msgstr "Так"
 
 #: ../komikku/servers/weebcentral/__init__.py:42
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 #: ../komikku/servers/zenko/__init__.py:45
 msgid "Age Restriction"

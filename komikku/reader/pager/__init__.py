@@ -170,9 +170,9 @@ class BasePager:
                     # Failed to save progress
                     on_error('server')
             except Exception as e:
-                on_error('connection', log_error_traceback(e))
+                on_error('connection', *log_error_traceback(e))
 
-        def on_error(_kind, message=None):
+        def on_error(_kind, message=None, stack_trace=None):
             if message is not None:
                 self.window.add_notification(_(f'Failed to sync read progress with server:\n{message}'), timeout=2)  # noqa E231
             else:

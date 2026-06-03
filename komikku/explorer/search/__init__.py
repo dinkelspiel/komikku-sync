@@ -440,8 +440,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
                 else:
                     GLib.idle_add(error, server)
             except Exception as e:
-                user_error_message = log_error_traceback(e)
-                GLib.idle_add(error, server, user_error_message)
+                GLib.idle_add(error, server, *log_error_traceback(e))
 
         def run_update(server, manga_id):
             manga = Manga.get(manga_id, server)
@@ -452,8 +451,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
                 else:
                     GLib.idle_add(error, server)
             except Exception as e:
-                user_error_message = log_error_traceback(e)
-                GLib.idle_add(error, server, user_error_message)
+                GLib.idle_add(error, server, *log_error_traceback(e))
 
         def complete_get(manga_data, server):
             if server != self.server:
@@ -481,7 +479,7 @@ class ExplorerSearchPage(Adw.NavigationPage):
 
             self.window.card.init(manga)
 
-        def error(server, message=None):
+        def error(server, message=None, stack_trace=None):
             if server != self.server:
                 return False
 

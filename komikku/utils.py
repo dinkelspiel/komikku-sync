@@ -350,13 +350,14 @@ def log_error_traceback(e):
     from komikku.servers.exceptions import ServerException
 
     if isinstance(e, requests.exceptions.RequestException):
-        return _('No Internet connection, timeout or server down')
+        return _('No Internet connection, timeout or server down'), None
     if isinstance(e, ServerException):
-        return e.message
+        return e.message, None
 
-    logger.info(traceback.format_exc())
+    stack_trace = traceback.format_exc()
+    logger.info(stack_trace)
 
-    return None
+    return None, stack_trace
 
 
 def markdown_to_markup(s):

@@ -121,7 +121,7 @@ class Page(Gtk.Overlay):
         self.reader.pager.interactive = True
 
     def render(self, retry=False):
-        def complete(error_code, error_message):
+        def complete(error_code, error_message, stack_trace):
             if error_code in ('connection', 'server'):
                 self.stop_activity_indicator()
                 on_error(error_code, error_message)
@@ -142,30 +142,30 @@ class Page(Gtk.Overlay):
 
         def load_chapter(prior_chapter=None):
             if self.chapter is None:
-                return 'error', 'offlimit', None
+                return 'error', 'offlimit', None, None
 
             if self.chapter.pages and self.index >= 0 and self.index < len(self.chapter.pages):
-                return 'success', None, None
+                return 'success', None, None, None
 
             if self.index < 0:
                 # Page belongs to another (previous) chapter
                 self.chapter = self.reader.manga.get_next_chapter(self.chapter, -1)
                 if self.chapter is None:
-                    return 'error', 'offlimit', None
+                    return 'error', 'offlimit', None, None
 
             if not self.chapter.pages:
                 try:
                     if not self.chapter.update_full():
-                        return 'error', 'server', None
+                        return 'error', 'server', None, None
                 except Exception as e:
-                    return 'error', 'connection', log_error_traceback(e)
+                    return 'error', 'connection', *log_error_traceback(e)
 
             if self.index > len(self.chapter.pages) - 1:
                 # Page belongs to another (next) chapter
                 prior_chapter = self.chapter
                 self.chapter = self.reader.manga.get_next_chapter(self.chapter, 1)
                 if self.chapter is None:
-                    return 'error', 'offlimit', None
+                    return 'error', 'offlimit', None, None
 
             if self.index < 0:
                 self.index = len(self.chapter.pages) + self.index
@@ -185,9 +185,9 @@ class Page(Gtk.Overlay):
             self.show_retry_button()
 
         def run():
-            res, error_code, error_message = load_chapter()
+            res, error_code, error_message, stack_trace = load_chapter()
             if res == 'error':
-                GLib.idle_add(complete, error_code, error_message)
+                GLib.idle_add(complete, error_code, error_message, stack_trace)
                 return
 
             self.loadable = True
@@ -200,18 +200,18 @@ class Page(Gtk.Overlay):
                         if page_path:
                             self.path = page_path
                         else:
-                            error_code, error_message = 'server', None
+                            error_code, error_message, stack_trace = 'server', None, None
                     except Exception as e:
-                        error_code, error_message = 'connection', log_error_traceback(e)
+                        error_code, error_message, stack_trace = 'connection', *log_error_traceback(e)
                 else:
                     self.path = page_path
             else:
                 try:
                     self.data = self.chapter.get_page_data(self.index)
                 except Exception as e:
-                    error_code, error_message = 'server', log_error_traceback(e)
+                    error_code, error_message, stack_trace = 'server', *log_error_traceback(e)
 
-            GLib.idle_add(complete, error_code, error_message)
+            GLib.idle_add(complete, error_code, error_message, stack_trace)
 
         if self.status is not None and self.error is None:
             return

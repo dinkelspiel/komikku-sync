@@ -49,8 +49,7 @@ class ExplorerSearchStackPageSearch(ExplorerSearchStackPage):
                 else:
                     GLib.idle_add(error, results, server)
             except Exception as e:
-                user_error_message = log_error_traceback(e)
-                GLib.idle_add(error, None, server, user_error_message)
+                GLib.idle_add(error, None, server, *log_error_traceback(e))
             finally:
                 gc.collect()
 
@@ -70,7 +69,7 @@ class ExplorerSearchStackPageSearch(ExplorerSearchStackPage):
 
             self.render_covers()
 
-        def error(results, server, message=None):
+        def error(results, server, message=None, stack_trace=None):
             if not self.parent.can_page_be_updated_with_results('search', server.id):
                 return
 

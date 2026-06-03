@@ -103,11 +103,10 @@ class Updater(GObject.GObject):
                         GLib.idle_add(complete, manga, in_batch, chapters_changes, synced)
                     else:
                         total_errors += 1
-                        GLib.idle_add(error, manga)
+                        GLib.idle_add(error, manga, in_batch)
                 except Exception as e:
-                    user_error_message = log_error_traceback(e)
                     total_errors += 1
-                    GLib.idle_add(error, manga, user_error_message)
+                    GLib.idle_add(error, manga, in_batch, *log_error_traceback(e))
 
             self.current_id = None
             self.running = False
@@ -172,7 +171,7 @@ class Updater(GObject.GObject):
 
             return False
 
-        def error(manga, message=None):
+        def error(manga, in_batch, message=None, stack_trace=None):
             show_notification(
                 f'updater.{manga.id}',
                 manga.name,

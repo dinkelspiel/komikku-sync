@@ -113,7 +113,8 @@ class ExplorerSearchStackPageSearchGlobal(ExplorerSearchStackPage):
                     try:
                         results = future.result()
                     except Exception as exc:
-                        GLib.idle_add(complete_server, None, server_data, log_error_traceback(exc))
+                        user_error_message, _stack_trace = log_error_traceback(exc)
+                        GLib.idle_add(complete_server, None, server_data, user_error_message)
                     else:
                         GLib.idle_add(complete_server, results, server_data)
 

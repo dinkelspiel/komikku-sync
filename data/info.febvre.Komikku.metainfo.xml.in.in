@@ -114,7 +114,7 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
-        <release version="50.5.0" date="2025-06-03">
+        <release version="50.5.0" date="2026-06-03">
             <description translate="no">
                 <ul>
                     <li>[Card] Info: Long Synopsis truncation With Show More/Less button</li>
@@ -127,7 +127,7 @@
                 <p>Happy reading.</p>
             </description>
         </release>
-        <release version="50.4.0" date="2025-05-19">
+        <release version="50.4.0" date="2026-05-19">
             <description translate="no">
                 <ul>
                     <li>[Servers] Dango Scan (pt_BR): Disabled</li>
@@ -143,7 +143,7 @@
                 <p>Happy reading.</p>
             </description>
         </release>
-        <release version="50.3.0" date="2025-05-01">
+        <release version="50.3.0" date="2026-05-01">
             <description translate="no">
                 <ul>
                     <li>[Library] Selection mode: Added `Clear` action (clears cached pages)</li>
@@ -157,7 +157,7 @@
                 <p>Happy reading.</p>
             </description>
         </release>
-        <release version="50.2.0" date="2025-04-13">
+        <release version="50.2.0" date="2026-04-13">
             <description translate="no">
                 <ul>
                     <li>Fixed an issue with unidentified cover files</li>
@@ -170,7 +170,7 @@
                 <p>Happy reading.</p>
             </description>
         </release>
-        <release version="50.1.0" date="2025-04-05">
+        <release version="50.1.0" date="2026-04-05">
             <description translate="no">
                 <ul>
                     <li>[Card] Improved `Blurred covers` backdrop</li>
@@ -189,7 +189,7 @@
                 <p>Happy reading.</p>
             </description>
         </release>
-        <release version="50.0.1" date="2025-03-23">
+        <release version="50.0.1" date="2026-03-23">
             <description translate="no">
                 <p>This is a bugfix version.</p>
                 <ul>

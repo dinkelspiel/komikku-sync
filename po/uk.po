@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-03 00:18+0200\n"
-"PO-Revision-Date: 2026-06-04 06:01+0000\n"
+"PO-Revision-Date: 2026-06-05 09:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -608,7 +608,7 @@ msgid ""
 "surfacing NSFW content."
 msgstr ""
 "Це налаштування не запобігає появі можливо неправильно класифікованим на "
-"боці Сервера мальописам, як контент для дорослих."
+"боці Сервера мальописам, як вмісту для дорослих."
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
@@ -684,7 +684,7 @@ msgstr "Повноекранний режим"
 
 #: ../data/ui/preferences.blp:320
 msgid "Automatically enter fullscreen mode"
-msgstr "Автоматично переходити в повноекранний режим"
+msgstr "Автоматично переходити до повноекранного режиму"
 
 #: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
@@ -2157,13 +2157,13 @@ msgstr "Чорно-біла"
 #: ../komikku/servers/mangadex/__init__.py:59
 #: ../komikku/servers/weebdex/__init__.py:48
 msgid "Rating"
-msgstr "Рейтинг"
+msgstr "Класифікація вмісту"
 
 #: ../komikku/servers/comick/__init__.py:66
 #: ../komikku/servers/mangadex/__init__.py:60
 #: ../komikku/servers/weebdex/__init__.py:49
 msgid "Filter by Content Ratings"
-msgstr "Фільтрувати за рейтингами контенту"
+msgstr "Фільтрувати за рівнями відвертості вмісту"
 
 #: ../komikku/servers/comick/__init__.py:69
 #: ../komikku/servers/comix/__init__.py:49
@@ -2177,14 +2177,14 @@ msgstr "Безпечний"
 #: ../komikku/servers/mangadex/__init__.py:64
 #: ../komikku/servers/weebdex/__init__.py:53
 msgid "Suggestive"
-msgstr "Під питанням"
+msgstr "Двозначний"
 
 #: ../komikku/servers/comick/__init__.py:71
 #: ../komikku/servers/comix/__init__.py:51
 #: ../komikku/servers/mangadex/__init__.py:65
 #: ../komikku/servers/weebdex/__init__.py:54
 msgid "Erotica"
-msgstr "Еротика"
+msgstr "Еротичний"
 
 #: ../komikku/servers/comick/__init__.py:78
 #: ../komikku/servers/comix/__init__.py:59
@@ -2547,13 +2547,13 @@ msgstr "Вікові обмеження"
 #: ../komikku/servers/comix/__init__.py:45
 #, fuzzy
 msgid "Filter by Content Rating"
-msgstr "Фільтрувати за віковими обмеженнями"
+msgstr "Фільтрувати за віковим обмеженням"
 
 #: ../komikku/servers/comix/__init__.py:52
 #: ../komikku/servers/mangadex/__init__.py:66
 #: ../komikku/servers/weebdex/__init__.py:55
 msgid "Pornographic"
-msgstr "Порнографія"
+msgstr "Порнографічний"
 
 #: ../komikku/servers/comix/__init__.py:72
 #: ../komikku/servers/dynasty/__init__.py:41
@@ -2601,7 +2601,7 @@ msgstr "З тегами"
 
 #: ../komikku/servers/dynasty/__init__.py:55
 msgid "Comma separated list of tags to search for"
-msgstr "Список тегів для пошуку (через кому)"
+msgstr "Вкажіть теги для пошуку через кому"
 
 #: ../komikku/servers/dynasty/__init__.py:61
 msgid "Without Tags"
@@ -2609,7 +2609,7 @@ msgstr "Без тегів"
 
 #: ../komikku/servers/dynasty/__init__.py:62
 msgid "Comma separated list of tags to exclude from search"
-msgstr "Список тегів для виключення з пошуку (через кому)"
+msgstr "Вкажіть теги, які потрібно виключити, через кому"
 
 #: ../komikku/servers/exceptions.py:10
 #, python-brace-format

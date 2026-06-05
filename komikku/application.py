@@ -127,7 +127,7 @@ class Application(Adw.Application):
         Adw.Application.do_startup(self)
 
         init_db()
-        init_servers_modules(Settings.get_default().external_servers_modules)
+        init_servers_modules(Settings.get_default().servers_external_modules)
 
 
 @Gtk.Template.from_resource('/info/febvre/Komikku/ui/application_window.ui')
@@ -137,7 +137,7 @@ class ApplicationWindow(Adw.ApplicationWindow):
     maximized_state = False
     network_available = False
     last_navigation_action = None
-    external_servers_modules_update_at_startup_done = False
+    servers_external_modules_update_at_startup_done = False
 
     overlay = Gtk.Template.Child('overlay')
     navigationview = Gtk.Template.Child('navigationview')
@@ -488,8 +488,8 @@ available in your region/language."""))
 
         if self.network_available:
             # Install external servers modules
-            if Settings.get_default().external_servers_modules and not self.external_servers_modules_update_at_startup_done:
-                self.external_servers_modules_update_at_startup_done = True
+            if Settings.get_default().servers_external_modules and not self.servers_external_modules_update_at_startup_done:
+                self.servers_external_modules_update_at_startup_done = True
                 self.install_servers_modules()
 
             # Automatically update library at startup

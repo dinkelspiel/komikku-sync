@@ -224,14 +224,6 @@ class Settings(Gio.Settings):
         self.set_value('explorer-search-global-selected-filters', filters)
 
     @property
-    def external_servers_modules(self):
-        return self.get_boolean('external-servers-modules')
-
-    @external_servers_modules.setter
-    def external_servers_modules(self, state):
-        self.set_boolean('external-servers-modules', state)
-
-    @property
     def fullscreen(self):
         return self.get_boolean('fullscreen')
 
@@ -597,6 +589,14 @@ class Settings(Gio.Settings):
     @servers_bug_report.setter
     def servers_bug_report(self, state):
         self.set_boolean('servers-bug-report', state)
+
+    @property
+    def servers_external_modules(self):
+        return self.get_boolean('external-servers-modules')
+
+    @servers_external_modules.setter
+    def servers_external_modules(self, state):
+        self.set_boolean('external-servers-modules', state)
 
     def toggle_server(self, uid, state):
         settings = self.servers_settings

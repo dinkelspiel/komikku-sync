@@ -424,12 +424,12 @@ class ServerDummy(Server):
         return None
 
 
-def init_servers_modules(use_external_servers_modules, reload_modules=False):
+def init_servers_modules(use_external_modules, reload_modules=False):
     # Add a first Finder with HIGH priority
     server_finder = ServerFinder(priority=ServerFinderPriority.HIGH)
     server_finder.add_path(os.environ.get('KOMIKKU_SERVERS_PATH'))
 
-    if use_external_servers_modules:
+    if use_external_modules:
         # A single Finder is sufficient
         server_finder.add_path(os.path.join(get_cache_dir(), 'servers/repo'))
         server_finder.install()

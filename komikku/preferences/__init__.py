@@ -68,7 +68,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     clear_cached_data_on_app_close_switch = Gtk.Template.Child('clear_cached_data_on_app_close_switch')
     clear_webview_data_actionrow = Gtk.Template.Child('clear_webview_data_actionrow')
     clear_webview_data_button = Gtk.Template.Child('clear_webview_data_button')
-    external_servers_modules_switch = Gtk.Template.Child('external_servers_modules_switch')
+    servers_external_modules_switch = Gtk.Template.Child('servers_external_modules_switch')
     servers_bug_report_switch = Gtk.Template.Child('servers_bug_report_switch')
     credentials_storage_plaintext_fallback_switch = Gtk.Template.Child('credentials_storage_plaintext_fallback_switch')
     disable_animations_switch = Gtk.Template.Child('disable_animations_switch')
@@ -78,7 +78,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
 
         self.window = window
         self.settings = Settings.get_default()
-        self.external_servers_modules_in_use = self.settings.external_servers_modules
+        self.servers_external_modules_in_use = self.settings.servers_external_modules
 
         self.support_button.connect('clicked', lambda _btn: self.push_subpage(self.window.support))
         self.support_close_button.connect('clicked', lambda _btn: self.support_group.set_visible(False))
@@ -214,11 +214,6 @@ class PreferencesDialog(Adw.PreferencesDialog):
             self.settings.disable_animations = False
             Gtk.Settings.get_default().set_property('gtk-enable-animations', True)
 
-    def on_external_servers_modules_changed(self, switch_button, _gparam):
-        active = switch_button.get_active()
-        self.advanced_banner.set_revealed(active != self.external_servers_modules_in_use)
-        self.settings.external_servers_modules = active
-
     def on_fullscreen_changed(self, switch_button, _gparam):
         self.settings.fullscreen = switch_button.get_active()
 
@@ -329,6 +324,11 @@ class PreferencesDialog(Adw.PreferencesDialog):
 
     def on_servers_bug_report_changed(self, switch_button, _gparam):
         self.settings.servers_bug_report = switch_button.get_active()
+
+    def on_servers_external_modules_changed(self, switch_button, _gparam):
+        active = switch_button.get_active()
+        self.advanced_banner.set_revealed(active != self.servers_external_modules_in_use)
+        self.settings.servers_external_modules = active
 
     def on_system_accent_colors_changed(self, switch_button, _gparam):
         self.settings.system_accent_colors = switch_button.get_active()
@@ -527,9 +527,9 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # Clear webview data
         self.clear_webview_data_button.connect('clicked', self.on_clear_webview_data_clicked)
 
-        # External servers modules
-        self.external_servers_modules_switch.set_active(self.settings.external_servers_modules)
-        self.external_servers_modules_switch.connect('notify::active', self.on_external_servers_modules_changed)
+        # Servers external modules
+        self.servers_external_modules_switch.set_active(self.settings.servers_external_modules)
+        self.servers_external_modules_switch.connect('notify::active', self.on_servers_external_modules_changed)
 
         # Servers bug report
         self.servers_bug_report_switch.set_active(self.settings.servers_bug_report)

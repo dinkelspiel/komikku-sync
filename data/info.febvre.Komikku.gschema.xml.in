@@ -293,6 +293,10 @@
             <default>false</default>
             <summary>Allow usage of alternative versions of servers modules</summary>
         </key>
+        <key type="b" name="servers-bug-report">
+            <default>false</default>
+            <summary>Suggest submitting a bug report in case of error</summary>
+        </key>
         <key type="b" name="credentials-storage-plaintext-fallback">
             <default>false</default>
             <summary>Allow plaintext storage as fallback</summary>

@@ -590,6 +590,14 @@ class Settings(Gio.Settings):
     def selected_category(self, state):
         self.set_int('selected-category', state)
 
+    @property
+    def servers_bug_report(self):
+        return self.get_boolean('servers-bug-report')
+
+    @servers_bug_report.setter
+    def servers_bug_report(self, state):
+        self.set_boolean('servers-bug-report', state)
+
     def toggle_server(self, uid, state):
         settings = self.servers_settings
 

@@ -178,6 +178,14 @@ class BasePager:
             else:
                 self.window.add_notification(_('Failed to sync read progress with server'), timeout=2)
 
+                if stack_trace is not None and Settings.get_default().servers_bug_report:
+                    context = '\n'.join([
+                        'Failed to sync read progress',
+                        f'- Server ID: {chapter.manga.server.id}',
+                        f'- Server URL: {chapter.manga.server.base_url}',
+                    ])
+                    self.window.open_server_bug_report_dialog(chapter.manga.server, context, stack_trace)
+
         thread = threading.Thread(target=run)
         thread.daemon = True
         thread.start()

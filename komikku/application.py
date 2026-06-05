@@ -10,6 +10,7 @@ import logging
 import os
 import sys
 import threading
+import urllib.parse
 
 gi.require_version('Adw', '1')
 gi.require_version('Gtk', '4.0')
@@ -150,6 +151,8 @@ class ApplicationWindow(Adw.ApplicationWindow):
     notification_active = False
     notification_queue = deque()
     notification_timer = None
+
+    servers_bug_report_lock = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -458,7 +461,7 @@ available in your region/language."""))
         dialog.set_release_notes(RELEASE_NOTES)
 
         debug_info = DebugInfo(self.application)
-        dialog.set_debug_info_filename('Komikku-debug-info.txt')
+        dialog.set_debug_info_filename(f'Komikku-debug-info-{self.application.version}.txt')
         dialog.set_debug_info(debug_info.generate())
 
         dialog.present(self)
@@ -538,6 +541,7 @@ available in your region/language."""))
                 cancel_callback()
 
         dialog = Adw.AlertDialog.new(heading)
+        dialog.set_prefer_wide_layout(True)
         if body:
             dialog.set_body_use_markup(True)
             dialog.set_body(body)
@@ -552,6 +556,129 @@ available in your region/language."""))
         dialog.set_default_response('cancel')
         if confirm_appearance is not None:
             dialog.set_response_appearance('yes', confirm_appearance)
+
+        dialog.connect('response', on_response)
+        dialog.present(self)
+
+    def open_server_bug_report_dialog(self, server, context, stack_trace):
+        if self.servers_bug_report_lock:
+            # Another server issue dialog is already open
+            return
+
+        debug_info = DebugInfo(self.application).generate()
+
+        title = urllib.parse.quote_plus(f'[BUG Server] {server.id}')
+        uri = f'https://codeberg.org/valos/Komikku/issues/new?title={title}'  # noqa
+        body = '\n'.join([
+            '# Context',
+            f'{context}\n',
+            '# Stack Trace',
+            '```sh',
+            stack_trace.strip(),
+            '```\n',
+            '# Debug Information',
+            '```',
+            debug_info,
+            '```',
+        ])
+
+        def copy_text(_button):
+            self.get_clipboard().set(body)
+            button.get_child().set_icon_name('checkmark-symbolic')
+            dialog.set_response_enabled('yes', True)
+
+        def on_response(_dialog, response_id):
+            if response_id == 'yes':
+                Gtk.UriLauncher.new(uri=uri).launch()
+
+            self.servers_bug_report_lock = False
+
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+
+        # Copy text button
+        button = Gtk.Button(hexpand=True)
+        content_button = Adw.ButtonContent(label=_('Copy Text'), icon_name='edit-copy-symbolic')
+        button.set_child(content_button)
+        button.connect('clicked', copy_text)
+        main_box.append(button)
+
+        # Context
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+
+        label = Gtk.Label(label=_('Context'), xalign=0)
+        label.add_css_class('heading')
+        box.append(label)
+
+        frame = Gtk.Frame()
+        textview = Gtk.TextView(
+            editable=False, wrap_mode=Gtk.WrapMode.WORD_CHAR,
+            bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+        )
+        textview.set_css_classes(['body', 'small'])
+        buffer = textview.get_buffer()
+        buffer.set_text(context)
+        frame.set_child(textview)
+        box.append(frame)
+
+        main_box.append(box)
+
+        # Stack trace
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+
+        label = Gtk.Label(label=_('Stack Trace'), xalign=0)
+        label.add_css_class('heading')
+        box.append(label)
+
+        frame = Gtk.Frame()
+        scrolledwindow = Gtk.ScrolledWindow()
+        scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER)
+        textview = Gtk.TextView(
+            editable=False, bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+        )
+        textview.set_css_classes(['body', 'small'])
+        buffer = textview.get_buffer()
+        buffer.set_text(stack_trace.strip())
+        scrolledwindow.set_child(textview)
+        frame.set_child(scrolledwindow)
+        box.append(frame)
+
+        main_box.append(box)
+
+        # Debug info
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+
+        label = Gtk.Label(label=_('Debug Information'), xalign=0)
+        label.add_css_class('heading')
+        box.append(label)
+
+        frame = Gtk.Frame()
+        textview = Gtk.TextView(
+            editable=False, wrap_mode=Gtk.WrapMode.WORD_CHAR,
+            bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+        )
+        textview.set_css_classes(['body', 'small'])
+        buffer = textview.get_buffer()
+        buffer.set_text(debug_info)
+        frame.set_child(textview)
+        box.append(frame)
+
+        main_box.append(box)
+
+        # Dialog
+        self.servers_bug_report_lock = True
+
+        dialog = Adw.AlertDialog.new(_('Server Error'))
+        dialog.set_body(_('You have encountered a problem with a server (it has been updated or an unexpected case has arisen). Here is a pre-formatted text that you can copy and paste when filling out the issue.'))
+        dialog.set_prefer_wide_layout(True)
+        dialog.set_extra_child(main_box)
+
+        dialog.add_response('cancel', _('Close'))
+        dialog.add_response('yes', _('Create an Issue'))
+
+        dialog.set_close_response('cancel')
+        dialog.set_default_response('cancel')
+        dialog.set_response_appearance('yes', Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_enabled('yes', False)
 
         dialog.connect('response', on_response)
         dialog.present(self)

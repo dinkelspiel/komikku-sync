@@ -455,11 +455,16 @@ template $PreferencesDialog : Adw.PreferencesDialog {
     }
 
     Adw.PreferencesGroup {
-      title: _("Servers Modules");
+      title: _("Servers");
 
       Adw.SwitchRow external_servers_modules_switch {
         title: _("Use Up-to-date Servers Modules");
         subtitle: _("An alternative version of the servers modules, installed from the source code repository and updated at each startup, is used instead of the one delivered with the application.");
+      }
+
+      Adw.SwitchRow servers_bug_report_switch {
+        title: _("Suggest Submitting a Bug Report in Case of Error");
+        subtitle: _("If an error occurs with a server (it has been updated or an unexpected case has arisen), you will be prompted to create a bug report using a pre-formatted text to copy/paste.");
       }
     }
 
@@ -481,7 +486,7 @@ template $PreferencesDialog : Adw.PreferencesDialog {
       }
 
       Label {
-        label: _("This tweak is only intended for users who do not use the GNOME desktop environment and therefore cannot disable animations globally via GNOME Settings (Accessibility ⇨ Seeing ⇨ Animation Effects).");
+        label: _("This tweak is only intended for users who do not use the GNOME desktop environment and therefore cannot toggle reduced motion animations globally via GNOME Settings (Accessibility ⇨ Seeing ⇨ Reduced Motion).");
         wrap: true;
         xalign: 0;
         margin-top: 12;

@@ -69,6 +69,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     clear_webview_data_actionrow = Gtk.Template.Child('clear_webview_data_actionrow')
     clear_webview_data_button = Gtk.Template.Child('clear_webview_data_button')
     external_servers_modules_switch = Gtk.Template.Child('external_servers_modules_switch')
+    servers_bug_report_switch = Gtk.Template.Child('servers_bug_report_switch')
     credentials_storage_plaintext_fallback_switch = Gtk.Template.Child('credentials_storage_plaintext_fallback_switch')
     disable_animations_switch = Gtk.Template.Child('disable_animations_switch')
 
@@ -326,6 +327,9 @@ class PreferencesDialog(Adw.PreferencesDialog):
     def on_scroll_drag_factor_changed(self, adjustment):
         self.settings.scroll_drag_factor = adjustment.get_value()
 
+    def on_servers_bug_report_changed(self, switch_button, _gparam):
+        self.settings.servers_bug_report = switch_button.get_active()
+
     def on_system_accent_colors_changed(self, switch_button, _gparam):
         self.settings.system_accent_colors = switch_button.get_active()
 
@@ -526,6 +530,10 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # External servers modules
         self.external_servers_modules_switch.set_active(self.settings.external_servers_modules)
         self.external_servers_modules_switch.connect('notify::active', self.on_external_servers_modules_changed)
+
+        # Servers bug report
+        self.servers_bug_report_switch.set_active(self.settings.servers_bug_report)
+        self.servers_bug_report_switch.connect('notify::active', self.on_servers_bug_report_changed)
 
         # Credentials storage: allow plaintext as fallback
         self.credentials_storage_plaintext_fallback_switch.set_active(self.settings.credentials_storage_plaintext_fallback)

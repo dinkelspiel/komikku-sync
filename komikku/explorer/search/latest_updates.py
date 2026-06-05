@@ -10,6 +10,7 @@ from gi.repository import GLib
 
 from komikku.explorer.common import ExplorerSearchResultRow
 from komikku.explorer.common import ExplorerSearchStackPage
+from komikku.models import Settings
 from komikku.utils import log_error_traceback
 
 
@@ -58,6 +59,14 @@ class ExplorerSearchStackPageLatestUpdates(ExplorerSearchStackPage):
             self.render_covers()
 
         def error(results, server, message=None, stack_trace=None):
+            if stack_trace is not None and Settings.get_default().servers_bug_report:
+                context = '\n'.join([
+                    'Failed to fetch Latest Updates',
+                    f'- Server ID: {server.id}',
+                    f'- Server URL: {server.base_url}',
+                ])
+                self.window.open_server_bug_report_dialog(server, context, stack_trace)
+
             if not self.parent.can_page_be_updated_with_results('latest_updates', server.id):
                 return
 

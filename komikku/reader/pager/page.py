@@ -11,6 +11,7 @@ from gi.repository import GObject
 from gi.repository import Gtk
 
 from komikku.reader.pager.image import KImage
+from komikku.models import Settings
 from komikku.utils import log_error_traceback
 
 
@@ -124,7 +125,7 @@ class Page(Gtk.Overlay):
         def complete(error_code, error_message, stack_trace):
             if error_code in ('connection', 'server'):
                 self.stop_activity_indicator()
-                on_error(error_code, error_message)
+                on_error(error_code, error_message, stack_trace)
                 if retry:
                     return
 
@@ -174,11 +175,21 @@ class Page(Gtk.Overlay):
 
             return load_chapter(prior_chapter)
 
-        def on_error(kind, message=None):
+        def on_error(kind, message=None, stack_trace=None):
             assert kind in ('connection', 'server', ), 'Invalid error kind'
 
             if message is not None:
                 self.window.add_notification(message, timeout=2)
+
+            elif stack_trace is not None and Settings.get_default().servers_bug_report:
+                manga = self.reader.manga
+                context = '\n'.join([
+                    'Failed to fetch chapter data or page',
+                    f'- Server ID: {manga.server.id}',
+                    f'- Serie Name: {manga.name}',
+                    f'- Serie URL: {manga.server.get_manga_url(manga.slug, manga.url)}',
+                ])
+                self.window.open_server_bug_report_dialog(manga.server, context, stack_trace)
 
             self.error = kind
 

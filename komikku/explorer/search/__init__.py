@@ -487,6 +487,15 @@ class ExplorerSearchPage(Adw.NavigationPage):
 
             self.window.add_notification(message or _("Oops, failed to retrieve manga's information."), timeout=2)
 
+            if stack_trace is not None and Settings.get_default().servers_bug_report:
+                context = '\n'.join([
+                    'Failed to retrieve name, cover, details or chapters',
+                    f'- Server ID: {server.id}',
+                    f'- Server URL: {server.base_url}',
+                    f'- Serie Name: {manga_data["name"]}',
+                ])
+                self.window.open_server_bug_report_dialog(server, context, stack_trace)
+
             return False
 
         self.window.activity_indicator.set_visible(True)

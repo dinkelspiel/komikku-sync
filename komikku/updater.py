@@ -178,6 +178,15 @@ class Updater(GObject.GObject):
                 message or _('Oops, update has failed. Please try again.')
             )
 
+            if Settings.get_default().servers_bug_report and not in_batch and stack_trace:
+                context = '\n'.join([
+                    'Failed to update name, cover, details or chapters',
+                    f'- Server ID: {manga.server.id}',
+                    f'- Serie Name: {manga.name}',
+                    f'- Serie URL: {manga.server.get_manga_url(manga.slug, manga.url)}',
+                ])
+                self.window.open_server_bug_report_dialog(manga.server, context, stack_trace)
+
             return False
 
         if self.running or len(self.queue) == 0:

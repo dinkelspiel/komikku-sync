@@ -44,6 +44,7 @@ from komikku.servers.utils import get_allowed_servers_list
 from komikku.support import SupportPage
 from komikku.trackers import Trackers
 from komikku.updater import Updater
+from komikku.utils import random_palette
 from komikku.webview import WebviewPage
 
 BANNER = """
@@ -362,17 +363,21 @@ class ApplicationWindow(Adw.ApplicationWindow):
         if theme == 'accent-color':
             self.css_rules['progressbar-theme'] = ''
         else:
-            colors = PROGRESSBAR_THEMES[theme]['colors']
+            if theme == 'random':
+                colors = random_palette(PROGRESSBAR_THEMES[theme]['lenght'])
+            else:
+                colors = PROGRESSBAR_THEMES[theme]['colors']
+
+            lg_colors = []
             step = 100 / len(colors)
-            lgc = []
             for index, color in enumerate(colors):
-                lgc.append(f'{color} {round(step * index, 2)}% {round(step * (index + 1), 2)}%')
+                lg_colors.append(f'{color} {round(step * index, 2)}% {round(step * (index + 1), 2)}%')
 
             self.css_rules['progressbar-theme'] = f"""
                 progressbar > trough > progress {{
                     background: linear-gradient(
                         90deg,
-                        {',\n\t'.join(lgc)}
+                        {',\n\t'.join(lg_colors)}
                     );
                 }}
             """  # noqa

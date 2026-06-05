@@ -49,6 +49,7 @@
         <value nick="disability" value="19" />
         <value nick="femboy" value="20" />
         <value nick="neutrois" value="21" />
+        <value nick="random" value="22" />
     </enum>
     <enum id="@appid@.ReadingMode">
         <value nick="--" value="-1" />

@@ -99,6 +99,11 @@ PROGRESSBAR_THEMES = {
         'name': _('Neutrois Pride Colors'),
         'colors': ['#FFFFFF', '#1F9F00', '#000000'],
     },
+    'random': {
+        'name': _('Random Colors'),
+        'lenght': 16,
+        'colors': None,
+    },
 }
 
 DOWNLOAD_MAX_DELAY = 1  # in seconds

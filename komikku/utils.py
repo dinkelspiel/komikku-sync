@@ -11,7 +11,9 @@ from gettext import gettext as _
 import html
 from io import BytesIO
 import logging
+import math
 import os
+import random
 import re
 import subprocess
 import traceback
@@ -20,6 +22,8 @@ import gi
 from jxlpy import JXLImagePlugin  # noqa: F401
 import magic
 from PIL import Image
+from PIL.ImageColor import colormap
+from PIL.ImageColor import getrgb
 import requests
 from requests.adapters import HTTPAdapter
 from requests.adapters import TimeoutSauce
@@ -410,6 +414,38 @@ def skip_past(haystack, needle):
         return idx + len(needle)
 
     return None
+
+
+def random_palette(n):
+    """
+    Return random Linear Cosine palette
+
+    https://iquilezles.org/articles/palettes/
+    color(t) = a + b * cos(2 * PI * (c * t + d))
+    """
+    base = []
+    for _name, color in colormap.items():
+        if color in base:
+            # Only distinct colors
+            continue
+        base.append(color)
+
+    a = (0.5, 0.5, 0.5)
+    b = tuple(map(lambda x: x / 255, getrgb(random.choice(base))))
+    c = tuple(map(lambda x: x / 255, getrgb(random.choice(base))))
+    d = tuple(map(lambda x: x / 255, getrgb(random.choice(base))))
+
+    palette = []
+    t = [x / (n - 1) for x in range(n)]
+    for ti in t:
+        color = []
+        for i in (0, 1, 2):
+            v = a[i] + b[i] * math.cos(2 * math.pi * (c[i] * ti + d[i]))
+            color.append(int(abs(min(1, v)) * 255))
+
+        palette.append('#{:02x}{:02x}{:02x}'.format(*color))
+
+    return palette
 
 
 def trunc_filename(filename):

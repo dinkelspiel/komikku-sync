@@ -16,16 +16,16 @@ msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-03 00:18+0200\n"
-"PO-Revision-Date: 2026-05-24 20:11+0000\n"
+"PO-Revision-Date: 2026-06-08 07:01+0000\n"
 "Last-Translator: anon <anon0000000000@users.noreply.hosted.weblate.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/"
-">\n"
+"Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -477,11 +477,11 @@ msgstr "System Akzentfarbe verwenden"
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
-msgstr ""
+msgstr "Fortschrittsbalken Design"
 
 #: ../data/ui/preferences.blp:84
 msgid "Theme to use for progress bars"
-msgstr ""
+msgstr "Design für Fortschrittsbalken nutzen"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
@@ -1257,11 +1257,11 @@ msgstr "Vorhergehende Kapitel als gelesen markiere"
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"
-msgstr ""
+msgstr "Weniger anzeigen"
 
 #: ../komikku/card/info_box.py:80 ../komikku/card/info_box.py:178
 msgid "Show More"
-msgstr ""
+msgstr "Mehr anzeigen"
 
 #: ../komikku/card/info_box.py:110
 msgid "Unknown author"
@@ -1387,23 +1387,27 @@ msgstr "Akzentfarbe"
 
 #: ../komikku/consts.py:19
 msgid "Pride Colors"
-msgstr ""
+msgstr "Pride-Farben"
 
 #: ../komikku/consts.py:23
+#, fuzzy
 msgid "Lesbian Pride Colors"
-msgstr ""
+msgstr "Lesben-Pride-Farben"
 
 #: ../komikku/consts.py:27
+#, fuzzy
 msgid "Male Homosexual Pride Colors"
-msgstr ""
+msgstr "Männliche-Homosexuelle-Pride-Farben"
 
 #: ../komikku/consts.py:31
+#, fuzzy
 msgid "Transgender Pride Colors"
-msgstr ""
+msgstr "Transgender-Pride-Farben"
 
 #: ../komikku/consts.py:35
+#, fuzzy
 msgid "Nonbinary Pride Colors"
-msgstr ""
+msgstr "Nonbinary-Pride-Farben"
 
 #: ../komikku/consts.py:39
 msgid "Bisexual Pride Colors"
@@ -2560,11 +2564,11 @@ msgstr "Yuri"
 
 #: ../komikku/servers/comix/__init__.py:44
 msgid "Content Rating"
-msgstr ""
+msgstr "Altersfreigabe"
 
 #: ../komikku/servers/comix/__init__.py:45
 msgid "Filter by Content Rating"
-msgstr ""
+msgstr "Nach Altersfreigabe filtern"
 
 #: ../komikku/servers/comix/__init__.py:52
 #: ../komikku/servers/mangadex/__init__.py:66
@@ -2835,11 +2839,11 @@ msgstr "Leinwand"
 
 #: ../komikku/servers/weebcentral/__init__.py:35
 msgid "Adult Content"
-msgstr ""
+msgstr "Nicht jugendfreie Inhalte"
 
 #: ../komikku/servers/weebcentral/__init__.py:36
 msgid "Filter by Adult Content"
-msgstr ""
+msgstr "Nach nicht jugendfreien Inhalten filtern"
 
 #: ../komikku/servers/weebcentral/__init__.py:41
 msgid "Yes"
@@ -2847,7 +2851,7 @@ msgstr "Ja"
 
 #: ../komikku/servers/weebcentral/__init__.py:42
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: ../komikku/servers/zenko/__init__.py:45
 msgid "Age Restriction"

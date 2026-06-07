@@ -21,8 +21,8 @@ class Lanortrad(Server):
     name = 'LanorTrad'
     lang = 'fr'
 
-    base_url = 'https://lanortrad.netlify.app'
-    logo_url = 'https://cdn.creativefabrica.com/2019/03/Monogram-LT-Logo-Design-by-Greenlines-Studios-580x387.jpg'
+    base_url = 'https://lanortrad.com'
+    logo_url = base_url + '/images/icons/icon-192x192.png'
     search_url = base_url + '/js/utile/mangaData.js'
     manga_url = base_url + '/manga/{0}'
     chapter_url = base_url + '/manga/{0}/{1}'

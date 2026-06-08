@@ -385,8 +385,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
         self.progressbar_theme_row.set_selected(self.settings.progressbar_theme_value)
         self.progressbar_theme_row.connect('notify::selected', self.on_progressbar_theme_changed)
 
-        progressbar = Gtk.ProgressBar(fraction=1, margin_top=4, margin_end=8)
-        progressbar.add_css_class('osd')
+        progressbar = Gtk.ProgressBar(fraction=1, halign=Gtk.Align.START, margin_top=4)
         self.progressbar_theme_row.get_first_child().get_first_child().get_next_sibling().get_next_sibling().append(progressbar)
 
         # Card backdrop method

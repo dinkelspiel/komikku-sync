@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 00:18+0200\n"
+"POT-Creation-Date: 2026-06-08 15:07+0200\n"
 "PO-Revision-Date: 2026-02-27 13:11+0000\n"
 "Last-Translator: Ahmet <teaqaria@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/"
@@ -273,6 +273,7 @@ msgid "Latest Updates"
 msgstr "Son Güncellemeler"
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:221
+#: ../data/ui/preferences.blp:458
 msgid "Servers"
 msgstr "Sunucular"
 
@@ -817,10 +818,6 @@ msgstr ""
 msgid "Clear Data"
 msgstr ""
 
-#: ../data/ui/preferences.blp:458
-msgid "Servers Modules"
-msgstr "Sunucu Modülleri"
-
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
 msgstr "Güncel Sunucu Modüllerini Kullan"
@@ -834,27 +831,38 @@ msgstr ""
 "Sunucu modüllerinin kaynak kod deposundan yüklenen ve her başlangıçta "
 "güncellenen alternatif sürümü, uygulamayla birlikte gelen yerine kullanılır."
 
+#: ../data/ui/preferences.blp:466
+msgid "Suggest Submitting a Bug Report in Case of Error"
+msgstr ""
+
 #: ../data/ui/preferences.blp:467
+msgid ""
+"If an error occurs with a server (it has been updated or an unexpected case "
+"has arisen), you will be prompted to create a bug report using a pre-"
+"formatted text to copy/paste."
+msgstr ""
+
+#: ../data/ui/preferences.blp:472
 msgid "Credentials Storage"
 msgstr "Kimlik Bilgileri Depolama"
 
-#: ../data/ui/preferences.blp:470
+#: ../data/ui/preferences.blp:475
 msgid "Allow Plaintext Storage as Fallback"
 msgstr "Geri Uyumluluk Olarak Düz Metin Depolamaya İzin Ver"
 
-#: ../data/ui/preferences.blp:471
+#: ../data/ui/preferences.blp:476
 msgid "Used when no keyring backends are found"
 msgstr "Anahtarlık arka ucu bulunmadığında kullanılır"
 
-#: ../data/ui/preferences.blp:476
+#: ../data/ui/preferences.blp:481
 msgid "Tweaks"
 msgstr "İnce Ayarlar"
 
-#: ../data/ui/preferences.blp:479
+#: ../data/ui/preferences.blp:484
 msgid "Disable Animations"
 msgstr "Animasyonları Devre Dışı Bırak"
 
-#: ../data/ui/preferences.blp:480
+#: ../data/ui/preferences.blp:485
 msgid ""
 "Useful with E Ink e-readers to avoid very choppy and unpleasant animations "
 "(due to the low refresh rate of the screen)"
@@ -862,15 +870,12 @@ msgstr ""
 "Çok dalgalı ve hoş olmayan animasyonlardan kaçınmak için E-Ink e-"
 "okuyucularda kullanışlıdır (ekranın düşük yenileme hızından dolayı)"
 
-#: ../data/ui/preferences.blp:484
+#: ../data/ui/preferences.blp:489
 msgid ""
 "This tweak is only intended for users who do not use the GNOME desktop "
-"environment and therefore cannot disable animations globally via GNOME "
-"Settings (Accessibility ⇨ Seeing ⇨ Animation Effects)."
+"environment and therefore cannot toggle reduced motion animations globally "
+"via GNOME Settings (Accessibility ⇨ Seeing ⇨ Reduced Motion)."
 msgstr ""
-"Bu ince ayar yalnızca GNOME masaüstü ortamını kullanmayan ve canlandırmaları "
-"GNOME Ayarları (Erişilebilirlik ⇨ Görme ⇨ Canlandırma Etkileri) aracılığıyla "
-"devre dışı bırakamayan kullanıcılar için tasarlanmıştır."
 
 #: ../data/ui/preferences_server_params.blp:10
 #: ../data/ui/preferences_server_params.blp:16
@@ -1068,24 +1073,24 @@ msgstr "Tek seferlik ya da aylık bağış"
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: ../komikku/application.py:101
+#: ../komikku/application.py:103
 msgid "Multiple URLs not supported"
 msgstr "Birden fazla URL desteklenmiyor"
 
-#: ../komikku/application.py:117
+#: ../komikku/application.py:119
 #, python-brace-format
 msgid "Invalid URL {}, not handled by any server."
 msgstr "Geçersiz URL {}, herhangi bir sunucu tarafından işlenmedi."
 
-#: ../komikku/application.py:423
+#: ../komikku/application.py:431
 msgid "Servers modules have been updated"
 msgstr "Sunucu modülleri güncellendi"
 
-#: ../komikku/application.py:430
+#: ../komikku/application.py:438
 msgid "External Servers Modules Update"
 msgstr "Harici Sunucu Modülleri Güncellemesi"
 
-#: ../komikku/application.py:431
+#: ../komikku/application.py:439
 msgid ""
 "Updating of external server modules is temporarily suspended, as changes are "
 "currently making them incompatible with the current version of the "
@@ -1095,11 +1100,12 @@ msgstr ""
 "geçerli sürümüyle uyumsuz olduğu için geçici olarak askıya alındı. Daha yeni "
 "bir sürüm varsa lütfen güncelleyin."
 
-#: ../komikku/application.py:432 ../komikku/explorer/common.py:321
+#: ../komikku/application.py:440 ../komikku/application.py:683
+#: ../komikku/explorer/common.py:321
 msgid "Close"
 msgstr "Kapat"
 
-#: ../komikku/application.py:447
+#: ../komikku/application.py:455
 msgid ""
 "A manga, webtoons and comics reader\n"
 "\n"
@@ -1108,46 +1114,77 @@ msgid ""
 "available in your region/language."
 msgstr ""
 
-#: ../komikku/application.py:456
+#: ../komikku/application.py:464
 msgid "Supporters"
 msgstr "Destekleyenler"
 
-#: ../komikku/application.py:458
+#: ../komikku/application.py:466
 msgid "Join Chat"
 msgstr "Sohbete Katıl"
 
-#: ../komikku/application.py:550 ../komikku/card/__init__.py:162
+#: ../komikku/application.py:559 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:186
 #: ../komikku/downloader.py:388 ../komikku/downloader.py:389
 #: ../komikku/library/__init__.py:835 ../komikku/library/__init__.py:836
 msgid "Cancel"
 msgstr "İptal"
 
-#: ../komikku/application.py:586
+#: ../komikku/application.py:608
+msgid "Copy Text"
+msgstr ""
+
+#: ../komikku/application.py:616
+msgid "Context"
+msgstr ""
+
+#: ../komikku/application.py:636
+msgid "Stack Trace"
+msgstr ""
+
+#: ../komikku/application.py:658
+msgid "Debug Information"
+msgstr ""
+
+#: ../komikku/application.py:678
+msgid "Server Error"
+msgstr ""
+
+#: ../komikku/application.py:679
+msgid ""
+"You have encountered a problem with a server (it has been updated or an "
+"unexpected case has arisen). Here is a pre-formatted text that you can copy "
+"and paste when filling out the issue."
+msgstr ""
+
+#: ../komikku/application.py:684
+msgid "Create an Issue"
+msgstr ""
+
+#: ../komikku/application.py:718
 msgid "Are you sure you want to quit?"
 msgstr "Çıkmak istediğinden emin misin?"
 
-#: ../komikku/application.py:589
+#: ../komikku/application.py:721
 msgid "Some chapters are currently being downloaded."
 msgstr "Bazı bölümler şu anda indiriliyor."
 
-#: ../komikku/application.py:591
+#: ../komikku/application.py:723
 msgid "Some mangas are currently being updated."
 msgstr "Bazı mangalar şu anda güncelleniyor."
 
-#: ../komikku/application.py:595
+#: ../komikku/application.py:727
 msgid "Quit?"
 msgstr "Çık?"
 
-#: ../komikku/application.py:597
+#: ../komikku/application.py:729
 msgid "Quit"
 msgstr "Çık"
 
-#: ../komikku/application.py:612
+#: ../komikku/application.py:744
 msgid "Restart?"
 msgstr ""
 
-#: ../komikku/application.py:614
+#: ../komikku/application.py:746
 msgid "Restart"
 msgstr ""
 
@@ -1160,8 +1197,8 @@ msgid "Filters"
 msgstr "Süzgeçler"
 
 #: ../komikku/card/__init__.py:220 ../komikku/library/__init__.py:358
-#: ../komikku/preferences/__init__.py:156
-#: ../komikku/preferences/__init__.py:179
+#: ../komikku/preferences/__init__.py:157
+#: ../komikku/preferences/__init__.py:180
 msgid "Clear?"
 msgstr "Temizlensin Mi?"
 
@@ -1170,8 +1207,8 @@ msgid "Are you sure you want to clear all chapters?"
 msgstr ""
 
 #: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:728
-#: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:158
-#: ../komikku/preferences/__init__.py:181
+#: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
+#: ../komikku/preferences/__init__.py:182
 msgid "Clear"
 msgstr "Temizle"
 
@@ -1339,16 +1376,16 @@ msgstr ""
 msgid "Search {}"
 msgstr "{} içinde ara"
 
-#: ../komikku/card/tracking.py:511 ../komikku/explorer/search/search.py:78
-#: ../komikku/explorer/search/search_global.py:168
+#: ../komikku/card/tracking.py:511 ../komikku/explorer/search/search.py:86
+#: ../komikku/explorer/search/search_global.py:169
 msgid "Oops, search failed. Please try again."
 msgstr "Hata, arama başarısız oldu. Lütfen tekrar deneyin."
 
-#: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:82
+#: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:90
 msgid "No Results Found"
 msgstr "Hiçbir Sonuç Bulunamadı"
 
-#: ../komikku/card/tracking.py:516 ../komikku/explorer/search/search.py:83
+#: ../komikku/card/tracking.py:516 ../komikku/explorer/search/search.py:91
 msgid "Try a different search"
 msgstr "Başka arama dene"
 
@@ -1455,6 +1492,10 @@ msgstr ""
 
 #: ../komikku/consts.py:99
 msgid "Neutrois Pride Colors"
+msgstr ""
+
+#: ../komikku/consts.py:103
+msgid "Random Colors"
 msgstr ""
 
 #: ../komikku/downloader.py:274
@@ -1598,38 +1639,38 @@ msgstr "Küresel olarak ada göre ara"
 msgid "Search for Comics"
 msgstr "Çizgi Roman Ara"
 
-#: ../komikku/explorer/search/__init__.py:490
+#: ../komikku/explorer/search/__init__.py:488
 msgid "Oops, failed to retrieve manga's information."
 msgstr "Hata, manga bilgileri alınamadı."
 
-#: ../komikku/explorer/search/latest_updates.py:66
+#: ../komikku/explorer/search/latest_updates.py:74
 msgid "Oops, failed to retrieve latest updates."
 msgstr "Hata, son güncellemeler alınamadı."
 
-#: ../komikku/explorer/search/latest_updates.py:70
+#: ../komikku/explorer/search/latest_updates.py:78
 msgid "No Latest Updates Found"
 msgstr "Son Güncellemeler Bulunamadı"
 
-#: ../komikku/explorer/search/latest_updates.py:78
-#: ../komikku/explorer/search/most_popular.py:78
-#: ../komikku/explorer/search/search.py:92
+#: ../komikku/explorer/search/latest_updates.py:86
+#: ../komikku/explorer/search/most_popular.py:86
+#: ../komikku/explorer/search/search.py:100
 #: ../komikku/explorer/search/search_global.py:95
 msgid "A request is already in progress."
 msgstr "Bir işlem zaten sürüyor."
 
-#: ../komikku/explorer/search/most_popular.py:66
+#: ../komikku/explorer/search/most_popular.py:74
 msgid "Oops, failed to retrieve most popular."
 msgstr "Hata, en gözdeler alınamadı."
 
-#: ../komikku/explorer/search/most_popular.py:70
+#: ../komikku/explorer/search/most_popular.py:78
 msgid "No Most Popular Found"
 msgstr "En Gözdeler Bulunamadı"
 
-#: ../komikku/explorer/search/search_global.py:165
+#: ../komikku/explorer/search/search_global.py:166
 msgid "Search cancelled"
 msgstr ""
 
-#: ../komikku/explorer/search/search_global.py:173
+#: ../komikku/explorer/search/search_global.py:174
 msgid "No results"
 msgstr "Sonuç yok"
 
@@ -1807,24 +1848,24 @@ msgstr "Askıya alındı"
 msgid "Hiatus"
 msgstr "Ara"
 
-#: ../komikku/preferences/__init__.py:157
+#: ../komikku/preferences/__init__.py:158
 msgid "Are you sure you want to clear chapters cache and database?"
 msgstr ""
 "Bölümler önbelleğini ve veri tabanını temizlemek istediğinizden emin misiniz?"
 
-#: ../komikku/preferences/__init__.py:176
+#: ../komikku/preferences/__init__.py:177
 msgid "Failed to clear WebView data"
 msgstr ""
 
-#: ../komikku/preferences/__init__.py:180
+#: ../komikku/preferences/__init__.py:181
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr ""
 
-#: ../komikku/preferences/__init__.py:205
+#: ../komikku/preferences/__init__.py:206
 msgid "Disable animations?"
 msgstr "Animasyonlar devre dışı bırakılsın mı?"
 
-#: ../komikku/preferences/__init__.py:206
+#: ../komikku/preferences/__init__.py:207
 msgid ""
 "Are you sure you want to disable animations?\n"
 "\n"
@@ -1834,7 +1875,7 @@ msgstr ""
 "\n"
 "Okuyucudaki hareketle gezinme özelliği artık düzgün çalışmayacaktır."
 
-#: ../komikku/preferences/__init__.py:207
+#: ../komikku/preferences/__init__.py:208
 msgid "Disable"
 msgstr "Devre Dışı Bırak"
 
@@ -1958,31 +1999,31 @@ msgstr ""
 msgid "Failed to sync read progress with server"
 msgstr "Sunucuyla okuma ilerlemesi eşitlenemedi"
 
-#: ../komikku/reader/pager/__init__.py:478
+#: ../komikku/reader/pager/__init__.py:486
 #: ../komikku/reader/pager/webtoon.py:94
 msgid "There is no previous chapter."
 msgstr "Önceki bölüm yok."
 
-#: ../komikku/reader/pager/__init__.py:480
+#: ../komikku/reader/pager/__init__.py:488
 #: ../komikku/reader/pager/webtoon.py:92
 msgid "It was the last chapter."
 msgstr "Bu son bölümdü."
 
-#: ../komikku/reader/pager/__init__.py:648
+#: ../komikku/reader/pager/__init__.py:656
 #: ../komikku/reader/pager/webtoon.py:170
 msgid "This chapter is inaccessible."
 msgstr "Bu bölüme erişilemiyor."
 
-#: ../komikku/reader/pager/page.py:258
+#: ../komikku/reader/pager/page.py:269
 msgid "Failed to load image"
 msgstr "Görsel yüklenemedi"
 
-#: ../komikku/reader/pager/page.py:260
+#: ../komikku/reader/pager/page.py:271
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
 msgstr ""
 
-#: ../komikku/reader/pager/page.py:301
+#: ../komikku/reader/pager/page.py:312
 msgid "Retry"
 msgstr "Yeniden Dene"
 
@@ -2853,60 +2894,60 @@ msgstr "Yeniden Okunuyor"
 msgid "{0} seems down. Please try updating later"
 msgstr ""
 
-#: ../komikku/updater.py:124
+#: ../komikku/updater.py:123
 msgid "Library update completed with errors"
 msgstr "Kitaplık güncellemesi hatalarla tamamlandı"
 
-#: ../komikku/updater.py:126
+#: ../komikku/updater.py:125
 msgid "Library update completed"
 msgstr "Kitaplık güncellemesi tamamlandı"
 
-#: ../komikku/updater.py:129
+#: ../komikku/updater.py:128
 msgid "Update completed with errors"
 msgstr "Güncelleme hatalarla tamamlandı"
 
-#: ../komikku/updater.py:131
+#: ../komikku/updater.py:130
 msgid "Update completed"
 msgstr "Güncelleme tamamlandı"
 
-#: ../komikku/updater.py:135
+#: ../komikku/updater.py:134
 #, python-brace-format
 msgid "{0} successful update"
 msgid_plural "{0} successful updates"
 msgstr[0] "{0} başarılı güncelleme"
 msgstr[1] "{0} başarılı güncelleme"
 
-#: ../komikku/updater.py:136 ../komikku/updater.py:152
+#: ../komikku/updater.py:135 ../komikku/updater.py:151
 #, python-brace-format
 msgid "{0} new chapter"
 msgid_plural "{0} new chapters"
 msgstr[0] "{0} yeni bölüm"
 msgstr[1] "{0} yeni bölüm"
 
-#: ../komikku/updater.py:138 ../komikku/updater.py:160
+#: ../komikku/updater.py:137 ../komikku/updater.py:159
 msgid "No new chapters"
 msgstr "Yeni bölüm yok"
 
-#: ../komikku/updater.py:141
+#: ../komikku/updater.py:140
 #, python-brace-format
 msgid "{0} update failed"
 msgid_plural "{0} updates failed"
 msgstr[0] "{0} güncelleme başarısız oldu"
 msgstr[1] "{0} güncelleme başarısız oldu"
 
-#: ../komikku/updater.py:179
+#: ../komikku/updater.py:178
 msgid "Oops, update has failed. Please try again."
 msgstr "Hata, güncelleme başarısız oldu. Lütfen tekrar deneyin."
 
-#: ../komikku/updater.py:188
+#: ../komikku/updater.py:196
 msgid "Library update started"
 msgstr "Kitaplık güncellemesi başladı"
 
-#: ../komikku/utils.py:354
+#: ../komikku/utils.py:358
 msgid "You are currently offline"
 msgstr "Çevrim dışısınız"
 
-#: ../komikku/utils.py:381
+#: ../komikku/utils.py:385
 msgid "No Internet connection, timeout or server down"
 msgstr ""
 "İnternet bağlantısı yok, bağlantınız zaman aşımına uğradı veya sunucu kapalı"
@@ -2918,6 +2959,19 @@ msgstr ""
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"
 msgstr "Lütfen CAPTCHA'yı tamamlayın"
+
+#~ msgid "Servers Modules"
+#~ msgstr "Sunucu Modülleri"
+
+#~ msgid ""
+#~ "This tweak is only intended for users who do not use the GNOME desktop "
+#~ "environment and therefore cannot disable animations globally via GNOME "
+#~ "Settings (Accessibility ⇨ Seeing ⇨ Animation Effects)."
+#~ msgstr ""
+#~ "Bu ince ayar yalnızca GNOME masaüstü ortamını kullanmayan ve "
+#~ "canlandırmaları GNOME Ayarları (Erişilebilirlik ⇨ Görme ⇨ Canlandırma "
+#~ "Etkileri) aracılığıyla devre dışı bırakamayan kullanıcılar için "
+#~ "tasarlanmıştır."
 
 #~ msgid "Synopsis"
 #~ msgstr "Özet"

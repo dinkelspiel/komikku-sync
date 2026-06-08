@@ -43,7 +43,6 @@ class Mangahub(Server):
     name = 'MangaHub'
     lang = 'en'
     is_nsfw = True
-    long_strip_genres = ['Webtoon', 'Webtoons', 'LONG STRIP', 'LONG STRIP ROMANCE', ]
     status = 'enabled' if requests is not None else 'disabled'
 
     http_client = 'curl_cffi'
@@ -54,6 +53,8 @@ class Mangahub(Server):
     manga_url = base_url + '/manga/{0}'
     chapter_url = base_url + '/chapter/{0}/{1}'
     cover_url = 'https://thumb.mghcdn.com/{0}'
+
+    long_strip_genres = ['Webtoon', 'Webtoons', 'LONG STRIP', 'LONG STRIP ROMANCE', ]
 
     def __init__(self):
         self.api_key = None
@@ -71,7 +72,7 @@ class Mangahub(Server):
         assert 'slug' in initial_data, 'Slug is missing in initial data'
 
         query = {
-            'query': '{latestPopular(x:m01){id,rank,title,slug,image,latestChapter,unauthFile,updatedDate}manga(x:m01,slug:"%s"){id,rank,title,slug,status,image,latestChapter,author,artist,genres,description,alternativeTitle,mainSlug,isYaoi,isPorn,isSoftPorn,unauthFile,noCoverAd,isLicensed,createdDate,updatedDate,chapters{id,number,title,slug,date}}}' % initial_data['slug']
+            'query': '{latestPopular(x:m01){id,rank,title,slug,image,latestChapter,isLicensed,updatedDate}manga(x:m01,slug:"%s"){id,rank,title,slug,status,image,latestChapter,author,artist,genres,description,alternativeTitle,mainSlug,isYaoi,isPorn,isSoftPorn,isLicensed,noCoverAd,createdDate,updatedDate,chapters{id,number,title,slug,date}}}' % initial_data['slug']
         }
         r = self.session.post(
             self.api_url,
@@ -208,7 +209,7 @@ class Mangahub(Server):
     def search(self, term, orderby=None):
         if orderby is not None:
             query = {
-                'query': '{search(x:m01,mod:%s,count:true,offset:0){rows{id,rank,title,slug,status,author,genres,image,latestChapter,unauthFile,createdDate},count}}' % orderby.upper()
+                'query': '{search(x:m01,mod:%s,count:true,offset:0){rows{id,rank,title,slug,status,author,genres,image,latestChapter,isLicensed,createdDate},count}}' % orderby.upper()
             }
         else:
             query = {
@@ -220,7 +221,7 @@ class Mangahub(Server):
             'Content-Type': 'application/json',
             'Origin': self.base_url,
             'Referer': self.base_url + '/',
-            'x-mhub-Access': self.api_key,
+            'x-mhub-access': self.api_key,
         })
         if r.status_code != 200:
             return None

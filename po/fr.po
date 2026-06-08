@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-08 15:28+0000\n"
+"PO-Revision-Date: 2026-06-09 16:01+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
 "\n"
@@ -482,8 +482,8 @@ msgstr "Toile de fond dans la page Détails"
 #: ../data/ui/preferences.blp:89
 msgid "Method used to recolor background to match cover"
 msgstr ""
-"Méthode utilisée pour recolorer l'arrière-plan afin qu'il corresponde à la "
-"couverture"
+"Méthode utilisée pour recolorer l'arrière-plan afin que celui-ci s'harmonise "
+"avec la couverture"
 
 #: ../data/ui/preferences.blp:93
 msgid "Linear gradient"
@@ -841,7 +841,7 @@ msgid ""
 "has arisen), you will be prompted to create a bug report using a pre-"
 "formatted text to copy/paste."
 msgstr ""
-"Si une erreur se produit avec un serveur (il a été mis à jour ou si un cas "
+"Si une erreur se produit avec un serveur (il a été mis à jour ou un cas "
 "inattendu est survenu), vous serez invité à créer un rapport de bug en "
 "utilisant un texte préformaté à copier/coller."
 
@@ -1477,7 +1477,7 @@ msgstr "Couleurs de la fierté omnisexuelle"
 
 #: ../komikku/consts.py:67
 msgid "Aroace Pride Colors"
-msgstr "Les couleurs de la fierté Aroace"
+msgstr "Couleurs de la fierté Aroace"
 
 #: ../komikku/consts.py:71
 msgid "Agender Pride Colors"

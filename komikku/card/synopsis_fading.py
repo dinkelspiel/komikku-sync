@@ -11,7 +11,7 @@ from gi.repository import Gsk
 from gi.repository import Gtk
 
 
-class SynopsisFading(Gtk.Widget, Gtk.ConstraintTarget):
+class SynopsisFading(Gtk.Widget):
     __gtype_name__ = 'SynopsisFading'
 
     def __init__(self):

@@ -125,7 +125,6 @@ class ThumbnailCover(GObject.GObject, Gdk.Paintable):
     cover_font_size = 9
     width = None
     height = None
-    ratio = Thumbnail.default_width / Thumbnail.default_height
 
     def __init__(self, manga):
         super().__init__()

@@ -254,12 +254,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Card] Info: Long Synopsis truncation With Show More/Less button</li>
-    <li>[Preferences] General: Added `Progress Bars Theme` setting (Happy Pride Month!)</li>
-    <li>[Servers] Added MangaTown (EN)</li>
-    <li>[Servers] Asura Scans (EN): Update</li>
-    <li>[Servers] Raijin Scan (FR): Update</li>
-    <li>[L10n] Updated French, German and Russian translations</li>
+    <li>[Preferences] General: Added `Random Colors` to Progress bars themes</li>
+    <li>[Preferences] Advanced: Added a setting to be prompted to submit a bug report if a server error occurs</li>
+    <li>[Servers] Anime-Sama (FR): Update</li>
+    <li>[Servers] LanorTrad (FR): Update</li>
+    <li>[Servers] MangaHub (EN): Update</li>
+    <li>[L10n] Updated French, German, Portuguese, Russian and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

@@ -114,6 +114,19 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.6.0" date="2026-06-10">
+            <description translate="no">
+                <ul>
+                    <li>[Preferences] General: Added `Random Colors` to Progress bars themes</li>
+                    <li>[Preferences] Advanced: Added a setting to be prompted to submit a bug report if a server error occurs</li>
+                    <li>[Servers] Anime-Sama (FR): Update</li>
+                    <li>[Servers] LanorTrad (FR): Update</li>
+                    <li>[Servers] MangaHub (EN): Update</li>
+                    <li>[L10n] Updated French, German, Portuguese, Russian and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.5.0" date="2026-06-03">
             <description translate="no">
                 <ul>

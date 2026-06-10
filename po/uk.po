@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-05 09:01+0000\n"
+"PO-Revision-Date: 2026-06-11 05:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -393,7 +393,7 @@ msgstr "Спочатку останнє оновлене"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
-msgstr "Комбінації клавіш"
+msgstr "Клавіатурні скорочення"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
@@ -435,10 +435,11 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
-"Komikku — це безкоштовний ресурс з відкритим вихідним кодом, і завжди ним "
-"буде. Вам це подобається, буде чудово, якщо ви підтримаєте мене пожертвою. "
-"Це не тільки допоможе мені підтримувати його, але й продовжувати мою роботу "
-"як розробника вільного програмного забезпечення в цілому."
+"Komikku — це вільне програмне забезпечення з відкритим вихідним кодом, і "
+"завжди ним буде. Якщо вам це подобається, буде чудово, якщо підтримаєте мене "
+"пожертвою. Ваша підтримка допоможе не лише розвивати й підтримувати Komikku, "
+"а й продовжувати мою роботу як розробника вільного програмного забезпечення "
+"в цілому."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
@@ -750,7 +751,7 @@ msgstr ""
 #: ../data/ui/preferences.blp:353 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
-msgstr "Режим читання вебмультфільмів"
+msgstr "Режим читання вебтунів"
 
 #: ../data/ui/preferences.blp:354
 msgid "Long Strip aka Infinite Vertical Canvas"
@@ -758,7 +759,7 @@ msgstr "Довга смуга, також відома як нескінченн
 
 #: ../data/ui/preferences.blp:359
 msgid "Reset to Default"
-msgstr "Скинути до заводських налаштувань"
+msgstr "Скинути до типових значень"
 
 #: ../data/ui/preferences.blp:367
 msgid "Maximum Width"
@@ -790,8 +791,7 @@ msgstr "Розширений"
 
 #: ../data/ui/preferences.blp:409
 msgid "A setting has changed that requires a restart to take effect"
-msgstr ""
-"Змінилась налаштування, для застосування яких необхідно перезавантажити"
+msgstr "Змінено налаштування, для застосування якого потрібен перезапуск"
 
 #: ../data/ui/preferences.blp:415
 msgid "Data"
@@ -803,11 +803,11 @@ msgstr "Дані не збережено в бібліотеці"
 
 #: ../data/ui/preferences.blp:419
 msgid "Clear Chapters Cache and Database"
-msgstr "Очистити кеш та базу даних розділів"
+msgstr "Очистити проміжні дані і базу даних розділів"
 
 #: ../data/ui/preferences.blp:434
 msgid "Clear Chapters Cache and Database on Exit"
-msgstr "Очистити кеш та базу даних розділів перед тим, як вийти"
+msgstr "Очищати проміжні дані і базу даних розділів при виході"
 
 #: ../data/ui/preferences.blp:439 ../data/ui/webview.blp:10
 msgid "WebView"
@@ -833,7 +833,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:466
 msgid "Suggest Submitting a Bug Report in Case of Error"
-msgstr ""
+msgstr "Пропонувати надсилати звіт про вади у разі помилки"
 
 #: ../data/ui/preferences.blp:467
 msgid ""
@@ -841,6 +841,9 @@ msgid ""
 "has arisen), you will be prompted to create a bug report using a pre-"
 "formatted text to copy/paste."
 msgstr ""
+"Якщо на сервері виникне помилка (його було оновлено або сталася "
+"непередбачена ситуація), вам буде запропоновано створити звіт про ваду за "
+"допомогою заздалегідь підготовленого тексту для копіювання та вставки."
 
 #: ../data/ui/preferences.blp:472
 msgid "Credentials Storage"
@@ -876,6 +879,8 @@ msgid ""
 "environment and therefore cannot toggle reduced motion animations globally "
 "via GNOME Settings (Accessibility ⇨ Seeing ⇨ Reduced Motion)."
 msgstr ""
+"Лише для систем не з GNOME, де неможливо системно вимкнути анімації руху "
+"через Параметри GNOME (Доступність ⇨ Бачення ⇨ Ефекти анімації)."
 
 #: ../data/ui/preferences_server_params.blp:10
 #: ../data/ui/preferences_server_params.blp:16
@@ -1137,23 +1142,23 @@ msgstr "Скасувати"
 
 #: ../komikku/application.py:608
 msgid "Copy Text"
-msgstr ""
+msgstr "Копіювати"
 
 #: ../komikku/application.py:616
 msgid "Context"
-msgstr ""
+msgstr "Контекст"
 
 #: ../komikku/application.py:636
 msgid "Stack Trace"
-msgstr ""
+msgstr "Послідовність викликів"
 
 #: ../komikku/application.py:658
 msgid "Debug Information"
-msgstr ""
+msgstr "Інформація для зневадження"
 
 #: ../komikku/application.py:678
 msgid "Server Error"
-msgstr ""
+msgstr "Помилка сервера"
 
 #: ../komikku/application.py:679
 msgid ""
@@ -1161,10 +1166,13 @@ msgid ""
 "unexpected case has arisen). Here is a pre-formatted text that you can copy "
 "and paste when filling out the issue."
 msgstr ""
+"Виявлено проблему на сервері (його було оновлено або сталася непередбачена "
+"ситуація). Нижче подано текст для копіювання і вставки під час створення "
+"звернення."
 
 #: ../komikku/application.py:684
 msgid "Create an Issue"
-msgstr ""
+msgstr "Створити звернення"
 
 #: ../komikku/application.py:718
 msgid "Are you sure you want to quit?"
@@ -1288,11 +1296,11 @@ msgstr "Позначити попередні розділи як прочита
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"
-msgstr "Стисло"
+msgstr "Згорнути"
 
 #: ../komikku/card/info_box.py:80 ../komikku/card/info_box.py:178
 msgid "Show More"
-msgstr "Розгорнуто"
+msgstr "Розгорнути"
 
 #: ../komikku/card/info_box.py:110
 msgid "Unknown author"
@@ -1502,7 +1510,7 @@ msgstr "Neutrois Pride Colors"
 
 #: ../komikku/consts.py:103
 msgid "Random Colors"
-msgstr ""
+msgstr "Випадкові кольори"
 
 #: ../komikku/downloader.py:274
 #, python-brace-format
@@ -1859,7 +1867,7 @@ msgstr "Перерва"
 
 #: ../komikku/preferences/__init__.py:158
 msgid "Are you sure you want to clear chapters cache and database?"
-msgstr "Ви впевнені, що хочете очистити кеш розділів і базу даних?"
+msgstr "Ви впевнені, що хочете очистити проміжні дані і базу даних розділів?"
 
 #: ../komikku/preferences/__init__.py:177
 msgid "Failed to clear WebView data"
@@ -1868,7 +1876,8 @@ msgstr "Не вдалося очистити дані WebView"
 #: ../komikku/preferences/__init__.py:181
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr ""
-"Ви впевнені, що хочете очистити дані WebView (кеш, пам’ять, файли cookie)?"
+"Ви впевнені, що хочете очистити дані WebView (проміжні дані, сховище, "
+"репʼяшки)?"
 
 #: ../komikku/preferences/__init__.py:206
 msgid "Disable animations?"
@@ -2581,14 +2590,12 @@ msgid "Yuri"
 msgstr "Юрі"
 
 #: ../komikku/servers/comix/__init__.py:44
-#, fuzzy
 msgid "Content Rating"
-msgstr "Вікові обмеження"
+msgstr "Класифікація вмісту"
 
 #: ../komikku/servers/comix/__init__.py:45
-#, fuzzy
 msgid "Filter by Content Rating"
-msgstr "Фільтрувати за віковим обмеженням"
+msgstr "Фільтрувати за класифікацією вмісту"
 
 #: ../komikku/servers/comix/__init__.py:52
 #: ../komikku/servers/mangadex/__init__.py:66
@@ -2856,7 +2863,6 @@ msgid "Adult Content"
 msgstr "Вміст для дорослих"
 
 #: ../komikku/servers/weebcentral/__init__.py:36
-#, fuzzy
 msgid "Filter by Adult Content"
 msgstr "Фільтрувати за вмістом для дорослих"
 

@@ -10,6 +10,6 @@ class Nightscans(Iken):
     name = 'Qi Scans (Night scans)'
     lang = 'en'
 
-    base_url = 'https://qimanhwa.com'
+    base_url = 'https://qimanga.com'
     logo_url = base_url + '/qiscans.ico'
-    api_url = 'https://api.qimanhwa.com/api/v1'
+    api_url = 'https://api.qimanga.com/api/v1'

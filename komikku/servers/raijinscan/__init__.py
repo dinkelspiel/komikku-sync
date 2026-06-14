@@ -158,7 +158,7 @@ class Raijinscan(Server):
             if not script or 'rjfr_' not in script:
                 continue
 
-            if matches := re.match(r'.*push\((.*)\);', script):
+            if matches := re.match(r'.*length]=(.*);', script):
                 req_data = json.loads(matches.group(1))
 
                 encoded = ''

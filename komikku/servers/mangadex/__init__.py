@@ -13,7 +13,6 @@ from uuid import UUID
 
 import requests
 
-from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.servers.exceptions import NotFoundError
 from komikku.servers.utils import convert_date_string
@@ -174,7 +173,7 @@ class Mangadex(Server):
     def __init__(self):
         if self.session is None:
             self.session = requests.Session()
-            self.session.headers.update({'user-agent': USER_AGENT})
+            self.session.headers.update({'User-Agent': 'Komikku ' + requests.utils.default_user_agent()})
 
     def __convert_old_slug(self, slug, type):
         # Removing this will break manga that were added before the change to the manga slug

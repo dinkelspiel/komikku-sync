@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-11 05:01+0000\n"
+"PO-Revision-Date: 2026-06-17 12:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -483,12 +483,11 @@ msgstr "Оберіть вигляд смужки поступу"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
-msgstr "Тло на сторінці з деталями"
+msgstr "Тло за обкладинкою"
 
 #: ../data/ui/preferences.blp:89
 msgid "Method used to recolor background to match cover"
-msgstr ""
-"Метод, що використовується для зміни кольору тла відповідно до обкладинки"
+msgstr "Метод зміни кольору тла за обкладинкою"
 
 #: ../data/ui/preferences.blp:93
 msgid "Linear gradient"
@@ -510,7 +509,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:113
 msgid "Synchronize reading progress"
-msgstr "Синхронізувати прогрес читання"
+msgstr "Суміщати поступ читання"
 
 #: ../data/ui/preferences.blp:124
 msgid "Display"
@@ -534,7 +533,7 @@ msgstr "Логотип серверів"
 
 #: ../data/ui/preferences.blp:138
 msgid "Display servers logo"
-msgstr "Відображати логотип сервера"
+msgstr "Відображати логотипи серверів"
 
 #: ../data/ui/preferences.blp:142
 msgid "Badges"
@@ -578,7 +577,7 @@ msgstr "Обмежити сервери вибраними мовами"
 
 #: ../data/ui/preferences.blp:234
 msgid "Enable/disable and configure servers"
-msgstr "Вмикання/вимикання та налаштування серверів"
+msgstr "Увімкнення, вимкнення та налаштування серверів"
 
 #: ../data/ui/preferences.blp:242
 msgid "Long Strip Detection"
@@ -586,31 +585,31 @@ msgstr "Виявлення довгих смуг"
 
 #: ../data/ui/preferences.blp:243
 msgid "Automatically detect long vertical strip when possible"
-msgstr "Автоматично визначати довгу вертикальну смугу, коли це можливо"
+msgstr "Автоматично визначати довгі вертикальні сторінки, коли це можливо"
 
 #: ../data/ui/preferences.blp:249
 msgid "NSFW Content (18+)"
-msgstr "Нецензурна лексика (18+)"
+msgstr "Вміст для дорослих (18+)"
 
 #: ../data/ui/preferences.blp:250
 msgid "Whether to enable servers with NSFW content"
-msgstr "Чи вмикати сервери з NSFW-вмістом"
+msgstr "Чи вмикати сервери з вмістом для дорослих"
 
 #: ../data/ui/preferences.blp:254
 msgid "NSFW Only Content (18+)"
-msgstr "Вміст нецензурної лексики (18+)"
+msgstr "Вміст лише для дорослих (18+)"
 
 #: ../data/ui/preferences.blp:255
 msgid "Whether to enable servers with NSFW only content"
-msgstr "Чи вмикати сервери з вмістом лише NSFW"
+msgstr "Чи вмикати сервери лише з вмістом для дорослих"
 
 #: ../data/ui/preferences.blp:259
 msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
 msgstr ""
-"Це налаштування не запобігає появі можливо неправильно класифікованим на "
-"боці Сервера мальописам, як вмісту для дорослих."
+"Ці параметри не гарантують відсутність помилково класифікованих мальописів "
+"для дорослих на серверах."
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
@@ -2357,7 +2356,7 @@ msgstr "Джосей"
 
 #: ../komikku/servers/comick/__init__.py:124
 msgid "None"
-msgstr "Жоден"
+msgstr "Без змін"
 
 #: ../komikku/servers/comick/__init__.py:130
 #: ../komikku/servers/mangadex/__init__.py:99

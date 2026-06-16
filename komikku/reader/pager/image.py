@@ -423,7 +423,7 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
                                 im_crop.save(io_buffer, 'tiff')
 
                                 if bbox[3] - bbox[1] > TEXTURES_CHUNK_MAX_HEIGHT:
-                                    stream = Gio.MemoryInputStream.new_from_data(io_buffer.getvalue(), None)
+                                    stream = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes.new(io_buffer.getvalue()))
 
                                     textures = []
                                     for pix in chunk_pixbuf(Pixbuf.new_from_stream(stream), TEXTURES_CHUNK_MAX_HEIGHT):
@@ -538,9 +538,9 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
         try:
             if path:
                 with open(path, 'rb') as fp:
-                    stream = Gio.MemoryInputStream.new_from_data(fp.read(), None)
+                    stream = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes.new(fp.read()))
             elif data:
-                stream = Gio.MemoryInputStream.new_from_data(data, None)
+                stream = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes.new(data))
 
             if not info['is_animated']:
                 Pixbuf.new_from_stream_async(stream, None, self.load_ready, callback, info, mime_type)

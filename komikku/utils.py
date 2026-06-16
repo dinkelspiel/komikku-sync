@@ -654,8 +654,8 @@ class CoverLoader(GObject.GObject):
         if not info:
             return None
 
+        stream = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes.new(data))
         try:
-            stream = Gio.MemoryInputStream.new_from_data(data, None)
             if info['is_animated'] and not static_animation:
                 pixbuf = PixbufAnimation.new_from_stream(stream)
             else:
@@ -664,6 +664,7 @@ class CoverLoader(GObject.GObject):
             stream.close()
         except Exception as exc:
             # Invalid image, corrupted image, unsupported image format,...
+            stream.close()
             logger.warning(
                 'Failed to create pixbuf: corrupted file or unsupported image format (%s)',
                 mime_type, exc_info=exc
@@ -678,13 +679,18 @@ class CoverLoader(GObject.GObject):
         if not info:
             return None
 
+        with open(path, 'rb') as fp:
+            stream = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes.new(fp.read()))
         try:
             if info['is_animated'] and not static_animation:
-                pixbuf = PixbufAnimation.new_from_file(path)
+                pixbuf = PixbufAnimation.new_from_stream(stream)
             else:
-                pixbuf = Pixbuf.new_from_file(path)
+                pixbuf = Pixbuf.new_from_stream(stream)
+
+            stream.close()
         except Exception as exc:
             # Invalid image, corrupted image, unsupported image format,...
+            stream.close()
             logger.warning(
                 'Failed to create pixbuf: corrupted file or unsupported image format (%s)',
                 mime_type, exc_info=exc

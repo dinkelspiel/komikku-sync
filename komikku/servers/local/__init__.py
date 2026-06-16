@@ -155,7 +155,8 @@ class CBR:
         except rarfile.NoRarEntry as e:
             logger.info(f'{self.path}: {e}')
             return None
-        except rarfile.RarCannotExec as e:
+        except (rarfile.BadRarFile, rarfile.RarCannotExec) as e:
+            # Strangely, we are getting BadRarFile exceptions when unrar is not installed
             logger.exception('Failed to execute unrar command')
             raise ArchiveUnrarMissingError from e
         except Exception as e:

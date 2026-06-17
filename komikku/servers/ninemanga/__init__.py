@@ -18,6 +18,7 @@ class Ninemanga(Server):
     name = 'Nine Manga'
     lang = 'en'
     is_nsfw = True
+    status = 'disabled'  # Move to https://niadd.com
 
     base_url = 'https://www.ninemanga.com'
     logo_url = base_url + '/favicon.png'

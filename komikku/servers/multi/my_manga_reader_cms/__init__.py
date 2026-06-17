@@ -11,7 +11,6 @@
 # Mangadoor [ES] (Disabled)
 # Manga Scan [FR] (Disabled)
 # Mangasin [ES]
-# Read Comics Online [EN]
 # Scan FR [FR] (Disabled)
 # Scan OP [FR] (Disabled)
 # ScanOnePiece [FR]

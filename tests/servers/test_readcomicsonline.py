@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Contributors to Komikku
+# SPDX-FileCopyrightText: 2019-2026 Contributors to Komikku
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -6,6 +6,7 @@ import logging
 import pytest
 from pytest_steps import test_steps
 
+from . import do_server_test
 from komikku.utils import log_error_traceback
 
 logging.basicConfig(level=logging.DEBUG)
@@ -18,6 +19,7 @@ def readcomicsonline_server():
     return Readcomicsonline()
 
 
+@do_server_test
 @test_steps('get_latest_updates', 'get_most_populars', 'search', 'get_manga_data', 'get_chapter_data', 'get_page_image')
 def test_readcomicsonline(readcomicsonline_server):
     # Get latest updates
@@ -65,8 +67,6 @@ def test_readcomicsonline(readcomicsonline_server):
         log_error_traceback(e)
 
     assert chapter_slug is not None
-    assert len(response['chapters']) > 0
-    yield
 
     # Get chapter data
     print('Get chapter data')

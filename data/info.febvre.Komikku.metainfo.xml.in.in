@@ -114,6 +114,20 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.7.0" date="2026-06-18">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] MangaDex (multi): Update</li>
+                    <li>[Servers] Nine Manga (multi): Disabled</li>
+                    <li>[Servers] Qi Scans (EN): Update</li>
+                    <li>[Servers] Raijin Scan (FR): Update</li>
+                    <li>[Servers] Read Comics Online (EN): Update</li>
+                    <li>Fixed memory leaks</li>
+                    <li>[L10n] Updated Ukrainian translation</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.6.0" date="2026-06-10">
             <description translate="no">
                 <ul>

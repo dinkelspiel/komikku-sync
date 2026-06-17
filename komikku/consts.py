@@ -254,12 +254,13 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Preferences] General: Added `Random Colors` to Progress bars themes</li>
-    <li>[Preferences] Advanced: Added a setting to be prompted to submit a bug report if a server error occurs</li>
-    <li>[Servers] Anime-Sama (FR): Update</li>
-    <li>[Servers] LanorTrad (FR): Update</li>
-    <li>[Servers] MangaHub (EN): Update</li>
-    <li>[L10n] Updated French, German, Portuguese, Russian and Ukrainian translations</li>
+    <li>[Servers] MangaDex (multi): Update</li>
+    <li>[Servers] Nine Manga (multi): Disabled</li>
+    <li>[Servers] Qi Scans (EN): Update</li>
+    <li>[Servers] Raijin Scan (FR): Update</li>
+    <li>[Servers] Read Comics Online (EN): Update</li>
+    <li>Fixed memory leaks</li>
+    <li>[L10n] Updated Ukrainian translation</li>
 </ul>
 <p>Happy reading.</p>
 """

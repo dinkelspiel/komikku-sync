@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-17 12:01+0000\n"
+"PO-Revision-Date: 2026-06-19 05:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -47,8 +47,8 @@ msgid ""
 "With its simple, elegant and adaptive interface, this reader lets you "
 "search, sort and read your series with ease."
 msgstr ""
-"Це читалка із простим, елегантним та адаптивним інтерфейсом, дозволяє "
-"шукати, сортувати та читати ваші мальописи з легкістю."
+"Це читалка із простим, елегантним та адаптивним інтерфейсом, у якій легко "
+"шукати, сортувати та читати мальописи."
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
@@ -56,7 +56,7 @@ msgstr "Чому вам сподобається Komikku?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr "Онлайн та офлайн читання з десятків серверів"
+msgstr "Онлайн і офлайн читання з десятків серверів"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
@@ -65,7 +65,8 @@ msgstr "Підтримка локальних серій (у форматах CB
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr "Режими читання правосторонній, лівосторонній, вертикальний та вебтун"
+msgstr ""
+"Кілька режимів читання: правосторонній, лівосторонній, вертикальний та вебтун"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -73,14 +74,14 @@ msgid ""
 "navigation layout via mouse click or tapping (touchpad/touch screen), mouse "
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
-"Підтримує кілька типів навігації: клавіші зі стрілками на клавіатурі, "
-"навігація праворуч та ліворуч за допомогою клацання мишею або торкання "
-"(тачпад/сенсорний екран), колесо мишки, жест проведення двома пальцями "
-"(тачпад), жест проведення (сенсорний екран)"
+"Підтримуються кілька способів гортання: клавіші зі стрілками, перехід "
+"ліворуч і праворуч клацанням мишею або торкання сенсорної панелі чи екрана, "
+"колесо миші, проведення двома пальцями на сенсорній панелі та проведення на "
+"сенсорному екрані"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:21
 msgid "Categories to organize your library"
-msgstr "Категорії для організації вашої бібліотеки"
+msgstr "Категорії для організації бібліотеки"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
@@ -94,7 +95,7 @@ msgstr "Автоматичне оновлення серій"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr "Автоматично завантажувати нові розділи"
+msgstr "Автоматичне завантаження нових розділів"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
@@ -247,7 +248,7 @@ msgstr "Додати"
 
 #: ../data/ui/download_manager.blp:10 ../data/ui/download_manager.blp:20
 msgid "Download Manager"
-msgstr "Менеджер завантажень"
+msgstr "Завантаження"
 
 #: ../data/ui/download_manager.blp:32
 msgid "Start/Stop Download"
@@ -304,7 +305,7 @@ msgstr "Бібліотека"
 
 #: ../data/ui/library.blp:23
 msgid "Toggle Categories Sidebar"
-msgstr "Перемикання бічної панелі категорії"
+msgstr "Бічна панель категорій"
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
@@ -381,15 +382,15 @@ msgstr "Сортувати"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr "Алфавітний"
+msgstr "За назвою"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
-msgstr "Спочатку останнє прочитане"
+msgstr "За датою читання"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"
-msgstr "Спочатку останнє оновлене"
+msgstr "За датою оновлення"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
@@ -435,8 +436,8 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
-"Komikku — це вільне програмне забезпечення з відкритим вихідним кодом, і "
-"завжди ним буде. Якщо вам це подобається, буде чудово, якщо підтримаєте мене "
+"Komikku поширюється під вільною ліцензією і має відкритий вихідний код, і "
+"завжди буде. Якщо вам це подобається, буде чудово, якщо підтримаєте мене "
 "пожертвою. Ваша підтримка допоможе не лише розвивати й підтримувати Komikku, "
 "а й продовжувати мою роботу як розробника вільного програмного забезпечення "
 "в цілому."
@@ -949,7 +950,7 @@ msgstr "Пошук"
 #: ../data/ui/shortcuts.blp:52
 msgctxt "Shortcut window description"
 msgid "Toggle Categories Pane"
-msgstr "Перемикання панелі категорій"
+msgstr "Панель категорій"
 
 #: ../data/ui/shortcuts.blp:57
 msgctxt "Shortcut window description"
@@ -1261,9 +1262,9 @@ msgstr "Скинути"
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
-msgstr[0] "{0} обрано"
-msgstr[1] "{0} обраний"
-msgstr[2] "{0} обраний"
+msgstr[0] "{0} вибрано"
+msgstr[1] "{0} вибрано"
+msgstr[2] "{0} вибрано"
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
@@ -1616,7 +1617,7 @@ msgstr "Може бути частково або повністю незако�
 
 #: ../komikku/explorer/common.py:329
 msgid "Toggle pinned status"
-msgstr "Переключити статус пришпилення"
+msgstr "Змінити стан пришпилення"
 
 #: ../komikku/explorer/search/__init__.py:283
 msgid "Search was cancelled"
@@ -1646,15 +1647,15 @@ msgstr ""
 
 #: ../komikku/explorer/search/__init__.py:412
 msgid "Global Search"
-msgstr "Глобальний пошук"
+msgstr "Загальний пошук"
 
 #: ../komikku/explorer/search/__init__.py:414
 msgid "Search globally by name"
-msgstr "Шукати скрізь по імені"
+msgstr "Шукати за назвою"
 
 #: ../komikku/explorer/search/__init__.py:416
 msgid "Search for Comics"
-msgstr "Шукати серед мальописів"
+msgstr "Пошук мальописів"
 
 #: ../komikku/explorer/search/__init__.py:488
 msgid "Oops, failed to retrieve manga's information."
@@ -2968,7 +2969,7 @@ msgstr "Ви зараз не в мережі"
 
 #: ../komikku/utils.py:385
 msgid "No Internet connection, timeout or server down"
-msgstr "Немає з'єднання з Інтернетом, таймаут або не працює сервер"
+msgstr "Немає з’єднання з Інтернетом або сервер недоступний"
 
 #: ../komikku/webview.py:440
 msgid "Please wait…"
@@ -2976,7 +2977,7 @@ msgstr "Будь ласка, зачекайте…"
 
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"
-msgstr "Будь ласка, заповніть CAPTCHA"
+msgstr "Будь ласка, пройдіть CAPTCHA"
 
 #~ msgid "Servers Modules"
 #~ msgstr "Серверні модулі"

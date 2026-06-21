@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -14,7 +14,8 @@ from gi.repository import GObject
 from gi.repository import Gtk
 
 from komikku.library.categories_list import CategoriesList
-from komikku.library.thumbnail import Thumbnail
+from komikku.library.flowbox_child import LibraryCompactFlowBoxChild
+from komikku.library.flowbox_child import LibraryFlowBoxChild
 from komikku.models import Category
 from komikku.models import CategoryVirtual
 from komikku.models import create_db_connection
@@ -56,13 +57,13 @@ class LibraryPage(Adw.NavigationPage):
     start_page_title_label = Gtk.Template.Child('start_page_title_label')
     start_page_discover_button = Gtk.Template.Child('start_page_discover_button')
 
+    flowbox_child_cover_size = None
     page = None
     populating = False
     selected_filters = []
     selection_mode = False
     selection_mode_range = False
-    selection_mode_last_thumbnail_index = None
-    thumbnails_cover_size = None
+    selection_mode_last_flowbox_child_index = None
 
     def __init__(self, window):
         Adw.NavigationPage.__init__(self)
@@ -114,9 +115,9 @@ class LibraryPage(Adw.NavigationPage):
 
         self.categories_list = CategoriesList(self)
 
-        # Thumbnails Flowbox
+        # Flowbox
         self.flowbox.set_valign(Gtk.Align.START)
-        self.flowbox.connect('child-activated', self.on_manga_thumbnail_activated)
+        self.flowbox.connect('child-activated', self.on_flowbox_child_activated)
         self.flowbox.connect('selected-children-changed', self.update_title)
         self.flowbox.connect('unselect-all', self.leave_selection_mode)
 
@@ -129,7 +130,7 @@ class LibraryPage(Adw.NavigationPage):
         self.gesture_click = Gtk.GestureClick.new()
         self.gesture_click.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
         self.gesture_click.set_button(3)
-        self.gesture_click.connect('released', self.on_manga_thumbnail_right_click)
+        self.gesture_click.connect('released', self.on_flowbox_child_right_click)
         self.flowbox.add_controller(self.gesture_click)
 
         self.gesture_long_press = Gtk.GestureLongPress.new()
@@ -140,8 +141,8 @@ class LibraryPage(Adw.NavigationPage):
 
         self.window.updater.connect('manga-updated', self.on_manga_updated)
 
-        def _filter(thumbnail):
-            manga = thumbnail.manga
+        def _filter(flowbox_child):
+            manga = flowbox_child.manga
             selected_category = Settings.get_default().selected_category
 
             if selected_category != CategoryVirtual.ALL:
@@ -175,24 +176,24 @@ class LibraryPage(Adw.NavigationPage):
                 if ret and 'recents' in self.selected_filters:
                     ret = manga.nb_recent_chapters > 0
 
-            if not ret and thumbnail._selected:
-                # Unselect thumbnail if it's selected
-                self.flowbox.unselect_child(thumbnail)
-                thumbnail._selected = False
+            if not ret and flowbox_child._selected:
+                # Unselect flowbox child if it's selected
+                self.flowbox.unselect_child(flowbox_child)
+                flowbox_child._selected = False
 
-            thumbnail._filtered = not ret
+            flowbox_child._filtered = not ret
 
             return ret
 
-        def _sort(thumbnail1, thumbnail2):
+        def _sort(flowbox_child1, flowbox_child2):
             """
             This function gets two children and has to return:
             - a negative integer if the firstone should come before the second one
             - zero if they are equal
             - a positive integer if the second one should come before the firstone
             """
-            manga1 = thumbnail1.manga
-            manga2 = thumbnail2.manga
+            manga1 = flowbox_child1.manga
+            manga2 = flowbox_child2.manga
 
             sort_order = Settings.get_default().library_sort_order
             if sort_order == 'latest-read-desc':
@@ -297,10 +298,6 @@ class LibraryPage(Adw.NavigationPage):
         edit_categories_selected_action.connect('activate', self.edit_categories_selected)
         self.window.application.add_action(edit_categories_selected_action)
 
-        select_all_action = Gio.SimpleAction.new('library.select-all', None)
-        select_all_action.connect('activate', self.select_all)
-        self.window.application.add_action(select_all_action)
-
         # Shortcuts
         toggle_categories_action = Gio.SimpleAction.new('library.toggle-categories', None)
         toggle_categories_action.connect(
@@ -309,23 +306,6 @@ class LibraryPage(Adw.NavigationPage):
             )
         )
         self.window.application.add_action(toggle_categories_action)
-
-    def compute_thumbnails_cover_size(self):
-        default_width = Thumbnail.default_width
-        default_height = Thumbnail.default_height
-
-        container_width = self.window.get_width() or self.window.props.default_width
-
-        if container_width / default_width != container_width // default_width:
-            nb = container_width // default_width + 1
-            width = container_width // nb
-        else:
-            width = default_width
-        width -= Thumbnail.padding * 2 + Thumbnail.margin * 2
-
-        height = (width * default_height) // default_width
-
-        self.thumbnails_cover_size = (width, height)
 
     def clear_mangas(self, mangas):
         def confirm_callback():
@@ -342,7 +322,7 @@ class LibraryPage(Adw.NavigationPage):
             db_conn = create_db_connection()
             for manga in mangas:
                 manga.clear(db_conn=db_conn)
-                self.update_thumbnail(manga)
+                self.update_flowbox_child(manga)
 
             # Update filtering if filters are selected
             if self.selected_filters:
@@ -363,7 +343,24 @@ class LibraryPage(Adw.NavigationPage):
         )
 
     def clear_selected(self, _action, _param):
-        self.clear_mangas([thumbnail.manga for thumbnail in self.flowbox.get_selected_children()])
+        self.clear_mangas([child.manga for child in self.flowbox.get_selected_children()])
+
+    def compute_flowbox_child_cover_size(self):
+        default_width = LibraryFlowBoxChild.default_width
+        default_height = LibraryFlowBoxChild.default_height
+
+        container_width = self.window.get_width() or self.window.props.default_width
+
+        if container_width / default_width != container_width // default_width:
+            nb = container_width // default_width + 1
+            width = container_width // nb
+        else:
+            width = default_width
+        width -= LibraryFlowBoxChild.margins
+
+        height = (width * default_height) // default_width
+
+        self.flowbox_child_cover_size = (width, height)
 
     def delete_mangas(self, mangas):
         def confirm_callback():
@@ -389,7 +386,7 @@ class LibraryPage(Adw.NavigationPage):
 
             # Finally, update library
             for manga in mangas:
-                self.remove_thumbnail(manga)
+                self.remove_flowbox_child(manga)
 
             if self.window.page == 'card':
                 self.window.navigationview.pop()
@@ -413,13 +410,13 @@ class LibraryPage(Adw.NavigationPage):
         )
 
     def delete_selected(self, _action, _param):
-        self.delete_mangas([thumbnail.manga for thumbnail in self.flowbox.get_selected_children()])
+        self.delete_mangas([child.manga for child in self.flowbox.get_selected_children()])
 
     def download_selected(self, _action, _param):
         def confirm_callback():
             chapters = []
-            for thumbnail in self.flowbox.get_selected_children():
-                for chapter in thumbnail.manga.chapters:
+            for child in self.flowbox.get_selected_children():
+                for chapter in child.manga.chapters:
                     chapters.append(chapter)
 
             self.leave_selection_mode()
@@ -484,8 +481,8 @@ class LibraryPage(Adw.NavigationPage):
         self.update_headerbar_buttons()
 
         self.flowbox.set_selection_mode(Gtk.SelectionMode.NONE)
-        for thumbnail in self.flowbox:
-            thumbnail._selected = False
+        for child in self.flowbox:
+            child._selected = False
 
         self.selection_mode_actionbar.set_revealed(False)
         self.overlaysplitview.set_show_sidebar(False)
@@ -507,8 +504,55 @@ class LibraryPage(Adw.NavigationPage):
     def on_filters_button_clicked(self, _button):
         self.filters_dialog.present(self.window)
 
+    def on_flowbox_child_activated(self, _flowbox, child):
+        if self.selection_mode:
+            if self.selection_mode_range and self.selection_mode_last_flowbox_child_index is not None:
+                # Range selection mode: select all mangas between last selected manga and clicked manga
+                walk_index = self.selection_mode_last_flowbox_child_index
+                last_index = child.get_index()
+
+                while walk_index != last_index:
+                    walk_child = self.flowbox.get_child_at_index(walk_index)
+                    if walk_child and not walk_child._selected and not walk_child._filtered:
+                        self.flowbox.select_child(walk_child)
+                        walk_child._selected = True
+
+                    if walk_index < last_index:
+                        walk_index += 1
+                    else:
+                        walk_index -= 1
+
+            self.selection_mode_range = False
+
+            if child._selected:
+                self.flowbox.unselect_child(child)
+                self.selection_mode_last_flowbox_child_index = None
+                child._selected = False
+            else:
+                self.flowbox.select_child(child)
+                self.selection_mode_last_flowbox_child_index = child.get_index()
+                child._selected = True
+
+            if len(self.flowbox.get_selected_children()) == 0:
+                self.leave_selection_mode()
+        else:
+            self.window.card.init(child.manga)
+
+    def on_flowbox_child_right_click(self, _gesture, _n_press, x, y):
+        """Allow to enter in selection mode with a right click on a flowbox child"""
+        if self.selection_mode:
+            return Gdk.EVENT_PROPAGATE
+
+        child = self.flowbox.get_child_at_pos(x, y)
+        if child is not None:
+            self.enter_selection_mode()
+            self.on_flowbox_child_activated(None, child)
+            return Gdk.EVENT_STOP
+
+        return Gdk.EVENT_PROPAGATE
+
     def on_gesture_long_press_activated(self, _gesture, x, y):
-        """Allow to enter in selection mode with a long press on a thumbnail"""
+        """Allow to enter in selection mode with a long press on a flowbox child"""
         if not self.selection_mode:
             self.enter_selection_mode()
         else:
@@ -516,15 +560,15 @@ class LibraryPage(Adw.NavigationPage):
             # Long press on a manga then long press on another to select everything in between
             self.selection_mode_range = True
 
-        selected_thumbnail = self.flowbox.get_child_at_pos(x, y)
-        self.on_manga_thumbnail_activated(None, selected_thumbnail)
+        selected_child = self.flowbox.get_child_at_pos(x, y)
+        self.on_flowbox_child_activated(None, selected_child)
 
     def on_key_pressed(self, _controller, keyval, _keycode, state):
         if self.window.page != self.props.tag:
             return Gdk.EVENT_PROPAGATE
 
         modifiers = state & Gtk.accelerator_get_default_mod_mask()
-        if not self.selection_mode:
+        if not self.selection_mode and modifiers == Gdk.ModifierType.SHIFT_MASK:
             # Allow to enter in selection mode with <SHIFT>+Arrow key
             arrow_keys = (
                 Gdk.KEY_Up, Gdk.KEY_KP_Up,
@@ -532,13 +576,13 @@ class LibraryPage(Adw.NavigationPage):
                 Gdk.KEY_Left, Gdk.KEY_KP_Left,
                 Gdk.KEY_Right, Gdk.KEY_KP_Right
             )
-            if modifiers != Gdk.ModifierType.SHIFT_MASK or keyval not in arrow_keys:
+            if keyval not in arrow_keys:
                 return Gdk.EVENT_PROPAGATE
 
-            thumbnail = self.flowbox.get_focus_child() or self.flowbox.get_first_child()
-            if thumbnail is not None:
+            child = self.flowbox.get_focus_child() or self.flowbox.get_first_child()
+            if child is not None:
                 self.enter_selection_mode()
-                self.on_manga_thumbnail_activated(None, thumbnail)
+                self.on_flowbox_child_activated(None, child)
         else:
             if keyval == Gdk.KEY_Escape or (modifiers == Gdk.ModifierType.ALT_MASK and keyval in (Gdk.KEY_Left, Gdk.KEY_KP_Left)):
                 self.leave_selection_mode()
@@ -563,55 +607,11 @@ class LibraryPage(Adw.NavigationPage):
             # Library was previously empty
             self.populate()
         else:
-            thumbnail = Thumbnail(self, manga, *self.thumbnails_cover_size)
-            self.flowbox.prepend(thumbnail)
-
-    def on_manga_thumbnail_activated(self, _flowbox, thumbnail):
-        if self.selection_mode:
-            if self.selection_mode_range and self.selection_mode_last_thumbnail_index is not None:
-                # Range selection mode: select all mangas between last selected manga and clicked manga
-                walk_index = self.selection_mode_last_thumbnail_index
-                last_index = thumbnail.get_index()
-
-                while walk_index != last_index:
-                    walk_thumbnail = self.flowbox.get_child_at_index(walk_index)
-                    if walk_thumbnail and not walk_thumbnail._selected and not walk_thumbnail._filtered:
-                        self.flowbox.select_child(walk_thumbnail)
-                        walk_thumbnail._selected = True
-
-                    if walk_index < last_index:
-                        walk_index += 1
-                    else:
-                        walk_index -= 1
-
-            self.selection_mode_range = False
-
-            if thumbnail._selected:
-                self.flowbox.unselect_child(thumbnail)
-                self.selection_mode_last_thumbnail_index = None
-                thumbnail._selected = False
+            if Settings.get_default().library_display_mode == 'grid-compact':
+                flowbox_child = LibraryCompactFlowBoxChild(self, manga, *self.flowbox_child_cover_size)
             else:
-                self.flowbox.select_child(thumbnail)
-                self.selection_mode_last_thumbnail_index = thumbnail.get_index()
-                thumbnail._selected = True
-
-            if len(self.flowbox.get_selected_children()) == 0:
-                self.leave_selection_mode()
-        else:
-            self.window.card.init(thumbnail.manga)
-
-    def on_manga_thumbnail_right_click(self, _gesture, _n_press, x, y):
-        """Allow to enter in selection mode with a right click on a thumbnail"""
-        if self.selection_mode:
-            return Gdk.EVENT_PROPAGATE
-
-        thumbnail = self.flowbox.get_child_at_pos(x, y)
-        if thumbnail is not None:
-            self.enter_selection_mode()
-            self.on_manga_thumbnail_activated(None, thumbnail)
-            return Gdk.EVENT_STOP
-
-        return Gdk.EVENT_PROPAGATE
+                flowbox_child = LibraryFlowBoxChild(self, manga, *self.flowbox_child_cover_size)
+            self.flowbox.prepend(flowbox_child)
 
     def on_manga_updated(self, _obj, manga, _chapters_changes, _synced):
         self.refresh_on_manga_state_changed(manga)
@@ -627,19 +627,18 @@ class LibraryPage(Adw.NavigationPage):
             return
 
         def do_resize():
-            self.compute_thumbnails_cover_size()
+            self.compute_flowbox_child_cover_size()
 
-            for thumbnail in self.flowbox:
-                thumbnail.resize(*self.thumbnails_cover_size)
+            for child in self.flowbox:
+                child.resize_cover(*self.flowbox_child_cover_size)
 
         # Wait until there are no higher priority events pending to the default main loop
         GLib.idle_add(do_resize)
 
     def on_search_entry_activated(self, _entry):
         """Open first manga in search when <Enter> is pressed"""
-        thumbnail = self.flowbox.get_child_at_pos(0, 0)
-        if thumbnail:
-            self.on_manga_thumbnail_activated(None, thumbnail)
+        if child := self.flowbox.get_child_at_pos(0, 0):
+            self.on_flowbox_child_activated(None, child)
 
     def on_shown(self, _page):
         if self.searchbar.get_search_mode():
@@ -698,18 +697,18 @@ class LibraryPage(Adw.NavigationPage):
         self.start_page_discover_button.set_visible(False)
 
         # Clear library flowbox
-        thumbnail = self.flowbox.get_first_child()
-        while thumbnail:
-            next_thumbnail = thumbnail.get_next_sibling()
-            self.flowbox.remove(thumbnail)
-            thumbnail = next_thumbnail
+        self.flowbox.remove_all()
 
         def run():
             db_conn = create_db_connection()
 
-            for index, row in enumerate(mangas_rows):
-                thumbnail = Thumbnail(self, Manga.get(row['id'], db_conn=db_conn), *self.thumbnails_cover_size)
-                GLib.idle_add(on_progress, thumbnail, (index + 1) / len(mangas_rows))
+            for index, row in enumerate(mangas_rows, start=1):
+                manga = Manga.get(row['id'], db_conn=db_conn)
+                if Settings.get_default().library_display_mode == 'grid-compact':
+                    flowbox_child = LibraryCompactFlowBoxChild(self, manga, *self.flowbox_child_cover_size)
+                else:
+                    flowbox_child = LibraryFlowBoxChild(self, manga, *self.flowbox_child_cover_size)
+                GLib.idle_add(on_progress, flowbox_child, index / len(mangas_rows))
 
             GLib.idle_add(on_complete)
 
@@ -718,33 +717,33 @@ class LibraryPage(Adw.NavigationPage):
             self.show_page('flowbox')
             self.populating = False
 
-        def on_progress(thumbnail, fraction):
+        def on_progress(flowbox_child, fraction):
             self.start_page_progressbar.set_fraction(fraction)
-            self.flowbox.append(thumbnail)
+            self.flowbox.append(flowbox_child)
 
         # Populate flowbox
-        self.compute_thumbnails_cover_size()
+        self.compute_flowbox_child_cover_size()
 
         thread = threading.Thread(target=run)
         thread.daemon = True
         thread.start()
 
     def refresh_on_manga_state_changed(self, manga):
-        # Update thumbnail
-        self.update_thumbnail(manga)
+        # Update flowbox child
+        self.update_flowbox_child(manga)
 
         # Update filtering if filters are selected
         if self.selected_filters:
             self.flowbox.invalidate_filter()
 
-    def remove_thumbnail(self, manga):
-        # Remove manga thumbnail in flowbox
-        thumbnail = self.flowbox.get_first_child()
-        while thumbnail:
-            if thumbnail.manga.id == manga.id:
-                self.flowbox.remove(thumbnail)
+    def remove_flowbox_child(self, manga):
+        # Remove child in flowbox
+        child = self.flowbox.get_first_child()
+        while child:
+            if child.manga.id == manga.id:
+                self.flowbox.remove(child)
                 break
-            thumbnail = thumbnail.get_next_sibling()
+            child = child.get_next_sibling()
 
     def search(self, _search_entry):
         self.flowbox.invalidate_filter()
@@ -756,10 +755,13 @@ class LibraryPage(Adw.NavigationPage):
         if not self.selection_mode:
             self.enter_selection_mode()
 
-        for thumbnail in self.flowbox:
-            if not thumbnail._selected and not thumbnail._filtered:
-                thumbnail._selected = True
-                self.flowbox.select_child(thumbnail)
+        if first_child := self.flowbox.get_first_child():
+            first_child.grab_focus()
+
+        for child in self.flowbox:
+            if not child._selected and not child._filtered:
+                child._selected = True
+                self.flowbox.select_child(child)
 
     def set_sort_order(self, invalidate=True):
         self.sort_order_action.set_state(GLib.Variant('s', Settings.get_default().library_sort_order))
@@ -798,8 +800,8 @@ class LibraryPage(Adw.NavigationPage):
 
         self.window.activity_indicator.set_visible(True)
 
-        for thumbnail in self.flowbox.get_selected_children():
-            for chapter in thumbnail.manga.chapters:
+        for child in self.flowbox.get_selected_children():
+            for chapter in child.manga.chapters:
                 chapters_ids.append(chapter.id)
                 chapters_data.append(dict(
                     last_page_read_index=None,
@@ -818,8 +820,8 @@ class LibraryPage(Adw.NavigationPage):
             self.window.add_notification(_('Failed to update reading status'))
         else:
             if Settings.get_default().library_badges:
-                for thumbnail in self.flowbox.get_selected_children():
-                    thumbnail.update()
+                for child in self.flowbox.get_selected_children():
+                    child.update()
 
             self.leave_selection_mode()
 
@@ -828,6 +830,12 @@ class LibraryPage(Adw.NavigationPage):
 
     def update_all(self, _action, _param):
         self.window.updater.update_library()
+
+    def update_flowbox_child(self, manga):
+        for child in self.flowbox:
+            if child.manga.id == manga.id:
+                child.update(manga)
+                break
 
     def update_headerbar_buttons(self):
         if self.page == 'flowbox':
@@ -849,17 +857,11 @@ class LibraryPage(Adw.NavigationPage):
             self.menu_button.set_visible(True)
 
     def update_selected(self, _action, _param):
-        self.window.updater.add([thumbnail.manga for thumbnail in self.flowbox.get_selected_children()])
+        self.window.updater.add([child.manga for child in self.flowbox.get_selected_children()])
         if self.window.updater.start():
             self.show_activity_indicator()
 
         self.leave_selection_mode()
-
-    def update_thumbnail(self, manga):
-        for thumbnail in self.flowbox:
-            if thumbnail.manga.id == manga.id:
-                thumbnail.update(manga)
-                break
 
     def update_title(self, *args, db_conn=None):
         title = 'Komikku'

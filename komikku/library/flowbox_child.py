@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -18,93 +18,41 @@ from komikku.models import Settings
 from komikku.utils import CoverLoader
 
 
-class Thumbnail(Gtk.FlowBoxChild):
-    __gtype_name__ = 'Thumbnail'
-
+class LibraryFlowBoxChildBase:
     default_width = COVER_WIDTH
     default_height = COVER_HEIGHT
-    padding = 6  # padding is overriding via CSS
-    margin = 3   # flowbox column spacing divided by 2
+    margins = (3 + 3 + 3) * 2  # FlowBoxChild margin + FlowBoxChild border + FlowBoxChild child margin
     server_logo_size = 16
 
-    def __init__(self, parent, manga, width, height):
-        super().__init__(halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
+    cover_picture: Gtk.Picture
+    name_label: Gtk.Label
 
+    def __init__(self, parent, manga):
         self.parent = parent
         self.manga = manga
         self._filtered = False
         self._selected = False
 
-        self.picture = Gtk.Picture()
-        self.picture.add_css_class('cover-dropshadow')
-        self.picture.set_can_shrink(False)
-        self.picture.set_paintable(ThumbnailCover(manga))
+        self.cover_picture.set_paintable(LibraryFlowBoxChildCoverPaintable(manga))
 
         # Logo widget (Gtk.Image or Adw.Avatar as fallback)
         if Settings.get_default().library_servers_logo:
             if self.manga.server.logo_path:
-                logo = Gtk.Image.new_from_file(self.manga.server.logo_path)
-                logo.set_pixel_size(self.server_logo_size)
+                self.logo = Gtk.Image.new_from_file(self.manga.server.logo_path)
+                self.logo.set_pixel_size(self.server_logo_size)
             elif self.manga.server.id == 'local':
-                logo = Adw.Avatar.new(self.server_logo_size, None, False)
-                logo.set_icon_name('folder-symbolic')
+                self.logo = Adw.Avatar.new(self.server_logo_size, None, False)
+                self.logo.set_icon_name('folder-symbolic')
             else:
-                logo = Adw.Avatar.new(self.server_logo_size, self.manga.server.name, True)
-
-        if Settings.get_default().library_display_mode == 'grid-compact':
-            # Compact grid
-            self.overlay = Gtk.Overlay()
-            self.overlay.set_child(self.picture)
-
-            self.name_label = Gtk.Label(xalign=0)
-            self.name_label.add_css_class('library-thumbnail-name-label')
-            self.name_label.set_valign(Gtk.Align.END)
-            self.name_label.set_wrap(True)
-            self.overlay.add_overlay(self.name_label)
-
-            if Settings.get_default().library_servers_logo:
-                logo.props.margin_start = 6
-                logo.props.margin_top = 6
-                logo.props.halign = Gtk.Align.START
-                logo.props.valign = Gtk.Align.START
-                self.overlay.add_overlay(logo)
-
-            self.set_child(self.overlay)
+                self.logo = Adw.Avatar.new(self.server_logo_size, self.manga.server.name, True)
         else:
-            # Expanded grid
-            box = Gtk.Grid(row_spacing=4)
-            box.attach(self.picture, 0, 0, 2, 1)
+            self.logo = None
 
-            self.name_label = Gtk.Label(hexpand=True)
-            self.name_label.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
-            self.name_label.add_css_class('caption')
-            self.name_label.set_lines(1)
-            self.name_label.set_wrap(True)
-            self.name_label.set_max_width_chars(0)
+    def draw_name(self):
+        self.name_label.set_text(self.manga.name)
 
-            if Settings.get_default().library_servers_logo:
-                self.name_label.props.xalign = 0
-                box.attach(self.name_label, 0, 1, 1, 1)
-
-                logo.props.halign = Gtk.Align.END
-                logo.props.valign = Gtk.Align.CENTER
-
-                box.attach(logo, 1, 1, 1, 1)
-            else:
-                self.name_label.set_justify(Gtk.Justification.CENTER)
-                box.attach(self.name_label, 0, 1, 2, 1)
-
-            self.set_child(box)
-
-        self.__draw_name()
-
-        self.resize(width, height)
-
-    def __draw_name(self):
-        self.name_label.set_text(self.manga.name + ' ')
-
-    def resize(self, width, height):
-        cover = self.picture.get_paintable()
+    def resize_cover(self, width, height):
+        cover = self.cover_picture.get_paintable()
         if cover.width == width:
             return
 
@@ -113,38 +61,87 @@ class Thumbnail(Gtk.FlowBoxChild):
     def update(self, manga=None):
         if manga:
             self.manga = manga
-            self.__draw_name()
+            self.draw_name()
 
-        self.picture.get_paintable().update(manga)
+        self.cover_picture.get_paintable().update(manga)
 
 
-class ThumbnailCover(GObject.GObject, Gdk.Paintable):
-    __gtype_name__ = 'ThumbnailCover'
+@Gtk.Template.from_resource('/info/febvre/Komikku/ui/library_compact_flowbox_child.ui')
+class LibraryCompactFlowBoxChild(Gtk.FlowBoxChild, LibraryFlowBoxChildBase):
+    __gtype_name__ = 'LibraryCompactFlowBoxChild'
 
-    corners_radius = 8
-    cover_font_size = 9
-    width = None
-    height = None
+    overlay = Gtk.Template.Child('overlay')
+    cover_picture = Gtk.Template.Child('cover_picture')
+    name_label = Gtk.Template.Child('name_label')
+
+    def __init__(self, parent, manga, width, height):
+        Gtk.FlowBoxChild.__init__(self)
+        LibraryFlowBoxChildBase.__init__(self, parent, manga)
+
+        if self.logo:
+            self.logo.props.margin_start = 6
+            self.logo.props.margin_top = 6
+            self.logo.props.halign = Gtk.Align.START
+            self.logo.props.valign = Gtk.Align.START
+            self.overlay.add_overlay(self.logo)
+
+        self.draw_name()
+        self.resize_cover(width, height)
+
+
+@Gtk.Template.from_resource('/info/febvre/Komikku/ui/library_flowbox_child.ui')
+class LibraryFlowBoxChild(Gtk.FlowBoxChild, LibraryFlowBoxChildBase):
+    __gtype_name__ = 'LibraryFlowBoxChild'
+
+    grid = Gtk.Template.Child('grid')
+    cover_picture = Gtk.Template.Child('cover_picture')
+    name_label = Gtk.Template.Child('name_label')
+
+    def __init__(self, parent, manga, width, height):
+        Gtk.FlowBoxChild.__init__(self)
+        LibraryFlowBoxChildBase.__init__(self, parent, manga)
+
+        if self.logo:
+            self.name_label.props.xalign = 0
+
+            self.logo.props.halign = Gtk.Align.END
+            self.logo.props.valign = Gtk.Align.CENTER
+
+            self.grid.attach(self.logo, 1, 1, 1, 1)
+        else:
+            self.name_label.set_justify(Gtk.Justification.CENTER)
+
+        self.draw_name()
+        self.resize_cover(width, height)
+
+
+class LibraryFlowBoxChildCoverPaintable(GObject.GObject, Gdk.Paintable):
+    __gtype_name__ = 'LibraryFlowBoxChildCoverPaintable'
+
+    badge_font_size = 9
+    badge_layout = None
+    badge_text_color = Gdk.RGBA(1, 1, 1, 1)
+    rect = Graphene.Rect().alloc()
+    rounded_rect = Gsk.RoundedRect()
+    rounded_rect_size = Graphene.Size.init(Graphene.Size().alloc(), 8, 8)
 
     def __init__(self, manga):
         super().__init__()
 
         self.manga = manga
-
         self.cover_texture = None
+        self.width = None
+        self.height = None
 
-        self.rect = Graphene.Rect().alloc()
-        self.rounded_rect = Gsk.RoundedRect()
-        self.rounded_rect_size = Graphene.Size().alloc()
-        self.rounded_rect_size.init(self.corners_radius, self.corners_radius)
+        if LibraryFlowBoxChildCoverPaintable.badge_layout is None:
+            pango_context = Gio.Application.get_default().window.get_pango_context()
 
-        font = Pango.FontDescription.new()
-        font.set_weight(Pango.Weight.HEAVY)
-        font.set_size(self.cover_font_size * Pango.SCALE)
-        self.badge_layout = Pango.Layout(Gio.Application.get_default().window.get_pango_context())
-        self.badge_layout.set_font_description(font)
-        self.badge_text_color = Gdk.RGBA()
-        self.badge_text_color.parse('#ffffff')
+            font = pango_context.get_font_description()
+            font.set_size(self.badge_font_size * Pango.SCALE)
+            font.set_weight(Pango.Weight.HEAVY)
+
+            LibraryFlowBoxChildCoverPaintable.badge_layout = Pango.Layout(pango_context)
+            LibraryFlowBoxChildCoverPaintable.badge_layout.set_font_description(font)
 
         self.__get_badges_values()
         self.__create_cover_texture()
@@ -210,11 +207,8 @@ class ThumbnailCover(GObject.GObject, Gdk.Paintable):
             snapshot.pop()  # remove the clip
 
             # Draw number
-            point = Graphene.Point()
-            point.init(x + 7, y + 1)
-
             snapshot.save()
-            snapshot.translate(point)
+            snapshot.translate(Graphene.Point().init(x + 7, y + 1))
             snapshot.append_layout(self.badge_layout, self.badge_text_color)
             snapshot.restore()
 
@@ -231,8 +225,6 @@ class ThumbnailCover(GObject.GObject, Gdk.Paintable):
     def update(self, manga=None):
         if manga:
             self.manga = manga
-
-            self.cover_texture = None
             self.__create_cover_texture()
 
         self.__get_badges_values()

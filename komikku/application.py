@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -320,10 +320,10 @@ class ApplicationWindow(Adw.ApplicationWindow):
         self.init_accent_colors()
         Adw.StyleManager.get_default().connect('notify::accent-color', lambda _sm, _p: self.init_accent_colors())
 
-        GLib.idle_add(self.library.populate)
-
     def do_present(self):
         self.present()
+
+        self.library.populate()
 
         # Detect maximized/unmaximized state changes
         self.get_native().get_surface().connect('notify::state', self.on_state_changed)

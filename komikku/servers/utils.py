@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -398,6 +398,9 @@ def get_soup_element_inner_text(tag, text=None, sep=' ', recursive=True):
 
     :param text: A optional list of text strings to prepend
     :type text: list of str
+
+    :param sep: The separator to use to join strings
+    :type sep: str
 
     :param recursive: Recursively walk in children or not
     :type recursive: bool

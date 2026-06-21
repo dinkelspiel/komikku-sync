@@ -1,5 +1,5 @@
 /*!
- * SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+ * SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -60,7 +60,6 @@ label.badge {
     background-color: var(--overview-bg-color);
 }
 flowbox flowboxchild {
-    padding: 6px; /* default is 4px */
     border-radius: 12px; /* default is 6px */
 }
 flowbox flowboxchild:selected {

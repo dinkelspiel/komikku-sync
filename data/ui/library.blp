@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+// SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -91,15 +91,11 @@ template $LibraryPage : Adw.NavigationPage {
                 hscrollbar-policy: never;
 
                 FlowBox flowbox {
+                  column-spacing: 0;
+                  row-spacing: 0;
                   homogeneous: true;
-                  margin-top: 3;
-                  margin-end: 3;
-                  margin-bottom: 3;
-                  margin-start: 3;
-                  row-spacing: 6;
-                  column-spacing: 6;
                   min-children-per-line: 2;
-                  max-children-per-line: 48;
+                  max-children-per-line: 999;
                   selection-mode: none;
                 }
 

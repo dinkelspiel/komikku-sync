@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -135,10 +135,6 @@ class ChaptersList:
         clear_reset_selected_chapters_action = Gio.SimpleAction.new('card.clear-reset-selected-chapters', None)
         clear_reset_selected_chapters_action.connect('activate', self.clear_selected_chapters, True)
         self.card.window.application.add_action(clear_reset_selected_chapters_action)
-
-        select_all_chapters_action = Gio.SimpleAction.new('card.select-all-chapters', None)
-        select_all_chapters_action.connect('activate', self.select_all)
-        self.card.window.application.add_action(select_all_chapters_action)
 
         # Chapters menu actions
         download_chapter_action = Gio.SimpleAction.new('card.download-chapter', GLib.VariantType.new('q'))

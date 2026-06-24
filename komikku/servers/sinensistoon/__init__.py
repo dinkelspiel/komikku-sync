@@ -18,6 +18,7 @@ class Sinensistoon(Madara2):
     id = 'sinensistoon'
     name = 'Lovers Toon (Sinensis/Cerise)'
     lang = 'pt_BR'
+    status = 'disabled'  # Dead 05/2026 => loverstoon.net
 
     date_format = '%d.%m.%Y'
 

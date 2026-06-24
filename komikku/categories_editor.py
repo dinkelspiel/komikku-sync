@@ -156,8 +156,7 @@ class CategoryRow(Gtk.ListBoxRow):
         self.category = category
 
         self.label_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6, hexpand=True)
-        self.label = Gtk.Label(label=category.label, xalign=0, wrap=True)
-        self.label.set_halign(Gtk.Align.START)
+        self.label = Gtk.Label(label=category.label, wrap=True)
         self.label_box.append(self.label)
         if nb_mangas := len(category.mangas):
             # Add badge to display number of associated manga
@@ -174,6 +173,7 @@ class CategoryRow(Gtk.ListBoxRow):
         self.delete_button = Gtk.Button.new_from_icon_name('user-trash-symbolic')
         self.delete_button.set_tooltip_text(_('Delete'))
         self.delete_button.set_valign(Gtk.Align.CENTER)
+        self.delete_button.add_css_class('destructive-action')
         self.box.append(self.delete_button)
 
         self.edit_button = Gtk.Button.new_from_icon_name('document-edit-symbolic')

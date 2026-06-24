@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-19 05:01+0000\n"
+"PO-Revision-Date: 2026-06-25 06:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -787,7 +787,7 @@ msgstr "Множник чутливості прокручування пере�
 
 #: ../data/ui/preferences.blp:405
 msgid "Advanced"
-msgstr "Розширений"
+msgstr "Просунуте"
 
 #: ../data/ui/preferences.blp:409
 msgid "A setting has changed that requires a restart to take effect"
@@ -859,7 +859,7 @@ msgstr "Використовується, якщо не знайдено жод�
 
 #: ../data/ui/preferences.blp:481
 msgid "Tweaks"
-msgstr "Твіки"
+msgstr "Докрутки"
 
 #: ../data/ui/preferences.blp:484
 msgid "Disable Animations"

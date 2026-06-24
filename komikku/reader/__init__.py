@@ -284,7 +284,7 @@ class ReaderPage(Adw.NavigationPage):
 
         # Sync Library page (root)
         if self.manga.in_library:
-            self.window.library.update_thumbnail(self.manga)
+            self.window.library.update_flowbox_child(self.manga)
             self.window.library.flowbox.invalidate_sort()
 
     def on_key_pressed(self, _controller, keyval, _keycode, state):

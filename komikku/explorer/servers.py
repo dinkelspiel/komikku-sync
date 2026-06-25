@@ -181,7 +181,7 @@ class ExplorerServersPage(Adw.NavigationPage):
 
                 row = Gtk.ListBoxRow(activatable=False)
                 row.add_css_class('explorer-server-section-listboxrow')
-                label = Gtk.Label(xalign=0)
+                label = Gtk.Label(halign=Gtk.Align.CENTER)
                 label.add_css_class('subtitle')
                 label.set_text(LANGUAGES.get(server_data['lang'], _('Other')).upper())
                 row.set_child(label)
@@ -218,7 +218,7 @@ class ExplorerServersPage(Adw.NavigationPage):
             # Add header
             row = Gtk.ListBoxRow(activatable=False)
             row.add_css_class('explorer-server-section-listboxrow')
-            label = Gtk.Label(xalign=0)
+            label = Gtk.Label(halign=Gtk.Align.CENTER)
             label.add_css_class('subtitle')
             label.set_text(_('Pinned').upper())
             row.set_child(label)

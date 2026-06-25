@@ -15,7 +15,6 @@ from komikku.servers import Server
 from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_response_elapsed
-from komikku.utils import is_number
 
 SEARCH_RESULTS_PAGES = 4
 SEARCH_RESULTS_PAGE_LIMIT = 24
@@ -37,6 +36,7 @@ class Mangak(Server):
 
     api_url = 'https://api.mangak.io'
     api_search_url = api_url + '/titles/search'
+    api_chapters_url = api_url + '/titles/{0}/chapters'
 
     filters = [
         {
@@ -191,13 +191,29 @@ class Mangak(Server):
             data['synopsis'] = synopsis
 
         # Chapters
-        for chapter in reversed(props['chapters']):
+        r = self.session_get(
+            self.api_chapters_url.format(id_),
+            params={
+                'cv': int(time.time() * 1000),
+            },
+            headers={
+                'Referer': self.manga_url.format(slug),
+            }
+        )
+        if r.status_code != 200:
+            return None
+
+        resp_data = r.json()
+        if not resp_data.get('success'):
+            return None
+
+        for chapter in reversed(resp_data['data']['chapters']):
+            # `chapter_number` field can't be used, it's an internal sorting index
             data['chapters'].append({
-                'slug': f'{chapter["realId"]}:{chapter["slug"]}',  # noqa
+                'slug': f'{chapter["id"]}:{chapter["slug"]}',  # noqa
                 'title': chapter['name'],
-                'num': chapter.get('chapterNumber') if is_number(chapter.get('chapterNumber')) else None,
                 'scanlators': [chapter['group']] if chapter.get('group') else None,
-                'date': convert_date_string(chapter['updatedAt'].split('T')[0], format='%Y-%m-%d'),
+                'date': convert_date_string(chapter['updated_at'].split('T')[0], format='%Y-%m-%d'),
             })
 
         return data
@@ -208,7 +224,7 @@ class Mangak(Server):
 
         Currently, only pages are expected.
         """
-        manga_id_, manga_slug = manga_slug.split(':')
+        _manga_id, manga_slug = manga_slug.split(':')
         chapter_id_, chapter_slug = chapter_slug.split(':')
 
         r = self.session_get(self.chapter_url.format(manga_slug, chapter_slug))
@@ -265,7 +281,7 @@ class Mangak(Server):
         """
         Returns manga absolute URL
         """
-        id_, slug = slug.split(':')
+        _id, slug = slug.split(':')
         return self.manga_url.format(slug)
 
     def get_manga_list(self, term=None, content_rating=None, type=None, demographic=None, status=None, orderby=None):

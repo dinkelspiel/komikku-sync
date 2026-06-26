@@ -150,20 +150,22 @@ class CategoryRow(Gtk.ListBoxRow):
         Gtk.ListBoxRow.__init__(self, activatable=False)
 
         self.box = Gtk.Box(
-            orientation=Gtk.Orientation.HORIZONTAL, spacing=12, margin_top=8, margin_start=12, margin_bottom=8, margin_end=12
+            orientation=Gtk.Orientation.HORIZONTAL, spacing=6, margin_top=8, margin_start=12, margin_bottom=8, margin_end=12
         )
 
         self.category = category
 
-        self.label_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6, hexpand=True)
-        self.label = Gtk.Label(label=category.label, wrap=True)
-        self.label_box.append(self.label)
+        self.title_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12, hexpand=True)
+
+        # Add badge to display number of associated series
         if nb_mangas := len(category.mangas):
-            # Add badge to display number of associated manga
-            label = Gtk.Label(label=str(nb_mangas), valign=Gtk.Align.CENTER)
-            label.set_css_classes(['badge', 'caption'])
-            self.label_box.append(label)
-        self.box.append(self.label_box)
+            self.badge_label = Gtk.Label(label=str(nb_mangas), valign=Gtk.Align.CENTER)
+            self.badge_label.set_css_classes(['badge', 'caption'])
+            self.title_box.append(self.badge_label)
+
+        self.title_label = Gtk.Label(label=category.label, hexpand=True, wrap=True, xalign=0)
+        self.title_box.append(self.title_label)
+        self.box.append(self.title_box)
 
         self.edit_entry = Gtk.Entry(visible=False, hexpand=True)
         self.edit_entry.set_valign(Gtk.Align.CENTER)
@@ -200,7 +202,7 @@ class CategoryRow(Gtk.ListBoxRow):
 
     def set_edit_mode(self, _button=None, active=False):
         if active:
-            self.label_box.set_visible(False)
+            self.title_box.set_visible(False)
             self.edit_entry.set_text(self.category.label)
             self.edit_entry.set_visible(True)
             self.delete_button.set_visible(False)
@@ -208,7 +210,7 @@ class CategoryRow(Gtk.ListBoxRow):
             self.cancel_button.set_visible(True)
             self.save_button.set_visible(True)
         else:
-            self.label_box.set_visible(True)
+            self.title_box.set_visible(True)
             self.edit_entry.set_text('')
             self.edit_entry.set_visible(False)
             self.delete_button.set_visible(True)
@@ -219,4 +221,4 @@ class CategoryRow(Gtk.ListBoxRow):
         self.emit('edit-mode-changed', active)
 
     def set_label(self, text):
-        self.label.set_text(text)
+        self.title_label.set_text(text)

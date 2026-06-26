@@ -13,6 +13,7 @@ class Mangabuddy(Madtheme):
     id = 'mangabuddy'
     name = 'MangaBuddy'
     lang = 'en'
+    status = 'disabled'
 
     base_url = 'https://mangabuddy.com'
     logo_url = base_url + '/static/sites/mangabuddy/icons/favicon-32x32.png'

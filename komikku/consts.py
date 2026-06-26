@@ -254,13 +254,10 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] MangaDex (multi): Update</li>
-    <li>[Servers] Nine Manga (multi): Disabled</li>
-    <li>[Servers] Qi Scans (EN): Update</li>
-    <li>[Servers] Raijin Scan (FR): Update</li>
-    <li>[Servers] Read Comics Online (EN): Update</li>
-    <li>Fixed memory leaks</li>
-    <li>[L10n] Updated Ukrainian translation</li>
+    <li>[Servers] Added MangaK (EN)</li>
+    <li>[Servers] Lovers Toon (pt_BR): Disabled</li>
+    <li>[Servers] MangaBuddy (EN): Disabled</li>
+    <li>[L10n] Updated Korean and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

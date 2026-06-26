@@ -114,6 +114,17 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.8.0" date="2026-06-26">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] Added MangaK (EN)</li>
+                    <li>[Servers] Lovers Toon (pt_BR): Disabled</li>
+                    <li>[Servers] MangaBuddy (EN): Disabled</li>
+                    <li>[L10n] Updated Korean and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.7.0" date="2026-06-18">
             <description translate="no">
                 <ul>

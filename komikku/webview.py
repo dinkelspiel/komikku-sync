@@ -293,7 +293,7 @@ class WebviewPage(Adw.NavigationPage):
         self.pop_challenger()
 
     def show(self):
-        self.window.navigationview.push(self)
+        GLib.idle_add(self.window.navigationview.push, self)
 
 
 class CompleteChallenge:
@@ -801,13 +801,13 @@ def get_tracker_access_token(url, app_redirect_url, user_agent=None):
         if not webview.load_page(uri=url, user_agent=user_agent):
             return False
 
+        # We assume that this function is always called from preferences
+        # Preferences dialog must be closed before opening webview page
+        GLib.idle_add(webview.window.preferences.force_close)
+
         webview.connect_signal('cancelled', on_cancelled)
         webview.connect_webview_signal('load-changed', on_load_changed)
         webview.connect_webview_signal('load-failed', on_load_failed)
-
-        # We assume that this function is always called from preferences
-        # Preferences dialog must be closed before opening webview page
-        webview.window.preferences.close()
         webview.show()
 
         return True
@@ -840,6 +840,6 @@ def get_tracker_access_token(url, app_redirect_url, user_agent=None):
     if error != 'locked':
         # We assume that this function is always called from preferences
         # Preferences dialog must be re-opened after closing webview page
-        webview.window.preferences.present(webview.window)
+        GLib.idle_add(webview.window.preferences.show)
 
     return redirect_url, error

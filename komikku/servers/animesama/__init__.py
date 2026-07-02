@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023-2024 Valéry Febvre
+# SPDX-FileCopyrightText: 2023-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -22,6 +22,7 @@ class Animesama(Server):
     chapter_url = base_url + '/catalogue/{0}/scan/vf/'
     api_chapters_url = base_url + '/s2/scans/get_nb_chap_et_img.php'
     image_url = base_url + '/s2/scans/{0}/{1}/{2}.jpg'
+    cover_url = 'https://raw.githubusercontent.com/Anime-Sama/IMG/img/contenu/{0}.jpg'
 
     long_strip_genres = ['Webcomic']
 
@@ -46,7 +47,7 @@ class Animesama(Server):
 
         data = initial_data.copy()
         data.update(dict(
-            authors=[],     # not available
+            authors=[],
             scanlators=[],  # not available
             genres=[],
             status=None,    # not available
@@ -57,18 +58,16 @@ class Animesama(Server):
         ))
 
         data['name'] = soup.select_one('.oeuvre-right h1').text.strip()
-        data['cover'] = soup.select_one('#coverOeuvre').get('src')
+        data['cover'] = self.cover_url.format(data['slug'])
+
+        if element := soup.select_one('.info-grid > .info-lbl:-soup-contains("Créateur") ~ span'):
+            data['authors'].append(element.text.strip())
+
+        for element in soup.select('.genre-pill'):
+            data['genres'].append(element.text.strip())
 
         if element := soup.select_one('div h2:-soup-contains("Synopsis") ~ p'):
             data['synopsis'] = element.text.strip()
-
-        if element := soup.select_one('div h2:-soup-contains("Genres") ~ a'):
-            genres = element.text
-            if ',' in genres:
-                genres = genres.split(',')
-            elif '-' in genres:
-                genres = genres.split('-')
-            data['genres'] = [genre.strip() for genre in genres]
 
         # Chapters
         oeuvre = self.get_manga_oeuvre(data['slug'])

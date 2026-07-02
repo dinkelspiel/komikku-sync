@@ -1,6 +1,6 @@
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
     # Identify invalid files
     -   id: check-ast
@@ -26,7 +26,7 @@ repos:
         exclude: ^.*\.json$
 
 -   repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+    rev: 7.3.0
     hooks:
     -   id: flake8
         additional_dependencies: [flake8-pyproject, flake8-quotes]

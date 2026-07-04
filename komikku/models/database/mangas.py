@@ -431,12 +431,12 @@ class Manga:
         elif self.sort_order in ('natural-asc', 'natural-desc'):
             if scanlators_subquery:
                 row = db_conn.execute(
-                    f'SELECT * FROM chapters WHERE manga_id = ? AND id IN ({scanlators_subquery}) AND title {op} ? COLLATE natsort ORDER BY title {order}, id {order}',
+                    f'SELECT * FROM chapters WHERE manga_id = ? AND id IN ({scanlators_subquery}) AND title {op} ? COLLATE natsort ORDER BY title COLLATE natsort {order}, id {order}',
                     (self.id, chapter.title)
                 ).fetchone()
             else:
                 row = db_conn.execute(
-                    f'SELECT * FROM chapters WHERE manga_id = ? AND title {op} ? COLLATE natsort ORDER BY title {order}, id {order}',
+                    f'SELECT * FROM chapters WHERE manga_id = ? AND title {op} ? COLLATE natsort ORDER BY title COLLATE natsort {order}, id {order}',
                     (self.id, chapter.title)
                 ).fetchone()
 

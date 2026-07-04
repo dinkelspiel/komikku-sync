@@ -11,6 +11,8 @@ import rarfile
 import tarfile
 import xml.etree.ElementTree as ET
 import zipfile
+from natsort import natsorted as sorted
+
 
 import ebooklib
 from ebooklib import epub

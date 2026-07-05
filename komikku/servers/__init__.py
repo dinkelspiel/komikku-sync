@@ -202,6 +202,13 @@ class Server(BaseServer, ABC):
         - title: Title of the chapter
         - date: Publish date of the chapter [optional]
         - scanlators: List of scanlators (str) [optional]
+
+        Beware, the slug passed to `initial_data` param must never be modified.
+        It must remain the same as the one obtained from search,
+        because the slug's uniqueness is verified during search.
+        If slug is modified, an UNIQUE constraint on (server_id, slug) can be violated when
+        inserting manga into the database.
+        However, there is one exception: when updating and a change in slug format is detected.
         """
 
     @abstractmethod

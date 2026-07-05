@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020-2025 Liliana Prikler
+# SPDX-FileCopyrightText: 2020-2026 Liliana Prikler
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Liliana Prikler <liliana.prikler@gmail.com>
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
@@ -6,6 +6,7 @@
 from gettext import gettext as _
 import json
 import logging
+import re
 
 from bs4 import BeautifulSoup
 import requests
@@ -16,7 +17,7 @@ from komikku.servers.utils import convert_date_string
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import skip_past
 
-logger = logging.getLogger('komikku.servers.dynasty')
+logger = logging.getLogger(__name__)
 
 
 class Dynasty(Server):
@@ -28,7 +29,6 @@ class Dynasty(Server):
     base_url = 'https://dynasty-scans.com'
     logo_url = base_url + '/assets/favicon-96599a954b862bfaaa71372cc403a6ab.png'
     search_url = base_url + '/search'
-    last_updates_url = base_url + '/chapters/added'
     manga_url = base_url + '/{0}'
     chapter_url = base_url + '/chapters/{0}'
     tags_url = base_url + '/tags/suggest/'
@@ -73,7 +73,7 @@ class Dynasty(Server):
     @classmethod
     def get_manga_initial_data_from_url(cls, url):
         if idx := skip_past(url, 'dynasty-scans.com/'):
-            return dict(slug=url[idx:])
+            return {'slug': url[idx:]}
 
         return None
 
@@ -89,37 +89,19 @@ class Dynasty(Server):
         if r.status_code != 200:
             return None
 
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
-            return None
-
         soup = BeautifulSoup(r.text, 'lxml')
 
-        # Check if chapter belongs to a serie
-        if a_element := soup.select_one('#chapter-title > b > a'):
-            initial_data['slug'] = a_element.get('href').lstrip('/')
-
-            r = self.session_get(self.manga_url.format(initial_data['slug']))
-            if r.status_code != 200:
-                return None
-
-            mime_type = get_buffer_mime_type(r.content)
-            if mime_type != 'text/html':
-                return None
-
-            soup = BeautifulSoup(r.text, 'lxml')
-
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-            cover=None,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+            'cover': None,
+        })
 
         class_ = initial_data['slug'].split('/')[0]
 
@@ -144,11 +126,11 @@ class Dynasty(Server):
 
         date_text = details.select_one('span.released').text.strip()
 
-        data['chapters'].append(dict(
-            slug=data['slug'].split('/')[-1],
-            title=data['name'],
-            date=convert_date_string(date_text),
-        ))
+        data['chapters'].append({
+            'slug': data['slug'].split('/')[-1],
+            'title': data['name'],
+            'date': convert_date_string(date_text),
+        })
 
         # Use first page as cover
         for script_element in soup.select('script'):
@@ -223,8 +205,7 @@ class Dynasty(Server):
             data['synopsis'] = '\n\n'.join([p.text.strip() for p in elements])
 
         # Chapters
-        elements = soup.select('dl.chapter-list dd')
-        for element in elements:
+        for element in soup.select('dl.chapter-list dd'):
             a_element = element.select_one('a')
             date_text = None
             for small in element.select('small'):
@@ -232,11 +213,11 @@ class Dynasty(Server):
                 if small.startswith('released'):
                     date_text = small[len('released'):]
 
-            data['chapters'].append(dict(
-                slug=a_element.get('href').split('/')[-1],
-                title=a_element.text.strip(),
-                date=convert_date_string(date_text),
-            ))
+            data['chapters'].append({
+                'slug': a_element.get('href').split('/')[-1],
+                'title': a_element.text.strip(),
+                'date': convert_date_string(date_text),
+            })
 
         return data
 
@@ -248,10 +229,6 @@ class Dynasty(Server):
         """
         r = self.session_get(self.chapter_url.format(chapter_slug))
         if r.status_code != 200:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
@@ -274,14 +251,14 @@ class Dynasty(Server):
         if pages is None:
             return None
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         for page in pages:
-            data['pages'].append(dict(
-                slug=None,  # not necessary, we know image url directly
-                image=self.base_url + page['image'],
-            ))
+            data['pages'].append({
+                'slug': None,  # not necessary, we know image url directly
+                'image': self.base_url + page['image'],
+            })
 
         return data
 
@@ -297,11 +274,11 @@ class Dynasty(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('?')[0].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('?')[0].split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """
@@ -310,79 +287,59 @@ class Dynasty(Server):
         return self.manga_url.format(slug)
 
     def resolve_tag(self, search_tag):
-        r = self.session_post(self.tags_url, params=dict(query=search_tag))
+        r = self.session_post(self.tags_url, params={'query': search_tag})
         if r.status_code != 200:
             return None
 
-        tag_id = None
         for tag in r.json():
             if tag['name'].lower() == search_tag.lower():
-                tag_id = tag['id']
-                break
+                return tag['id']
 
-        return tag_id
+        return None
 
-    def _do_search(self, response, with_tags=None, without_tags=None):
-        if response.status_code != 200:
-            return None
-
-        # Make sure with_tags and without_tags are lists if not provided
-        if not with_tags:
-            with_tags = []
-        if not without_tags:
-            without_tags = []
-
-        try:
-            results = []
-            soup = BeautifulSoup(response.text, 'lxml')
-            elements = soup.select('dl.chapter-list dd')
-
-            for element in elements:
-                a_element = element.select_one('a.name')
-
-                do_include = True
-                if with_tags or without_tags:
-                    tags_element = element.select_one('tags')
-                    tags = set([])
-                    if tags_element:
-                        tags = [t.text.strip() for t in tags_element.select('a')]
-                        do_include = do_include and tags >= set(with_tags)
-                        do_include = do_include and tags.isdisjoint(set(without_tags))
-                    elif with_tags:
-                        do_include = False
-
-                if do_include:
-                    results.append(dict(
-                        slug=a_element.get('href').lstrip('/'),
-                        name=a_element.text.strip(),
-                    ))
-        except Exception:
-            return None
-        else:
-            return results
-
-    def get_latest_updates(self, classes=None, with_tags='', without_tags=''):
-        with_tags = [t.strip() for t in with_tags.split(',') if t]
-        without_tags = [t.strip() for t in without_tags.split(',') if t]
-
-        return self._do_search(self.session_get(self.last_updates_url), with_tags=with_tags, without_tags=without_tags)
-
-    def search(self, term, classes=None, with_tags='', without_tags=''):
-        if classes is None:
-            classes = []
-
-        classes = sorted(classes, key=str.lower)
+    def get_manga_list(self, term=None, classes=None, with_tags='', without_tags=''):
         with_tags = [self.resolve_tag(t.strip()) for t in with_tags.split(',') if t]
         without_tags = [self.resolve_tag(t.strip()) for t in without_tags.split(',') if t]
+        classes = sorted(classes, key=str.lower) if classes else []
 
-        r = self.session_get(
-            self.search_url,
-            params={
-                'q': term,
-                'classes[]': classes,
-                'with[]': with_tags,
-                'without[]': without_tags,
-            }
-        )
+        params = {
+            'q': '',
+            'classes[]': classes,
+            'with[]': with_tags,
+            'without[]': without_tags,
+            'sort': '',
+        }
 
-        return self._do_search(r)
+        if term:
+            # Search
+            params['q'] = term
+        else:
+            # Latest
+            params['sort'] = 'created_at'
+
+        r = self.session_get(self.search_url, params=params)
+        if r.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(r.text, 'lxml')
+
+        results = []
+        for a_element in soup.select('dl.chapter-list dd a.name'):
+            slug = a_element.get('href').lstrip('/')
+            if slug.startswith('chapters/'):
+                # Check if chapter belongs to a serie
+                if matches := re.search(r'([a-z_\/]*)_ch[0-9_]*', slug):
+                    slug = matches.group(1).replace('chapters/', 'series/')
+
+            results.append({
+                'slug': slug,
+                'name': a_element.text.strip(),
+            })
+
+        return results
+
+    def get_latest_updates(self, classes=None, with_tags='', without_tags=''):
+        return self.get_manga_list(classes=classes, with_tags=with_tags, without_tags=without_tags)
+
+    def search(self, term, classes=None, with_tags='', without_tags=''):
+        return self.get_manga_list(term=term, classes=classes, with_tags=with_tags, without_tags=without_tags)

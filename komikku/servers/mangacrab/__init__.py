@@ -17,6 +17,7 @@ class Mangacrab(Madara2):
     id = 'mangacrab'
     name = 'MangaCrab'
     lang = 'es'
+    status = 'disabled'
     is_nsfw = True
 
     date_format = '%d/%m/%Y'

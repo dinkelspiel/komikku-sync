@@ -206,17 +206,15 @@ class Dynasty(Server):
 
         # Chapters
         for element in soup.select('dl.chapter-list dd'):
-            if (a_element := element.select_one('a')) is not None:
+            if a_element := element.select_one('a'):
                 date_text = None
-                for small in element.select('small'):
-                    small = small.text.strip()
-                    if small.startswith('released'):
-                        date_text = small[len('released'):]
+                if small := element.select_one('small:-soup-contains("release")'):
+                    date_text = small.text[8:].strip()
 
                 data['chapters'].append({
                     'slug': a_element.get('href').split('/')[-1],
                     'title': a_element.text.strip(),
-                    'date': convert_date_string(date_text),
+                    'date': convert_date_string(date_text) if date_text else None,
                 })
 
         return data

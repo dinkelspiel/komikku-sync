@@ -11,11 +11,11 @@ import rarfile
 import tarfile
 import xml.etree.ElementTree as ET
 import zipfile
-from natsort import natsorted as sorted
 
-
-import ebooklib
 from ebooklib import epub
+from ebooklib import ITEM_COVER
+from ebooklib import ITEM_IMAGE
+from natsort import natsorted as sorted
 from pypdf import PdfReader
 
 from komikku.servers import Server
@@ -25,8 +25,8 @@ from komikku.servers.exceptions import ServerException
 from komikku.servers.utils import convert_date_string
 from komikku.utils import concat_images_vertically
 from komikku.utils import get_buffer_mime_type
-from komikku.utils import get_file_mime_type
 from komikku.utils import get_data_dir
+from komikku.utils import get_file_mime_type
 
 IMG_EXTENSIONS = ['bmp', 'gif', 'jpg', 'jpeg', 'jxl', 'png', 'tif', 'tiff', 'webp']
 
@@ -278,10 +278,10 @@ class EPUB:
     def get_namelist(self):
         namelist = []
 
-        for image in self.archive.get_items_of_type(ebooklib.ITEM_COVER):
+        for image in self.archive.get_items_of_type(ITEM_COVER):
             namelist.append(image.get_name())
 
-        for image in self.archive.get_items_of_type(ebooklib.ITEM_IMAGE):
+        for image in self.archive.get_items_of_type(ITEM_IMAGE):
             namelist.append(image.get_name())
 
         return namelist

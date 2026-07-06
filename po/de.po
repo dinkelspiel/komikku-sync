@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-06 06:01+0000\n"
+"PO-Revision-Date: 2026-07-07 07:01+0000\n"
 "Last-Translator: anon <anon0000000000@users.noreply.hosted.weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/>"
 "\n"
@@ -1460,16 +1460,19 @@ msgid "Nonbinary Pride Colors"
 msgstr "Nonbinary-Pride-Farben"
 
 #: ../komikku/consts.py:39
+#, fuzzy
 msgid "Bisexual Pride Colors"
-msgstr ""
+msgstr "Bisexuelle-Pride-Farbem"
 
 #: ../komikku/consts.py:43
+#, fuzzy
 msgid "Asexual Pride Colors"
-msgstr ""
+msgstr "Asexuelle-Pride-Farben"
 
 #: ../komikku/consts.py:47
+#, fuzzy
 msgid "Pansexual Pride Colors"
-msgstr ""
+msgstr "Pansexuelle-Pride-Farben"
 
 #: ../komikku/consts.py:51
 msgid "Aromantic Pride Colors"
@@ -1525,7 +1528,7 @@ msgstr ""
 
 #: ../komikku/consts.py:103
 msgid "Random Colors"
-msgstr ""
+msgstr "Zufällige Farben"
 
 #: ../komikku/downloader.py:274
 #, python-brace-format

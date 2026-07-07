@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-07 10:26+0000\n"
+"PO-Revision-Date: 2026-07-07 11:25+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -37,7 +37,7 @@ msgstr "@description@"
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 msgstr ""
-"manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;мальопис;манґа;манга;читач;пере;глядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;сканлейт;сканляція;сканлятори;книга;електронна;книга;офлайн;GTK;Adwaita;GNOME;"
+"manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;мальопис;манґа;манга;читач;переглядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;сканлейт;сканляція;сканлятори;книга;електронна;книга;офлайн;GTK;Adwaita;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -87,7 +87,7 @@ msgstr "Категорії для організації бібліотеки"
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
 msgstr ""
-"Автоматичне відстеження серіалів за допомогою AniList, MangaUpdates та "
+"Автоматичне відстеження серій за допомогою AniList, MangaUpdates та "
 "MyAnimeList"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
@@ -735,7 +735,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:347
 msgid "Borders Crop"
-msgstr "Обрізати межі"
+msgstr "Обрізати поля"
 
 #: ../data/ui/preferences.blp:348
 msgid ""
@@ -820,7 +820,7 @@ msgstr "Очистити дані"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
-msgstr "Використовувати найновіші серверні модулі"
+msgstr "Використовувати начасні серверні модулі"
 
 #: ../data/ui/preferences.blp:462
 msgid ""
@@ -856,7 +856,7 @@ msgstr "Дозволити зберігання без шифрування як
 
 #: ../data/ui/preferences.blp:476
 msgid "Used when no keyring backends are found"
-msgstr "Коли не знайдено підтримуваних ключниць (сховищ)"
+msgstr "Коли не знайдено підтримуваних ключниць"
 
 #: ../data/ui/preferences.blp:481
 msgid "Tweaks"

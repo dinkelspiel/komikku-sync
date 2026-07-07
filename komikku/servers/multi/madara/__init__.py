@@ -34,6 +34,7 @@
 # Toonily [EN]
 # Wakascan [FR] (disabled)
 # Webtoon Hatti [TR]
+# Webtoon TR [TR] (disabled)
 
 import datetime
 from gettext import gettext as _

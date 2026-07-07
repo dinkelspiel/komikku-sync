@@ -9,6 +9,7 @@ class Webtoontr(Madara):
     id = 'webtoontr'
     name = 'Webtoon TR'
     lang = 'tr'
+    status = 'disabled'  # Dead source
     is_nsfw = True
 
     date_format = '%d/%m/%Y'

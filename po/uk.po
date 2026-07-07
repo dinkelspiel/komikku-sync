@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-25 06:01+0000\n"
+"PO-Revision-Date: 2026-07-07 10:26+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -36,7 +36,8 @@ msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
-msgstr "манґа;читач;глядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;книга;електронна;книга;офлайн;GTK;GNOME;"
+msgstr ""
+"manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;мальопис;манґа;манга;читач;пере;глядач;комікс;манхва;манхуа;вебтун;вебкомікс;сканування;сканлейт;сканляція;сканлятори;книга;електронна;книга;офлайн;GTK;Adwaita;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -95,7 +96,7 @@ msgstr "Автоматичне оновлення серій"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr "Автоматичне завантаження нових розділів"
+msgstr "Автоматичне довантаження нових розділів"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
@@ -464,11 +465,11 @@ msgstr "Системна"
 
 #: ../data/ui/preferences.blp:73
 msgid "Night Light"
-msgstr "Нічний режим"
+msgstr "Нічна тема"
 
 #: ../data/ui/preferences.blp:74
 msgid "Automatically enable dark theme at night"
-msgstr "Автоматично вмикати темну тему вночі"
+msgstr "Вмикати темну тему вночі"
 
 #: ../data/ui/preferences.blp:79
 msgid "Use system accent colors"
@@ -538,7 +539,7 @@ msgstr "Відображати логотипи серверів"
 
 #: ../data/ui/preferences.blp:142
 msgid "Badges"
-msgstr "Значки"
+msgstr "Лічильники на обкладинках"
 
 #: ../data/ui/preferences.blp:145
 msgid "Number of Unread Chapters"
@@ -550,23 +551,23 @@ msgstr "Кількість завантажених розділів"
 
 #: ../data/ui/preferences.blp:185
 msgid "Number of Recent and Unread Chapters"
-msgstr "Кількість останніх і непрочитаних розділів"
+msgstr "Кількість нових і непрочитаних розділів"
 
 #: ../data/ui/preferences.blp:210
 msgid "Update at Startup"
-msgstr "Оновлення під час запуску"
+msgstr "Оновлення бібліотеки"
 
 #: ../data/ui/preferences.blp:211
 msgid "Automatically update library at startup"
-msgstr "Автоматичне оновлення бібліотеки під час запуску"
+msgstr "Освіжувати бібліотеку під час запуску"
 
 #: ../data/ui/preferences.blp:215
 msgid "Auto Download of New Chapters"
-msgstr "Автозавантаження нових розділів"
+msgstr "Поповнення бібліотеки"
 
 #: ../data/ui/preferences.blp:216
 msgid "Automatically download new chapters"
-msgstr "Автоматичне завантаження нових розділів"
+msgstr "Довантажувати нові розділи"
 
 #: ../data/ui/preferences.blp:224
 msgid "Languages"
@@ -686,7 +687,7 @@ msgstr "Повноекранний режим"
 
 #: ../data/ui/preferences.blp:320
 msgid "Automatically enter fullscreen mode"
-msgstr "Автоматично переходити до повноекранного режиму"
+msgstr "Під час читання переходити в повноекранний режим"
 
 #: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
@@ -743,10 +744,10 @@ msgid ""
 "NOTE: Requires more CPU usage and can cause rendering and animation "
 "slowdowns, especially on mobile devices."
 msgstr ""
-"Обрізати білі межі зображень\n"
+"Обрізати білі поля зображень\n"
 "\n"
-"ПРИМІТКА: Вимагає більше використання процесора і може спричинити "
-"уповільнення рендерингу та анімації, особливо на мобільних пристроях."
+"ПРИМІТКА: Збільшує навантаження на процесор і може спричинити уповільнення "
+"відображення та анімації, особливо на мобільних пристроях."
 
 #: ../data/ui/preferences.blp:353 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
@@ -819,7 +820,7 @@ msgstr "Очистити дані"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
-msgstr "Використовуйте найновіші серверні модулі"
+msgstr "Використовувати найновіші серверні модулі"
 
 #: ../data/ui/preferences.blp:462
 msgid ""
@@ -828,12 +829,12 @@ msgid ""
 "delivered with the application."
 msgstr ""
 "Замість серверних модулів, що постачаються з програмою, використовується "
-"альтернативна версія, яка встановлюється зі сховища вихідного коду й "
-"оновлюється при кожному запуску."
+"альтернативна версія зі сховища вихідного коду й оновлюється при кожному "
+"запуску."
 
 #: ../data/ui/preferences.blp:466
 msgid "Suggest Submitting a Bug Report in Case of Error"
-msgstr "Пропонувати надсилати звіт про вади у разі помилки"
+msgstr "Пропонувати створити звернення про вади у разі помилки"
 
 #: ../data/ui/preferences.blp:467
 msgid ""
@@ -841,21 +842,21 @@ msgid ""
 "has arisen), you will be prompted to create a bug report using a pre-"
 "formatted text to copy/paste."
 msgstr ""
-"Якщо на сервері виникне помилка (його було оновлено або сталася "
-"непередбачена ситуація), вам буде запропоновано створити звіт про ваду за "
-"допомогою заздалегідь підготовленого тексту для копіювання та вставки."
+"Якщо на сервері виникне помилка (його оновлено або сталася непередбачена "
+"ситуація), вам буде запропоновано створити звернення про ваду за допомогою "
+"заздалегідь підготовленого тексту для копіювання та вставки."
 
 #: ../data/ui/preferences.blp:472
 msgid "Credentials Storage"
-msgstr "Сховище облікових записів"
+msgstr "Сховище облікових даних"
 
 #: ../data/ui/preferences.blp:475
 msgid "Allow Plaintext Storage as Fallback"
-msgstr "Дозволити зберігання відкритого тексту як запасний варіант"
+msgstr "Дозволити зберігання без шифрування як запасний варіант"
 
 #: ../data/ui/preferences.blp:476
 msgid "Used when no keyring backends are found"
-msgstr "Використовується, якщо не знайдено жодного Keyring бекенда"
+msgstr "Коли не знайдено підтримуваних ключниць (сховищ)"
 
 #: ../data/ui/preferences.blp:481
 msgid "Tweaks"
@@ -1510,7 +1511,7 @@ msgstr "Neutrois Pride Colors"
 
 #: ../komikku/consts.py:103
 msgid "Random Colors"
-msgstr "Випадкові кольори"
+msgstr "Випадково"
 
 #: ../komikku/downloader.py:274
 #, python-brace-format
@@ -1547,13 +1548,13 @@ msgstr "Довідка"
 
 #: ../komikku/explorer/common.py:268
 msgid "Local Folder"
-msgstr "На комп'ютері"
+msgstr "Локальна тека"
 
 #: ../komikku/explorer/common.py:270
 msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
-msgstr "Щоб локальні мальописи працювали, потрібна певна структура папок."
+msgstr "Для належної роботи локальних мальописів потрібна певна структура тек."
 
 #: ../komikku/explorer/common.py:271
 msgid ""

@@ -6,21 +6,23 @@
 # gallegonovato <fran-carro@hotmail.es>, 2023, 2024.
 # Óscar Fernández Díaz <42654671+oscfdezdz@users.noreply.github.com>, 2025.
 # Klauss <lukasfigueroa.09@gmail.com>, 2025.
+# Champiñon Traductor <300458929+champinondev-lab@users.noreply.github.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.30.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2025-12-27 16:00+0000\n"
-"Last-Translator: Klauss <lukasfigueroa.09@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/komikku/main/es/"
-">\n"
+"PO-Revision-Date: 2026-07-07 07:01+0000\n"
+"Last-Translator: Champiñon Traductor <300458929+champinondev-"
+"lab@users.noreply.github.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/komikku/main/es/>"
+"\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -58,6 +60,7 @@ msgstr "Lectura en línea y fuera de línea desde decenas de servidores"
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Permite series almacenadas localmente (en formatos CBZ/CBR/CBT, EPUB y PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
@@ -158,7 +161,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "La página de Preferencias (Ajustes generales)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
@@ -470,11 +473,11 @@ msgstr "Utilizar colores de resalte del sistema"
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
-msgstr ""
+msgstr "Tema de las barras de progreso"
 
 #: ../data/ui/preferences.blp:84
 msgid "Theme to use for progress bars"
-msgstr ""
+msgstr "Tema a usar para las barras de progreso"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
@@ -832,7 +835,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:466
 msgid "Suggest Submitting a Bug Report in Case of Error"
-msgstr ""
+msgstr "Sugerir enviar un informe de error en caso de fallo"
 
 #: ../data/ui/preferences.blp:467
 msgid ""
@@ -840,6 +843,9 @@ msgid ""
 "has arisen), you will be prompted to create a bug report using a pre-"
 "formatted text to copy/paste."
 msgstr ""
+"Si ocurre un error con un servidor (ha sido actualizado o ha surgido un caso "
+"inesperado), se te pedirá que crees un informe de error usando un texto "
+"preformateado para copiar y pegar."
 
 #: ../data/ui/preferences.blp:472
 msgid "Credentials Storage"
@@ -876,6 +882,10 @@ msgid ""
 "environment and therefore cannot toggle reduced motion animations globally "
 "via GNOME Settings (Accessibility ⇨ Seeing ⇨ Reduced Motion)."
 msgstr ""
+"Este ajuste es solo para usuarios que no utilizan el entorno de escritorio "
+"GNOME y, por lo tanto, no pueden activar las animaciones de movimiento "
+"reducido de forma global a través de la Configuración de GNOME "
+"(Accesibilidad ⇨ Visión ⇨ Movimiento reducido)."
 
 #: ../data/ui/preferences_server_params.blp:10
 #: ../data/ui/preferences_server_params.blp:16
@@ -970,42 +980,42 @@ msgstr "Lector"
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Siguiente página"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr ""
+msgstr "Página de la derecha"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr ""
+msgstr "Página de la izquierda"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "Bajar"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "Subir"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "Acercar"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Alejar"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "Reiniciar Zoom"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1136,23 +1146,23 @@ msgstr "Cancelar"
 
 #: ../komikku/application.py:608
 msgid "Copy Text"
-msgstr ""
+msgstr "Copiar texto"
 
 #: ../komikku/application.py:616
 msgid "Context"
-msgstr ""
+msgstr "Contexto"
 
 #: ../komikku/application.py:636
 msgid "Stack Trace"
-msgstr ""
+msgstr "Seguimiento de la pila"
 
 #: ../komikku/application.py:658
 msgid "Debug Information"
-msgstr ""
+msgstr "Información de depuración"
 
 #: ../komikku/application.py:678
 msgid "Server Error"
-msgstr ""
+msgstr "Error del servidor"
 
 #: ../komikku/application.py:679
 msgid ""
@@ -1160,10 +1170,13 @@ msgid ""
 "unexpected case has arisen). Here is a pre-formatted text that you can copy "
 "and paste when filling out the issue."
 msgstr ""
+"Has encontrado un problema con un servidor (ha sido actualizado o ha surgido "
+"un caso inesperado). Aquí tienes un texto preformateado que puedes copiar y "
+"pegar al rellenar el informe de error."
 
 #: ../komikku/application.py:684
 msgid "Create an Issue"
-msgstr ""
+msgstr "Crear un problema"
 
 #: ../komikku/application.py:718
 msgid "Are you sure you want to quit?"
@@ -1209,7 +1222,7 @@ msgstr "¿Limpiar?"
 
 #: ../komikku/card/__init__.py:221
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "¿Estás seguro de que deseas borrar todos los capítulos?"
 
 #: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:728
 #: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
@@ -1260,7 +1273,7 @@ msgstr[1] "{0} seleccionados"
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
-msgstr ""
+msgstr "No se encontraron capítulos"
 
 #: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
 msgid "Failed to update chapters reading status"
@@ -1288,11 +1301,11 @@ msgstr "Marcar capítulos anteriores como leídos"
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"
-msgstr ""
+msgstr "Mostrar menos"
 
 #: ../komikku/card/info_box.py:80 ../komikku/card/info_box.py:178
 msgid "Show More"
-msgstr ""
+msgstr "Mostrar más"
 
 #: ../komikku/card/info_box.py:110
 msgid "Unknown author"
@@ -1309,7 +1322,7 @@ msgstr "Local"
 
 #: ../komikku/card/info_box.py:165
 msgid "%m/%d/%Y %H:%M"
-msgstr ""
+msgstr "%m/%d/%Y %H:%M"
 
 #: ../komikku/card/info_box.py:183
 msgid "Donate"
@@ -1418,91 +1431,91 @@ msgstr "Color del acento"
 
 #: ../komikku/consts.py:19
 msgid "Pride Colors"
-msgstr ""
+msgstr "Colores de orgullo"
 
 #: ../komikku/consts.py:23
 msgid "Lesbian Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Lesbiana"
 
 #: ../komikku/consts.py:27
 msgid "Male Homosexual Pride Colors"
-msgstr ""
+msgstr "Hombre Homosexual Colores de orgullo"
 
 #: ../komikku/consts.py:31
 msgid "Transgender Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Transgénero"
 
 #: ../komikku/consts.py:35
 msgid "Nonbinary Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo No Binario"
 
 #: ../komikku/consts.py:39
 msgid "Bisexual Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Bisexual"
 
 #: ../komikku/consts.py:43
 msgid "Asexual Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Asexual"
 
 #: ../komikku/consts.py:47
 msgid "Pansexual Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Pansexual"
 
 #: ../komikku/consts.py:51
 msgid "Aromantic Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Arromántico"
 
 #: ../komikku/consts.py:55
 msgid "Genderfluid Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Género fluido"
 
 #: ../komikku/consts.py:59
 msgid "Polysexual Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Polisexual"
 
 #: ../komikku/consts.py:63
 msgid "Omnisexual Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Omnisexual"
 
 #: ../komikku/consts.py:67
 msgid "Aroace Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Aroace"
 
 #: ../komikku/consts.py:71
 msgid "Agender Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Agénero"
 
 #: ../komikku/consts.py:75
 msgid "Genderqueer Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Genderqueer"
 
 #: ../komikku/consts.py:79
 msgid "Intersex Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Intersexual"
 
 #: ../komikku/consts.py:83
 msgid "Demigender Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Demigénero"
 
 #: ../komikku/consts.py:87
 msgid "Biromantic Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Birromántico"
 
 #: ../komikku/consts.py:91
 msgid "Disability Pride Colors"
-msgstr ""
+msgstr "Deshabilitar Colores de Orgullo"
 
 #: ../komikku/consts.py:95
 msgid "Femboy Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Femboy"
 
 #: ../komikku/consts.py:99
 msgid "Neutrois Pride Colors"
-msgstr ""
+msgstr "Colores de Orgullo Neutrois"
 
 #: ../komikku/consts.py:103
 msgid "Random Colors"
-msgstr ""
+msgstr "Colores Aleatorios"
 
 #: ../komikku/downloader.py:274
 #, python-brace-format
@@ -1545,21 +1558,27 @@ msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr ""
+"Se requiere una estructura de carpetas específica para que los cómics "
+"almacenados localmente se procesen correctamente."
 
 #: ../komikku/explorer/common.py:271
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
 msgstr ""
+"Cada cómic debe tener su propia carpeta que contenga los capítulos/volúmenes "
+"como archivos en formatos CBZ, CBR, CBT, EPUB o PDF."
 
 #: ../komikku/explorer/common.py:272
 msgid "The folder's name will be used as name for the comic."
-msgstr ""
+msgstr "El nombre de la carpeta será usada para el nombre del cómic."
 
 #: ../komikku/explorer/common.py:273
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
+"NOTA: Se requiere la herramienta de línea de comandos «unrar» o «unar» para "
+"los archivos CBR."
 
 #: ../komikku/explorer/common.py:279
 msgid "Open local folder"
@@ -1568,12 +1587,12 @@ msgstr "Abrir carpeta local"
 #: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
 #: ../komikku/explorer/common.py:303 ../komikku/explorer/common.py:306
 msgid "Content Information"
-msgstr ""
+msgstr "Información del contenido"
 
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
 msgid "Type: {0}"
-msgstr ""
+msgstr "Tipo: {0}"
 
 #: ../komikku/explorer/common.py:295
 #, python-brace-format
@@ -1581,26 +1600,28 @@ msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
 msgstr ""
+"Copyright: Reproducción y distribución autorizada bajo ciertas condiciones ("
+"{0} licencia)"
 
 #: ../komikku/explorer/common.py:298
 msgid "Royalty-free, Public domain"
-msgstr ""
+msgstr "Libre de derechos, dominio público"
 
 #: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:311
 msgid "Copyrighted works"
-msgstr ""
+msgstr "Obras protegidas por derechos de autor"
 
 #: ../komikku/explorer/common.py:310
 msgid "Use with caution!"
-msgstr ""
+msgstr "¡Úsalo con precaución!"
 
 #: ../komikku/explorer/common.py:313
 msgid "Licensed/Published and/or Unlicensed works"
-msgstr ""
+msgstr "Obras autorizadas/publicadas y/o no autorizadas"
 
 #: ../komikku/explorer/common.py:314
 msgid "It may be partially or totally illegal"
-msgstr ""
+msgstr "Puede ser parcial o totalmente ilegal"
 
 #: ../komikku/explorer/common.py:329
 msgid "Toggle pinned status"
@@ -1689,6 +1710,7 @@ msgstr "Otros"
 msgid ""
 "It appears that you have not yet defined any server languages in Preferences."
 msgstr ""
+"Parece que aún no has definido ningún idioma de servidor en las Preferencias."
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
@@ -1712,7 +1734,7 @@ msgstr "Reanudar"
 
 #: ../komikku/library/__init__.py:359
 msgid "Are you sure you want to clear selected mangas?"
-msgstr ""
+msgstr "¿Estás seguro de que quieres borrar los mangas seleccionados?"
 
 #: ../komikku/library/__init__.py:404
 msgid "Are you sure you want to delete this manga?"
@@ -1738,7 +1760,7 @@ msgstr "No leído"
 
 #: ../komikku/library/__init__.py:460
 msgid "Series with unread chapters"
-msgstr ""
+msgstr "Series con capítulos sin leer."
 
 #: ../komikku/library/__init__.py:463
 #: ../komikku/models/database/downloads.py:20
@@ -1747,7 +1769,7 @@ msgstr "Descargado"
 
 #: ../komikku/library/__init__.py:464
 msgid "Series with downloaded chapters"
-msgstr ""
+msgstr "Series con capítulos descargados."
 
 #: ../komikku/library/__init__.py:467
 msgid "Recents"
@@ -1755,7 +1777,7 @@ msgstr "Recientes"
 
 #: ../komikku/library/__init__.py:468
 msgid "Series with new chapters"
-msgstr ""
+msgstr "Series con nuevos capítulos."
 
 #: ../komikku/library/__init__.py:685
 msgid "Welcome to Komikku"
@@ -2031,7 +2053,7 @@ msgstr "Error al cargar la imagen"
 #: ../komikku/reader/pager/page.py:271
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
-msgstr ""
+msgstr "Archivo corrupto o formato de imagen no soportada ({0})"
 
 #: ../komikku/reader/pager/page.py:312
 msgid "Retry"
@@ -2050,7 +2072,7 @@ msgstr "Reintentar"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Self-publishing"
-msgstr ""
+msgstr "Autopublicación"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/comick/__init__.py:149
@@ -2067,11 +2089,11 @@ msgstr ""
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr ""
+msgstr "Webcómic."
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr ""
+msgstr "Plataforma de autopublicación."
 
 #: ../komikku/servers/asurascans/__init__.py:33
 #: ../komikku/servers/comix/__init__.py:71
@@ -2584,11 +2606,11 @@ msgstr "Yuri"
 
 #: ../komikku/servers/comix/__init__.py:44
 msgid "Content Rating"
-msgstr ""
+msgstr "Clasificación del contenido"
 
 #: ../komikku/servers/comix/__init__.py:45
 msgid "Filter by Content Rating"
-msgstr ""
+msgstr "Filtrar por clasificación de contenido"
 
 #: ../komikku/servers/comix/__init__.py:52
 #: ../komikku/servers/mangadex/__init__.py:66
@@ -2610,7 +2632,7 @@ msgstr "Filtrar por tipos"
 #: ../komikku/servers/dbmultiverse/__init__.py:58
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr ""
+msgstr "Webcómic de fans."
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"
@@ -2784,7 +2806,7 @@ msgstr "OEL"
 
 #: ../komikku/servers/mangatown/__init__.py:58
 msgid "Shounen Ai"
-msgstr ""
+msgstr "Shounen Ai"
 
 #: ../komikku/servers/mangatown/__init__.py:71
 msgid "New"
@@ -2842,7 +2864,7 @@ msgstr "No disponible en el idioma {0}"
 
 #: ../komikku/servers/suwayomi/__init__.py:33
 msgid "Manga reader server"
-msgstr ""
+msgstr "Servidor de lector de Manga."
 
 #: ../komikku/servers/webtoon/__init__.py:61
 msgid "Originals"
@@ -2854,11 +2876,11 @@ msgstr "Lienzo"
 
 #: ../komikku/servers/weebcentral/__init__.py:35
 msgid "Adult Content"
-msgstr ""
+msgstr "Contenido para adultos (+18)"
 
 #: ../komikku/servers/weebcentral/__init__.py:36
 msgid "Filter by Adult Content"
-msgstr ""
+msgstr "Filtrar por contenido para adultos (+18)"
 
 #: ../komikku/servers/weebcentral/__init__.py:41
 msgid "Yes"
@@ -2866,7 +2888,7 @@ msgstr "Sí"
 
 #: ../komikku/servers/weebcentral/__init__.py:42
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: ../komikku/servers/zenko/__init__.py:45
 msgid "Age Restriction"

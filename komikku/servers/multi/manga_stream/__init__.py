@@ -16,7 +16,7 @@
 # Noromax [ID]
 # Point Zero Toons [pt_BR]
 # Ragna Scan [ES] (Disabled)
-# Raiki Scan [ES]
+# Raiki Scan [ES] (Disabled)
 # Raw Manga [JA] (Disabled)
 # Rimu Scans [FR] (Disabled)
 # Rukav Inari [ES] (Disabled)

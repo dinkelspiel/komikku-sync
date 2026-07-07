@@ -9,6 +9,7 @@ class Raikiscan(MangaStream):
     id = 'raikiscan'
     name = 'Raiki Scan'
     lang = 'es'
+    status = 'disabled'
 
     base_url = 'https://raikiscan.com'
     logo_url = base_url + '/wp-content/uploads/2021/08/cropped-logo.5-32x32.png'

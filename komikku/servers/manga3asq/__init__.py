@@ -14,7 +14,7 @@ class Manga3asq(Madara2):
 
     date_format = '%Y \u060c%B %-d'
 
-    base_url = 'https://3asq.pro'
+    base_url = 'https://3asq.online'
     logo_url = base_url + '/wp-content/uploads/2021/06/cropped-ICON-32x32.png'
     chapters_url = base_url + '/manga/{0}/ajax/chapters/'
     chapter_url = base_url + '/manga/{0}/{1}/'

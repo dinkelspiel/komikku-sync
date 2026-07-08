@@ -141,9 +141,8 @@ blueprints = custom_target('blueprints',
         'ui/support.blp',
         'ui/webview.blp',
     ),
-    build_always_stale: true,
     output: '.',
-    command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+    command: [find_program('blueprint-compiler'), 'batch-compile', '--minify', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
 #

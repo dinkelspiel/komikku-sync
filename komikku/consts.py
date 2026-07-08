@@ -226,6 +226,7 @@ CREDITS = dict(
         'Óscar Fernández Díaz (Spanish)',
         'gallegonovato (Spanish)',
         'Klauss (Spanish)',
+        'Champiñon Traductor (Spanish)',
         'Jesper (Swedish)',
         'PaneradFisk (Swedish)',
         'Willem Dinkelspiel (Swedish)',
@@ -254,10 +255,16 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Added MangaK (EN)</li>
-    <li>[Servers] Lovers Toon (pt_BR): Disabled</li>
-    <li>[Servers] MangaBuddy (EN): Disabled</li>
-    <li>[L10n] Updated Korean and Ukrainian translations</li>
+    <li>[Card] Chapters list: Improved ordering by Title</li>
+    <li>[Trackers] Fixed authentication bug</li>
+    <li>[Servers] Added Rncalation (ES)</li>
+    <li>[Servers] 3asq (AR): Re-enabled</li>
+    <li>[Servers] Anime-Sama (FR): Update</li>
+    <li>[Servers] Dynasty Reader (EN): Update</li>
+    <li>[Servers] MangaCrab (ES): Disabled</li>
+    <li>[Servers] Raiki Scan (ES): Disabled</li>
+    <li>[Servers] Webtoon TR (TR): Disabled</li>
+    <li>[L10n] Updated German, Spanish, Swedish and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

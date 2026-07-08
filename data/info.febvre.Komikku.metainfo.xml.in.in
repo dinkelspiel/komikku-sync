@@ -114,6 +114,23 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.9.0" date="2026-07-09">
+            <description translate="no">
+                <ul>
+                    <li>[Card] Chapters list: Improved ordering by Title</li>
+                    <li>[Trackers] Fixed authentication bug</li>
+                    <li>[Servers] Added Rncalation (ES)</li>
+                    <li>[Servers] 3asq (AR): Re-enabled</li>
+                    <li>[Servers] Anime-Sama (FR): Update</li>
+                    <li>[Servers] Dynasty Reader (EN): Update</li>
+                    <li>[Servers] MangaCrab (ES): Disabled</li>
+                    <li>[Servers] Raiki Scan (ES): Disabled</li>
+                    <li>[Servers] Webtoon TR (TR): Disabled</li>
+                    <li>[L10n] Updated German, Spanish, Swedish and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.8.0" date="2026-06-26">
             <description translate="no">
                 <ul>

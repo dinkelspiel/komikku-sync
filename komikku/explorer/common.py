@@ -192,6 +192,7 @@ class ExplorerServerRow(Gtk.ListBoxRow):
         Gtk.ListBoxRow.__init__(self)
 
         self.page = page
+        self.logo = None
 
         self.pin_button_toggled_handler_id = None
         self.local_folder_button_clicked_handler_id = None
@@ -370,7 +371,6 @@ class ExplorerServerRow(Gtk.ListBoxRow):
                 # Fallback to an Adw.Avatar if logo fetching failed
                 self.logo = Adw.Avatar.new(LOGO_SIZE, self.server_data['name'], True)
             else:
-                self.logo = None
                 return
 
         else:

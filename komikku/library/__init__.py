@@ -627,6 +627,9 @@ class LibraryPage(Adw.NavigationPage):
             return
 
         def do_resize():
+            if self.populating:
+                return GLib.SOURCE_CONTINUE
+
             self.compute_flowbox_child_cover_size()
 
             for child in self.flowbox:
@@ -713,9 +716,9 @@ class LibraryPage(Adw.NavigationPage):
             GLib.idle_add(on_complete)
 
         def on_complete():
+            self.populating = False
             self.filters_button.set_visible(True)
             self.show_page('flowbox')
-            self.populating = False
 
         def on_progress(flowbox_child, fraction):
             self.start_page_progressbar.set_fraction(fraction)

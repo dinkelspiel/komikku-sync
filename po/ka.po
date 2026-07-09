@@ -7,22 +7,24 @@ msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-07-09 16:53+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/komikku/main/"
+"ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
-msgstr ""
+msgstr "@prettyname@"
 
 #: ../data/info.febvre.Komikku.desktop.in:3
 msgid "@description@"
-msgstr ""
+msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
@@ -124,7 +126,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "წიგნი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
@@ -132,7 +134,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "გათიშული"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
@@ -176,17 +178,17 @@ msgstr ""
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:410
 msgid "Got it!"
-msgstr ""
+msgstr "Გავიგე!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:418
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
 #: ../data/ui/library.blp:152 ../data/ui/reader.blp:37
 msgid "Menu"
-msgstr ""
+msgstr "მენიუ"
 
 #: ../data/ui/card.blp:68
 msgid "Info"
-msgstr ""
+msgstr "ინფორმაცია"
 
 #: ../data/ui/card.blp:148
 msgid "Add to Library"
@@ -198,11 +200,11 @@ msgstr ""
 
 #: ../data/ui/card.blp:308
 msgid "Last Update"
-msgstr ""
+msgstr "ბოლო განახლება"
 
 #: ../data/ui/card.blp:336
 msgid "Size on Disk"
-msgstr ""
+msgstr "ზომა დისკზე"
 
 #: ../data/ui/card.blp:455 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:255
@@ -211,13 +213,13 @@ msgstr ""
 
 #: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:110
 msgid "Tracking"
-msgstr ""
+msgstr "ტრეკინგი"
 
 #: ../data/ui/card_tracking_search.blp:10 ../data/ui/explorer_search.blp:10
 #: ../data/ui/explorer_search.blp:43 ../data/ui/history.blp:22
 #: ../data/ui/library.blp:45
 msgid "Search"
-msgstr ""
+msgstr "ძებნა"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
@@ -225,11 +227,11 @@ msgstr ""
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
-msgstr ""
+msgstr "დამატება"
 
 #: ../data/ui/download_manager.blp:10 ../data/ui/download_manager.blp:20
 msgid "Download Manager"
-msgstr ""
+msgstr "გადმოწერების მმართველი"
 
 #: ../data/ui/download_manager.blp:32
 msgid "Start/Stop Download"
@@ -237,19 +239,19 @@ msgstr ""
 
 #: ../data/ui/download_manager.blp:67
 msgid "No Downloads"
-msgstr ""
+msgstr "გადმოწერების გარეშე"
 
 #: ../data/ui/explorer_search.blp:28
 msgid "Search Filters"
-msgstr ""
+msgstr "ფილტრების ძებნა"
 
 #: ../data/ui/explorer_search.blp:34
 msgid "Open in Browser"
-msgstr ""
+msgstr "ბრაუზერში გახსნა"
 
 #: ../data/ui/explorer_search.blp:147
 msgid "Most Popular"
-msgstr ""
+msgstr "პოპულარული"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
@@ -258,7 +260,7 @@ msgstr ""
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:221
 #: ../data/ui/preferences.blp:458
 msgid "Servers"
-msgstr ""
+msgstr "სერვერები"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
@@ -274,7 +276,7 @@ msgstr ""
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"
-msgstr ""
+msgstr "ისტორია"
 
 #: ../data/ui/history.blp:71
 msgid "No History"
@@ -282,7 +284,7 @@ msgstr ""
 
 #: ../data/ui/library.blp:10 ../data/ui/preferences.blp:120
 msgid "Library"
-msgstr ""
+msgstr "ბიბლიოთეკა"
 
 #: ../data/ui/library.blp:23
 msgid "Toggle Categories Sidebar"
@@ -290,7 +292,7 @@ msgstr ""
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
-msgstr ""
+msgstr "მთავარი მენიუ"
 
 #: ../data/ui/library.blp:79
 msgid "Search by name, server or genre"
@@ -298,7 +300,7 @@ msgstr ""
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
 msgid "Update"
-msgstr ""
+msgstr "განახლება"
 
 #: ../data/ui/library.blp:206
 msgid "Discover Comics"
@@ -306,7 +308,7 @@ msgstr ""
 
 #: ../data/ui/library.blp:277
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
@@ -339,11 +341,11 @@ msgstr ""
 #: ../data/ui/menu/card_selection_mode.xml:23
 #: ../data/ui/menu/library_selection_mode.xml:30
 msgid "Select All"
-msgstr ""
+msgstr "ყველაფრის მონიშვნა"
 
 #: ../data/ui/menu/download_manager.xml:12
 msgid "Delete All"
-msgstr ""
+msgstr "ყველას წაშლა"
 
 #: ../data/ui/menu/explorer_search_global_search.xml:12
 msgid "Pinned Servers Only"
@@ -351,7 +353,7 @@ msgstr ""
 
 #: ../data/ui/menu/library_selection_mode.xml:12
 msgid "Edit Categories"
-msgstr ""
+msgstr "კატეგორიების ჩასწორება"
 
 #: ../data/ui/menu/main.xml:12
 msgid "Update Library"
@@ -359,11 +361,11 @@ msgstr ""
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
-msgstr ""
+msgstr "დალაგება"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr ""
+msgstr "ანბანით დალაგებული"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
@@ -375,7 +377,7 @@ msgstr ""
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "კლავიატურის მალსახმობები"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
@@ -387,7 +389,7 @@ msgstr ""
 
 #: ../data/ui/menu/reader.xml:118
 msgid "Crop Borders"
-msgstr ""
+msgstr "საზღვრების ამოჭრა"
 
 #: ../data/ui/menu/reader.xml:122
 msgid "Hide Page Numbering"
@@ -395,16 +397,16 @@ msgstr ""
 
 #: ../data/ui/menu/reader.xml:136
 msgid "Save Page"
-msgstr ""
+msgstr "გვერდის შენახვა"
 
 #: ../data/ui/preferences.blp:9 ../data/ui/preferences_servers_languages.blp:16
 #: ../data/ui/preferences_servers_settings.blp:16
 msgid "Preferences"
-msgstr ""
+msgstr "მორგება"
 
 #: ../data/ui/preferences.blp:14
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: ../data/ui/preferences.blp:24
 msgid "Support Komikku"
@@ -420,27 +422,27 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
-msgstr ""
+msgstr "გარეგნობა"
 
 #: ../data/ui/preferences.blp:62
 msgid "Theme"
-msgstr ""
+msgstr "თემა"
 
 #: ../data/ui/preferences.blp:65
 msgid "Light"
-msgstr ""
+msgstr "ღია"
 
 #: ../data/ui/preferences.blp:66
 msgid "Dark"
-msgstr ""
+msgstr "მუქი"
 
 #: ../data/ui/preferences.blp:67
 msgid "Follow System"
-msgstr ""
+msgstr "სისტემის მიყოლა"
 
 #: ../data/ui/preferences.blp:73
 msgid "Night Light"
-msgstr ""
+msgstr "ღამის სინათლე"
 
 #: ../data/ui/preferences.blp:74
 msgid "Automatically enable dark theme at night"
@@ -476,7 +478,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:104
 msgid "Desktop Notifications"
-msgstr ""
+msgstr "სამუშაო მაგიდის გაფრთხილებები"
 
 #: ../data/ui/preferences.blp:105
 msgid "Use desktop notifications for downloads and library updates"
@@ -488,15 +490,15 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:124
 msgid "Display"
-msgstr ""
+msgstr "ჩვენება"
 
 #: ../data/ui/preferences.blp:127
 msgid "Display Mode"
-msgstr ""
+msgstr "ჩვენების რეჟიმი"
 
 #: ../data/ui/preferences.blp:130
 msgid "Grid"
-msgstr ""
+msgstr "ბადე"
 
 #: ../data/ui/preferences.blp:131
 msgid "Compact Grid"
@@ -512,7 +514,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:142
 msgid "Badges"
-msgstr ""
+msgstr "სამკერდე ნიშნები"
 
 #: ../data/ui/preferences.blp:145
 msgid "Number of Unread Chapters"
@@ -544,7 +546,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:224
 msgid "Languages"
-msgstr ""
+msgstr "ენები"
 
 #: ../data/ui/preferences.blp:225
 msgid "Restrict servers to selected languages"
@@ -586,7 +588,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
-msgstr ""
+msgstr "მკითხველი"
 
 #: ../data/ui/preferences.blp:279
 msgid "Reading Mode"
@@ -618,7 +620,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:295
 msgid "Linear"
-msgstr ""
+msgstr "წრფივი"
 
 #: ../data/ui/preferences.blp:296
 msgid "Trilinear"
@@ -626,27 +628,27 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:302
 msgid "Background Color"
-msgstr ""
+msgstr "ფონის ფერი"
 
 #: ../data/ui/preferences.blp:305
 msgid "White"
-msgstr ""
+msgstr "თეთრი"
 
 #: ../data/ui/preferences.blp:306
 msgid "Gray"
-msgstr ""
+msgstr "ნაცრისფერი"
 
 #: ../data/ui/preferences.blp:307
 msgid "Black"
-msgstr ""
+msgstr "შავი"
 
 #: ../data/ui/preferences.blp:308
 msgid "System Style"
-msgstr ""
+msgstr "სისტემის მიყოლა"
 
 #: ../data/ui/preferences.blp:314
 msgid "Page Numbering"
-msgstr ""
+msgstr "გვერდის დანომრვა"
 
 #: ../data/ui/preferences.blp:315
 msgid "Hide the page numbering at the bottom of the screen while reading"
@@ -654,7 +656,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:319
 msgid "Fullscreen"
-msgstr ""
+msgstr "სრულ ეკრანზე"
 
 #: ../data/ui/preferences.blp:320
 msgid "Automatically enter fullscreen mode"
@@ -671,7 +673,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:329
 msgid "Scaling"
-msgstr ""
+msgstr "მასშტაბი"
 
 #: ../data/ui/preferences.blp:330
 msgid "Type of scaling to adapt image"
@@ -691,7 +693,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:336
 msgid "Original Size"
-msgstr ""
+msgstr "საწყისი ზომა"
 
 #: ../data/ui/preferences.blp:342
 msgid "Landscape Pages Zoom"
@@ -725,11 +727,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:359
 msgid "Reset to Default"
-msgstr ""
+msgstr "ნაგულისხმევ მნიშვნელობაზე ჩამოყრა"
 
 #: ../data/ui/preferences.blp:367
 msgid "Maximum Width"
-msgstr ""
+msgstr "მაქსიმალური სიგანე"
 
 #: ../data/ui/preferences.blp:368
 msgid "Constrain reader's width to a given maximum size"
@@ -737,7 +739,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:378
 msgid "Scroll Distance"
-msgstr ""
+msgstr "გადახვევის მანძილი"
 
 #: ../data/ui/preferences.blp:379
 msgid "Percentage of page height to scroll on click or Page Up/Down"
@@ -753,7 +755,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:405
 msgid "Advanced"
-msgstr ""
+msgstr "დამატებით"
 
 #: ../data/ui/preferences.blp:409
 msgid "A setting has changed that requires a restart to take effect"
@@ -761,7 +763,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:415
 msgid "Data"
-msgstr ""
+msgstr "მონაცემები"
 
 #: ../data/ui/preferences.blp:416
 msgid "Data not saved in the library"
@@ -777,11 +779,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:439 ../data/ui/webview.blp:10
 msgid "WebView"
-msgstr ""
+msgstr "WebView"
 
 #: ../data/ui/preferences.blp:442
 msgid "Clear Data"
-msgstr ""
+msgstr "მონაცემების გასუფავება"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
@@ -819,7 +821,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:481
 msgid "Tweaks"
-msgstr ""
+msgstr "მცირე ცვლილებები"
 
 #: ../data/ui/preferences.blp:484
 msgid "Disable Animations"
@@ -852,7 +854,7 @@ msgstr ""
 
 #: ../data/ui/reader.blp:23
 msgid "Back"
-msgstr ""
+msgstr "უკან"
 
 #: ../data/ui/reader.blp:31
 msgid "Toggle Fullscreen Mode"
@@ -861,12 +863,12 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:10
 msgctxt "Shortcut window description"
 msgid "Application"
-msgstr ""
+msgstr "აპლიკაცია"
 
 #: ../data/ui/shortcuts.blp:13
 msgctxt "Shortcut window description"
 msgid "Open Preferences"
-msgstr ""
+msgstr "მორგების ფანჯრის გახსნა"
 
 #: ../data/ui/shortcuts.blp:18
 msgctxt "Shortcut window description"
@@ -876,17 +878,17 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:23
 msgctxt "Shortcut window description"
 msgid "Open Keyboard Shortcuts"
-msgstr ""
+msgstr "კლავიატურის მალსახმობების გახსნა"
 
 #: ../data/ui/shortcuts.blp:28
 msgctxt "Shortcut window description"
 msgid "Quit"
-msgstr ""
+msgstr "გასვლა"
 
 #: ../data/ui/shortcuts.blp:34
 msgctxt "Shortcut window description"
 msgid "Library"
-msgstr ""
+msgstr "ბიბლიოთეკა"
 
 #: ../data/ui/shortcuts.blp:37
 msgctxt "Shortcut window description"
@@ -896,12 +898,12 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:42
 msgctxt "Shortcut window description"
 msgid "Select All"
-msgstr ""
+msgstr "ყველაფრის მონიშვნა"
 
 #: ../data/ui/shortcuts.blp:47
 msgctxt "Shortcut window description"
 msgid "Search"
-msgstr ""
+msgstr "ძებნა"
 
 #: ../data/ui/shortcuts.blp:52
 msgctxt "Shortcut window description"
@@ -911,7 +913,7 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:57
 msgctxt "Shortcut window description"
 msgid "Update"
-msgstr ""
+msgstr "განახლება"
 
 #: ../data/ui/shortcuts.blp:63
 msgctxt "Shortcut window description"
@@ -926,12 +928,12 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:72
 msgctxt "Shortcut window description"
 msgid "Reader"
-msgstr ""
+msgstr "მკითხველი"
 
 #: ../data/ui/shortcuts.blp:75
 msgctxt "Shortcut window description"
 msgid "Go to Next Page"
-msgstr ""
+msgstr "გადასვლა შემდეგ გვერდზე"
 
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
@@ -946,37 +948,37 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
 msgid "Scroll Down"
-msgstr ""
+msgstr "ქვემოთ ჩამოწევა"
 
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr ""
+msgstr "მაღლა აქაჩვა"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr ""
+msgstr "გადიდება"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr ""
+msgstr "დაპატარავება"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr ""
+msgstr "გადიდების ჩამოყრა"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
 msgid "Save Page"
-msgstr ""
+msgstr "გვერდის შენახვა"
 
 #: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
-msgstr ""
+msgstr "გადმოწერების მმართველი"
 
 #: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
@@ -1026,7 +1028,7 @@ msgstr ""
 
 #: ../data/ui/support.blp:144
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "ბუფერში კოპირება"
 
 #: ../komikku/application.py:103
 msgid "Multiple URLs not supported"
@@ -1055,7 +1057,7 @@ msgstr ""
 #: ../komikku/application.py:440 ../komikku/application.py:683
 #: ../komikku/explorer/common.py:321
 msgid "Close"
-msgstr ""
+msgstr "დახურვა"
 
 #: ../komikku/application.py:455
 msgid ""
@@ -1068,38 +1070,38 @@ msgstr ""
 
 #: ../komikku/application.py:464
 msgid "Supporters"
-msgstr ""
+msgstr "მხარდამჭერები"
 
 #: ../komikku/application.py:466
 msgid "Join Chat"
-msgstr ""
+msgstr "საუბარში ჩართვა"
 
 #: ../komikku/application.py:559 ../komikku/card/__init__.py:162
 #: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:186
 #: ../komikku/downloader.py:388 ../komikku/downloader.py:389
 #: ../komikku/library/__init__.py:835 ../komikku/library/__init__.py:836
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: ../komikku/application.py:608
 msgid "Copy Text"
-msgstr ""
+msgstr "ტექსტის კოპირება"
 
 #: ../komikku/application.py:616
 msgid "Context"
-msgstr ""
+msgstr "კონტექსტი"
 
 #: ../komikku/application.py:636
 msgid "Stack Trace"
-msgstr ""
+msgstr "სტეკის ტრეისი"
 
 #: ../komikku/application.py:658
 msgid "Debug Information"
-msgstr ""
+msgstr "გამართვის ინფორმაცია"
 
 #: ../komikku/application.py:678
 msgid "Server Error"
-msgstr ""
+msgstr "სერვერის შეცდომა"
 
 #: ../komikku/application.py:679
 msgid ""
@@ -1114,7 +1116,7 @@ msgstr ""
 
 #: ../komikku/application.py:718
 msgid "Are you sure you want to quit?"
-msgstr ""
+msgstr "მართლა გნებავთ, გახვიდეთ?"
 
 #: ../komikku/application.py:721
 msgid "Some chapters are currently being downloaded."
@@ -1126,11 +1128,11 @@ msgstr ""
 
 #: ../komikku/application.py:727
 msgid "Quit?"
-msgstr ""
+msgstr "გავიდე?"
 
 #: ../komikku/application.py:729
 msgid "Quit"
-msgstr ""
+msgstr "გასვლა"
 
 #: ../komikku/application.py:744
 msgid "Restart?"
@@ -1138,7 +1140,7 @@ msgstr ""
 
 #: ../komikku/application.py:746
 msgid "Restart"
-msgstr ""
+msgstr "გადატვირთვა"
 
 #: ../komikku/card/__init__.py:110 ../komikku/card/__init__.py:257
 #: ../komikku/explorer/search/__init__.py:75
@@ -1146,7 +1148,7 @@ msgstr ""
 #: ../komikku/library/__init__.py:104 ../komikku/library/__init__.py:452
 #: ../komikku/reader/__init__.py:529 ../komikku/reader/__init__.py:532
 msgid "Filters"
-msgstr ""
+msgstr "ფილტრები"
 
 #: ../komikku/card/__init__.py:220 ../komikku/library/__init__.py:358
 #: ../komikku/preferences/__init__.py:157
@@ -1162,11 +1164,11 @@ msgstr ""
 #: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
 #: ../komikku/preferences/__init__.py:182
 msgid "Clear"
-msgstr ""
+msgstr "გასუფთავება"
 
 #: ../komikku/card/__init__.py:266
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: ../komikku/card/__init__.py:368
 msgid "Read progress synchronization with server completed successfully"
@@ -1190,7 +1192,7 @@ msgstr ""
 
 #: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
 msgid "Reset"
-msgstr ""
+msgstr "ჩამოყრა"
 
 #: ../komikku/card/chapters_list.py:340 ../komikku/downloader.py:533
 #: ../komikku/library/__init__.py:869
@@ -1202,7 +1204,7 @@ msgstr[1] ""
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
-msgstr ""
+msgstr "თავები ვერ ვიპოვე"
 
 #: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
 msgid "Failed to update chapters reading status"
@@ -1210,19 +1212,19 @@ msgstr ""
 
 #: ../komikku/card/chapters_list.py:660
 msgid "%m/%d/%Y"
-msgstr ""
+msgstr "%m/%d/%Y"
 
 #: ../komikku/card/chapters_list.py:718 ../komikku/library/__init__.py:434
 msgid "Download"
-msgstr ""
+msgstr "გადმოწერა"
 
 #: ../komikku/card/chapters_list.py:742
 msgid "Mark as Read"
-msgstr ""
+msgstr "წაკითხულად მონიშვნა"
 
 #: ../komikku/card/chapters_list.py:746
 msgid "Mark as Unread"
-msgstr ""
+msgstr "წაუკითხავად მონიშვნა"
 
 #: ../komikku/card/chapters_list.py:750
 msgid "Mark Previous Chapters as Read"
@@ -1230,32 +1232,32 @@ msgstr ""
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"
-msgstr ""
+msgstr "ნაკლების ჩვენება"
 
 #: ../komikku/card/info_box.py:80 ../komikku/card/info_box.py:178
 msgid "Show More"
-msgstr ""
+msgstr "მეტის ჩვენება"
 
 #: ../komikku/card/info_box.py:110
 msgid "Unknown author"
-msgstr ""
+msgstr "უცნობი ავტორი"
 
 #: ../komikku/card/info_box.py:117 ../komikku/card/info_box.py:124
 #: ../komikku/card/tracking.py:154
 msgid "Unknown status"
-msgstr ""
+msgstr "უცნობი სტატუსი"
 
 #: ../komikku/card/info_box.py:124
 msgid "Local"
-msgstr ""
+msgstr "ლოკალური"
 
 #: ../komikku/card/info_box.py:165
 msgid "%m/%d/%Y %H:%M"
-msgstr ""
+msgstr "%m/%d/%Y %H:%M"
 
 #: ../komikku/card/info_box.py:183
 msgid "Donate"
-msgstr ""
+msgstr "შემოწირულობა"
 
 #: ../komikku/card/tracking.py:72
 msgid "Failed to get data from tracker"
@@ -1267,11 +1269,11 @@ msgstr ""
 
 #: ../komikku/card/tracking.py:187
 msgid "Track"
-msgstr ""
+msgstr "ტრეკი"
 
 #: ../komikku/card/tracking.py:213
 msgid "Use"
-msgstr ""
+msgstr "გამოყენება"
 
 #: ../komikku/card/tracking.py:221
 msgid "Cancel Tracking"
@@ -1291,20 +1293,20 @@ msgstr ""
 #: ../komikku/servers/weebdex/__init__.py:61
 #: ../komikku/servers/zenko/__init__.py:57
 msgid "Status"
-msgstr ""
+msgstr "სტატუსი"
 
 #: ../komikku/card/tracking.py:236
 msgid "Score"
-msgstr ""
+msgstr "ქულები"
 
 #: ../komikku/card/tracking.py:241
 msgid "Chapter"
-msgstr ""
+msgstr "თავი"
 
 #: ../komikku/card/tracking.py:253 ../komikku/categories_editor.py:78
 #: ../komikku/library/__init__.py:408
 msgid "Delete?"
-msgstr ""
+msgstr "წავშალო?"
 
 #: ../komikku/card/tracking.py:254
 msgid "Are you sure you want to cancel tracking?"
@@ -1313,7 +1315,7 @@ msgstr ""
 #: ../komikku/card/tracking.py:255 ../komikku/categories_editor.py:80
 #: ../komikku/categories_editor.py:175 ../komikku/library/__init__.py:410
 msgid "Delete"
-msgstr ""
+msgstr "წაშლა"
 
 #: ../komikku/card/tracking.py:359 ../komikku/preferences/trackers.py:42
 msgid "Connection is expired"
@@ -1331,11 +1333,11 @@ msgstr ""
 
 #: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:90
 msgid "No Results Found"
-msgstr ""
+msgstr "შედეგების გარეშე"
 
 #: ../komikku/card/tracking.py:516 ../komikku/explorer/search/search.py:91
 msgid "Try a different search"
-msgstr ""
+msgstr "სცადეთ სხვა ძებნა"
 
 #: ../komikku/categories_editor.py:79
 #, python-brace-format
@@ -1346,15 +1348,15 @@ msgstr ""
 
 #: ../komikku/categories_editor.py:180
 msgid "Edit"
-msgstr ""
+msgstr "ჩასწორება"
 
 #: ../komikku/categories_editor.py:193
 msgid "Save"
-msgstr ""
+msgstr "შენახვა"
 
 #: ../komikku/consts.py:14
 msgid "Accent Color"
-msgstr ""
+msgstr "აქცენტის ფერი"
 
 #: ../komikku/consts.py:19
 msgid "Pride Colors"
@@ -1474,11 +1476,11 @@ msgstr ""
 
 #: ../komikku/explorer/common.py:267
 msgid "Help"
-msgstr ""
+msgstr "დახმარება"
 
 #: ../komikku/explorer/common.py:268
 msgid "Local Folder"
-msgstr ""
+msgstr "ლოკალური საქაღალდე"
 
 #: ../komikku/explorer/common.py:270
 msgid ""
@@ -1508,7 +1510,7 @@ msgstr ""
 #: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
 #: ../komikku/explorer/common.py:303 ../komikku/explorer/common.py:306
 msgid "Content Information"
-msgstr ""
+msgstr "ინფორმაცია შემცველობის შესახებ"
 
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
@@ -1571,7 +1573,7 @@ msgstr ""
 
 #: ../komikku/explorer/search/__init__.py:412
 msgid "Global Search"
-msgstr ""
+msgstr "გლობალური ძებნა"
 
 #: ../komikku/explorer/search/__init__.py:414
 msgid "Search globally by name"
@@ -1614,13 +1616,13 @@ msgstr ""
 
 #: ../komikku/explorer/search/search_global.py:174
 msgid "No results"
-msgstr ""
+msgstr "შედეგების გარეშე"
 
 #: ../komikku/explorer/servers.py:109 ../komikku/explorer/servers.py:186
 #: ../komikku/servers/comix/__init__.py:78
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
-msgstr ""
+msgstr "სხვა"
 
 #: ../komikku/explorer/servers.py:150
 msgid ""
@@ -1629,15 +1631,15 @@ msgstr ""
 
 #: ../komikku/explorer/servers.py:223
 msgid "Pinned"
-msgstr ""
+msgstr "მიმაგრებულია"
 
 #: ../komikku/history.py:36
 msgid "Today"
-msgstr ""
+msgstr "დღეს"
 
 #: ../komikku/history.py:38
 msgid "Yesterday"
-msgstr ""
+msgstr "გუშინ"
 
 #: ../komikku/history.py:40
 msgid "%A, %B %e"
@@ -1645,7 +1647,7 @@ msgstr ""
 
 #: ../komikku/history.py:94
 msgid "Resume"
-msgstr ""
+msgstr "გაგრძელება"
 
 #: ../komikku/library/__init__.py:359
 msgid "Are you sure you want to clear selected mangas?"
@@ -1669,7 +1671,7 @@ msgstr ""
 
 #: ../komikku/library/__init__.py:459
 msgid "Unread"
-msgstr ""
+msgstr "წაუკითხავი"
 
 #: ../komikku/library/__init__.py:460
 msgid "Series with unread chapters"
@@ -1678,7 +1680,7 @@ msgstr ""
 #: ../komikku/library/__init__.py:463
 #: ../komikku/models/database/downloads.py:20
 msgid "Downloaded"
-msgstr ""
+msgstr "გადმოწერილია"
 
 #: ../komikku/library/__init__.py:464
 msgid "Series with downloaded chapters"
@@ -1686,7 +1688,7 @@ msgstr ""
 
 #: ../komikku/library/__init__.py:467
 msgid "Recents"
-msgstr ""
+msgstr "უახლესები"
 
 #: ../komikku/library/__init__.py:468
 msgid "Series with new chapters"
@@ -1698,7 +1700,7 @@ msgstr ""
 
 #: ../komikku/library/__init__.py:697
 msgid "Loading…"
-msgstr ""
+msgstr "ჩატვირთვა…"
 
 #: ../komikku/library/__init__.py:818
 msgid "Failed to update reading status"
@@ -1710,7 +1712,7 @@ msgstr ""
 
 #: ../komikku/library/__init__.py:873 ../komikku/library/categories_list.py:146
 msgid "Uncategorized"
-msgstr ""
+msgstr "კატეგორიის გარეშე"
 
 #: ../komikku/library/categories_list.py:140
 #: ../komikku/servers/asurascans/__init__.py:38
@@ -1728,30 +1730,30 @@ msgstr ""
 #: ../komikku/servers/phenixscans/__init__.py:40
 #: ../komikku/servers/webtoon/__init__.py:60
 msgid "All"
-msgstr ""
+msgstr "ყველა"
 
 #: ../komikku/models/database/downloads.py:19
 msgid "Download pending"
-msgstr ""
+msgstr "გადმოწერა რიგშია"
 
 #: ../komikku/models/database/downloads.py:21
 msgid "Downloading"
-msgstr ""
+msgstr "გადმოწერა"
 
 #: ../komikku/models/database/downloads.py:22
 msgid "Download canceled"
-msgstr ""
+msgstr "გადმოწერა გაუქმდა"
 
 #: ../komikku/models/database/downloads.py:23
 msgid "Download error"
-msgstr ""
+msgstr "გადმოწერის შეცდომა"
 
 #: ../komikku/models/database/mangas.py:46
 #: ../komikku/servers/mangamana/__init__.py:68
 #: ../komikku/servers/mangaworld/__init__.py:79
 #: ../komikku/servers/weebcentral/__init__.py:66
 msgid "Complete"
-msgstr ""
+msgstr "დასრულება"
 
 #: ../komikku/models/database/mangas.py:47
 #: ../komikku/servers/comick/__init__.py:81
@@ -1768,13 +1770,13 @@ msgstr ""
 #: ../komikku/servers/weebdex/__init__.py:65
 #: ../komikku/servers/zenko/__init__.py:61
 msgid "Ongoing"
-msgstr ""
+msgstr "მიმდინარე"
 
 #: ../komikku/models/database/mangas.py:48
 #: ../komikku/servers/mangamana/__init__.py:69
 #: ../komikku/servers/mangaworld/__init__.py:80
 msgid "Suspended"
-msgstr ""
+msgstr "გაჩერებულია"
 
 #: ../komikku/models/database/mangas.py:49
 #: ../komikku/servers/comix/__init__.py:64
@@ -1814,23 +1816,23 @@ msgstr ""
 
 #: ../komikku/preferences/__init__.py:208
 msgid "Disable"
-msgstr ""
+msgstr "გამორთვა"
 
 #: ../komikku/preferences/servers.py:44
 msgid "User Account"
-msgstr ""
+msgstr "მომხმარებლის ანგარიში"
 
 #: ../komikku/preferences/servers.py:49
 msgid "Address"
-msgstr ""
+msgstr "მისამართი"
 
 #: ../komikku/preferences/servers.py:55 ../komikku/preferences/trackers.py:60
 msgid "Username"
-msgstr ""
+msgstr "მომხმარებლის სახელი"
 
 #: ../komikku/preferences/servers.py:59 ../komikku/preferences/trackers.py:64
 msgid "Password"
-msgstr ""
+msgstr "პაროლი"
 
 #: ../komikku/preferences/servers.py:72
 msgid "System keyring service is disabled. Credential cannot be saved."
@@ -1850,21 +1852,21 @@ msgstr ""
 
 #: ../komikku/preferences/servers.py:90
 msgid "Test"
-msgstr ""
+msgstr "შემოწმება"
 
 #: ../komikku/preferences/trackers.py:36 ../komikku/preferences/trackers.py:88
 #: ../komikku/preferences/trackers.py:118
 msgid "Disconnect"
-msgstr ""
+msgstr "გათიშვა"
 
 #: ../komikku/preferences/trackers.py:43
 msgid "Reconnect"
-msgstr ""
+msgstr "თავიდან დაკავშირება"
 
 #: ../komikku/preferences/trackers.py:46 ../komikku/preferences/trackers.py:71
 #: ../komikku/preferences/trackers.py:104
 msgid "Connect"
-msgstr ""
+msgstr "დაკავშირება"
 
 #: ../komikku/preferences/trackers.py:92
 msgid "Failed to request client access"
@@ -1885,11 +1887,11 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:523
 msgid "Settings"
-msgstr ""
+msgstr "მორგება"
 
 #: ../komikku/reader/__init__.py:536
 msgid "Brightness"
-msgstr ""
+msgstr "სიკაშკაშე"
 
 #: ../komikku/reader/__init__.py:537
 msgid "Make pages brighter or darker"
@@ -1897,7 +1899,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:544
 msgid "Contrast"
-msgstr ""
+msgstr "კონტრასტი"
 
 #: ../komikku/reader/__init__.py:545
 msgid "Increase or decrease the contrast of pages"
@@ -1905,7 +1907,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:552
 msgid "Grayscale"
-msgstr ""
+msgstr "ნაცრისფერი"
 
 #: ../komikku/reader/__init__.py:553
 msgid "Convert pages to grayscale"
@@ -1913,7 +1915,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:560
 msgid "Sepia"
-msgstr ""
+msgstr "სეპია"
 
 #: ../komikku/reader/__init__.py:561
 msgid "Give a more yellow/brown appearance to pages"
@@ -1921,7 +1923,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:568
 msgid "Saturation"
-msgstr ""
+msgstr "გაჯერებულობა"
 
 #: ../komikku/reader/__init__.py:569
 msgid "Super-saturate or desaturate pages"
@@ -1948,7 +1950,7 @@ msgstr ""
 
 #: ../komikku/reader/pager/page.py:269
 msgid "Failed to load image"
-msgstr ""
+msgstr "გამოსახულების ჩატვირთვის შეცდომა"
 
 #: ../komikku/reader/pager/page.py:271
 #, python-brace-format
@@ -1957,7 +1959,7 @@ msgstr ""
 
 #: ../komikku/reader/pager/page.py:312
 msgid "Retry"
-msgstr ""
+msgstr "თავიდან ცდა"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/existentialcomics/__init__.py:23
@@ -2009,7 +2011,7 @@ msgstr ""
 #: ../komikku/servers/webtoon/__init__.py:55
 #: ../komikku/servers/zenko/__init__.py:69
 msgid "Type"
-msgstr ""
+msgstr "ტიპი"
 
 #: ../komikku/servers/asurascans/__init__.py:34
 #: ../komikku/servers/invinciblecomicsvf/__init__.py:38
@@ -2020,7 +2022,7 @@ msgstr ""
 #: ../komikku/servers/rawkuma/__init__.py:38
 #: ../komikku/servers/webtoon/__init__.py:56
 msgid "Filter by Type"
-msgstr ""
+msgstr "ტიპით გაფილტვრა"
 
 #: ../komikku/servers/asurascans/__init__.py:39
 #: ../komikku/servers/coloredcouncil/__init__.py:44
@@ -2039,7 +2041,7 @@ msgstr ""
 #: ../komikku/servers/weebcentral/__init__.py:52
 #: ../komikku/servers/zenko/__init__.py:74
 msgid "Manga"
-msgstr ""
+msgstr "მანგა"
 
 #: ../komikku/servers/asurascans/__init__.py:40
 #: ../komikku/servers/coloredcouncil/__init__.py:43
@@ -2080,7 +2082,7 @@ msgstr ""
 
 #: ../komikku/servers/bilibili/__init__.py:38
 msgid "Price"
-msgstr ""
+msgstr "ფასი"
 
 #: ../komikku/servers/bilibili/__init__.py:39
 msgid "Filter by price"
@@ -2088,7 +2090,7 @@ msgstr ""
 
 #: ../komikku/servers/bilibili/__init__.py:44
 msgid "Free"
-msgstr ""
+msgstr "უფასო"
 
 #: ../komikku/servers/bilibili/__init__.py:45
 msgid "Paid"
@@ -2096,7 +2098,7 @@ msgstr ""
 
 #: ../komikku/servers/coloredcouncil/__init__.py:37
 msgid "Format"
-msgstr ""
+msgstr "ფორმატი"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:38
 msgid "Filter by format"
@@ -2104,25 +2106,25 @@ msgstr ""
 
 #: ../komikku/servers/coloredcouncil/__init__.py:50
 msgid "Version"
-msgstr ""
+msgstr "ვერსია"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:51
 msgid "Filter by version"
-msgstr ""
+msgstr "ვერსიით გაფილტვრა"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:56
 msgid "Color"
-msgstr ""
+msgstr "ფერი"
 
 #: ../komikku/servers/coloredcouncil/__init__.py:57
 msgid "B/W"
-msgstr ""
+msgstr "შ/თ"
 
 #: ../komikku/servers/comick/__init__.py:65
 #: ../komikku/servers/mangadex/__init__.py:59
 #: ../komikku/servers/weebdex/__init__.py:48
 msgid "Rating"
-msgstr ""
+msgstr "რეიტინგი"
 
 #: ../komikku/servers/comick/__init__.py:66
 #: ../komikku/servers/mangadex/__init__.py:60
@@ -2135,7 +2137,7 @@ msgstr ""
 #: ../komikku/servers/mangadex/__init__.py:63
 #: ../komikku/servers/weebdex/__init__.py:52
 msgid "Safe"
-msgstr ""
+msgstr "უსაფრთხო"
 
 #: ../komikku/servers/comick/__init__.py:70
 #: ../komikku/servers/comix/__init__.py:50
@@ -2176,7 +2178,7 @@ msgstr ""
 #: ../komikku/servers/weebdex/__init__.py:66
 #: ../komikku/servers/zenko/__init__.py:62 ../komikku/trackers/__init__.py:68
 msgid "Completed"
-msgstr ""
+msgstr "დასრულებულია"
 
 #: ../komikku/servers/comick/__init__.py:83
 #: ../komikku/servers/comix/__init__.py:65
@@ -2187,11 +2189,11 @@ msgstr ""
 #: ../komikku/servers/weebcentral/__init__.py:68
 #: ../komikku/servers/weebdex/__init__.py:68
 msgid "Canceled"
-msgstr ""
+msgstr "გაუქმებულია"
 
 #: ../komikku/servers/comick/__init__.py:84
 msgid "Paused"
-msgstr ""
+msgstr "შეჩერებულია"
 
 #: ../komikku/servers/comick/__init__.py:90
 msgid "Origination"
@@ -2203,7 +2205,7 @@ msgstr ""
 
 #: ../komikku/servers/comick/__init__.py:102
 msgid "Countries"
-msgstr ""
+msgstr "ქვეყნები"
 
 #: ../komikku/servers/comick/__init__.py:104
 msgid "[Search and Most Popular only] Filter by Country (origination)"
@@ -2272,12 +2274,12 @@ msgstr ""
 
 #: ../komikku/servers/comick/__init__.py:124
 msgid "None"
-msgstr ""
+msgstr "არცერთი"
 
 #: ../komikku/servers/comick/__init__.py:130
 #: ../komikku/servers/mangadex/__init__.py:99
 msgid "Tags"
-msgstr ""
+msgstr "ჭდეები"
 
 #: ../komikku/servers/comick/__init__.py:131
 #: ../komikku/servers/mangadex/__init__.py:100
@@ -2292,7 +2294,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:135
 #: ../komikku/servers/mangadex/__init__.py:104
 msgid "Adaptation"
-msgstr ""
+msgstr "ადაპტაცია"
 
 #: ../komikku/servers/comick/__init__.py:136
 #: ../komikku/servers/mangadex/__init__.py:105
@@ -2321,7 +2323,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:140
 #: ../komikku/servers/mangadex/__init__.py:109
 msgid "Full Color"
-msgstr ""
+msgstr "სრულფერიანი"
 
 #: ../komikku/servers/comick/__init__.py:141
 #: ../komikku/servers/mangadex/__init__.py:110
@@ -2350,7 +2352,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:155
 #: ../komikku/servers/mangadex/__init__.py:120
 msgid "Genres"
-msgstr ""
+msgstr "ჟანრები"
 
 #: ../komikku/servers/comick/__init__.py:156
 #: ../komikku/servers/mangadex/__init__.py:121
@@ -2360,31 +2362,31 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:159
 #: ../komikku/servers/mangadex/__init__.py:124
 msgid "Action"
-msgstr ""
+msgstr "ქმედება"
 
 #: ../komikku/servers/comick/__init__.py:160
 msgid "Adult"
-msgstr ""
+msgstr "ზრდასრულთა"
 
 #: ../komikku/servers/comick/__init__.py:161
 #: ../komikku/servers/mangadex/__init__.py:125
 msgid "Adventure"
-msgstr ""
+msgstr "თავგადასავალი"
 
 #: ../komikku/servers/comick/__init__.py:162
 #: ../komikku/servers/mangadex/__init__.py:127
 msgid "Comedy"
-msgstr ""
+msgstr "კომედია"
 
 #: ../komikku/servers/comick/__init__.py:163
 #: ../komikku/servers/mangadex/__init__.py:128
 msgid "Crime"
-msgstr ""
+msgstr "დანაშაული"
 
 #: ../komikku/servers/comick/__init__.py:164
 #: ../komikku/servers/mangadex/__init__.py:129
 msgid "Drama"
-msgstr ""
+msgstr "დრამა"
 
 #: ../komikku/servers/comick/__init__.py:165
 msgid "Ecchi"
@@ -2393,7 +2395,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:166
 #: ../komikku/servers/mangadex/__init__.py:130
 msgid "Fantasy"
-msgstr ""
+msgstr "ფანტაზია"
 
 #: ../komikku/servers/comick/__init__.py:167
 msgid "Gender Bender"
@@ -2402,12 +2404,12 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:168
 #: ../komikku/servers/mangadex/__init__.py:132
 msgid "Historical"
-msgstr ""
+msgstr "ისტორიული"
 
 #: ../komikku/servers/comick/__init__.py:169
 #: ../komikku/servers/mangadex/__init__.py:133
 msgid "Horror"
-msgstr ""
+msgstr "საშინელება"
 
 #: ../komikku/servers/comick/__init__.py:170
 #: ../komikku/servers/mangadex/__init__.py:134
@@ -2421,7 +2423,7 @@ msgstr ""
 
 #: ../komikku/servers/comick/__init__.py:172
 msgid "Mature"
-msgstr ""
+msgstr "ასაკიანები"
 
 #: ../komikku/servers/comick/__init__.py:173
 #: ../komikku/servers/mangadex/__init__.py:136
@@ -2436,7 +2438,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:175
 #: ../komikku/servers/mangadex/__init__.py:138
 msgid "Mystery"
-msgstr ""
+msgstr "საიდუმლო"
 
 #: ../komikku/servers/comick/__init__.py:176
 #: ../komikku/servers/mangadex/__init__.py:139
@@ -2450,7 +2452,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:178
 #: ../komikku/servers/mangadex/__init__.py:140
 msgid "Romance"
-msgstr ""
+msgstr "რომანტიკა"
 
 #: ../komikku/servers/comick/__init__.py:179
 #: ../komikku/servers/mangadex/__init__.py:141
@@ -2470,12 +2472,12 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:182
 #: ../komikku/servers/mangadex/__init__.py:143
 msgid "Sports"
-msgstr ""
+msgstr "სპორტი"
 
 #: ../komikku/servers/comick/__init__.py:183
 #: ../komikku/servers/mangadex/__init__.py:144
 msgid "Superhero"
-msgstr ""
+msgstr "სუპერგმირი"
 
 #: ../komikku/servers/comick/__init__.py:184
 #: ../komikku/servers/mangadex/__init__.py:145
@@ -2506,7 +2508,7 @@ msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:44
 msgid "Content Rating"
-msgstr ""
+msgstr "შემცველობის შეფასება"
 
 #: ../komikku/servers/comix/__init__.py:45
 msgid "Filter by Content Rating"
@@ -2536,7 +2538,7 @@ msgstr ""
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"
-msgstr ""
+msgstr "კატეგორიები"
 
 #: ../komikku/servers/dynasty/__init__.py:44
 msgid "Anthologies"
@@ -2548,15 +2550,15 @@ msgstr ""
 
 #: ../komikku/servers/dynasty/__init__.py:46
 msgid "Issues"
-msgstr ""
+msgstr "პრობლემები"
 
 #: ../komikku/servers/dynasty/__init__.py:47
 msgid "Series"
-msgstr ""
+msgstr "სერიები"
 
 #: ../komikku/servers/dynasty/__init__.py:48
 msgid "Chapters"
-msgstr ""
+msgstr "თავები"
 
 #: ../komikku/servers/dynasty/__init__.py:54
 msgid "With Tags"
@@ -2577,7 +2579,7 @@ msgstr ""
 #: ../komikku/servers/exceptions.py:10
 #, python-brace-format
 msgid "Error: {}"
-msgstr ""
+msgstr "შეცდომა: {}"
 
 #: ../komikku/servers/exceptions.py:16
 msgid "Local archive is corrupt."
@@ -2599,12 +2601,12 @@ msgstr ""
 #: ../komikku/servers/rawkuma/__init__.py:37
 #: ../komikku/servers/weebcentral/__init__.py:48
 msgid "Types"
-msgstr ""
+msgstr "ტიპები"
 
 #: ../komikku/servers/flamescans/__init__.py:48
 #: ../komikku/servers/weebcentral/__init__.py:61
 msgid "Statuses"
-msgstr ""
+msgstr "სტატუსები"
 
 #: ../komikku/servers/flamescans/__init__.py:55
 #: ../komikku/trackers/__init__.py:70
@@ -2635,7 +2637,7 @@ msgstr ""
 #: ../komikku/servers/mangaball/__init__.py:93
 #: ../komikku/servers/weebcentral/__init__.py:40
 msgid "Any"
-msgstr ""
+msgstr "ნებისმიერი"
 
 #: ../komikku/servers/mangaball/__init__.py:89
 #: ../komikku/servers/mangatown/__init__.py:66
@@ -2693,7 +2695,7 @@ msgstr ""
 
 #: ../komikku/servers/mangafire/__init__.py:66
 msgid "Discontinued"
-msgstr ""
+msgstr "შეწყვეტილია"
 
 #: ../komikku/servers/mangapill/__init__.py:46
 #: ../komikku/servers/weebcentral/__init__.py:55
@@ -2706,7 +2708,7 @@ msgstr ""
 
 #: ../komikku/servers/mangatown/__init__.py:71
 msgid "New"
-msgstr ""
+msgstr "ახალი"
 
 #: ../komikku/servers/mangatube/__init__.py:126
 msgid "Type of Serie"
@@ -2720,7 +2722,7 @@ msgstr ""
 #: ../komikku/servers/multi/manga_stream/__init__.py:85
 #: ../komikku/servers/zenko/__init__.py:78
 msgid "Comic"
-msgstr ""
+msgstr "კომიკური"
 
 #: ../komikku/servers/mangatube/__init__.py:137
 #: ../komikku/servers/zenko/__init__.py:79
@@ -2729,15 +2731,15 @@ msgstr ""
 
 #: ../komikku/servers/mangatube/__init__.py:143
 msgid "Age Rating"
-msgstr ""
+msgstr "ასაკის რეიტინგი"
 
 #: ../komikku/servers/mangatube/__init__.py:144
 msgid "Maturity"
-msgstr ""
+msgstr "თამასუქის განაღდების ვადა"
 
 #: ../komikku/servers/mangatube/__init__.py:148
 msgid "Without"
-msgstr ""
+msgstr "გარეშე"
 
 #: ../komikku/servers/mangatube/__init__.py:149
 msgid "16+"
@@ -2768,7 +2770,7 @@ msgstr ""
 
 #: ../komikku/servers/webtoon/__init__.py:62
 msgid "Canvas"
-msgstr ""
+msgstr "ტილო"
 
 #: ../komikku/servers/weebcentral/__init__.py:35
 msgid "Adult Content"
@@ -2780,7 +2782,7 @@ msgstr ""
 
 #: ../komikku/servers/weebcentral/__init__.py:41
 msgid "Yes"
-msgstr ""
+msgstr "დიახ"
 
 #: ../komikku/servers/weebcentral/__init__.py:42
 msgid "No"
@@ -2804,11 +2806,11 @@ msgstr ""
 
 #: ../komikku/trackers/__init__.py:67
 msgid "Reading"
-msgstr ""
+msgstr "კითხვა"
 
 #: ../komikku/trackers/__init__.py:69
 msgid "On Hold"
-msgstr ""
+msgstr "შეყოვნებულია"
 
 #: ../komikku/trackers/__init__.py:71
 msgid "Plan to Read"
@@ -2837,7 +2839,7 @@ msgstr ""
 
 #: ../komikku/updater.py:130
 msgid "Update completed"
-msgstr ""
+msgstr "განახლება დასრულდა"
 
 #: ../komikku/updater.py:134
 #, python-brace-format
@@ -2874,7 +2876,7 @@ msgstr ""
 
 #: ../komikku/utils.py:358
 msgid "You are currently offline"
-msgstr ""
+msgstr "ამჟამად ხაზგარეშე ბრძანდებით"
 
 #: ../komikku/utils.py:385
 msgid "No Internet connection, timeout or server down"
@@ -2882,7 +2884,7 @@ msgstr ""
 
 #: ../komikku/webview.py:440
 msgid "Please wait…"
-msgstr ""
+msgstr "გთხოვთ, მოითმინოთ…"
 
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"

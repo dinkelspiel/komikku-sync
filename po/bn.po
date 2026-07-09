@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-07-10 17:01+0000\n"
+"Last-Translator: Jsus “Jsux” <mdjsusbinsus@gmail.com>\n"
+"Language-Team: Bengali <https://hosted.weblate.org/projects/komikku/main/bn/>"
+"\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -22,7 +24,7 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.desktop.in:3
 msgid "@description@"
-msgstr ""
+msgstr "মাঙ্গা ও কমিক পড়ার সেরা অ্যাপ"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
@@ -30,30 +32,33 @@ msgstr ""
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr ""
+msgstr "মজার-মজার কমিক ও মাঙ্গা খুঁজে পড়ুন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
 "With its simple, elegant and adaptive interface, this reader lets you "
 "search, sort and read your series with ease."
 msgstr ""
+"কমিকুর রয়েছে সিম্পল, মার্জিত এবং এডাপটিভ ইন্টারফেস। কমিকু দ্বারা আপনি মাঙ্গা খুঁজতে, সাজাতে ও "
+"পড়তে পারবেন খুব সহজেই।"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
-msgstr ""
+msgstr "কেনো আপনি কমিকু কে ভালোবাসবেন?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr ""
+msgstr "অনলাইন ও অফলাইন উভয় মাধ্যমেই হাজারো কমিক ও মাঙ্গা পড়তে পারবেন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"লোকালি ডাউনলোড করা সিরিজ এর জন্যে সাপোর্ট রয়েছে (CBZ/CBR/CBT, EPUB এবং PDF ফরম্যাট)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr ""
+msgstr "RTL, LTR, ভার্টিক্যাল এবং ওয়েবটুন ফরম্যাট এ পড়ার মোড আছে"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -61,313 +66,317 @@ msgid ""
 "navigation layout via mouse click or tapping (touchpad/touch screen), mouse "
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
+"বিভিন্ন ধরণের নেভিগেশন সাপোর্ট করে: কিবোর্ডের অ্যারো কী, মাউস ক্লিক বা ট্যাপ করার মাধ্যমে "
+"ডান ও বাম নেভিগেশন লেআউট (টাচপ্যাড/টাচ স্ক্রিন), মাউস হুইল, ২-আঙুলের সোয়াইপ জেসচার (টাচপ্যাড)"
+", সোয়াইপ জেসচার (টাচপ্যাড)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:21
 msgid "Categories to organize your library"
-msgstr ""
+msgstr "ক্যাটাগরির মাধ্যমে লাইব্রেরি শুন্দির করে সাজাতে পারবেন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
 msgstr ""
+"অটোমেটিক ট্র্যাকিং সাপোর্ট রয়েছে অনিলিস্ট, মাঙ্গা আপডেট এবং MyAnimeList এর জন্যে"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
-msgstr ""
+msgstr "সিরিজ অটোমেটিক আপডেট করবে"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr ""
+msgstr "নতুন চ্যাপ্টার অটোমেটিক ডাউনলোড করা যায়"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
-msgstr ""
+msgstr "পড়ার হিস্টরি"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:26
 msgid "Light and dark themes"
-msgstr ""
+msgstr "সাদা এবং গাঢ় থিম"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "রিডার"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr ""
+msgstr "ভিউয়ার"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 msgid "scanlation"
-msgstr ""
+msgstr "স্ক্যানলেশন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "কমিক"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "মাঙ্গা"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "মানহওয়া"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "মানহুয়া"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "ওয়েবটুন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
-msgstr ""
+msgstr "ওয়েবকমিক"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "বই"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "ই-বই"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "অফলাইন"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
-msgstr ""
+msgstr "লাইব্রেরি পেজ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:66
 msgid "The Library page with the category sidebar open"
-msgstr ""
+msgstr "ক্যাটাগরির স্লাইডার সহবলিব্রেরি পেজ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "পছন্দের সেটিং পেজ (সাধারণ সেটিংস)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
-msgstr ""
+msgstr "এক্সপ্লোরার পেজ মোবাইল ফরম্যাট এ (সার্ভার লিস্ট)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:78
 msgid "The Details page"
-msgstr ""
+msgstr "ডিটেইল পেজ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:82
 msgid "The Details page (chapters list)"
-msgstr ""
+msgstr "ডিটেইল পেজ (চ্যাপ্টার লিস্ট)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:86
 msgid "The Reader page"
-msgstr ""
+msgstr "রিডার পেজ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:90
 msgid "The Reader page in mobile format"
-msgstr ""
+msgstr "রিডার পেজ মোবাইল ফরম্যাট এ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:94
 msgid "The Category editor page in mobile format"
-msgstr ""
+msgstr "ক্যাটাগরির এডিটর পেজ মোবাইল ফরম্যাট এ"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:98
 msgid "The Reading history page in mobile format"
-msgstr ""
+msgstr "রিডিং হিস্টরি পেজ মোবাইল ফরম্যাট এ"
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:410
 msgid "Got it!"
-msgstr ""
+msgstr "আই হাই!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:418
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
 #: ../data/ui/library.blp:152 ../data/ui/reader.blp:37
 msgid "Menu"
-msgstr ""
+msgstr "মেনু"
 
 #: ../data/ui/card.blp:68
 msgid "Info"
-msgstr ""
+msgstr "তথ্য"
 
 #: ../data/ui/card.blp:148
 msgid "Add to Library"
-msgstr ""
+msgstr "লাইব্রেরিতে যোগ দিন"
 
 #: ../data/ui/card.blp:252
 msgid "Scanlators"
-msgstr ""
+msgstr "স্ক্যানলেটরস"
 
 #: ../data/ui/card.blp:308
 msgid "Last Update"
-msgstr ""
+msgstr "শেষ আপডেট"
 
 #: ../data/ui/card.blp:336
 msgid "Size on Disk"
-msgstr ""
+msgstr "ডিস্ক এ সাইজ"
 
 #: ../data/ui/card.blp:455 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:255
 msgid "No Categories"
-msgstr ""
+msgstr "ক্যাটাগরি নেই"
 
 #: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:110
 msgid "Tracking"
-msgstr ""
+msgstr "ট্র্যাকিং"
 
 #: ../data/ui/card_tracking_search.blp:10 ../data/ui/explorer_search.blp:10
 #: ../data/ui/explorer_search.blp:43 ../data/ui/history.blp:22
 #: ../data/ui/library.blp:45
 msgid "Search"
-msgstr ""
+msgstr "সার্চ"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
-msgstr ""
+msgstr "ট্র্যাকিংয়ের জন্যে সার্চ"
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
-msgstr ""
+msgstr "যোগ করুন"
 
 #: ../data/ui/download_manager.blp:10 ../data/ui/download_manager.blp:20
 msgid "Download Manager"
-msgstr ""
+msgstr "ডাউনলোড ম্যানেজার"
 
 #: ../data/ui/download_manager.blp:32
 msgid "Start/Stop Download"
-msgstr ""
+msgstr "চালু/বন্ধ ডাউনলোড"
 
 #: ../data/ui/download_manager.blp:67
 msgid "No Downloads"
-msgstr ""
+msgstr "ডাউনলোড নেই"
 
 #: ../data/ui/explorer_search.blp:28
 msgid "Search Filters"
-msgstr ""
+msgstr "সার্চের ফিল্টার"
 
 #: ../data/ui/explorer_search.blp:34
 msgid "Open in Browser"
-msgstr ""
+msgstr "ব্রাউজারে খুলুন"
 
 #: ../data/ui/explorer_search.blp:147
 msgid "Most Popular"
-msgstr ""
+msgstr "সবচেয়ে পপুলার"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
-msgstr ""
+msgstr "লেটেস্ট আপডেট"
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:221
 #: ../data/ui/preferences.blp:458
 msgid "Servers"
-msgstr ""
+msgstr "সার্ভার"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
-msgstr ""
+msgstr "কমিক সার্চ করুন সকল সার্ভারের মধ্যে"
 
 #: ../data/ui/explorer_servers.blp:23
 msgid "Search Servers"
-msgstr ""
+msgstr "সার্ভারে সার্চ"
 
 #: ../data/ui/explorer_servers.blp:37
 msgid "Search for servers by name or language"
-msgstr ""
+msgstr "সার্ভার খুঁজুন নাম বা ভাষা দিয়ে"
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"
-msgstr ""
+msgstr "হিস্টরি"
 
 #: ../data/ui/history.blp:71
 msgid "No History"
-msgstr ""
+msgstr "হিস্টরি নেই"
 
 #: ../data/ui/library.blp:10 ../data/ui/preferences.blp:120
 msgid "Library"
-msgstr ""
+msgstr "লাইব্রেরি"
 
 #: ../data/ui/library.blp:23
 msgid "Toggle Categories Sidebar"
-msgstr ""
+msgstr "টগেল করুন ক্যাটাগরির সাইডবার"
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
-msgstr ""
+msgstr "মেইন মেনু"
 
 #: ../data/ui/library.blp:79
 msgid "Search by name, server or genre"
-msgstr ""
+msgstr "নাম, সার্ভার বা ধরণ দিয়ে খুঁজুন"
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
 msgid "Update"
-msgstr ""
+msgstr "আপডেট"
 
 #: ../data/ui/library.blp:206
 msgid "Discover Comics"
-msgstr ""
+msgstr "কমিক খুঁজুন"
 
 #: ../data/ui/library.blp:277
 msgid "OK"
-msgstr ""
+msgstr "ওকে"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
-msgstr ""
+msgstr "চ্যাপ্টারের অর্ডার"
 
 #: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
-msgstr ""
+msgstr "⬆ সোর্স অনুযায়"
 
 #: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
-msgstr ""
+msgstr "⬇ সোর্স অনুযায়"
 
 #: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
-msgstr ""
+msgstr "⬆ তারিখ অনুযায়"
 
 #: ../data/ui/menu/card.xml:55
 msgid "⬇ By Date"
-msgstr ""
+msgstr "⬇ তারিখ অনুযায়"
 
 #: ../data/ui/menu/card.xml:61
 msgid "⬆ By Title"
-msgstr ""
+msgstr "⬆ টাইটেল অনুযায়"
 
 #: ../data/ui/menu/card.xml:66
 msgid "⬇ By Title"
-msgstr ""
+msgstr "⬇ টাইটেল অনুযায়"
 
 #: ../data/ui/menu/card_selection_mode.xml:23
 #: ../data/ui/menu/library_selection_mode.xml:30
 msgid "Select All"
-msgstr ""
+msgstr "সব সিলেক্ট করুন"
 
 #: ../data/ui/menu/download_manager.xml:12
 msgid "Delete All"
-msgstr ""
+msgstr "শন ডিলিট করুন"
 
 #: ../data/ui/menu/explorer_search_global_search.xml:12
 msgid "Pinned Servers Only"
-msgstr ""
+msgstr "পিন করা সার্ভার গুলো খালি"
 
 #: ../data/ui/menu/library_selection_mode.xml:12
 msgid "Edit Categories"
-msgstr ""
+msgstr "ক্যাটাগরি এডিট করুন"
 
 #: ../data/ui/menu/main.xml:12
 msgid "Update Library"
-msgstr ""
+msgstr "লাইব্রেরি আপডেট করুন"
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
-msgstr ""
+msgstr "সাজান"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr ""
+msgstr "আলফাবেটিকাল"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
-msgstr ""
+msgstr "লেটেস্ট রিড প্রথমে"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"

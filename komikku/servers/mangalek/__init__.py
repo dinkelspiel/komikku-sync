@@ -14,8 +14,8 @@ class Mangalek(Madara):
 
     date_format = '%Y ,%d %B'
 
-    base_url = 'https://lek-manga.net'
-    logo_url = 'https://io.lek-manga.net/wp-content/app/lekmanganet/512.png'
+    base_url = 'https://mangalik.net'
+    logo_url = 'https://io.mangalik.net/wp-content/app/lekmanganet/512.png'
     chapter_url = base_url + '/manga/{0}/{1}/'
 
     bypass_cf_url = base_url + '/manga/apotheosis/'
@@ -23,5 +23,5 @@ class Mangalek(Madara):
     # Mirrors
     # https://lekmanga.online/
     # https://lekmanga.site
+    # https://manga-leko.site
     # https://like-manga.net
-    # https://manga-leko.org

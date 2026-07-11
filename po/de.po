@@ -3,7 +3,7 @@
 # gregorni <gregorniehl@web.de>, 2023.
 # Liliana Marie Prikler <liliana.prikler@gmail.com>, 2023, 2026.
 # Tim <RC2225@users.noreply.github.com>, 2024.
-# Tim <rc2225@ghueder-schrott.com>, 2024, 2025.
+# Tim <rc2225@ghueder-schrott.com>, 2024, 2025, 2026.
 # Sear Gasor <tefffd@proton.me>, 2024.
 # Vortex Acherontic <vortex@z-ray.de>, 2024.
 # Dlurak <dlurak@proton.me>, 2025.
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
 "PO-Revision-Date: 2026-07-12 15:01+0000\n"
-"Last-Translator: Liliana Marie Prikler <liliana.prikler@gmail.com>\n"
+"Last-Translator: Tim <rc2225@ghueder-schrott.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/>"
 "\n"
 "Language: de\n"
@@ -1036,7 +1036,7 @@ msgstr "Download-Manager"
 #: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
 msgid "Select All Downloads"
-msgstr "Alle Download auswählen"
+msgstr "Alle Downloads auswählen"
 
 #: ../data/ui/support.blp:10 ../data/ui/support.blp:16
 msgid "Support Development"

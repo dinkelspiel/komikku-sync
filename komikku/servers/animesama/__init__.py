@@ -50,7 +50,7 @@ class Animesama(Server):
             authors=[],
             scanlators=[],  # not available
             genres=[],
-            status=None,    # not available
+            status=None,
             cover=None,
             synopsis=None,
             chapters=[],
@@ -62,6 +62,13 @@ class Animesama(Server):
 
         if element := soup.select_one('.info-grid > .info-lbl:-soup-contains("Créateur") ~ span'):
             data['authors'].append(element.text.strip())
+
+        if element := soup.select_one('.info-grid > .info-lbl:-soup-contains("État") ~ span'):
+            status = element.text.strip()
+            if status == 'En cours':
+                data['status'] = 'ongoing'
+            elif status == 'Terminé':
+                data['status'] = 'complete'
 
         for element in soup.select('.genre-pill'):
             data['genres'].append(element.text.strip())

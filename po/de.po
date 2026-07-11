@@ -1,7 +1,7 @@
 # Sandor Odor <sandor@codingclouds.de>, 2020.
 # Liliana Prikler <liliana.prikler@gmail.com>, 2020-2023.
 # gregorni <gregorniehl@web.de>, 2023.
-# Liliana Marie Prikler <liliana.prikler@gmail.com>, 2023.
+# Liliana Marie Prikler <liliana.prikler@gmail.com>, 2023, 2026.
 # Tim <RC2225@users.noreply.github.com>, 2024.
 # Tim <rc2225@ghueder-schrott.com>, 2024, 2025.
 # Sear Gasor <tefffd@proton.me>, 2024.
@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Komikku 0.19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-07 07:01+0000\n"
-"Last-Translator: anon <anon0000000000@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-07-12 15:01+0000\n"
+"Last-Translator: Liliana Marie Prikler <liliana.prikler@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/komikku/main/de/>"
 "\n"
 "Language: de\n"
@@ -37,11 +37,12 @@ msgstr "@description"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
-msgstr "manga;leser;betrachter;comic;manhwa;manhua;webtoon;webcomic;scanlation;buch;ebook;offline;GTK;GNOME;"
+msgstr ""
+"manga;leser;comic;manhwa;manhua;webtoon;webcomic;scanlation;übersetzung;buch;ebook;offline;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr "Entdecke und lese Manga &amp; Comics"
+msgstr "Entdecke und lese Manga und Comics"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
@@ -112,7 +113,7 @@ msgstr "Leser"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr "Betrachter"
+msgstr "Leser"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 #, fuzzy
@@ -439,10 +440,11 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
-"Komikku ist kostenlos und Open Source – und das wird auch immer so bleiben. "
-"Wenn es dir gefällt, würde ich mich über eine Spende sehr freuen. Das hilft "
-"mir nicht nur bei der Pflege des Projekts, sondern ermöglicht mir auch, "
-"meine Arbeit als Entwickler freier Software insgesamt fortzusetzen."
+"Komikku ist frei – sowohl gratis als auch quelloffen – und wird auch immer "
+"frei bleiben. Wenn es dir gefällt, würde ich mich über eine Spende sehr "
+"freuen. Diese wird mir nicht nur bei der Pflege des Projekts helfen, sondern "
+"ermöglicht mir auch, meine Arbeit als Entwickler freier Software insgesamt "
+"fortzusetzen."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
@@ -613,8 +615,8 @@ msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
 msgstr ""
-"Diese Einstellungen verhindern nicht , dass falsch konfigurierte Server NFSW "
-"Inhalte ausspielen."
+"Diese Einstellungen verhindern nicht, dass möglicherweise falsch markierte "
+"Server unpassende Inhalte ausspielen."
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
@@ -1159,13 +1161,12 @@ msgid "Context"
 msgstr "Kontext"
 
 #: ../komikku/application.py:636
-#, fuzzy
 msgid "Stack Trace"
-msgstr "Stapelverfolgung"
+msgstr "Stacktrace"
 
 #: ../komikku/application.py:658
 msgid "Debug Information"
-msgstr "Debug-Informationen"
+msgstr "Informationen zur Fehlerbehebung"
 
 #: ../komikku/application.py:678
 msgid "Server Error"
@@ -1440,87 +1441,81 @@ msgid "Pride Colors"
 msgstr "Pride-Farben"
 
 #: ../komikku/consts.py:23
-#, fuzzy
 msgid "Lesbian Pride Colors"
-msgstr "Lesben-Pride-Farben"
+msgstr "Lesbische Pride-Farben"
 
 #: ../komikku/consts.py:27
-#, fuzzy
 msgid "Male Homosexual Pride Colors"
-msgstr "Männliche-Homosexuelle-Pride-Farben"
+msgstr "Schwule Pride-Farben"
 
 #: ../komikku/consts.py:31
-#, fuzzy
 msgid "Transgender Pride Colors"
 msgstr "Transgender-Pride-Farben"
 
 #: ../komikku/consts.py:35
-#, fuzzy
 msgid "Nonbinary Pride Colors"
-msgstr "Nonbinary-Pride-Farben"
+msgstr "Nichtbinäre Pride-Farben"
 
 #: ../komikku/consts.py:39
-#, fuzzy
 msgid "Bisexual Pride Colors"
-msgstr "Bisexuelle-Pride-Farbem"
+msgstr "Bisexuelle Pride-Farbem"
 
 #: ../komikku/consts.py:43
-#, fuzzy
 msgid "Asexual Pride Colors"
-msgstr "Asexuelle-Pride-Farben"
+msgstr "Asexuelle Pride-Farben"
 
 #: ../komikku/consts.py:47
-#, fuzzy
 msgid "Pansexual Pride Colors"
-msgstr "Pansexuelle-Pride-Farben"
+msgstr "Pansexuelle Pride-Farben"
 
 #: ../komikku/consts.py:51
 msgid "Aromantic Pride Colors"
-msgstr ""
+msgstr "Aromantische Pride-Farben"
 
 #: ../komikku/consts.py:55
 msgid "Genderfluid Pride Colors"
-msgstr ""
+msgstr "Genderfluide Pride-Farben"
 
 #: ../komikku/consts.py:59
 msgid "Polysexual Pride Colors"
-msgstr ""
+msgstr "Polysexuelle Pride-Farben"
 
 #: ../komikku/consts.py:63
 msgid "Omnisexual Pride Colors"
-msgstr ""
+msgstr "Omnisexuelle Pride-Farben"
 
 #: ../komikku/consts.py:67
 msgid "Aroace Pride Colors"
-msgstr ""
+msgstr "Aromantisch-asexuelle Pride-Farben"
 
 #: ../komikku/consts.py:71
 msgid "Agender Pride Colors"
-msgstr ""
+msgstr "Agender-Pride-Farben"
 
 #: ../komikku/consts.py:75
 msgid "Genderqueer Pride Colors"
-msgstr ""
+msgstr "Genderqueere Pride-Farben"
 
 #: ../komikku/consts.py:79
 msgid "Intersex Pride Colors"
-msgstr ""
+msgstr "Intersex-Pride-Farben"
 
 #: ../komikku/consts.py:83
 msgid "Demigender Pride Colors"
-msgstr ""
+msgstr "Demigender-Pride-Farben"
 
 #: ../komikku/consts.py:87
 msgid "Biromantic Pride Colors"
-msgstr ""
+msgstr "Biromantische Pride-Farben"
 
 #: ../komikku/consts.py:91
+#, fuzzy
 msgid "Disability Pride Colors"
-msgstr ""
+msgstr "Disability-Pride-Farben"
 
 #: ../komikku/consts.py:95
 msgid "Femboy Pride Colors"
-msgstr ""
+msgstr "Femboy-Pride-Farben"
 
 #: ../komikku/consts.py:99
 msgid "Neutrois Pride Colors"
@@ -1899,12 +1894,12 @@ msgstr ""
 
 #: ../komikku/preferences/__init__.py:177
 msgid "Failed to clear WebView data"
-msgstr "Das Löschen der Webansicht-Daten ist fehlgeschlagen"
+msgstr "Webansicht-Daten konnten nicht gelöscht werden"
 
 #: ../komikku/preferences/__init__.py:181
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr ""
-"Möchten Sie die Daten der WebView (Cache, Speicher, Cookies) wirklich "
+"Möchten Sie die Daten der Webansicht (Cache, Speicher, Cookies) wirklich "
 "löschen?"
 
 #: ../komikku/preferences/__init__.py:206
@@ -2024,7 +2019,7 @@ msgstr "Graustufen"
 
 #: ../komikku/reader/__init__.py:553
 msgid "Convert pages to grayscale"
-msgstr "Seiten in Graustufen umwandeln"
+msgstr "Seiten grau einfärben"
 
 #: ../komikku/reader/__init__.py:560
 msgid "Sepia"
@@ -2032,7 +2027,7 @@ msgstr "Sepia"
 
 #: ../komikku/reader/__init__.py:561
 msgid "Give a more yellow/brown appearance to pages"
-msgstr "Den Seiten ein gelblicheres/bräunlicheres Aussehen verleihen"
+msgstr "Seiten gelblich-bräunlich einfärben"
 
 #: ../komikku/reader/__init__.py:568
 msgid "Saturation"
@@ -2374,7 +2369,7 @@ msgstr "Mädchen"
 #: ../komikku/servers/mangatown/__init__.py:53
 #: ../komikku/servers/weebdex/__init__.py:81
 msgid "Seinen"
-msgstr "Erwachsene"
+msgstr "Männer"
 
 #: ../komikku/servers/comick/__init__.py:123
 #: ../komikku/servers/comix/__init__.py:88
@@ -2383,7 +2378,7 @@ msgstr "Erwachsene"
 #: ../komikku/servers/mangatown/__init__.py:57
 #: ../komikku/servers/weebdex/__init__.py:80
 msgid "Josei"
-msgstr "Erwachsene"
+msgstr "Frauen"
 
 #: ../komikku/servers/comick/__init__.py:124
 msgid "None"
@@ -2527,7 +2522,7 @@ msgstr "Horror"
 #: ../komikku/servers/comick/__init__.py:170
 #: ../komikku/servers/mangadex/__init__.py:134
 msgid "Isekai"
-msgstr "Isekai"
+msgstr "Andere Welt (Isekai)"
 
 #: ../komikku/servers/comick/__init__.py:171
 #: ../komikku/servers/mangadex/__init__.py:135
@@ -2536,7 +2531,7 @@ msgstr "Magische Mädchen"
 
 #: ../komikku/servers/comick/__init__.py:172
 msgid "Mature"
-msgstr "Anstößig"
+msgstr "„Erwachsen“"
 
 #: ../komikku/servers/comick/__init__.py:173
 #: ../komikku/servers/mangadex/__init__.py:136
@@ -2550,6 +2545,7 @@ msgstr "Medizinisch"
 
 #: ../komikku/servers/comick/__init__.py:175
 #: ../komikku/servers/mangadex/__init__.py:138
+#, fuzzy
 msgid "Mystery"
 msgstr "Mysteriös"
 
@@ -2575,7 +2571,7 @@ msgstr "Sci-Fi"
 #: ../komikku/servers/comick/__init__.py:180
 #: ../komikku/servers/mangatown/__init__.py:56
 msgid "Shoujo Ai"
-msgstr "Lesbisch"
+msgstr "Liebe zwischen Frauen"
 
 #: ../komikku/servers/comick/__init__.py:181
 #: ../komikku/servers/mangadex/__init__.py:142
@@ -2802,7 +2798,7 @@ msgstr "Datensparmodus"
 #: ../komikku/servers/mangadex/__init__.py:169
 #: ../komikku/servers/weebdex/__init__.py:99
 msgid "Fetch lower quality images to save bandwidth"
-msgstr "Lade Bilder in geringerer Qualität herunter, um Bandbreite zu sparen"
+msgstr "Lade Bilder in niedriger Auflösung herunter, um Bandbreite zu sparen"
 
 #: ../komikku/servers/mangafire/__init__.py:52
 #: ../komikku/servers/mangapill/__init__.py:41
@@ -2825,7 +2821,7 @@ msgstr "Original englischsprachige Manga"
 
 #: ../komikku/servers/mangatown/__init__.py:58
 msgid "Shounen Ai"
-msgstr ""
+msgstr "Liebe zwischen Männern"
 
 #: ../komikku/servers/mangatown/__init__.py:71
 msgid "New"

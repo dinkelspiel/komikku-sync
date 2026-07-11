@@ -30,6 +30,7 @@ class Mangafire(Server):
     id = 'mangafire'
     name = 'MangaFire'
     lang = 'en'
+    status = 'disabled'  # New site
 
     base_url = 'https://mangafire.to'
     logo_url = base_url + '/assets/sites/mangafire/favicon.png?v3'

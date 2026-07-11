@@ -6,6 +6,7 @@ import logging
 import pytest
 from pytest_steps import test_steps
 
+from . import do_server_test
 from komikku.utils import log_error_traceback
 
 logging.basicConfig(level=logging.DEBUG)
@@ -18,6 +19,7 @@ def mangafire_server():
     return Mangafire()
 
 
+@do_server_test
 @test_steps('get_latest_updates', 'get_most_popular', 'get_manga_data')
 def test_mangafire(mangafire_server):
     # Get latest updates

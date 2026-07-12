@@ -7,8 +7,8 @@
 # Cerise Scan [pt_BR] (disabled)
 # Dango Scan [pt_BR] (disabled)
 # Luratoon Scan [pt_BR] (disabled)
-# Nazarick Scan [pt_BR]
-# RF Dragon Scan [pt_BR]
+# Nazarick Scan [pt_BR] (disabled)
+# RF Dragon Scan [pt_BR] (disabled)
 # Wicked Witch Scan [pt_BR] (disabled)
 
 import base64
@@ -196,26 +196,28 @@ class Peachscan(Server):
         if mime_type == 'application/zip' or page['image'].endswith('.zip'):
             # Image is cut into several chunks stored in a ZIP archive
             chunks = []
-            with ZipFile(BytesIO(r.content), 'r') as zip:
-                # Read files
-                for name in zip.namelist():
-                    _index, type = name.split('.')
-                    with zip.open(name=name, mode='r') as fp:
-                        data = fp.read()
+            with BytesIO(r.content) as io_buffer:
+                with ZipFile(io_buffer, 'r') as zip:
+                    # Read files
+                    for name in zip.namelist():
+                        _index, type = name.split('.')
+                        with zip.open(name=name, mode='r') as fp:
+                            data = fp.read()
 
-                    if type == 's':
-                        # image data in a SVG
-                        data = data.decode('utf-8')
-                        if matches := RE_ZIP_IMAGES.search(data):
-                            chunks.append(base64.b64decode(matches.group(1)))
-                    else:
-                        chunks.append(data)
+                        if type == 's':
+                            # image data in a SVG
+                            data = data.decode('utf-8')
+                            if matches := RE_ZIP_IMAGES.search(data):
+                                chunks.append(base64.b64decode(matches.group(1)))
+                        else:
+                            chunks.append(data)
 
             # Load image chunks and compute its size
             width, height = 0, 0
             img_chunks = []
             for chunk in chunks:
-                img_chunk = Image.open(BytesIO(chunk))
+                with BytesIO(chunk) as io_buffer:
+                    img_chunk = Image.open(io_buffer)
                 img_chunks.append(img_chunk)
                 width = max(width, img_chunk.width)
                 height += img_chunk.height
@@ -227,11 +229,12 @@ class Peachscan(Server):
                 x = (img_chunk.width - width) / 2
                 image.paste(img_chunk, (int(x), y))
                 y += img_chunk.height
+                img_chunk.close()
 
-            io_buffer = BytesIO()
-            image.save(io_buffer, 'png')
+            with BytesIO() as io_buffer:
+                image.save(io_buffer, 'png')
+                buffer = io_buffer.getvalue()
 
-            buffer = io_buffer.getvalue()
             ext = 'png'
 
         elif mime_type.startswith('image'):

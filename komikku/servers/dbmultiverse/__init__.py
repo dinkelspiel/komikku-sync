@@ -217,7 +217,8 @@ class Dbmultiverse(Server):
         format_ = mime_type.split('/')[-1]
 
         if balloons:
-            image = Image.open(BytesIO(buffer)).convert('RGB')
+            with BytesIO(buffer) as io_buffer:
+                image = Image.open(io_buffer).convert('RGB')
             draw = ImageDraw.Draw(image)
             font_base_size = 14
             font_ratio = 1
@@ -241,10 +242,11 @@ class Dbmultiverse(Server):
                     draw.text(xy=(balloon['left'] + offset_x, offset_y), text=line, font=font, fill=(0, 0, 0))
                     offset_y += font_base_size * font_ratio
 
-            io_buffer = BytesIO()
-            image.save(io_buffer, format_)
+            with BytesIO() as io_buffer:
+                image.save(io_buffer, format_)
+                buffer = io_buffer.getvalue()
+
             image.close()
-            buffer = io_buffer.getvalue()
 
         return {
             'buffer': buffer,

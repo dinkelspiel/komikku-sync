@@ -336,12 +336,11 @@ class PDF:
         else:
             image = concat_images_vertically(*[page.images[key].image for key in images_keys])
 
-            io_buffer = BytesIO()
-            image.save(io_buffer, 'JPEG')
-            image.close()
+            with BytesIO() as io_buffer:
+                image.save(io_buffer, 'JPEG')
+                buffer = io_buffer.getvalue()
 
-            buffer = io_buffer.getvalue()
-            io_buffer.close()
+            image.close()
 
         return buffer
 

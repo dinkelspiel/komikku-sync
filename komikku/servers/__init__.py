@@ -203,7 +203,7 @@ class Server(BaseServer, ABC):
         - date: Publish date of the chapter [optional]
         - scanlators: List of scanlators (str) [optional]
 
-        Beware, the slug passed to `initial_data` param must never be modified.
+        .. warning:: the slug passed to `initial_data` param must never be modified.
         It must remain the same as the one obtained from search,
         because the slug's uniqueness is verified during search.
         If slug is modified, an UNIQUE constraint on (server_id, slug) can be violated when
@@ -503,12 +503,13 @@ def install_servers_modules_from_repo(app_version):
         if r.status_code != 200:
             return None, None
 
-        with zipfile.ZipFile(BytesIO(r.content)) as zip:
-            for zip_info in zip.infolist():
-                if zip_info.is_dir():
-                    continue
+        with BytesIO(r.content) as io_buffer:
+            with zipfile.ZipFile(io_buffer) as zip:
+                for zip_info in zip.infolist():
+                    if zip_info.is_dir():
+                        continue
 
-                zip.extract(zip_info, dest_path)
+                    zip.extract(zip_info, dest_path)
 
         return True, 'updated' if current_hash else 'created'
 

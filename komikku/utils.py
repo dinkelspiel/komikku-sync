@@ -18,6 +18,7 @@ import re
 import subprocess
 import traceback
 
+from colorthief import ColorThief
 import gi
 from jxlpy import JXLImagePlugin  # noqa: F401
 import magic
@@ -91,13 +92,6 @@ def convert_and_resize_image(buffer, width, height, keep_aspect_ratio=True, domi
     :rtype: bytes
     """
 
-    def get_dominant_color(img):
-        # Resize image to reduce number of colors
-        colors = img.resize((150, 150), resample=0).getcolors(150 * 150)
-        sorted_colors = sorted(colors, key=lambda t: t[0])
-
-        return sorted_colors[-1][1]
-
     def remove_alpha(img):
         if img.mode not in ('P', 'RGBA'):
             return img
@@ -107,36 +101,42 @@ def convert_and_resize_image(buffer, width, height, keep_aspect_ratio=True, domi
 
         return Image.alpha_composite(background, img)
 
-    try:
-        img = Image.open(BytesIO(buffer))
-    except Exception as exc:
-        logger.error('Failed to open image (Pillow)', exc_info=exc)
-        return None
+    with BytesIO(buffer) as io_buffer:
+        try:
+            img = Image.open(io_buffer)
+        except Exception as exc:
+            logger.error('Failed to open image (Pillow)', exc_info=exc)
+            return None
 
-    if img.format in ('GIF', 'WEBP') and img.is_animated:
-        return buffer
+        if img.format in ('GIF', 'WEBP') and img.is_animated:
+            img.close()
+            return buffer
 
-    old_width, old_height = img.size
-    if keep_aspect_ratio and old_width >= old_height:
-        img = remove_alpha(img)
+        old_width, old_height = img.size
+        if keep_aspect_ratio and old_width >= old_height:
+            img = remove_alpha(img)
 
-        new_ratio = height / width
+            new_ratio = height / width
 
-        new_img = Image.new(img.mode, (old_width, int(old_width * new_ratio)), get_dominant_color(img))
-        new_img.paste(img, (0, (int(old_width * new_ratio) - old_height) // 2))
-        new_img.thumbnail((width, height), Image.LANCZOS)
-    else:
-        new_img = img.resize((width, height), Image.LANCZOS)
+            new_img = Image.new(img.mode, (old_width, int(old_width * new_ratio)), ColorThief(io_buffer).get_color())
+            new_img.paste(img, (0, (int(old_width * new_ratio) - old_height) // 2))
+            new_img.thumbnail((width, height), Image.LANCZOS)
+        else:
+            new_img = img.resize((width, height), Image.LANCZOS)
 
-    new_buffer = BytesIO()
-    if format == 'JPEG':
-        new_img.convert('RGB').save(new_buffer, 'JPEG', quality=90)
-    else:
-        # Assume format supports alpha channel (transparency)
-        new_img.convert('RGBA').save(new_buffer, format)
-    new_img.close()
+        img.close()
 
-    return new_buffer.getvalue()
+    with BytesIO() as io_buffer:
+        if format == 'JPEG':
+            new_img.convert('RGB').save(io_buffer, 'JPEG', quality=90)
+        else:
+            # Assume format supports alpha channel (transparency)
+            new_img.convert('RGBA').save(io_buffer, format)
+        new_img.close()
+
+        new_buffer = io_buffer.getvalue()
+
+    return new_buffer
 
 
 def folder_size(path, exclude=None):
@@ -257,7 +257,8 @@ def get_image_info(path_or_bytes):
         if isinstance(path_or_bytes, str):
             img = Image.open(path_or_bytes)
         else:
-            img = Image.open(BytesIO(path_or_bytes))
+            with BytesIO(path_or_bytes) as io_buffer:
+                img = Image.open(io_buffer)
     except Exception:
         # Pillow doesn´t support SVG images
         # Get content type to identify an image

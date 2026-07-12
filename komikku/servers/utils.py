@@ -46,7 +46,8 @@ class TextImage:
             text = ''
 
         rfont = Gio.resources_lookup_data('/info/febvre/Komikku/text-image.otf', Gio.ResourceLookupFlags.NONE)
-        font = ImageFont.truetype(BytesIO(rfont.get_data()), font_size)
+        with BytesIO(rfont.get_data()) as io_buffer:
+            font = ImageFont.truetype(io_buffer, font_size)
 
         draw = ImageDraw.Draw(self.image)
         if '\n' in text:
@@ -63,10 +64,10 @@ class TextImage:
 
     @property
     def content(self):
-        buf = BytesIO()
-        self.image.save(buf, self.format.upper())
+        with BytesIO() as io_buffer:
+            self.image.save(io_buffer, self.format.upper())
 
-        return buf.getvalue()
+            return io_buffer.getvalue()
 
     @property
     def mime_type(self):
@@ -614,7 +615,8 @@ def unscramble_image(image):
     :rtype: PIL.Image.Image
     """
     if not isinstance(image, Image.Image):
-        image = Image.open(BytesIO(image))
+        with BytesIO(image) as io_buffer:
+            image = Image.open(io_buffer)
 
     temp = Image.new('RGB', image.size)
     output_image = Image.new('RGB', image.size)
@@ -642,6 +644,9 @@ def unscramble_image(image):
             row2 = temp.crop((0, y + 100, temp.width, temp.height))
             output_image.paste(row1, (0, y))
             output_image.paste(row2, (0, y + 100))
+
+    image.close()
+    temp.close()
 
     return output_image
 
@@ -712,7 +717,8 @@ def unscramble_image_rc4(image, key, piece_size):
     :rtype: PIL.Image.Image
     """
     if not isinstance(image, Image.Image):
-        image = Image.open(BytesIO(image))
+        with BytesIO(image) as io_buffer:
+            image = Image.open(io_buffer)
 
     output_image = Image.new('RGB', image.size)
 
@@ -756,5 +762,7 @@ def unscramble_image_rc4(image, key, piece_size):
 
             src_piece = image.crop((src['x'], src['y'], src['x'] + src['w'], src['y'] + src['h']))
             output_image.paste(src_piece, (dst['x'], dst['y']))
+
+    image.close()
 
     return output_image

@@ -9,7 +9,8 @@ class Rfdragonscan(Peachscan):
     id = 'rfdragonscan'
     name = 'RF Dragon Scan'
     lang = 'pt_BR'
+    status = 'disabled'
 
     has_cf = True
 
-    base_url = 'https://rfdragonscan.com'
+    base_url = 'https://rfdragonscan.net'

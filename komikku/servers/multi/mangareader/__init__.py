@@ -1,12 +1,14 @@
-# SPDX-FileCopyrightText: 2023-2024 Valéry Febvre
+# SPDX-FileCopyrightText: 2023-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 # Supported servers:
-# MangaReader [EN/FR/JA/KO/ZH_HANS]
+# JManga [JA]
+# MangaReader [EN/FR/JA/KO/ZH_HANS] (disabled)
 
 from gettext import gettext as _
 from io import BytesIO
+import urllib.parse
 
 from bs4 import BeautifulSoup
 import requests
@@ -27,6 +29,9 @@ class Mangareader(Server):
     api_chapter_images_url: str
 
     languages_codes: dict
+
+    scrambled_images = False
+    slug_position: int = -2
 
     def __init__(self):
         if self.session is None:
@@ -53,56 +58,62 @@ class Mangareader(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],  # not available
-            genres=[],
-            status=None,
-            cover=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],  # not available
+            'genres': [],
+            'status': None,
+            'cover': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         data['name'] = soup.select_one('.manga-name').text.strip()
-        data['cover'] = soup.select_one('.manga-poster > img').get('src')
+        data['cover'] = soup.select_one('.manga-poster img').get('data-src')
 
         # Details
-        for element in soup.select('.genres >a'):
+        for element in soup.select('.genres > a'):
             data['genres'].append(element.text.strip())
 
         for element in soup.select('.anisc-info .item'):
             label = element.span.text.strip()
 
-            if label.startswith('Status'):
+            if label.startswith('タイプ'):
+                # Type
+                data['genres'].append(element.select_one('.name').text.strip())
+
+            elif label.startswith('地位'):
+                # Status
                 value = element.select_one('.name').text.strip()
                 if value == 'Publishing':
                     data['status'] = 'ongoing'
-                elif value == 'Finished':
+                elif value == 'Completed':
                     data['status'] = 'complete'
                 elif value == 'Discontinued':
                     data['status'] = 'suspended'
                 elif value == 'On Hiatus':
                     data['status'] = 'hiatus'
 
-            elif label.startswith('Author'):
+            elif label.startswith('著者'):
+                # Authors
                 for a_element in element.select('a'):
-                    name = a_element.text.replace(',', '').strip()
-                    func = a_element.next_sibling.replace(',', '').strip()
-                    data['authors'].append(f'{name} {func}')
+                    data['authors'].append(a_element.text.strip())
 
         if synopsis_element := soup.select_one('.description'):
             data['synopsis'] = synopsis_element.text.strip()
 
         # Chapters
-        if ul_element := soup.select_one(f'#{self.languages_codes[self.lang]}-chapters'):
+        if ul_element := soup.select_one(f'#{self.languages_codes[self.lang]}-chaps'):
             for element in reversed(ul_element.select('li')):
                 a_element = element.a
-                data['chapters'].append(dict(
-                    slug=a_element.get('href').split('/')[-1],
-                    title=a_element.get('title').strip(),
-                    num=element.get('data-number'),
-                ))
+                sid = element.get('data-id')
+                slug = a_element.get('href').split('/')[self.slug_position]
+                data['chapters'].append({
+                    'slug': f'{sid}:{slug}',
+                    'title': a_element.get('title').strip(),
+                    'num': element.get('data-number'),
+                })
         else:
             # Manga exists but has no chapters in self.lang (not filtered in search)
             raise ServerException(_('Not available in {0} language').format(self.lang.upper()))
@@ -110,47 +121,36 @@ class Mangareader(Server):
         return data
 
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
-        # Retrieve chapter ID in chapter HTML page
-        chapter_url = self.chapter_url.format(manga_slug, self.languages_codes[self.lang], chapter_slug)
-        r = self.session_get(
-            chapter_url,
-            headers={
-                'Referer': self.manga_url.format(manga_slug),
-            }
-        )
-        if r.status_code != 200:
-            return None
-
-        soup = BeautifulSoup(r.text, 'lxml')
-
-        chapter_id = soup.select_one('#wrapper').get('data-reading-id')
+        chapter_id, chapter_slug = chapter_slug.split(':')
 
         # Get chapter images (ajax)
         r = self.session_get(
             self.api_chapter_images_url.format(chapter_id),
             headers={
-                'Referer': chapter_url,
-                'x-requested-with': 'XMLHttpRequest',
+                'Referer': urllib.parse.quote_plus(self.chapter_url.format(
+                    manga_slug, self.languages_codes[self.lang], chapter_slug
+                )),
+                'X-Requested-With': 'XMLHttpRequest',
             }
         )
         if r.status_code != 200:
             return None
 
         json_data = r.json()
-        if json_data['status']:
-            soup = BeautifulSoup(r.json()['html'], 'lxml')
-        else:
+        if not json_data['status']:
             return None
 
-        data = dict(
-            pages=[],
-        )
+        soup = BeautifulSoup(json_data['html'], 'lxml')
+
+        data = {
+            'pages': [],
+        }
         for element in soup.select('.iv-card'):
-            data['pages'].append(dict(
-                slug=None,
-                scrambled='shuffled' in element.get('class'),
-                image=element.get('data-url'),
-            ))
+            data['pages'].append({
+                'slug': None,
+                'scrambled': 'shuffled' in element.get('class'),
+                'image': element.img.get('data-src'),
+            })
 
         return data
 
@@ -171,20 +171,20 @@ class Mangareader(Server):
         if not mime_type.startswith('image'):
             return None
 
-        if page['scrambled']:
+        if self.scrambled_images and page['scrambled']:
             # js/read.min.js: key is 2nd argument of unShuffle function
             image = unscramble_image_rc4(r.content, 'stay', 200)
-            io_buffer = BytesIO()
-            image.save(io_buffer, 'png')
-            buffer = io_buffer.getvalue()
+            with BytesIO() as io_buffer:
+                image.save(io_buffer, 'png')
+                buffer = io_buffer.getvalue()
         else:
             buffer = r.content
 
-        return dict(
-            buffer=buffer,
-            mime_type=mime_type,
-            name=page['image'].split('?')[0].split('/')[-1],
-        )
+        return {
+            'buffer': buffer,
+            'mime_type': mime_type,
+            'name': page['image'].split('?')[0].split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """
@@ -192,21 +192,12 @@ class Mangareader(Server):
         """
         return self.manga_url.format(slug)
 
-    def get_manga_list(self, sort='default'):
+    def get_manga_list(self, type=None, status=None, orderby='default'):
         params = {
-            'type': None,
-            'status': None,
-            'rating_type': None,
-            'score': None,
+            'type': type,
+            'status': status,
             'language': self.languages_codes[self.lang],
-            'sy': None,
-            'sm': None,
-            'sd': None,
-            'ey': None,
-            'em': None,
-            'ed': None,
-            'sort': sort,
-            'genre': None,
+            'sort': orderby,
         }
 
         r = self.session_get(
@@ -223,25 +214,33 @@ class Mangareader(Server):
 
         results = []
         for item in soup.select('.item-spc'):
-            results.append(dict(
-                slug=item.select_one('.manga-name > a').get('href').split('/')[-1],
-                name=item.select_one('.manga-name').text.strip(),
-                cover=item.select_one('.manga-poster > img').get('src'),
-            ))
+            cover = None
+            if cover_element := item.select_one('.manga-poster img'):
+                cover = cover_element.get('data-src')
+                if not cover:
+                    cover = cover_element.get('src')
+
+            results.append({
+                'slug': item.select_one('.manga-name > a').get('href').split('/')[self.slug_position],
+                'name': item.select_one('.manga-name').text.strip(),
+                'cover': cover,
+            })
 
         return results
 
-    def get_latest_updates(self):
-        return self.get_manga_list(sort='latest-updated')
+    def get_latest_updates(self, type=None, status=None):
+        return self.get_manga_list(type=type, status=status, orderby='latest-updated')
 
-    def get_most_populars(self):
-        return self.get_manga_list(sort='most-viewed')
+    def get_most_populars(self, type=None, status=None):
+        return self.get_manga_list(type=type, status=status, orderby='most-viewed')
 
-    def search(self, term):
+    def search(self, term, type=None, status=None):
         # Search does not take language into account
         r = self.session_get(
             self.search_url,
-            params=dict(keyword=term),
+            params={
+                'q': term,
+            },
             headers={
                 'Referer': self.base_url + '/',
             }
@@ -257,10 +256,16 @@ class Mangareader(Server):
             if self.languages_codes[self.lang].upper() not in langs:
                 continue
 
-            results.append(dict(
-                slug=item.select_one('.manga-name > a').get('href').split('/')[-1],
-                name=item.select_one('.manga-name').text.strip(),
-                cover=item.select_one('.manga-poster > img').get('src'),
-            ))
+            cover = None
+            if cover_element := item.select_one('.manga-poster img'):
+                cover = cover_element.get('data-src')
+                if not cover:
+                    cover = cover_element.get('src')
+
+            results.append({
+                'slug': item.select_one('.manga-name > a').get('href').split('/')[self.slug_position],
+                'name': item.select_one('.manga-name').text.strip(),
+                'cover': cover,
+            })
 
         return results

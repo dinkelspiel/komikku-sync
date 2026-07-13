@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-02-17 00:31+0000\n"
+"PO-Revision-Date: 2026-07-13 19:01+0000\n"
 "Last-Translator: Flynn <cirilla@tuta.io>\n"
-"Language-Team: Cornish <https://hosted.weblate.org/projects/komikku/main/kw/"
-">\n"
+"Language-Team: Cornish <https://hosted.weblate.org/projects/komikku/main/kw/>"
+"\n"
 "Language: kw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "1000000 == 100000) ? 2 : ((n % 100 == 3 || n % 100 == 23 || n % 100 == 43 || "
 "n % 100 == 63 || n % 100 == 83) ? 3 : ((n != 1 && (n % 100 == 1 || n % 100 "
 "== 21 || n % 100 == 41 || n % 100 == 61 || n % 100 == 81)) ? 4 : 5))));\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -35,7 +35,8 @@ msgstr "@description@"
 
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
-msgstr "manga;redell;gwelyell;komik;manhwa;manhua;webtoon;webkomik;scanlation;lyver;elyver;dhywarlinen;GTK;GNOME;"
+msgstr ""
+"manga;redyell;gwelell;komik;manhwa;manhua;webtoon;webkomik;scanlation;lyver;elyver;dhywarlinen;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -46,25 +47,27 @@ msgid ""
 "With its simple, elegant and adaptive interface, this reader lets you "
 "search, sort and read your series with ease."
 msgstr ""
-"Gans an ynterfas sempel, afinys, ha desedhadow, an redell ma gasa ty hwilas, "
-"sortya, ha redya dha kevresyow yn es."
+"Gans an ynterfas sempel, afinys, ha desedhadow, an redyell ma a asa dhis "
+"hwilas, sortya, ha redya dha gevresyow yn es."
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
-msgstr "Prag ty kara Komikku?"
+msgstr "Prag karydh Komikku?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr "Redyans warlinen ha dhywarlinen dhyworth dewdhegow servellow"
+msgstr "Redyans warlinen ha dhywarlinen dhyworth dewdhegow a servellow"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"Skoodhyans rag kevresyow gwithys yn leel (yn furvasow CBZ/CBR/CBT, EPUB, ha "
+"PDF)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
-msgstr "Fordh reyans DDK, KDD, Plommwedhek, ha Webtoon"
+msgstr "Fordh redyans DDK, KDD, Plommwedhek, ha Webtoon"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -72,78 +75,81 @@ msgid ""
 "navigation layout via mouse click or tapping (touchpad/touch screen), mouse "
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
+"Skoodhyans rag nebes eghennow a navigacyon: alhwedhennow sethow, klyckyans "
+"po tavans, ros logosen, skubyans bys"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:21
 msgid "Categories to organize your library"
-msgstr ""
+msgstr "Klassys rag orna dha lyverva"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
 msgstr ""
+"Helerghyans awtomatek a gevresyow gans AniList, MangaUpdates, ha MyAnimeList"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
-msgstr ""
+msgstr "Nowedhyans awtomatek a gevresyow"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr ""
+msgstr "Iskarg awtomatek a japters nowydh"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
-msgstr ""
+msgstr "Istori redya"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:26
 msgid "Light and dark themes"
-msgstr ""
+msgstr "Themys gwynn ha du"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "redyell"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr ""
+msgstr "gwelell"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 msgid "scanlation"
-msgstr ""
+msgstr "scanlation"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "komik"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "manga"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "manhwa"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "manhua"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "webtoon"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
-msgstr ""
+msgstr "komik gwi"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
-msgstr ""
+msgstr "lyver"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "elyver"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
-msgstr ""
+msgstr "dhywarlinen"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
@@ -151,43 +157,43 @@ msgstr "An folen Lyverva"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:66
 msgid "The Library page with the category sidebar open"
-msgstr "An folen lyverva gans an bordh lestri ygor"
+msgstr "An folen Lyverva gans an bordh lestri ygor"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "An folen Dhewisyow (Settyansow ollgemmyn)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
-msgstr "An folen Furyer yn furvas klapkodh (Rol servellow)"
+msgstr "An folen Furyell yn furvas klapkodh (Rol servellow)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:78
 msgid "The Details page"
-msgstr "An folen Manylyon"
+msgstr "An folen Vanylyon"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:82
 msgid "The Details page (chapters list)"
-msgstr "An folen Manylyon (rol chapters)"
+msgstr "An folen Vanylyon (rol japters)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:86
 msgid "The Reader page"
-msgstr "An folen Redyer"
+msgstr "An folen Redyell"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:90
 msgid "The Reader page in mobile format"
-msgstr "An folen Redyer yn furvas klapkodh"
+msgstr "An folen Redyell yn furvas klapkodh"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:94
 msgid "The Category editor page in mobile format"
-msgstr ""
+msgstr "An folen Janjyell klass yn furvas klapkodh"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:98
 msgid "The Reading history page in mobile format"
-msgstr ""
+msgstr "An folen Istori redya yn furvas klapkodh"
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:410
 msgid "Got it!"
-msgstr ""
+msgstr "Da Lowr!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:418
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
@@ -201,11 +207,11 @@ msgstr "Kedhlow"
 
 #: ../data/ui/card.blp:148
 msgid "Add to Library"
-msgstr "Addya dhe Lyverva"
+msgstr "Keworra dhe Lyverva"
 
 #: ../data/ui/card.blp:252
 msgid "Scanlators"
-msgstr ""
+msgstr "Scanlatoryon"
 
 #: ../data/ui/card.blp:308
 msgid "Last Update"
@@ -213,7 +219,7 @@ msgstr "Nowedhyans Diwettha"
 
 #: ../data/ui/card.blp:336
 msgid "Size on Disk"
-msgstr "Braster war Plasen"
+msgstr "Braster war Blasen"
 
 #: ../data/ui/card.blp:455 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:255
@@ -222,7 +228,7 @@ msgstr "Klassys Vyth"
 
 #: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:110
 msgid "Tracking"
-msgstr "Ow Helerghi"
+msgstr "Owth Helerghi"
 
 #: ../data/ui/card_tracking_search.blp:10 ../data/ui/explorer_search.blp:10
 #: ../data/ui/explorer_search.blp:43 ../data/ui/history.blp:22
@@ -232,11 +238,11 @@ msgstr "Hwilas"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
-msgstr "Hwilas rag Ow Helerghi"
+msgstr "Hwilas rag Owth Helerghi"
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
-msgstr "Addya"
+msgstr "Keworra"
 
 #: ../data/ui/download_manager.blp:10 ../data/ui/download_manager.blp:20
 msgid "Download Manager"
@@ -260,7 +266,7 @@ msgstr "Ygeri yn Peurell"
 
 #: ../data/ui/explorer_search.blp:147
 msgid "Most Popular"
-msgstr "Gerys-Da Moyha"
+msgstr "An Moyha Gerys-Da"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
@@ -273,7 +279,7 @@ msgstr "Servellow"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
-msgstr "Hwilas Komigow A-Dreus Oll Servellow"
+msgstr "Hwilas Komigow A-Dreus Oll a Servellow"
 
 #: ../data/ui/explorer_servers.blp:23
 msgid "Search Servers"
@@ -281,7 +287,7 @@ msgstr "Hwilas Servellow"
 
 #: ../data/ui/explorer_servers.blp:37
 msgid "Search for servers by name or language"
-msgstr "Hwilas rag servellow gans hanow po yeth"
+msgstr "Hwilas rag servellow orth hanow po yeth"
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"
@@ -301,15 +307,15 @@ msgstr "Dewis Bordh Lestri Klassys"
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
-msgstr "Rol Chif"
+msgstr "Pennrol"
 
 #: ../data/ui/library.blp:79
 msgid "Search by name, server or genre"
-msgstr "Hwilas gans hanow, servell po eghen"
+msgstr "Hwilas orth hanow, servell po eghen"
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
 msgid "Update"
-msgstr ""
+msgstr "Nowedhi"
 
 #: ../data/ui/library.blp:206
 msgid "Discover Comics"
@@ -321,31 +327,31 @@ msgstr "Da Lowr"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
-msgstr ""
+msgstr "Aray a Japters"
 
 #: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
-msgstr ""
+msgstr "⬆ Orth Pennfenten"
 
 #: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
-msgstr ""
+msgstr "⬇ Orth Pennfenten"
 
 #: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
-msgstr ""
+msgstr "⬆ Orth Dedhyas"
 
 #: ../data/ui/menu/card.xml:55
 msgid "⬇ By Date"
-msgstr ""
+msgstr "⬇ Orth Dedhyas"
 
 #: ../data/ui/menu/card.xml:61
 msgid "⬆ By Title"
-msgstr ""
+msgstr "⬆ Orth Titel"
 
 #: ../data/ui/menu/card.xml:66
 msgid "⬇ By Title"
-msgstr ""
+msgstr "⬇ Orth Titel"
 
 #: ../data/ui/menu/card_selection_mode.xml:23
 #: ../data/ui/menu/library_selection_mode.xml:30
@@ -362,56 +368,56 @@ msgstr "Servellow Pynnys Hepken"
 
 #: ../data/ui/menu/library_selection_mode.xml:12
 msgid "Edit Categories"
-msgstr ""
+msgstr "Golegi Klassys"
 
 #: ../data/ui/menu/main.xml:12
 msgid "Update Library"
-msgstr ""
+msgstr "Nowedhi Lyverva"
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
-msgstr ""
+msgstr "Sortya"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr ""
+msgstr "Aray Lytherennek"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
-msgstr ""
+msgstr "Redys A-dhiwedhes"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"
-msgstr ""
+msgstr "Nowedhys A-dhiwedhes"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Kesunyansow Bysowek"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
-msgstr ""
+msgstr "A-dro dhe Gomikku"
 
 #: ../data/ui/menu/reader.xml:114
 msgid "Zoom Landscape Pages"
-msgstr ""
+msgstr "Moghhe/Lehe Folennow yn Hworwelyek"
 
 #: ../data/ui/menu/reader.xml:118
 msgid "Crop Borders"
-msgstr ""
+msgstr "Dibenna Emlow"
 
 #: ../data/ui/menu/reader.xml:122
 msgid "Hide Page Numbering"
-msgstr ""
+msgstr "Kudha Niverennans Folen"
 
 #: ../data/ui/menu/reader.xml:136
 msgid "Save Page"
-msgstr ""
+msgstr "Gwitha Folen"
 
 #: ../data/ui/preferences.blp:9 ../data/ui/preferences_servers_languages.blp:16
 #: ../data/ui/preferences_servers_settings.blp:16
 msgid "Preferences"
-msgstr ""
+msgstr "Dewisyow"
 
 #: ../data/ui/preferences.blp:14
 msgid "General"
@@ -428,294 +434,300 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"Komikku yw rydh hag y fydh yndelna bys vynari. Mar karydh, ty a yll ow "
+"skoodhya der argevrohow. Hemm a wra ow gweres gans an ober."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
-msgstr ""
+msgstr "Gis"
 
 #: ../data/ui/preferences.blp:62
 msgid "Theme"
-msgstr ""
+msgstr "Thema"
 
 #: ../data/ui/preferences.blp:65
 msgid "Light"
-msgstr ""
+msgstr "Gwynn"
 
 #: ../data/ui/preferences.blp:66
 msgid "Dark"
-msgstr ""
+msgstr "Du"
 
 #: ../data/ui/preferences.blp:67
 msgid "Follow System"
-msgstr ""
+msgstr "Obaya Kevreyth"
 
 #: ../data/ui/preferences.blp:73
 msgid "Night Light"
-msgstr ""
+msgstr "Golow Nos"
 
 #: ../data/ui/preferences.blp:74
 msgid "Automatically enable dark theme at night"
-msgstr ""
+msgstr "Bywhe yn awtomatek thema du yn nos"
 
 #: ../data/ui/preferences.blp:79
 msgid "Use system accent colors"
-msgstr ""
+msgstr "Devnydhya liwyow chif an kevreyth"
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
-msgstr ""
+msgstr "Thema Barrys Avonsyans"
 
 #: ../data/ui/preferences.blp:84
 msgid "Theme to use for progress bars"
-msgstr ""
+msgstr "Thema rag barrys avonsyans"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
-msgstr ""
+msgstr "Kilva yn Folen Vanylyon"
 
 #: ../data/ui/preferences.blp:89
 msgid "Method used to recolor background to match cover"
-msgstr ""
+msgstr "Method devnydhys rag dasliwa kilva rag omdhesedha gorher"
 
 #: ../data/ui/preferences.blp:93
 msgid "Linear gradient"
-msgstr ""
+msgstr "Ledras linyek"
 
 #: ../data/ui/preferences.blp:94
 msgid "Blurred cover"
-msgstr ""
+msgstr "Gorher drogurys"
 
 #: ../data/ui/preferences.blp:104
 msgid "Desktop Notifications"
-msgstr ""
+msgstr "Gwarnyansow"
 
 #: ../data/ui/preferences.blp:105
 msgid "Use desktop notifications for downloads and library updates"
-msgstr ""
+msgstr "Devnydhya gwarnyansow rag iskargow ha nowedhyansow lyverva"
 
 #: ../data/ui/preferences.blp:113
 msgid "Synchronize reading progress"
-msgstr ""
+msgstr "Kettermynyegi avonsyans redya"
 
 #: ../data/ui/preferences.blp:124
 msgid "Display"
-msgstr ""
+msgstr "Displetyans"
 
 #: ../data/ui/preferences.blp:127
 msgid "Display Mode"
-msgstr ""
+msgstr "Fordh Dhispletyans"
 
 #: ../data/ui/preferences.blp:130
 msgid "Grid"
-msgstr ""
+msgstr "Rastell"
 
 #: ../data/ui/preferences.blp:131
 msgid "Compact Grid"
-msgstr ""
+msgstr "Rastell Gesstrothys"
 
 #: ../data/ui/preferences.blp:137
 msgid "Servers Logo"
-msgstr ""
+msgstr "Logo an Servell"
 
 #: ../data/ui/preferences.blp:138
 msgid "Display servers logo"
-msgstr ""
+msgstr "Displetya logo an servell"
 
 #: ../data/ui/preferences.blp:142
 msgid "Badges"
-msgstr ""
+msgstr "Arwodhigow"
 
 #: ../data/ui/preferences.blp:145
 msgid "Number of Unread Chapters"
-msgstr ""
+msgstr "Niver a Japters Anredys"
 
 #: ../data/ui/preferences.blp:165
 msgid "Number of Downloaded Chapters"
-msgstr ""
+msgstr "Niver a Japters Iskargys"
 
 #: ../data/ui/preferences.blp:185
 msgid "Number of Recent and Unread Chapters"
-msgstr ""
+msgstr "Niver a Japters A-dhiwedhes hag Anredys"
 
 #: ../data/ui/preferences.blp:210
 msgid "Update at Startup"
-msgstr ""
+msgstr "Nowedhi dres Dalleth"
 
 #: ../data/ui/preferences.blp:211
 msgid "Automatically update library at startup"
-msgstr ""
+msgstr "Nowedhi yn awtomatek an lyverva yn dalleth"
 
 #: ../data/ui/preferences.blp:215
 msgid "Auto Download of New Chapters"
-msgstr ""
+msgstr "Iskarga yn awtomatek Chapters Nowydh"
 
 #: ../data/ui/preferences.blp:216
 msgid "Automatically download new chapters"
-msgstr ""
+msgstr "Iskarga yn awtomatek chapters nowydh"
 
 #: ../data/ui/preferences.blp:224
 msgid "Languages"
-msgstr ""
+msgstr "Yethow"
 
 #: ../data/ui/preferences.blp:225
 msgid "Restrict servers to selected languages"
-msgstr ""
+msgstr "Fronna servellow dhe yethow dewisys"
 
 #: ../data/ui/preferences.blp:234
 msgid "Enable/disable and configure servers"
-msgstr ""
+msgstr "Bywhe/marowhe ha selya servellow"
 
 #: ../data/ui/preferences.blp:242
 msgid "Long Strip Detection"
-msgstr ""
+msgstr "Helerghyans Sketh Hir"
 
 #: ../data/ui/preferences.blp:243
 msgid "Automatically detect long vertical strip when possible"
-msgstr ""
+msgstr "Helerghi yn awtomatek sketh plommwedhek hir mars yw galladow"
 
 #: ../data/ui/preferences.blp:249
 msgid "NSFW Content (18+)"
-msgstr ""
+msgstr "Synsas DRO (18+)"
 
 #: ../data/ui/preferences.blp:250
 msgid "Whether to enable servers with NSFW content"
-msgstr ""
+msgstr "Mar pywhe servellow gans synsas DRO"
 
 #: ../data/ui/preferences.blp:254
 msgid "NSFW Only Content (18+)"
-msgstr ""
+msgstr "Synsas DRO-hepken (18+)"
 
 #: ../data/ui/preferences.blp:255
 msgid "Whether to enable servers with NSFW only content"
-msgstr ""
+msgstr "Mar pywhe servellow gans synsas DRO hepken"
 
 #: ../data/ui/preferences.blp:259
 msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
 msgstr ""
+"Ny lett an settyansow ma servellow merkys yn anewn rag ow tiskwedhes synsas "
+"DRO."
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
-msgstr ""
+msgstr "Redyell"
 
 #: ../data/ui/preferences.blp:279
 msgid "Reading Mode"
-msgstr ""
+msgstr "Fordh Redya"
 
 #: ../data/ui/preferences.blp:282
 msgid "⬅ Right to Left"
-msgstr ""
+msgstr "⬅ A-dhyghow dhe A-gledh"
 
 #: ../data/ui/preferences.blp:283
 msgid "➡ Left to Right"
-msgstr ""
+msgstr "➡ A-gledh dhe A-dhyghow"
 
 #: ../data/ui/preferences.blp:284
 msgid "⬇ Vertical"
-msgstr ""
+msgstr "⬇ Plommwedhek"
 
 #: ../data/ui/preferences.blp:285
 msgid "⬇ Webtoon"
-msgstr ""
+msgstr "⬇ Webtoon"
 
 #: ../data/ui/preferences.blp:291
 msgid "Scaling Filter"
-msgstr ""
+msgstr "Sidhel Brasteryans"
 
 #: ../data/ui/preferences.blp:292
 msgid "Interpolation method used when scaling images"
-msgstr ""
+msgstr "Method yngorrans devnydhys pan ow tesedha imajys"
 
 #: ../data/ui/preferences.blp:295
 msgid "Linear"
-msgstr ""
+msgstr "Linyek"
 
 #: ../data/ui/preferences.blp:296
 msgid "Trilinear"
-msgstr ""
+msgstr "Teyrlinyek"
 
 #: ../data/ui/preferences.blp:302
 msgid "Background Color"
-msgstr ""
+msgstr "Liw Kilva"
 
 #: ../data/ui/preferences.blp:305
 msgid "White"
-msgstr ""
+msgstr "Gwynn"
 
 #: ../data/ui/preferences.blp:306
 msgid "Gray"
-msgstr ""
+msgstr "Loos"
 
 #: ../data/ui/preferences.blp:307
 msgid "Black"
-msgstr ""
+msgstr "Du"
 
 #: ../data/ui/preferences.blp:308
 msgid "System Style"
-msgstr ""
+msgstr "Gis an Kevreyth"
 
 #: ../data/ui/preferences.blp:314
 msgid "Page Numbering"
-msgstr ""
+msgstr "Niverennans Folen"
 
 #: ../data/ui/preferences.blp:315
 msgid "Hide the page numbering at the bottom of the screen while reading"
-msgstr ""
+msgstr "Kudha an niverennans folen a-barth woles dhe'n skrin dres ow redya"
 
 #: ../data/ui/preferences.blp:319
 msgid "Fullscreen"
-msgstr ""
+msgstr "Leun-skrin"
 
 #: ../data/ui/preferences.blp:320
 msgid "Automatically enter fullscreen mode"
-msgstr ""
+msgstr "Entra yn awtomatek fordh leun-skrin"
 
 #: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
-msgstr ""
+msgstr "Fordhow Redyans Folennys"
 
 #: ../data/ui/preferences.blp:326
 msgid "Right to Left / Left to Right / Vertical"
-msgstr ""
+msgstr "A-dhyghow dhe A-gledh / A-gledh dhe A-dhyghow / Plommwedhek"
 
 #: ../data/ui/preferences.blp:329
 msgid "Scaling"
-msgstr ""
+msgstr "Brasteryans"
 
 #: ../data/ui/preferences.blp:330
 msgid "Type of scaling to adapt image"
-msgstr ""
+msgstr "Eghen a vrasteryans rag omdhesedha imach"
 
 #: ../data/ui/preferences.blp:333
 msgid "Adapt to Screen"
-msgstr ""
+msgstr "Desedha orth Skrin"
 
 #: ../data/ui/preferences.blp:334
 msgid "Adapt to Width"
-msgstr ""
+msgstr "Desedha orth Lester"
 
 #: ../data/ui/preferences.blp:335
 msgid "Adapt to Height"
-msgstr ""
+msgstr "Desedha orth Ughelder"
 
 #: ../data/ui/preferences.blp:336
 msgid "Original Size"
-msgstr ""
+msgstr "Braster Gwreydhek"
 
 #: ../data/ui/preferences.blp:342
 msgid "Landscape Pages Zoom"
-msgstr ""
+msgstr "Moghheans/Leheans Folennow Gorwelyek"
 
 #: ../data/ui/preferences.blp:343
 msgid ""
 "Zoom page to fit height when page is landscape (Adapt to Screen scaling only)"
 msgstr ""
+"Moghhe/lehe folen rag desedha ughelder pan worwelyek yw an folen "
+"(brasteryans Desedha orth Skrin hepken)"
 
 #: ../data/ui/preferences.blp:347
 msgid "Borders Crop"
-msgstr ""
+msgstr "Dibennans Emlow"
 
 #: ../data/ui/preferences.blp:348
 msgid ""
@@ -724,79 +736,83 @@ msgid ""
 "NOTE: Requires more CPU usage and can cause rendering and animation "
 "slowdowns, especially on mobile devices."
 msgstr ""
+"Dibenna emlow gwynn a imajys\n"
+"\n"
+"NOTYEWGH: Hemm a rekwir moy a usadow CPU hag a yll kawsya lenthens rendrans "
+"ha bewheans, dres oll war dhevisyow gwayadow."
 
 #: ../data/ui/preferences.blp:353 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
-msgstr ""
+msgstr "Fordh Redya Webtoon"
 
 #: ../data/ui/preferences.blp:354
 msgid "Long Strip aka Infinite Vertical Canvas"
-msgstr ""
+msgstr "Sketh Hir henwys ynwedh Kewarghlen Blommwedhek Didhiwedh"
 
 #: ../data/ui/preferences.blp:359
 msgid "Reset to Default"
-msgstr ""
+msgstr "Dasworra dhe Dhefowt"
 
 #: ../data/ui/preferences.blp:367
 msgid "Maximum Width"
-msgstr ""
+msgstr "Lester Ughboyntyel"
 
 #: ../data/ui/preferences.blp:368
 msgid "Constrain reader's width to a given maximum size"
-msgstr ""
+msgstr "Konstrina lester an redya dhe vraster ughboyntyel"
 
 #: ../data/ui/preferences.blp:378
 msgid "Scroll Distance"
-msgstr ""
+msgstr "Hirder Gwayans Plommwedhek"
 
 #: ../data/ui/preferences.blp:379
 msgid "Percentage of page height to scroll on click or Page Up/Down"
-msgstr ""
+msgstr "Kansran a ughelder an folen rag gwaya war glyckyans po Folen Ugh/Woles"
 
 #: ../data/ui/preferences.blp:390
 msgid "Drag Sensitivity"
-msgstr ""
+msgstr "Finder Draylya"
 
 #: ../data/ui/preferences.blp:391
 msgid "Multiplier for drag scrolling sensitivity"
-msgstr ""
+msgstr "Liesheor rag finder gwayans draylya"
 
 #: ../data/ui/preferences.blp:405
 msgid "Advanced"
-msgstr ""
+msgstr "Avonsys"
 
 #: ../data/ui/preferences.blp:409
 msgid "A setting has changed that requires a restart to take effect"
-msgstr ""
+msgstr "Yma settyansow chanjys gans dastalleth a res rag gweytha"
 
 #: ../data/ui/preferences.blp:415
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 #: ../data/ui/preferences.blp:416
 msgid "Data not saved in the library"
-msgstr ""
+msgstr "Data nyns yw gwithys y'n lyverva"
 
 #: ../data/ui/preferences.blp:419
 msgid "Clear Chapters Cache and Database"
-msgstr ""
+msgstr "Klerhe Sorn Chapters ha Sel Dherivadow"
 
 #: ../data/ui/preferences.blp:434
 msgid "Clear Chapters Cache and Database on Exit"
-msgstr ""
+msgstr "Klerhe Sorn Chapters ha Sel Dherivadow dres Kwytyans"
 
 #: ../data/ui/preferences.blp:439 ../data/ui/webview.blp:10
 msgid "WebView"
-msgstr ""
+msgstr "WebView"
 
 #: ../data/ui/preferences.blp:442
 msgid "Clear Data"
-msgstr ""
+msgstr "Klerhe Data"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
-msgstr ""
+msgstr "Devnydhya Darnow Servellow Nowedhys"
 
 #: ../data/ui/preferences.blp:462
 msgid ""
@@ -863,7 +879,7 @@ msgstr ""
 
 #: ../data/ui/reader.blp:23
 msgid "Back"
-msgstr ""
+msgstr "Dehweles"
 
 #: ../data/ui/reader.blp:31
 msgid "Toggle Fullscreen Mode"
@@ -892,27 +908,27 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:28
 msgctxt "Shortcut window description"
 msgid "Quit"
-msgstr ""
+msgstr "Kwytya"
 
 #: ../data/ui/shortcuts.blp:34
 msgctxt "Shortcut window description"
 msgid "Library"
-msgstr ""
+msgstr "Lyverva"
 
 #: ../data/ui/shortcuts.blp:37
 msgctxt "Shortcut window description"
 msgid "Add Manga"
-msgstr ""
+msgstr "Keworra Manga"
 
 #: ../data/ui/shortcuts.blp:42
 msgctxt "Shortcut window description"
 msgid "Select All"
-msgstr ""
+msgstr "Dewis Oll"
 
 #: ../data/ui/shortcuts.blp:47
 msgctxt "Shortcut window description"
 msgid "Search"
-msgstr ""
+msgstr "Hwilas"
 
 #: ../data/ui/shortcuts.blp:52
 msgctxt "Shortcut window description"

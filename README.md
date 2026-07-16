@@ -8,7 +8,7 @@
 [![Flathub download stats](https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Finfo.febvre.Komikku)](https://klausenbusk.github.io/flathub-stats/#ref=info.febvre.Komikku&interval=infinity&downloadType=installs)
 [![Translation status](https://hosted.weblate.org/widget/komikku/svg-badge.svg)](https://hosted.weblate.org/engage/komikku/)
 [![Open Hub](https://www.openhub.net/p/komikku/widgets/project_thin_badge?format=gif)](https://www.openhub.net/p/komikku)
-[![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org)
+![No AI](https://img.shields.io/badge/Made_by_Humans-No_AI-26a269)
 
 **Komikku** is a manga reader for [GNOME](https://www.gnome.org). It focuses on providing a clean, intuitive and adaptive interface.
 

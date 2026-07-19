@@ -114,6 +114,24 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.10.0" date="2026-07-20">
+            <description translate="no">
+                <ul>
+                    <li>[Preferences] Reader: Added `White Borders Cropping Threshold`</li>
+                    <li>[Reader] Settings: Added `White Borders Cropping Threshold`</li>
+                    <li>[Servers] Added BDplus (FR)</li>
+                    <li>[Servers] Anime-Sama (FR): Update</li>
+                    <li>[Servers] JManga (JA): Re-enabled</li>
+                    <li>[Servers] MangaFire (multi): Disabled</li>
+                    <li>[Servers] Mangalek (AR): Update</li>
+                    <li>[Servers] Mangas Origines (FR): Update</li>
+                    <li>[Servers] RF Dragon Scan (pt_BR): Disabled</li>
+                    <li>[L10n] Added Bengali and Georgian translations</li>
+                    <li>[L10n] Updated Cornish, German and Russian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.9.0" date="2026-07-09">
             <description translate="no">
                 <ul>

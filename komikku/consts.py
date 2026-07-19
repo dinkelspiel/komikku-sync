@@ -151,6 +151,7 @@ CREDITS = dict(
         'Rayen Ghanmi (Arabic)',
         'Mohamed Abdalah Noh (Arabic)',
         'Ahmed Najmawi (Arabic)',
+        'Jsus “Jsux” (Bengali)',
         'Rafael Fontenelle (Brazilian Portuguese)',
         'Infinitive Witch (Brazilian Portuguese)',
         'Unidealistic Raccoon (Brazilian Portuguese)',
@@ -165,6 +166,7 @@ CREDITS = dict(
         'Beruto666 (Brazilian Portuguese)',
         'twlvnn (Bulgarian)',
         'Roger VC (Catalan)',
+        'Flynn (Cornish)'
         'Lukáš Linhart (Czech)',
         'Jakub Soukup (Czech)',
         'Petr Horník (Czech)',
@@ -188,6 +190,7 @@ CREDITS = dict(
         'Mathieu B. (French)',
         'rene-coty (French)',
         'paul verot (French)',
+        'Temuri Doghonadze (Georgian)',
         'Sandor Odor (German)',
         'Liliana Prikler (German)',
         'gregorni (German)',
@@ -215,7 +218,6 @@ CREDITS = dict(
         'cas9 (Italian)',
         'Giulia (Italian)',
         'on9686 (Korean)',
-        'Flynn (Cornish)',
         'Velyvis (Lithuanian)',
         'Lili Kurek (Polish)',
         'Aleksander Warzyniak (Polish)',
@@ -263,16 +265,17 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Card] Chapters list: Improved ordering by Title</li>
-    <li>[Trackers] Fixed authentication bug</li>
-    <li>[Servers] Added Rncalation (ES)</li>
-    <li>[Servers] 3asq (AR): Re-enabled</li>
+    <li>[Preferences] Reader: Added `White Borders Cropping Threshold`</li>
+    <li>[Reader] Settings: Added `White Borders Cropping Threshold`</li>
+    <li>[Servers] Added BDplus (FR)</li>
     <li>[Servers] Anime-Sama (FR): Update</li>
-    <li>[Servers] Dynasty Reader (EN): Update</li>
-    <li>[Servers] MangaCrab (ES): Disabled</li>
-    <li>[Servers] Raiki Scan (ES): Disabled</li>
-    <li>[Servers] Webtoon TR (TR): Disabled</li>
-    <li>[L10n] Updated German, Spanish, Swedish and Ukrainian translations</li>
+    <li>[Servers] JManga (JA): Re-enabled</li>
+    <li>[Servers] MangaFire (multi): Disabled</li>
+    <li>[Servers] Mangalek (AR): Update</li>
+    <li>[Servers] Mangas Origines (FR): Update</li>
+    <li>[Servers] RF Dragon Scan (pt_BR): Disabled</li>
+    <li>[L10n] Added Bengali and Georgian translations</li>
+    <li>[L10n] Updated Cornish, German and Russian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

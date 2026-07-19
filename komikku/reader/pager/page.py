@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -293,7 +293,9 @@ class Page(Gtk.Overlay):
             image.load_missing(callback=on_loaded)
         else:
             image = KImage(
-                scaling=self.reader.scaling, scaling_filter=self.reader.scaling_filter, crop=self.reader.borders_crop, landscape_zoom=self.reader.landscape_zoom, zoomable=self.zoomable
+                scaling=self.reader.scaling, scaling_filter=self.reader.scaling_filter,
+                crop=self.reader.borders_crop, crop_threshold=self.reader.borders_crop_threshold,
+                landscape_zoom=self.reader.landscape_zoom, zoomable=self.zoomable
             )
             image.load(path=self.path, data=self.data['buffer'] if self.data else None, callback=on_loaded)
 

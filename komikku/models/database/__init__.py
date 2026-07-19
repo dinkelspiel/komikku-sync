@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 db_connections = threading.local()
 
-VERSION = 15
+VERSION = 16
 
 
 def adapt_date_iso(val):
@@ -238,6 +238,7 @@ def init_db():
         status text,
         background_color text,
         borders_crop integer,
+        borders_crop_threshold integer,
         filters json,
         landscape_zoom integer,
         page_numbering integer,
@@ -348,35 +349,35 @@ def init_db():
 
     if 0 < db_version <= 7:
         # Version 0.31.0
-        ids_mapping = dict(
-            jaiminisbox__old='jaiminisbox',
-            kireicake='kireicake:jaiminisbox',
-            lupiteam='lupiteam:jaiminisbox',
-            tuttoanimemanga='tuttoanimemanga:jaiminisbox',
+        ids_mapping = {
+            'jaiminisbox__old': 'jaiminisbox',
+            'kireicake': 'kireicake:jaiminisbox',
+            'lupiteam': 'lupiteam:jaiminisbox',
+            'tuttoanimemanga': 'tuttoanimemanga:jaiminisbox',
 
-            readcomicsonline='readcomicsonline:hatigarmscans',
+            'readcomicsonline': 'readcomicsonline:hatigarmscans',
 
-            hatigarmscans__old='hatigarmscans',
+            'hatigarmscans__old': 'hatigarmscans',
 
-            edelgardescans='edelgardescans:genkan',
-            hatigarmscans='hatigarmscans:genkan',
-            hunlightscans='hunlightscans:genkan',
-            leviatanscans__old='leviatanscans:genkan',
-            leviatanscans_es_old='leviatanscans_es:genkan',
-            oneshotscans__old='oneshotscans:genkan',
-            reaperscans='reaperscans:genkan',
-            thenonamesscans='thenonamesscans:genkan',
-            zeroscans='zeroscans:genkan',
+            'edelgardescans': 'edelgardescans:genkan',
+            'hatigarmscans': 'hatigarmscans:genkan',
+            'hunlightscans': 'hunlightscans:genkan',
+            'leviatanscans__old': 'leviatanscans:genkan',
+            'leviatanscans_es_old': 'leviatanscans_es:genkan',
+            'oneshotscans__old': 'oneshotscans:genkan',
+            'reaperscans': 'reaperscans:genkan',
+            'thenonamesscans': 'thenonamesscans:genkan',
+            'zeroscans': 'zeroscans:genkan',
 
-            akumanga='akumanga:madara',
-            aloalivn='aloalivn:madara',
-            apollcomics='apollcomics:madara',
-            araznovel='araznovel:madara',
-            argosscan='argosscan:madara',
-            atikrost='atikrost:madara',
-            romance24h='romance24h:madara',
-            wakascan='wakascan:madara',
-        )
+            'akumanga': 'akumanga:madara',
+            'aloalivn': 'aloalivn:madara',
+            'apollcomics': 'apollcomics:madara',
+            'araznovel': 'araznovel:madara',
+            'argosscan': 'argosscan:madara',
+            'atikrost': 'atikrost:madara',
+            'romance24h': 'romance24h:madara',
+            'wakascan': 'wakascan:madara',
+        }
         res = True
         for new, old in ids_mapping.items():
             res &= execute_sql(db_conn, f"UPDATE mangas SET server_id = '{new}' WHERE server_id = '{old}';")  # noqa: E702, E231
@@ -447,6 +448,11 @@ def init_db():
         # Version 1.70.0
         execute_sql(db_conn, 'ALTER TABLE mangas ADD COLUMN filters json;')
         db_conn.execute('PRAGMA user_version = {0}'.format(15))
+
+    if 0 < db_version <= 15:
+        # Version 50.10.0
+        execute_sql(db_conn, 'ALTER TABLE mangas ADD COLUMN borders_crop_threshold integer;')
+        db_conn.execute('PRAGMA user_version = {0}'.format(16))
 
     logger.info('DB version {0}'.format(db_conn.execute('PRAGMA user_version').fetchone()[0]))
 

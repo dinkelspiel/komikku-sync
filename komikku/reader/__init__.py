@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -11,6 +11,7 @@ from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import Gtk
 
+from komikku.consts import BORDERS_CROP_THRESHOLDS
 from komikku.models import Settings
 from komikku.reader.controls import Controls
 from komikku.reader.pager import Pager
@@ -88,6 +89,10 @@ class ReaderPage(Adw.NavigationPage):
             return bool(self.manga.borders_crop)
 
         return Settings.get_default().borders_crop
+
+    @property
+    def borders_crop_threshold(self):
+        return self.manga.borders_crop_threshold or Settings.get_default().borders_crop_threshold
 
     @property
     def landscape_zoom(self):
@@ -234,9 +239,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.background_color:
             return
 
-        self.manga.update(dict(
-            background_color=value if value != Settings.get_default().background_color else None,
-        ))
+        self.manga.update({
+            'background_color': value if value != Settings.get_default().background_color else None,
+        })
         self.set_action_background_color()
 
     def on_borders_crop_changed(self, _action, variant):
@@ -244,9 +249,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.borders_crop:
             return
 
-        self.manga.update(dict(
-            borders_crop=value if value != Settings.get_default().borders_crop else None,
-        ))
+        self.manga.update({
+            'borders_crop': value if value != Settings.get_default().borders_crop else None,
+        })
         self.set_action_borders_crop()
 
         self.pager.crop_pages_borders()
@@ -304,9 +309,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.landscape_zoom:
             return
 
-        self.manga.update(dict(
-            landscape_zoom=value if value != Settings.get_default().landscape_zoom else None,
-        ))
+        self.manga.update({
+            'landscape_zoom': value if value != Settings.get_default().landscape_zoom else None,
+        })
         self.set_action_landscape_zoom()
 
         self.pager.rescale_pages()
@@ -316,9 +321,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.page_numbering:
             return
 
-        self.manga.update(dict(
-            page_numbering=value if value != Settings.get_default().page_numbering else None,
-        ))
+        self.manga.update({
+            'page_numbering': value if value != Settings.get_default().page_numbering else None,
+        })
         self.set_action_page_numbering()
 
         if value and self.page_numbering_defined and not self.controls.is_visible:
@@ -333,9 +338,9 @@ class ReaderPage(Adw.NavigationPage):
 
         prior_reading_mode = self.reading_mode
 
-        self.manga.update(dict(
-            reading_mode=value if value != Settings.get_default().reading_mode else None,
-        ))
+        self.manga.update({
+            'reading_mode': value if value != Settings.get_default().reading_mode else None,
+        })
         self.set_action_reading_mode()
 
         if value == 'webtoon' or prior_reading_mode == 'webtoon':
@@ -350,9 +355,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.scaling:
             return
 
-        self.manga.update(dict(
-            scaling=value if value != Settings.get_default().scaling else None,
-        ))
+        self.manga.update({
+            'scaling': value if value != Settings.get_default().scaling else None,
+        })
         self.set_action_scaling()
 
         self.pager.rescale_pages()
@@ -362,9 +367,9 @@ class ReaderPage(Adw.NavigationPage):
         if value == self.scaling:
             return
 
-        self.manga.update(dict(
-            scaling_filter=value if value != Settings.get_default().scaling_filter else None,
-        ))
+        self.manga.update({
+            'scaling_filter': value if value != Settings.get_default().scaling_filter else None,
+        })
         self.set_action_scaling_filter()
 
         self.pager.rescale_pages()
@@ -386,7 +391,7 @@ class ReaderPage(Adw.NavigationPage):
             do_init_pager()
 
     def open_settings_dialog(self, _action, _gparam):
-        self.settings_dialog.present(self.window)
+        self.settings_dialog.open()
 
     def save_page(self, _action, _gparam):
         if self.window.page != self.props.tag:
@@ -529,6 +534,7 @@ class SettingsDialog(Adw.PreferencesDialog):
         page = Adw.PreferencesPage(title=_('Filters'))
         self.add(page)
 
+        # Filters
         group = Adw.PreferencesGroup(title=_('Filters'), separate_rows=True)
 
         filters = {
@@ -594,6 +600,21 @@ class SettingsDialog(Adw.PreferencesDialog):
 
         self.apply_filters()
 
+        # White borders cropping
+        group = Adw.PreferencesGroup(title=_('White Borders Cropping'), separate_rows=True)
+
+        self.threshold_row = Adw.ComboRow()
+        self.threshold_row.set_title(_('Threshold'))
+        self.threshold_row.set_subtitle(_("Control which pixels are classified as 'white' during borders detection"))
+        model = Gtk.StringList()
+        for threshold in BORDERS_CROP_THRESHOLDS:
+            model.append(str(threshold))
+        self.threshold_row.set_model(model)
+        self.threshold_row.connect('notify::selected', self.set_borders_crop_threshold)
+
+        group.add(self.threshold_row)
+        page.add(group)
+
     def apply_filters(self):
         funcs = []
         for name, value in self.settings.page_filters.items():
@@ -612,6 +633,25 @@ class SettingsDialog(Adw.PreferencesDialog):
         else:
             self.css_provider.load_from_string('')
             self.page.overlay.remove_css_class('page-filters')
+
+    def open(self):
+        # Init settings values
+        self.threshold_row.set_selected(BORDERS_CROP_THRESHOLDS.index(self.page.borders_crop_threshold))
+
+        self.present(self.page.window)
+
+    def set_borders_crop_threshold(self, row, _gparam):
+        threshold = BORDERS_CROP_THRESHOLDS[row.get_selected()]
+
+        self.page.manga.update({
+            'borders_crop_threshold': threshold if threshold != Settings.get_default().borders_crop_threshold else None,
+        })
+
+        for page in self.page.pager.pages:
+            if page.image and page.error is None:
+                page.image.crop_bbox = None
+                page.image.textures_crop = None
+                page.image.crop_threshold = threshold
 
     def set_filter_value(self, row, _gparam, name):
         filters = self.settings.page_filters

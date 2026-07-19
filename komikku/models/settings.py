@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -85,6 +85,22 @@ class Settings(Gio.Settings):
     @borders_crop.setter
     def borders_crop(self, state):
         self.set_boolean('borders-crop', state)
+
+    @property
+    def borders_crop_threshold(self):
+        """Return broders crop threshold"""
+        return self.get_int('borders-crop-threshold')
+
+    @borders_crop_threshold.setter
+    def borders_crop_threshold(self, value):
+        """
+        Set the threshold to classified pixels as `white` during borders detection
+
+        :param value: threshold
+        :type value: int
+        """
+        threshold = GLib.Variant('i', value)
+        self.set_value('borders-crop-threshold', threshold)
 
     @property
     def card_backdrop_method(self):
@@ -602,9 +618,9 @@ class Settings(Gio.Settings):
         settings = self.servers_settings
 
         if uid not in settings:
-            settings[uid] = dict(
-                langs={},
-            )
+            settings[uid] = {
+                'langs': {},
+            }
 
         settings[uid]['enabled'] = state
 
@@ -614,10 +630,10 @@ class Settings(Gio.Settings):
         settings = self.servers_settings
 
         if uid not in settings:
-            settings[uid] = dict(
-                langs={},
-                enabled=True,
-            )
+            settings[uid] = {
+                'langs': {},
+                'enabled': True,
+            }
 
         settings[uid]['langs'][lang] = state
 

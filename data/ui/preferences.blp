@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+// SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -346,6 +346,11 @@ template $PreferencesDialog : Adw.PreferencesDialog {
       Adw.SwitchRow borders_crop_switch {
         title: _("Borders Crop");
         subtitle: _("Crop white borders of images\n\nNOTE: Requires more CPU usage and can cause rendering and animation slowdowns, especially on mobile devices.");
+      }
+
+      Adw.ComboRow borders_crop_threshold_row {
+        title: _("Borders Crop Threshold");
+        subtitle: _("Control which pixels are classified as 'white' during borders detection");
       }
     }
 

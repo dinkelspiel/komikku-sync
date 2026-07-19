@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -27,6 +27,7 @@ from gi.repository.GdkPixbuf import Pixbuf
 from gi.repository.GdkPixbuf import PixbufAnimation
 
 from komikku.consts import MISSING_IMG_RESOURCE_PATH
+from komikku.models import Settings
 from komikku.utils import get_image_info
 
 logger = logging.getLogger('komikku')
@@ -64,10 +65,11 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
         'zoom-end': (GObject.SignalFlags.RUN_FIRST, None, ()),
     }
 
-    def __init__(self, scaling='screen', scaling_filter='linear', crop=False, landscape_zoom=False, zoomable=False):
+    def __init__(self, scaling='screen', scaling_filter='linear', crop=False, crop_threshold=None, landscape_zoom=False, zoomable=False):
         super().__init__()
 
         self.__crop = crop
+        self.__crop_threshold = crop_threshold
         self.__hadj = None
         self.__landscape_zoom = zoomable and landscape_zoom
         self.__rendered = False
@@ -151,6 +153,18 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
             return
 
         self.__crop = value
+        self.queue_resize()
+
+    @GObject.Property(type=int, default=0)
+    def crop_threshold(self):
+        return self.__crop_threshold or Settings.get_default().borders_crop_threshold
+
+    @crop_threshold.setter
+    def crop_threshold(self, value):
+        if self.__crop_threshold == value:
+            return
+
+        self.__crop_threshold = value
         self.queue_resize()
 
     @GObject.Property(type=Gtk.Adjustment)
@@ -357,13 +371,11 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
         return GLib.SOURCE_CONTINUE
 
     def __compute_borders_crop_bbox(self):
-        threshold = 225
-
         if self.path is None and self.data is None:
             return None
 
         def lookup(x):
-            return 255 if x > threshold else 0
+            return 255 if x > self.crop_threshold else 0
 
         try:
             with Image.open(self.path or BytesIO(self.data)) as im:

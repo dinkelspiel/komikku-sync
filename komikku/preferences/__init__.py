@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -8,6 +8,7 @@ from gi.repository import Adw
 from gi.repository import GLib
 from gi.repository import Gtk
 
+from komikku.consts import BORDERS_CROP_THRESHOLDS
 from komikku.consts import PROGRESSBAR_THEMES
 from komikku.models import Settings
 from komikku.models.database import clear_cached_data
@@ -57,6 +58,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     scaling_row = Gtk.Template.Child('scaling_row')
     landscape_zoom_switch = Gtk.Template.Child('landscape_zoom_switch')
     borders_crop_switch = Gtk.Template.Child('borders_crop_switch')
+    borders_crop_threshold_row = Gtk.Template.Child('borders_crop_threshold_row')
     webtoon_reading_mode_group_reset_button = Gtk.Template.Child('webtoon_reading_mode_group_reset_button')
     clamp_size_adjustment = Gtk.Template.Child('clamp_size_adjustment')
     scroll_click_percentage_adjustment = Gtk.Template.Child('scroll_click_percentage_adjustment')
@@ -102,6 +104,9 @@ class PreferencesDialog(Adw.PreferencesDialog):
 
     def on_borders_crop_changed(self, switch_button, _gparam):
         self.settings.borders_crop = switch_button.get_active()
+
+    def on_borders_crop_threshold_changed(self, row, _gparam):
+        self.settings.borders_crop_threshold = BORDERS_CROP_THRESHOLDS[row.get_selected()]
 
     def on_card_backdrop_method_changed(self, row, _gparam):
         index = row.get_selected()
@@ -494,6 +499,14 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # Borders crop
         self.borders_crop_switch.set_active(self.settings.borders_crop)
         self.borders_crop_switch.connect('notify::active', self.on_borders_crop_changed)
+
+        # Borders crop threshold
+        model = Gtk.StringList()
+        for threshold in BORDERS_CROP_THRESHOLDS:
+            model.append(str(threshold))
+        self.borders_crop_threshold_row.set_model(model)
+        self.borders_crop_threshold_row.set_selected(BORDERS_CROP_THRESHOLDS.index(self.settings.borders_crop_threshold))
+        self.borders_crop_threshold_row.connect('notify::selected', self.on_borders_crop_threshold_changed)
 
         #
         # Webtoon reading mode specific settings

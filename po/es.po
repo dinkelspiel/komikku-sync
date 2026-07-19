@@ -7,14 +7,14 @@
 # Óscar Fernández Díaz <42654671+oscfdezdz@users.noreply.github.com>, 2025.
 # Klauss <lukasfigueroa.09@gmail.com>, 2025.
 # Champiñon Traductor <300458929+champinondev-lab@users.noreply.github.com>, 2026.
+# Libre <6n0n1m0s@proton.me>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 0.30.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-07 07:01+0000\n"
-"Last-Translator: Champiñon Traductor <300458929+champinondev-"
-"lab@users.noreply.github.com>\n"
+"PO-Revision-Date: 2026-07-20 17:01+0000\n"
+"Last-Translator: Libre <6n0n1m0s@proton.me>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/komikku/main/es/>"
 "\n"
 "Language: es\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1015,7 +1015,7 @@ msgstr "Alejar"
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr "Reiniciar Zoom"
+msgstr "Restablecer zoom"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1222,7 +1222,7 @@ msgstr "¿Limpiar?"
 
 #: ../komikku/card/__init__.py:221
 msgid "Are you sure you want to clear all chapters?"
-msgstr "¿Estás seguro de que deseas borrar todos los capítulos?"
+msgstr "¿Estás seguro que deseas vaciar todos los capítulos?"
 
 #: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:728
 #: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
@@ -1578,7 +1578,7 @@ msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr ""
 "NOTA: Se requiere la herramienta de línea de comandos «unrar» o «unar» para "
-"los archivos CBR."
+"los archivadores CBR."
 
 #: ../komikku/explorer/common.py:279
 msgid "Open local folder"
@@ -1600,8 +1600,8 @@ msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
 "conditions ({0} license)"
 msgstr ""
-"Copyright: Reproducción y distribución autorizada bajo ciertas condiciones ("
-"{0} licencia)"
+"Derechos de autor: Reproducción y distribución autorizada bajo ciertas "
+"condiciones ({0} licencia)"
 
 #: ../komikku/explorer/common.py:298
 msgid "Royalty-free, Public domain"
@@ -1760,7 +1760,7 @@ msgstr "No leído"
 
 #: ../komikku/library/__init__.py:460
 msgid "Series with unread chapters"
-msgstr "Series con capítulos sin leer."
+msgstr "Series con capítulos sin leer"
 
 #: ../komikku/library/__init__.py:463
 #: ../komikku/models/database/downloads.py:20
@@ -1769,7 +1769,7 @@ msgstr "Descargado"
 
 #: ../komikku/library/__init__.py:464
 msgid "Series with downloaded chapters"
-msgstr "Series con capítulos descargados."
+msgstr "Series con capítulos descargados"
 
 #: ../komikku/library/__init__.py:467
 msgid "Recents"
@@ -1777,7 +1777,7 @@ msgstr "Recientes"
 
 #: ../komikku/library/__init__.py:468
 msgid "Series with new chapters"
-msgstr "Series con nuevos capítulos."
+msgstr "Series con nuevos capítulos"
 
 #: ../komikku/library/__init__.py:685
 msgid "Welcome to Komikku"
@@ -2089,11 +2089,11 @@ msgstr "Autopublicación"
 #: ../komikku/servers/wildlife/__init__.py:16
 #: ../komikku/servers/xkcd/__init__.py:24
 msgid "Webcomic"
-msgstr "Webcómic."
+msgstr "Webcómic"
 
 #: ../komikku/servers/aralosbd/__init__.py:21
 msgid "Self-publishing platform"
-msgstr "Plataforma de autopublicación."
+msgstr "Plataforma de auto‐publicación"
 
 #: ../komikku/servers/asurascans/__init__.py:33
 #: ../komikku/servers/comix/__init__.py:71
@@ -2632,7 +2632,7 @@ msgstr "Filtrar por tipos"
 #: ../komikku/servers/dbmultiverse/__init__.py:58
 #: ../komikku/servers/dbnewhope/__init__.py:30
 msgid "Fan Webcomic"
-msgstr "Webcómic de fans."
+msgstr "Webcómic de fans"
 
 #: ../komikku/servers/dynasty/__init__.py:40
 msgid "Categories"
@@ -2864,7 +2864,7 @@ msgstr "No disponible en el idioma {0}"
 
 #: ../komikku/servers/suwayomi/__init__.py:33
 msgid "Manga reader server"
-msgstr "Servidor de lector de Manga."
+msgstr "Servidor de lector de Manga"
 
 #: ../komikku/servers/webtoon/__init__.py:61
 msgid "Originals"

@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Komikku package.
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026.
+# David Gogniashvili <gogniashvili.dg@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-09 16:53+0000\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"PO-Revision-Date: 2026-07-20 17:01+0000\n"
+"Last-Translator: David Gogniashvili <gogniashvili.dg@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/komikku/main/"
 "ka/>\n"
 "Language: ka\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -29,33 +30,41 @@ msgstr "@description@"
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 msgstr ""
+"მანგა;მკითხველი;მნახველი;კომიქსი;მანჰვა;მანჰუა;ვებ-ტუნი;ვებ-"
+"კომიქსი;სკანლაცია;წიგნი;ელ-წიგნი;ხაზგარეშე;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
-msgstr ""
+msgstr "აღმოაჩინე და წაიკითხე მანგა &amp; კომიქსი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:13
 msgid ""
 "With its simple, elegant and adaptive interface, this reader lets you "
 "search, sort and read your series with ease."
 msgstr ""
+"თავისი მარტივი, ელეგანტური და მორგებადი ინტერფეისით, ეს მკითხველი საშუალებას "
+"გაძელვთ, მოძებნოთ და წაიკითხოთ თქვენი სერიები ადვილად."
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:15
 msgid "Why you will love Komikku?"
-msgstr ""
+msgstr "რატომ შეიყვარებთ კომიკკუს?"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:17
 msgid "Online and offline reading from dozens of servers"
-msgstr ""
+msgstr "ხაზზე და ხაზგარეშე კითხვა უამრავი სერვერებიდან"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:18
 msgid ""
 "Support for locally stored series (in CBZ/CBR/CBT, EPUB and PDF formats)"
 msgstr ""
+"ადგილობრივად შენახული სერიების მხარდაჭერა (CBZ/CBR/CBT, EPUB და PDF "
+"ფორმატებში)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:19
 msgid "RTL, LTR, Vertical and Webtoon reading modes"
 msgstr ""
+"მარჯვნიდან მარცხნივ, მარცხნიდან მარჯვნივ, ვერტიკალური და ვებ-ტუნის კითხვის "
+"რეჟიმები"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:20
 msgid ""
@@ -63,66 +72,70 @@ msgid ""
 "navigation layout via mouse click or tapping (touchpad/touch screen), mouse "
 "wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)"
 msgstr ""
+"მხარს უჭერს რამდენიმე ტიპის ნავიგაციას: კლავიატურის ისრის ღილაკები, მარჯვენა "
+"და მარხენა ნავიგაციის განლაგება მაუზე დაწკაპუნებით ან ეკრანზე შეხებით "
+"(თაჩპედი/თაჩ სქრინი), მაუსის ბორბალი, 2 თითის გასმის ჟესტი (თაჩპედი), თითის "
+"გასმის ჟესტი (თაჩ სქრინი)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:21
 msgid "Categories to organize your library"
-msgstr ""
+msgstr "კატეგორიები ბიბლიოთეკის მოსაწესრიგებლად"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:22
 msgid "Automatic tracking of series with AniList, MangaUpdates and MyAnimeList"
-msgstr ""
+msgstr "სერიების ავტომატური ტრეკინგი - AniList, MangaUpdates და MyAnimeList"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:23
 msgid "Automatic update of series"
-msgstr ""
+msgstr "სერიების ავტომატური განახლება"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:24
 msgid "Automatic download of new chapters"
-msgstr ""
+msgstr "ახალი თავების ავტომატური ჩამოტვირთვა"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:25
 msgid "Reading history"
-msgstr ""
+msgstr "კითხვის ისტორია"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:26
 msgid "Light and dark themes"
-msgstr ""
+msgstr "ნათელი და ბნელი თემები"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:31
 msgid "reader"
-msgstr ""
+msgstr "მკითხველი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:32
 msgid "viewer"
-msgstr ""
+msgstr "მნახველი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:33
 msgid "scanlation"
-msgstr ""
+msgstr "სკანლაცია"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:34
 msgid "comic"
-msgstr ""
+msgstr "კომიქსი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:35
 msgid "manga"
-msgstr ""
+msgstr "მანგა"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:36
 msgid "manhwa"
-msgstr ""
+msgstr "მანჰვა"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:37
 msgid "manhua"
-msgstr ""
+msgstr "მანჰუა"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:38
 msgid "webtoon"
-msgstr ""
+msgstr "ვებ-ტუნი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:39
 msgid "webcomic"
-msgstr ""
+msgstr "ვებ-კომიქსი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:40
 msgid "book"
@@ -130,7 +143,7 @@ msgstr "წიგნი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:41
 msgid "ebook"
-msgstr ""
+msgstr "ელ-წიგნი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:42
 msgid "offline"
@@ -138,47 +151,47 @@ msgstr "გათიშული"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:62
 msgid "The Library page"
-msgstr ""
+msgstr "ბიბლიოთეკის გვერდი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:66
 msgid "The Library page with the category sidebar open"
-msgstr ""
+msgstr "ბიბლიოთეკის გვერდი ღია კატეგორიების პანელით"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:70
 msgid "The Preferences page (General settings)"
-msgstr ""
+msgstr "მორგების გვერდი (ზოგადი პარამეტრები)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:74
 msgid "The Explorer page in mobile format (Servers list)"
-msgstr ""
+msgstr "გვერდების დათვალიერება მობილურ ფორმატში (სერვერების სია)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:78
 msgid "The Details page"
-msgstr ""
+msgstr "დეტალების გვერდი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:82
 msgid "The Details page (chapters list)"
-msgstr ""
+msgstr "დეტალების გვერდი (თავების სია)"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:86
 msgid "The Reader page"
-msgstr ""
+msgstr "მკითხველის გვერდი"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:90
 msgid "The Reader page in mobile format"
-msgstr ""
+msgstr "მკითხველის გვერდი მობილურ ფორმატში"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:94
 msgid "The Category editor page in mobile format"
-msgstr ""
+msgstr "კატეგორიების ჩასწორების გვერდი მობილურ ფორმატში"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:98
 msgid "The Reading history page in mobile format"
-msgstr ""
+msgstr "კითხვის ისტორიის გვერდი მობილურ ფორმატში"
 
 #: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:410
 msgid "Got it!"
-msgstr "Გავიგე!"
+msgstr "გავიგე!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:418
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
@@ -188,15 +201,15 @@ msgstr "მენიუ"
 
 #: ../data/ui/card.blp:68
 msgid "Info"
-msgstr "ინფორმაცია"
+msgstr "ინფო"
 
 #: ../data/ui/card.blp:148
 msgid "Add to Library"
-msgstr ""
+msgstr "ბიბლიოთეკაში დამატება"
 
 #: ../data/ui/card.blp:252
 msgid "Scanlators"
-msgstr ""
+msgstr "სკანლატორები"
 
 #: ../data/ui/card.blp:308
 msgid "Last Update"
@@ -209,7 +222,7 @@ msgstr "ზომა დისკზე"
 #: ../data/ui/card.blp:455 ../data/ui/categories_editor.blp:67
 #: ../data/ui/library.blp:255
 msgid "No Categories"
-msgstr ""
+msgstr "არ არის კატეგორიები"
 
 #: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:110
 msgid "Tracking"
@@ -223,7 +236,7 @@ msgstr "ძებნა"
 
 #: ../data/ui/card_tracking_search.blp:75
 msgid "Search for Tracking"
-msgstr ""
+msgstr "ტრეკინგის ძებნა"
 
 #: ../data/ui/categories_editor.blp:36
 msgid "Add"
@@ -235,7 +248,7 @@ msgstr "გადმოწერების მმართველი"
 
 #: ../data/ui/download_manager.blp:32
 msgid "Start/Stop Download"
-msgstr ""
+msgstr "გადმოწერის დაწყება/დასრულება"
 
 #: ../data/ui/download_manager.blp:67
 msgid "No Downloads"
@@ -255,7 +268,7 @@ msgstr "პოპულარული"
 
 #: ../data/ui/explorer_search.blp:214
 msgid "Latest Updates"
-msgstr ""
+msgstr "უახლესი განახლებები"
 
 #: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:221
 #: ../data/ui/preferences.blp:458
@@ -264,15 +277,15 @@ msgstr "სერვერები"
 
 #: ../data/ui/explorer_servers.blp:17
 msgid "Search Comics Across All Servers"
-msgstr ""
+msgstr "კომიქსების ძებნა ყველა სერვერზე"
 
 #: ../data/ui/explorer_servers.blp:23
 msgid "Search Servers"
-msgstr ""
+msgstr "სერვერების ძებნა"
 
 #: ../data/ui/explorer_servers.blp:37
 msgid "Search for servers by name or language"
-msgstr ""
+msgstr "სერვერების ძებნა სახელით ან ენით"
 
 #: ../data/ui/history.blp:10 ../data/ui/history.blp:16
 msgid "History"
@@ -280,7 +293,7 @@ msgstr "ისტორია"
 
 #: ../data/ui/history.blp:71
 msgid "No History"
-msgstr ""
+msgstr "ისტორია არ არის"
 
 #: ../data/ui/library.blp:10 ../data/ui/preferences.blp:120
 msgid "Library"
@@ -288,7 +301,7 @@ msgstr "ბიბლიოთეკა"
 
 #: ../data/ui/library.blp:23
 msgid "Toggle Categories Sidebar"
-msgstr ""
+msgstr "კატეგორიების პანელის გადართვა"
 
 #: ../data/ui/library.blp:39
 msgid "Main Menu"
@@ -296,7 +309,7 @@ msgstr "მთავარი მენიუ"
 
 #: ../data/ui/library.blp:79
 msgid "Search by name, server or genre"
-msgstr ""
+msgstr "სახელით, სერვერით ან ჟანრით ძიება"
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
 msgid "Update"
@@ -304,39 +317,39 @@ msgstr "განახლება"
 
 #: ../data/ui/library.blp:206
 msgid "Discover Comics"
-msgstr ""
+msgstr "აღმოაჩინე კომიქსები"
 
 #: ../data/ui/library.blp:277
 msgid "OK"
-msgstr "დიახ"
+msgstr "კარგი"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
-msgstr ""
+msgstr "თავების მწყობრი"
 
 #: ../data/ui/menu/card.xml:39
 msgid "⬆ By Source"
-msgstr ""
+msgstr "⬆ წყაროთი"
 
 #: ../data/ui/menu/card.xml:44
 msgid "⬇ By Source"
-msgstr ""
+msgstr "⬇ წყაროთი"
 
 #: ../data/ui/menu/card.xml:50
 msgid "⬆ By Date"
-msgstr ""
+msgstr "⬆ თარიღით"
 
 #: ../data/ui/menu/card.xml:55
 msgid "⬇ By Date"
-msgstr ""
+msgstr "⬇ თარიღით"
 
 #: ../data/ui/menu/card.xml:61
 msgid "⬆ By Title"
-msgstr ""
+msgstr "⬆ სათაურით"
 
 #: ../data/ui/menu/card.xml:66
 msgid "⬇ By Title"
-msgstr ""
+msgstr "⬇ სათაურით"
 
 #: ../data/ui/menu/card_selection_mode.xml:23
 #: ../data/ui/menu/library_selection_mode.xml:30
@@ -349,7 +362,7 @@ msgstr "ყველას წაშლა"
 
 #: ../data/ui/menu/explorer_search_global_search.xml:12
 msgid "Pinned Servers Only"
-msgstr ""
+msgstr "მხოლოდ მიმაგრებული სერვერები"
 
 #: ../data/ui/menu/library_selection_mode.xml:12
 msgid "Edit Categories"
@@ -357,7 +370,7 @@ msgstr "კატეგორიების ჩასწორება"
 
 #: ../data/ui/menu/main.xml:12
 msgid "Update Library"
-msgstr ""
+msgstr "ბიბლიოთეკის განახლება"
 
 #: ../data/ui/menu/main.xml:16
 msgid "Sort"
@@ -365,15 +378,15 @@ msgstr "დალაგება"
 
 #: ../data/ui/menu/main.xml:21
 msgid "Alphabetical"
-msgstr "ანბანით დალაგებული"
+msgstr "ანბანური"
 
 #: ../data/ui/menu/main.xml:26
 msgid "Latest Read First"
-msgstr ""
+msgstr "პირველ რიგში უახლესის საკითხავი"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"
-msgstr ""
+msgstr "პირველ რიგში უახლესი განახლება"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
@@ -381,19 +394,19 @@ msgstr "კლავიატურის მალსახმობები"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
-msgstr ""
+msgstr "კომიკკუს შესახებ"
 
 #: ../data/ui/menu/reader.xml:114
 msgid "Zoom Landscape Pages"
-msgstr ""
+msgstr "პეიზაჟის რეჟიმის გვერდების მიახლოება"
 
 #: ../data/ui/menu/reader.xml:118
 msgid "Crop Borders"
-msgstr "საზღვრების ამოჭრა"
+msgstr "საზღვრების მოჭრა"
 
 #: ../data/ui/menu/reader.xml:122
 msgid "Hide Page Numbering"
-msgstr ""
+msgstr "გვერდის ნუმერაციის დამალვა"
 
 #: ../data/ui/menu/reader.xml:136
 msgid "Save Page"
@@ -410,7 +423,7 @@ msgstr "ზოგადი"
 
 #: ../data/ui/preferences.blp:24
 msgid "Support Komikku"
-msgstr ""
+msgstr "მხარი დაუჭირეთ კომიკკუს"
 
 #: ../data/ui/preferences.blp:30
 msgid ""
@@ -419,6 +432,9 @@ msgid ""
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"კომიკკუ არის უფასო და ოფენ-სორს, და ყოველთვის იქნება. თუ მოგწონთ, "
+"გამიხარდება დონაციებით მხარდაჭერა. ეს არამარტო მოვლაში, არამედ უფასო "
+"პროგრამის დეველოპერად დარჩენაშიც დამეხმარება ზოგადად."
 
 #: ../data/ui/preferences.blp:59
 msgid "Appearance"
@@ -430,11 +446,11 @@ msgstr "თემა"
 
 #: ../data/ui/preferences.blp:65
 msgid "Light"
-msgstr "ღია"
+msgstr "ნათელი"
 
 #: ../data/ui/preferences.blp:66
 msgid "Dark"
-msgstr "მუქი"
+msgstr "ბნელი"
 
 #: ../data/ui/preferences.blp:67
 msgid "Follow System"
@@ -446,47 +462,49 @@ msgstr "ღამის სინათლე"
 
 #: ../data/ui/preferences.blp:74
 msgid "Automatically enable dark theme at night"
-msgstr ""
+msgstr "ღამით ბნელი რეჟიმის ავტომატურად ჩართვა"
 
 #: ../data/ui/preferences.blp:79
 msgid "Use system accent colors"
-msgstr ""
+msgstr "სისტემის აქცენტის ფერების გამოყენება"
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
-msgstr ""
+msgstr "პროგრესის ზოლის თემა"
 
 #: ../data/ui/preferences.blp:84
 msgid "Theme to use for progress bars"
-msgstr ""
+msgstr "თემა პროგრესის ბარისთვის"
 
 #: ../data/ui/preferences.blp:88
 msgid "Backdrop in Details Page"
-msgstr ""
+msgstr "ფონი დეტალების გვერდზე"
 
 #: ../data/ui/preferences.blp:89
 msgid "Method used to recolor background to match cover"
-msgstr ""
+msgstr "გამოყენებული მეთოდი ფონის შეფერვისთვის, რათა დამეთხას საფარს"
 
 #: ../data/ui/preferences.blp:93
 msgid "Linear gradient"
-msgstr ""
+msgstr "წრფივი გრადიენტი"
 
 #: ../data/ui/preferences.blp:94
 msgid "Blurred cover"
-msgstr ""
+msgstr "ბუნდრი საფარი"
 
 #: ../data/ui/preferences.blp:104
 msgid "Desktop Notifications"
-msgstr "სამუშაო მაგიდის გაფრთხილებები"
+msgstr "სამუშაო მაგიდის შეტყობინებები"
 
 #: ../data/ui/preferences.blp:105
 msgid "Use desktop notifications for downloads and library updates"
 msgstr ""
+"გამოიყენეთ სამუშაო მაგიდის შეტყობინებები გადმოწერების და ბიბლიოთეკის "
+"განახლებებისთვის"
 
 #: ../data/ui/preferences.blp:113
 msgid "Synchronize reading progress"
-msgstr ""
+msgstr "კითხვის პროგრესის სინქრონირება"
 
 #: ../data/ui/preferences.blp:124
 msgid "Display"
@@ -502,15 +520,15 @@ msgstr "ბადე"
 
 #: ../data/ui/preferences.blp:131
 msgid "Compact Grid"
-msgstr ""
+msgstr "მჭიდრო ბადე"
 
 #: ../data/ui/preferences.blp:137
 msgid "Servers Logo"
-msgstr ""
+msgstr "სერვერის ლოგი"
 
 #: ../data/ui/preferences.blp:138
 msgid "Display servers logo"
-msgstr ""
+msgstr "სერვერების ლოგოს გამოსახვა"
 
 #: ../data/ui/preferences.blp:142
 msgid "Badges"
@@ -518,31 +536,31 @@ msgstr "სამკერდე ნიშნები"
 
 #: ../data/ui/preferences.blp:145
 msgid "Number of Unread Chapters"
-msgstr ""
+msgstr "წაუკითხავი თავების რაოდენობა"
 
 #: ../data/ui/preferences.blp:165
 msgid "Number of Downloaded Chapters"
-msgstr ""
+msgstr "გადმოწერილი თავიების რაოდენობა"
 
 #: ../data/ui/preferences.blp:185
 msgid "Number of Recent and Unread Chapters"
-msgstr ""
+msgstr "უახლესი და წაუკითხავი თავების რაოდენობა"
 
 #: ../data/ui/preferences.blp:210
 msgid "Update at Startup"
-msgstr ""
+msgstr "გახსნისას განახლება"
 
 #: ../data/ui/preferences.blp:211
 msgid "Automatically update library at startup"
-msgstr ""
+msgstr "ბიბლიოთქკის ავტომატური განახლება გახსნისას"
 
 #: ../data/ui/preferences.blp:215
 msgid "Auto Download of New Chapters"
-msgstr ""
+msgstr "ახალი თავების ავტო-გადმოწერა"
 
 #: ../data/ui/preferences.blp:216
 msgid "Automatically download new chapters"
-msgstr ""
+msgstr "ახალი თავების ავტომატური გადმოწერა"
 
 #: ../data/ui/preferences.blp:224
 msgid "Languages"
@@ -550,41 +568,43 @@ msgstr "ენები"
 
 #: ../data/ui/preferences.blp:225
 msgid "Restrict servers to selected languages"
-msgstr ""
+msgstr "სერვერების მითითებულ ენებზე შეზღუდვა"
 
 #: ../data/ui/preferences.blp:234
 msgid "Enable/disable and configure servers"
-msgstr ""
+msgstr "ჩართვა/გამორთვა და სერვერების კონფიგურაცია"
 
 #: ../data/ui/preferences.blp:242
 msgid "Long Strip Detection"
-msgstr ""
+msgstr "გრძელი ზოლის ამოცნობა"
 
 #: ../data/ui/preferences.blp:243
 msgid "Automatically detect long vertical strip when possible"
-msgstr ""
+msgstr "გრძელი ვერტიკალური ზოლის ამოცნობა როცა შესაძელებლია"
 
 #: ../data/ui/preferences.blp:249
 msgid "NSFW Content (18+)"
-msgstr ""
+msgstr "NSFW შინაარსი (18+)"
 
 #: ../data/ui/preferences.blp:250
 msgid "Whether to enable servers with NSFW content"
-msgstr ""
+msgstr "იყოს თუ არა ჩართული NSFW შინაარსიანი სერვერები"
 
 #: ../data/ui/preferences.blp:254
 msgid "NSFW Only Content (18+)"
-msgstr ""
+msgstr "მხოლოდ NSFW შინაარის (18+)"
 
 #: ../data/ui/preferences.blp:255
 msgid "Whether to enable servers with NSFW only content"
-msgstr ""
+msgstr "იყოს თუ არა ჩართული მხოლოდ NSFW შინაარსიანი სერვერები"
 
 #: ../data/ui/preferences.blp:259
 msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
 msgstr ""
+"ეს პარამეტრები ვერ აღკვეთს პოტენციურად არასწორად მონიშნულ სერვერებს NSFW "
+"შინაარსის გამოჩენისგან."
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
@@ -592,31 +612,31 @@ msgstr "მკითხველი"
 
 #: ../data/ui/preferences.blp:279
 msgid "Reading Mode"
-msgstr ""
+msgstr "კითცვის რეჟიმი"
 
 #: ../data/ui/preferences.blp:282
 msgid "⬅ Right to Left"
-msgstr ""
+msgstr "⬅ მარჯვნიდან მარცხნივ"
 
 #: ../data/ui/preferences.blp:283
 msgid "➡ Left to Right"
-msgstr ""
+msgstr "➡ მარცხნიდან მარჯვნივ"
 
 #: ../data/ui/preferences.blp:284
 msgid "⬇ Vertical"
-msgstr ""
+msgstr "⬇ ვერტიკალური"
 
 #: ../data/ui/preferences.blp:285
 msgid "⬇ Webtoon"
-msgstr ""
+msgstr "⬇ ვებ-ტუნი"
 
 #: ../data/ui/preferences.blp:291
 msgid "Scaling Filter"
-msgstr ""
+msgstr "ზრდადი ფილტრი"
 
 #: ../data/ui/preferences.blp:292
 msgid "Interpolation method used when scaling images"
-msgstr ""
+msgstr "გამოსახულებების გაფართოებისას გამოყენებული ინტერპოლაციის მეთოდი"
 
 #: ../data/ui/preferences.blp:295
 msgid "Linear"
@@ -624,7 +644,7 @@ msgstr "წრფივი"
 
 #: ../data/ui/preferences.blp:296
 msgid "Trilinear"
-msgstr ""
+msgstr "სამ-წრფივი"
 
 #: ../data/ui/preferences.blp:302
 msgid "Background Color"
@@ -636,7 +656,7 @@ msgstr "თეთრი"
 
 #: ../data/ui/preferences.blp:306
 msgid "Gray"
-msgstr "ნაცრისფერი"
+msgstr "რუხი"
 
 #: ../data/ui/preferences.blp:307
 msgid "Black"
@@ -644,7 +664,7 @@ msgstr "შავი"
 
 #: ../data/ui/preferences.blp:308
 msgid "System Style"
-msgstr "სისტემის მიყოლა"
+msgstr "სისტემის სტილი"
 
 #: ../data/ui/preferences.blp:314
 msgid "Page Numbering"
@@ -652,7 +672,7 @@ msgstr "გვერდის დანომრვა"
 
 #: ../data/ui/preferences.blp:315
 msgid "Hide the page numbering at the bottom of the screen while reading"
-msgstr ""
+msgstr "კითხვისას ეკრანის ძირას გვერდის ნუმერაციის დამალვა"
 
 #: ../data/ui/preferences.blp:319
 msgid "Fullscreen"
@@ -660,12 +680,12 @@ msgstr "სრულ ეკრანზე"
 
 #: ../data/ui/preferences.blp:320
 msgid "Automatically enter fullscreen mode"
-msgstr ""
+msgstr "სრული ეკრანის რეჟიმში ავტომატურად შესვლა"
 
 #: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
-msgstr ""
+msgstr "გვერდის კითხვის რეჟიმები"
 
 #: ../data/ui/preferences.blp:326
 msgid "Right to Left / Left to Right / Vertical"
@@ -727,7 +747,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:359
 msgid "Reset to Default"
-msgstr "ნაგულისხმევ მნიშვნელობაზე ჩამოყრა"
+msgstr "ნაგულისხმევზე დაბრუნება"
 
 #: ../data/ui/preferences.blp:367
 msgid "Maximum Width"
@@ -755,7 +775,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:405
 msgid "Advanced"
-msgstr "დამატებით"
+msgstr "გაფართოებული"
 
 #: ../data/ui/preferences.blp:409
 msgid "A setting has changed that requires a restart to take effect"
@@ -779,11 +799,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:439 ../data/ui/webview.blp:10
 msgid "WebView"
-msgstr "WebView"
+msgstr "ვებ-ხედი"
 
 #: ../data/ui/preferences.blp:442
 msgid "Clear Data"
-msgstr "მონაცემების გასუფავება"
+msgstr "მონაცემთა გასუფავება"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"
@@ -953,22 +973,22 @@ msgstr "ქვემოთ ჩამოწევა"
 #: ../data/ui/shortcuts.blp:99
 msgctxt "Shortcut window description"
 msgid "Scroll Up"
-msgstr "მაღლა აქაჩვა"
+msgstr "მაღლა აწევა"
 
 #: ../data/ui/shortcuts.blp:107
 msgctxt "Shortcut window description"
 msgid "Zoom In"
-msgstr "გადიდება"
+msgstr "მიახლოება"
 
 #: ../data/ui/shortcuts.blp:112
 msgctxt "Shortcut window description"
 msgid "Zoom Out"
-msgstr "დაპატარავება"
+msgstr "დაშორება"
 
 #: ../data/ui/shortcuts.blp:117
 msgctxt "Shortcut window description"
 msgid "Zoom Reset"
-msgstr "გადიდების ჩამოყრა"
+msgstr "მიახლოების გადაყენება"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
@@ -1028,7 +1048,7 @@ msgstr ""
 
 #: ../data/ui/support.blp:144
 msgid "Copy to Clipboard"
-msgstr "ბუფერში კოპირება"
+msgstr "გაცვლის ბუფერში კოპირება"
 
 #: ../komikku/application.py:103
 msgid "Multiple URLs not supported"
@@ -1093,7 +1113,7 @@ msgstr "კონტექსტი"
 
 #: ../komikku/application.py:636
 msgid "Stack Trace"
-msgstr "სტეკის ტრეისი"
+msgstr "დასტის კვალი"
 
 #: ../komikku/application.py:658
 msgid "Debug Information"
@@ -1192,7 +1212,7 @@ msgstr ""
 
 #: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
 msgid "Reset"
-msgstr "ჩამოყრა"
+msgstr "გადაყენება"
 
 #: ../komikku/card/chapters_list.py:340 ../komikku/downloader.py:533
 #: ../komikku/library/__init__.py:869
@@ -1204,7 +1224,7 @@ msgstr[1] ""
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
-msgstr "თავები ვერ ვიპოვე"
+msgstr "თავები ვერ მოიძებნა"
 
 #: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
 msgid "Failed to update chapters reading status"
@@ -1249,7 +1269,7 @@ msgstr "უცნობი სტატუსი"
 
 #: ../komikku/card/info_box.py:124
 msgid "Local"
-msgstr "ლოკალური"
+msgstr "ადგილობრივი"
 
 #: ../komikku/card/info_box.py:165
 msgid "%m/%d/%Y %H:%M"
@@ -1297,7 +1317,7 @@ msgstr "სტატუსი"
 
 #: ../komikku/card/tracking.py:236
 msgid "Score"
-msgstr "ქულები"
+msgstr "ქულა"
 
 #: ../komikku/card/tracking.py:241
 msgid "Chapter"
@@ -1333,7 +1353,7 @@ msgstr ""
 
 #: ../komikku/card/tracking.py:515 ../komikku/explorer/search/search.py:90
 msgid "No Results Found"
-msgstr "შედეგების გარეშე"
+msgstr "შედეგები არ მოიძებნა"
 
 #: ../komikku/card/tracking.py:516 ../komikku/explorer/search/search.py:91
 msgid "Try a different search"
@@ -1480,7 +1500,7 @@ msgstr "დახმარება"
 
 #: ../komikku/explorer/common.py:268
 msgid "Local Folder"
-msgstr "ლოკალური საქაღალდე"
+msgstr "ადგილობრივი საქაღალდე"
 
 #: ../komikku/explorer/common.py:270
 msgid ""
@@ -1510,7 +1530,7 @@ msgstr ""
 #: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
 #: ../komikku/explorer/common.py:303 ../komikku/explorer/common.py:306
 msgid "Content Information"
-msgstr "ინფორმაცია შემცველობის შესახებ"
+msgstr "შემადგენოლბის ინფორმაცია"
 
 #: ../komikku/explorer/common.py:292
 #, python-brace-format
@@ -1700,7 +1720,7 @@ msgstr ""
 
 #: ../komikku/library/__init__.py:697
 msgid "Loading…"
-msgstr "ჩატვირთვა…"
+msgstr "იტვირთება…"
 
 #: ../komikku/library/__init__.py:818
 msgid "Failed to update reading status"
@@ -1738,7 +1758,7 @@ msgstr "გადმოწერა რიგშია"
 
 #: ../komikku/models/database/downloads.py:21
 msgid "Downloading"
-msgstr "გადმოწერა"
+msgstr "იწერება"
 
 #: ../komikku/models/database/downloads.py:22
 msgid "Download canceled"
@@ -1887,7 +1907,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:523
 msgid "Settings"
-msgstr "მორგება"
+msgstr "პარამეტრები"
 
 #: ../komikku/reader/__init__.py:536
 msgid "Brightness"
@@ -1907,7 +1927,7 @@ msgstr ""
 
 #: ../komikku/reader/__init__.py:552
 msgid "Grayscale"
-msgstr "ნაცრისფერი"
+msgstr "ნაცრისფერი-სკალა"
 
 #: ../komikku/reader/__init__.py:553
 msgid "Convert pages to grayscale"
@@ -2279,7 +2299,7 @@ msgstr "არცერთი"
 #: ../komikku/servers/comick/__init__.py:130
 #: ../komikku/servers/mangadex/__init__.py:99
 msgid "Tags"
-msgstr "ჭდეები"
+msgstr "იარლიყი"
 
 #: ../komikku/servers/comick/__init__.py:131
 #: ../komikku/servers/mangadex/__init__.py:100
@@ -2362,7 +2382,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:159
 #: ../komikku/servers/mangadex/__init__.py:124
 msgid "Action"
-msgstr "ქმედება"
+msgstr "ექშენი"
 
 #: ../komikku/servers/comick/__init__.py:160
 msgid "Adult"
@@ -2371,7 +2391,7 @@ msgstr "ზრდასრულთა"
 #: ../komikku/servers/comick/__init__.py:161
 #: ../komikku/servers/mangadex/__init__.py:125
 msgid "Adventure"
-msgstr "თავგადასავალი"
+msgstr "სათავგადასავლო"
 
 #: ../komikku/servers/comick/__init__.py:162
 #: ../komikku/servers/mangadex/__init__.py:127
@@ -2381,7 +2401,7 @@ msgstr "კომედია"
 #: ../komikku/servers/comick/__init__.py:163
 #: ../komikku/servers/mangadex/__init__.py:128
 msgid "Crime"
-msgstr "დანაშაული"
+msgstr "კრიმინალი"
 
 #: ../komikku/servers/comick/__init__.py:164
 #: ../komikku/servers/mangadex/__init__.py:129
@@ -2409,7 +2429,7 @@ msgstr "ისტორიული"
 #: ../komikku/servers/comick/__init__.py:169
 #: ../komikku/servers/mangadex/__init__.py:133
 msgid "Horror"
-msgstr "საშინელება"
+msgstr "საშინელებათა"
 
 #: ../komikku/servers/comick/__init__.py:170
 #: ../komikku/servers/mangadex/__init__.py:134
@@ -2423,7 +2443,7 @@ msgstr ""
 
 #: ../komikku/servers/comick/__init__.py:172
 msgid "Mature"
-msgstr "ასაკიანები"
+msgstr "მოწიფულთათვის"
 
 #: ../komikku/servers/comick/__init__.py:173
 #: ../komikku/servers/mangadex/__init__.py:136
@@ -2438,7 +2458,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:175
 #: ../komikku/servers/mangadex/__init__.py:138
 msgid "Mystery"
-msgstr "საიდუმლო"
+msgstr "მისტიკა"
 
 #: ../komikku/servers/comick/__init__.py:176
 #: ../komikku/servers/mangadex/__init__.py:139
@@ -2508,7 +2528,7 @@ msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:44
 msgid "Content Rating"
-msgstr "შემცველობის შეფასება"
+msgstr "შინაარსის რეიტინგი"
 
 #: ../komikku/servers/comix/__init__.py:45
 msgid "Filter by Content Rating"
@@ -2735,7 +2755,7 @@ msgstr "ასაკის რეიტინგი"
 
 #: ../komikku/servers/mangatube/__init__.py:144
 msgid "Maturity"
-msgstr "თამასუქის განაღდების ვადა"
+msgstr "მოწიფულობა"
 
 #: ../komikku/servers/mangatube/__init__.py:148
 msgid "Without"
@@ -2884,7 +2904,7 @@ msgstr ""
 
 #: ../komikku/webview.py:440
 msgid "Please wait…"
-msgstr "გთხოვთ, მოითმინოთ…"
+msgstr "გთხოვთ მოიცადოთ…"
 
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"

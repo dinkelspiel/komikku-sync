@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-08 13:01+0000\n"
+"PO-Revision-Date: 2026-07-21 20:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -318,7 +318,7 @@ msgstr "Пошук за назвою, сервером або жанром"
 
 #: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
 msgid "Update"
-msgstr "Оновити"
+msgstr "Оновлення"
 
 #: ../data/ui/library.blp:206
 msgid "Discover Comics"
@@ -639,11 +639,11 @@ msgstr "⬇ Вебтун"
 
 #: ../data/ui/preferences.blp:291
 msgid "Scaling Filter"
-msgstr "Фільтр масштабування"
+msgstr "Метод інтерполяції"
 
 #: ../data/ui/preferences.blp:292
 msgid "Interpolation method used when scaling images"
-msgstr "Метод інтерполяції, що використовується при масштабуванні зображень"
+msgstr "Для масштабування сторінок"
 
 #: ../data/ui/preferences.blp:295
 msgid "Linear"
@@ -655,7 +655,7 @@ msgstr "Трилінійний"
 
 #: ../data/ui/preferences.blp:302
 msgid "Background Color"
-msgstr "Колір фону"
+msgstr "Колір тла"
 
 #: ../data/ui/preferences.blp:305
 msgid "White"
@@ -704,11 +704,11 @@ msgstr "Масштабування"
 
 #: ../data/ui/preferences.blp:330
 msgid "Type of scaling to adapt image"
-msgstr "Тип масштабування для адаптації зображення"
+msgstr "Як вмістити сторінку"
 
 #: ../data/ui/preferences.blp:333
 msgid "Adapt to Screen"
-msgstr "За екраном"
+msgstr "Під екран"
 
 #: ../data/ui/preferences.blp:334
 msgid "Adapt to Width"
@@ -720,7 +720,7 @@ msgstr "За висотою"
 
 #: ../data/ui/preferences.blp:336
 msgid "Original Size"
-msgstr "За розміром"
+msgstr "Оригінал"
 
 #: ../data/ui/preferences.blp:342
 msgid "Landscape Pages Zoom"
@@ -1679,7 +1679,7 @@ msgstr "Запит вже обробляється."
 
 #: ../komikku/explorer/search/most_popular.py:74
 msgid "Oops, failed to retrieve most popular."
-msgstr "На жаль, не вдалося отримати найпопулярніші."
+msgstr "На жаль, не вдалося завантажити список найпопулярніших."
 
 #: ../komikku/explorer/search/most_popular.py:78
 msgid "No Most Popular Found"

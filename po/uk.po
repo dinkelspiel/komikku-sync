@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-21 20:01+0000\n"
+"PO-Revision-Date: 2026-07-25 10:01+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -1679,7 +1679,7 @@ msgstr "Запит вже обробляється."
 
 #: ../komikku/explorer/search/most_popular.py:74
 msgid "Oops, failed to retrieve most popular."
-msgstr "На жаль, не вдалося завантажити список найпопулярніших."
+msgstr "На жаль, не вдалося отримати список найпопулярніших."
 
 #: ../komikku/explorer/search/most_popular.py:78
 msgid "No Most Popular Found"

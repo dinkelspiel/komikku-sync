@@ -2,9 +2,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+import base64
 import datetime
 from gettext import gettext as _
 import time
+from urllib.parse import urlparse
 
 import requests
 
@@ -28,6 +30,24 @@ SEARCH_RESULTS_PAGES = 3
 SEARCH_RESULTS_PAGE_LIMIT = 30
 CHAPTERS_PAGE_LIMIT = 100
 
+VRF_STAGES = [
+    {
+        'table': base64.b64decode('yINlmUNho8VYJT+ibTIP+9ESiULpVEtMOoD6U6lRE0R/xwXo/Xp9NrUgC4cw/Lmo33vUyjUE40kUoEWIr/fxfNNcq2s79ShQ5NhNrFnJ4hXPwOu/SuXzIbuTQKGFvfm08E9jvCfqAtoDqvQq3dVWPQFmJjgvkISBeXY3BgANR+yVnjGbcxZ47d6kLNfZPIayTq3/YGySb1KuVZodWp/WGNAO5pfMcpaK53Hhs0allBszaMaxuouOwdxbwgxIw6YunSsXjI05Yi0j9j4eHKfSXR8Ifo/Od+8iamRfCXTyvm7NGRGYdcQ0ywcK/u6RXhrbcCm4t2eCtrDgQVecJGkQ+A=='),
+        'key': base64.b64decode('0Ec58JOY3uBzJK9m3zqIOpdlF7UFiax9DmA='),
+        'iv': 0x5A,
+    },
+    {
+        'table': base64.b64decode('IUFltCxD3Oc2cwCgkJffthaOg9cgPUb0LgW6H/VtfcF0kc5F25t+aWj6JH9VOhOaY0rAFdUxlDnl5BLNvwEJvQtP5qcw7vdb/K+chnbwnspSHT8mz5lqwz41TezG0hkO06FTjJZhsyNuFLDpD2ZZxQj/QIRcF90zpmQ7Byu483WsQqUE0C342HL+JXngRB6fRzxRyVTaKu83h7UYTJ0QMt6ixFh6S3F8gqkKwrGTL3jHNBsD45UnifK8+RGtishQV2K3rujLKEkiZxpr2dYcudFW4oFsDKhad3CLBvuyTqsCo4B7mL5IKQ1vXo/MOOvq1I1d8ar9X6Ttu5KF4fZgiA=='),
+        'key': base64.b64decode('AAdjb1iPY8CiDmq9H34tKTBF8a3oDQ=='),
+        'iv': 0x35,
+    },
+    {
+        'table': base64.b64decode('NQHlu1/wVO5EmkwQymF810qqY2xG1k2obcas4Z9mCsPEIFl9pRIjFxbJ7ybMHbBckT5Ton85E0FOeHezbh/mjlEYpmpnlXOS8dgrqeq2KfxImTh1YK9y0PeMNhzA1OQzSY9brYOJq/l2QnE/hwOeZIhPixVSKIUlDb5vLcH6RWKxkIEMuP0bDwIqQ71AJJaEaMJL7A6YtyIwoRT+L5v4aZzodN/0+3nOGsfblFjgxSfPzVDjNFeNl5P26+kEC/8AHgdrpAbt3hHz3HrRN1Y6e+JHgF7ncFWnoF0y3THL1S71WgWGCa6KtSzTCCG58n68nTyj2T3Sshk7utqCtMi/ZQ=='),
+        'key': base64.b64decode('DELOJgPsVaCcblDtTGMdHzM='),
+        'iv': 0xBA,
+    },
+]
+
 
 def convert_old_slug(slug):
     # Old format: slug.hid
@@ -37,6 +57,41 @@ def convert_old_slug(slug):
         slug = f'{hid}:{slug}'
 
     return slug if ':' in slug else None
+
+
+def compute_vrf(url, params):
+    def encrypt_stage(data, table, key, iv):
+        key_size = len(key)
+        prev = iv
+
+        out = b''
+        for index, value in enumerate(data):
+            prev = table[(value ^ key[index % key_size] ^ prev) & 0xFF] & 0xFF
+            out += prev.to_bytes()
+
+        return out
+
+    new_params = []
+    if params:
+        params = dict(sorted(params.items()))
+        for name in params.keys():
+            if name.endswith('[]'):
+                for index, value in enumerate(params[name]):
+                    new_name = name.replace('[]', f'[{index}]')
+                    new_params.append(f'{new_name}={value}')
+            else:
+                new_params.append(f'{name}={params[name]}')
+
+    data = urlparse(url).path.replace('/api', '')
+    if new_params:
+        data += '?'
+        data += '&'.join(new_params)
+
+    data = data.encode()
+    for stage in VRF_STAGES:
+        data = encrypt_stage(data, stage['table'], stage['key'], stage['iv'])
+
+    return base64.b64encode(data, altchars=b'-_').rstrip(b'=')
 
 
 class Mangafire(Server):
@@ -143,11 +198,17 @@ class Mangafire(Server):
                 return None
 
         hid, slug = initial_data['slug'].split(':')
+        url = self.api_manga_url.format(hid)
 
         r = self.session_get(
-            self.api_manga_url.format(hid),
+            url,
+            params={
+                'vrf': compute_vrf(url, None),
+            },
             headers={
+                'Accept': 'application/json',
                 'Referer': self.get_manga_url(initial_data['slug'], None),
+                'X-Requested-With': 'XMLHttpRequest',
             }
         )
         if r.status_code != 200:
@@ -210,10 +271,17 @@ class Mangafire(Server):
 
         Currently, only pages are expected.
         """
+        url = self.api_chapter_url.format(chapter_slug)
+
         r = self.session_get(
-            self.api_chapter_url.format(chapter_slug),
+            url,
+            params={
+                'vrf': compute_vrf(url, None),
+            },
             headers={
+                'Accept': 'application/json',
                 'Referer': self.chapter_url.format(manga_slug.replace(':', '-'), chapter_slug),
+                'X-Requested-With': 'XMLHttpRequest',
             }
         )
         if r.status_code != 200:
@@ -236,17 +304,22 @@ class Mangafire(Server):
             chapters = []
 
         hid, _slug = slug.split(':')
+        url = self.api_chapters_url.format(hid)
+        params = {
+            'language': LANGUAGES_CODES[self.lang],
+            'order': 'desc',
+            'page': page,
+            'limit': CHAPTERS_PAGE_LIMIT,
+        }
+        params['vrf'] = compute_vrf(url, params)
 
         r = self.session_get(
-            self.api_chapters_url.format(hid),
-            params={
-                'language': LANGUAGES_CODES[self.lang],
-                'order': 'desc',
-                'page': page,
-                'limit': CHAPTERS_PAGE_LIMIT,
-            },
+            url,
+            params=params,
             headers={
+                'Accept': 'application/json',
                 'Referer': self.get_manga_url(slug, None),
+                'X-Requested-With': 'XMLHttpRequest',
             }
         )
         if r.status_code != 200:
@@ -311,10 +384,7 @@ class Mangafire(Server):
 
     def get_manga_list(self, term=None, content_rating=None, types=None, demographics=None, statuses=None, orderby=None):
         def get_page(page):
-            params = {
-                'limit': SEARCH_RESULTS_PAGE_LIMIT,
-                'page': page,
-            }
+            params = {}
             if term:
                 params['keyword'] = term
 
@@ -334,11 +404,20 @@ class Mangafire(Server):
             else:
                 params['order[relevance]'] = 'desc'
 
+            params.update({
+                'page': page,
+                'limit': SEARCH_RESULTS_PAGE_LIMIT,
+            })
+
+            params['vrf'] = compute_vrf(self.api_search_url, params)
+
             r = self.session_get(
                 self.api_search_url,
                 params=params,
                 headers={
-                    'Referer': f'{self.search_url}',
+                    'Accept': 'application/json',
+                    'Referer': f'{self.base_url}/',
+                    'X-Requested-With': 'XMLHttpRequest',
                 }
             )
             if r.status_code != 200:

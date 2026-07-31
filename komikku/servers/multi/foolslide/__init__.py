@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -23,20 +23,35 @@ re_chapter_date = re.compile(r'\d{4}.\d{2}.\d{2}')
 # Jaimini's Box [EN] (disabled)
 # Kirei Cake [EN] (disabled)
 # Le Cercle du Scan [FR] (disabled)
-# Tutto Anime Manga [IT] (disabled)
+# NIFTeam [it]
 
 
 class FoOlSlide(Server):
     base_url: str
     search_url: str
-    mangas_url: str
+    manga_list_url: str
     manga_url: str
     chapter_url: str
+    latest_updates_url = None
+
+    name_selector = '.title'
+    cover_selector = '.thumbnail img'
+    details_selector = '.info b'
+    synopsis_selector = None
+    chapters_list_selector = '.list .element'
+    chapters_list_link_selector = '.title > a'
+    latest_updates_list_selector = '.group > .title > a'
+    search_list_selector = '.group'
+    search_last_chapter_selector = '.element .title a'
+    search_list_cover_selector = 'img.preview'
 
     def __init__(self):
         if self.session is None:
             self.session = requests.Session()
             self.session.headers.update({'user-agent': USER_AGENT})
+
+        if self.latest_updates_url is None:
+            self.latest_updates_url = self.base_url
 
     @staticmethod
     def decrypt(value):
@@ -67,12 +82,7 @@ class FoOlSlide(Server):
         assert 'slug' in initial_data, 'Manga slug is missing in initial data'
 
         r = self.session_get(self.manga_url.format(initial_data['slug']))
-        if r is None:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-
-        if r.status_code != 200 or mime_type != 'text/html':
+        if r.status_code != 200:
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
@@ -99,31 +109,35 @@ class FoOlSlide(Server):
             cover=None,
         ))
 
-        data['name'] = soup.find('h1', class_='title').text.strip()
-        if soup.find('div', class_='thumbnail'):
-            data['cover'] = soup.find('div', class_='thumbnail').img.get('src')
+        data['name'] = soup.select_one(self.name_selector).text.strip()
+        if element := soup.select_one(self.cover_selector):
+            data['cover'] = element.get('src')
 
         # Details
-        for element in soup.find('div', class_='info').find_all('b'):
-            label = element.text
-            value = list(element.next_siblings)[0][2:]
-            if label in ('Author', 'Artist'):
-                data['authors'].append(value)
-            elif label in ('Description', 'Synopsis', ):
-                if adult_alert:
-                    data['synopsis'] = '{0}\n\n{1}'.format(
-                        'ALERT: This series contains mature contents and is meant to be viewed by an adult audience.',
-                        value
-                    )
-                else:
-                    data['synopsis'] = value
+        if self.details_selector:
+            for element in soup.select(self.details_selector):
+                label = element.text
+                value = list(element.next_siblings)[0][2:]
+                if label in ('Author', 'Artist'):
+                    data['authors'].append(value)
+                elif label in ('Description', 'Synopsis', 'Trama'):
+                    if adult_alert:
+                        data['synopsis'] = '{0}\n\n{1}'.format(
+                            'ALERT: This series contains mature contents and is meant to be viewed by an adult audience.',
+                            value
+                        )
+                    else:
+                        data['synopsis'] = value
+
+        if self.synopsis_selector:
+            data['synopsis'] = soup.select_one(self.synopsis_selector).text.strip()
 
         # Chapters
-        for element in reversed(soup.find('div', class_='list').find_all('div', class_='element')):
-            a_element = element.find('div', class_='title').a
+        for element in reversed(soup.select(self.chapters_list_selector)):
+            a_element = element.select_one(self.chapters_list_link_selector)
 
             title = a_element.text.strip()
-            slug = a_element.get('href').replace(f'{self.base_url}/read/{initial_data["slug"]}/{self.lang}/', '')[:-1]
+            slug = a_element.get('href').split(f'{self.lang}/')[-1][:-1]
 
             date_match = re.search(re_chapter_date, element.find('div', class_='meta_r').text)
             if date_match:
@@ -156,10 +170,6 @@ class FoOlSlide(Server):
         if r.status_code != 200:
             return None
 
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
-            return None
-
         soup = BeautifulSoup(r.text, 'lxml')
 
         # List of pages is available in JavaScript variable '_0x3320' or 'pages'
@@ -182,12 +192,11 @@ class FoOlSlide(Server):
                     # String is BASE64 encoded
                     pages = base64.b64decode(pages)
                     break
+
                 if line.startswith('var pages'):
-                    #
-                    # Kirei Cake
-                    #
                     pages = line.replace('var pages = ', '')[:-1]
                     break
+
             if pages is not None:
                 pages = json.loads(pages)
                 break
@@ -230,24 +239,27 @@ class FoOlSlide(Server):
         """
         return self.manga_url.format(slug)
 
-    def get_mangas(self, page=1):
-        r = self.session_get('{0}/{1}'.format(self.mangas_url, page))
+    def get_manga_list(self, page=1):
+        r = self.session_get('{0}/{1}'.format(self.manga_list_url, page))
         if r.status_code != 200:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
 
         results = []
-        for element in soup.find('div', class_='series').find_all('div', class_='group'):
+        for element in soup.select(self.search_list_selector):
             a_element = element.find('div', class_='title').a
+            if self.search_list_cover_selector:
+                cover_element = element.select_one(self.search_list_cover_selector)
+            else:
+                cover_element = None
+            last_chapter_element = element.select_one(self.search_last_chapter_selector)
 
             results.append(dict(
                 slug=a_element.get('href').split('/')[-2],
                 name=a_element.get('title'),
+                cover=cover_element.get('src') if cover_element else None,
+                last_chapter=last_chapter_element.text.strip() if last_chapter_element else None,
             ))
 
         return results
@@ -256,19 +268,15 @@ class FoOlSlide(Server):
         """
         Returns latest updates
         """
-        r = self.session_get(self.base_url)
+        r = self.session_get(self.latest_updates_url)
         if r.status_code != 200:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
 
         results = []
         slugs = []
-        for a_element in soup.select('.group > .title > a'):
+        for a_element in soup.select(self.latest_updates_list_selector):
             slug = a_element.get('href').split('/')[-2]
             if slug in slugs:
                 continue
@@ -284,12 +292,8 @@ class FoOlSlide(Server):
         """
         Returns list of all mangas
         """
-        r = self.session_get(self.mangas_url)
+        r = self.session_get(self.manga_list_url)
         if r.status_code != 200:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
@@ -302,7 +306,7 @@ class FoOlSlide(Server):
 
         results = []
         for index in range(nb_pages):
-            results += self.get_mangas(page=index + 1)
+            results += self.get_manga_list(page=index + 1)
 
         return results
 
@@ -315,19 +319,24 @@ class FoOlSlide(Server):
                 'Accept-Language': '{0}-{1},{0};q=0.9,en-US;q=0.8,en;q=0.7'.format(self.lang, self.lang.upper()),
             }
         )
+        if r.status_code != 200:
+            return None
 
-        if r.status_code == 200:
-            soup = BeautifulSoup(r.text, 'lxml')
+        soup = BeautifulSoup(r.text, 'lxml')
+        results = []
+        for element in soup.select(self.search_list_selector):
+            a_element = element.find_all('div')[0].a
+            if self.search_list_cover_selector:
+                cover_element = element.select_one(self.search_list_cover_selector)
+            else:
+                cover_element = None
+            last_chapter_element = element.select_one(self.search_last_chapter_selector)
 
-            results = []
-            for element in soup.find('div', class_='list').find_all('div', class_='group'):
-                a_element = element.find_all('div')[0].a
+            results.append(dict(
+                slug=a_element.get('href').split('/')[-2],
+                name=element.select_one('.title a').text.strip(),
+                cover=cover_element.get('src') if cover_element else None,
+                last_chapter=last_chapter_element.text.strip() if last_chapter_element else None,
+            ))
 
-                results.append(dict(
-                    slug=a_element.get('href').split('/')[-2],
-                    name=a_element.get('title'),
-                ))
-
-            return results
-
-        return None
+        return results

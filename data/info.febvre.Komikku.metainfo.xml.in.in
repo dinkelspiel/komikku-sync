@@ -114,6 +114,19 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.11.0" date="2026-08-01">
+            <description translate="no">
+                <ul>
+                    <li>[Servers] Added Death Toll Reader (EN)</li>
+                    <li>[Servers] Added Juin Jutsu Team (IT)</li>
+                    <li>[Servers] Added NIF Team (IT)</li>
+                    <li>[Servers] JManga (JA): Update</li>
+                    <li>[Servers] MangaFire (EN/ES/FR/JA/PT/pt_BR): Update</li>
+                    <li>[L10n] Updated Georgian, Spanish and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.10.0" date="2026-07-20">
             <description translate="no">
                 <ul>

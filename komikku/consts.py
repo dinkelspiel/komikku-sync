@@ -191,6 +191,7 @@ CREDITS = dict(
         'rene-coty (French)',
         'paul verot (French)',
         'Temuri Doghonadze (Georgian)',
+        'David Gogniashvili (Georgian)',
         'Sandor Odor (German)',
         'Liliana Prikler (German)',
         'gregorni (German)',
@@ -237,6 +238,7 @@ CREDITS = dict(
         'gallegonovato (Spanish)',
         'Klauss (Spanish)',
         'Champiñon Traductor (Spanish)',
+        'Libre (Spanish)',
         'Jesper (Swedish)',
         'PaneradFisk (Swedish)',
         'Willem Dinkelspiel (Swedish)',
@@ -265,17 +267,12 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Preferences] Reader: Added `White Borders Cropping Threshold`</li>
-    <li>[Reader] Settings: Added `White Borders Cropping Threshold`</li>
-    <li>[Servers] Added BDplus (FR)</li>
-    <li>[Servers] Anime-Sama (FR): Update</li>
-    <li>[Servers] JManga (JA): Re-enabled</li>
-    <li>[Servers] MangaFire (multi): Disabled</li>
-    <li>[Servers] Mangalek (AR): Update</li>
-    <li>[Servers] Mangas Origines (FR): Update</li>
-    <li>[Servers] RF Dragon Scan (pt_BR): Disabled</li>
-    <li>[L10n] Added Bengali and Georgian translations</li>
-    <li>[L10n] Updated Cornish, German and Russian translations</li>
+    <li>[Servers] Added Death Toll Reader (EN)</li>
+    <li>[Servers] Added Juin Jutsu Team (IT)</li>
+    <li>[Servers] Added NIF Team (IT)</li>
+    <li>[Servers] JManga (JA): Update</li>
+    <li>[Servers] MangaFire (EN/ES/FR/JA/PT/pt_BR): Update</li>
+    <li>[L10n] Updated Georgian, Spanish and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

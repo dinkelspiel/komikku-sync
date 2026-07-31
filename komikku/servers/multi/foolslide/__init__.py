@@ -21,6 +21,7 @@ re_chapter_date = re.compile(r'\d{4}.\d{2}.\d{2}')
 
 # Supported servers:
 # Jaimini's Box [EN] (disabled)
+# Juin Jutsu Team [it]
 # Kirei Cake [EN] (disabled)
 # Le Cercle du Scan [FR] (disabled)
 # NIFTeam [it]

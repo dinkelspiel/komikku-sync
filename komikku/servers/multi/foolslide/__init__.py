@@ -20,6 +20,7 @@ re_chapter_date = re.compile(r'\d{4}.\d{2}.\d{2}')
 # https://github.com/FoolCode/FoOlSlide or https://github.com/chocolatkey/FoOlSlide2 (fork)
 
 # Supported servers:
+# Death Toll Reader [EN]
 # Jaimini's Box [EN] (disabled)
 # Juin Jutsu Team [it]
 # Kirei Cake [EN] (disabled)

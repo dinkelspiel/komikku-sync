@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the Komikku package.
 # 유찬후 <chanhooyoo1488@gmail.com>, 2025.
 # 안세훈 <on9686@gmail.com>, 2026.
+# Jun-Hyung Park <cplane15@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-06-23 02:01+0000\n"
-"Last-Translator: on9686 <on9686@gmail.com>\n"
+"PO-Revision-Date: 2026-08-01 07:55+0000\n"
+"Last-Translator: Jun-Hyung Park <cplane15@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/komikku/main/ko/>"
 "\n"
 "Language: ko\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -799,7 +800,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:442
 msgid "Clear Data"
-msgstr ""
+msgstr "데이터 정리"
 
 #: ../data/ui/preferences.blp:461
 msgid "Use Up-to-date Servers Modules"

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -89,15 +89,15 @@ class Weebcentral(Server):
             return None
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],  # not available
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],  # not available
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         soup = BeautifulSoup(r.text, 'lxml')
 
@@ -145,15 +145,21 @@ class Weebcentral(Server):
             if not title_element:
                 continue
 
+            scanlator = 'Unknown'
+            if img_element := soup.select_one('span:first-child > img'):
+                if 'official' in img_element.get('src'):
+                    scanlator = 'Offical'
+
             title = title_element.text.strip()
             num = title.split(' ')[-1]  # chapter number theoretically is at end of chapter title
 
-            data['chapters'].append(dict(
-                slug=a_element.get('href').split('/')[-1],
-                title=title,
-                num=num if is_number(num) else None,
-                date=convert_date_string(a_element.select_one('time').get('datetime').split('T')[0], '%Y-%m-%d'),
-            ))
+            data['chapters'].append({
+                'slug': a_element.get('href').split('/')[-1],
+                'title': title,
+                'scanlators': [scanlator],
+                'num': num if is_number(num) else None,
+                'date': convert_date_string(a_element.select_one('time').get('datetime').split('T')[0], '%Y-%m-%d'),
+            })
 
         return data
 
@@ -171,14 +177,14 @@ class Weebcentral(Server):
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         for element in soup.select('img'):
-            data['pages'].append(dict(
-                slug=None,
-                image=element.get('src'),
-            ))
+            data['pages'].append({
+                'slug': None,
+                'image': element.get('src'),
+            })
 
         return data
 
@@ -199,11 +205,11 @@ class Weebcentral(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """

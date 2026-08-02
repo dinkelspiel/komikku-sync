@@ -27,7 +27,7 @@ class Rncalation(Server):
     search_url = base_url + '/library'
     manga_url = base_url + '/comics/{0}'
     chapters_url = base_url + '/comics/{0}/chapters'
-    chapter_url = base_url + '/comics/{0}/cap/{1}'
+    chapter_url = base_url + '/leer/{0}'
 
     filters = [
         {
@@ -91,16 +91,16 @@ class Rncalation(Server):
         soup = BeautifulSoup(r.text, 'lxml')
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-            cover=None,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+            'cover': None,
+        })
 
         data['name'] = soup.select_one('h1').text.strip()
         data['cover'] = self.base_url + soup.select_one('img.comic-cover__img').get('src')
@@ -160,28 +160,24 @@ class Rncalation(Server):
 
         Currently, only pages are expected.
         """
-        r = self.session_get(self.chapter_url.format(manga_slug, chapter_slug))
+        r = self.session_get(self.chapter_url.format(chapter_slug))
         if r.status_code != 200:
-            return None
-
-        mime_type = get_buffer_mime_type(r.content)
-        if mime_type != 'text/html':
             return None
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        data = dict(
-            pages=[],
-        )
+        data = {
+            'pages': [],
+        }
         for img_element in soup.select('img.page-img, .page-wrap img'):
             image = img_element.get('data-src') or img_element.get('src')
             if not image:
                 continue
 
-            data['pages'].append(dict(
-                image=image,
-                slug=None,
-            ))
+            data['pages'].append({
+                'image': image,
+                'slug': None,
+            })
 
         return data
 
@@ -189,9 +185,9 @@ class Rncalation(Server):
         def get_page(page):
             r = self.session_get(
                 self.chapters_url.format(manga_slug),
-                params=dict(
-                    page=page,
-                )
+                params={
+                    'page': page,
+                }
             )
             if r.status_code != 200:
                 return None
@@ -250,11 +246,11 @@ class Rncalation(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('/')[-1],
+        }
 
     def get_manga_url(self, slug, url):
         """
@@ -288,11 +284,11 @@ class Rncalation(Server):
                 continue
 
             img_element = a_element.select_one('img.comic-cover__img')
-            results.append(dict(
-                slug=a_element.get('href').split('/')[-1],
-                name=img_element.get('alt'),
-                cover=self.base_url + img_element.get('src'),
-            ))
+            results.append({
+                'slug': a_element.get('href').split('/')[-1],
+                'name': img_element.get('alt'),
+                'cover': self.base_url + img_element.get('src'),
+            })
 
         return results
 

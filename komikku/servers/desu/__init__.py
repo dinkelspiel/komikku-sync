@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2020-2024 GrownNed
+# SPDX-FileCopyrightText: 2020-2026 GrownNed
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: GrownNed <grownned@gmail.com>
+# Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 from datetime import datetime
 
@@ -25,12 +26,11 @@ class Desu(Server):
 
     base_url = 'https://desu.uno'
     logo_url = base_url + '/styles/favicons/favicon-32x32.png?v=1'
-    api_url = base_url + '/manga/api/'
-    api_latest_updates_url = base_url + '/manga/api?limit=50&order=updated'
-    api_most_populars_url = base_url + '/manga/api?limit=50&order=popular'
-    api_manga_url = base_url + '/manga/api/{0}'
-    api_chapter_url = base_url + '/manga/api/{0}/chapter/{1}'
-    api_search_url = base_url + '/manga/api?limit=50&search={0}'
+    api_url = base_url + '/api'
+    api_search_url = api_url + '/manga'
+    api_manga_url = api_url + '/manga/{0}'
+    api_chapters_url = api_url + '/manga/{0}/chapters'
+    api_chapter_url = api_url + '/manga/{0}/chapters/{1}'
 
     manga_title_css_selector = 'h1 > span.name'
 
@@ -47,47 +47,68 @@ class Desu(Server):
         """
         assert 'slug' in initial_data, 'Slug is missing in initial data'
 
-        r = self.session_get(self.api_manga_url.format(initial_data['slug']))
+        r = self.session_get(
+            self.api_manga_url.format(initial_data['slug']),
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
         if r.status_code != 200:
             return None
 
-        resp_data = r.json()['response']
+        resp_data = r.json()['manga']
 
         data = initial_data.copy()
-        data.update(dict(
-            authors=[],
-            scanlators=[],
-            genres=[],
-            status=None,
-            synopsis=None,
-            chapters=[],
-            server_id=self.id,
-        ))
+        data.update({
+            'authors': [],
+            'scanlators': [],
+            'genres': [],
+            'status': None,
+            'synopsis': None,
+            'chapters': [],
+            'server_id': self.id,
+        })
 
         data['name'] = resp_data['russian']
-        data['url'] = resp_data['url']
-        data['cover'] = resp_data['image']['original']
+        data['url'] = resp_data['view_url']
+        data['cover'] = resp_data['cover']['preview']
 
         if resp_data.get('translators'):
             data['scanlators'] = [t['name'] for t in resp_data['translators']]
-        data['genres'] = [genre['russian'] for genre in resp_data['genres']]
+        data['genres'] = [genre['name'] for genre in resp_data['genres']]
         if resp_data['status'] == 'ongoing':
             data['status'] = 'ongoing'
         elif resp_data['status'] == 'released':
             data['status'] = 'complete'
         data['synopsis'] = resp_data['description']
 
-        for chapter in reversed(resp_data['chapters']['list']):
-            title = '#{0}'.format(chapter['ch'])
-            if chapter['title']:
-                title = '{0} - {1}'.format(title, chapter['title'])
+        # Chapters
+        r = self.session_get(
+            self.api_chapters_url.format(initial_data['slug']),
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
+        if r.status_code != 200:
+            return None
 
-            data['chapters'].append(dict(
-                slug=chapter['id'],
-                title=title,
-                num=chapter['ch'],
-                date=datetime.fromtimestamp(chapter['date']).date(),
-            ))
+        resp_data = r.json()['chapters']
+
+        for chapter in reversed(resp_data):
+            title = ''
+            if volume := chapter.get('volume'):
+                title += f'Том {volume}'
+            if number := chapter.get('number'):
+                title += f' Глава {number}'
+            if chapter.get('title'):
+                title += f' - {chapter["title"]}'
+
+            data['chapters'].append({
+                'slug': chapter['chapter_id'],
+                'title': title,
+                'num': number,
+                'date': datetime.fromtimestamp(chapter['publish_date']).date(),
+            })
 
         return data
 
@@ -97,20 +118,25 @@ class Desu(Server):
 
         Currently, only pages are expected.
         """
-        r = self.session_get(self.api_chapter_url.format(manga_slug, chapter_slug))
+        r = self.session_get(
+            self.api_chapter_url.format(manga_slug, chapter_slug),
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
         if r.status_code != 200:
             return None
 
-        resp_data = r.json()['response']
+        resp_data = r.json()['chapter']
 
-        data = dict(
-            pages=[],
-        )
-        for page in resp_data['pages']['list']:
-            data['pages'].append(dict(
-                slug=None,
-                image=page['img'],
-            ))
+        data = {
+            'pages': [],
+        }
+        for page in resp_data['pages']:
+            data['pages'].append({
+                'slug': None,
+                'image': page['url'],
+            })
 
         return data
 
@@ -118,7 +144,12 @@ class Desu(Server):
         """
         Returns chapter page scan (image) content
         """
-        r = self.session_get(page['image'], headers={'Referer': self.base_url})
+        r = self.session_get(
+            page['image'],
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
         if r.status_code != 200:
             return None
 
@@ -126,11 +157,11 @@ class Desu(Server):
         if not mime_type.startswith('image'):
             return None
 
-        return dict(
-            buffer=r.content,
-            mime_type=mime_type,
-            name=page['image'].split('/')[-1],
-        )
+        return {
+            'buffer': r.content,
+            'mime_type': mime_type,
+            'name': page['image'].split('/')[-1].split('?')[0],
+        }
 
     @staticmethod
     def get_manga_url(slug, url):
@@ -152,23 +183,29 @@ class Desu(Server):
         return self.search('', orderby='popular')
 
     def search(self, term, orderby=None):
-        params = dict(
-            limit=50,
-        )
+        params = {
+            'limit': 50,
+        }
         if orderby is not None:
-            params['order'] = orderby
+            params['order_by'] = orderby
         else:
             params['search'] = term
 
-        r = self.session_get(self.api_url, params=params, headers={'Referer': self.base_url})
+        r = self.session_get(
+            f'{self.api_search_url}/',
+            params=params,
+            headers={
+                'Referer': f'{self.base_url}/',
+            }
+        )
         if r.status_code != 200:
             return None
 
-        resp_data = r.json()['response']
+        resp_data = r.json()['mangas']
 
-        return [dict(
-            slug=item['id'],
-            name=item['russian'],
-            cover=item['image']['preview'],
-            last_chapter=item['chapters']['updated']['ch'],
-        ) for item in resp_data]
+        return [{
+            'slug': item['manga_id'],
+            'name': item['russian'],
+            'cover': item['cover']['preview'],
+            # last_chapter=item['chapters']['updated']['number'],
+        } for item in resp_data]

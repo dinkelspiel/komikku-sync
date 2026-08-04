@@ -4,13 +4,14 @@
 # 유찬후 <chanhooyoo1488@gmail.com>, 2025.
 # 안세훈 <on9686@gmail.com>, 2026.
 # Jun-Hyung Park <cplane15@gmail.com>, 2026.
+# on9686 <on9686@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.96.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-08-02 01:36+0000\n"
-"Last-Translator: Jun-Hyung Park <cplane15@gmail.com>\n"
+"PO-Revision-Date: 2026-08-04 05:49+0000\n"
+"Last-Translator: on9686 <on9686@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/komikku/main/ko/>"
 "\n"
 "Language: ko\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -1176,11 +1177,11 @@ msgstr "종료"
 
 #: ../komikku/application.py:744
 msgid "Restart?"
-msgstr ""
+msgstr "재시작하시겠습니까?"
 
 #: ../komikku/application.py:746
 msgid "Restart"
-msgstr ""
+msgstr "재시작"
 
 #: ../komikku/card/__init__.py:110 ../komikku/card/__init__.py:257
 #: ../komikku/explorer/search/__init__.py:75
@@ -1188,7 +1189,7 @@ msgstr ""
 #: ../komikku/library/__init__.py:104 ../komikku/library/__init__.py:452
 #: ../komikku/reader/__init__.py:529 ../komikku/reader/__init__.py:532
 msgid "Filters"
-msgstr ""
+msgstr "필터"
 
 #: ../komikku/card/__init__.py:220 ../komikku/library/__init__.py:358
 #: ../komikku/preferences/__init__.py:157
@@ -1198,13 +1199,13 @@ msgstr ""
 
 #: ../komikku/card/__init__.py:221
 msgid "Are you sure you want to clear all chapters?"
-msgstr ""
+msgstr "모든 챕터(화)를 정리하시겠습니까?"
 
 #: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:728
 #: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
 #: ../komikku/preferences/__init__.py:182
 msgid "Clear"
-msgstr ""
+msgstr "정리"
 
 #: ../komikku/card/__init__.py:266
 msgid "Unknown"
@@ -1212,7 +1213,7 @@ msgstr "알 수 없음"
 
 #: ../komikku/card/__init__.py:368
 msgid "Read progress synchronization with server completed successfully"
-msgstr ""
+msgstr "서버와 읽기 진행도 동기화가 완료되었습니다"
 
 #: ../komikku/card/__init__.py:374
 msgid "Failed to get manga URL"
@@ -1231,11 +1232,11 @@ msgstr ""
 
 #: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
 msgid "Clear and Reset"
-msgstr ""
+msgstr "정리 및 초기화"
 
 #: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: ../komikku/card/chapters_list.py:340 ../komikku/downloader.py:533
 #: ../komikku/library/__init__.py:869
@@ -1246,15 +1247,15 @@ msgstr[0] "{0} 선택됨"
 
 #: ../komikku/card/chapters_list.py:359
 msgid "No chapters found"
-msgstr ""
+msgstr "챕터(화) 없음"
 
 #: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
 msgid "Failed to update chapters reading status"
-msgstr ""
+msgstr "챕터(화) 읽기 상태 업데이트 실패"
 
 #: ../komikku/card/chapters_list.py:660
 msgid "%m/%d/%Y"
-msgstr ""
+msgstr "%Y/%m/%d"
 
 #: ../komikku/card/chapters_list.py:718 ../komikku/library/__init__.py:434
 msgid "Download"
@@ -1270,7 +1271,7 @@ msgstr "읽지 않음으로 표시"
 
 #: ../komikku/card/chapters_list.py:750
 msgid "Mark Previous Chapters as Read"
-msgstr ""
+msgstr "이전 챕터(화)를 읽음으로 표시"
 
 #: ../komikku/card/info_box.py:80
 msgid "Show Less"

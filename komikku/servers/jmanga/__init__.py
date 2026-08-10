@@ -13,7 +13,7 @@ class Jmanga(Mangareader):
     lang = 'ja'
     is_nsfw = True
 
-    base_url = 'https://jmanga.loan'
+    base_url = 'https://jmanga.farm'
     list_url = base_url + '/filter/'
     search_url = base_url + '/'
     manga_url = base_url + '/read/{0}/'

@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Komikku package.
 # Jsus “Jsux” <mdjsusbinsus@gmail.com>, 2026.
+# Bhalet Chakma <bhalet002@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-10 17:01+0000\n"
-"Last-Translator: Jsus “Jsux” <mdjsusbinsus@gmail.com>\n"
+"PO-Revision-Date: 2026-08-12 16:51+0000\n"
+"Last-Translator: Bhalet Chakma <bhalet002@gmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/komikku/main/bn/>"
 "\n"
 "Language: bn\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -29,6 +30,8 @@ msgstr "মাঙ্গা ও কমিক পড়ার সেরা অ্�
 #: ../data/info.febvre.Komikku.desktop.in:15
 msgid "manga;reader;viewer;comic;manhwa;manhua;webtoon;webcomic;scanlation;book;ebook;offline;GTK;GNOME;"
 msgstr ""
+"মাঙ্গা;রিডার;ভিউয়ার;কমিক;মানহওয়া;মানহুয়া;ওয়েবটুন;ওয়েবকমিক;স্ক্যানলেশন;বই;ই-"
+"বই;অফলাইন;GTK;GNOME;"
 
 #: ../data/info.febvre.Komikku.metainfo.xml.in.in:11
 msgid "Discover and read manga & comics"
@@ -400,7 +403,7 @@ msgstr ""
 
 #: ../data/ui/menu/reader.xml:122
 msgid "Hide Page Numbering"
-msgstr ""
+msgstr "পৃষ্ঠা নম্বর লুকিয়ে রাখুন"
 
 #: ../data/ui/menu/reader.xml:136
 msgid "Save Page"
@@ -417,7 +420,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:24
 msgid "Support Komikku"
-msgstr ""
+msgstr "কমিকুকে সহায়তা করুন"
 
 #: ../data/ui/preferences.blp:30
 msgid ""
@@ -433,19 +436,19 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:62
 msgid "Theme"
-msgstr ""
+msgstr "থিম"
 
 #: ../data/ui/preferences.blp:65
 msgid "Light"
-msgstr ""
+msgstr "সাদা"
 
 #: ../data/ui/preferences.blp:66
 msgid "Dark"
-msgstr ""
+msgstr "গাঢ়"
 
 #: ../data/ui/preferences.blp:67
 msgid "Follow System"
-msgstr ""
+msgstr "স্বয়ংক্রিয়"
 
 #: ../data/ui/preferences.blp:73
 msgid "Night Light"
@@ -497,11 +500,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:124
 msgid "Display"
-msgstr ""
+msgstr "ডিসপ্লে"
 
 #: ../data/ui/preferences.blp:127
 msgid "Display Mode"
-msgstr ""
+msgstr "ডিসপ্লে মোড"
 
 #: ../data/ui/preferences.blp:130
 msgid "Grid"
@@ -553,7 +556,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:224
 msgid "Languages"
-msgstr ""
+msgstr "ভাষা"
 
 #: ../data/ui/preferences.blp:225
 msgid "Restrict servers to selected languages"
@@ -603,11 +606,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:282
 msgid "⬅ Right to Left"
-msgstr ""
+msgstr "⬅ ডান থেকে বাম"
 
 #: ../data/ui/preferences.blp:283
 msgid "➡ Left to Right"
-msgstr ""
+msgstr "➡ বাম থেকে ডান"
 
 #: ../data/ui/preferences.blp:284
 msgid "⬇ Vertical"

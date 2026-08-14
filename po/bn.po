@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-08-14 08:13+0000\n"
+"PO-Revision-Date: 2026-08-15 08:51+0000\n"
 "Last-Translator: Bhalet Chakma <bhalet002@gmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/komikku/main/bn/>"
 "\n"
@@ -2833,7 +2833,7 @@ msgstr ""
 #: ../komikku/updater.py:92
 #, python-brace-format
 msgid "{0} seems down. Please try updating later"
-msgstr ""
+msgstr "{0} সার্ভার বোধহয় ডাউন আছে। অনুগ্রহ করে পরে চেষ্টা করুন"
 
 #: ../komikku/updater.py:123
 msgid "Library update completed with errors"
@@ -2873,8 +2873,8 @@ msgstr "কোন নতুন চ্যাপ্টার নেই"
 #, python-brace-format
 msgid "{0} update failed"
 msgid_plural "{0} updates failed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{0}টি আপডেট নিষ্ফল"
+msgstr[1] "{0}টি আপডেট নিষ্ফল"
 
 #: ../komikku/updater.py:178
 msgid "Oops, update has failed. Please try again."
@@ -2886,7 +2886,7 @@ msgstr "লাইব্রেরি আপডেট শুরু করা হ�
 
 #: ../komikku/utils.py:358
 msgid "You are currently offline"
-msgstr ""
+msgstr "আপনি বর্তমানে অফলাইন আছেন"
 
 #: ../komikku/utils.py:385
 msgid "No Internet connection, timeout or server down"

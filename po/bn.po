@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-08-12 16:51+0000\n"
+"PO-Revision-Date: 2026-08-14 08:13+0000\n"
 "Last-Translator: Bhalet Chakma <bhalet002@gmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/komikku/main/bn/>"
 "\n"
@@ -383,11 +383,11 @@ msgstr "লেটেস্ট রিড প্রথমে"
 
 #: ../data/ui/menu/main.xml:31
 msgid "Latest Updated First"
-msgstr ""
+msgstr "লেটেস্ট আপডেট প্রথমে"
 
 #: ../data/ui/menu/main.xml:60
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "কিবোর্ড শর্টকাট"
 
 #: ../data/ui/menu/main.xml:68
 msgid "About Komikku"
@@ -691,11 +691,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:333
 msgid "Adapt to Screen"
-msgstr ""
+msgstr "স্ক্রিন অনুসারে"
 
 #: ../data/ui/preferences.blp:334
 msgid "Adapt to Width"
-msgstr ""
+msgstr "প্রস্থ অনুসারে"
 
 #: ../data/ui/preferences.blp:335
 msgid "Adapt to Height"
@@ -860,7 +860,7 @@ msgstr ""
 #: ../data/ui/preferences_servers_languages.blp:10
 #: ../data/ui/preferences_servers_languages.blp:17
 msgid "Servers Languages"
-msgstr ""
+msgstr "সার্ভার ভাষা"
 
 #: ../data/ui/reader.blp:23
 msgid "Back"
@@ -923,12 +923,12 @@ msgstr ""
 #: ../data/ui/shortcuts.blp:57
 msgctxt "Shortcut window description"
 msgid "Update"
-msgstr ""
+msgstr "আপডেট"
 
 #: ../data/ui/shortcuts.blp:63
 msgctxt "Shortcut window description"
 msgid "Manga Card"
-msgstr ""
+msgstr "মাঙ্গা কার্ড"
 
 #: ../data/ui/shortcuts.blp:66
 msgctxt "Shortcut window description"
@@ -2314,7 +2314,7 @@ msgstr ""
 #: ../komikku/servers/comick/__init__.py:137
 #: ../komikku/servers/mangadex/__init__.py:106
 msgid "Award Winning"
-msgstr ""
+msgstr "পুরস্কারপ্রাপ্ত"
 
 #: ../komikku/servers/comick/__init__.py:138
 #: ../komikku/servers/dbmultiverse/__init__.py:58
@@ -2726,26 +2726,26 @@ msgstr ""
 
 #: ../komikku/servers/mangatube/__init__.py:134
 msgid "Webtoon"
-msgstr ""
+msgstr "ওয়েবটুন"
 
 #: ../komikku/servers/mangatube/__init__.py:135
 #: ../komikku/servers/multi/manga_stream/__init__.py:85
 #: ../komikku/servers/zenko/__init__.py:78
 msgid "Comic"
-msgstr ""
+msgstr "কমিক"
 
 #: ../komikku/servers/mangatube/__init__.py:137
 #: ../komikku/servers/zenko/__init__.py:79
 msgid "Light Novel"
-msgstr ""
+msgstr "লাইট নভেল"
 
 #: ../komikku/servers/mangatube/__init__.py:143
 msgid "Age Rating"
-msgstr ""
+msgstr "বয়স রেটিং"
 
 #: ../komikku/servers/mangatube/__init__.py:144
 msgid "Maturity"
-msgstr ""
+msgstr "পক্বতা"
 
 #: ../komikku/servers/mangatube/__init__.py:148
 msgid "Without"
@@ -2753,12 +2753,12 @@ msgstr ""
 
 #: ../komikku/servers/mangatube/__init__.py:149
 msgid "16+"
-msgstr ""
+msgstr "১৬+"
 
 #: ../komikku/servers/multi/madara/__init__.py:433
 #: ../komikku/servers/readmanhwa/__init__.py:45
 msgid "NSFW Content"
-msgstr ""
+msgstr "কাজের জন্য নিরাপদ নয়"
 
 #: ../komikku/servers/multi/madara/__init__.py:434
 #: ../komikku/servers/readmanhwa/__init__.py:46
@@ -2792,11 +2792,11 @@ msgstr ""
 
 #: ../komikku/servers/weebcentral/__init__.py:41
 msgid "Yes"
-msgstr ""
+msgstr "হ্যাঁ"
 
 #: ../komikku/servers/weebcentral/__init__.py:42
 msgid "No"
-msgstr ""
+msgstr "না"
 
 #: ../komikku/servers/zenko/__init__.py:45
 msgid "Age Restriction"
@@ -2812,7 +2812,7 @@ msgstr ""
 
 #: ../komikku/servers/zenko/__init__.py:77
 msgid "Western Comic"
-msgstr ""
+msgstr "আমেরিকান/ইউরোপীয় কমিক"
 
 #: ../komikku/trackers/__init__.py:67
 msgid "Reading"
@@ -2837,37 +2837,37 @@ msgstr ""
 
 #: ../komikku/updater.py:123
 msgid "Library update completed with errors"
-msgstr ""
+msgstr "লাইব্রেরি আপডেট ত্রুটিসহ সম্পন্ন হয়েছে"
 
 #: ../komikku/updater.py:125
 msgid "Library update completed"
-msgstr ""
+msgstr "লাইব্রেরি আপডেট সম্পন্ন হয়েছে"
 
 #: ../komikku/updater.py:128
 msgid "Update completed with errors"
-msgstr ""
+msgstr "আপডেট ত্রুটিসহ সম্পন্ন হয়েছে"
 
 #: ../komikku/updater.py:130
 msgid "Update completed"
-msgstr ""
+msgstr "আপডেট সম্পন্ন হয়েছে"
 
 #: ../komikku/updater.py:134
 #, python-brace-format
 msgid "{0} successful update"
 msgid_plural "{0} successful updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{0}টি সফল আপডেট"
+msgstr[1] "{0}টি সফল আপডেট"
 
 #: ../komikku/updater.py:135 ../komikku/updater.py:151
 #, python-brace-format
 msgid "{0} new chapter"
 msgid_plural "{0} new chapters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{0}টি নতুন চ্যাপ্টার"
+msgstr[1] "{0}টি নতুন চ্যাপ্টার"
 
 #: ../komikku/updater.py:137 ../komikku/updater.py:159
 msgid "No new chapters"
-msgstr ""
+msgstr "কোন নতুন চ্যাপ্টার নেই"
 
 #: ../komikku/updater.py:140
 #, python-brace-format
@@ -2878,11 +2878,11 @@ msgstr[1] ""
 
 #: ../komikku/updater.py:178
 msgid "Oops, update has failed. Please try again."
-msgstr ""
+msgstr "ওহ, আপডেট ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
 
 #: ../komikku/updater.py:196
 msgid "Library update started"
-msgstr ""
+msgstr "লাইব্রেরি আপডেট শুরু করা হয়েছে"
 
 #: ../komikku/utils.py:358
 msgid "You are currently offline"

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-07-25 10:01+0000\n"
+"PO-Revision-Date: 2026-08-14 08:13+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -473,7 +473,7 @@ msgstr "Вмикати темну тему вночі"
 
 #: ../data/ui/preferences.blp:79
 msgid "Use system accent colors"
-msgstr "Використовувати системні акцентні кольори"
+msgstr "Системний колір акценту"
 
 #: ../data/ui/preferences.blp:83
 msgid "Progress Bars Theme"
@@ -489,7 +489,7 @@ msgstr "Тло за обкладинкою"
 
 #: ../data/ui/preferences.blp:89
 msgid "Method used to recolor background to match cover"
-msgstr "Метод зміни кольору тла за обкладинкою"
+msgstr "Спосіб забарвлення тла на сторінці серії під кольори обкладинки"
 
 #: ../data/ui/preferences.blp:93
 msgid "Linear gradient"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
 msgid "Reader"
-msgstr "Читач"
+msgstr "Читання"
 
 #: ../data/ui/preferences.blp:279
 msgid "Reading Mode"
@@ -692,7 +692,7 @@ msgstr "Під час читання переходити в повноекра�
 #: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
-msgstr "Режими читання по сторінках"
+msgstr "Режим посторінкового читання"
 
 #: ../data/ui/preferences.blp:326
 msgid "Right to Left / Left to Right / Vertical"
@@ -800,7 +800,7 @@ msgstr "Дані"
 
 #: ../data/ui/preferences.blp:416
 msgid "Data not saved in the library"
-msgstr "Дані не збережено в бібліотеці"
+msgstr "Дані, не збережені в бібліотеці"
 
 #: ../data/ui/preferences.blp:419
 msgid "Clear Chapters Cache and Database"
@@ -871,7 +871,7 @@ msgid ""
 "Useful with E Ink e-readers to avoid very choppy and unpleasant animations "
 "(due to the low refresh rate of the screen)"
 msgstr ""
-"Корисно для електронних читалок E-Ink, щоб уникнути дуже переривчастої та "
+"Корисно для електронних читалок E-Ink, щоб уникнути переривчастої та "
 "неприємної анімації (через низьку частоту оновлення екрану)"
 
 #: ../data/ui/preferences.blp:489
@@ -901,17 +901,17 @@ msgstr "Назад"
 
 #: ../data/ui/reader.blp:31
 msgid "Toggle Fullscreen Mode"
-msgstr "Переключитися в повноекранний режим"
+msgstr "Повноекранний режим"
 
 #: ../data/ui/shortcuts.blp:10
 msgctxt "Shortcut window description"
 msgid "Application"
-msgstr "Програма"
+msgstr "Загальні"
 
 #: ../data/ui/shortcuts.blp:13
 msgctxt "Shortcut window description"
 msgid "Open Preferences"
-msgstr "Відкрити параметри"
+msgstr "Параметри"
 
 #: ../data/ui/shortcuts.blp:18
 msgctxt "Shortcut window description"
@@ -921,7 +921,7 @@ msgstr "Переключитися в повноекранний режим"
 #: ../data/ui/shortcuts.blp:23
 msgctxt "Shortcut window description"
 msgid "Open Keyboard Shortcuts"
-msgstr "Відкрити клавіатурні скорочення"
+msgstr "Клавіатурні скорочення"
 
 #: ../data/ui/shortcuts.blp:28
 msgctxt "Shortcut window description"
@@ -936,7 +936,7 @@ msgstr "Бібліотека"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "Shortcut window description"
 msgid "Add Manga"
-msgstr "Додати Мальопис"
+msgstr "Додати мальопис"
 
 #: ../data/ui/shortcuts.blp:42
 msgctxt "Shortcut window description"
@@ -961,7 +961,7 @@ msgstr "Оновити"
 #: ../data/ui/shortcuts.blp:63
 msgctxt "Shortcut window description"
 msgid "Manga Card"
-msgstr "Картка мальопису"
+msgstr "Сторінка мальопису"
 
 #: ../data/ui/shortcuts.blp:66
 msgctxt "Shortcut window description"
@@ -981,12 +981,12 @@ msgstr "Наступна сторінка"
 #: ../data/ui/shortcuts.blp:81
 msgctxt "Shortcut window description"
 msgid "Go to Right Page"
-msgstr "На праву сторінку"
+msgstr "Перейти вправо"
 
 #: ../data/ui/shortcuts.blp:87
 msgctxt "Shortcut window description"
 msgid "Go to Left Page"
-msgstr "На ліву сторінку"
+msgstr "Перейти вліво"
 
 #: ../data/ui/shortcuts.blp:93
 msgctxt "Shortcut window description"
@@ -1021,7 +1021,7 @@ msgstr "Зберегти сторінку"
 #: ../data/ui/shortcuts.blp:130
 msgctxt "Shortcut window description"
 msgid "Download Manager"
-msgstr "Менеджер завантажень"
+msgstr "Завантаження"
 
 #: ../data/ui/shortcuts.blp:133
 msgctxt "Shortcut window description"
@@ -1326,7 +1326,7 @@ msgstr "Пожертвувати"
 
 #: ../komikku/card/tracking.py:72
 msgid "Failed to get data from tracker"
-msgstr "Не вдалося отримати дані від трекера"
+msgstr "Не вдалося отримати дані від служби відстеження"
 
 #: ../komikku/card/tracking.py:100
 msgid "No tracking services available"
@@ -2020,7 +2020,7 @@ msgstr "Не вдалося синхронізувати хід читання �
 #: ../komikku/reader/pager/__init__.py:486
 #: ../komikku/reader/pager/webtoon.py:94
 msgid "There is no previous chapter."
-msgstr "Попереднього розділу немає."
+msgstr "Це перший розділ."
 
 #: ../komikku/reader/pager/__init__.py:488
 #: ../komikku/reader/pager/webtoon.py:92
@@ -2039,7 +2039,7 @@ msgstr "Не вдалося завантажити зображення"
 #: ../komikku/reader/pager/page.py:271
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
-msgstr "Файл пошкоджено або формат зображення не підтримується ({0})"
+msgstr "Файл пошкоджено або формат сторінок не підтримується ({0})"
 
 #: ../komikku/reader/pager/page.py:312
 msgid "Retry"

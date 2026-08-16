@@ -14,12 +14,14 @@ import urllib.parse
 
 gi.require_version('Adw', '1')
 gi.require_version('Gtk', '4.0')
+gi.require_version('GtkSource', '5')
 
 from gi.repository import Adw
 from gi.repository import Gdk
 from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import Gtk
+from gi.repository import GtkSource
 
 from komikku.card import CardPage
 from komikku.consts import CREDITS
@@ -126,6 +128,8 @@ class Application(Adw.Application):
 
     def do_startup(self):
         Adw.Application.do_startup(self)
+
+        GtkSource.init()
 
         init_db()
         init_servers_modules(Settings.get_default().servers_external_modules)
@@ -617,7 +621,7 @@ available in your region/language."""))
         frame = Gtk.Frame()
         textview = Gtk.TextView(
             editable=False, wrap_mode=Gtk.WrapMode.WORD_CHAR,
-            bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+            bottom_margin=9, left_margin=9, right_margin=9, top_margin=9
         )
         textview.set_css_classes(['body', 'small'])
         buffer = textview.get_buffer()
@@ -637,13 +641,20 @@ available in your region/language."""))
         frame = Gtk.Frame()
         scrolledwindow = Gtk.ScrolledWindow()
         scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER)
-        textview = Gtk.TextView(
-            editable=False, bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+
+        sourceview = GtkSource.View(
+            background_pattern=GtkSource.BackgroundPatternType.GRID,
+            editable=False, bottom_margin=9, left_margin=9, right_margin=9, top_margin=9
         )
-        textview.set_css_classes(['body', 'small'])
-        buffer = textview.get_buffer()
+        sourceview.add_css_class('monospace')
+        buffer = sourceview.get_buffer()
+        buffer.set_highlight_syntax(True)
+        buffer.set_language(GtkSource.LanguageManager.get_default().get_language('python3'))
+        scheme = 'solarized-dark' if Adw.StyleManager.get_default().get_dark() else 'solarized-light'
+        buffer.set_style_scheme(GtkSource.StyleSchemeManager.get_default().get_scheme(scheme))
         buffer.set_text(stack_trace.strip())
-        scrolledwindow.set_child(textview)
+
+        scrolledwindow.set_child(sourceview)
         frame.set_child(scrolledwindow)
         box.append(frame)
 
@@ -659,7 +670,7 @@ available in your region/language."""))
         frame = Gtk.Frame()
         textview = Gtk.TextView(
             editable=False, wrap_mode=Gtk.WrapMode.WORD_CHAR,
-            bottom_margin=6, left_margin=12, right_margin=12, top_margin=6
+            bottom_margin=9, left_margin=9, right_margin=9, top_margin=9
         )
         textview.set_css_classes(['body', 'small'])
         buffer = textview.get_buffer()

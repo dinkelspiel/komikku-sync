@@ -22,6 +22,7 @@
         <file compressed="true" preprocess="xml-stripblanks">ui/preferences_servers_languages.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/preferences_servers_settings.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/reader.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/reader_settings.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/shortcuts.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/support.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/webview.ui</file>
@@ -52,6 +53,7 @@
         <file compressed="true" preprocess="xml-stripblanks" alias="icons/scalable/apps/library-symbolic.svg">icons/library-symbolic.svg</file>
         <file compressed="true" preprocess="xml-stripblanks" alias="icons/scalable/apps/reset-symbolic.svg">icons/reset-symbolic.svg</file>
         <file compressed="true" preprocess="xml-stripblanks" alias="icons/scalable/apps/server-settings-symbolic.svg">icons/server-settings-symbolic.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks" alias="icons/scalable/apps/wrench-symbolic.svg">icons/wrench-symbolic.svg</file>
 
         <!-- Images -->
         <file compressed="true">images/logo.png</file>

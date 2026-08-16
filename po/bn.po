@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Komikku 50.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-08 15:07+0200\n"
-"PO-Revision-Date: 2026-08-15 08:51+0000\n"
+"PO-Revision-Date: 2026-08-17 17:59+0000\n"
 "Last-Translator: Bhalet Chakma <bhalet002@gmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/komikku/main/bn/>"
 "\n"
@@ -423,16 +423,20 @@ msgid "Support Komikku"
 msgstr "কমিকুকে সহায়তা করুন"
 
 #: ../data/ui/preferences.blp:30
+#, fuzzy
 msgid ""
 "Komikku is a free and open-source, and always will be. If you like it, "
 "backing me through donating would be great. This will not only help me "
 "maintain it, but also continue my work as a free software developer in "
 "general."
 msgstr ""
+"কমিকু হলো একটি মুক্ত ও উন্মুক্ত উৎস সফটওয়্যার (FOSS), এবং সর্বদা থাকবে। যদি আপনি ইচ্ছুক, "
+"আমাকে ডোনেশনের মাধ্যমে আমাকে সহায়তা করলে দারুণ হবে।"
 
 #: ../data/ui/preferences.blp:59
+#, fuzzy
 msgid "Appearance"
-msgstr ""
+msgstr "অবয়ব"
 
 #: ../data/ui/preferences.blp:62
 msgid "Theme"

@@ -40,11 +40,11 @@ class Mangalivreblog(Server):
             'default': '',
             'options': [
                 {'key': '', 'name': _('Any')},
-                {'key': 'cancelado', 'name': _('Cancelado')},
-                {'key': 'completo', 'name': _('Completo')},
-                {'key': 'en-andamento', 'name': _('Em Andamento')},
-                {'key': 'em-lancamento', 'name': _('Em Lançamento')},
-                {'key': 'hiato', 'name': _('Hiato')},
+                {'key': 'cancelado', 'name': 'Cancelado'},
+                {'key': 'completo', 'name': 'Completo'},
+                {'key': 'en-andamento', 'name': 'Em Andamento'},
+                {'key': 'em-lancamento', 'name': 'Em Lançamento'},
+                {'key': 'hiato', 'name': 'Hiato'},
             ],
         },
     ]

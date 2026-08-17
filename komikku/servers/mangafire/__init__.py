@@ -8,14 +8,12 @@ from gettext import gettext as _
 import time
 from urllib.parse import urlparse
 
-import requests
-
 from komikku.consts import DOWNLOAD_MAX_DELAY
-from komikku.consts import USER_AGENT
 from komikku.servers import Server
 from komikku.utils import get_buffer_mime_type
 from komikku.utils import get_response_elapsed
 from komikku.utils import is_number
+from komikku.webview import CompleteChallenge
 
 LANGUAGES_CODES = {
     'en': 'en',
@@ -99,6 +97,7 @@ class Mangafire(Server):
     name = 'MangaFire'
     lang = 'en'
 
+    has_cf = True
     is_nsfw = True
 
     base_url = 'https://mangafire.to'
@@ -169,19 +168,14 @@ class Mangafire(Server):
         },
     ]
 
-    headers = {
-        'User-Agent': USER_AGENT,
-    }
-
     long_strip_genres = [
         'manhwa',
     ]
 
     def __init__(self):
-        if self.session is None:
-            self.session = requests.Session()
-            self.session.headers = self.headers
+        self.session = None
 
+    @CompleteChallenge()
     def get_manga_data(self, initial_data):
         """
         Returns manga data using API
@@ -265,6 +259,7 @@ class Mangafire(Server):
 
         return data
 
+    @CompleteChallenge()
     def get_manga_chapter_data(self, manga_slug, manga_name, chapter_slug, chapter_url):
         """
         Returns chapter data using API
@@ -416,7 +411,7 @@ class Mangafire(Server):
                 params=params,
                 headers={
                     'Accept': 'application/json',
-                    'Referer': f'{self.base_url}/',
+                    'Referer': self.search_url,
                     'X-Requested-With': 'XMLHttpRequest',
                 }
             )
@@ -451,16 +446,19 @@ class Mangafire(Server):
 
         return results
 
+    @CompleteChallenge()
     def get_latest_updates(self, content_rating=None, types=None, demographics=None, statuses=None):
         return self.get_manga_list(
             content_rating=content_rating, types=types, demographics=demographics, statuses=statuses, orderby='latest'
         )
 
+    @CompleteChallenge()
     def get_most_populars(self, content_rating=None, types=None, demographics=None, statuses=None):
         return self.get_manga_list(
             content_rating=content_rating, types=types, demographics=demographics, statuses=statuses, orderby='popular'
         )
 
+    @CompleteChallenge()
     def search(self, term, content_rating=None, types=None, demographics=None, statuses=None):
         return self.get_manga_list(
             term=term, content_rating=content_rating, types=types, demographics=demographics, statuses=statuses

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 00:27+0200\n"
+"POT-Creation-Date: 2026-08-18 00:54+0200\n"
 "PO-Revision-Date: 2025-08-30 17:01+0000\n"
 "Last-Translator: Ahmed Najmawi <iramosu@protonmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/komikku/main/ar/"
@@ -695,7 +695,7 @@ msgstr ""
 "وخصوصًا على الأجهزة المحمولة."
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
-msgid "Borders Crop Threshold"
+msgid "Borders Cropping Threshold"
 msgstr ""
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44

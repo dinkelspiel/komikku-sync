@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 00:27+0200\n"
+"POT-Creation-Date: 2026-08-18 00:54+0200\n"
 "PO-Revision-Date: 2026-02-27 13:11+0000\n"
 "Last-Translator: Ahmet <teaqaria@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/komikku/main/tr/"
@@ -711,7 +711,7 @@ msgstr ""
 "işleme ve animasyon yavaşlamalarına neden olabilir."
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
-msgid "Borders Crop Threshold"
+msgid "Borders Cropping Threshold"
 msgstr ""
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44

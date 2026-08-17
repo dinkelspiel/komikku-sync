@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.44.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 00:27+0200\n"
+"POT-Creation-Date: 2026-08-18 00:54+0200\n"
 "PO-Revision-Date: 2026-05-02 13:51+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/komikku/main/"
@@ -702,7 +702,7 @@ msgstr ""
 "thị và hoạt ảnh, đặc biệt là trên thiết bị di động."
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
-msgid "Borders Crop Threshold"
+msgid "Borders Cropping Threshold"
 msgstr ""
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44

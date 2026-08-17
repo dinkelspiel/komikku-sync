@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 00:27+0200\n"
+"POT-Creation-Date: 2026-08-18 00:54+0200\n"
 "PO-Revision-Date: 2026-08-17 22:53+0000\n"
 "Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
-"\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
+">\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -704,8 +704,8 @@ msgstr ""
 "анимации, особенно на мобильных устройствах."
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
-msgid "Borders Crop Threshold"
-msgstr "Порог обрезки границ"
+msgid "Borders Cropping Threshold"
+msgstr ""
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
 msgid "Control which pixels are classified as 'white' during borders detection"
@@ -3130,6 +3130,9 @@ msgstr "Пожалуйста, подождите…"
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"
 msgstr "Пожалуйста, пройдите CAPTCHA"
+
+#~ msgid "Borders Crop Threshold"
+#~ msgstr "Порог обрезки границ"
 
 #~ msgid "Releasing"
 #~ msgstr "Выпускается"

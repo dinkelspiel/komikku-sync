@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.12.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 00:27+0200\n"
+"POT-Creation-Date: 2026-08-18 00:54+0200\n"
 "PO-Revision-Date: 2025-12-24 16:00+0000\n"
 "Last-Translator: Nataniel Dika Kurniawan <hikawaart2@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/komikku/main/"
@@ -706,7 +706,7 @@ msgstr ""
 "lambatnya rendering dan animasi, terutama pada perangkat seluler."
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
-msgid "Borders Crop Threshold"
+msgid "Borders Cropping Threshold"
 msgstr ""
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44

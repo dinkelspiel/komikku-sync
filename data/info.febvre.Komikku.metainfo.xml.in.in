@@ -114,6 +114,22 @@
     <url type="donation">https://febvre.info/donate.html</url>
 
     <releases>
+        <release version="50.12.0" date="2026-08-18">
+            <description translate="no">
+                <ul>
+                    <li>[Reader] Added an OCR translator</li>
+                    <li>[Reader] Moved settings from Menu to Settings dialog</li>
+                    <li>[Servers] Added MangaLivre (pt_BR)</li>
+                    <li>[Servers] Desu (RU): Update</li>
+                    <li>[Servers] JManga (JA): Update</li>
+                    <li>[Servers] MangaFire (EN/ES/FR/JA/PT/pt_BR): Update</li>
+                    <li>[Servers] Rncalation (ES): Update</li>
+                    <li>[Servers] Weeb Central (EN): Update</li>
+                    <li>[L10n] Updated Bengali, French, Korean, Polish, Russian and Ukrainian translations</li>
+                </ul>
+                <p>Happy reading.</p>
+            </description>
+        </release>
         <release version="50.11.0" date="2026-08-01">
             <description translate="no">
                 <ul>

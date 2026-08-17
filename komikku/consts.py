@@ -152,6 +152,7 @@ CREDITS = dict(
         'Mohamed Abdalah Noh (Arabic)',
         'Ahmed Najmawi (Arabic)',
         'Jsus “Jsux” (Bengali)',
+        'Bhalet Chakma (Bengali)',
         'Rafael Fontenelle (Brazilian Portuguese)',
         'Infinitive Witch (Brazilian Portuguese)',
         'Unidealistic Raccoon (Brazilian Portuguese)',
@@ -223,6 +224,7 @@ CREDITS = dict(
         'Lili Kurek (Polish)',
         'Aleksander Warzyniak (Polish)',
         'Kurai (Polish)',
+        'Goraj (Polish)',
         'ssantos (Portuguese)',
         'Ademario Cunha (Portuguese)',
         'SpiralPack 527 (Portuguese)',
@@ -267,12 +269,15 @@ CREDITS = dict(
 
 RELEASE_NOTES = """
 <ul>
-    <li>[Servers] Added Death Toll Reader (EN)</li>
-    <li>[Servers] Added Juin Jutsu Team (IT)</li>
-    <li>[Servers] Added NIF Team (IT)</li>
+    <li>[Reader] Added an OCR translator</li>
+    <li>[Reader] Moved settings from Menu to Settings dialog</li>
+    <li>[Servers] Added MangaLivre (pt_BR)</li>
+    <li>[Servers] Desu (RU): Update</li>
     <li>[Servers] JManga (JA): Update</li>
     <li>[Servers] MangaFire (EN/ES/FR/JA/PT/pt_BR): Update</li>
-    <li>[L10n] Updated Georgian, Spanish and Ukrainian translations</li>
+    <li>[Servers] Rncalation (ES): Update</li>
+    <li>[Servers] Weeb Central (EN): Update</li>
+    <li>[L10n] Updated Bengali, French, Korean, Polish, Russian and Ukrainian translations</li>
 </ul>
 <p>Happy reading.</p>
 """

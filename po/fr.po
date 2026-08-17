@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:27+0200\n"
-"PO-Revision-Date: 2026-06-09 16:01+0000\n"
+"PO-Revision-Date: 2026-08-17 22:53+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: ../data/info.febvre.Komikku.desktop.in:2
 msgid "@prettyname@"
@@ -312,7 +312,7 @@ msgstr "Rechercher par nom, serveur ou genre"
 #: ../data/ui/library.blp:113
 msgctxt "Library: verb"
 msgid "Update"
-msgstr ""
+msgstr "Mettre à jour"
 
 #: ../data/ui/library.blp:202
 msgid "Discover Comics"
@@ -543,7 +543,7 @@ msgstr "Nombre de chapitres récents et non lus"
 #: ../data/ui/preferences.blp:206
 msgctxt "Settings: noun"
 msgid "Update"
-msgstr ""
+msgstr "Mise à jour"
 
 #: ../data/ui/preferences.blp:209
 msgid "Update at Startup"
@@ -713,6 +713,8 @@ msgstr ""
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
 msgid "Control which pixels are classified as 'white' during borders detection"
 msgstr ""
+"Contrôler quels pixels sont classés comme « blancs » lors de la détection "
+"des contours"
 
 #: ../data/ui/preferences.blp:357 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
@@ -755,15 +757,15 @@ msgstr "Multiplicateur pour la sensibilité du défilement par glissement"
 
 #: ../data/ui/preferences.blp:407 ../data/ui/reader_settings.blp:54
 msgid "OCR Translator"
-msgstr ""
+msgstr "Traducteur OCR"
 
 #: ../data/ui/preferences.blp:410 ../data/ui/reader_settings.blp:57
 msgid "OCR Language"
-msgstr ""
+msgstr "Langue de l'OCR"
 
 #: ../data/ui/preferences.blp:411
 msgid "Default language used for OCR text recognitions"
-msgstr ""
+msgstr "Langue par défaut utilisée pour la reconnaissance de texte par OCR"
 
 #: ../data/ui/preferences.blp:418
 msgid "Advanced"
@@ -888,19 +890,19 @@ msgstr "Basculer le mode plein écran"
 
 #: ../data/ui/reader.blp:47
 msgid "Toggle OCR Translator"
-msgstr ""
+msgstr "Activer/désactiver le traducteur OCR"
 
 #: ../data/ui/reader_settings.blp:9
 msgid "Reader Settings"
-msgstr ""
+msgstr "Réglages du lecteur"
 
 #: ../data/ui/reader_settings.blp:14
 msgid "Custom"
-msgstr ""
+msgstr "Presonnalisés"
 
 #: ../data/ui/reader_settings.blp:18
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: ../data/ui/reader_settings.blp:33
 msgid "Zoom Landscape Pages"
@@ -912,7 +914,7 @@ msgstr "Rogner les bordures"
 
 #: ../data/ui/reader_settings.blp:39
 msgid "Crop white borders of pages"
-msgstr ""
+msgstr "Découper les bordures blanches des pages"
 
 #: ../data/ui/reader_settings.blp:48
 msgid "Hide Page Numbering"
@@ -1031,7 +1033,7 @@ msgstr "Réinitialiser le zoom"
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
 msgid "Toggle OCR Translator"
-msgstr ""
+msgstr "Activer/désactiver le traducteur OCR"
 
 #: ../data/ui/shortcuts.blp:131
 msgctxt "Shortcut window description"
@@ -2270,11 +2272,11 @@ msgstr "Manhua"
 
 #: ../komikku/servers/bdplus/__init__.py:58
 msgid "Genre"
-msgstr ""
+msgstr "Genre"
 
 #: ../komikku/servers/bdplus/__init__.py:59
 msgid "Filter by Genre"
-msgstr ""
+msgstr "Filtrer par genre"
 
 #: ../komikku/servers/bilibili/__init__.py:38
 msgid "Price"
@@ -2930,11 +2932,11 @@ msgstr ""
 
 #: ../komikku/servers/mangak/__init__.py:80
 msgid "Boy (Shounen + Seinen)"
-msgstr ""
+msgstr "Garçon (Shōnen + Seinen)"
 
 #: ../komikku/servers/mangak/__init__.py:81
 msgid "Girl (Shoujo + Josei)"
-msgstr ""
+msgstr "Filles (Shoujo + Josei)"
 
 #: ../komikku/servers/mangapill/__init__.py:41
 #: ../komikku/servers/rawkuma/__init__.py:44

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -398,6 +398,9 @@ class Pager(Adw.Bin, BasePager):
         if self.page_change_in_progress:
             return Gdk.EVENT_PROPAGATE
 
+        if not self.interactive:
+            return Gdk.EVENT_PROPAGATE
+
         modifiers = Gtk.accelerator_get_default_mod_mask()
         if (state & modifiers) not in (Gdk.ModifierType.NO_MODIFIER_MASK, Gdk.ModifierType.SHIFT_MASK):
             return Gdk.EVENT_PROPAGATE
@@ -532,6 +535,9 @@ class Pager(Adw.Bin, BasePager):
             self.interactive = not page.scrollable
 
     def on_scroll(self, _controller, dx, dy):
+        if not self.interactive:
+            return Gdk.EVENT_PROPAGATE
+
         page = self.current_page
 
         modifiers = Gtk.accelerator_get_default_mod_mask()

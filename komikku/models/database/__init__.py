@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 db_connections = threading.local()
 
-VERSION = 16
+VERSION = 17
 
 
 def adapt_date_iso(val):
@@ -241,13 +241,14 @@ def init_db():
         borders_crop_threshold integer,
         filters json,
         landscape_zoom integer,
+        last_read timestamp,
+        last_update timestamp,
+        ocr_lang text,
         page_numbering integer,
         reading_mode text,
         scaling text,
         scaling_filter text,
         sort_order text,
-        last_read timestamp,
-        last_update timestamp,
         tracking json,
         UNIQUE (slug, server_id)
     );"""
@@ -453,6 +454,11 @@ def init_db():
         # Version 50.10.0
         execute_sql(db_conn, 'ALTER TABLE mangas ADD COLUMN borders_crop_threshold integer;')
         db_conn.execute('PRAGMA user_version = {0}'.format(16))
+
+    if 0 < db_version <= 16:
+        # Version 50.12.0
+        execute_sql(db_conn, 'ALTER TABLE mangas ADD COLUMN ocr_lang text;')
+        db_conn.execute('PRAGMA user_version = {0}'.format(17))
 
     logger.info('DB version {0}'.format(db_conn.execute('PRAGMA user_version').fetchone()[0]))
 

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -17,6 +17,7 @@ PyGObject
 PyJWT >= 2.10.1
 pypdf >= 6.7.3
 python-magic  # or file-magic
+pytesseract >= 5
 rarfile
 requests >= 2.32.4
 Unidecode

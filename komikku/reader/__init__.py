@@ -13,6 +13,7 @@ from gi.repository import Gtk
 
 from komikku.models import Settings
 from komikku.reader.controls import Controls
+from komikku.reader.ocr_translator import OCRTranslator
 from komikku.reader.pager import Pager
 from komikku.reader.pager.webtoon import WebtoonPager
 from komikku.reader.settings import ReaderSettingsDialog
@@ -27,9 +28,17 @@ class ReaderPage(Adw.NavigationPage):
     back_button = Gtk.Template.Child('back_button')
     title = Gtk.Template.Child('title')
     fullscreen_button = Gtk.Template.Child('fullscreen_button')
+    ocr_translator_togglebutton = Gtk.Template.Child('ocr_translator_togglebutton')
     menu_button = Gtk.Template.Child('menu_button')
 
     overlay = Gtk.Template.Child('reader_overlay')
+
+    ocr_translator_bottomsheet = Gtk.Template.Child('ocr_translator_bottomsheet')
+    ocr_translator_src_dropdown = Gtk.Template.Child('ocr_translator_src_dropdown')
+    ocr_translator_src_scrolledwindow = Gtk.Template.Child('ocr_translator_src_scrolledwindow')
+    ocr_translator_dst_dropdown = Gtk.Template.Child('ocr_translator_dst_dropdown')
+    ocr_translator_dst_scrolledwindow = Gtk.Template.Child('ocr_translator_dst_scrolledwindow')
+    ocr_translator_translate_button = Gtk.Template.Child('ocr_translator_translate_button')
 
     manga = None
     init_chapter = None
@@ -68,6 +77,9 @@ class ReaderPage(Adw.NavigationPage):
 
         # Controls
         self.controls = Controls(self)
+
+        # OCR translator
+        self.ocr_translator = OCRTranslator(self)
 
         # Settings dialog
         self.settings_dialog = ReaderSettingsDialog(self)
@@ -136,11 +148,12 @@ class ReaderPage(Adw.NavigationPage):
         height = self.window.get_height()
 
         if self.headerbar_revealer.get_child_revealed():
-            height -= self.get_child().get_top_bar_height()
+            height -= self.ocr_translator_bottomsheet.get_content().get_top_bar_height()
 
         return (width, height)
 
     def add_accelerators(self):
+        self.window.application.set_accels_for_action('app.reader.toggle-ocr-translator', ['<Primary>t'])
         self.window.application.set_accels_for_action('app.reader.save-page', ['<Primary>s'])
 
     def add_actions(self):
@@ -150,15 +163,22 @@ class ReaderPage(Adw.NavigationPage):
         self.reading_mode_action.connect('activate', self.on_reading_mode_changed)
         self.window.application.add_action(self.reading_mode_action)
 
+        # Open settings dialog
+        self.open_settings_dialog_action = Gio.SimpleAction.new('reader.open-settings-dialog', None)
+        self.open_settings_dialog_action.connect('activate', self.open_settings_dialog)
+        self.window.application.add_action(self.open_settings_dialog_action)
+
         # Save page
         self.save_page_action = Gio.SimpleAction.new('reader.save-page', None)
         self.save_page_action.connect('activate', self.save_page)
         self.window.application.add_action(self.save_page_action)
 
-        # Open settings dialog
-        self.open_settings_dialog_action = Gio.SimpleAction.new('reader.open-settings-dialog', None)
-        self.open_settings_dialog_action.connect('activate', self.open_settings_dialog)
-        self.window.application.add_action(self.open_settings_dialog_action)
+        # Toggle OCR translator
+        self.toggle_ocr_translator_action = Gio.SimpleAction.new('reader.toggle-ocr-translator', None)
+        self.toggle_ocr_translator_action.connect(
+            'activate', lambda _a, _p: self.ocr_translator.set_active(not self.ocr_translator.active)
+        )
+        self.window.application.add_action(self.toggle_ocr_translator_action)
 
     def init(self, manga, chapter):
         self.manga = manga
@@ -179,6 +199,7 @@ class ReaderPage(Adw.NavigationPage):
 
     def init_pager(self, chapter):
         if self.pager:
+            self.ocr_translator.set_active(False)
             self.pager.dispose()
 
         if self.reading_mode == 'webtoon':
@@ -208,13 +229,14 @@ class ReaderPage(Adw.NavigationPage):
         if self.window.previous_page == self.props.tag:
             return
 
+        self.controls.hide()
+        self.ocr_translator.set_active(False)
+        self.page_numbering_label.set_visible(False)
+        self.window.unfullscreen()
+
         if self.pager:
             self.pager.dispose()
             self.pager = None
-
-        self.controls.hide()
-        self.page_numbering_label.set_visible(False)
-        self.window.unfullscreen()
 
         # Sync Card page
         if self.window.card in self.window.navigationview.get_navigation_stack():

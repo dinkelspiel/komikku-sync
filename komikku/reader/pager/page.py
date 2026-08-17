@@ -10,6 +10,8 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Gtk
 
+import cairo
+
 from komikku.reader.pager.image import KImage
 from komikku.models import Settings
 from komikku.utils import log_error_traceback
@@ -57,6 +59,29 @@ class Page(Gtk.Overlay):
         )
         self.add_overlay(self.activity_indicator)
 
+        if self.reader.ocr_translator.enabled:
+            # Creating a drawing area allowing to select an image portion containing text
+            # in order to perform text recognition and translate it
+            self.ocr_selection_da = Gtk.DrawingArea(hexpand=True, vexpand=True, can_target=False)
+            self.ocr_selection_da.set_draw_func(self.draw_ocr_selection)
+            self.reader.ocr_translator.bind_property(
+                'active', self.ocr_selection_da, 'can-target',
+                GObject.BindingFlags.BIDIRECTIONAL | GObject.BindingFlags.SYNC_CREATE
+            )
+            self.add_overlay(self.ocr_selection_da)
+
+            drag_gesture = Gtk.GestureDrag.new()
+            drag_gesture.set_propagation_phase(Gtk.PropagationPhase.BUBBLE)
+            drag_gesture.set_button(1)
+            self.ocr_selection_da.add_controller(drag_gesture)
+            drag_gesture.connect('drag-begin', self.on_ocr_selection_drag_begin)
+            drag_gesture.connect('drag-update', self.on_ocr_selection_drag_update, False)
+            drag_gesture.connect('drag-end', self.on_ocr_selection_drag_update, True)
+
+            self.ocr_selection_surface = None
+            self.ocr_selection_start_x = 0
+            self.ocr_selection_start_y = 0
+
     @property
     def hscrollable(self):
         if self.zoomable:
@@ -99,6 +124,13 @@ class Page(Gtk.Overlay):
             # RTL/LTR/Vertical pager: remove from Adw.Carousel
             self.get_parent().remove(self)
 
+    def draw_ocr_selection(self, da, ctx, width, height):
+        if not self.ocr_selection_surface:
+            return
+
+        ctx.set_source_surface(self.ocr_selection_surface, 0, 0)
+        ctx.paint()
+
     def on_button_retry_clicked(self, _button):
         self.chapter = self.init_chapter
         self.index = self.init_index
@@ -109,6 +141,47 @@ class Page(Gtk.Overlay):
 
     def on_clicked(self, _image, x, y):
         self.reader.pager.on_single_click(x, y)
+
+    def on_ocr_selection_drag_begin(self, gesture, x, y):
+        self.ocr_selection_start_x = x
+        self.ocr_selection_start_y = y
+
+    def on_ocr_selection_drag_update(self, gesture, offset_x, offset_y, end):
+        self.ocr_selection_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, self.get_width(), self.get_height())
+
+        ctx = cairo.Context(self.ocr_selection_surface)
+        ctx.set_source_rgb(0.9647, 0.51, 0.462745)
+        ctx.set_line_width(2)
+        ctx.rectangle(self.ocr_selection_start_x, self.ocr_selection_start_y, offset_x, offset_y)
+        ctx.stroke()
+
+        self.ocr_selection_da.queue_draw()
+
+        if end:
+            # Clear context
+            ctx.set_operator(cairo.OPERATOR_CLEAR)
+            ctx.rectangle(0, 0, self.get_width(), self.get_height())
+            ctx.paint()
+
+            # Selection size
+            w = offset_x
+            h = offset_y
+            if abs(w) < 1 or abs(h) < 1:
+                return
+
+            # Selection coordinates
+            x = self.ocr_selection_start_x + min(0, offset_x)
+            y = self.ocr_selection_start_y + min(0, offset_y)
+            x = max(0, x - self.image.image_displayed_x)
+            y = max(0, y - self.image.image_displayed_y)
+            zoom = self.image.zoom
+
+            # Text recognition
+            self.reader.ocr_translator.recognize(
+                self.image.path,
+                x / zoom, y / zoom,
+                (x + abs(w)) / zoom, (y + abs(h)) / zoom
+            )
 
     def on_rendered(self, _image, update, retry):
         self.status = 'rendered'

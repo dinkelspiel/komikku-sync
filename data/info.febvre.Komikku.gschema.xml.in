@@ -291,6 +291,12 @@
             <description>Multiplier for drag scrolling sensitivity (Webtoon reading mode only)</description>
         </key>
 
+        <key type="s" name="ocr-lang">
+            <default>""</default>
+            <summary>OCR Language</summary>
+            <description>Default language used for OCR text recognitions</description>
+        </key>
+
         <!-- Preferences: Advanced -->
         <key type="b" name="clear-cached-data-on-app-close">
             <default>true</default>

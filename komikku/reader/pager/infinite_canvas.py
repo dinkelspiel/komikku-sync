@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -38,6 +38,7 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
         self.pager = pager
         self.settings = Settings.get_default()
 
+        self.__interactive = True
         self.__hadj = None
         self.__vadj = None
         self.zoom = 1
@@ -59,7 +60,7 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
         self.canvas_height = 0
 
         self.set_overflow(Gtk.Overflow.HIDDEN)
-        self.connect_signals()
+
         self.add_controllers()
 
     @property
@@ -77,6 +78,31 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
     @GObject.Property(type=Gtk.ScrollablePolicy, default=Gtk.ScrollablePolicy.MINIMUM)
     def hscroll_policy(self):
         return Gtk.ScrollablePolicy.MINIMUM
+
+    @GObject.Property(type=bool, default=True)
+    def interactive(self):
+        return self.__interactive
+
+    @interactive.setter
+    def interactive(self, value):
+        self.__interactive = value
+
+        if value:
+            # Restore value
+            self.vadjustment.props.value = self.vadjustment_value
+            self.connect_signals()
+
+            self.gesture_drag.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
+            self.gesture_click.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
+            self.controller_scroll.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
+        else:
+            # Save value
+            self.vadjustment_value = self.vadjustment.props.value
+            self.disconnect_signals()
+
+            self.gesture_drag.set_propagation_phase(Gtk.PropagationPhase.NONE)
+            self.gesture_click.set_propagation_phase(Gtk.PropagationPhase.NONE)
+            self.controller_scroll.set_propagation_phase(Gtk.PropagationPhase.NONE)
 
     @property
     def max_vadjustment_value(self):
@@ -102,7 +128,7 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
             return
 
         self.__vadj = adj
-        self.vadjustment_value_changed_handler_id = adj.connect('value-changed', lambda _adj: self.queue_allocate())
+        self.connect_signals()
 
     @GObject.Property(type=Gtk.ScrollablePolicy, default=Gtk.ScrollablePolicy.MINIMUM)
     def vscroll_policy(self):
@@ -222,17 +248,23 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
 
     def connect_signals(self):
         if self.vadjustment and self.vadjustment_value_changed_handler_id is None:
-            self.vadjustment_value_changed_handler_id = self.vadjustment.connect('value-changed', lambda adj: self.queue_allocate())
+            self.vadjustment_value_changed_handler_id = self.vadjustment.connect(
+                'value-changed', lambda _adj: self.queue_allocate()
+            )
 
         # Keyboard navigation
-        self.key_pressed_handler_id = self.pager.window.controller_key.connect('key-pressed', self.on_key_pressed)
+        self.key_pressed_handler_id = self.pager.window.controller_key.connect(
+            'key-pressed', self.on_key_pressed
+        )
 
     def disconnect_signals(self):
-        self.vadjustment.disconnect(self.vadjustment_value_changed_handler_id)
-        self.vadjustment_value_changed_handler_id = None
+        if self.vadjustment_value_changed_handler_id:
+            self.vadjustment.disconnect(self.vadjustment_value_changed_handler_id)
+            self.vadjustment_value_changed_handler_id = None
 
-        self.pager.window.controller_key.disconnect(self.key_pressed_handler_id)
-        self.key_pressed_handler_id = None
+        if self.key_pressed_handler_id:
+            self.pager.window.controller_key.disconnect(self.key_pressed_handler_id)
+            self.key_pressed_handler_id = None
 
     def dispose(self):
         self.disconnect_signals()

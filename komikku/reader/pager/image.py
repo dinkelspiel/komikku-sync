@@ -82,6 +82,8 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
         self.data = None
         self.path = None
 
+        self.image_displayed_x = 0
+        self.image_displayed_y = 0
         self.textures = None
         self.textures_crop = None
         self.crop_bbox = None
@@ -506,19 +508,17 @@ class KImage(Gtk.Widget, Gtk.Scrollable):
         width = self.image_displayed_width
         height = self.image_displayed_height
 
+        self.image_displayed_x = 0
+        self.image_displayed_y = 0
         if self.scrollable:
-            x = -(self.hadjustment.props.value - (self.hadjustment.props.upper - width) / 2)
-            snapshot.translate(Graphene.Point().init(int(x), 0))
-            y = -(self.vadjustment.props.value - (self.vadjustment.props.upper - height) / 2)
-            snapshot.translate(Graphene.Point().init(0, int(y)))
+            self.image_displayed_x = int(-(self.hadjustment.props.value - (self.hadjustment.props.upper - width) / 2))
+            self.image_displayed_y = int(-(self.vadjustment.props.value - (self.vadjustment.props.upper - height) / 2))
 
         # Center in widget
-        snapshot.translate(
-            Graphene.Point().init(
-                max((self.widget_width - width) // 2, 0),
-                max((self.widget_height - height) // 2, 0),
-            )
-        )
+        self.image_displayed_x += max((self.widget_width - width) // 2, 0)
+        self.image_displayed_y += max((self.widget_height - height) // 2, 0)
+
+        snapshot.translate(Graphene.Point().init(self.image_displayed_x, self.image_displayed_y))
 
         # Append textures
         scale_factor = self.get_native().get_surface().get_scale()

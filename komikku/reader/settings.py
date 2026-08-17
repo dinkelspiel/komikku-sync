@@ -31,6 +31,7 @@ class ReaderSettingsDialog(Adw.PreferencesDialog):
     borders_crop_switch = Gtk.Template.Child('borders_crop_switch')
     borders_crop_threshold_row = Gtk.Template.Child('borders_crop_threshold_row')
     page_numbering_switch = Gtk.Template.Child('page_numbering_switch')
+    ocr_lang_row = Gtk.Template.Child('ocr_lang_row')
 
     def __init__(self, reader):
         Adw.PreferencesDialog.__init__(self)
@@ -95,6 +96,14 @@ class ReaderSettingsDialog(Adw.PreferencesDialog):
         self.borders_crop_threshold_row.set_expression(list_store_expression)
         self.borders_crop_threshold_row.set_model(model)
 
+        # OCR language
+        if self.reader.ocr_translator.enabled:
+            model = Gio.ListStore(item_type=KeyLabelPair)
+            items = [KeyLabelPair(key=value, label=value) for value in self.reader.ocr_translator.ocr_languages]
+            model.splice(0, 0, items)
+            self.ocr_lang_row.set_expression(list_store_expression)
+            self.ocr_lang_row.set_model(model)
+
         self.init_general()
 
     def init_custom(self):
@@ -125,6 +134,13 @@ class ReaderSettingsDialog(Adw.PreferencesDialog):
         # Page numbering
         self.page_numbering_switch.set_active(not self.reader.page_numbering)
         self.page_numbering_switch.connect('notify::active', self.on_page_numbering_changed)
+
+        # OCR language
+        if self.reader.ocr_translator.enabled:
+            self.ocr_lang_row.set_selected(self.reader.ocr_translator.ocr_languages.index(self.reader.ocr_translator.ocr_lang))
+            self.ocr_lang_row.connect('notify::selected', self.on_ocr_lang_changed)
+        else:
+            self.ocr_lang_row.set_sensitive(False)
 
     def init_general(self):
         # Filters
@@ -257,6 +273,15 @@ class ReaderSettingsDialog(Adw.PreferencesDialog):
             self.reader.page_numbering_label.set_visible(True)
         else:
             self.reader.page_numbering_label.set_visible(False)
+
+    def on_ocr_lang_changed(self, _row, _gparam):
+        value = self.ocr_lang_row.get_selected_item().key
+        if value == self.reader.ocr_translator.ocr_lang:
+            return
+
+        self.reader.manga.update({
+            'ocr_lang': value if value != self.settings.ocr_lang else None,
+        })
 
     def on_scaling_changed(self, _row, _gparam):
         value = self.scaling_row.get_selected_item().key

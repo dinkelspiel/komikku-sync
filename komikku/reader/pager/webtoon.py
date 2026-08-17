@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+# SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
@@ -6,6 +6,7 @@ from gettext import gettext as _
 
 from gi.repository import Adw
 from gi.repository import GLib
+from gi.repository import GObject
 from gi.repository import Gtk
 
 from komikku.models import Settings
@@ -19,6 +20,7 @@ class WebtoonPager(Adw.Bin, BasePager):
 
     __gtype_name__ = 'WebtoonPager'
 
+    __interactive = True
     current_chapter_id = None
     scroll_page = None
 
@@ -44,6 +46,14 @@ class WebtoonPager(Adw.Bin, BasePager):
         self.canvas.connect('offlimit', self.on_offlimit)
         self.canvas.connect('page-requested', self.on_page_requested)
         self.clamp.set_child(self.canvas)
+
+    @GObject.Property(type=bool, default=True)
+    def interactive(self):
+        return self.canvas.interactive
+
+    @interactive.setter
+    def interactive(self, value):
+        self.canvas.interactive = value
 
     @property
     def pages(self):

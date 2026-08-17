@@ -382,6 +382,14 @@ class Settings(Gio.Settings):
         self.set_boolean('nsfw-only-content', state)
 
     @property
+    def ocr_lang(self):
+        return self.get_string('ocr-lang')
+
+    @ocr_lang.setter
+    def ocr_lang(self, lang):
+        self.set_string('ocr-lang', lang)
+
+    @property
     def page_filters(self):
         return json.loads(self.get_string('page-filters'))
 

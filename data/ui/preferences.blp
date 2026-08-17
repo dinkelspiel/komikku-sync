@@ -402,6 +402,15 @@ template $PreferencesDialog : Adw.PreferencesDialog {
         };
       }
     }
+
+    Adw.PreferencesGroup {
+      title: _("OCR Translator");
+
+      Adw.ComboRow ocr_lang_row {
+        title: _("OCR Language");
+        subtitle: _("Default language used for OCR text recognitions");
+      }
+    }
   }
 
   Adw.PreferencesPage {

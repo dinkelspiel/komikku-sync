@@ -49,6 +49,14 @@ template $ReaderSettingsDialog : Adw.PreferencesDialog {
         subtitle: _("Hide the page numbering at the bottom of the screen while reading");
       }
     }
+
+    Adw.PreferencesGroup {
+      title: _("OCR Translator");
+
+      Adw.ComboRow ocr_lang_row {
+        title: _("OCR Language");
+      }
+    }
   }
 
   Adw.PreferencesPage {

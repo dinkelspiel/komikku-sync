@@ -63,6 +63,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     clamp_size_adjustment = Gtk.Template.Child('clamp_size_adjustment')
     scroll_click_percentage_adjustment = Gtk.Template.Child('scroll_click_percentage_adjustment')
     scroll_drag_factor_adjustment = Gtk.Template.Child('scroll_drag_factor_adjustment')
+    ocr_lang_row = Gtk.Template.Child('ocr_lang_row')
 
     advanced_banner = Gtk.Template.Child('advanced_banner')
     clear_cached_data_actionrow = Gtk.Template.Child('clear_cached_data_actionrow')
@@ -285,6 +286,9 @@ class PreferencesDialog(Adw.PreferencesDialog):
             self.settings.nsfw_only_content = True
         else:
             self.settings.nsfw_only_content = False
+
+    def on_ocr_lang_changed(self, row, _gparam):
+        self.settings.ocr_lang = self.window.reader.ocr_translator.ocr_languages[row.get_selected()]
 
     def on_page_numbering_changed(self, switch_button, _gparam):
         self.settings.page_numbering = not switch_button.get_active()
@@ -524,6 +528,19 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # Scroll drag factor
         self.scroll_drag_factor_adjustment.set_value(self.settings.scroll_drag_factor)
         self.scroll_drag_factor_adjustment.connect('value-changed', self.on_scroll_drag_factor_changed)
+
+        # OCR language
+        if self.window.reader.ocr_translator.enabled:
+            model = Gtk.StringList()
+            languages = self.window.reader.ocr_translator.ocr_languages
+            for lang in languages:
+                model.append(lang)
+            self.ocr_lang_row.set_model(model)
+            if self.settings.ocr_lang in languages:
+                self.ocr_lang_row.set_selected(languages.index(self.settings.ocr_lang))
+            self.ocr_lang_row.connect('notify::selected', self.on_ocr_lang_changed)
+        else:
+            self.ocr_lang_row.set_sensitive(False)
 
         #
         # Advanced

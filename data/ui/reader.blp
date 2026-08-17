@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2019-2025 Valéry Febvre
+// SPDX-FileCopyrightText: 2019-2026 Valéry Febvre
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -9,37 +9,120 @@ template $ReaderPage : Adw.NavigationPage {
   tag: "reader";
   title: _("Reader");
   can-pop: false;
-  child: Adw.ToolbarView {
-    [top]
-    Revealer headerbar_revealer {
-      reveal-child: true;
+  child: Adw.BottomSheet ocr_translator_bottomsheet {
+    reveal-bottom-bar: false;
 
-      Adw.HeaderBar {
-        centering-policy: strict;
+    [content]
+    Adw.ToolbarView {
+      [top]
+      Revealer headerbar_revealer {
+        reveal-child: true;
 
-        [start]
-        Button back_button {
-          icon-name: "go-previous-symbolic";
-          tooltip-text: _("Back");
-        }
-        title-widget: Adw.WindowTitle title {
-        };
+        Adw.HeaderBar {
+          centering-policy: strict;
 
-        [start]
-        ToggleButton fullscreen_button {
-          icon-name: "view-fullscreen-symbolic";
-          tooltip-text: _("Toggle Fullscreen Mode");
-        }
+          [start]
+          Button back_button {
+            icon-name: "go-previous-symbolic";
+            tooltip-text: _("Back");
+          }
 
-        [end]
-        MenuButton menu_button {
-          icon-name: "view-more-symbolic";
-          tooltip-text: _("Menu");
+          title-widget: Adw.WindowTitle title {};
+
+          [start]
+          ToggleButton fullscreen_button {
+            icon-name: "view-fullscreen-symbolic";
+            tooltip-text: _("Toggle Fullscreen Mode");
+          }
+
+          [end]
+          MenuButton menu_button {
+            icon-name: "view-more-symbolic";
+            tooltip-text: _("Menu");
+          }
+
+          [end]
+          ToggleButton ocr_translator_togglebutton {
+            icon-name: "translate-symbolic";
+            tooltip-text: _("Toggle OCR Translator");
+          }
+
         }
       }
+
+      content: Overlay reader_overlay {};
     }
 
-    content: Overlay reader_overlay {
-    };
+    [sheet]
+    Adw.ToolbarView {
+      [top]
+      Adw.HeaderBar {}
+
+      content: Adw.Clamp {
+        maximum-size: 768;
+        margin-top: 12;
+        margin-end: 12;
+        margin-bottom: 12;
+        margin-start: 12;
+
+        Box ocr_translator_box {
+          orientation: horizontal;
+          homogeneous: true;
+          vexpand: true;
+          spacing: 12;
+
+          Box ocr_translator_src_box {
+            orientation: vertical;
+            spacing: 12;
+
+            DropDown ocr_translator_src_dropdown {
+              enable-search: true;
+            }
+
+            Frame {
+              ScrolledWindow ocr_translator_src_scrolledwindow {
+                min-content-height: 100;
+                hscrollbar-policy: never;
+              }
+            }
+
+            Box {
+              orientation: horizontal;
+              halign: end;
+
+              Button ocr_translator_translate_button {
+                label: "Translate";
+
+                styles ["suggested-action"]
+              }
+            }
+          }
+
+          Box ocr_translator_dst_box {
+            orientation: vertical;
+            spacing: 12;
+
+            DropDown ocr_translator_dst_dropdown {
+              enable-search: true;
+            }
+
+            Frame {
+              ScrolledWindow ocr_translator_dst_scrolledwindow {
+                min-content-height: 100;
+                hscrollbar-policy: never;
+              }
+            }
+          }
+        }
+      };
+    }
+
+    [bottom-bar]
+    Label {
+      label: "<b>——————</b>";
+      use-markup: true;
+
+      styles ["monospace"]
+    }
   };
 }

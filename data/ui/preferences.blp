@@ -41,7 +41,6 @@ template $PreferencesDialog : Adw.PreferencesDialog {
             halign: end;
             margin-top: 6;
           }
-
         }
 
         [overlay]
@@ -204,7 +203,7 @@ template $PreferencesDialog : Adw.PreferencesDialog {
     }
 
     Adw.PreferencesGroup {
-      title: _("Update");
+      title: C_("Settings: noun", "Update");
 
       Adw.SwitchRow update_at_startup_switch {
         title: _("Update at Startup");

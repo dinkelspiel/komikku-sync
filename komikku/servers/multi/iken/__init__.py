@@ -251,7 +251,6 @@ class Iken(Server):
             }
         )
         if r.status_code != 200:
-            print(r.json())
             return None
 
         results = []

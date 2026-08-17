@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-17 22:53+0000\n"
+"PO-Revision-Date: 2026-08-17 22:57+0000\n"
 "Last-Translator: Valéry Febvre <vfebvre@easter-eggs.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/komikku/main/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -708,7 +708,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
 msgid "Borders Cropping Threshold"
-msgstr ""
+msgstr "Seuil de découpage des bordures"
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
 msgid "Control which pixels are classified as 'white' during borders detection"
@@ -2928,7 +2928,7 @@ msgstr ""
 
 #: ../komikku/servers/mangafire/__init__.py:146
 msgid "Demographics"
-msgstr ""
+msgstr "Démographies"
 
 #: ../komikku/servers/mangak/__init__.py:80
 msgid "Boy (Shounen + Seinen)"

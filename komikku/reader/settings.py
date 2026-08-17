@@ -54,7 +54,7 @@ class ReaderSettingsDialog(Adw.PreferencesDialog):
             'screen': _('Adapt to Screen'),
             'width': _('Adapt to Width'),
             'height': _('Adapt to Height'),
-            'original': _('Origin Size'),
+            'original': _('Original Size'),
         }
 
         model = Gio.ListStore(item_type=KeyLabelPair)

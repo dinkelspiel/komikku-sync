@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Komikku 1.64.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-08 15:07+0200\n"
+"POT-Creation-Date: 2026-08-18 00:27+0200\n"
 "PO-Revision-Date: 2026-03-22 00:09+0000\n"
 "Last-Translator: தமிழ்நேரம் <tamilneram247@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/komikku/main/ta/>\n"
@@ -183,13 +183,13 @@ msgstr "மொபைல் வடிவத்தில் வகை எடிட
 msgid "The Reading history page in mobile format"
 msgstr "மொபைல் வடிவத்தில் வாசிப்பு வரலாறு பக்கம்"
 
-#: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:410
+#: ../data/ui/application_window.blp:56 ../data/ui/preferences.blp:423
 msgid "Got it!"
 msgstr "கிடைத்தது!"
 
 #: ../data/ui/card.blp:47 ../data/ui/card.blp:418
 #: ../data/ui/card_chapters_list_row.blp:48 ../data/ui/download_manager.blp:26
-#: ../data/ui/library.blp:152 ../data/ui/reader.blp:37
+#: ../data/ui/library.blp:148 ../data/ui/reader.blp:41
 msgid "Menu"
 msgstr "பட்டியல்"
 
@@ -214,11 +214,11 @@ msgid "Size on Disk"
 msgstr "வட்டில் அளவு"
 
 #: ../data/ui/card.blp:455 ../data/ui/categories_editor.blp:67
-#: ../data/ui/library.blp:255
+#: ../data/ui/library.blp:251
 msgid "No Categories"
 msgstr "வகைகள் இல்லை"
 
-#: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:110
+#: ../data/ui/card_tracking.blp:9 ../data/ui/preferences.blp:109
 msgid "Tracking"
 msgstr "கண்காணிப்பு"
 
@@ -264,8 +264,8 @@ msgstr "மிகவும் பிரபலமான"
 msgid "Latest Updates"
 msgstr "அண்மைக் கால புதுப்பிப்புகள்"
 
-#: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:221
-#: ../data/ui/preferences.blp:458
+#: ../data/ui/explorer_servers.blp:10 ../data/ui/preferences.blp:220
+#: ../data/ui/preferences.blp:471
 msgid "Servers"
 msgstr "சேவையகங்கள்"
 
@@ -289,7 +289,7 @@ msgstr "வரலாறு"
 msgid "No History"
 msgstr "வரலாறு இல்லை"
 
-#: ../data/ui/library.blp:10 ../data/ui/preferences.blp:120
+#: ../data/ui/library.blp:10 ../data/ui/preferences.blp:119
 msgid "Library"
 msgstr "நூலகம்"
 
@@ -305,17 +305,22 @@ msgstr "பட்டியல் விளையாடுங்கள்"
 msgid "Search by name, server or genre"
 msgstr "பெயர், சேவையகம் அல்லது வகையால் தேடுங்கள்"
 
-#: ../data/ui/library.blp:117 ../data/ui/preferences.blp:207
+#: ../data/ui/library.blp:113
+msgctxt "Library: verb"
 msgid "Update"
-msgstr "புதுப்பிப்பு"
+msgstr ""
 
-#: ../data/ui/library.blp:206
+#: ../data/ui/library.blp:202
 msgid "Discover Comics"
 msgstr "காமிக்சைக் கண்டறியவும்"
 
-#: ../data/ui/library.blp:277
+#: ../data/ui/library.blp:273
 msgid "OK"
 msgstr "சரி"
+
+#: ../data/ui/menu/card.xml:16
+msgid "Update"
+msgstr "புதுப்பிப்பு"
 
 #: ../data/ui/menu/card.xml:34
 msgid "Order of Chapters"
@@ -390,19 +395,7 @@ msgstr "விசைப்பலகை குறுக்குவழிகள�
 msgid "About Komikku"
 msgstr "Abo t -comic"
 
-#: ../data/ui/menu/reader.xml:114
-msgid "Zoom Landscape Pages"
-msgstr "பெரிதாக்க நிலப்பரப்பு பக்கங்கள்"
-
-#: ../data/ui/menu/reader.xml:118
-msgid "Crop Borders"
-msgstr "பயிர் எல்லைகள்"
-
-#: ../data/ui/menu/reader.xml:122
-msgid "Hide Page Numbering"
-msgstr "பக்க எண்ணை மறைக்கவும்"
-
-#: ../data/ui/menu/reader.xml:136
+#: ../data/ui/menu/reader.xml:49
 msgid "Save Page"
 msgstr "பக்கத்தை சேமிக்கவும்"
 
@@ -411,7 +404,7 @@ msgstr "பக்கத்தை சேமிக்கவும்"
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
 
-#: ../data/ui/preferences.blp:14
+#: ../data/ui/preferences.blp:14 ../data/ui/reader_settings.blp:64
 msgid "General"
 msgstr "பொது"
 
@@ -430,168 +423,177 @@ msgstr ""
 "நன்கொடையின் மூலம் என்னை ஆதரிப்பது நன்றாக இருக்கும். இது என்னைப் பராமரிக்க உதவுவது "
 "மட்டுமல்லாமல், பொதுவாக ஒரு இலவச மென்பொருள் உருவாக்குநராக எனது பணியைத் தொடரவும் உதவும்."
 
-#: ../data/ui/preferences.blp:59
+#: ../data/ui/preferences.blp:58
 msgid "Appearance"
 msgstr "தோற்றம்"
 
-#: ../data/ui/preferences.blp:62
+#: ../data/ui/preferences.blp:61
 msgid "Theme"
 msgstr "கருப்பொருள்"
 
-#: ../data/ui/preferences.blp:65
+#: ../data/ui/preferences.blp:64
 msgid "Light"
 msgstr "ஒளி"
 
-#: ../data/ui/preferences.blp:66
+#: ../data/ui/preferences.blp:65
 msgid "Dark"
 msgstr "இருண்ட"
 
-#: ../data/ui/preferences.blp:67
+#: ../data/ui/preferences.blp:66
 msgid "Follow System"
 msgstr "அமைப்பைப் பின்தொடரவும்"
 
-#: ../data/ui/preferences.blp:73
+#: ../data/ui/preferences.blp:72
 msgid "Night Light"
 msgstr "இரவு ஒளி"
 
-#: ../data/ui/preferences.blp:74
+#: ../data/ui/preferences.blp:73
 msgid "Automatically enable dark theme at night"
 msgstr "இரவில் தானாகவே இருண்ட கருப்பொருளை இயக்கவும்"
 
-#: ../data/ui/preferences.blp:79
+#: ../data/ui/preferences.blp:78
 msgid "Use system accent colors"
 msgstr "கணினி உச்சரிப்பு வண்ணங்களைப் பயன்படுத்துங்கள்"
 
-#: ../data/ui/preferences.blp:83
+#: ../data/ui/preferences.blp:82
 msgid "Progress Bars Theme"
 msgstr ""
 
-#: ../data/ui/preferences.blp:84
+#: ../data/ui/preferences.blp:83
 msgid "Theme to use for progress bars"
 msgstr ""
 
-#: ../data/ui/preferences.blp:88
+#: ../data/ui/preferences.blp:87
 msgid "Backdrop in Details Page"
 msgstr "விவரங்கள் பக்கத்தில் பின்னணி"
 
-#: ../data/ui/preferences.blp:89
+#: ../data/ui/preferences.blp:88
 msgid "Method used to recolor background to match cover"
 msgstr "அட்டையை பொருத்த பின்னணியை நினைவுகூர பயன்படுத்தப்படுகிறது"
 
-#: ../data/ui/preferences.blp:93
+#: ../data/ui/preferences.blp:92
 msgid "Linear gradient"
 msgstr "நேரியல் சாய்வு"
 
-#: ../data/ui/preferences.blp:94
+#: ../data/ui/preferences.blp:93
 msgid "Blurred cover"
 msgstr "மங்கலான கவர்"
 
-#: ../data/ui/preferences.blp:104
+#: ../data/ui/preferences.blp:103
 msgid "Desktop Notifications"
 msgstr "டெச்க்டாப் அறிவிப்புகள்"
 
-#: ../data/ui/preferences.blp:105
+#: ../data/ui/preferences.blp:104
 msgid "Use desktop notifications for downloads and library updates"
 msgstr ""
 "பதிவிறக்கங்கள் மற்றும் நூலக புதுப்பிப்புகளுக்கு டெச்க்டாப் அறிவிப்புகளைப் பயன்படுத்தவும்"
 
-#: ../data/ui/preferences.blp:113
+#: ../data/ui/preferences.blp:112
 msgid "Synchronize reading progress"
 msgstr "வாசிப்பு முன்னேற்றத்தை ஒத்திசைக்கவும்"
 
-#: ../data/ui/preferences.blp:124
+#: ../data/ui/preferences.blp:123
 msgid "Display"
 msgstr "காட்சி"
 
-#: ../data/ui/preferences.blp:127
+#: ../data/ui/preferences.blp:126
 msgid "Display Mode"
 msgstr "காட்சி முறை"
 
-#: ../data/ui/preferences.blp:130
+#: ../data/ui/preferences.blp:129
 msgid "Grid"
 msgstr "வலைவாய்"
 
-#: ../data/ui/preferences.blp:131
+#: ../data/ui/preferences.blp:130
 msgid "Compact Grid"
 msgstr "கச்சிதமான கட்டம்"
 
-#: ../data/ui/preferences.blp:137
+#: ../data/ui/preferences.blp:136
 msgid "Servers Logo"
 msgstr "சேவையகங்கள் லோகோ"
 
-#: ../data/ui/preferences.blp:138
+#: ../data/ui/preferences.blp:137
 msgid "Display servers logo"
 msgstr "சேவையகங்கள் லோகோவைக் காண்பி"
 
-#: ../data/ui/preferences.blp:142
+#: ../data/ui/preferences.blp:141
 msgid "Badges"
 msgstr "பேட்ச்கள்"
 
-#: ../data/ui/preferences.blp:145
+#: ../data/ui/preferences.blp:144
 msgid "Number of Unread Chapters"
 msgstr "படிக்காத அத்தியாயங்களின் எண்ணிக்கை"
 
-#: ../data/ui/preferences.blp:165
+#: ../data/ui/preferences.blp:164
 msgid "Number of Downloaded Chapters"
 msgstr "பதிவிறக்கம் செய்யப்பட்ட அத்தியாயங்களின் எண்ணிக்கை"
 
-#: ../data/ui/preferences.blp:185
+#: ../data/ui/preferences.blp:184
 msgid "Number of Recent and Unread Chapters"
 msgstr "அண்மைக் கால மற்றும் படிக்காத அத்தியாயங்களின் எண்ணிக்கை"
 
-#: ../data/ui/preferences.blp:210
+#: ../data/ui/preferences.blp:206
+msgctxt "Settings: noun"
+msgid "Update"
+msgstr ""
+
+#: ../data/ui/preferences.blp:209
 msgid "Update at Startup"
 msgstr "தொடக்கத்தில் புதுப்பிக்கவும்"
 
-#: ../data/ui/preferences.blp:211
+#: ../data/ui/preferences.blp:210
 msgid "Automatically update library at startup"
 msgstr "தொடக்கத்தில் நூலகத்தை தானாக புதுப்பிக்கவும்"
 
-#: ../data/ui/preferences.blp:215
+#: ../data/ui/preferences.blp:214
 msgid "Auto Download of New Chapters"
 msgstr "புதிய அத்தியாயங்களின் தானாக பதிவிறக்கம்"
 
-#: ../data/ui/preferences.blp:216
+#: ../data/ui/preferences.blp:215
 msgid "Automatically download new chapters"
 msgstr "புதிய அத்தியாயங்களை தானாக பதிவிறக்கவும்"
 
-#: ../data/ui/preferences.blp:224
+#: ../data/ui/preferences.blp:223
 msgid "Languages"
 msgstr "மொழிகள்"
 
-#: ../data/ui/preferences.blp:225
+#: ../data/ui/preferences.blp:224
 msgid "Restrict servers to selected languages"
 msgstr "தேர்ந்தெடுக்கப்பட்ட மொழிகளுக்கு சேவையகங்களை கட்டுப்படுத்தவும்"
 
-#: ../data/ui/preferences.blp:234
+#: ../data/ui/preferences.blp:232
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+#: ../data/ui/preferences.blp:233
 msgid "Enable/disable and configure servers"
 msgstr "சேவையகங்களை இயக்கவும்/முடக்கவும் கட்டமைக்கவும்"
 
-#: ../data/ui/preferences.blp:242
+#: ../data/ui/preferences.blp:241
 msgid "Long Strip Detection"
 msgstr "நீண்ட துண்டு கண்டறிதல்"
 
-#: ../data/ui/preferences.blp:243
+#: ../data/ui/preferences.blp:242
 msgid "Automatically detect long vertical strip when possible"
 msgstr "முடிந்தவரை நீண்ட செங்குத்து துண்டு தானாகவே கண்டறியவும்"
 
-#: ../data/ui/preferences.blp:249
+#: ../data/ui/preferences.blp:248
 msgid "NSFW Content (18+)"
 msgstr "NSFW உள்ளடக்கம் (18+)"
 
-#: ../data/ui/preferences.blp:250
+#: ../data/ui/preferences.blp:249
 msgid "Whether to enable servers with NSFW content"
 msgstr "NSFW உள்ளடக்கத்துடன் சேவையகங்களை இயக்க வேண்டுமா"
 
-#: ../data/ui/preferences.blp:254
+#: ../data/ui/preferences.blp:253
 msgid "NSFW Only Content (18+)"
 msgstr "NSFW மட்டும் உள்ளடக்கம் (18+)"
 
-#: ../data/ui/preferences.blp:255
+#: ../data/ui/preferences.blp:254
 msgid "Whether to enable servers with NSFW only content"
 msgstr "NSFW மட்டுமே உள்ளடக்கத்துடன் சேவையகங்களை இயக்க வேண்டுமா"
 
-#: ../data/ui/preferences.blp:259
+#: ../data/ui/preferences.blp:258
 msgid ""
 "These settings do not prevent potentially incorrectly flagged servers from "
 "surfacing NSFW content."
@@ -599,131 +601,91 @@ msgstr ""
 "இந்த அமைப்புகள் தவறாக கொடியிடப்பட்ட சேவையகங்கள் என்.எச்.எஃப்.டபிள்யூ உள்ளடக்கம் "
 "வெளிவருவதைத் தடுக்காது."
 
-#: ../data/ui/preferences.blp:274 ../data/ui/reader.blp:10
+#: ../data/ui/preferences.blp:273 ../data/ui/reader.blp:10
 msgid "Reader"
 msgstr "வாசகர்"
 
-#: ../data/ui/preferences.blp:279
+#: ../data/ui/preferences.blp:278
 msgid "Reading Mode"
 msgstr "படித்தல் பயன்முறை"
 
-#: ../data/ui/preferences.blp:282
+#: ../data/ui/preferences.blp:281
 msgid "⬅ Right to Left"
 msgstr "⬅ வலதுபுறம் இடமிருந்து"
 
-#: ../data/ui/preferences.blp:283
+#: ../data/ui/preferences.blp:282
 msgid "➡ Left to Right"
 msgstr "➡ இடமிருந்து வலமாக"
 
-#: ../data/ui/preferences.blp:284
+#: ../data/ui/preferences.blp:283
 msgid "⬇ Vertical"
 msgstr "⬇ செங்குத்து"
 
-#: ../data/ui/preferences.blp:285
+#: ../data/ui/preferences.blp:284
 msgid "⬇ Webtoon"
 msgstr "⬇ வெப்டூன்"
 
-#: ../data/ui/preferences.blp:291
+#: ../data/ui/preferences.blp:290 ../data/ui/reader_settings.blp:25
 msgid "Scaling Filter"
 msgstr "அளவிடுதல் வடிகட்டி"
 
-#: ../data/ui/preferences.blp:292
+#: ../data/ui/preferences.blp:291
 msgid "Interpolation method used when scaling images"
 msgstr "படங்களை அளவிடும்போது பயன்படுத்தப்படும் இடைக்கணிப்பு முறை"
 
-#: ../data/ui/preferences.blp:295
-msgid "Linear"
-msgstr "நேரியல்"
-
-#: ../data/ui/preferences.blp:296
-msgid "Trilinear"
-msgstr "முக்கோடு"
-
-#: ../data/ui/preferences.blp:302
+#: ../data/ui/preferences.blp:301 ../data/ui/reader_settings.blp:29
 msgid "Background Color"
 msgstr "பின்னணி நிறம்"
 
-#: ../data/ui/preferences.blp:305
-msgid "White"
-msgstr "வெள்ளை"
-
-#: ../data/ui/preferences.blp:306
-msgid "Gray"
-msgstr "சாம்பல்"
-
-#: ../data/ui/preferences.blp:307
-msgid "Black"
-msgstr "கருப்பு"
-
-#: ../data/ui/preferences.blp:308
-msgid "System Style"
-msgstr "கணினி நடை"
-
-#: ../data/ui/preferences.blp:314
+#: ../data/ui/preferences.blp:313
 msgid "Page Numbering"
 msgstr "பக்க எண்"
 
-#: ../data/ui/preferences.blp:315
+#: ../data/ui/preferences.blp:314 ../data/ui/reader_settings.blp:49
 msgid "Hide the page numbering at the bottom of the screen while reading"
 msgstr "படிக்கும் போது திரையின் அடிப்பகுதியில் பக்க எண்ணை மறைக்கவும்"
 
-#: ../data/ui/preferences.blp:319
+#: ../data/ui/preferences.blp:318
 msgid "Fullscreen"
 msgstr "முழு திரை"
 
-#: ../data/ui/preferences.blp:320
+#: ../data/ui/preferences.blp:319
 msgid "Automatically enter fullscreen mode"
 msgstr "தானாகவே முழுத்திரை பயன்முறையை உள்ளிடவும்"
 
-#: ../data/ui/preferences.blp:325 ../data/ui/shortcuts.blp:76
+#: ../data/ui/preferences.blp:324 ../data/ui/shortcuts.blp:76
 #: ../data/ui/shortcuts.blp:82 ../data/ui/shortcuts.blp:88
 msgid "Paged Reading Modes"
 msgstr "பக்க வாசிப்பு முறைகள்"
 
-#: ../data/ui/preferences.blp:326
+#: ../data/ui/preferences.blp:325
 msgid "Right to Left / Left to Right / Vertical"
 msgstr "வலமிருந்து இடமாக / இடமிருந்து வலமாக / செங்குத்து"
 
-#: ../data/ui/preferences.blp:329
+#: ../data/ui/preferences.blp:328 ../data/ui/reader_settings.blp:21
 msgid "Scaling"
 msgstr "அளவிடுதல்"
 
-#: ../data/ui/preferences.blp:330
+#: ../data/ui/preferences.blp:329
 msgid "Type of scaling to adapt image"
 msgstr "படத்தை மாற்றியமைக்க அளவிடுதல் வகை"
 
-#: ../data/ui/preferences.blp:333
-msgid "Adapt to Screen"
-msgstr "திரைக்கு ஏற்றவாறு"
-
-#: ../data/ui/preferences.blp:334
-msgid "Adapt to Width"
-msgstr "அகலத்திற்கு ஏற்ப"
-
-#: ../data/ui/preferences.blp:335
-msgid "Adapt to Height"
-msgstr "உயரத்திற்கு ஏற்ப"
-
-#: ../data/ui/preferences.blp:336
-msgid "Original Size"
-msgstr "அசல் அளவு"
-
-#: ../data/ui/preferences.blp:342
+#: ../data/ui/preferences.blp:341
 msgid "Landscape Pages Zoom"
 msgstr "இயற்கை பக்கங்கள் பெரிதாக்கு"
 
-#: ../data/ui/preferences.blp:343
+#: ../data/ui/preferences.blp:342 ../data/ui/reader_settings.blp:34
 msgid ""
 "Zoom page to fit height when page is landscape (Adapt to Screen scaling only)"
 msgstr ""
 "பக்கம் நிலப்பரப்பாக இருக்கும்போது உயரத்திற்கு பொருந்தக்கூடிய பெரிதாக்க பக்கம் (திரை "
 "அளவிடுதலுக்கு மட்டும் மாற்றியமைக்கவும்)"
 
-#: ../data/ui/preferences.blp:347
+#: ../data/ui/preferences.blp:346
 msgid "Borders Crop"
 msgstr "எல்லைகள் பயிர்"
 
-#: ../data/ui/preferences.blp:348
+#: ../data/ui/preferences.blp:347
 msgid ""
 "Crop white borders of images\n"
 "\n"
@@ -735,80 +697,100 @@ msgstr ""
 " குறிப்பு: அதிக சிபியு பயன்பாடு தேவைப்படுகிறது மற்றும் வழங்குதல் மற்றும் அனிமேசன் "
 "மந்தநிலைகளை ஏற்படுத்தும், குறிப்பாக மொபைல் சாதனங்களில்."
 
-#: ../data/ui/preferences.blp:353 ../data/ui/shortcuts.blp:94
+#: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
+msgid "Borders Crop Threshold"
+msgstr ""
+
+#: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
+msgid "Control which pixels are classified as 'white' during borders detection"
+msgstr ""
+
+#: ../data/ui/preferences.blp:357 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
 msgid "Webtoon Reading Mode"
 msgstr "வெப்டூன் வாசிப்பு முறை"
 
-#: ../data/ui/preferences.blp:354
+#: ../data/ui/preferences.blp:358
 msgid "Long Strip aka Infinite Vertical Canvas"
 msgstr "நீண்ட கீற்று அல்லது எல்லையற்ற செங்குத்து கேன்வாச்"
 
-#: ../data/ui/preferences.blp:359
+#: ../data/ui/preferences.blp:363
 msgid "Reset to Default"
 msgstr "இயல்புநிலைக்கு மீட்டமைக்கவும்"
 
-#: ../data/ui/preferences.blp:367
+#: ../data/ui/preferences.blp:371
 msgid "Maximum Width"
 msgstr "அதிகபட்ச அகலம்"
 
-#: ../data/ui/preferences.blp:368
+#: ../data/ui/preferences.blp:372
 msgid "Constrain reader's width to a given maximum size"
 msgstr "கொடுக்கப்பட்ட அதிகபட்ச அளவிற்கு ரீடரின் அகலத்தைக் கட்டுப்படுத்தவும்"
 
-#: ../data/ui/preferences.blp:378
+#: ../data/ui/preferences.blp:382
 msgid "Scroll Distance"
 msgstr "ச்க்ரோல் தூரம்"
 
-#: ../data/ui/preferences.blp:379
+#: ../data/ui/preferences.blp:383
 msgid "Percentage of page height to scroll on click or Page Up/Down"
 msgstr "சொடுக்கு அல்லது பக்கம் மேல்/கீழாக உருட்ட வேண்டிய பக்க உயரத்தின் விழுக்காடு"
 
-#: ../data/ui/preferences.blp:390
+#: ../data/ui/preferences.blp:394
 msgid "Drag Sensitivity"
 msgstr "இழுக்கும் உணர்திறன்"
 
-#: ../data/ui/preferences.blp:391
+#: ../data/ui/preferences.blp:395
 msgid "Multiplier for drag scrolling sensitivity"
 msgstr "இழுவை ச்க்ரோலிங் உணர்திறனுக்கான பெருக்கி"
 
-#: ../data/ui/preferences.blp:405
+#: ../data/ui/preferences.blp:407 ../data/ui/reader_settings.blp:54
+msgid "OCR Translator"
+msgstr ""
+
+#: ../data/ui/preferences.blp:410 ../data/ui/reader_settings.blp:57
+msgid "OCR Language"
+msgstr ""
+
+#: ../data/ui/preferences.blp:411
+msgid "Default language used for OCR text recognitions"
+msgstr ""
+
+#: ../data/ui/preferences.blp:418
 msgid "Advanced"
 msgstr "மேம்பட்ட"
 
-#: ../data/ui/preferences.blp:409
+#: ../data/ui/preferences.blp:422
 msgid "A setting has changed that requires a restart to take effect"
 msgstr "நடைமுறைக்கு வர மறுதொடக்கம் தேவைப்படும் ஒரு அமைப்பு மாறிவிட்டது"
 
-#: ../data/ui/preferences.blp:415
+#: ../data/ui/preferences.blp:428
 msgid "Data"
 msgstr "தகவல்கள்"
 
-#: ../data/ui/preferences.blp:416
+#: ../data/ui/preferences.blp:429
 msgid "Data not saved in the library"
 msgstr "தரவு நூலகத்தில் சேமிக்கப்படவில்லை"
 
-#: ../data/ui/preferences.blp:419
+#: ../data/ui/preferences.blp:432
 msgid "Clear Chapters Cache and Database"
 msgstr "தற்காலிக கேச் மற்றும் தரவுத்தளத்தை அழிக்கவும்"
 
-#: ../data/ui/preferences.blp:434
+#: ../data/ui/preferences.blp:447
 msgid "Clear Chapters Cache and Database on Exit"
 msgstr "வெளியேறும்போது கேச் மற்றும் தரவுத்தளத்தை அழிக்கவும்"
 
-#: ../data/ui/preferences.blp:439 ../data/ui/webview.blp:10
+#: ../data/ui/preferences.blp:452 ../data/ui/webview.blp:10
 msgid "WebView"
 msgstr "வலைப்பார்வை"
 
-#: ../data/ui/preferences.blp:442
+#: ../data/ui/preferences.blp:455
 msgid "Clear Data"
 msgstr "தரவை அழிக்கவும்"
 
-#: ../data/ui/preferences.blp:461
+#: ../data/ui/preferences.blp:474
 msgid "Use Up-to-date Servers Modules"
 msgstr "புதுப்பித்த சேவையக தொகுதிகள் பயன்படுத்தவும்"
 
-#: ../data/ui/preferences.blp:462
+#: ../data/ui/preferences.blp:475
 msgid ""
 "An alternative version of the servers modules, installed from the source "
 "code repository and updated at each startup, is used instead of the one "
@@ -818,38 +800,38 @@ msgstr ""
 "சேவையக தொகுதிகளின் மாற்று பதிப்பு, பயன்பாட்டுடன் வழங்கப்பட்டதற்கு பதிலாக "
 "பயன்படுத்தப்படுகிறது."
 
-#: ../data/ui/preferences.blp:466
+#: ../data/ui/preferences.blp:479
 msgid "Suggest Submitting a Bug Report in Case of Error"
 msgstr ""
 
-#: ../data/ui/preferences.blp:467
+#: ../data/ui/preferences.blp:480
 msgid ""
 "If an error occurs with a server (it has been updated or an unexpected case "
 "has arisen), you will be prompted to create a bug report using a pre-"
 "formatted text to copy/paste."
 msgstr ""
 
-#: ../data/ui/preferences.blp:472
+#: ../data/ui/preferences.blp:485
 msgid "Credentials Storage"
 msgstr "நற்சான்றிதழ்கள் சேமிப்பு"
 
-#: ../data/ui/preferences.blp:475
+#: ../data/ui/preferences.blp:488
 msgid "Allow Plaintext Storage as Fallback"
 msgstr "எளிய உரை சேமிப்பிடத்தை குறைவடையும்"
 
-#: ../data/ui/preferences.blp:476
+#: ../data/ui/preferences.blp:489
 msgid "Used when no keyring backends are found"
 msgstr "கீரிங் பின்தளத்தில் எதுவும் காணப்படாதபோது பயன்படுத்தப்படுகிறது"
 
-#: ../data/ui/preferences.blp:481
+#: ../data/ui/preferences.blp:494
 msgid "Tweaks"
 msgstr "மாற்றங்கள்"
 
-#: ../data/ui/preferences.blp:484
+#: ../data/ui/preferences.blp:497
 msgid "Disable Animations"
 msgstr "அனிமேசன்களை முடக்கு"
 
-#: ../data/ui/preferences.blp:485
+#: ../data/ui/preferences.blp:498
 msgid ""
 "Useful with E Ink e-readers to avoid very choppy and unpleasant animations "
 "(due to the low refresh rate of the screen)"
@@ -857,7 +839,7 @@ msgstr ""
 "மிகவும் மென்மையான மற்றும் விரும்பத்தகாத அனிமேசன்களைத் தவிர்க்க மின் மை மின்-வாசகர்களுடன் "
 "பயனுள்ளதாக இருக்கும் (திரையின் குறைந்த புதுப்பிப்பு வீதம் காரணமாக)"
 
-#: ../data/ui/preferences.blp:489
+#: ../data/ui/preferences.blp:502
 msgid ""
 "This tweak is only intended for users who do not use the GNOME desktop "
 "environment and therefore cannot toggle reduced motion animations globally "
@@ -876,13 +858,45 @@ msgstr "சேவையக அமைப்புகள்"
 msgid "Servers Languages"
 msgstr "சேவையகங்கள் மொழிகள்"
 
-#: ../data/ui/reader.blp:23
+#: ../data/ui/reader.blp:27
 msgid "Back"
 msgstr "பின்"
 
-#: ../data/ui/reader.blp:31
+#: ../data/ui/reader.blp:35
 msgid "Toggle Fullscreen Mode"
 msgstr "முழுத்திரை பயன்முறையை மாற்றவும்"
+
+#: ../data/ui/reader.blp:47
+msgid "Toggle OCR Translator"
+msgstr ""
+
+#: ../data/ui/reader_settings.blp:9
+msgid "Reader Settings"
+msgstr ""
+
+#: ../data/ui/reader_settings.blp:14
+msgid "Custom"
+msgstr ""
+
+#: ../data/ui/reader_settings.blp:18
+msgid "Pages"
+msgstr ""
+
+#: ../data/ui/reader_settings.blp:33
+msgid "Zoom Landscape Pages"
+msgstr "பெரிதாக்க நிலப்பரப்பு பக்கங்கள்"
+
+#: ../data/ui/reader_settings.blp:38
+msgid "Crop Borders"
+msgstr "பயிர் எல்லைகள்"
+
+#: ../data/ui/reader_settings.blp:39
+msgid "Crop white borders of pages"
+msgstr ""
+
+#: ../data/ui/reader_settings.blp:48
+msgid "Hide Page Numbering"
+msgstr "பக்க எண்ணை மறைக்கவும்"
 
 #: ../data/ui/shortcuts.blp:10
 msgctxt "Shortcut window description"
@@ -996,15 +1010,20 @@ msgstr "பெரிதாக்கு மீட்டமைப்பு"
 
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
+msgid "Toggle OCR Translator"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:131
+msgctxt "Shortcut window description"
 msgid "Save Page"
 msgstr "பக்கத்தை சேமிக்கவும்"
 
-#: ../data/ui/shortcuts.blp:130
+#: ../data/ui/shortcuts.blp:137
 msgctxt "Shortcut window description"
 msgid "Download Manager"
 msgstr "மேலாளரைப் பதிவிறக்கவும்"
 
-#: ../data/ui/shortcuts.blp:133
+#: ../data/ui/shortcuts.blp:140
 msgctxt "Shortcut window description"
 msgid "Select All Downloads"
 msgstr "எல்லா பதிவிறக்கங்களையும் தேர்ந்தெடுக்கவும்"
@@ -1060,24 +1079,24 @@ msgstr "ஒரு முறை அல்லது மாதாந்திர �
 msgid "Copy to Clipboard"
 msgstr "இடைநிலைப்பலகைக்கு நகலெடுக்கவும்"
 
-#: ../komikku/application.py:103
+#: ../komikku/application.py:105
 msgid "Multiple URLs not supported"
 msgstr "பல முகவரி கள் ஆதரிக்கப்படவில்லை"
 
-#: ../komikku/application.py:119
+#: ../komikku/application.py:121
 #, python-brace-format
 msgid "Invalid URL {}, not handled by any server."
 msgstr "தவறான முகவரி {}, எந்த சேவையகமும் கையாளப்படவில்லை."
 
-#: ../komikku/application.py:431
+#: ../komikku/application.py:435
 msgid "Servers modules have been updated"
 msgstr "சேவையக தொகுதிகள் புதுப்பிக்கப்பட்டுள்ளன"
 
-#: ../komikku/application.py:438
+#: ../komikku/application.py:442
 msgid "External Servers Modules Update"
 msgstr "வெளிப்புற சேவையக தொகுதிகள் புதுப்பிக்கப்படுகின்றன"
 
-#: ../komikku/application.py:439
+#: ../komikku/application.py:443
 msgid ""
 "Updating of external server modules is temporarily suspended, as changes are "
 "currently making them incompatible with the current version of the "
@@ -1087,12 +1106,12 @@ msgstr ""
 "ஏனெனில் மாற்றங்கள் தற்போது பயன்பாட்டின் தற்போதைய பதிப்போடு பொருந்தாது. அண்மைக் கால பதிப்பு "
 "இருந்தால் தயவுசெய்து அதைப் புதுப்பிக்கவும்."
 
-#: ../komikku/application.py:440 ../komikku/application.py:683
-#: ../komikku/explorer/common.py:321
+#: ../komikku/application.py:444 ../komikku/application.py:694
+#: ../komikku/explorer/common.py:322
 msgid "Close"
 msgstr "மூடு"
 
-#: ../komikku/application.py:455
+#: ../komikku/application.py:459
 msgid ""
 "A manga, webtoons and comics reader\n"
 "\n"
@@ -1106,91 +1125,90 @@ msgstr ""
 "அதிகாரப்பூர்வ காமிக்சை வாங்குவதன் மூலம் \n"
 "உங்கள் பிராந்தியத்தில்/மொழியில் கிடைக்கும்."
 
-#: ../komikku/application.py:464
+#: ../komikku/application.py:468
 msgid "Supporters"
 msgstr "ஆதரவாளர்கள்"
 
-#: ../komikku/application.py:466
+#: ../komikku/application.py:470
 msgid "Join Chat"
 msgstr "அரட்டையில் சேரவும்"
 
-#: ../komikku/application.py:559 ../komikku/card/__init__.py:162
-#: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:186
+#: ../komikku/application.py:563 ../komikku/card/__init__.py:162
+#: ../komikku/card/__init__.py:163 ../komikku/categories_editor.py:188
 #: ../komikku/downloader.py:388 ../komikku/downloader.py:389
-#: ../komikku/library/__init__.py:835 ../komikku/library/__init__.py:836
+#: ../komikku/library/__init__.py:846 ../komikku/library/__init__.py:847
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
-#: ../komikku/application.py:608
+#: ../komikku/application.py:612
 msgid "Copy Text"
 msgstr ""
 
-#: ../komikku/application.py:616
+#: ../komikku/application.py:620
 msgid "Context"
 msgstr ""
 
-#: ../komikku/application.py:636
+#: ../komikku/application.py:640
 msgid "Stack Trace"
 msgstr ""
 
-#: ../komikku/application.py:658
+#: ../komikku/application.py:669
 msgid "Debug Information"
 msgstr ""
 
-#: ../komikku/application.py:678
+#: ../komikku/application.py:689
 msgid "Server Error"
 msgstr ""
 
-#: ../komikku/application.py:679
+#: ../komikku/application.py:690
 msgid ""
 "You have encountered a problem with a server (it has been updated or an "
 "unexpected case has arisen). Here is a pre-formatted text that you can copy "
 "and paste when filling out the issue."
 msgstr ""
 
-#: ../komikku/application.py:684
+#: ../komikku/application.py:695
 msgid "Create an Issue"
 msgstr ""
 
-#: ../komikku/application.py:718
+#: ../komikku/application.py:729
 msgid "Are you sure you want to quit?"
 msgstr "நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?"
 
-#: ../komikku/application.py:721
+#: ../komikku/application.py:732
 msgid "Some chapters are currently being downloaded."
 msgstr "சில அத்தியாயங்கள் தற்போது பதிவிறக்கம் செய்யப்படுகின்றன."
 
-#: ../komikku/application.py:723
+#: ../komikku/application.py:734
 msgid "Some mangas are currently being updated."
 msgstr "சில மங்காக்கள் தற்போது புதுப்பிக்கப்பட்டு வருகின்றன."
 
-#: ../komikku/application.py:727
+#: ../komikku/application.py:738
 msgid "Quit?"
 msgstr "வெளியேறவா?"
 
-#: ../komikku/application.py:729
+#: ../komikku/application.py:740
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: ../komikku/application.py:744
+#: ../komikku/application.py:755
 msgid "Restart?"
 msgstr "மறுதொடக்கம் செய்யவா?"
 
-#: ../komikku/application.py:746
+#: ../komikku/application.py:757
 msgid "Restart"
 msgstr "மறுதொடக்கம்"
 
 #: ../komikku/card/__init__.py:110 ../komikku/card/__init__.py:257
 #: ../komikku/explorer/search/__init__.py:75
 #: ../komikku/explorer/search/__init__.py:220
-#: ../komikku/library/__init__.py:104 ../komikku/library/__init__.py:452
-#: ../komikku/reader/__init__.py:529 ../komikku/reader/__init__.py:532
+#: ../komikku/library/__init__.py:105 ../komikku/library/__init__.py:449
 msgid "Filters"
 msgstr "வடிப்பான்கள்"
 
-#: ../komikku/card/__init__.py:220 ../komikku/library/__init__.py:358
-#: ../komikku/preferences/__init__.py:157
-#: ../komikku/preferences/__init__.py:180
+#: ../komikku/card/__init__.py:220 ../komikku/library/__init__.py:338
+#: ../komikku/preferences/__init__.py:163
+#: ../komikku/preferences/__init__.py:186
 msgid "Clear?"
 msgstr "அழிக்கப்படுகிறதா?"
 
@@ -1198,9 +1216,9 @@ msgstr "அழிக்கப்படுகிறதா?"
 msgid "Are you sure you want to clear all chapters?"
 msgstr "எல்லா அத்தியாயங்களையும் அழிக்க விரும்புகிறீர்களா?"
 
-#: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:728
-#: ../komikku/library/__init__.py:360 ../komikku/preferences/__init__.py:159
-#: ../komikku/preferences/__init__.py:182
+#: ../komikku/card/__init__.py:222 ../komikku/card/chapters_list.py:724
+#: ../komikku/library/__init__.py:340 ../komikku/preferences/__init__.py:165
+#: ../komikku/preferences/__init__.py:188
 msgid "Clear"
 msgstr "தெளிவான"
 
@@ -1227,47 +1245,47 @@ msgstr ""
 " {0} இனி ஆதரிக்கப்படாது.\n"
 " தயவுசெய்து மற்றொரு சேவையகத்திற்கு மாறவும்."
 
-#: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
+#: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:728
 msgid "Clear and Reset"
 msgstr "அழி மீட்டமை"
 
-#: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:732
+#: ../komikku/card/__init__.py:493 ../komikku/card/chapters_list.py:728
 msgid "Reset"
 msgstr "மீட்டமை"
 
-#: ../komikku/card/chapters_list.py:340 ../komikku/downloader.py:533
-#: ../komikku/library/__init__.py:869
+#: ../komikku/card/chapters_list.py:336 ../komikku/downloader.py:533
+#: ../komikku/library/__init__.py:874
 #, python-brace-format
 msgid "{0} selected"
 msgid_plural "{0} selected"
 msgstr[0] "{0} தேர்ந்தெடுக்கப்பட்டது"
 msgstr[1] "{0} தேர்ந்தெடுக்கப்பட்டன"
 
-#: ../komikku/card/chapters_list.py:359
+#: ../komikku/card/chapters_list.py:355
 msgid "No chapters found"
 msgstr "அத்தியாயங்கள் எதுவும் இல்லை"
 
-#: ../komikku/card/chapters_list.py:422 ../komikku/card/chapters_list.py:521
+#: ../komikku/card/chapters_list.py:418 ../komikku/card/chapters_list.py:517
 msgid "Failed to update chapters reading status"
 msgstr "வாசிப்பு நிலை அத்தியாயங்களைப் புதுப்பிக்கத் தவறிவிட்டது"
 
-#: ../komikku/card/chapters_list.py:660
+#: ../komikku/card/chapters_list.py:656
 msgid "%m/%d/%Y"
 msgstr "%m/%d/%y"
 
-#: ../komikku/card/chapters_list.py:718 ../komikku/library/__init__.py:434
+#: ../komikku/card/chapters_list.py:714 ../komikku/library/__init__.py:431
 msgid "Download"
 msgstr "பதிவிறக்கம்"
 
-#: ../komikku/card/chapters_list.py:742
+#: ../komikku/card/chapters_list.py:738
 msgid "Mark as Read"
 msgstr "படித்தபடி குறி"
 
-#: ../komikku/card/chapters_list.py:746
+#: ../komikku/card/chapters_list.py:742
 msgid "Mark as Unread"
 msgstr "படிக்காத எனக் குறிக்கவும்"
 
-#: ../komikku/card/chapters_list.py:750
+#: ../komikku/card/chapters_list.py:746
 msgid "Mark Previous Chapters as Read"
 msgstr "முந்தைய அத்தியாயங்களைப் படிக்கக் குறிக்கவும்"
 
@@ -1322,15 +1340,19 @@ msgstr "கண்காணிப்பை ரத்துசெய்"
 
 #: ../komikku/card/tracking.py:227 ../komikku/servers/comick/__init__.py:77
 #: ../komikku/servers/comix/__init__.py:58
+#: ../komikku/servers/jmanga/__init__.py:46
 #: ../komikku/servers/mangaball/__init__.py:88
-#: ../komikku/servers/mangadex/__init__.py:73
-#: ../komikku/servers/mangafire/__init__.py:60
+#: ../komikku/servers/mangadex/__init__.py:72
+#: ../komikku/servers/mangak/__init__.py:91
+#: ../komikku/servers/mangalivreblog/__init__.py:37
 #: ../komikku/servers/mangamana/__init__.py:62
 #: ../komikku/servers/mangamana/__init__.py:63
 #: ../komikku/servers/mangatown/__init__.py:65
 #: ../komikku/servers/mangaworld/__init__.py:74
 #: ../komikku/servers/multi/madtheme/__init__.py:44
 #: ../komikku/servers/raijinscan/__init__.py:40
+#: ../komikku/servers/readcomicsonline/__init__.py:33
+#: ../komikku/servers/rncalation/__init__.py:52
 #: ../komikku/servers/weebdex/__init__.py:61
 #: ../komikku/servers/zenko/__init__.py:57
 msgid "Status"
@@ -1345,7 +1367,7 @@ msgid "Chapter"
 msgstr "பாடம்"
 
 #: ../komikku/card/tracking.py:253 ../komikku/categories_editor.py:78
-#: ../komikku/library/__init__.py:408
+#: ../komikku/library/__init__.py:405
 msgid "Delete?"
 msgstr "நீக்கவா?"
 
@@ -1354,7 +1376,7 @@ msgid "Are you sure you want to cancel tracking?"
 msgstr "கண்காணிப்பை ரத்து செய்ய விரும்புகிறீர்களா?"
 
 #: ../komikku/card/tracking.py:255 ../komikku/categories_editor.py:80
-#: ../komikku/categories_editor.py:175 ../komikku/library/__init__.py:410
+#: ../komikku/categories_editor.py:176 ../komikku/library/__init__.py:407
 msgid "Delete"
 msgstr "நீக்கு"
 
@@ -1389,103 +1411,103 @@ msgstr ""
 "நீங்கள் நிச்சயமாக நீக்க விரும்புகிறீர்களா?\n"
 " \"{0}\" வகை?"
 
-#: ../komikku/categories_editor.py:180
+#: ../komikku/categories_editor.py:182
 msgid "Edit"
 msgstr "தொகு"
 
-#: ../komikku/categories_editor.py:193
+#: ../komikku/categories_editor.py:195
 msgid "Save"
 msgstr "சேமி"
 
-#: ../komikku/consts.py:14
+#: ../komikku/consts.py:22
 msgid "Accent Color"
 msgstr "உச்சரிப்பு நிறம்"
 
-#: ../komikku/consts.py:19
+#: ../komikku/consts.py:27
 msgid "Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:23
+#: ../komikku/consts.py:31
 msgid "Lesbian Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:27
+#: ../komikku/consts.py:35
 msgid "Male Homosexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:31
+#: ../komikku/consts.py:39
 msgid "Transgender Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:35
+#: ../komikku/consts.py:43
 msgid "Nonbinary Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:39
+#: ../komikku/consts.py:47
 msgid "Bisexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:43
+#: ../komikku/consts.py:51
 msgid "Asexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:47
+#: ../komikku/consts.py:55
 msgid "Pansexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:51
+#: ../komikku/consts.py:59
 msgid "Aromantic Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:55
+#: ../komikku/consts.py:63
 msgid "Genderfluid Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:59
+#: ../komikku/consts.py:67
 msgid "Polysexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:63
+#: ../komikku/consts.py:71
 msgid "Omnisexual Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:67
+#: ../komikku/consts.py:75
 msgid "Aroace Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:71
+#: ../komikku/consts.py:79
 msgid "Agender Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:75
+#: ../komikku/consts.py:83
 msgid "Genderqueer Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:79
+#: ../komikku/consts.py:87
 msgid "Intersex Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:83
+#: ../komikku/consts.py:91
 msgid "Demigender Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:87
+#: ../komikku/consts.py:95
 msgid "Biromantic Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:91
+#: ../komikku/consts.py:99
 msgid "Disability Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:95
+#: ../komikku/consts.py:103
 msgid "Femboy Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:99
+#: ../komikku/consts.py:107
 msgid "Neutrois Pride Colors"
 msgstr ""
 
-#: ../komikku/consts.py:103
+#: ../komikku/consts.py:111
 msgid "Random Colors"
 msgstr ""
 
@@ -1511,27 +1533,27 @@ msgstr "கடைசி அத்தியாயம்: {}"
 msgid "Last Volume: {}"
 msgstr "கடைசி தொகுதி: {}"
 
-#: ../komikku/explorer/common.py:244 ../komikku/preferences/servers.py:394
+#: ../komikku/explorer/common.py:245 ../komikku/preferences/servers.py:394
 #: ../komikku/preferences/servers.py:446
 #: ../komikku/servers/mangatube/__init__.py:150
 msgid "18+"
 msgstr "18+"
 
-#: ../komikku/explorer/common.py:267
+#: ../komikku/explorer/common.py:268
 msgid "Help"
 msgstr "உதவி"
 
-#: ../komikku/explorer/common.py:268
+#: ../komikku/explorer/common.py:269
 msgid "Local Folder"
 msgstr "உள்ளக கோப்புறை"
 
-#: ../komikku/explorer/common.py:270
+#: ../komikku/explorer/common.py:271
 msgid ""
 "A specific folder structure is required for local comics to be properly "
 "processed."
 msgstr "உள்ளக காமிக்ச் சரியாக செயலாக்கப்படுவதற்கு ஒரு குறிப்பிட்ட கோப்புறை அமைப்பு தேவை."
 
-#: ../komikku/explorer/common.py:271
+#: ../komikku/explorer/common.py:272
 msgid ""
 "Each comic must have its own folder which must contain the chapters/volumes "
 "as archive files in CBZ, CBR, CBT, EPUB or PDF formats."
@@ -1539,30 +1561,30 @@ msgstr ""
 "CBZ, CBR, CBT, EPUB அல்லது PDF வடிவங்களில் காப்பகக் கோப்புகளாக அத்தியாயங்கள்/"
 "தொகுதிகளைக் கொண்டிருக்க வேண்டும்."
 
-#: ../komikku/explorer/common.py:272
+#: ../komikku/explorer/common.py:273
 msgid "The folder's name will be used as name for the comic."
 msgstr "கோப்புறையின் பெயர் நகைச்சுவைக்கான பெயராகப் பயன்படுத்தப்படும்."
 
-#: ../komikku/explorer/common.py:273
+#: ../komikku/explorer/common.py:274
 msgid ""
 "NOTE: The 'unrar' or 'unar' command-line tool is required for CBR archives."
 msgstr "குறிப்பு: CBR காப்பகங்களுக்கு 'unrar' அல்லது 'unar' கட்டளை வரி கருவி தேவை."
 
-#: ../komikku/explorer/common.py:279
+#: ../komikku/explorer/common.py:280
 msgid "Open local folder"
 msgstr "உள்ளக கோப்புறையைத் திறக்கவும்"
 
-#: ../komikku/explorer/common.py:285 ../komikku/explorer/common.py:287
-#: ../komikku/explorer/common.py:303 ../komikku/explorer/common.py:306
+#: ../komikku/explorer/common.py:286 ../komikku/explorer/common.py:288
+#: ../komikku/explorer/common.py:304 ../komikku/explorer/common.py:307
 msgid "Content Information"
 msgstr "உள்ளடக்க செய்தி"
 
-#: ../komikku/explorer/common.py:292
+#: ../komikku/explorer/common.py:293
 #, python-brace-format
 msgid "Type: {0}"
 msgstr "வகை: {0}"
 
-#: ../komikku/explorer/common.py:295
+#: ../komikku/explorer/common.py:296
 #, python-brace-format
 msgid ""
 "Copyrighted: Reproduction and distribution authorized under certain "
@@ -1571,27 +1593,27 @@ msgstr ""
 "பதிப்புரிமை பெற்றது: சில நிபந்தனைகளின் கீழ் அங்கீகரிக்கப்பட்ட மறுஉருவாக்கம் மற்றும் வழங்கல் "
 "({0} உரிமம்)"
 
-#: ../komikku/explorer/common.py:298
+#: ../komikku/explorer/common.py:299
 msgid "Royalty-free, Public domain"
 msgstr "ராயல்டி இல்லாத, பொது டொமைன்"
 
-#: ../komikku/explorer/common.py:300 ../komikku/explorer/common.py:311
+#: ../komikku/explorer/common.py:301 ../komikku/explorer/common.py:312
 msgid "Copyrighted works"
 msgstr "பதிப்புரிமை பெற்ற படைப்புகள்"
 
-#: ../komikku/explorer/common.py:310
+#: ../komikku/explorer/common.py:311
 msgid "Use with caution!"
 msgstr "எச்சரிக்கையுடன் பயன்படுத்தவும்!"
 
-#: ../komikku/explorer/common.py:313
+#: ../komikku/explorer/common.py:314
 msgid "Licensed/Published and/or Unlicensed works"
 msgstr "உரிமம் பெற்ற/வெளியிடப்பட்ட மற்றும்/அல்லது உரிமம் பெறாத படைப்புகள்"
 
-#: ../komikku/explorer/common.py:314
+#: ../komikku/explorer/common.py:315
 msgid "It may be partially or totally illegal"
 msgstr "இது பகுதி அல்லது முற்றிலும் சட்டவிரோதமாக இருக்கலாம்"
 
-#: ../komikku/explorer/common.py:329
+#: ../komikku/explorer/common.py:330
 msgid "Toggle pinned status"
 msgstr "பின் நிலையை மாற்றவும்"
 
@@ -1670,6 +1692,9 @@ msgstr "முடிவுகள் இல்லை"
 
 #: ../komikku/explorer/servers.py:109 ../komikku/explorer/servers.py:186
 #: ../komikku/servers/comix/__init__.py:78
+#: ../komikku/servers/mangafire/__init__.py:140
+#: ../komikku/servers/readcomicsonline/__init__.py:54
+#: ../komikku/servers/rncalation/__init__.py:46
 #: ../komikku/servers/zenko/__init__.py:80
 msgid "Other"
 msgstr "மற்றொன்று"
@@ -1701,69 +1726,69 @@ msgstr "%A, %b %e"
 msgid "Resume"
 msgstr "மீண்டும் தொடங்குங்கள்"
 
-#: ../komikku/library/__init__.py:359
+#: ../komikku/library/__init__.py:339
 msgid "Are you sure you want to clear selected mangas?"
 msgstr ""
 
-#: ../komikku/library/__init__.py:404
+#: ../komikku/library/__init__.py:401
 msgid "Are you sure you want to delete this manga?"
 msgstr "இந்த மங்காவை நீக்க விரும்புகிறீர்களா?"
 
-#: ../komikku/library/__init__.py:406
+#: ../komikku/library/__init__.py:403
 msgid "Are you sure you want to delete selected mangas?"
 msgstr "தேர்ந்தெடுக்கப்பட்ட மங்காக்களை நீக்க விரும்புகிறீர்களா?"
 
-#: ../komikku/library/__init__.py:430
+#: ../komikku/library/__init__.py:427
 msgid "Are you sure you want to download all chapters of selected mangas?"
 msgstr ""
 "தேர்ந்தெடுக்கப்பட்ட மங்காவின் அனைத்து அத்தியாயங்களையும் பதிவிறக்கம் செய்ய விரும்புகிறீர்களா?"
 
-#: ../komikku/library/__init__.py:432
+#: ../komikku/library/__init__.py:429
 msgid "Download?"
 msgstr "பதிவிறக்கம்?"
 
-#: ../komikku/library/__init__.py:459
+#: ../komikku/library/__init__.py:456
 msgid "Unread"
 msgstr "படிக்காதது"
 
-#: ../komikku/library/__init__.py:460
+#: ../komikku/library/__init__.py:457
 msgid "Series with unread chapters"
 msgstr "படிக்காத அத்தியாயங்களைக் கொண்ட தொடர்"
 
-#: ../komikku/library/__init__.py:463
+#: ../komikku/library/__init__.py:460
 #: ../komikku/models/database/downloads.py:20
 msgid "Downloaded"
 msgstr "பதிவிறக்கம்"
 
-#: ../komikku/library/__init__.py:464
+#: ../komikku/library/__init__.py:461
 msgid "Series with downloaded chapters"
 msgstr "பதிவிறக்கம் செய்யப்பட்ட அத்தியாயங்களைக் கொண்ட தொடர்"
 
-#: ../komikku/library/__init__.py:467
+#: ../komikku/library/__init__.py:464
 msgid "Recents"
 msgstr "அண்மைக் கால"
 
-#: ../komikku/library/__init__.py:468
+#: ../komikku/library/__init__.py:465
 msgid "Series with new chapters"
 msgstr "புதிய அத்தியாயங்கள் கொண்ட தொடர்"
 
-#: ../komikku/library/__init__.py:685
+#: ../komikku/library/__init__.py:687
 msgid "Welcome to Komikku"
 msgstr "வா எல் அரிசி மற்றும் காமிக்ச்"
 
-#: ../komikku/library/__init__.py:697
+#: ../komikku/library/__init__.py:699
 msgid "Loading…"
 msgstr "ஏற்றுகிறது…"
 
-#: ../komikku/library/__init__.py:818
+#: ../komikku/library/__init__.py:823
 msgid "Failed to update reading status"
 msgstr "வாசிப்பு நிலையைப் புதுப்பிக்கத் தவறிவிட்டது"
 
-#: ../komikku/library/__init__.py:840
+#: ../komikku/library/__init__.py:851
 msgid "Add New Comic"
 msgstr "புதிய காமிக் சேர்க்கவும்"
 
-#: ../komikku/library/__init__.py:873 ../komikku/library/categories_list.py:146
+#: ../komikku/library/__init__.py:878 ../komikku/library/categories_list.py:146
 msgid "Uncategorized"
 msgstr "வகைப்படுத்தப்படாதது"
 
@@ -1773,6 +1798,7 @@ msgstr "வகைப்படுத்தப்படாதது"
 #: ../komikku/servers/coloredcouncil/__init__.py:42
 #: ../komikku/servers/coloredcouncil/__init__.py:55
 #: ../komikku/servers/invinciblecomicsvf/__init__.py:42
+#: ../komikku/servers/jmanga/__init__.py:51
 #: ../komikku/servers/mangapill/__init__.py:39
 #: ../komikku/servers/mangatown/__init__.py:51
 #: ../komikku/servers/mangatown/__init__.py:70
@@ -1781,6 +1807,8 @@ msgstr "வகைப்படுத்தப்படாதது"
 #: ../komikku/servers/multi/madtheme/__init__.py:49
 #: ../komikku/servers/multi/manga_stream/__init__.py:81
 #: ../komikku/servers/phenixscans/__init__.py:40
+#: ../komikku/servers/readcomicsonline/__init__.py:38
+#: ../komikku/servers/readcomicsonline/__init__.py:51
 #: ../komikku/servers/webtoon/__init__.py:60
 msgid "All"
 msgstr "அனைத்தும்"
@@ -1802,8 +1830,10 @@ msgid "Download error"
 msgstr "பிழையைப் பதிவிறக்கவும்"
 
 #: ../komikku/models/database/mangas.py:46
+#: ../komikku/servers/jmanga/__init__.py:53
 #: ../komikku/servers/mangamana/__init__.py:68
 #: ../komikku/servers/mangaworld/__init__.py:79
+#: ../komikku/servers/readcomicsonline/__init__.py:40
 #: ../komikku/servers/weebcentral/__init__.py:66
 msgid "Complete"
 msgstr "முழுமையானது"
@@ -1812,13 +1842,18 @@ msgstr "முழுமையானது"
 #: ../komikku/servers/comick/__init__.py:81
 #: ../komikku/servers/comix/__init__.py:62
 #: ../komikku/servers/flamescans/__init__.py:52
+#: ../komikku/servers/jmanga/__init__.py:52
 #: ../komikku/servers/mangaball/__init__.py:94
-#: ../komikku/servers/mangadex/__init__.py:77
+#: ../komikku/servers/mangadex/__init__.py:76
+#: ../komikku/servers/mangafire/__init__.py:163
+#: ../komikku/servers/mangak/__init__.py:97
 #: ../komikku/servers/mangamana/__init__.py:67
 #: ../komikku/servers/mangatown/__init__.py:72
 #: ../komikku/servers/mangaworld/__init__.py:78
 #: ../komikku/servers/multi/madtheme/__init__.py:50
 #: ../komikku/servers/raijinscan/__init__.py:44
+#: ../komikku/servers/readcomicsonline/__init__.py:39
+#: ../komikku/servers/rncalation/__init__.py:58
 #: ../komikku/servers/weebcentral/__init__.py:65
 #: ../komikku/servers/weebdex/__init__.py:65
 #: ../komikku/servers/zenko/__init__.py:61
@@ -1835,32 +1870,34 @@ msgstr "இடைநீக்கம்"
 #: ../komikku/servers/comix/__init__.py:64
 #: ../komikku/servers/flamescans/__init__.py:54
 #: ../komikku/servers/mangaball/__init__.py:96
-#: ../komikku/servers/mangadex/__init__.py:79
-#: ../komikku/servers/mangafire/__init__.py:67
+#: ../komikku/servers/mangadex/__init__.py:78
+#: ../komikku/servers/mangafire/__init__.py:165
+#: ../komikku/servers/mangak/__init__.py:99
 #: ../komikku/servers/mangaworld/__init__.py:81
+#: ../komikku/servers/rncalation/__init__.py:60
 #: ../komikku/servers/weebcentral/__init__.py:67
 #: ../komikku/servers/weebdex/__init__.py:67
 #: ../komikku/servers/zenko/__init__.py:63
 msgid "Hiatus"
 msgstr "இடைவெளி"
 
-#: ../komikku/preferences/__init__.py:158
+#: ../komikku/preferences/__init__.py:164
 msgid "Are you sure you want to clear chapters cache and database?"
 msgstr "கேச் மற்றும் தரவுத்தளத்தை அத்தியாயங்களை அழிக்க விரும்புகிறீர்களா?"
 
-#: ../komikku/preferences/__init__.py:177
+#: ../komikku/preferences/__init__.py:183
 msgid "Failed to clear WebView data"
 msgstr "WebView தரவை அழிக்க முடியவில்லை"
 
-#: ../komikku/preferences/__init__.py:181
+#: ../komikku/preferences/__init__.py:187
 msgid "Are you sure you want to clear WebView data (cache, storage, cookies)?"
 msgstr "WebView தரவை (கேச், சேமிப்பு, குக்கீகள்) நிச்சயமாக அழிக்க விரும்புகிறீர்களா?"
 
-#: ../komikku/preferences/__init__.py:206
+#: ../komikku/preferences/__init__.py:212
 msgid "Disable animations?"
 msgstr "அனிமேசன்களை முடக்கவா?"
 
-#: ../komikku/preferences/__init__.py:207
+#: ../komikku/preferences/__init__.py:213
 msgid ""
 "Are you sure you want to disable animations?\n"
 "\n"
@@ -1870,7 +1907,7 @@ msgstr ""
 "\n"
 " வாசகரில் சைகை வழிசெலுத்தல் இனி சரியாக வேலை செய்யாது."
 
-#: ../komikku/preferences/__init__.py:208
+#: ../komikku/preferences/__init__.py:214
 msgid "Disable"
 msgstr "முடக்கு"
 
@@ -1941,85 +1978,121 @@ msgstr "வெப்வியூ தற்போது பயன்படுத�
 msgid "Disconnect from {}"
 msgstr "{} இலிருந்து துண்டிக்கவும்"
 
-#: ../komikku/reader/__init__.py:405
+#: ../komikku/reader/__init__.py:321
 msgid "Page successfully saved"
 msgstr "பக்கம் வெற்றிகரமாக சேமிக்கப்பட்டது"
-
-#: ../komikku/reader/__init__.py:523
-msgid "Settings"
-msgstr "அமைப்புகள்"
-
-#: ../komikku/reader/__init__.py:536
-msgid "Brightness"
-msgstr "ஒளிர்வு"
-
-#: ../komikku/reader/__init__.py:537
-msgid "Make pages brighter or darker"
-msgstr "பக்கங்களை பிரகாசமாக அல்லது இருண்டதாக மாற்றவும்"
-
-#: ../komikku/reader/__init__.py:544
-msgid "Contrast"
-msgstr "மாறுபாடு"
-
-#: ../komikku/reader/__init__.py:545
-msgid "Increase or decrease the contrast of pages"
-msgstr "பக்கங்களின் மாறுபாட்டை அதிகரிக்கவும் அல்லது குறைக்கவும்"
-
-#: ../komikku/reader/__init__.py:552
-msgid "Grayscale"
-msgstr "கிரேச்கேல்"
-
-#: ../komikku/reader/__init__.py:553
-msgid "Convert pages to grayscale"
-msgstr "பக்கங்களை கிரேச்கேலுக்கு மாற்றவும்"
-
-#: ../komikku/reader/__init__.py:560
-msgid "Sepia"
-msgstr "செபியா"
-
-#: ../komikku/reader/__init__.py:561
-msgid "Give a more yellow/brown appearance to pages"
-msgstr "பக்கங்களுக்கு அதிக மஞ்சள்/பழுப்புத் தோற்றத்தைக் கொடுங்கள்"
-
-#: ../komikku/reader/__init__.py:568
-msgid "Saturation"
-msgstr "தெவிட்டல்"
-
-#: ../komikku/reader/__init__.py:569
-msgid "Super-saturate or desaturate pages"
-msgstr "சூப்பர் சாச்சுரேட் அல்லது டெசாச்சுரேட் பக்கங்கள்"
 
 #: ../komikku/reader/pager/__init__.py:179
 msgid "Failed to sync read progress with server"
 msgstr "சேவையகத்துடன் முன்னேற்றத்தைப் படிக்க ஒத்திசைக்கத் தவறிவிட்டது"
 
-#: ../komikku/reader/pager/__init__.py:486
-#: ../komikku/reader/pager/webtoon.py:94
+#: ../komikku/reader/pager/__init__.py:489
+#: ../komikku/reader/pager/webtoon.py:104
 msgid "There is no previous chapter."
 msgstr "முந்தைய அத்தியாயம் எதுவும் இல்லை."
 
-#: ../komikku/reader/pager/__init__.py:488
-#: ../komikku/reader/pager/webtoon.py:92
+#: ../komikku/reader/pager/__init__.py:491
+#: ../komikku/reader/pager/webtoon.py:102
 msgid "It was the last chapter."
 msgstr "அது கடைசி அத்தியாயம்."
 
-#: ../komikku/reader/pager/__init__.py:656
-#: ../komikku/reader/pager/webtoon.py:170
+#: ../komikku/reader/pager/__init__.py:662
+#: ../komikku/reader/pager/webtoon.py:180
 msgid "This chapter is inaccessible."
 msgstr "இந்த அத்தியாயம் அணுக முடியாதது."
 
-#: ../komikku/reader/pager/page.py:269
+#: ../komikku/reader/pager/page.py:342
 msgid "Failed to load image"
 msgstr "படத்தை ஏற்றுவதில் தோல்வி"
 
-#: ../komikku/reader/pager/page.py:271
+#: ../komikku/reader/pager/page.py:344
 #, python-brace-format
 msgid "Corrupted file or unsupported image format ({0})"
 msgstr ""
 
-#: ../komikku/reader/pager/page.py:312
+#: ../komikku/reader/pager/page.py:387
 msgid "Retry"
 msgstr "மீண்டும் முயற்சிக்கவும்"
+
+#: ../komikku/reader/settings.py:54
+msgid "Adapt to Screen"
+msgstr "திரைக்கு ஏற்றவாறு"
+
+#: ../komikku/reader/settings.py:55
+msgid "Adapt to Width"
+msgstr "அகலத்திற்கு ஏற்ப"
+
+#: ../komikku/reader/settings.py:56
+msgid "Adapt to Height"
+msgstr "உயரத்திற்கு ஏற்ப"
+
+#: ../komikku/reader/settings.py:57
+msgid "Original Size"
+msgstr "அசல் அளவு"
+
+#: ../komikku/reader/settings.py:68
+msgid "Linear"
+msgstr "நேரியல்"
+
+#: ../komikku/reader/settings.py:69
+msgid "Trilinear"
+msgstr "முக்கோடு"
+
+#: ../komikku/reader/settings.py:80
+msgid "White"
+msgstr "வெள்ளை"
+
+#: ../komikku/reader/settings.py:81
+msgid "Gray"
+msgstr "சாம்பல்"
+
+#: ../komikku/reader/settings.py:82
+msgid "Black"
+msgstr "கருப்பு"
+
+#: ../komikku/reader/settings.py:83
+msgid "System Style"
+msgstr "கணினி நடை"
+
+#: ../komikku/reader/settings.py:149
+msgid "Brightness"
+msgstr "ஒளிர்வு"
+
+#: ../komikku/reader/settings.py:150
+msgid "Make pages brighter or darker"
+msgstr "பக்கங்களை பிரகாசமாக அல்லது இருண்டதாக மாற்றவும்"
+
+#: ../komikku/reader/settings.py:157
+msgid "Contrast"
+msgstr "மாறுபாடு"
+
+#: ../komikku/reader/settings.py:158
+msgid "Increase or decrease the contrast of pages"
+msgstr "பக்கங்களின் மாறுபாட்டை அதிகரிக்கவும் அல்லது குறைக்கவும்"
+
+#: ../komikku/reader/settings.py:165
+msgid "Grayscale"
+msgstr "கிரேச்கேல்"
+
+#: ../komikku/reader/settings.py:166
+msgid "Convert pages to grayscale"
+msgstr "பக்கங்களை கிரேச்கேலுக்கு மாற்றவும்"
+
+#: ../komikku/reader/settings.py:173
+msgid "Sepia"
+msgstr "செபியா"
+
+#: ../komikku/reader/settings.py:174
+msgid "Give a more yellow/brown appearance to pages"
+msgstr "பக்கங்களுக்கு அதிக மஞ்சள்/பழுப்புத் தோற்றத்தைக் கொடுங்கள்"
+
+#: ../komikku/reader/settings.py:181
+msgid "Saturation"
+msgstr "தெவிட்டல்"
+
+#: ../komikku/reader/settings.py:182
+msgid "Super-saturate or desaturate pages"
+msgstr "சூப்பர் சாச்சுரேட் அல்லது டெசாச்சுரேட் பக்கங்கள்"
 
 #: ../komikku/servers/annyo/__init__.py:22
 #: ../komikku/servers/existentialcomics/__init__.py:23
@@ -2042,7 +2115,7 @@ msgstr "சுயமாக வெளியிடுதல்"
 #: ../komikku/servers/fosscomics/__init__.py:25
 #: ../komikku/servers/grisebouille/__init__.py:24
 #: ../komikku/servers/jensorensen/__init__.py:25
-#: ../komikku/servers/mangadex/__init__.py:114
+#: ../komikku/servers/mangadex/__init__.py:113
 #: ../komikku/servers/monkeyuser/__init__.py:23
 #: ../komikku/servers/nixofnothing/__init__.py:19
 #: ../komikku/servers/peppercarrot/__init__.py:54
@@ -2060,7 +2133,8 @@ msgstr "தன்வய வெளியீட்டு தளம்"
 #: ../komikku/servers/asurascans/__init__.py:33
 #: ../komikku/servers/comix/__init__.py:71
 #: ../komikku/servers/invinciblecomicsvf/__init__.py:37
-#: ../komikku/servers/mangafire/__init__.py:45
+#: ../komikku/servers/jmanga/__init__.py:27
+#: ../komikku/servers/mangak/__init__.py:60
 #: ../komikku/servers/mangapill/__init__.py:34
 #: ../komikku/servers/mangatown/__init__.py:79
 #: ../komikku/servers/mangatube/__init__.py:125
@@ -2068,6 +2142,8 @@ msgstr "தன்வய வெளியீட்டு தளம்"
 #: ../komikku/servers/multi/manga_stream/__init__.py:76
 #: ../komikku/servers/phenixscans/__init__.py:35
 #: ../komikku/servers/raijinscan/__init__.py:51
+#: ../komikku/servers/readcomicsonline/__init__.py:46
+#: ../komikku/servers/rncalation/__init__.py:36
 #: ../komikku/servers/webtoon/__init__.py:55
 #: ../komikku/servers/zenko/__init__.py:69
 msgid "Type"
@@ -2075,11 +2151,15 @@ msgstr "வகை"
 
 #: ../komikku/servers/asurascans/__init__.py:34
 #: ../komikku/servers/invinciblecomicsvf/__init__.py:38
+#: ../komikku/servers/jmanga/__init__.py:28
+#: ../komikku/servers/mangak/__init__.py:61
 #: ../komikku/servers/mangapill/__init__.py:35
 #: ../komikku/servers/mangatown/__init__.py:80
 #: ../komikku/servers/multi/manga_stream/__init__.py:77
 #: ../komikku/servers/phenixscans/__init__.py:36
 #: ../komikku/servers/rawkuma/__init__.py:38
+#: ../komikku/servers/readcomicsonline/__init__.py:47
+#: ../komikku/servers/rncalation/__init__.py:37
 #: ../komikku/servers/webtoon/__init__.py:56
 msgid "Filter by Type"
 msgstr "வகை மூலம் வடிகட்டவும்"
@@ -2089,7 +2169,8 @@ msgstr "வகை மூலம் வடிகட்டவும்"
 #: ../komikku/servers/comick/__init__.py:94
 #: ../komikku/servers/comix/__init__.py:75
 #: ../komikku/servers/flamescans/__init__.py:40
-#: ../komikku/servers/mangafire/__init__.py:49
+#: ../komikku/servers/mangafire/__init__.py:137
+#: ../komikku/servers/mangak/__init__.py:66
 #: ../komikku/servers/mangapill/__init__.py:40
 #: ../komikku/servers/mangatown/__init__.py:85
 #: ../komikku/servers/mangatube/__init__.py:131
@@ -2098,6 +2179,7 @@ msgstr "வகை மூலம் வடிகட்டவும்"
 #: ../komikku/servers/phenixscans/__init__.py:41
 #: ../komikku/servers/raijinscan/__init__.py:55
 #: ../komikku/servers/rawkuma/__init__.py:41
+#: ../komikku/servers/rncalation/__init__.py:42
 #: ../komikku/servers/weebcentral/__init__.py:52
 #: ../komikku/servers/zenko/__init__.py:74
 msgid "Manga"
@@ -2108,7 +2190,8 @@ msgstr "மங்கா"
 #: ../komikku/servers/comick/__init__.py:95
 #: ../komikku/servers/comix/__init__.py:76
 #: ../komikku/servers/flamescans/__init__.py:41
-#: ../komikku/servers/mangafire/__init__.py:53
+#: ../komikku/servers/mangafire/__init__.py:138
+#: ../komikku/servers/mangak/__init__.py:67
 #: ../komikku/servers/mangapill/__init__.py:44
 #: ../komikku/servers/mangatown/__init__.py:87
 #: ../komikku/servers/mangatube/__init__.py:132
@@ -2117,6 +2200,7 @@ msgstr "மங்கா"
 #: ../komikku/servers/phenixscans/__init__.py:42
 #: ../komikku/servers/raijinscan/__init__.py:56
 #: ../komikku/servers/rawkuma/__init__.py:42
+#: ../komikku/servers/rncalation/__init__.py:43
 #: ../komikku/servers/weebcentral/__init__.py:53
 #: ../komikku/servers/zenko/__init__.py:75
 msgid "Manhwa"
@@ -2126,7 +2210,8 @@ msgstr "மன்அ்வா"
 #: ../komikku/servers/comick/__init__.py:96
 #: ../komikku/servers/comix/__init__.py:77
 #: ../komikku/servers/flamescans/__init__.py:42
-#: ../komikku/servers/mangafire/__init__.py:54
+#: ../komikku/servers/mangafire/__init__.py:139
+#: ../komikku/servers/mangak/__init__.py:68
 #: ../komikku/servers/mangapill/__init__.py:45
 #: ../komikku/servers/mangatown/__init__.py:86
 #: ../komikku/servers/mangatube/__init__.py:133
@@ -2135,10 +2220,19 @@ msgstr "மன்அ்வா"
 #: ../komikku/servers/phenixscans/__init__.py:43
 #: ../komikku/servers/raijinscan/__init__.py:57
 #: ../komikku/servers/rawkuma/__init__.py:43
+#: ../komikku/servers/rncalation/__init__.py:44
 #: ../komikku/servers/weebcentral/__init__.py:54
 #: ../komikku/servers/zenko/__init__.py:76
 msgid "Manhua"
 msgstr "மன்உவா"
+
+#: ../komikku/servers/bdplus/__init__.py:58
+msgid "Genre"
+msgstr ""
+
+#: ../komikku/servers/bdplus/__init__.py:59
+msgid "Filter by Genre"
+msgstr ""
 
 #: ../komikku/servers/bilibili/__init__.py:38
 msgid "Price"
@@ -2181,34 +2275,40 @@ msgid "B/W"
 msgstr "B/w"
 
 #: ../komikku/servers/comick/__init__.py:65
-#: ../komikku/servers/mangadex/__init__.py:59
+#: ../komikku/servers/mangadex/__init__.py:58
 #: ../komikku/servers/weebdex/__init__.py:48
 msgid "Rating"
 msgstr "செயல்வரம்பு"
 
 #: ../komikku/servers/comick/__init__.py:66
-#: ../komikku/servers/mangadex/__init__.py:60
+#: ../komikku/servers/mangadex/__init__.py:59
 #: ../komikku/servers/weebdex/__init__.py:49
 msgid "Filter by Content Ratings"
 msgstr "உள்ளடக்க மதிப்பீடுகள் மூலம் வடிகட்டவும்"
 
 #: ../komikku/servers/comick/__init__.py:69
 #: ../komikku/servers/comix/__init__.py:49
-#: ../komikku/servers/mangadex/__init__.py:63
+#: ../komikku/servers/mangadex/__init__.py:62
+#: ../komikku/servers/mangafire/__init__.py:124
+#: ../komikku/servers/mangak/__init__.py:51
 #: ../komikku/servers/weebdex/__init__.py:52
 msgid "Safe"
 msgstr "பாதுகாப்பானது"
 
 #: ../komikku/servers/comick/__init__.py:70
 #: ../komikku/servers/comix/__init__.py:50
-#: ../komikku/servers/mangadex/__init__.py:64
+#: ../komikku/servers/mangadex/__init__.py:63
+#: ../komikku/servers/mangafire/__init__.py:125
+#: ../komikku/servers/mangak/__init__.py:52
 #: ../komikku/servers/weebdex/__init__.py:53
 msgid "Suggestive"
 msgstr "பரிந்துரைக்கும்"
 
 #: ../komikku/servers/comick/__init__.py:71
 #: ../komikku/servers/comix/__init__.py:51
-#: ../komikku/servers/mangadex/__init__.py:65
+#: ../komikku/servers/mangadex/__init__.py:64
+#: ../komikku/servers/mangafire/__init__.py:126
+#: ../komikku/servers/mangak/__init__.py:53
 #: ../komikku/servers/weebdex/__init__.py:54
 msgid "Erotica"
 msgstr "காமம்"
@@ -2216,8 +2316,8 @@ msgstr "காமம்"
 #: ../komikku/servers/comick/__init__.py:78
 #: ../komikku/servers/comix/__init__.py:59
 #: ../komikku/servers/flamescans/__init__.py:49
-#: ../komikku/servers/mangadex/__init__.py:74
-#: ../komikku/servers/mangafire/__init__.py:61
+#: ../komikku/servers/mangadex/__init__.py:73
+#: ../komikku/servers/mangafire/__init__.py:160
 #: ../komikku/servers/mangaworld/__init__.py:75
 #: ../komikku/servers/raijinscan/__init__.py:41
 #: ../komikku/servers/weebcentral/__init__.py:62
@@ -2230,11 +2330,13 @@ msgstr "நிலைகள் மூலம் வடிகட்டவும்"
 #: ../komikku/servers/comix/__init__.py:63
 #: ../komikku/servers/flamescans/__init__.py:53
 #: ../komikku/servers/mangaball/__init__.py:95
-#: ../komikku/servers/mangadex/__init__.py:78
-#: ../komikku/servers/mangafire/__init__.py:65
+#: ../komikku/servers/mangadex/__init__.py:77
+#: ../komikku/servers/mangafire/__init__.py:164
+#: ../komikku/servers/mangak/__init__.py:98
 #: ../komikku/servers/mangatown/__init__.py:73
 #: ../komikku/servers/multi/madtheme/__init__.py:51
 #: ../komikku/servers/raijinscan/__init__.py:45
+#: ../komikku/servers/rncalation/__init__.py:59
 #: ../komikku/servers/weebdex/__init__.py:66
 #: ../komikku/servers/zenko/__init__.py:62 ../komikku/trackers/__init__.py:68
 msgid "Completed"
@@ -2244,8 +2346,11 @@ msgstr "முடிந்தது"
 #: ../komikku/servers/comix/__init__.py:65
 #: ../komikku/servers/flamescans/__init__.py:56
 #: ../komikku/servers/mangaball/__init__.py:97
-#: ../komikku/servers/mangadex/__init__.py:80
+#: ../komikku/servers/mangadex/__init__.py:79
+#: ../komikku/servers/mangafire/__init__.py:166
+#: ../komikku/servers/mangak/__init__.py:100
 #: ../komikku/servers/mangaworld/__init__.py:82
+#: ../komikku/servers/rncalation/__init__.py:61
 #: ../komikku/servers/weebcentral/__init__.py:68
 #: ../komikku/servers/weebdex/__init__.py:68
 msgid "Canceled"
@@ -2285,13 +2390,14 @@ msgstr "சீனா (மன்உவா)"
 
 #: ../komikku/servers/comick/__init__.py:116
 #: ../komikku/servers/comix/__init__.py:84
-#: ../komikku/servers/mangadex/__init__.py:86
+#: ../komikku/servers/mangadex/__init__.py:85
 msgid "Publication Demographic"
 msgstr "வெளியீட்டு புள்ளிவிவரங்கள்"
 
 #: ../komikku/servers/comick/__init__.py:117
 #: ../komikku/servers/comix/__init__.py:85
-#: ../komikku/servers/mangadex/__init__.py:87
+#: ../komikku/servers/mangadex/__init__.py:86
+#: ../komikku/servers/mangafire/__init__.py:147
 #: ../komikku/servers/weebdex/__init__.py:75
 msgid "Filter by Publication Demographics"
 msgstr "வெளியீட்டு புள்ளிவிவரங்கள் மூலம் வடிகட்டவும்"
@@ -2299,7 +2405,9 @@ msgstr "வெளியீட்டு புள்ளிவிவரங்க�
 #: ../komikku/servers/comick/__init__.py:120
 #: ../komikku/servers/comix/__init__.py:91
 #: ../komikku/servers/mangaball/__init__.py:77
-#: ../komikku/servers/mangadex/__init__.py:90
+#: ../komikku/servers/mangadex/__init__.py:89
+#: ../komikku/servers/mangafire/__init__.py:153
+#: ../komikku/servers/mangak/__init__.py:82
 #: ../komikku/servers/mangatown/__init__.py:52
 #: ../komikku/servers/weebdex/__init__.py:78
 msgid "Shounen"
@@ -2308,7 +2416,9 @@ msgstr "சவுன்"
 #: ../komikku/servers/comick/__init__.py:121
 #: ../komikku/servers/comix/__init__.py:90
 #: ../komikku/servers/mangaball/__init__.py:78
-#: ../komikku/servers/mangadex/__init__.py:91
+#: ../komikku/servers/mangadex/__init__.py:90
+#: ../komikku/servers/mangafire/__init__.py:152
+#: ../komikku/servers/mangak/__init__.py:83
 #: ../komikku/servers/mangatown/__init__.py:54
 #: ../komikku/servers/weebdex/__init__.py:79
 msgid "Shoujo"
@@ -2317,7 +2427,9 @@ msgstr "சோசோ"
 #: ../komikku/servers/comick/__init__.py:122
 #: ../komikku/servers/comix/__init__.py:89
 #: ../komikku/servers/mangaball/__init__.py:79
-#: ../komikku/servers/mangadex/__init__.py:93
+#: ../komikku/servers/mangadex/__init__.py:92
+#: ../komikku/servers/mangafire/__init__.py:151
+#: ../komikku/servers/mangak/__init__.py:84
 #: ../komikku/servers/mangatown/__init__.py:53
 #: ../komikku/servers/weebdex/__init__.py:81
 msgid "Seinen"
@@ -2326,7 +2438,9 @@ msgstr "அவரது"
 #: ../komikku/servers/comick/__init__.py:123
 #: ../komikku/servers/comix/__init__.py:88
 #: ../komikku/servers/mangaball/__init__.py:80
-#: ../komikku/servers/mangadex/__init__.py:92
+#: ../komikku/servers/mangadex/__init__.py:91
+#: ../komikku/servers/mangafire/__init__.py:150
+#: ../komikku/servers/mangak/__init__.py:85
 #: ../komikku/servers/mangatown/__init__.py:57
 #: ../komikku/servers/weebdex/__init__.py:80
 msgid "Josei"
@@ -2337,67 +2451,66 @@ msgid "None"
 msgstr "எதுவுமில்லை"
 
 #: ../komikku/servers/comick/__init__.py:130
-#: ../komikku/servers/mangadex/__init__.py:99
+#: ../komikku/servers/mangadex/__init__.py:98
 msgid "Tags"
 msgstr "குறிச்சொற்கள்"
 
 #: ../komikku/servers/comick/__init__.py:131
-#: ../komikku/servers/mangadex/__init__.py:100
+#: ../komikku/servers/mangadex/__init__.py:99
 msgid "Filter by Formats"
 msgstr "வடிவங்களால் வடிகட்டவும்"
 
 #: ../komikku/servers/comick/__init__.py:134
-#: ../komikku/servers/mangadex/__init__.py:103
+#: ../komikku/servers/mangadex/__init__.py:102
 msgid "4-Koma"
 msgstr "4-வருகை"
 
 #: ../komikku/servers/comick/__init__.py:135
-#: ../komikku/servers/mangadex/__init__.py:104
+#: ../komikku/servers/mangadex/__init__.py:103
 msgid "Adaptation"
 msgstr "தழுவல்"
 
 #: ../komikku/servers/comick/__init__.py:136
-#: ../komikku/servers/mangadex/__init__.py:105
+#: ../komikku/servers/mangadex/__init__.py:104
 msgid "Anthology"
 msgstr "பேந்தாலசி"
 
 #: ../komikku/servers/comick/__init__.py:137
-#: ../komikku/servers/mangadex/__init__.py:106
+#: ../komikku/servers/mangadex/__init__.py:105
 msgid "Award Winning"
 msgstr "பட்டம் வென்றது"
 
 #: ../komikku/servers/comick/__init__.py:138
 #: ../komikku/servers/dbmultiverse/__init__.py:58
 #: ../komikku/servers/dbnewhope/__init__.py:30
-#: ../komikku/servers/mangadex/__init__.py:107
-#: ../komikku/servers/mangafire/__init__.py:51
+#: ../komikku/servers/mangadex/__init__.py:106
 #: ../komikku/servers/mangapill/__init__.py:43
+#: ../komikku/servers/rncalation/__init__.py:45
 msgid "Doujinshi"
 msgstr "டூசின்சி"
 
 #: ../komikku/servers/comick/__init__.py:139
-#: ../komikku/servers/mangadex/__init__.py:108
+#: ../komikku/servers/mangadex/__init__.py:107
 msgid "Fan Colored"
 msgstr "விசிறி நிறம்"
 
 #: ../komikku/servers/comick/__init__.py:140
-#: ../komikku/servers/mangadex/__init__.py:109
+#: ../komikku/servers/mangadex/__init__.py:108
 msgid "Full Color"
 msgstr "முழு நிறம்"
 
 #: ../komikku/servers/comick/__init__.py:141
-#: ../komikku/servers/mangadex/__init__.py:110
+#: ../komikku/servers/mangadex/__init__.py:109
 msgid "Long Strip"
 msgstr "நீண்ட துண்டு"
 
 #: ../komikku/servers/comick/__init__.py:144
-#: ../komikku/servers/mangadex/__init__.py:111
+#: ../komikku/servers/mangadex/__init__.py:110
 msgid "Official Colored"
 msgstr "அதிகாரப்பூர்வ வண்ணம்"
 
 #: ../komikku/servers/comick/__init__.py:147
-#: ../komikku/servers/mangadex/__init__.py:112
-#: ../komikku/servers/mangafire/__init__.py:50
+#: ../komikku/servers/mangadex/__init__.py:111
 #: ../komikku/servers/mangapill/__init__.py:42
 #: ../komikku/servers/mangatube/__init__.py:136
 #: ../komikku/servers/mangaworld/__init__.py:66
@@ -2410,17 +2523,17 @@ msgid "User Created"
 msgstr "பயனர் உருவாக்கப்பட்டது"
 
 #: ../komikku/servers/comick/__init__.py:155
-#: ../komikku/servers/mangadex/__init__.py:120
+#: ../komikku/servers/mangadex/__init__.py:119
 msgid "Genres"
 msgstr "வகைகள்"
 
 #: ../komikku/servers/comick/__init__.py:156
-#: ../komikku/servers/mangadex/__init__.py:121
+#: ../komikku/servers/mangadex/__init__.py:120
 msgid "Filter by Genres"
 msgstr "வகைகளால் வடிகட்டவும்"
 
 #: ../komikku/servers/comick/__init__.py:159
-#: ../komikku/servers/mangadex/__init__.py:124
+#: ../komikku/servers/mangadex/__init__.py:123
 msgid "Action"
 msgstr "செயல்"
 
@@ -2429,22 +2542,22 @@ msgid "Adult"
 msgstr "அகவை வந்தோர்"
 
 #: ../komikku/servers/comick/__init__.py:161
-#: ../komikku/servers/mangadex/__init__.py:125
+#: ../komikku/servers/mangadex/__init__.py:124
 msgid "Adventure"
 msgstr "துணிவு"
 
 #: ../komikku/servers/comick/__init__.py:162
-#: ../komikku/servers/mangadex/__init__.py:127
+#: ../komikku/servers/mangadex/__init__.py:126
 msgid "Comedy"
 msgstr "நகைச்சுவை"
 
 #: ../komikku/servers/comick/__init__.py:163
-#: ../komikku/servers/mangadex/__init__.py:128
+#: ../komikku/servers/mangadex/__init__.py:127
 msgid "Crime"
 msgstr "குற்றம்"
 
 #: ../komikku/servers/comick/__init__.py:164
-#: ../komikku/servers/mangadex/__init__.py:129
+#: ../komikku/servers/mangadex/__init__.py:128
 msgid "Drama"
 msgstr "நாடகம்"
 
@@ -2453,7 +2566,7 @@ msgid "Ecchi"
 msgstr "Cchi"
 
 #: ../komikku/servers/comick/__init__.py:166
-#: ../komikku/servers/mangadex/__init__.py:130
+#: ../komikku/servers/mangadex/__init__.py:129
 msgid "Fantasy"
 msgstr "கற்பனை"
 
@@ -2462,22 +2575,22 @@ msgid "Gender Bender"
 msgstr "பாலின பெண்டர்"
 
 #: ../komikku/servers/comick/__init__.py:168
-#: ../komikku/servers/mangadex/__init__.py:132
+#: ../komikku/servers/mangadex/__init__.py:131
 msgid "Historical"
 msgstr "வரலாற்று"
 
 #: ../komikku/servers/comick/__init__.py:169
-#: ../komikku/servers/mangadex/__init__.py:133
+#: ../komikku/servers/mangadex/__init__.py:132
 msgid "Horror"
 msgstr "அதிர்ச்சி"
 
 #: ../komikku/servers/comick/__init__.py:170
-#: ../komikku/servers/mangadex/__init__.py:134
+#: ../komikku/servers/mangadex/__init__.py:133
 msgid "Isekai"
 msgstr "மற்றொரு உலகம்"
 
 #: ../komikku/servers/comick/__init__.py:171
-#: ../komikku/servers/mangadex/__init__.py:135
+#: ../komikku/servers/mangadex/__init__.py:134
 msgid "Magical Girls"
 msgstr "மந்திர பெண்கள்"
 
@@ -2486,22 +2599,22 @@ msgid "Mature"
 msgstr "முதிர்ந்த"
 
 #: ../komikku/servers/comick/__init__.py:173
-#: ../komikku/servers/mangadex/__init__.py:136
+#: ../komikku/servers/mangadex/__init__.py:135
 msgid "Mecha"
 msgstr "மெச்சா"
 
 #: ../komikku/servers/comick/__init__.py:174
-#: ../komikku/servers/mangadex/__init__.py:137
+#: ../komikku/servers/mangadex/__init__.py:136
 msgid "Medical"
 msgstr "மருத்துவ"
 
 #: ../komikku/servers/comick/__init__.py:175
-#: ../komikku/servers/mangadex/__init__.py:138
+#: ../komikku/servers/mangadex/__init__.py:137
 msgid "Mystery"
 msgstr "மர்மம்"
 
 #: ../komikku/servers/comick/__init__.py:176
-#: ../komikku/servers/mangadex/__init__.py:139
+#: ../komikku/servers/mangadex/__init__.py:138
 msgid "Philosophical"
 msgstr "தத்துவ"
 
@@ -2510,12 +2623,12 @@ msgid "Psychological"
 msgstr "உளவியல்"
 
 #: ../komikku/servers/comick/__init__.py:178
-#: ../komikku/servers/mangadex/__init__.py:140
+#: ../komikku/servers/mangadex/__init__.py:139
 msgid "Romance"
 msgstr "காதல்"
 
 #: ../komikku/servers/comick/__init__.py:179
-#: ../komikku/servers/mangadex/__init__.py:141
+#: ../komikku/servers/mangadex/__init__.py:140
 msgid "Sci-Fi"
 msgstr "அறிவியல் புனைகதை"
 
@@ -2525,32 +2638,32 @@ msgid "Shoujo Ai"
 msgstr "பெண் காதல்"
 
 #: ../komikku/servers/comick/__init__.py:181
-#: ../komikku/servers/mangadex/__init__.py:142
+#: ../komikku/servers/mangadex/__init__.py:141
 msgid "Slice of Life"
 msgstr "வாழ்க்கையின் துண்டு"
 
 #: ../komikku/servers/comick/__init__.py:182
-#: ../komikku/servers/mangadex/__init__.py:143
+#: ../komikku/servers/mangadex/__init__.py:142
 msgid "Sports"
 msgstr "விளையாட்டு"
 
 #: ../komikku/servers/comick/__init__.py:183
-#: ../komikku/servers/mangadex/__init__.py:144
+#: ../komikku/servers/mangadex/__init__.py:143
 msgid "Superhero"
 msgstr "சூப்பர் ஈரோ"
 
 #: ../komikku/servers/comick/__init__.py:184
-#: ../komikku/servers/mangadex/__init__.py:145
+#: ../komikku/servers/mangadex/__init__.py:144
 msgid "Thriller"
 msgstr "த்ரில்லர்"
 
 #: ../komikku/servers/comick/__init__.py:185
-#: ../komikku/servers/mangadex/__init__.py:146
+#: ../komikku/servers/mangadex/__init__.py:145
 msgid "Tragedy"
 msgstr "சோகம்"
 
 #: ../komikku/servers/comick/__init__.py:186
-#: ../komikku/servers/mangadex/__init__.py:147
+#: ../komikku/servers/mangadex/__init__.py:146
 msgid "Wuxia"
 msgstr "w U- ஏவன்"
 
@@ -2567,15 +2680,21 @@ msgid "Yuri"
 msgstr "யூரி"
 
 #: ../komikku/servers/comix/__init__.py:44
+#: ../komikku/servers/mangafire/__init__.py:120
+#: ../komikku/servers/mangak/__init__.py:45
 msgid "Content Rating"
 msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:45
+#: ../komikku/servers/mangafire/__init__.py:121
+#: ../komikku/servers/mangak/__init__.py:46
 msgid "Filter by Content Rating"
 msgstr ""
 
 #: ../komikku/servers/comix/__init__.py:52
-#: ../komikku/servers/mangadex/__init__.py:66
+#: ../komikku/servers/mangadex/__init__.py:65
+#: ../komikku/servers/mangafire/__init__.py:127
+#: ../komikku/servers/mangak/__init__.py:54
 #: ../komikku/servers/weebdex/__init__.py:55
 msgid "Pornographic"
 msgstr "ஆபாச"
@@ -2583,7 +2702,7 @@ msgstr "ஆபாச"
 #: ../komikku/servers/comix/__init__.py:72
 #: ../komikku/servers/dynasty/__init__.py:41
 #: ../komikku/servers/flamescans/__init__.py:37
-#: ../komikku/servers/mangafire/__init__.py:46
+#: ../komikku/servers/mangafire/__init__.py:134
 #: ../komikku/servers/mangaworld/__init__.py:60
 #: ../komikku/servers/raijinscan/__init__.py:52
 #: ../komikku/servers/weebcentral/__init__.py:49
@@ -2658,12 +2777,14 @@ msgid "No longer exists."
 msgstr "இனி இல்லை."
 
 #: ../komikku/servers/flamescans/__init__.py:36
+#: ../komikku/servers/mangafire/__init__.py:133
 #: ../komikku/servers/rawkuma/__init__.py:37
 #: ../komikku/servers/weebcentral/__init__.py:48
 msgid "Types"
 msgstr "வகைகள்"
 
 #: ../komikku/servers/flamescans/__init__.py:48
+#: ../komikku/servers/mangafire/__init__.py:159
 #: ../komikku/servers/weebcentral/__init__.py:61
 msgid "Statuses"
 msgstr "நிலைகள்"
@@ -2673,92 +2794,109 @@ msgstr "நிலைகள்"
 msgid "Dropped"
 msgstr "கைவிடப்பட்டது"
 
+#: ../komikku/servers/jmanga/__init__.py:47
+#: ../komikku/servers/mangaball/__init__.py:89
+#: ../komikku/servers/mangak/__init__.py:92
+#: ../komikku/servers/mangalivreblog/__init__.py:38
+#: ../komikku/servers/mangatown/__init__.py:66
+#: ../komikku/servers/multi/madtheme/__init__.py:45
+#: ../komikku/servers/readcomicsonline/__init__.py:34
+#: ../komikku/servers/rncalation/__init__.py:53
+msgid "Filter by Status"
+msgstr "நிலையின்படி வடிகட்டவும்"
+
 #: ../komikku/servers/kavita/__init__.py:32
 #: ../komikku/servers/komga/__init__.py:26
 msgid "Self-hosted digital library"
 msgstr "சுயமாக புரவலன் செய்யப்பட்ட டிசிட்டல் லைப்ரரி"
 
-#: ../komikku/servers/local/__init__.py:349
+#: ../komikku/servers/local/__init__.py:351
 msgid "Comics stored locally as archives in CBZ/CBR/CBT or PDF formats"
 msgstr ""
 "காமிக்ச் உள்நாட்டில் CBZ/CBR/CBT அல்லது PDF வடிவங்களில் காப்பகங்களாக சேமிக்கப்படுகிறது"
 
 #: ../komikku/servers/mangaball/__init__.py:71
+#: ../komikku/servers/mangak/__init__.py:74
 #: ../komikku/servers/mangatown/__init__.py:46
 #: ../komikku/servers/weebdex/__init__.py:74
 msgid "Demographic"
 msgstr "மக்கள்தொகை"
 
 #: ../komikku/servers/mangaball/__init__.py:72
+#: ../komikku/servers/mangak/__init__.py:75
 #: ../komikku/servers/mangatown/__init__.py:47
 msgid "Filter by Publication Demographic"
 msgstr "வெளியீடு மக்கள்தொகை அடிப்படையில் வடிகட்டவும்"
 
 #: ../komikku/servers/mangaball/__init__.py:76
 #: ../komikku/servers/mangaball/__init__.py:93
+#: ../komikku/servers/mangak/__init__.py:50
+#: ../komikku/servers/mangak/__init__.py:65
+#: ../komikku/servers/mangak/__init__.py:79
+#: ../komikku/servers/mangak/__init__.py:96
+#: ../komikku/servers/mangalivreblog/__init__.py:42
+#: ../komikku/servers/rncalation/__init__.py:41
+#: ../komikku/servers/rncalation/__init__.py:57
 #: ../komikku/servers/weebcentral/__init__.py:40
 msgid "Any"
 msgstr "ஏதேனும்"
 
-#: ../komikku/servers/mangaball/__init__.py:89
-#: ../komikku/servers/mangatown/__init__.py:66
-#: ../komikku/servers/multi/madtheme/__init__.py:45
-msgid "Filter by Status"
-msgstr "நிலையின்படி வடிகட்டவும்"
-
-#: ../komikku/servers/mangadex/__init__.py:113
+#: ../komikku/servers/mangadex/__init__.py:112
 msgid "Self-Published"
 msgstr "தன்வய வெளியீடு"
 
-#: ../komikku/servers/mangadex/__init__.py:126
+#: ../komikku/servers/mangadex/__init__.py:125
 msgid "Boys Love"
 msgstr "சிறுவர்கள் நேசிக்கிறார்கள்"
 
-#: ../komikku/servers/mangadex/__init__.py:131
+#: ../komikku/servers/mangadex/__init__.py:130
 msgid "Girls Love"
 msgstr "பெண்கள் நேசிக்கிறார்கள்"
 
-#: ../komikku/servers/mangadex/__init__.py:153
+#: ../komikku/servers/mangadex/__init__.py:152
 msgid "Tags Inclusion Mode"
 msgstr "குறிச்சொற்கள் சேர்க்கும் முறை"
 
-#: ../komikku/servers/mangadex/__init__.py:154
+#: ../komikku/servers/mangadex/__init__.py:153
 msgid "Include manga that match <b>all</b> tags (AND) or <b>any</b> tag (OR)"
 msgstr ""
 "<b>அனைத்து</b> குறிச்சொற்கள் (மற்றும்) அல்லது <b>ஏதேனும்</b> குறிச்சொல் (அல்லது) "
 "பொருந்தக்கூடிய மங்காவைச் சேர்"
 
-#: ../komikku/servers/mangadex/__init__.py:158
+#: ../komikku/servers/mangadex/__init__.py:157
 msgid "AND"
 msgstr "மற்றும்"
 
-#: ../komikku/servers/mangadex/__init__.py:159
+#: ../komikku/servers/mangadex/__init__.py:158
 msgid "OR"
 msgstr "அல்லது"
 
-#: ../komikku/servers/mangadex/__init__.py:168
+#: ../komikku/servers/mangadex/__init__.py:167
 #: ../komikku/servers/weebdex/__init__.py:98
 msgid "Data Saver Mode"
 msgstr "டேட்டா சேவர் பயன்முறை"
 
-#: ../komikku/servers/mangadex/__init__.py:169
+#: ../komikku/servers/mangadex/__init__.py:168
 #: ../komikku/servers/weebdex/__init__.py:99
 msgid "Fetch lower quality images to save bandwidth"
 msgstr "அலைவரிசையைச் சேமிக்க குறைந்த தரமான படங்களைப் பெறவும்"
 
-#: ../komikku/servers/mangafire/__init__.py:52
+#: ../komikku/servers/mangafire/__init__.py:146
+msgid "Demographics"
+msgstr ""
+
+#: ../komikku/servers/mangak/__init__.py:80
+msgid "Boy (Shounen + Seinen)"
+msgstr ""
+
+#: ../komikku/servers/mangak/__init__.py:81
+msgid "Girl (Shoujo + Josei)"
+msgstr ""
+
 #: ../komikku/servers/mangapill/__init__.py:41
 #: ../komikku/servers/rawkuma/__init__.py:44
 msgid "Novel"
 msgstr "நாவல்"
-
-#: ../komikku/servers/mangafire/__init__.py:64
-msgid "Releasing"
-msgstr "வெளியீடு"
-
-#: ../komikku/servers/mangafire/__init__.py:66
-msgid "Discontinued"
-msgstr "நிறுத்தப்பட்டது"
 
 #: ../komikku/servers/mangapill/__init__.py:46
 #: ../komikku/servers/weebcentral/__init__.py:55
@@ -2808,17 +2946,17 @@ msgstr "இல்லாமல்"
 msgid "16+"
 msgstr "16+"
 
-#: ../komikku/servers/multi/madara/__init__.py:433
+#: ../komikku/servers/multi/madara/__init__.py:434
 #: ../komikku/servers/readmanhwa/__init__.py:45
 msgid "NSFW Content"
 msgstr "NSFW உள்ளடக்கம்"
 
-#: ../komikku/servers/multi/madara/__init__.py:434
+#: ../komikku/servers/multi/madara/__init__.py:435
 #: ../komikku/servers/readmanhwa/__init__.py:46
 msgid "Whether to show manga containing NSFW content"
 msgstr "NSFW உள்ளடக்கத்தைக் கொண்ட மங்காவைக் காட்ட வேண்டுமா"
 
-#: ../komikku/servers/multi/mangareader/__init__.py:108
+#: ../komikku/servers/multi/mangareader/__init__.py:119
 #, python-brace-format
 msgid "Not available in {0} language"
 msgstr "{0} மொழியில் கிடைக்கவில்லை"
@@ -2937,11 +3075,11 @@ msgstr "அச்சச்சோ, புதுப்பிப்பு தோல
 msgid "Library update started"
 msgstr "நூலக புதுப்பிப்பு தொடங்கியது"
 
-#: ../komikku/utils.py:358
+#: ../komikku/utils.py:365
 msgid "You are currently offline"
 msgstr "நீங்கள் தற்போது ஆஃப்லைனில் இருக்கிறீர்கள்"
 
-#: ../komikku/utils.py:385
+#: ../komikku/utils.py:392
 msgid "No Internet connection, timeout or server down"
 msgstr "இணைய இணைப்பு, நேரம் முடிந்தது அல்லது சேவையகம் கீழே இல்லை"
 
@@ -2952,6 +3090,12 @@ msgstr "தயவுசெய்து காத்திருங்கள்�
 #: ../komikku/webview.py:495
 msgid "Please complete CAPTCHA"
 msgstr "தயவுசெய்து கேப்ட்சாவை முடிக்கவும்"
+
+#~ msgid "Releasing"
+#~ msgstr "வெளியீடு"
+
+#~ msgid "Discontinued"
+#~ msgstr "நிறுத்தப்பட்டது"
 
 #~ msgid "Servers Modules"
 #~ msgstr "சேவையக தொகுதிகள்"

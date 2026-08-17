@@ -231,7 +231,7 @@
         </key>
         <key type="i" name="borders-crop-threshold">
             <default>220</default>
-            <summary>Borders Crop Threshold</summary>
+            <summary>Borders Cropping Threshold</summary>
             <description>Controls which pixels are classified as "white" during borders detection</description>
         </key>
 

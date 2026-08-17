@@ -33,7 +33,7 @@ class Jmanga(Mangareader):
                 {'key': 'Raw Manga', 'name': 'Raw Manga'},
                 {'key': 'BLコミック', 'name': 'BLコミック'},
                 {'key': 'TLコミック', 'name': 'TLコミック'},
-                {'key': 'オトナコミック', 'name': _('オトナコミック')},
+                {'key': 'オトナコミック', 'name': 'オトナコミック'},
                 {'key': '女性マンガ', 'name': '女性マンガ'},
                 {'key': '少女マンガ', 'name': '少女マンガ'},
                 {'key': '少年マンガ', 'name': '少年マンガ'},
@@ -48,7 +48,7 @@ class Jmanga(Mangareader):
             'value_type': 'single',
             'default': 'all',
             'options': [
-                {'key': 'all', 'name': '全て'},
+                {'key': 'all', 'name': _('All')},
                 {'key': 'Publishing', 'name': _('Ongoing')},
                 {'key': 'Completed', 'name': _('Complete')},
             ],

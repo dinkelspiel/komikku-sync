@@ -13,11 +13,10 @@ lxml >= 5.2.1
 natsort
 piexif
 pillow >= 11.3.0
-jxlpy
 PyGObject
 PyJWT >= 2.10.1
 pypdf >= 6.7.3
-python-magic
+python-magic  # or file-magic
 rarfile
 requests >= 2.32.4
 Unidecode

@@ -3,3 +3,4 @@
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 curl_cffi >= 0.6.3
+jxlpy  # or pillow-jxl-plugin

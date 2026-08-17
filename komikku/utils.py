@@ -20,7 +20,13 @@ import traceback
 
 from colorthief import ColorThief
 import gi
-from jxlpy import JXLImagePlugin  # noqa: F401
+try:
+    from jxlpy import JXLImagePlugin  # noqa: F401
+except ModuleNotFoundError:
+    try:
+        import pillow_jxl  # noqa: F401
+    except ModuleNotFoundError:
+        pass
 import magic
 from PIL import Image
 from PIL.ImageColor import colormap

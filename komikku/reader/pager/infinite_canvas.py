@@ -43,6 +43,7 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
         self.__vadj = None
         self.zoom = 1
 
+        self.vadjustment_value = None
         self.vadjustment_value_changed_handler_id = None
 
         self.scroll_adjusting_delta = 0
@@ -89,7 +90,8 @@ class KInfiniteCanvas(Gtk.Widget, Gtk.Scrollable):
 
         if value:
             # Restore value
-            self.vadjustment.props.value = self.vadjustment_value
+            if self.vadjustment_value is not None:
+                self.vadjustment.props.value = self.vadjustment_value
             self.connect_signals()
 
             self.gesture_drag.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)

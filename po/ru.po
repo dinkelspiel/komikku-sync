@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-17 22:53+0000\n"
+"PO-Revision-Date: 2026-08-18 02:16+0000\n"
 "Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -425,8 +425,8 @@ msgid ""
 "general."
 msgstr ""
 "Komikku — это бесплатный проект с открытым исходным кодом и всегда будет "
-"таким. Если он вам нравится, было бы здорово поддержать меня "
-"пожертвованиями. Это поможет мне не только поддерживать проект, но и "
+"таким. Если он пришёлся вам по душе, буду благодарен за любую поддержку в "
+"виде пожертвований. Это поможет мне не только сопровождать проект, но и "
 "продолжить работу как разработчика свободного ПО в целом."
 
 #: ../data/ui/preferences.blp:58
@@ -492,7 +492,7 @@ msgstr "Уведомления рабочего стола"
 #: ../data/ui/preferences.blp:104
 msgid "Use desktop notifications for downloads and library updates"
 msgstr ""
-"Использовать уведомления рабочего стола для загрузок и обновления библиотеки"
+"Использовать уведомления рабочего стола для загрузок и обновлений библиотеки"
 
 #: ../data/ui/preferences.blp:112
 msgid "Synchronize reading progress"
@@ -553,7 +553,7 @@ msgstr "Автоматически обновлять библиотеку пр�
 
 #: ../data/ui/preferences.blp:214
 msgid "Auto Download of New Chapters"
-msgstr "Авто-загрузка новых глав"
+msgstr "Автозагрузка новых глав"
 
 #: ../data/ui/preferences.blp:215
 msgid "Automatically download new chapters"
@@ -581,23 +581,23 @@ msgstr "Обнаружение длинных лент"
 
 #: ../data/ui/preferences.blp:242
 msgid "Automatically detect long vertical strip when possible"
-msgstr "По возможности, автоматически обнаруживать длинные вертикальные ленты"
+msgstr "Автоматически определять длинные вертикальные ленты по возможности"
 
 #: ../data/ui/preferences.blp:248
 msgid "NSFW Content (18+)"
-msgstr "NSFW-контент (18+)"
+msgstr "Контент для взрослых (18+)"
 
 #: ../data/ui/preferences.blp:249
 msgid "Whether to enable servers with NSFW content"
-msgstr "Следует ли использовать серверы имеющие NSFW-контент"
+msgstr "Использовать ли серверы с NSFW-контентом"
 
 #: ../data/ui/preferences.blp:253
 msgid "NSFW Only Content (18+)"
-msgstr "Только NSFW-контент (18+)"
+msgstr "Только контент для взрослых (18+)"
 
 #: ../data/ui/preferences.blp:254
 msgid "Whether to enable servers with NSFW only content"
-msgstr "Следует ли использовать серверы имеющие только NSFW-контент"
+msgstr "Использовать ли серверы только с NSFW-контентом"
 
 #: ../data/ui/preferences.blp:258
 msgid ""
@@ -705,7 +705,7 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
 msgid "Borders Cropping Threshold"
-msgstr ""
+msgstr "Порог обрезки границ"
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
 msgid "Control which pixels are classified as 'white' during borders detection"
@@ -764,7 +764,7 @@ msgstr "Язык по умолчанию для распознавания те�
 
 #: ../data/ui/preferences.blp:418
 msgid "Advanced"
-msgstr "Продвинутые"
+msgstr "Прочие"
 
 #: ../data/ui/preferences.blp:422
 msgid "A setting has changed that requires a restart to take effect"
@@ -859,10 +859,9 @@ msgid ""
 "environment and therefore cannot toggle reduced motion animations globally "
 "via GNOME Settings (Accessibility ⇨ Seeing ⇨ Reduced Motion)."
 msgstr ""
-"Этот твик предназначен только для пользователей, которые не используют среду "
-"рабочего стола GNOME и поэтому не могут глобально отключить анимацию с "
-"пониженным движением через настройки GNOME (Специальные возможности ⇨ Зрение "
-"⇨ Пониженное движение)."
+"Эта настройка предназначена только для пользователей, которые не используют "
+"GNOME и поэтому не могут отключить анимацию с пониженным движением глобально "
+"через настройки GNOME (Спец. возможности ⇨ Зрение ⇨ Пониженное движение)."
 
 #: ../data/ui/preferences_server_params.blp:10
 #: ../data/ui/preferences_server_params.blp:16
@@ -1778,7 +1777,7 @@ msgstr "Загрузить?"
 
 #: ../komikku/library/__init__.py:456
 msgid "Unread"
-msgstr "Не прочитано"
+msgstr "Непрочитано"
 
 #: ../komikku/library/__init__.py:457
 msgid "Series with unread chapters"
@@ -1795,7 +1794,7 @@ msgstr "Циклы с загруженными главами"
 
 #: ../komikku/library/__init__.py:464
 msgid "Recents"
-msgstr "Недавние"
+msgstr "Недавнее"
 
 #: ../komikku/library/__init__.py:465
 msgid "Series with new chapters"

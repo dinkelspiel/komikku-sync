@@ -228,6 +228,8 @@ class Pager(Adw.Bin, BasePager):
         Adw.Bin.__init__(self)
         BasePager.__init__(self, reader)
 
+        self.current_page = None
+
         self.carousel = Adw.Carousel()
         self.carousel.set_scroll_params(Adw.SpringParams.new(1, 0.025, 10))  # guesstimate
         self.carousel.set_allow_long_swipes(False)
@@ -251,7 +253,15 @@ class Pager(Adw.Bin, BasePager):
 
     @interactive.setter
     def interactive(self, value):
-        self.carousel.set_interactive(value)
+        # Prop must not be set to True while OCR translator is active
+        value = value and not self.reader.ocr_translator.active
+
+        # Prop must not be set to True if current page is scrollable
+        if self.current_page:
+            value = value and not self.current_page.scrollable
+
+        if value != self.interactive:
+            self.carousel.set_interactive(value)
 
     @property
     def page_change_in_progress(self):
@@ -398,7 +408,7 @@ class Pager(Adw.Bin, BasePager):
         if self.page_change_in_progress:
             return Gdk.EVENT_PROPAGATE
 
-        if not self.interactive:
+        if self.reader.ocr_translator.active:
             return Gdk.EVENT_PROPAGATE
 
         modifiers = Gtk.accelerator_get_default_mod_mask()
@@ -535,7 +545,7 @@ class Pager(Adw.Bin, BasePager):
             self.interactive = not page.scrollable
 
     def on_scroll(self, _controller, dx, dy):
-        if not self.interactive:
+        if self.reader.ocr_translator.active:
             return Gdk.EVENT_PROPAGATE
 
         page = self.current_page

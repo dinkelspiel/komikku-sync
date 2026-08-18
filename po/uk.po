@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-18 09:51+0000\n"
+"PO-Revision-Date: 2026-08-19 10:51+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -712,11 +712,11 @@ msgstr ""
 
 #: ../data/ui/preferences.blp:351 ../data/ui/reader_settings.blp:43
 msgid "Borders Cropping Threshold"
-msgstr ""
+msgstr "Поріг обрізання полів"
 
 #: ../data/ui/preferences.blp:352 ../data/ui/reader_settings.blp:44
 msgid "Control which pixels are classified as 'white' during borders detection"
-msgstr ""
+msgstr "Визначає, які пікселі вважатимуться «білими» під час виявлення полів"
 
 #: ../data/ui/preferences.blp:357 ../data/ui/shortcuts.blp:94
 #: ../data/ui/shortcuts.blp:100
@@ -756,16 +756,17 @@ msgid "Multiplier for drag scrolling sensitivity"
 msgstr "Множник чутливості прокручування перетягуванням"
 
 #: ../data/ui/preferences.blp:407 ../data/ui/reader_settings.blp:54
+#, fuzzy
 msgid "OCR Translator"
-msgstr ""
+msgstr "OCR-перекладач"
 
 #: ../data/ui/preferences.blp:410 ../data/ui/reader_settings.blp:57
 msgid "OCR Language"
-msgstr ""
+msgstr "Мова розпізнавання"
 
 #: ../data/ui/preferences.blp:411
 msgid "Default language used for OCR text recognitions"
-msgstr ""
+msgstr "Типова мова для оптичного розпізнавання тексту"
 
 #: ../data/ui/preferences.blp:418
 msgid "Advanced"
@@ -890,15 +891,15 @@ msgstr "Перекладач"
 
 #: ../data/ui/reader_settings.blp:9
 msgid "Reader Settings"
-msgstr "Параметри"
+msgstr "Параметри перегляду"
 
 #: ../data/ui/reader_settings.blp:14
 msgid "Custom"
-msgstr ""
+msgstr "Поточне"
 
 #: ../data/ui/reader_settings.blp:18
 msgid "Pages"
-msgstr ""
+msgstr "Перегляд"
 
 #: ../data/ui/reader_settings.blp:33
 msgid "Zoom Landscape Pages"
@@ -910,7 +911,7 @@ msgstr "Обрізати рамку"
 
 #: ../data/ui/reader_settings.blp:39
 msgid "Crop white borders of pages"
-msgstr ""
+msgstr "Обрізати білі поля сторінок"
 
 #: ../data/ui/reader_settings.blp:48
 msgid "Hide Page Numbering"
@@ -1029,7 +1030,7 @@ msgstr "Скинути масштаб"
 #: ../data/ui/shortcuts.blp:124
 msgctxt "Shortcut window description"
 msgid "Toggle OCR Translator"
-msgstr ""
+msgstr "Перекладач"
 
 #: ../data/ui/shortcuts.blp:131
 msgctxt "Shortcut window description"
@@ -2255,7 +2256,7 @@ msgstr "Жанр"
 
 #: ../komikku/servers/bdplus/__init__.py:59
 msgid "Filter by Genre"
-msgstr ""
+msgstr "Фільтрувати за жанром"
 
 #: ../komikku/servers/bilibili/__init__.py:38
 msgid "Price"
@@ -2910,11 +2911,11 @@ msgstr "Читацька авдиторія"
 
 #: ../komikku/servers/mangak/__init__.py:80
 msgid "Boy (Shounen + Seinen)"
-msgstr ""
+msgstr "Для хлопців (Шьонен + Сейнен)"
 
 #: ../komikku/servers/mangak/__init__.py:81
 msgid "Girl (Shoujo + Josei)"
-msgstr ""
+msgstr "Для дівчат (Шьойджо + Джосей)"
 
 #: ../komikku/servers/mangapill/__init__.py:41
 #: ../komikku/servers/rawkuma/__init__.py:44

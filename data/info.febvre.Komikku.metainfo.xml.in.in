@@ -19,6 +19,7 @@
             <li>RTL, LTR, Vertical and Webtoon reading modes</li>
             <li>Support several types of navigation: keyboard arrow keys, right and left navigation layout via mouse click or tapping (touchpad/touch screen), mouse wheel, 2-fingers swipe gesture (touchpad), swipe gesture (touch screen)</li>
             <li>Categories to organize your library</li>
+            <li>OCR Translator</li>
             <li>Automatic tracking of series with AniList, MangaUpdates and MyAnimeList</li>
             <li>Automatic update of series</li>
             <li>Automatic download of new chapters</li>

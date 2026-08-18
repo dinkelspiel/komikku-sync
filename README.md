@@ -28,6 +28,7 @@
   * 2-fingers swipe gesture (touchpad)
   * Swipe gesture (touch screen)
 * Categories to organize your library
+* OCR Translator
 * Automatic tracking of series with [AniList](https://anilist.co/), [MangaUpdates](https://www.mangaupdates.com) and [MyAnimeList](https://myanimelist.net/)
 * Automatic update of series
 * Automatic download of new chapters

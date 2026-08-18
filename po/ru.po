@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-18 02:16+0000\n"
+"PO-Revision-Date: 2026-08-18 09:51+0000\n"
 "Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/komikku/main/ru/>"
 "\n"
@@ -739,8 +739,8 @@ msgstr "Расстояние прокрутки"
 #: ../data/ui/preferences.blp:383
 msgid "Percentage of page height to scroll on click or Page Up/Down"
 msgstr ""
-"Процент от высоты страницы для прокрутки при щелчке мышью или использовании "
-"клавиш «Page Up»/«Page Down»"
+"Процент высоты страницы для прокрутки при щелчке мышью или нажатии Page Up/"
+"Down"
 
 #: ../data/ui/preferences.blp:394
 msgid "Drag Sensitivity"
@@ -829,7 +829,7 @@ msgstr "Хранение учётных данных"
 
 #: ../data/ui/preferences.blp:488
 msgid "Allow Plaintext Storage as Fallback"
-msgstr "Разрешить хранение в виде простого текста, как запасной вариант"
+msgstr "Разрешить хранение в виде простого текста как запасной вариант"
 
 #: ../data/ui/preferences.blp:489
 msgid "Used when no keyring backends are found"
@@ -1346,7 +1346,7 @@ msgstr "Не удалось получить данные отслеживани
 
 #: ../komikku/card/tracking.py:100
 msgid "No tracking services available"
-msgstr "Служба отслеживания недоступна"
+msgstr "Службы отслеживания недоступны"
 
 #: ../komikku/card/tracking.py:187
 msgid "Track"
@@ -2024,7 +2024,7 @@ msgstr "Не удалось синхронизировать с сервером
 #: ../komikku/reader/pager/__init__.py:489
 #: ../komikku/reader/pager/webtoon.py:104
 msgid "There is no previous chapter."
-msgstr "Предыдущей главы нет."
+msgstr "Предыдущая глава отсутствует."
 
 #: ../komikku/reader/pager/__init__.py:491
 #: ../komikku/reader/pager/webtoon.py:102

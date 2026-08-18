@@ -3,6 +3,7 @@
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
 from gettext import gettext as _
+from io import BytesIO
 import threading
 
 from PIL import Image
@@ -153,14 +154,13 @@ class OCRTranslator(GObject.GObject):
             self.translate_button.set_sensitive(True)
             self.bottomsheet.props.open = True
 
-    def recognize(self, path_or_bytes, x, y, w, h):
+    def recognize(self, image, x, y, w, h):
         def complete(text):
             self.open_sheet(text)
 
         def run():
-            with Image.open(path_or_bytes) as full_img:
+            with Image.open(image.path or BytesIO(image.data)) as full_img:
                 img = full_img.crop((x, y, w, h))
-                # img.save('/tmp/ocr.png', 'PNG')
                 text = pytesseract.image_to_string(img, lang=self.ocr_lang, config='--psm 12 --oem 1')
                 img.close()
 

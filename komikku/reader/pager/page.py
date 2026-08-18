@@ -178,7 +178,7 @@ class Page(Gtk.Overlay):
 
             # Text recognition
             self.reader.ocr_translator.recognize(
-                self.image.path,
+                self.image,
                 x / zoom, y / zoom,
                 (x + abs(w)) / zoom, (y + abs(h)) / zoom
             )

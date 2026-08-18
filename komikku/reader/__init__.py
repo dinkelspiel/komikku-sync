@@ -34,11 +34,16 @@ class ReaderPage(Adw.NavigationPage):
     overlay = Gtk.Template.Child('reader_overlay')
 
     ocr_translator_bottomsheet = Gtk.Template.Child('ocr_translator_bottomsheet')
+    ocr_translator_box = Gtk.Template.Child('ocr_translator_box')
     ocr_translator_src_dropdown = Gtk.Template.Child('ocr_translator_src_dropdown')
     ocr_translator_src_scrolledwindow = Gtk.Template.Child('ocr_translator_src_scrolledwindow')
     ocr_translator_dst_dropdown = Gtk.Template.Child('ocr_translator_dst_dropdown')
     ocr_translator_dst_scrolledwindow = Gtk.Template.Child('ocr_translator_dst_scrolledwindow')
+    ocr_translator_clear_button = Gtk.Template.Child('ocr_translator_clear_button')
+    ocr_translator_chars_counter_label = Gtk.Template.Child('ocr_translator_chars_counter_label')
     ocr_translator_translate_button = Gtk.Template.Child('ocr_translator_translate_button')
+    ocr_translator_translate_spinner = Gtk.Template.Child('ocr_translator_translate_spinner')
+    ocr_translator_copy_button = Gtk.Template.Child('ocr_translator_copy_button')
 
     manga = None
     init_chapter = None

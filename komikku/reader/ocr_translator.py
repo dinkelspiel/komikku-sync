@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Author: Valéry Febvre <vfebvre@easter-eggs.com>
 
+from gettext import gettext as _
 import threading
 
 from PIL import Image
@@ -11,6 +12,7 @@ except Exception:
     pytesseract = None
 
 from gi.repository import Adw
+from gi.repository import Gdk
 from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GObject
@@ -39,18 +41,24 @@ class OCRTranslator(GObject.GObject):
 
         self.togglebutton = self.reader.ocr_translator_togglebutton
         self.bottomsheet = self.reader.ocr_translator_bottomsheet
+        self.box = self.reader.ocr_translator_box
         self.src_dropdown = self.reader.ocr_translator_src_dropdown
         self.src_scrolledwindow = self.reader.ocr_translator_src_scrolledwindow
         self.dst_dropdown = self.reader.ocr_translator_dst_dropdown
         self.dst_scrolledwindow = self.reader.ocr_translator_dst_scrolledwindow
+        self.clear_button = self.reader.ocr_translator_clear_button
+        self.chars_counter_label = self.reader.ocr_translator_chars_counter_label
         self.translate_button = self.reader.ocr_translator_translate_button
+        self.translate_spinner = self.reader.ocr_translator_translate_spinner
+        self.copy_button = self.reader.ocr_translator_copy_button
 
         if pytesseract is None or not self.ocr_languages:
             self.enabled = False
             self.togglebutton.set_visible(False)
         else:
+            self.reader.window.breakpoint.add_setter(self.box, 'orientation', Gtk.Orientation.VERTICAL)
+
             self.togglebutton.connect('toggled', self.toggle)
-            self.translate_button.connect('clicked', self.translate)
 
             list_store_expression = Gtk.PropertyExpression.new(LangCodeNamePair, None, 'name')
             items = [LangCodeNamePair(code='auto', name='Auto')]
@@ -76,6 +84,11 @@ class OCRTranslator(GObject.GObject):
             self.dst_text = TextView(editable=False, bottom_margin=9, left_margin=9, right_margin=9, top_margin=9)
             self.dst_scrolledwindow.set_child(self.dst_text)
 
+            # Buttons
+            self.clear_button.connect('clicked', self.src_text.clear_text)
+            self.translate_button.connect('clicked', self.translate)
+            self.copy_button.connect('clicked', self.copy_dst)
+
     @GObject.Property(type=bool, default=False)
     def active(self):
         return self.__active
@@ -84,7 +97,7 @@ class OCRTranslator(GObject.GObject):
     def active(self, active):
         if not self.enabled:
             return
-        if self.reader.window.page != self.reader.props.tag:
+        if active and self.reader.window.page != self.reader.props.tag:
             # Avoid activation outside of reader page
             return
 
@@ -92,6 +105,7 @@ class OCRTranslator(GObject.GObject):
 
         self.reader.pager.interactive = not active
         self.bottomsheet.props.reveal_bottom_bar = active
+        self.togglebutton.props.active = active
         if not active:
             self.bottomsheet.props.open = False
             self.togglebutton.remove_css_class('accent')
@@ -122,12 +136,18 @@ class OCRTranslator(GObject.GObject):
 
         return languages
 
+    def copy_dst(self, _btn):
+        if display := Gdk.Display.get_default():
+            display.get_clipboard().set(self.dst_text.get_text())
+            self.reader.window.add_notification(_('Copied to clipboard'))
+
     def on_src_text_changed(self, _buffer):
         text = self.src_text.get_text()
+        self.chars_counter_label.set_text(f'{len(text)}/2000')
         self.translate_button.set_sensitive(text and not text.isspace())
 
     def open_sheet(self, text):
-        self.dst_text.set_text('')
+        self.dst_text.clear_text()
         if text:
             self.src_text.set_text(text)
             self.translate_button.set_sensitive(True)
@@ -140,7 +160,7 @@ class OCRTranslator(GObject.GObject):
         def run():
             with Image.open(path_or_bytes) as full_img:
                 img = full_img.crop((x, y, w, h))
-                img.save('/tmp/ocr.png', 'PNG')
+                # img.save('/tmp/ocr.png', 'PNG')
                 text = pytesseract.image_to_string(img, lang=self.ocr_lang, config='--psm 12 --oem 1')
                 img.close()
 
@@ -164,9 +184,11 @@ class OCRTranslator(GObject.GObject):
 
     def translate(self, _btn):
         def on_complete(result):
+            self.translate_spinner.set_visible(False)
             self.dst_text.set_text(result['translated'])
 
         def on_error(message):
+            self.translate_spinner.set_visible(False)
             self.window.add_notification(message)
 
         def run(text):
@@ -183,6 +205,8 @@ class OCRTranslator(GObject.GObject):
             GLib.idle_add(on_complete, result)
 
         text = self.src_text.get_text().strip()
+        self.translate_spinner.set_visible(True)
+        self.dst_text.clear_text()
 
         thread = threading.Thread(target=run, args=(text, ))
         thread.daemon = True
@@ -198,6 +222,9 @@ class TextView(GtkSource.View):
         self.buffer = self.props.buffer
         scheme = 'adwaita-dark' if Adw.StyleManager.get_default().get_dark() else 'adwaita-light'
         self.buffer.set_style_scheme(GtkSource.StyleSchemeManager.get_default().get_scheme(scheme))
+
+    def clear_text(self, *args):
+        self.set_text('')
 
     def get_text(self):
         return self.buffer.get_text(self.buffer.get_start_iter(), self.buffer.get_end_iter(), True)

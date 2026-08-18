@@ -88,10 +88,31 @@ template $ReaderPage : Adw.NavigationPage {
 
             Box {
               orientation: horizontal;
-              halign: end;
+              halign: fill;
+              vexpand: true;
+              spacing: 12;
+
+              Button ocr_translator_clear_button {
+                icon-name: "edit-clear-symbolic";
+                tooltip-text: _("Clear");
+
+                styles ["flat"]
+              }
+
+              Label ocr_translator_chars_counter_label {
+                hexpand: true;
+                halign: end;
+
+                styles [
+                  "dim-label",
+                  "caption-heading",
+                  "numeric"
+                ]
+              }
 
               Button ocr_translator_translate_button {
-                label: "Translate";
+                label: _("Translate");
+                halign: end;
 
                 styles ["suggested-action"]
               }
@@ -110,6 +131,26 @@ template $ReaderPage : Adw.NavigationPage {
               ScrolledWindow ocr_translator_dst_scrolledwindow {
                 min-content-height: 100;
                 hscrollbar-policy: never;
+              }
+            }
+
+            Box {
+              orientation: horizontal;
+              halign: fill;
+              vexpand: true;
+
+              Adw.Spinner ocr_translator_translate_spinner {
+                margin-start: 8;
+                visible: false;
+              }
+
+              Button ocr_translator_copy_button {
+                icon-name: "edit-copy-symbolic";
+                tooltip-text: _("Copy");
+                hexpand: true;
+                halign: end;
+
+                styles ["flat"]
               }
             }
           }

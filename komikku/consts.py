@@ -268,6 +268,14 @@ CREDITS = dict(
 )
 
 RELEASE_NOTES = """
+<p>This is a bugfix version.</p>
+<ul>
+    <li>[Reader] RTL/LTR/Vertical pager: Fixed keyboard/mouse navigation</li>
+    <li>[Reader] OCR Translator: Improvements in Translator</li>
+    <li>[L10n] Updated Russian and Ukrainian translations</li>
+</ul>
+
+<p>Changes in previous version 50.12.0</p>
 <ul>
     <li>[Reader] Added an OCR translator</li>
     <li>[Reader] Moved settings from Menu to Settings dialog</li>

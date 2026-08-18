@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-14 08:13+0000\n"
+"PO-Revision-Date: 2026-08-18 09:51+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -318,7 +318,7 @@ msgstr "Пошук за назвою, сервером або жанром"
 #: ../data/ui/library.blp:113
 msgctxt "Library: verb"
 msgid "Update"
-msgstr ""
+msgstr "Оновити"
 
 #: ../data/ui/library.blp:202
 msgid "Discover Comics"
@@ -489,7 +489,7 @@ msgstr "Лінійний градієнт"
 
 #: ../data/ui/preferences.blp:93
 msgid "Blurred cover"
-msgstr "Розмита обкладинка"
+msgstr "Розмиття"
 
 #: ../data/ui/preferences.blp:103
 msgid "Desktop Notifications"
@@ -548,7 +548,7 @@ msgstr "Кількість нових і непрочитаних розділі
 #: ../data/ui/preferences.blp:206
 msgctxt "Settings: noun"
 msgid "Update"
-msgstr ""
+msgstr "Оновлення"
 
 #: ../data/ui/preferences.blp:209
 msgid "Update at Startup"
@@ -886,11 +886,11 @@ msgstr "Повноекранний режим"
 
 #: ../data/ui/reader.blp:47
 msgid "Toggle OCR Translator"
-msgstr ""
+msgstr "Перекладач"
 
 #: ../data/ui/reader_settings.blp:9
 msgid "Reader Settings"
-msgstr ""
+msgstr "Параметри"
 
 #: ../data/ui/reader_settings.blp:14
 msgid "Custom"
@@ -2251,7 +2251,7 @@ msgstr "Маньхва"
 
 #: ../komikku/servers/bdplus/__init__.py:58
 msgid "Genre"
-msgstr ""
+msgstr "Жанр"
 
 #: ../komikku/servers/bdplus/__init__.py:59
 msgid "Filter by Genre"
@@ -2906,7 +2906,7 @@ msgstr "Отримуйте зображення нижчої якості для
 
 #: ../komikku/servers/mangafire/__init__.py:146
 msgid "Demographics"
-msgstr ""
+msgstr "Читацька авдиторія"
 
 #: ../komikku/servers/mangak/__init__.py:80
 msgid "Boy (Shounen + Seinen)"

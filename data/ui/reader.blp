@@ -90,11 +90,19 @@ template $ReaderPage : Adw.NavigationPage {
               orientation: horizontal;
               halign: fill;
               vexpand: true;
-              spacing: 12;
+              spacing: 6;
 
-              Button ocr_translator_clear_button {
+              Button ocr_translator_src_clear_button {
                 icon-name: "edit-clear-symbolic";
                 tooltip-text: _("Clear");
+
+                styles ["flat"]
+              }
+
+              Button ocr_translator_src_copy_button {
+                icon-name: "edit-copy-symbolic";
+                tooltip-text: _("Copy");
+                sensitive: false;
 
                 styles ["flat"]
               }
@@ -138,17 +146,19 @@ template $ReaderPage : Adw.NavigationPage {
               orientation: horizontal;
               halign: fill;
               vexpand: true;
+              spacing: 6;
 
               Adw.Spinner ocr_translator_translate_spinner {
                 margin-start: 8;
                 visible: false;
               }
 
-              Button ocr_translator_copy_button {
+              Button ocr_translator_dst_copy_button {
                 icon-name: "edit-copy-symbolic";
                 tooltip-text: _("Copy");
                 hexpand: true;
                 halign: end;
+                sensitive: false;
 
                 styles ["flat"]
               }

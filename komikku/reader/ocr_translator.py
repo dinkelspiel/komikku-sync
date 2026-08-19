@@ -41,17 +41,21 @@ class OCRTranslator(GObject.GObject):
         self.window = reader.window
 
         self.togglebutton = self.reader.ocr_translator_togglebutton
+
         self.bottomsheet = self.reader.ocr_translator_bottomsheet
         self.box = self.reader.ocr_translator_box
+
         self.src_dropdown = self.reader.ocr_translator_src_dropdown
         self.src_scrolledwindow = self.reader.ocr_translator_src_scrolledwindow
-        self.dst_dropdown = self.reader.ocr_translator_dst_dropdown
-        self.dst_scrolledwindow = self.reader.ocr_translator_dst_scrolledwindow
-        self.clear_button = self.reader.ocr_translator_clear_button
+        self.src_clear_button = self.reader.ocr_translator_src_clear_button
+        self.src_copy_button = self.reader.ocr_translator_src_copy_button
         self.chars_counter_label = self.reader.ocr_translator_chars_counter_label
         self.translate_button = self.reader.ocr_translator_translate_button
+
+        self.dst_dropdown = self.reader.ocr_translator_dst_dropdown
+        self.dst_scrolledwindow = self.reader.ocr_translator_dst_scrolledwindow
         self.translate_spinner = self.reader.ocr_translator_translate_spinner
-        self.copy_button = self.reader.ocr_translator_copy_button
+        self.dst_copy_button = self.reader.ocr_translator_dst_copy_button
 
         if pytesseract is None or not self.ocr_languages:
             self.enabled = False
@@ -83,12 +87,14 @@ class OCRTranslator(GObject.GObject):
             self.dst_dropdown.set_selected(list(LANGUAGES.keys()).index('en'))
 
             self.dst_text = TextView(editable=False, bottom_margin=9, left_margin=9, right_margin=9, top_margin=9)
+            self.dst_text.buffer.connect('changed', self.on_dst_text_changed)
             self.dst_scrolledwindow.set_child(self.dst_text)
 
             # Buttons
-            self.clear_button.connect('clicked', self.src_text.clear_text)
+            self.src_clear_button.connect('clicked', self.src_text.clear_text)
+            self.src_copy_button.connect('clicked', self.copy_src)
             self.translate_button.connect('clicked', self.translate)
-            self.copy_button.connect('clicked', self.copy_dst)
+            self.dst_copy_button.connect('clicked', self.copy_dst)
 
     @GObject.Property(type=bool, default=False)
     def active(self):
@@ -142,8 +148,18 @@ class OCRTranslator(GObject.GObject):
             display.get_clipboard().set(self.dst_text.get_text())
             self.reader.window.add_notification(_('Copied to clipboard'))
 
+    def copy_src(self, _btn):
+        if display := Gdk.Display.get_default():
+            display.get_clipboard().set(self.src_text.get_text())
+            self.reader.window.add_notification(_('Copied to clipboard'))
+
+    def on_dst_text_changed(self, _buffer):
+        text = self.dst_text.get_text()
+        self.dst_copy_button.set_sensitive(text and not text.isspace())
+
     def on_src_text_changed(self, _buffer):
         text = self.src_text.get_text()
+        self.src_copy_button.set_sensitive(text and not text.isspace())
         self.chars_counter_label.set_text(f'{len(text)}/2000')
         self.translate_button.set_sensitive(text and not text.isspace())
 
@@ -183,7 +199,13 @@ class OCRTranslator(GObject.GObject):
         self.active = active
 
     def translate(self, _btn):
-        def on_complete(result):
+        def on_complete(result, src):
+            if src == 'auto' and result['src_detected']:
+                lang_detected = LANGUAGES[result['src_detected']]
+                self.src_dropdown.get_model().splice(
+                    0, 1, [LangCodeNamePair(code='auto', name=f'Auto ({lang_detected})')]
+                )
+
             self.translate_spinner.set_visible(False)
             self.dst_text.set_text(result['translated'])
 
@@ -191,24 +213,23 @@ class OCRTranslator(GObject.GObject):
             self.translate_spinner.set_visible(False)
             self.window.add_notification(message)
 
-        def run(text):
+        def run(text, src, dst):
             try:
-                result = Google().translate(
-                    text,
-                    src=self.src_dropdown.get_selected_item().code,
-                    dst=self.dst_dropdown.get_selected_item().code
-                )
+                result = Google().translate(text, src=src, dst=dst)
             except Exception as e:
                 GLib.idle_add(on_error, e.message)
                 return
 
-            GLib.idle_add(on_complete, result)
+            GLib.idle_add(on_complete, result, src)
 
         text = self.src_text.get_text().strip()
+        src = self.src_dropdown.get_selected_item().code
+        dst = self.dst_dropdown.get_selected_item().code
+
         self.translate_spinner.set_visible(True)
         self.dst_text.clear_text()
 
-        thread = threading.Thread(target=run, args=(text, ))
+        thread = threading.Thread(target=run, args=(text, src, dst))
         thread.daemon = True
         thread.start()
 

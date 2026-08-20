@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Komikku 1.17.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-18 00:54+0200\n"
-"PO-Revision-Date: 2026-08-19 10:51+0000\n"
+"PO-Revision-Date: 2026-08-21 04:03+0000\n"
 "Last-Translator: Димко <Dymkovych@proton.me>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/komikku/main/"
 "uk/>\n"
@@ -756,7 +756,6 @@ msgid "Multiplier for drag scrolling sensitivity"
 msgstr "Множник чутливості прокручування перетягуванням"
 
 #: ../data/ui/preferences.blp:407 ../data/ui/reader_settings.blp:54
-#, fuzzy
 msgid "OCR Translator"
 msgstr "OCR-перекладач"
 

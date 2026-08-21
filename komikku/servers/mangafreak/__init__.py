@@ -22,7 +22,7 @@ class Mangafreak(Server):
 
     has_cf = True
 
-    base_url = 'https://ww2.mangafreak.me'
+    base_url = 'https://ww3.mangafreak.me'
     most_populars_url = base_url
     latest_updates_url = base_url + '/Latest_Releases'
     search_url = base_url + '/Find/{term}'

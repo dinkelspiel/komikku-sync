@@ -54,6 +54,25 @@ class Manga:
             self._server = server
 
     @classmethod
+    def all(cls, server=None, db_conn=None):
+        if db_conn is None:
+            db_conn = create_db_connection()
+
+        rows = db_conn.execute('SELECT * FROM mangas').fetchall()
+
+        if rows is None:
+            return []
+
+        mangas = []
+        for row in rows:
+            manga = cls(server=server)
+            for key in row.keys():
+                setattr(manga, key, row[key])
+            mangas.append(manga)
+
+        return mangas
+
+    @classmethod
     def get(cls, id_, server=None, db_conn=None):
         if db_conn is None:
             db_conn = create_db_connection()

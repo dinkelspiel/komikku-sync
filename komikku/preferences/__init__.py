@@ -16,6 +16,7 @@ from komikku.models.database import clear_cached_data
 from komikku.preferences.servers import PreferencesServersLanguagesSubPage
 from komikku.preferences.servers import PreferencesServersSettingsSubPage
 from komikku.preferences.trackers import TrackerRow
+from komikku.preferences.sync import SyncRow
 from komikku.reader.ocr_translator import LangCodeNamePair
 from komikku.utils import folder_size
 from komikku.utils import get_cached_data_dir
@@ -36,6 +37,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     progressbar_theme_row = Gtk.Template.Child('progressbar_theme_row')
     card_backdrop_method_row = Gtk.Template.Child('card_backdrop_method_row')
     desktop_notifications_switch = Gtk.Template.Child('desktop_notifications_switch')
+    sync_group = Gtk.Template.Child('sync_group')
     tracking_group = Gtk.Template.Child('tracking_group')
     tracking_switch = Gtk.Template.Child('tracking_switch')
 
@@ -412,6 +414,10 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # Desktop notifications
         self.desktop_notifications_switch.set_active(self.settings.desktop_notifications)
         self.desktop_notifications_switch.connect('notify::active', self.on_desktop_notifications_changed)
+
+        # Sync
+        row = SyncRow(self.window)
+        self.sync_group.add(row)
 
         # Tracking
         self.tracking_switch.set_active(self.settings.tracking)

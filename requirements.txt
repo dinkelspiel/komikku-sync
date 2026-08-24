@@ -17,7 +17,7 @@ PyGObject
 PyJWT >= 2.10.1
 pypdf >= 6.7.3
 python-magic  # or file-magic
-pytesseract >= 5
+pytesseract >= 0.3.13
 rarfile
 requests >= 2.32.4
 Unidecode

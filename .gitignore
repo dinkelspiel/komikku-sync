@@ -7,6 +7,8 @@ resources
 subprojects/.wraplock
 subprojects/blueprint-compiler
 _build/
+_build2/
+.komikku-dev/
 .buildconfig
 flatpak/*Devel*
 .venv/

@@ -5,6 +5,7 @@
 from gettext import gettext as _
 
 from gi.repository import Adw
+from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import Gtk
 
@@ -15,6 +16,7 @@ from komikku.models.database import clear_cached_data
 from komikku.preferences.servers import PreferencesServersLanguagesSubPage
 from komikku.preferences.servers import PreferencesServersSettingsSubPage
 from komikku.preferences.trackers import TrackerRow
+from komikku.reader.ocr_translator import LangCodeNamePair
 from komikku.utils import folder_size
 from komikku.utils import get_cached_data_dir
 from komikku.utils import get_webview_data_dir
@@ -64,6 +66,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     scroll_click_percentage_adjustment = Gtk.Template.Child('scroll_click_percentage_adjustment')
     scroll_drag_factor_adjustment = Gtk.Template.Child('scroll_drag_factor_adjustment')
     ocr_lang_row = Gtk.Template.Child('ocr_lang_row')
+    translator_lang_row = Gtk.Template.Child('translator_lang_row')
 
     advanced_banner = Gtk.Template.Child('advanced_banner')
     clear_cached_data_actionrow = Gtk.Template.Child('clear_cached_data_actionrow')
@@ -347,6 +350,11 @@ class PreferencesDialog(Adw.PreferencesDialog):
     def on_tracking_changed(self, switch_button, _gparam):
         self.settings.tracking = switch_button.get_active()
 
+    def on_translator_lang_changed(self, row, _gparam):
+        translators_langs = self.settings.translators_langs
+        translators_langs['google'] = row.get_selected_item().code
+        self.settings.translators_langs = translators_langs
+
     def on_update_at_startup_changed(self, switch_button, _gparam):
         if switch_button.get_active():
             self.settings.update_at_startup = True
@@ -541,6 +549,22 @@ class PreferencesDialog(Adw.PreferencesDialog):
             self.ocr_lang_row.connect('notify::selected', self.on_ocr_lang_changed)
         else:
             self.ocr_lang_row.set_sensitive(False)
+
+        # Translator target language
+        if self.window.reader.ocr_translator.enabled:
+            list_store_expression = Gtk.PropertyExpression.new(LangCodeNamePair, None, 'name')
+            self.translator_lang_row.set_expression(list_store_expression)
+
+            model = Gio.ListStore(item_type=LangCodeNamePair)
+            languages = self.window.reader.ocr_translator.translator_languages
+            items = [LangCodeNamePair(code=k, name=v) for k, v in languages.items()]
+            model.splice(0, 0, items)
+            self.translator_lang_row.set_model(model)
+            lang = self.settings.translators_langs.get('google', 'en')
+            self.translator_lang_row.set_selected(list(languages.keys()).index(lang))
+            self.translator_lang_row.connect('notify::selected', self.on_translator_lang_changed)
+        else:
+            self.translator_lang_row.set_sensitive(False)
 
         #
         # Advanced

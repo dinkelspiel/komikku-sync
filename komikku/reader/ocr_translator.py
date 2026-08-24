@@ -22,7 +22,7 @@ from gi.repository import GtkSource
 
 from komikku.models.settings import Settings
 from komikku.translators import Google
-from komikku.translators import LANGUAGES
+from komikku.translators import LANGUAGES as TRANSLATOR_LANGUAGES
 
 
 class LangCodeNamePair(GObject.Object):
@@ -67,7 +67,7 @@ class OCRTranslator(GObject.GObject):
 
             list_store_expression = Gtk.PropertyExpression.new(LangCodeNamePair, None, 'name')
             items = [LangCodeNamePair(code='auto', name='Auto')]
-            items += [LangCodeNamePair(code=k, name=v) for k, v in LANGUAGES.items()]
+            items += [LangCodeNamePair(code=k, name=v) for k, v in TRANSLATOR_LANGUAGES.items()]
 
             # Source
             model = Gio.ListStore(item_type=LangCodeNamePair)
@@ -84,7 +84,8 @@ class OCRTranslator(GObject.GObject):
             model.splice(0, 0, items[1:])
             self.dst_dropdown.set_expression(list_store_expression)
             self.dst_dropdown.set_model(model)
-            self.dst_dropdown.set_selected(list(LANGUAGES.keys()).index('en'))
+            lang = Settings.get_default().translators_langs.get('google', 'en')
+            self.dst_dropdown.set_selected(list(TRANSLATOR_LANGUAGES.keys()).index(lang))
 
             self.dst_text = TextView(editable=False, bottom_margin=9, left_margin=9, right_margin=9, top_margin=9)
             self.dst_text.buffer.connect('changed', self.on_dst_text_changed)
@@ -142,6 +143,10 @@ class OCRTranslator(GObject.GObject):
                 languages.remove(lang)
 
         return languages
+
+    @property
+    def translator_languages(self):
+        return TRANSLATOR_LANGUAGES
 
     def copy_dst(self, _btn):
         if display := Gdk.Display.get_default():
@@ -201,7 +206,7 @@ class OCRTranslator(GObject.GObject):
     def translate(self, _btn):
         def on_complete(result, src):
             if src == 'auto' and result['src_detected']:
-                lang_detected = LANGUAGES[result['src_detected']]
+                lang_detected = TRANSLATOR_LANGUAGES[result['src_detected']]
                 self.src_dropdown.get_model().splice(
                     0, 1, [LangCodeNamePair(code='auto', name=f'Auto ({lang_detected})')]
                 )

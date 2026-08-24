@@ -703,6 +703,15 @@ class Settings(Gio.Settings):
         self.set_boolean('tracking', state)
 
     @property
+    def translators_langs(self):
+        """Return default target languages of translators"""
+        return json.loads(self.get_string('translators-langs'))
+
+    @translators_langs.setter
+    def translators_langs(self, state):
+        self.set_string('translators-langs', json.dumps(state))
+
+    @property
     def update_at_startup(self):
         return self.get_boolean('update-at-startup')
 

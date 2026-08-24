@@ -410,6 +410,12 @@ template $PreferencesDialog : Adw.PreferencesDialog {
         title: _("OCR Language");
         subtitle: _("Default language used for OCR text recognitions");
       }
+
+      Adw.ComboRow translator_lang_row {
+        title: _("Translator Language");
+        subtitle: _("Default language used as target language for the translator");
+        enable-search: true;
+      }
     }
   }
 

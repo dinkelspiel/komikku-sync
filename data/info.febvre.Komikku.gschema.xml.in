@@ -296,6 +296,11 @@
             <summary>OCR Language</summary>
             <description>Default language used for OCR text recognitions</description>
         </key>
+        <key type="s" name="translators-langs">
+            <default>"{}"</default>
+            <summary>Translators target languages</summary>
+            <description>Default target languages of translators</description>
+        </key>
 
         <!-- Preferences: Advanced -->
         <key type="b" name="clear-cached-data-on-app-close">

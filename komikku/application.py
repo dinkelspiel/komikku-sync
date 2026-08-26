@@ -44,6 +44,7 @@ from komikku.servers import init_servers_modules
 from komikku.servers import install_servers_modules_from_repo
 from komikku.servers.utils import get_allowed_servers_list
 from komikku.support import SupportPage
+from komikku.sync import CloudSyncController
 from komikku.trackers import Trackers
 from komikku.updater import Updater
 from komikku.utils import random_palette
@@ -178,6 +179,8 @@ class ApplicationWindow(Adw.ApplicationWindow):
             halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER, width_request=48, height_request=48, visible=False
         )
         self.overlay.add_overlay(self.activity_indicator)
+
+        self.cloud_sync = CloudSyncController(self)
 
         self.downloader = Downloader(self)
         self.trackers = Trackers(self)
@@ -328,6 +331,7 @@ class ApplicationWindow(Adw.ApplicationWindow):
         self.present()
 
         self.library.populate()
+        self.cloud_sync.startup()
 
         # Detect maximized/unmaximized state changes
         self.get_native().get_surface().connect('notify::state', self.on_state_changed)

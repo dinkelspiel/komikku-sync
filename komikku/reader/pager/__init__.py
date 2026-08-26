@@ -149,6 +149,8 @@ class BasePager:
                     db_conn=db_conn
                 )
 
+                self.window.cloud_sync.schedule_push()
+
                 for index in pages:
                     self.sync_progress_with_server(chapter, index)
                     self.sync_progress_with_trackers(chapter, index)

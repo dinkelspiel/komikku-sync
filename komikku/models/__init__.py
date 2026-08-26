@@ -16,4 +16,9 @@ from .database.downloads import Download
 from .database.mangas import Chapter
 from .database.mangas import Manga
 
+from .komikku_sync import KomikkuSyncDAO
+from .komikku_sync import KomikkuSyncError
 from .settings import Settings
+from .synced_state import SyncedChapter
+from .synced_state import SyncedManga
+from .synced_state import SyncedState

@@ -16,6 +16,7 @@ from komikku.models.database import clear_cached_data
 from komikku.preferences.servers import PreferencesServersLanguagesSubPage
 from komikku.preferences.servers import PreferencesServersSettingsSubPage
 from komikku.preferences.trackers import TrackerRow
+from komikku.preferences.sync import CloudSyncRow
 from komikku.preferences.sync import SyncRow
 from komikku.reader.ocr_translator import LangCodeNamePair
 from komikku.utils import folder_size
@@ -418,6 +419,8 @@ class PreferencesDialog(Adw.PreferencesDialog):
         # Sync
         row = SyncRow(self.window)
         self.sync_group.add(row)
+        self.cloud_sync_row = CloudSyncRow(self.window)
+        self.sync_group.add(self.cloud_sync_row)
 
         # Tracking
         self.tracking_switch.set_active(self.settings.tracking)

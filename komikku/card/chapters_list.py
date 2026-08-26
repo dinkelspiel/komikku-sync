@@ -413,6 +413,7 @@ class ChaptersList:
 
             self.card.refresh(unread_chapters=True)
             self.card.window.library.refresh_on_manga_state_changed(self.card.manga)
+            self.card.window.cloud_sync.schedule_push()
         else:
             self.card.window.activity_indicator.set_visible(False)
             self.card.window.add_notification(_('Failed to update chapters reading status'))
@@ -468,6 +469,8 @@ class ChaptersList:
 
         self.card.refresh(unread_chapters=True)
         self.card.window.library.refresh_on_manga_state_changed(self.card.manga)
+        if read:
+            self.card.window.cloud_sync.schedule_push()
 
     def toggle_selected_chapters_read_status(self, _action, _gparam, read):
         chapters_ids = []
@@ -505,6 +508,8 @@ class ChaptersList:
 
                 self.card.refresh(unread_chapters=True)
                 self.card.window.library.refresh_on_manga_state_changed(self.card.manga)
+                if read:
+                    self.card.window.cloud_sync.schedule_push()
 
             def run_generator(func):
                 gen = func()

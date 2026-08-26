@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Willem Dinkelspiel <mail@keii.dev>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+first
+.build
+database.db
+database_test
+synced_state_test

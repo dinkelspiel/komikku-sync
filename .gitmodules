@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Willem Dinkelspiel <mail@keii.dev>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[submodule "web/modules/argon2-jai"]
+	path = web/modules/argon2-jai
+	url = git@github.com:dinkelspiel/argon2-jai.git
+	branch = master
+[submodule "web/modules/jai-sqlite"]
+	path = web/modules/jai-sqlite
+	url = git@github.com:dinkelspiel/jai-sqlite.git
+	branch = prod
+[submodule "web/modules/prairie"]
+	path = web/modules/prairie
+	url = git@github.com:dinkelspiel/prairie.git
+	branch = master
